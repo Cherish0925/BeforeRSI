@@ -66,7 +66,7 @@ The project has three concrete outputs.
 
 3. **Reusable evaluation instruments.** Versioned task splits, cost accounting, lineage records, component swaps, regression tests, and machine-readable results make different systems comparable.
 
-The initial public map includes STOP, Gödel Agent, ADAS, AFlow, Darwin Gödel Machine, HGM, HyperAgents, RRSI, Meta-Harness, HSI, OpenRSI, MASS, SIA, SEAL, RSI-Anything, Dream-RSI, and RSIGym. Inclusion means that the work is relevant and publicly inspectable. It does not mean that BeforeRSI accepts every RSI claim made by its authors.
+The maintained public map now spans early self-referential optimization (STOP, Promptbreeder), executable self-modification (Gödel Agent, SICA, Darwin Gödel Machine, HGM, HyperAgents, AIDE²), harness and context evolution (RRSI, Meta-Harness, HSI, ACE, EvoHarness-RL), model-weight self-training and self-reward (SPIN, Self-Rewarding Language Models, SEAL), model–system co-improvement (OpenRSI, MASS, SIA), environment-mediated systems, and evaluation infrastructure. Adjacent optimizers such as ADAS, AFlow, GEPA, and AgentBreeder are retained as matched baselines rather than counted as RSI by default. Inclusion means that a work constrains a concrete RSI question; it does not mean that BeforeRSI accepts the authors' strongest interpretation.
 
 ## Minimum evidence for an RSI claim
 
@@ -114,7 +114,7 @@ The repository starts with a small number of maintained objects. New files shoul
 
 ## Status
 
-Version 0.1 establishes the research object, evidence standard, public-system catalog, and first experiment. No system in the catalog is marked as independently reproduced by BeforeRSI yet.
+Version 0.2 establishes the research object, evidence standard, a source-linked public corpus with explicit RSI-relation classes, and the first controlled experiments. No system in the catalog is marked as independently reproduced by BeforeRSI yet.
 
 ## License
 
