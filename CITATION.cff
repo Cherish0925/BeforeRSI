@@ -1,22 +1,13 @@
 cff-version: 1.2.0
-message: "If you use BeforeRSI in research, please cite the repository and the specific upstream systems or papers on which your claim depends."
-title: "BeforeRSI"
+message: "If you use BeforeRSI, cite this repository."
+title: "BeforeRSI: A research map and experimental program for recursive self-improvement"
 type: software
 authors:
-  - family-names: "Yang"
-    given-names: "Shuxing"
-    alias: "Cherish0925"
+  - family-names: Yang
+    given-names: Shuxing
 repository-code: "https://github.com/Cherish0925/BeforeRSI"
 url: "https://github.com/Cherish0925/BeforeRSI"
-version: "0.1.0"
-date-released: "2026-10-16"
 license: MIT
-abstract: "An open research project on the definitions, evidence, public systems, and experiments required before recursive self-improvement can be established as a general and reproducible property of AI systems."
-keywords:
-  - recursive self-improvement
-  - self-improving AI
-  - language models
-  - AI agents
-  - harness optimization
-  - meta-learning
-  - self-modification
+version: 0.3.0
+date-released: 2026-10-16
+abstract: "A source-linked map, evidence standard, and experimental program for recursive self-improvement in AI models, harnesses, and complete AI systems."
