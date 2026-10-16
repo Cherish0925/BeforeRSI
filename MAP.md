@@ -15,23 +15,27 @@ The field becomes clear when the questions are arranged by causal dependency rat
 
 A deployed AI system is represented as
 
-\[
-S_t=(M_t,H_t,I_t,D_t,E_t).
-\]
+$
 
-- \(M_t\): model weights, architecture, optimizer state, and learned policies;
-- \(H_t\): prompts, context construction, memory, tools, skills, routing, agent topology, control flow, verification calls, and stopping rules;
-- \(I_t\): the procedure that proposes, implements, tests, and selects changes;
-- \(D_t\): persistent experience, training data, lineage, and externalized knowledge;
-- \(E_t\): tasks, software, simulators, instruments, users, and other sources of feedback.
+S_t=(M_t,H_t,I_t,D_t,E_t).
+
+$
+
+- $M_t$: model weights, architecture, optimizer state, and learned policies;
+- $H_t$: prompts, context construction, memory, tools, skills, routing, agent topology, control flow, verification calls, and stopping rules;
+- $I_t$: the procedure that proposes, implements, tests, and selects changes;
+- $D_t$: persistent experience, training data, lineage, and externalized knowledge;
+- $E_t$: tasks, software, simulators, instruments, users, and other sources of feedback.
 
 The acceptance process is written separately:
 
-\[
-V^\*(S_t,S_{t+1};Q,B),
-\]
+$
 
-where \(Q\) is an untouched task distribution and \(B\) is a fixed resource budget. \(V^\*\) may be improved through a separate process, but a candidate cannot freely modify the test that accepts it.
+V^\*(S_t,S_{t+1};Q,B),
+
+$
+
+where $Q$ is an untouched task distribution and $B$ is a fixed resource budget. $V^\*$ may be improved through a separate process, but a candidate cannot freely modify the test that accepts it.
 
 A work contributes to RSI only after the changed object, improvement operator, feedback source, persistence, transfer, and recursion depth are explicit.
 
@@ -134,15 +138,17 @@ Exact verifiers make algorithm search, games, theorem proving, and code tests un
 
 A credible RSI system therefore needs three feedback layers:
 
-\[
+$
+
 V_t^{\text{search}},\qquad
 V_t^{\text{validation}},\qquad
 V^\*_{\text{accept}}.
-\]
 
-- \(V^{\text{search}}\) supplies dense feedback and may be imperfect.
-- \(V^{\text{validation}}\) supports model and procedure choices but must have controlled exposure.
-- \(V^\*_{\text{accept}}\) is protected, sparse, and preferably time-forward or externally generated.
+$
+
+- $V^{\text{search}}$ supplies dense feedback and may be imperfect.
+- $V^{\text{validation}}$ supports model and procedure choices but must have controlled exposure.
+- $V^\*_{\text{accept}}$ is protected, sparse, and preferably time-forward or externally generated.
 
 Rethinking the Evaluation of Harness Evolution, Harness Updating Is Not Harness Benefit, On the Statistical Limits of Self-Improving Agents, and Auditing Harness Tampering are part of the mainline because they change which apparent gains can be believed.
 
@@ -203,7 +209,7 @@ The loop has six necessary properties:
 
 1. **Portfolio search:** maintain several harnesses and lineages; a single incumbent loses diversity and hides co-adaptation.
 2. **Verified experience:** model training uses solutions, failures, near misses, and counterfactual alternatives linked to reliable outcomes.
-3. **Cross-component attribution:** evaluate \(M_i\times H_j\times I_k\), not only matched versions.
+3. **Cross-component attribution:** evaluate $M_i\times H_j\times I_k$, not only matched versions.
 4. **Protected acceptance:** the candidate cannot rewrite the final test or its provenance.
 5. **Time-forward transfer:** evaluation includes tasks created after the candidate is frozen.
 6. **Successor-as-improver measurement:** compare parents by the quality and cost of descendants they generate.
