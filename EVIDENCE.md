@@ -4,7 +4,7 @@ This document separates scientific value from the label attached to a project. A
 
 ## 1. The evidence test
 
-For a claimed update \(S_t\rightarrow S_{t+1}\), ask seven questions:
+For a claimed update $S_t\rightarrow S_{t+1}$, ask seven questions:
 
 1. **What changed?** Response, prompt, memory, tool, harness code, model weights, optimizer, evaluator, or improver.
 2. **What supplied the change?** The system itself, a stronger fixed model, human engineering, search, or hidden tests.
@@ -12,7 +12,7 @@ For a claimed update \(S_t\rightarrow S_{t+1}\), ask seven questions:
 4. **What transferred?** Same benchmark, held-out rows, time-forward tasks, new domains, new model families, or new environments.
 5. **What was the matched baseline?** Parent with equal inference, search, training, and evaluator budget.
 6. **What regressed?** Task-level failures, cost, latency, reliability, calibration, or unrelated capabilities.
-7. **Did the successor improve later improvement?** Was \(S_{t+1}\) compared with \(S_t\) as an improver?
+7. **Did the successor improve later improvement?** Was $S_{t+1}$ compared with $S_t$ as an improver?
 
 A paper that does not answer the last question may establish self-improvement. It does not establish recursion.
 
@@ -144,13 +144,15 @@ HELIX, Co-Harness, OpenRSI, MASS, SIA, and related work identify the correct dep
 
 The core loop is sound:
 
-\[
+$
+
 H_t \rightarrow D_t^{\text{verified}}
 \rightarrow M_{t+1}
 \rightarrow H_{t+1}.
-\]
 
-Current public evidence is early. Common limitations include one-round demonstrations, task-specific evaluators, incomplete \(M\times H\) crossing, no time-forward tasks, and no comparison of parent and successor as improvers.
+$
+
+Current public evidence is early. Common limitations include one-round demonstrations, task-specific evaluators, incomplete $M\times H$ crossing, no time-forward tasks, and no comparison of parent and successor as improvers.
 
 The direction deserves priority because it can combine cheap external adaptation with durable parameter learning. It should not be described as solved RSI until the repeated loop is measured.
 
@@ -180,7 +182,7 @@ The following patterns should not occupy the center of the repository.
 
 The system critiques or revises its current answer but retains no reusable change. This is task-time computation.
 
-### Best-of-\(N\) presented as learning
+### Best-of-$N$ presented as learning
 
 A system samples many candidates and keeps the best output. Unless the selected information changes later behavior, no successor was created.
 
