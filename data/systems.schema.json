@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Cherish0925/BeforeRSI/data/systems.schema.json",
+  "title": "BeforeRSI public-system catalog",
+  "type": "object",
+  "required": ["schema_version", "updated", "status_definitions", "systems"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "updated": {
+      "type": "string",
+      "format": "date"
+    },
+    "status_definitions": {
+      "type": "object",
+      "required": ["reported", "reproduced", "replicated", "contradicted", "open"],
+      "additionalProperties": {"type": "string"}
+    },
+    "systems": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/system"}
+    }
+  },
+  "$defs": {
+    "system": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "repo",
+        "track",
+        "claimed_changed_objects",
+        "evidence_status",
+        "before_rsi_audit",
+        "central_question"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "repo": {
+          "type": "string",
+          "pattern": "^https://github\\.com/[^/]+/[^/]+/?$"
+        },
+        "track": {
+          "type": "string",
+          "minLength": 1
+        },
+        "claimed_changed_objects": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+          }
+        },
+        "evidence_status": {
+          "enum": ["reported", "reproduced", "replicated", "contradicted", "open"]
+        },
+        "before_rsi_audit": {
+          "enum": ["pending", "in_progress", "complete"]
+        },
+        "central_question": {
+          "type": "string",
+          "minLength": 10
+        }
+      }
+    }
+  }
+}
