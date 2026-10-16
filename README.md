@@ -1,148 +1,197 @@
 # BeforeRSI
 
-**What must be established before an AI system can be said to improve its own capacity to improve?**
+<div align="center">
 
-BeforeRSI is a research map, evidence ledger, and experimental program for recursive self-improvement in AI models, harnesses, and complete AI systems.
+<img src="assets/beforersi-hero.svg" width="100%" alt="BeforeRSI — recursive self-improvement needs a sharper test">
 
-The repository is organized around one sequence:
+<br>
 
-\[
-S_0 \xrightarrow{I_0,V^\*} S_1
-\xrightarrow{I_1,V^\*} S_2
-\xrightarrow{I_2,V^\*} \cdots
-\]
+[![Status](https://img.shields.io/badge/status-research%20in%20progress-111827?style=flat-square)](#status)
+[![Corpus](https://img.shields.io/badge/public%20corpus-38%20works-C58B35?style=flat-square)](EVIDENCE.md)
+[![Claim depth](https://img.shields.io/badge/claim%20depth-D0%E2%86%92D4-5C9C96?style=flat-square)](#claim-depth)
+[![CI](https://img.shields.io/github/actions/workflow/status/Cherish0925/BeforeRSI/validate.yml?branch=main&style=flat-square&label=data)](https://github.com/Cherish0925/BeforeRSI/actions)
+[![License](https://img.shields.io/badge/license-MIT-6B7280?style=flat-square)](LICENSE)
 
-\(S_t\) is a versioned AI system. \(I_t\) proposes and implements changes. \(V^\*\) is a protected acceptance process that the candidate cannot freely rewrite. A higher task score is insufficient. Three distinct claims must be separated:
+**[Research map](MAP.md)** · **[Evidence](EVIDENCE.md)** · **[Program](PROGRAM.md)** · **[Evaluation](EVALUATION.md)** · **[Experiments](experiments/)**
 
-1. **Persistent self-modification:** the system participates in producing a change that survives into later tasks.
-2. **Transferable self-improvement:** the successor is better on untouched tasks or achieves the same result at lower total cost.
-3. **Recursive self-improvement:** the successor produces better later successors than its parent under a matched improvement budget.
+</div>
 
-Most work called “self-improving AI” establishes only part of this sequence.
+---
 
-## The main conclusion
+## What must be true before RSI is real?
 
-The historical path to RSI has five branches:
+**BeforeRSI** studies one question:
 
-- self-reference and formal self-modification;
-- heuristic, evolutionary, and program search;
-- meta-learning, self-play, and self-training;
-- external memory, tools, skills, and harnesses;
-- evaluators, verifiers, and selection under uncertainty.
+> When can we say that an AI system has improved its own capacity to improve?
 
-The branches now converge on a system-level target:
+A better answer after more sampling is not enough. A benchmark score obtained after repeated access to the benchmark is not enough. A fixed optimizer producing a better prompt or workflow is not enough. A model and harness updated together are not interpretable unless their contributions can be separated.
 
-\[
+The object of study is a versioned AI system:
+
+$$
 S_t=(M_t,H_t,I_t,D_t,E_t),
-\]
+$$
 
-where \(M\) is the model, \(H\) the harness, \(I\) the improver, \(D\) persistent experience and training data, and \(E\) the task environment. The acceptance process \(V^\*\) is kept separate because an editable evaluator can turn genuine improvement into metric drift or tampering.
+where **M** is the model, **H** the harness, **I** the improver, **D** persistent experience and training data, and **E** the task environment. A separate acceptance process $V^*$ decides whether a candidate becomes the next version.
 
-The strongest plausible route is repeated **model–harness–improver co-evolution**:
+<div align="center">
+<img src="assets/rsi-mainline.svg" width="96%" alt="BeforeRSI research spine">
+</div>
 
-\[
-H_t \rightarrow \text{verified trajectories}
-\rightarrow M_{t+1}
-\rightarrow H_{t+1}
-\rightarrow I_{t+1}.
-\]
+The central empirical target is stronger than task performance:
 
-This route is still unproven. Public systems show useful one-step and short multi-generation gains, mainly in coding, benchmarked agent work, and bounded post-training. Public evidence does not yet establish sustained broad transfer, frontier-scale model-level recursion, or an improving rate of improvement over many generations.
+$$
+S_t \xrightarrow{I_t} S_{t+1}
+\qquad\text{and then}\qquad
+S_{t+1}\ \text{must be a better improver than}\ S_t.
+$$
 
-## The map
+That second statement is where most public evidence becomes thin.
 
-[MAP.md](MAP.md) gives the historical tree, causal graph, present frontier, and the exact point at which adjacent fields become evidence for RSI.
+## The research spine
 
-[EVIDENCE.md](EVIDENCE.md) states what the strongest public work establishes, what it leaves unresolved, and which common claims do not count as RSI evidence.
+The history of self-improving AI is easiest to understand as five streams that now meet:
 
-[PROGRAM.md](PROGRAM.md) specifies the research program for model–harness co-evolution, including system state, update order, lineage, attribution, scaling tests, and the sequence of experiments.
+| Stream | What it contributed | What remains unresolved |
+|---|---|---|
+| **Self-reference** | programs and agents that can modify their own executable description | whether self-reference produces transferable improvement rather than bounded self-editing |
+| **Search** | evolutionary search, program synthesis, prompt/workflow optimization | whether the optimizer itself improves, rather than only its target |
+| **Learning to learn** | meta-learning, self-play, self-training, self-generated rewards | whether repeated weight updates remain reliable and useful as models become stronger |
+| **External cognition** | memory, tools, skills, context, agent control, harnesses | where durable capability should live and whether harness gains transfer across models |
+| **Verification** | exact checks, learned judges, hidden tasks, selection under uncertainty | how to prevent benchmark fitting, evaluator exploitation, and metric drift |
 
-[EVALUATION.md](EVALUATION.md) defines the acceptance standard: hidden and time-forward tasks, matched compute, cross-component swaps, tampering checks, regression limits, and successor-as-improver tests.
+The current technical frontier is their intersection: **model–harness–improver co-evolution under protected evaluation**.
+
+Read the full historical and causal map in **[MAP.md](MAP.md)**.
 
 ## Claim depth
 
-BeforeRSI uses a five-level claim scale:
+BeforeRSI does not classify whole projects as “RSI” or “not RSI.” It asks what a specific experiment actually establishes.
 
-| Level | Claim | Required observation |
+| Level | Claim | Minimum observation |
 |---|---|---|
-| **D0** | Task-time search or adaptation | Better current-task output; no persistent successor required |
-| **D1** | Persistent self-modification | A versioned change survives into later tasks |
-| **D2** | Transferable self-improvement | The change improves untouched tasks, models, environments, or cost |
-| **D3** | Recursive self-improvement | The successor generates better later successors under matched budget |
-| **D4** | Open-ended RSI | D3 persists across changing tasks and bottlenecks without rapid saturation |
+| **D0** | task-time adaptation | better current-task output; no persistent successor required |
+| **D1** | persistent self-modification | a versioned change survives into later tasks |
+| **D2** | transferable self-improvement | the change improves untouched tasks, models, environments, or cost |
+| **D3** | recursive self-improvement | the successor produces better later successors under the same improvement budget |
+| **D4** | open-ended RSI | D3 persists as tasks and bottlenecks change, without rapid saturation |
 
-A paper can be technically valuable at D0 or D1. It should not be presented as D3 or D4 without the corresponding experiment.
+A technically useful D0 or D1 result remains useful. The problem is claiming D3 or D4 without the corresponding observation.
 
-## Current judgment
+## What the public record says now
 
-The public literature supports four conclusions.
+The strongest public work has already established several pieces of the puzzle:
 
-**First, useful persistent change can live outside model weights.** Prompt, memory, tool, workflow, and source-code changes can materially alter a fixed model’s realized capability.
+- **persistent capability can live outside weights** — prompts, context, memory, tools, workflows and executable agent code can materially change a fixed model's realized capability;
+- **self-modification can be executable** — agents can inspect, edit, test and retain changes to their own software;
+- **model updates can be self-generated** — self-training, self-generated rewards and AI-generated update data can improve model behavior in bounded settings;
+- **model and harness can be improved together** — recent systems expose both as editable objects and begin to test component transfer;
+- **selection quality is a first-class constraint** — hidden tasks, cost accounting, lineage and independent acceptance materially change what counts as an improvement.
 
-**Second, harness updating and harness benefit are separate abilities.** A model may produce a useful update that another model can exploit better. Stronger base models do not necessarily receive larger gains from a given harness update.
+What is **not** yet established publicly is equally important: sustained broad transfer over many generations, frontier-scale weight-level recursion with reproducible artifacts, and a successor that repeatedly becomes better at producing later successors under matched resources.
 
-**Third, benchmark improvement is heavily confounded.** Additional inference, repeated benchmark feedback, winner selection, evaluator exploitation, and task-specific compensation can all imitate reusable improvement.
+The source-backed record is in **[EVIDENCE.md](EVIDENCE.md)** and the machine-readable corpus is in **[data/works.json](data/works.json)**.
 
-**Fourth, model–harness co-evolution is the correct system boundary, but current public work has not closed the full loop repeatedly.** One round of harness search followed by one model update is evidence about co-adaptation; it is not yet evidence of sustained recursive improvement.
+## The system we actually want to test
 
-## What this repository excludes
+A credible route to general RSI cannot optimize only one layer forever. The working program is:
 
-BeforeRSI does not classify a project as RSI because it uses words such as *recursive*, *self-evolving*, *autonomous*, or *self-reflective*. The following are adjacent unless they produce a persistent, transferable successor:
+$$
+H_t
+\rightarrow D_t^{\mathrm{verified}}
+\rightarrow M_{t+1}
+\rightarrow H_{t+1}
+\rightarrow I_{t+1}.
+$$
 
-- repeated sampling, reflection, debate, or tree search;
-- automated prompt or workflow search by a fixed external optimizer;
-- algorithm discovery whose output does not improve the producing system;
-- synthetic-data training with a fixed update procedure;
-- benchmark-specific prompt patches;
-- more agents, tokens, retries, or evaluator calls without matched-cost controls.
+1. improve a **portfolio of harnesses** around a fixed model;
+2. collect matched trajectories and verify them independently;
+3. update the model from evidence-bearing trajectories rather than undifferentiated logs;
+4. cross old/new models with old/new harnesses to locate the gain;
+5. rebuild the harness around the new model instead of assuming the old optimum remains optimal;
+6. improve the improver using candidate lineage, failed hypotheses and transfer results;
+7. compare parent and successor **as improvers** on a new improvement problem;
+8. repeat only while held-out gain survives cost, regression and contamination controls.
 
-These methods can be strong baselines or necessary components. The distinction concerns the claim, not their engineering usefulness.
+The detailed design is in **[PROGRAM.md](PROGRAM.md)**.
 
-## Repository structure
+## Three experiments before stronger claims
 
-```text
-BeforeRSI/
-├── README.md
-├── MAP.md
-├── EVIDENCE.md
-├── PROGRAM.md
-├── EVALUATION.md
-├── data/
-│   ├── works.json
-│   ├── works.schema.json
-│   └── knowledge-graph.json
-├── experiments/
-│   ├── 001-harness-transfer.md
-│   ├── 002-model-harness-cross.md
-│   └── 003-successor-as-improver.md
-├── scripts/
-│   └── validate.py
-└── .github/workflows/
-    └── validate.yml
-```
+<table>
+<tr>
+<td width="33%" valign="top">
 
-The corpus is selective. Entries are retained because they establish a necessary capability, provide direct RSI evidence, supply a strong baseline, or expose a failure mode that changes the research program.
+### 01 · Harness transfer
 
-## Evidence labels
+Does an evolved harness still win after the parent receives the same total compute?
 
-- `reported`: stated by the original authors;
-- `reproduced`: public artifacts were rerun with materially matching results;
-- `replicated`: an independent implementation supports the same conclusion;
-- `contradicted`: a controlled result conflicts with the claim;
-- `open`: available evidence does not decide the claim.
+[Protocol →](experiments/001-harness-transfer.md)
 
-No author-reported result is silently upgraded to independent evidence.
+</td>
+<td width="33%" valign="top">
 
-## Immediate work
+### 02 · Model × Harness
 
-The next useful work is not another broad survey. It is a sequence of controlled experiments:
+Evaluate the full cross:
 
-1. reproduce one inspectable harness-evolution system;
-2. compare it with the parent under equal total compute;
-3. transfer the change across tasks and model families;
-4. cross parent and successor models with parent and successor harnesses;
-5. run a second improvement generation and compare the parents as improvers;
-6. update model weights from verified harness-generated trajectories;
-7. rebuild the harness for the updated model and repeat.
+(M0,H0) · (M1,H0) · (M0,H1) · (M1,H1)
 
-The repository will be judged by whether these experiments change what is known about transfer, attribution, scaling, and recursion.
+[Protocol →](experiments/002-model-harness-cross.md)
+
+</td>
+<td width="33%" valign="top">
+
+### 03 · Successor as improver
+
+Under the same improvement budget, does $S_1$ produce a better descendant than $S_0$?
+
+[Protocol →](experiments/003-successor-as-improver.md)
+
+</td>
+</tr>
+</table>
+
+These experiments are ordered. Experiment 03 is the first direct test of the word **recursive**.
+
+## What this repository rejects
+
+BeforeRSI does not upgrade a result because its title contains *recursive*, *self-evolving*, *autonomous* or *self-reflective*. The following are insufficient on their own:
+
+- extra samples, retries, agents or evaluator calls;
+- a fixed outer optimizer repeatedly improving a target;
+- benchmark-specific prompt or workflow patches;
+- self-generated data with an unchanged training rule;
+- joint model/harness updates without component crossing;
+- one successful parent → child update described as recursion;
+- gains demonstrated only on small models and extrapolated to frontier models;
+- self-evaluation used as the sole acceptance test.
+
+These methods may be useful components or strong baselines. **[EVALUATION.md](EVALUATION.md)** specifies what stronger claims require.
+
+## Repository
+
+| File | Purpose |
+|---|---|
+| **[MAP.md](MAP.md)** | history, causal structure, knowledge tree and present frontier |
+| **[EVIDENCE.md](EVIDENCE.md)** | strongest public work, claim depth, limitations and primary sources |
+| **[PROGRAM.md](PROGRAM.md)** | target system, model–harness–improver co-evolution and research sequence |
+| **[EVALUATION.md](EVALUATION.md)** | hidden/time-forward tests, cost controls, attribution, regression and recursion tests |
+| **[data/works.json](data/works.json)** | machine-readable public research corpus |
+| **[data/knowledge-graph.json](data/knowledge-graph.json)** | machine-readable causal knowledge graph |
+| **[experiments/](experiments/)** | executable discriminating experiments |
+
+The repository stays small on purpose. New files are added when they contain a new source audit, a testable claim, an experiment, or a result.
+
+## Status
+
+**October 2026.** The historical map and experimental program are established; the corpus is still being audited claim by claim. Author-reported results remain labeled reported until they are independently rerun or replicated.
+
+The immediate work is deliberately narrow:
+
+**audit → reproduce → transfer → attribute → test the successor as an improver → repeat.**
+
+---
+
+<div align="center">
+<sub>BeforeRSI asks for stronger evidence before stronger words.</sub>
+</div>
