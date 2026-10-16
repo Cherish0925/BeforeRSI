@@ -47,10 +47,10 @@ Post hoc changes belong in a new experiment.
 
 Use four cohorts:
 
-- \(P\): improvement tasks visible to candidate generation and selection;
-- \(V\): validation tasks with limited exposure;
-- \(Q\): hidden tasks inaccessible during modification;
-- \(T\): time-forward tasks created after the candidate is frozen.
+- $P$: improvement tasks visible to candidate generation and selection;
+- $V$: validation tasks with limited exposure;
+- $Q$: hidden tasks inaccessible during modification;
+- $T$: time-forward tasks created after the candidate is frozen.
 
 Record template overlap, shared source data, common generators, and likely contamination. A nominally hidden split from the same public benchmark is weaker than a time-forward cohort.
 
@@ -71,7 +71,7 @@ Record:
 
 Every claimed persistent improvement needs an equal-total-resource parent baseline.
 
-If producing \(S_1\) costs \(C_{\text{improve}}\), compare it with a parent strategy allowed to spend the same total resource through additional search, sampling, or task-time computation. Report immediate and amortized cost.
+If producing $S_1$ costs $C_{\text{improve}}$, compare it with a parent strategy allowed to spend the same total resource through additional search, sampling, or task-time computation. Report immediate and amortized cost.
 
 ## 5. Use the required baselines
 
@@ -129,7 +129,8 @@ A gain inside the parent’s repeat-evaluation noise is unresolved.
 
 Observed score change can contain:
 
-\[
+$
+
 \Delta_{\text{obs}}=
 \Delta_{\text{compute}}
 +\Delta_{\text{selection}}
@@ -137,7 +138,8 @@ Observed score change can contain:
 +\Delta_{\text{transfer}}
 +\Delta_{\text{measurement}}
 +\epsilon.
-\]
+
+$
 
 This is an experimental decomposition, not an identity recoverable from one run.
 
@@ -151,32 +153,36 @@ Estimate the terms through:
 - component ablation;
 - parser and logging invariance checks.
 
-Only \(\Delta_{\text{transfer}}\), net of unacceptable regressions and cost, supports a general improvement claim.
+Only $\Delta_{\text{transfer}}$, net of unacceptable regressions and cost, supports a general improvement claim.
 
 ## 9. Cross components
 
-For model \(M\), harness \(H\), and improver \(I\), evaluate a factorial subset of:
+For model $M$, harness $H$, and improver $I$, evaluate a factorial subset of:
 
-\[
+$
+
 M_i\times H_j\times I_k.
-\]
+
+$
 
 The minimum model–harness cross is:
 
-\[
+$
+
 (M_0,H_0),\quad
 (M_1,H_0),\quad
 (M_0,H_1),\quad
 (M_1,H_1).
-\]
+
+$
 
 Interpretation:
 
-- \(M_1,H_0\) gain: model contribution;
-- \(M_0,H_1\) gain: harness contribution;
-- excess gain of \(M_1,H_1\): interaction or co-adaptation;
-- failure of \(H_1\) on other models: model-specific compensation;
-- failure of \(M_1\) on other harnesses: harness-conditioned model update.
+- $M_1,H_0$ gain: model contribution;
+- $M_0,H_1$ gain: harness contribution;
+- excess gain of $M_1,H_1$: interaction or co-adaptation;
+- failure of $H_1$ on other models: model-specific compensation;
+- failure of $M_1$ on other harnesses: harness-conditioned model update.
 
 Apply analogous swaps to memory, tools, data filters, reward models, and evaluators.
 
@@ -234,9 +240,11 @@ Use several model capability levels when the claim concerns general harness or i
 
 Report:
 
-\[
+$
+
 \Delta(s)=U_Q(M_s,H_1)-U_Q(M_s,H_0)
-\]
+
+$
 
 and the corresponding cost. A single small-model result cannot support a frontier-model claim. A single frontier-model result cannot reveal whether the method depends on capabilities absent from smaller systems.
 
@@ -244,13 +252,15 @@ and the corresponding cost. A single small-model result cannot support a frontie
 
 For D3, compare parent and successor as improvers on a new improvement problem.
 
-\[
+$
+
 S_0 \xrightarrow{I_0} S_1,\qquad
 S_0 \xrightarrow[\text{new problem}]{B} C_0,\qquad
 S_1 \xrightarrow[\text{same problem}]{B} C_1.
-\]
 
-Evaluate \(C_0\) and \(C_1\) on hidden tasks. Match the improvement budget \(B\).
+$
+
+Evaluate $C_0$ and $C_1$ on hidden tasks. Match the improvement budget $B$.
 
 Measure:
 
@@ -263,7 +273,7 @@ Measure:
 - time to a useful successor;
 - evaluator exploitation rate.
 
-A repeated outer loop with a fixed stronger optimizer does not establish recursion unless \(S_1\) improves these quantities.
+A repeated outer loop with a fixed stronger optimizer does not establish recursion unless $S_1$ improves these quantities.
 
 ## 15. Publish a result bundle
 
