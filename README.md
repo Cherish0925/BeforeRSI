@@ -12,7 +12,7 @@
 [![CI](https://img.shields.io/github/actions/workflow/status/Cherish0925/BeforeRSI/validate.yml?branch=main&style=flat-square&label=data)](https://github.com/Cherish0925/BeforeRSI/actions)
 [![License](https://img.shields.io/badge/license-MIT-6B7280?style=flat-square)](LICENSE)
 
-**[Research map](MAP.md)** · **[Evidence](EVIDENCE.md)** · **[Program](PROGRAM.md)** · **[Evaluation](EVALUATION.md)** · **[Experiments](experiments/)**
+**[Theory](THEORY.md)** · **[Research map](MAP.md)** · **[Evidence](EVIDENCE.md)** · **[Program](PROGRAM.md)** · **[Evaluation](EVALUATION.md)** · **[Experiments](experiments/)**
 
 </div>
 
@@ -46,7 +46,7 @@ S_t \xrightarrow{I_t} S_{t+1}
 S_{t+1}\ \text{must be a better improver than}\ S_t.
 $$
 
-That second statement is where most public evidence becomes thin.
+That second statement is where most public evidence becomes thin. **[THEORY.md](THEORY.md)** develops this claim as a resource-normalized dynamical system, derives the model–harness–improver coupling matrix, and states the measurable conditions for recursive growth.
 
 ## The research spine
 
@@ -172,6 +172,7 @@ These methods may be useful components or strong baselines. **[EVALUATION.md](EV
 
 | File | Purpose |
 |---|---|
+| **[THEORY.md](THEORY.md)** | mathematical dynamics, coevolution matrix, control parameters, phase regimes and predictions |
 | **[MAP.md](MAP.md)** | history, causal structure, knowledge tree and present frontier |
 | **[EVIDENCE.md](EVIDENCE.md)** | strongest public work, claim depth, limitations and primary sources |
 | **[PROGRAM.md](PROGRAM.md)** | target system, model–harness–improver co-evolution and research sequence |
