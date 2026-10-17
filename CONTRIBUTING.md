@@ -1,5 +1,8 @@
 # Contributing
 
+For multi-agent research conventions, disagreement handling, and the distinction between facts, hypotheses, simulations, proposals, and empirical results, read [AGENTS.md](AGENTS.md). Working theoretical claims belong in [HYPOTHESES.md](HYPOTHESES.md) until decisive evidence changes their status.
+
+
 BeforeRSI accepts contributions that change the evidence, the map, or the experimental capability of the project.
 
 Useful contributions include:
