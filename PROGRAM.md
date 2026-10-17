@@ -281,7 +281,7 @@ $
 
 D3 requires a reproducible increase in later improvement quality or efficiency.
 
-### Experiment 4: repeated co-evolution
+### Experiment 4: [repeated co-evolution](experiments/004-repeated-coevolution.md)
 
 Run at least three complete cycles:
 
@@ -301,7 +301,7 @@ Track held-out capability, transfer, diversity, regressions, update cost, and sa
 - equal total compute spent on the parent;
 - human-designed update schedules.
 
-### Experiment 5: evaluator robustness
+### Experiment 5: [evaluator robustness](experiments/005-evaluator-phase-boundary.md)
 
 Vary evaluator quality, noise, access, and exploitability. Measure how frequently accepted updates fail external tests or violate provenance and completeness.
 
