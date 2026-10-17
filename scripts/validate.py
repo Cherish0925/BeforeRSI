@@ -10,6 +10,7 @@ from urllib.parse import urlparse
 ROOT = Path(__file__).resolve().parents[1]
 WORKS_PATH = ROOT / "data" / "works.json"
 GRAPH_PATH = ROOT / "data" / "knowledge-graph.json"
+HYPOTHESES_PATH = ROOT / "data" / "hypotheses.json"
 
 ID_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 SNAKE_RE = re.compile(r"^[a-z0-9]+(?:_[a-z0-9]+)*$")
@@ -137,10 +138,44 @@ def validate_graph(data: object, work_ids: set[str]) -> None:
                 fail(f"{binding['work_id']}: unknown node {node_id!r}")
 
 
+
+def validate_hypotheses(data: object) -> None:
+    if not isinstance(data, dict):
+        fail("hypothesis registry root must be an object")
+    required = {"schema_version", "updated", "status_definitions", "hypotheses"}
+    if set(data) != required:
+        fail(f"hypothesis registry keys must be exactly {sorted(required)}")
+    statuses = {"open", "supported", "weakened", "falsified", "superseded"}
+    if set(data["status_definitions"]) != statuses:
+        fail("hypothesis status_definitions are invalid")
+
+    seen: set[str] = set()
+    for index, item in enumerate(data["hypotheses"]):
+        context = f"hypotheses[{index}]"
+        required_item = {"id", "status", "statement", "decisive_test", "files"}
+        if not isinstance(item, dict) or set(item) != required_item:
+            fail(f"{context}: invalid keys")
+        hypothesis_id = item["id"]
+        if not isinstance(hypothesis_id, str) or not ID_RE.fullmatch(hypothesis_id):
+            fail(f"{context}: invalid id")
+        if hypothesis_id in seen:
+            fail(f"duplicate hypothesis id: {hypothesis_id}")
+        seen.add(hypothesis_id)
+        if item["status"] not in statuses:
+            fail(f"{hypothesis_id}: invalid status")
+        if not isinstance(item["statement"], str) or len(item["statement"].strip()) < 20:
+            fail(f"{hypothesis_id}: statement is too short")
+        if not isinstance(item["decisive_test"], str) or len(item["decisive_test"].strip()) < 20:
+            fail(f"{hypothesis_id}: decisive_test is too short")
+        if not isinstance(item["files"], list) or not item["files"]:
+            fail(f"{hypothesis_id}: files must be non-empty")
+
+
 def main() -> int:
     try:
         work_ids = validate_works(load(WORKS_PATH))
         validate_graph(load(GRAPH_PATH), work_ids)
+        validate_hypotheses(load(HYPOTHESES_PATH))
     except (OSError, json.JSONDecodeError, ValueError) as exc:
         print(f"validation failed: {exc}", file=sys.stderr)
         return 1
