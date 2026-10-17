@@ -12,7 +12,7 @@
 [![CI](https://img.shields.io/github/actions/workflow/status/Cherish0925/BeforeRSI/validate.yml?branch=main&style=flat-square&label=data)](https://github.com/Cherish0925/BeforeRSI/actions)
 [![License](https://img.shields.io/badge/license-MIT-6B7280?style=flat-square)](LICENSE)
 
-**[Theory](THEORY.md)** · **[Research map](MAP.md)** · **[Evidence](EVIDENCE.md)** · **[Program](PROGRAM.md)** · **[Evaluation](EVALUATION.md)** · **[Experiments](experiments/)**
+**[Theory](THEORY.md)** · **[Map](MAP.md)** · **[Evidence](EVIDENCE.md)** · **[Program](PROGRAM.md)** · **[Evaluation](EVALUATION.md)** · **[Simulation](SIMULATION.md)** · **[Hypotheses](HYPOTHESES.md)**
 
 </div>
 
@@ -115,7 +115,7 @@ $$
 
 The detailed design is in **[PROGRAM.md](PROGRAM.md)**.
 
-## Three experiments before stronger claims
+## Experimental sequence
 
 <table>
 <tr>
@@ -153,6 +153,9 @@ Under the same improvement budget, does $S_1$ produce a better descendant than $
 
 These experiments are ordered. Experiment 03 is the first direct test of the word **recursive**.
 
+4. **[Repeated co-evolution](experiments/004-repeated-coevolution.md)** — run model, harness, and improver updates for several generations against model-only, harness-only, fixed-improver, and equal-compute baselines.
+5. **[Evaluator phase boundary](experiments/005-evaluator-phase-boundary.md)** — measure when additional candidate search stops producing true held-out gain because evaluation noise or exploitability dominates.
+
 ## What this repository rejects
 
 BeforeRSI does not upgrade a result because its title contains *recursive*, *self-evolving*, *autonomous* or *self-reflective*. The following are insufficient on their own:
@@ -180,6 +183,10 @@ These methods may be useful components or strong baselines. **[EVALUATION.md](EV
 | **[data/works.json](data/works.json)** | machine-readable public research corpus |
 | **[data/knowledge-graph.json](data/knowledge-graph.json)** | machine-readable causal knowledge graph |
 | **[experiments/](experiments/)** | executable discriminating experiments |
+| **[SIMULATION.md](SIMULATION.md)** | synthetic dynamics, phase regimes, parameter identification and reproducible plots |
+| **[HYPOTHESES.md](HYPOTHESES.md)** | working propositions, alternatives and decisive tests |
+| **[RESEARCH_LOG.md](RESEARCH_LOG.md)** | distilled lineage of the project's changing representations and decisions |
+| **[AGENTS.md](AGENTS.md)** | multi-agent research protocol and epistemic rules |
 
 The repository stays small on purpose. New files are added when they contain a new source audit, a testable claim, an experiment, or a result.
 
