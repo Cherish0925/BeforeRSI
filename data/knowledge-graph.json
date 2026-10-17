@@ -1,1 +1,535 @@
-{"schema_version":"1.0.0","updated":"2026-10-16","nodes":[{"id":"self-reference","type":"concept","label":"Self-reference and self-modification"},{"id":"intelligence-explosion","type":"concept","label":"Intelligence-explosion hypothesis"},{"id":"formal-rsi","type":"concept","label":"Formal self-rewrite"},{"id":"heuristic-search","type":"concept","label":"Heuristic and evolutionary search"},{"id":"automated-algorithm-search","type":"concept","label":"Automated algorithm and program search"},{"id":"meta-learning","type":"concept","label":"Learning to learn"},{"id":"self-generated-experience","type":"concept","label":"Self-play and self-generated data"},{"id":"model-update","type":"concept","label":"Model-weight self-improvement"},{"id":"external-cognition","type":"concept","label":"Memory, tools, skills, and context"},{"id":"harness-evolution","type":"concept","label":"Harness evolution"},{"id":"executable-self-modification","type":"concept","label":"Executable agent self-modification"},{"id":"lineage-search","type":"concept","label":"Lineage and parent selection"},{"id":"verification","type":"concept","label":"Verification and selection"},{"id":"protected-acceptance","type":"concept","label":"Protected acceptance and time-forward tests"},{"id":"model-harness-coevolution","type":"concept","label":"Model–harness co-evolution"},{"id":"improver-improvement","type":"concept","label":"Improvement of the improver"},{"id":"open-ended-rsi","type":"target","label":"Open-ended recursive self-improvement"}],"edges":[{"source":"self-reference","target":"intelligence-explosion","relation":"motivates"},{"source":"self-reference","target":"formal-rsi","relation":"formalized_by"},{"source":"formal-rsi","target":"executable-self-modification","relation":"approximated_by"},{"source":"heuristic-search","target":"automated-algorithm-search","relation":"develops_into"},{"source":"automated-algorithm-search","target":"harness-evolution","relation":"supplies_search_methods"},{"source":"meta-learning","target":"self-generated-experience","relation":"supports"},{"source":"self-generated-experience","target":"model-update","relation":"supplies_training_signal"},{"source":"external-cognition","target":"harness-evolution","relation":"defines_editable_state"},{"source":"executable-self-modification","target":"lineage-search","relation":"creates_successor_space"},{"source":"verification","target":"protected-acceptance","relation":"strengthened_by"},{"source":"harness-evolution","target":"model-harness-coevolution","relation":"converges_to"},{"source":"model-update","target":"model-harness-coevolution","relation":"converges_to"},{"source":"lineage-search","target":"improver-improvement","relation":"supplies_meta_experience"},{"source":"protected-acceptance","target":"model-harness-coevolution","relation":"selects"},{"source":"model-harness-coevolution","target":"improver-improvement","relation":"produces_lineage_for"},{"source":"improver-improvement","target":"open-ended-rsi","relation":"required_for"},{"source":"protected-acceptance","target":"open-ended-rsi","relation":"required_for"}],"work_bindings":[{"work_id":"good-1965","node_ids":["intelligence-explosion"]},{"work_id":"eurisko","node_ids":["heuristic-search","self-reference"]},{"work_id":"godel-machine","node_ids":["formal-rsi"]},{"work_id":"maml","node_ids":["meta-learning"]},{"work_id":"alphago-zero","node_ids":["self-generated-experience"]},{"work_id":"automl-zero","node_ids":["automated-algorithm-search"]},{"work_id":"funsearch","node_ids":["automated-algorithm-search"]},{"work_id":"stop","node_ids":["executable-self-modification","improver-improvement"]},{"work_id":"promptbreeder","node_ids":["self-reference","heuristic-search"]},{"work_id":"spin","node_ids":["self-generated-experience","model-update"]},{"work_id":"self-rewarding-lm","node_ids":["self-generated-experience","model-update","verification"]},{"work_id":"godel-agent","node_ids":["executable-self-modification"]},{"work_id":"sica","node_ids":["executable-self-modification"]},{"work_id":"dgm","node_ids":["executable-self-modification","lineage-search"]},{"work_id":"hyperagents","node_ids":["executable-self-modification","improver-improvement"]},{"work_id":"rrsi","node_ids":["harness-evolution","verification"]},{"work_id":"meta-harness","node_ids":["harness-evolution"]},{"work_id":"hsi","node_ids":["harness-evolution","improver-improvement"]},{"work_id":"helix","node_ids":["harness-evolution","model-update","model-harness-coevolution"]},{"work_id":"co-harness","node_ids":["model-update","harness-evolution","model-harness-coevolution"]},{"work_id":"sia","node_ids":["model-update","harness-evolution","model-harness-coevolution"]},{"work_id":"rethink-harness-eval","node_ids":["verification","protected-acceptance"]},{"work_id":"harness-tampering","node_ids":["verification","protected-acceptance"]},{"work_id":"statistical-limits","node_ids":["verification"]},{"work_id":"aide2","node_ids":["executable-self-modification","lineage-search","improver-improvement"]}]}
+{
+  "schema_version": "1.0.0",
+  "updated": "2026-10-17",
+  "nodes": [
+    {
+      "id": "self-reference",
+      "type": "concept",
+      "label": "Self-reference and self-modification"
+    },
+    {
+      "id": "intelligence-explosion",
+      "type": "concept",
+      "label": "Intelligence-explosion hypothesis"
+    },
+    {
+      "id": "formal-rsi",
+      "type": "concept",
+      "label": "Formal self-rewrite"
+    },
+    {
+      "id": "heuristic-search",
+      "type": "concept",
+      "label": "Heuristic and evolutionary search"
+    },
+    {
+      "id": "automated-algorithm-search",
+      "type": "concept",
+      "label": "Automated algorithm and program search"
+    },
+    {
+      "id": "meta-learning",
+      "type": "concept",
+      "label": "Learning to learn"
+    },
+    {
+      "id": "self-generated-experience",
+      "type": "concept",
+      "label": "Self-play and self-generated data"
+    },
+    {
+      "id": "model-update",
+      "type": "concept",
+      "label": "Model-weight self-improvement"
+    },
+    {
+      "id": "external-cognition",
+      "type": "concept",
+      "label": "Memory, tools, skills, and context"
+    },
+    {
+      "id": "harness-evolution",
+      "type": "concept",
+      "label": "Harness evolution"
+    },
+    {
+      "id": "executable-self-modification",
+      "type": "concept",
+      "label": "Executable agent self-modification"
+    },
+    {
+      "id": "lineage-search",
+      "type": "concept",
+      "label": "Lineage and parent selection"
+    },
+    {
+      "id": "verification",
+      "type": "concept",
+      "label": "Verification and selection"
+    },
+    {
+      "id": "protected-acceptance",
+      "type": "concept",
+      "label": "Protected acceptance and time-forward tests"
+    },
+    {
+      "id": "model-harness-coevolution",
+      "type": "concept",
+      "label": "Model–harness co-evolution"
+    },
+    {
+      "id": "improver-improvement",
+      "type": "concept",
+      "label": "Improvement of the improver"
+    },
+    {
+      "id": "open-ended-rsi",
+      "type": "target",
+      "label": "Open-ended recursive self-improvement"
+    },
+    {
+      "id": "system-state",
+      "type": "concept",
+      "label": "Versioned AI system state"
+    },
+    {
+      "id": "improvement-kernel",
+      "type": "concept",
+      "label": "Resource-normalized successor-generating operator"
+    },
+    {
+      "id": "capability-field",
+      "type": "concept",
+      "label": "Capability as a task-budget field"
+    },
+    {
+      "id": "improvement-efficiency",
+      "type": "concept",
+      "label": "Transferable improvement efficiency"
+    },
+    {
+      "id": "resource-normalized-dynamics",
+      "type": "concept",
+      "label": "Resource-normalized improvement dynamics"
+    },
+    {
+      "id": "coevolution-jacobian",
+      "type": "concept",
+      "label": "Model–harness–improver coupling matrix"
+    },
+    {
+      "id": "model-harness-interaction",
+      "type": "concept",
+      "label": "Model–harness interaction and attribution"
+    },
+    {
+      "id": "harness-portfolio",
+      "type": "concept",
+      "label": "Harness portfolio and lineage"
+    },
+    {
+      "id": "externalize-internalize",
+      "type": "concept",
+      "label": "Externalize–verify–internalize cycle"
+    },
+    {
+      "id": "evaluator-fidelity",
+      "type": "concept",
+      "label": "Evaluator fidelity and search selection"
+    },
+    {
+      "id": "recursive-gain",
+      "type": "concept",
+      "label": "Recursive design gain"
+    },
+    {
+      "id": "complexity-debt",
+      "type": "concept",
+      "label": "Complexity and verification debt"
+    },
+    {
+      "id": "rsi-phase-regime",
+      "type": "concept",
+      "label": "RSI dynamical phase regimes"
+    },
+    {
+      "id": "optimal-control",
+      "type": "concept",
+      "label": "Adaptive allocation of improvement resources"
+    },
+    {
+      "id": "system-identification",
+      "type": "concept",
+      "label": "Experimental identification of RSI dynamics"
+    }
+  ],
+  "edges": [
+    {
+      "source": "self-reference",
+      "target": "intelligence-explosion",
+      "relation": "motivates"
+    },
+    {
+      "source": "self-reference",
+      "target": "formal-rsi",
+      "relation": "formalized_by"
+    },
+    {
+      "source": "formal-rsi",
+      "target": "executable-self-modification",
+      "relation": "approximated_by"
+    },
+    {
+      "source": "heuristic-search",
+      "target": "automated-algorithm-search",
+      "relation": "develops_into"
+    },
+    {
+      "source": "automated-algorithm-search",
+      "target": "harness-evolution",
+      "relation": "supplies_search_methods"
+    },
+    {
+      "source": "meta-learning",
+      "target": "self-generated-experience",
+      "relation": "supports"
+    },
+    {
+      "source": "self-generated-experience",
+      "target": "model-update",
+      "relation": "supplies_training_signal"
+    },
+    {
+      "source": "external-cognition",
+      "target": "harness-evolution",
+      "relation": "defines_editable_state"
+    },
+    {
+      "source": "executable-self-modification",
+      "target": "lineage-search",
+      "relation": "creates_successor_space"
+    },
+    {
+      "source": "verification",
+      "target": "protected-acceptance",
+      "relation": "strengthened_by"
+    },
+    {
+      "source": "harness-evolution",
+      "target": "model-harness-coevolution",
+      "relation": "converges_to"
+    },
+    {
+      "source": "model-update",
+      "target": "model-harness-coevolution",
+      "relation": "converges_to"
+    },
+    {
+      "source": "lineage-search",
+      "target": "improver-improvement",
+      "relation": "supplies_meta_experience"
+    },
+    {
+      "source": "protected-acceptance",
+      "target": "model-harness-coevolution",
+      "relation": "selects"
+    },
+    {
+      "source": "model-harness-coevolution",
+      "target": "improver-improvement",
+      "relation": "produces_lineage_for"
+    },
+    {
+      "source": "improver-improvement",
+      "target": "open-ended-rsi",
+      "relation": "required_for"
+    },
+    {
+      "source": "protected-acceptance",
+      "target": "open-ended-rsi",
+      "relation": "required_for"
+    },
+    {
+      "source": "self-reference",
+      "target": "improvement-kernel",
+      "relation": "motivates"
+    },
+    {
+      "source": "system-state",
+      "target": "improvement-kernel",
+      "relation": "defines_domain_for"
+    },
+    {
+      "source": "capability-field",
+      "target": "improvement-efficiency",
+      "relation": "provides_transfer_measure_for"
+    },
+    {
+      "source": "improvement-kernel",
+      "target": "improvement-efficiency",
+      "relation": "induces"
+    },
+    {
+      "source": "improvement-efficiency",
+      "target": "resource-normalized-dynamics",
+      "relation": "is_order_parameter_for"
+    },
+    {
+      "source": "model-harness-coevolution",
+      "target": "model-harness-interaction",
+      "relation": "requires_attribution_by"
+    },
+    {
+      "source": "model-harness-interaction",
+      "target": "coevolution-jacobian",
+      "relation": "localizes_into"
+    },
+    {
+      "source": "harness-evolution",
+      "target": "harness-portfolio",
+      "relation": "represented_by"
+    },
+    {
+      "source": "harness-portfolio",
+      "target": "externalize-internalize",
+      "relation": "supplies_exploration_for"
+    },
+    {
+      "source": "model-update",
+      "target": "externalize-internalize",
+      "relation": "supplies_internalization_for"
+    },
+    {
+      "source": "verification",
+      "target": "evaluator-fidelity",
+      "relation": "measured_by"
+    },
+    {
+      "source": "evaluator-fidelity",
+      "target": "rsi-phase-regime",
+      "relation": "controls"
+    },
+    {
+      "source": "recursive-gain",
+      "target": "rsi-phase-regime",
+      "relation": "competes_with"
+    },
+    {
+      "source": "complexity-debt",
+      "target": "rsi-phase-regime",
+      "relation": "opposes"
+    },
+    {
+      "source": "improver-improvement",
+      "target": "recursive-gain",
+      "relation": "can_increase"
+    },
+    {
+      "source": "resource-normalized-dynamics",
+      "target": "rsi-phase-regime",
+      "relation": "generates"
+    },
+    {
+      "source": "rsi-phase-regime",
+      "target": "optimal-control",
+      "relation": "informs"
+    },
+    {
+      "source": "system-identification",
+      "target": "coevolution-jacobian",
+      "relation": "estimates"
+    },
+    {
+      "source": "system-identification",
+      "target": "evaluator-fidelity",
+      "relation": "estimates"
+    },
+    {
+      "source": "system-identification",
+      "target": "recursive-gain",
+      "relation": "estimates"
+    },
+    {
+      "source": "optimal-control",
+      "target": "model-harness-coevolution",
+      "relation": "allocates_resources_across"
+    },
+    {
+      "source": "improvement-kernel",
+      "target": "open-ended-rsi",
+      "relation": "must_improve_for"
+    }
+  ],
+  "work_bindings": [
+    {
+      "work_id": "good-1965",
+      "node_ids": [
+        "intelligence-explosion"
+      ]
+    },
+    {
+      "work_id": "eurisko",
+      "node_ids": [
+        "heuristic-search",
+        "self-reference"
+      ]
+    },
+    {
+      "work_id": "godel-machine",
+      "node_ids": [
+        "formal-rsi"
+      ]
+    },
+    {
+      "work_id": "maml",
+      "node_ids": [
+        "meta-learning"
+      ]
+    },
+    {
+      "work_id": "alphago-zero",
+      "node_ids": [
+        "self-generated-experience"
+      ]
+    },
+    {
+      "work_id": "automl-zero",
+      "node_ids": [
+        "automated-algorithm-search"
+      ]
+    },
+    {
+      "work_id": "funsearch",
+      "node_ids": [
+        "automated-algorithm-search"
+      ]
+    },
+    {
+      "work_id": "stop",
+      "node_ids": [
+        "executable-self-modification",
+        "improver-improvement"
+      ]
+    },
+    {
+      "work_id": "promptbreeder",
+      "node_ids": [
+        "self-reference",
+        "heuristic-search"
+      ]
+    },
+    {
+      "work_id": "spin",
+      "node_ids": [
+        "self-generated-experience",
+        "model-update"
+      ]
+    },
+    {
+      "work_id": "self-rewarding-lm",
+      "node_ids": [
+        "self-generated-experience",
+        "model-update",
+        "verification"
+      ]
+    },
+    {
+      "work_id": "godel-agent",
+      "node_ids": [
+        "executable-self-modification"
+      ]
+    },
+    {
+      "work_id": "sica",
+      "node_ids": [
+        "executable-self-modification"
+      ]
+    },
+    {
+      "work_id": "dgm",
+      "node_ids": [
+        "executable-self-modification",
+        "lineage-search"
+      ]
+    },
+    {
+      "work_id": "hyperagents",
+      "node_ids": [
+        "executable-self-modification",
+        "improver-improvement"
+      ]
+    },
+    {
+      "work_id": "rrsi",
+      "node_ids": [
+        "harness-evolution",
+        "verification"
+      ]
+    },
+    {
+      "work_id": "meta-harness",
+      "node_ids": [
+        "harness-evolution"
+      ]
+    },
+    {
+      "work_id": "hsi",
+      "node_ids": [
+        "harness-evolution",
+        "improver-improvement"
+      ]
+    },
+    {
+      "work_id": "helix",
+      "node_ids": [
+        "harness-evolution",
+        "model-update",
+        "model-harness-coevolution"
+      ]
+    },
+    {
+      "work_id": "co-harness",
+      "node_ids": [
+        "model-update",
+        "harness-evolution",
+        "model-harness-coevolution"
+      ]
+    },
+    {
+      "work_id": "sia",
+      "node_ids": [
+        "model-update",
+        "harness-evolution",
+        "model-harness-coevolution"
+      ]
+    },
+    {
+      "work_id": "rethink-harness-eval",
+      "node_ids": [
+        "verification",
+        "protected-acceptance"
+      ]
+    },
+    {
+      "work_id": "harness-tampering",
+      "node_ids": [
+        "verification",
+        "protected-acceptance"
+      ]
+    },
+    {
+      "work_id": "statistical-limits",
+      "node_ids": [
+        "verification"
+      ]
+    },
+    {
+      "work_id": "aide2",
+      "node_ids": [
+        "executable-self-modification",
+        "lineage-search",
+        "improver-improvement"
+      ]
+    }
+  ]
+}
