@@ -1,343 +1,126 @@
-# Simulation and model identification
+# Illustrative trajectories and model identification
 
-The simulations in this repository are **illustrative dynamical models**, not empirical forecasts. Their job is to make assumptions explicit, expose qualitative regimes, and identify which quantities a real RSI experiment must measure.
+These simulations integrate chosen equations. They are not measurements of AI systems, evidence for recursive self-improvement, or forecasts. See THEORY.md for counterexamples to the previous causal interpretation.
 
-The current simulation stack has three layers:
+The plotted slope $\eta_{\rm path}=dC/dr$ is a trajectory statistic. It is distinct from $G(A;\mu,B,b)$, which compares improvers on common targets. Rising $\eta_{\rm path}$ alone does not identify an improved improver.
 
-1. capability growth as a function of recursive elasticity;
-2. improvement-efficiency dynamics under recursive gain and complexity debt;
-3. candidate-search efficiency under evaluator noise.
+## 1. Assumed capability-growth law
 
-A fourth layer couples capability, improvement efficiency, and evaluator fidelity.
-
-## 1. Capability growth and recursive elasticity
-
-Let $r$ be cumulative improvement resource and let capability satisfy
+The equation
 
 $$
-\frac{dC}{dr}=aC^\epsilon.
+\frac{dC}{dr}=aC^\epsilon
 $$
 
-The exponent
+has, for $\epsilon\ne1$, the solution
 
 $$
-\epsilon_{\rm RSI}
-=
-\frac{d\ln\eta}{d\ln C}
+C(r)=
+\left[C_0^{1-\epsilon}+(1-\epsilon)ar\right]^{1/(1-\epsilon)}
 $$
 
-measures how improvement efficiency changes with capability.
+while the bracket remains positive. For $\epsilon=1$, $C=C_0e^{ar}$.
 
-For $\epsilon\ne1$,
-
-$$
-C(r)
-=
-\left[
-C_0^{1-\epsilon}
-+
-(1-\epsilon)ar
-\right]^{1/(1-\epsilon)}.
-$$
-
-For $\epsilon=1$,
-
-$$
-C(r)=C_0e^{ar}.
-$$
-
-The qualitative regimes are:
-
-| Elasticity | Predicted shape |
+| Assumed exponent | Consequence within this equation |
 |---|---|
-| $\epsilon<0$ | diminishing returns |
-| $\epsilon=0$ | linear capability growth in resource |
-| $0<\epsilon<1$ | superlinear but non-exponential growth |
+| $\epsilon<0$ | diminishing slope |
+| $\epsilon=0$ | linear growth |
+| $0<\epsilon<1$ | superlinear non-exponential growth |
 | $\epsilon=1$ | exponential growth |
-| $\epsilon>1$ | finite-resource singularity in the idealized equation |
+| $\epsilon>1$ | finite-resource divergence; no continuation through the singularity is supplied |
 
-The final regime is not a realistic literal forecast; it signals that omitted constraints must become important before the idealized singularity.
+The exponent determines the curve by assumption. These plots do not estimate an exponent for RSI. A bounded benchmark score cannot follow an unbounded curve indefinitely.
 
-## 2. Improvement efficiency
+## 2. Slope dynamics
 
-A minimal model for improvement efficiency is
-
-$$
-\frac{d\eta}{dr}
-=
-\lambda_{\rm RSI}\eta
--
-\kappa\eta^2
-+
-u_{\rm ext},
-$$
-
-with
+The illustrative equation is
 
 $$
-\lambda_{\rm RSI}=g-d.
+\frac{d\eta}{dr}=(g-d)\eta-\kappa\eta^2+u.
 $$
 
-Here:
-
-- $g$ is recursive design gain;
-- $d$ is complexity and verification debt;
-- $\kappa$ is saturation;
-- $u_{\rm ext}$ is external improvement supplied by humans, new algorithms, stronger teachers, or new data.
-
-With $u_{\rm ext}=0$ and $\lambda_{\rm RSI}>0$, the positive equilibrium is
+For $\eta>0$, rising slope requires
 
 $$
-\eta^*=\frac{\lambda_{\rm RSI}}{\kappa}.
+g-d>\kappa\eta-\frac{u}{\eta}.
 $$
 
-This model separates three cases:
+The sign of $g-d$ alone is insufficient. For constant coefficients, $u=0$, $g-d>0$, and $\kappa>0$, positive solutions approach $(g-d)/\kappa$; the asymptotic logarithmic growth rate of $\eta$ is zero.
 
-- capability can improve while $\eta$ falls;
-- capability can improve at roughly constant $\eta$;
-- capability can improve while $\eta$ also rises.
+Replacing $g,d$ with $g+q,d+q$ leaves the equation unchanged. Estimating one trajectory therefore cannot separately identify these two quantities. Their names do not assign causal meanings.
 
-Only the third is evidence for recursive acceleration.
+## 3. Search and evaluator noise
 
-## 3. Candidate search and evaluator fidelity
-
-Let candidate true gains be approximately
-
-$$
-g_j\sim\mathcal N(\mu_g,\sigma_g^2),
-$$
-
-and measured gains be
-
-$$
-y_j=g_j+\epsilon_j.
-$$
-
-Let
-
-$$
-\rho=\operatorname{Corr}(g,y)
-$$
-
-measure evaluator fidelity.
-
-Selecting the maximum measured candidate among $n$ proposals gives the approximation
+Under i.i.d. jointly Gaussian candidate/score pairs $(g_j,y_j)$, selecting the maximum observed score yields
 
 $$
 \mathbb E[g_{\rm selected}]
-\approx
-\mu_g+\rho\sigma_g\sqrt{2\log n}.
+=\mu_g+\rho\sigma_g a_n,
+\qquad
+a_n=\mathbb E[\max_{j\le n}Z_j]
+\sim\sqrt{2\log n}.
 $$
 
-If search cost is
+The plotted function uses the large-$n$ approximation, with $a_1=0$, and divides by $C_0+nC_{\rm candidate}$. With fixed $\rho>0$, absolute expected selected gain increases with $n$; gain per unit cost can peak and fall. There is no universal sharp fidelity threshold in this model. Non-Gaussian, adaptive, or exploitative search requires a different conditional selection model.
 
-$$
-C(n)=C_0+n(C_{\rm gen}+C_{\rm eval}),
-$$
+## 4. Coupled illustrative equations
 
-then resource-normalized search efficiency is approximately
-
-$$
-\eta_{\rm search}(n)
-=
-\frac{
-\mu_g+\rho\sigma_g\sqrt{2\log n}-R(n)
-}{
-C(n)
-}.
-$$
-
-The benefit grows only as $\sqrt{\log n}$ while cost is approximately linear in $n$. Therefore the model predicts a finite optimal candidate count $n^*$.
-
-Low evaluator fidelity moves $n^*$ downward and increases the gap between measured winner score and true held-out gain.
-
-## 4. Coupled capability–improvement–verification dynamics
-
-The current three-state model is
+The script integrates
 
 $$
 \frac{dC}{dr}=\eta,
 $$
 
 $$
-\frac{d\eta}{dr}
-=
+\frac{d\eta}{dr}=
 \left[
 q\left(a_0+a_1\frac{C}{K+C}\right)
--
-\left(d_0+d_1C^p\right)
-\right]\eta
--
-\kappa\eta^2
-+
-u_{\rm ext},
+-(d_0+d_1C^p)
+\right]\eta-\kappa\eta^2+u,
 $$
 
 $$
-\frac{dq}{dr}
-=
-r_v(1-q)-s_v\eta q.
+\frac{dq}{dr}=r_v(1-q)-s_v\eta q.
 $$
 
-The state variables are:
+Initial conditions are $(C,\eta,q)=(1,0.08,0.90)$ over resource interval $[0,80]$. Parameters are declared in the script; none are fitted. All four reference scenarios have nonzero external forcing $u$, so none isolates autonomous improvement.
 
-- $C$: protected transferable capability;
-- $\eta$: transferable improvement per unit improvement resource;
-- $q\in[0,1]$: evaluator and acceptance fidelity.
-
-The term
-
-$$
-a_0+a_1\frac{C}{K+C}
-$$
-
-is capability-dependent design gain. The term
-
-$$
-d_0+d_1C^p
-$$
-
-is complexity and verification debt.
-
-Evaluator fidelity is repaired at rate $r_v$ and eroded by faster-changing candidate systems at rate $s_v\eta q$.
-
-At fixed $\eta$,
+At fixed $\eta$, the evaluator variable has equilibrium
 
 $$
 q^*(\eta)=\frac{r_v}{r_v+s_v\eta}.
 $$
 
-This creates a moving-target effect: a faster improver can outrun its evaluator unless verification investment scales with it.
+Substituting this into the other equations is a quasi-steady approximation, not an exact reduction of a time-varying run. It requires a justified separation of timescales and an error check.
 
-Define the local net recursive gain
+Reference outputs, unchanged numerically by relabeling:
 
-$$
-\lambda(C,\eta)
-=
-\frac{r_v}{r_v+s_v\eta}
-\left(a_0+a_1\frac{C}{K+C}\right)
--
-\left(d_0+d_1C^p\right).
-$$
+| Synthetic scenario | Final $C$ | Final $\eta$ | Final $q$ |
+|---|---:|---:|---:|
+| Low final slope | 3.156 | 0.019 | 0.986 |
+| Bounded slope example | 17.554 | 0.317 | 0.932 |
+| Rising slope example | 167.954 | 2.925 | 0.925 |
+| Declining fidelity example | 40.075 | 0.535 | 0.241 |
 
-Then
+These are consequences of arbitrary parameters on a finite interval. They do not identify an RSI phase or a real-system acceleration regime.
 
-$$
-\frac{d\eta}{dr}
-=
-\lambda(C,\eta)\eta
--
-\kappa\eta^2
-+
-u_{\rm ext}.
-$$
+## 5. Identification requirements
 
-## 5. Illustrative regimes
+Before using a low-dimensional law, test whether its state variables predict intervention responses after conditioning on history, code structure, and task type. THEORY.md gives the exact state-sufficiency condition and an approximate error bound.
 
-The reference parameterizations currently produce four synthetic regimes under equal cumulative improvement resource.
+Measure improver changes on common targets. Independently vary proposal, selection, feedback, data production, and update resources where the implementation permits it. Use measured quantities to fit competing laws; preserve uncertainty and distinguish shared parameters from method-specific ones.
 
-| Regime | Final $C$ | Final $\eta$ | Final $q$ | Interpretation |
-|---|---:|---:|---:|---|
-| Saturation | 3.156 | 0.019 | 0.986 | complexity debt dominates recursive gain |
-| Steady improvement | 17.554 | 0.317 | 0.932 | positive but bounded improvement efficiency |
-| Recursive acceleration | 167.954 | 2.925 | 0.925 | capability-dependent design gain dominates while verification keeps pace |
-| Verifier-limited | 40.075 | 0.535 | 0.241 | proposal power grows faster than evaluator fidelity |
+Prediction requires withheld interventions, methods, generations, and task cohorts. Fitting each historical curve with its own free parameters does not establish a transferable theory. Separate causal terms require interventions that distinguish them; otherwise report only identifiable combinations.
 
-These values are generated by the current toy parameters. They are not measurements of any real AI system.
-
-## 6. Phase language
-
-The simulations suggest a useful qualitative phase map.
-
-### Noise-dominated
-
-Evaluator signal is below candidate variation. More search mainly selects noise.
-
-### Benchmark-fitting
-
-Visible-task gain is positive but transfer number
-
-$$
-\mathcal T
-=
-\frac{\Delta J_{\rm hidden}}
-{\Delta J_{\rm visible}+\varepsilon}
-$$
-
-is near zero.
-
-### Ordinary improvement
-
-Capability rises but improvement efficiency is approximately constant or falling.
-
-### Recursive improvement
-
-Capability and held-out improvement efficiency both rise:
-
-$$
-\frac{dC}{dr}>0,
-\qquad
-\frac{d\eta}{dr}>0.
-$$
-
-### Saturation
-
-The system approaches a finite $\eta^*$ because complexity, verification, data, or search limitations dominate.
-
-### Unstable growth
-
-Measured improvement rises while evaluator fidelity, protected capability, or regression control deteriorates. This is not automatically beneficial RSI.
-
-## 7. Parameter identification
-
-A real system must estimate parameters from interventions.
-
-| Parameter | Measurement |
-|---|---|
-| $a_0,a_1,K$ | parent-versus-successor improver comparisons across capability levels |
-| $d_0,d_1,p$ | update cost, regression burden, system coupling, validation cost as capability grows |
-| $\kappa$ | candidate-count and task-diversity sweeps |
-| $r_v$ | controlled investment in evaluator construction or recalibration |
-| $s_v$ | freeze the evaluator while proposal power rises |
-| $u_{\rm ext}$ | remove or vary human, teacher-model, and external research contributions |
-| $\rho$ | compare search-evaluator scores with an independent stronger test |
-| $\Gamma_{MH}$ | full model–harness cross |
-
-The model should be judged by out-of-sample prediction of later generations, not by fitting one historical trajectory.
-
-## 8. Reproduction
-
-Run:
+## 6. Reproduction
 
 ~~~bash
 python -m venv .venv
 source .venv/bin/activate
 pip install numpy scipy matplotlib
 python simulations/minimal_rsi_dynamics.py
+python scripts/check_model_counterexamples.py
 ~~~
 
-The script writes plots and a JSON summary to **simulations/output/**.
+The simulation writes plots and parameter summaries under simulations/output/. The counterexample script checks deterministic mathematical witnesses using only the Python standard library. Neither command runs a model or establishes empirical RSI.
 
-Current outputs include:
-
-- capability trajectories for the four coupled regimes;
-- improvement-efficiency trajectories;
-- evaluator-fidelity trajectories;
-- capability growth under several recursive elasticities;
-- search efficiency as candidate count changes under several evaluator fidelities.
-
-## 9. What the simulations are for
-
-The simulations should be used to decide what to measure next.
-
-They should not be used to infer a takeoff curve from arbitrary parameters.
-
-A simulation becomes a forecast only after:
-
-1. parameters are estimated from interventions;
-2. uncertainty is propagated;
-3. the model predicts withheld generations;
-4. competing models are fit to the same data;
-5. the prediction survives a change in task distribution or system version.
-
-The current purpose is system identification, model criticism, and experiment design.

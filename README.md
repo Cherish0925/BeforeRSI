@@ -7,12 +7,12 @@
 <br>
 
 [![Status](https://img.shields.io/badge/status-research%20in%20progress-111827?style=flat-square)](#status)
-[![Corpus](https://img.shields.io/badge/public%20corpus-38%20works-C58B35?style=flat-square)](EVIDENCE.md)
+[![Corpus](https://img.shields.io/badge/public%20corpus-42%20works-C58B35?style=flat-square)](EVIDENCE.md)
 [![Claim depth](https://img.shields.io/badge/claim%20depth-D0%E2%86%92D4-5C9C96?style=flat-square)](#claim-depth)
 [![CI](https://img.shields.io/github/actions/workflow/status/Cherish0925/BeforeRSI/validate.yml?branch=main&style=flat-square&label=data)](https://github.com/Cherish0925/BeforeRSI/actions)
 [![License](https://img.shields.io/badge/license-MIT-6B7280?style=flat-square)](LICENSE)
 
-**[Theory](THEORY.md)** · **[Map](MAP.md)** · **[Evidence](EVIDENCE.md)** · **[Program](PROGRAM.md)** · **[Evaluation](EVALUATION.md)** · **[Simulation](SIMULATION.md)** · **[Hypotheses](HYPOTHESES.md)**
+**[Theory](THEORY.md)** · **[Compatibility](COMPATIBILITY.md)** · **[Map](MAP.md)** · **[Evidence](EVIDENCE.md)** · **[Program](PROGRAM.md)** · **[Evaluation](EVALUATION.md)** · **[Simulation](SIMULATION.md)** · **[Hypotheses](HYPOTHESES.md)**
 
 </div>
 
@@ -24,15 +24,15 @@
 
 > When can we say that an AI system has improved its own capacity to improve?
 
-A better answer after more sampling is not enough. A benchmark score obtained after repeated access to the benchmark is not enough. A fixed optimizer producing a better prompt or workflow is not enough. A model and harness updated together are not interpretable unless their contributions can be separated.
+A better answer after more sampling is not enough. A benchmark score obtained after repeated access to the benchmark is not enough. A fixed optimizer producing a better prompt or workflow is not enough. A joint model–harness gain establishes a result for the pair; separate component claims require additional interventions.
 
 The object of study is a versioned AI system:
 
 $$
-S_t=(M_t,H_t,I_t,D_t,E_t),
+S_t=(M_t,H_t,D_t),
 $$
 
-where **M** is the model, **H** the harness, **I** the improver, **D** persistent experience and training data, and **E** the task environment. A separate acceptance process $V^*$ decides whether a candidate becomes the next version.
+where **M** records learned models, **H** executable orchestration, and **D** persistent information. **Improver** is a role performed by a configured system; it can use the same model and harness as task solving. Environment, resource budgets, and assessment protocol are declared separately. Each artifact has one recorded owner.
 
 <div align="center">
 <img src="assets/rsi-mainline.svg" width="96%" alt="BeforeRSI research spine">
@@ -41,12 +41,12 @@ where **M** is the model, **H** the harness, **I** the improver, **D** persisten
 The central empirical target is stronger than task performance:
 
 $$
-S_t \xrightarrow{I_t} S_{t+1}
+S_t \xrightarrow{\text{self-modification}} S_{t+1}
 \qquad\text{and then}\qquad
 S_{t+1}\ \text{must be a better improver than}\ S_t.
 $$
 
-That second statement is where most public evidence becomes thin. **[THEORY.md](THEORY.md)** develops this claim as a resource-normalized dynamical system, derives the model–harness–improver coupling matrix, and states the measurable conditions for recursive growth.
+Test that second statement by letting parent and successor improve identical copies of common targets under matched budgets. **[THEORY.md](THEORY.md)** defines this comparison and gives counterexamples to the previous growth interpretation. It does not claim an identified law of RSI.
 
 ## The research spine
 
@@ -73,10 +73,10 @@ BeforeRSI does not classify whole projects as “RSI” or “not RSI.” It ask
 | **D0** | task-time adaptation | better current-task output; no persistent successor required |
 | **D1** | persistent self-modification | a versioned change survives into later tasks |
 | **D2** | transferable self-improvement | the change improves untouched tasks, models, environments, or cost |
-| **D3** | recursive self-improvement | the successor produces better later successors under the same improvement budget |
+| **D3** | improved self-improvement ability | the successor improves common reference targets more effectively under matched budgets |
 | **D4** | open-ended RSI | D3 persists as tasks and bottlenecks change, without rapid saturation |
 
-A technically useful D0 or D1 result remains useful. The problem is claiming D3 or D4 without the corresponding observation.
+These levels are this repository's evidence convention. They do not require improvement to accelerate at every generation. Useful D0/D1 results retain their value; D3/D4 require the corresponding observations.
 
 ## What the public record says now
 
@@ -94,14 +94,13 @@ The source-backed record is in **[EVIDENCE.md](EVIDENCE.md)** and the machine-re
 
 ## The system we actually want to test
 
-A credible route to general RSI cannot optimize only one layer forever. The working program is:
+One route under test alternates harness changes, learning from trajectories, and renewed system design:
 
 $$
-H_t
-\rightarrow D_t^{\mathrm{verified}}
+(M_t,H_t)
+\rightarrow D_{t+1}^{\mathrm{development}}
 \rightarrow M_{t+1}
-\rightarrow H_{t+1}
-\rightarrow I_{t+1}.
+\rightarrow H_{t+1}.
 $$
 
 1. improve a **portfolio of harnesses** around a fixed model;
@@ -113,7 +112,7 @@ $$
 7. compare parent and successor **as improvers** on a new improvement problem;
 8. repeat only while held-out gain survives cost, regression and contamination controls.
 
-The detailed design is in **[PROGRAM.md](PROGRAM.md)**.
+The detailed design is in **[PROGRAM.md](PROGRAM.md)**. This schedule and its portfolio are hypotheses; model-only, harness-only, joint, and other schedules remain valid alternatives. No independent improver module is required.
 
 ## Experimental sequence
 
@@ -154,7 +153,7 @@ Under the same improvement budget, does $S_1$ produce a better descendant than $
 These experiments are ordered. Experiment 03 is the first direct test of the word **recursive**.
 
 4. **[Repeated co-evolution](experiments/004-repeated-coevolution.md)** — run model, harness, and improver updates for several generations against model-only, harness-only, fixed-improver, and equal-compute baselines.
-5. **[Evaluator phase boundary](experiments/005-evaluator-phase-boundary.md)** — measure when additional candidate search stops producing true held-out gain because evaluation noise or exploitability dominates.
+5. **[Evaluator fidelity and search efficiency](experiments/005-evaluator-phase-boundary.md)** — distinguish absolute selected gain, gain per unit cost, and adaptive exploitation as search grows.
 
 ## What this repository rejects
 
@@ -163,7 +162,7 @@ BeforeRSI does not upgrade a result because its title contains *recursive*, *sel
 - extra samples, retries, agents or evaluator calls;
 - a fixed outer optimizer repeatedly improving a target;
 - benchmark-specific prompt or workflow patches;
-- self-generated data with an unchanged training rule;
+- self-generated data without evidence that later improvement behavior became better;
 - joint model/harness updates without component crossing;
 - one successful parent → child update described as recursion;
 - gains demonstrated only on small models and extrapolated to frontier models;
@@ -175,15 +174,16 @@ These methods may be useful components or strong baselines. **[EVALUATION.md](EV
 
 | File | Purpose |
 |---|---|
-| **[THEORY.md](THEORY.md)** | mathematical dynamics, coevolution matrix, control parameters, phase regimes and predictions |
+| **[THEORY.md](THEORY.md)** | implementation boundaries, common-target improvement tests, coupling, and mathematical counterexamples |
+| **[COMPATIBILITY.md](COMPATIBILITY.md)** | per-work mapping of all 42 catalog entries and limits of universality claims |
 | **[MAP.md](MAP.md)** | history, causal structure, knowledge tree and present frontier |
 | **[EVIDENCE.md](EVIDENCE.md)** | strongest public work, claim depth, limitations and primary sources |
 | **[PROGRAM.md](PROGRAM.md)** | target system, model–harness–improver co-evolution and research sequence |
 | **[EVALUATION.md](EVALUATION.md)** | hidden/time-forward tests, cost controls, attribution, regression and recursion tests |
 | **[data/works.json](data/works.json)** | machine-readable public research corpus |
 | **[data/knowledge-graph.json](data/knowledge-graph.json)** | machine-readable causal knowledge graph |
-| **[experiments/](experiments/)** | executable discriminating experiments |
-| **[SIMULATION.md](SIMULATION.md)** | synthetic dynamics, phase regimes, parameter identification and reproducible plots |
+| **[experiments/](experiments/)** | experimental protocols; real-system runs are not implemented here |
+| **[SIMULATION.md](SIMULATION.md)** | illustrative trajectories, identification limits, and reproducible plots |
 | **[HYPOTHESES.md](HYPOTHESES.md)** | working propositions, alternatives and decisive tests |
 | **[RESEARCH_LOG.md](RESEARCH_LOG.md)** | distilled lineage of the project's changing representations and decisions |
 | **[AGENTS.md](AGENTS.md)** | multi-agent research protocol and epistemic rules |
@@ -203,3 +203,4 @@ The immediate work is deliberately narrow:
 <div align="center">
 <sub>BeforeRSI asks for stronger evidence before stronger words.</sub>
 </div>
+

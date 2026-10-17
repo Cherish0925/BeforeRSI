@@ -2,23 +2,19 @@
 
 The objective is a system that repeatedly improves both task capability and the ability to construct later improvements.
 
-The unit of research is not a model checkpoint or a harness in isolation. It is a versioned tuple:
+Record a versioned system and an explicit improvement role:
 
 $
 
-S_t=(M_t,\mathcal H_t,I_t,D_t,E_t),
+S_t=(M_t,H_t,D_t),
 
 $
 
 with protected acceptance $V^\*$.
 
-- $M_t$: one or more model checkpoints;
-- $\mathcal H_t$: a portfolio of harnesses rather than a single incumbent;
-- $I_t$: candidate generation, experiment selection, attribution, and parent selection;
-- $D_t$: verified trajectories, counterfactuals, failures, lineage, and training records;
-- $E_t$: task distributions and execution environments.
+$M_t$ records learned models, $H_t$ executable orchestration, and $D_t$ persistent information. The improver role $A_t$ names the complete snapshot that proposes and tests changes, including its model, code, and data dependencies. It may be $S_t$ itself. Environments and budgets are declared separately.
 
-A portfolio is necessary because the best harness for current task score may generate poor training data, overfit one model, or destroy behavioral diversity needed for the next model update.
+The schedule below tests a portfolio $\mathcal H_t$ of harness candidates. A portfolio is optional: compare its diversity benefits with its extra cost and a single-incumbent baseline. Model-only, harness-only, simultaneous, and adaptive updates remain alternative schedules.
 
 ## 1. The optimization target
 
@@ -105,7 +101,13 @@ Construct several data views from verified trajectories:
 
 Update $M_t\rightarrow M_{t+1}$ with a declared training method. Retain a frozen copy of $M_t$. Measure general capability and protected regressions before any new harness search.
 
-### Step E: cross models and harnesses
+### Step E: rebuild the harness
+
+The optimal harness may change when the model changes. Freeze $M_{t+1}$ and repeat harness search to test whether adaptation is useful. Compare the kinds of edits discovered at different model scales and generations.
+
+A useful pattern is one whose benefit survives model changes or whose failure can be predicted from model capability. A patch that only compensates one checkpoint is local engineering, not a general improvement principle.
+
+### Step F: cross models and harnesses
 
 Evaluate the full matrix
 
@@ -134,13 +136,7 @@ A_{ij}=U_Q(M_i,H_j).
 
 $
 
-This matrix reveals whether gain lives in model weights, harness code, or local co-adaptation. It also shows whether the new model can exploit older harnesses and whether the new harness transfers back to the parent model.
-
-### Step F: rebuild the harness
-
-The optimal harness changes when the model changes. Freeze $M_{t+1}$ and repeat harness search. Compare the kinds of edits discovered at different model scales and generations.
-
-A useful pattern is one whose benefit survives model changes or whose failure can be predicted from model capability. A patch that only compensates one checkpoint is local engineering, not a general improvement principle.
+This matrix measures component effects conditional on the counterpart, data snapshot, interface, and task budget. Negative interaction can reflect redundant solutions; positive interaction can coexist with poor portability. It does not by itself identify improved learning or recursion.
 
 ### Step G: update the improver
 
@@ -153,7 +149,7 @@ The lineage contains hypotheses, edits, evaluations, accepted candidates, reject
 - when to update model weights instead of the harness;
 - how to allocate evaluation budget.
 
-Then compare $I_t$ and $I_{t+1}$ on a new improvement problem. This is the direct test of recursion.
+Then compare the complete old and new improver snapshots on identical copies of common new targets. A separate improver-code update is optional; changes to its model or available information can change the effective improvement policy.
 
 ## 3. System architecture
 
@@ -194,7 +190,7 @@ The protected evaluator and raw evidence store are outside the candidate’s edi
 
 The model that proposes changes need not be the model that executes tasks. Public evidence suggests update quality and update benefit can scale differently.
 
-Run at least three roles:
+Distinguish the following roles; separate model instances are a design choice:
 
 - proposer/evolver;
 - task executor;
@@ -214,7 +210,7 @@ Promotion from local to general requires transfer evidence.
 
 ### Preserve diversity
 
-Greedy replacement collapses behavioral diversity and can reduce the quality of future training data. Keep a Pareto archive over capability, cost, novelty, error type, and data contribution.
+Greedy replacement can lose useful branches. Test a Pareto archive over capability, cost, novelty, error type, and data contribution against simpler search under a matched budget.
 
 Lineage should record ancestry and rejected branches. A rejected candidate may become useful after the model changes.
 
@@ -270,16 +266,13 @@ Primary quantity:
 
 $
 
-R_t=
-\frac{
-U_Q(S_{t+1}^{\text{child}})-U_Q(S_t)
-}{
-C_{\text{improve}}
-}.
+\Delta_{\rm rec}
+=
+G(S_1;\mu,B,b)-G(S_0;\mu,B,b).
 
 $
 
-D3 requires a reproducible increase in later improvement quality or efficiency.
+Both improvers modify identical copies of targets sampled from the same distribution; their own versions are not the two target starting points. D3 requires a reproducible increase in improvement performance under the declared comparison. See Experiment 003.
 
 ### Experiment 4: [repeated co-evolution](experiments/004-repeated-coevolution.md)
 
@@ -287,9 +280,8 @@ Run at least three complete cycles:
 
 $
 
-(M_t,\mathcal H_t,I_t)
-\rightarrow
-(M_{t+1},\mathcal H_{t+1},I_{t+1}).
+S_t=(M_t,H_t,D_t)\rightarrow S_{t+1},
+\qquad A_t\text{ is recorded separately as the acting role}.
 
 $
 
@@ -297,7 +289,7 @@ Track held-out capability, transfer, diversity, regressions, update cost, and sa
 
 - harness-only evolution;
 - model-only updating;
-- fixed improver;
+- frozen ancestor improver, including all of its model, code, and data dependencies;
 - equal total compute spent on the parent;
 - human-designed update schedules.
 
@@ -367,12 +359,12 @@ A credible model–harness RSI result should satisfy all of the following:
 
 - persistent versioned changes;
 - positive held-out and time-forward transfer;
-- gain beyond equal-total-compute parent baselines;
-- component attribution through model–harness crossing;
+- declared execution, improvement, and amortized lifecycle cost comparisons;
+- model–harness crossing when claiming separate component effects;
 - no undisclosed critical regressions;
 - independent final acceptance;
 - repeated generations;
-- successor improvement ability greater than parent improvement ability;
+- successor improvement ability greater than parent improvement ability on common targets;
 - replication from public artifacts or an independent implementation.
 
 Open-ended RSI would additionally require changing task distributions and bottlenecks, many generations, and evidence against rapid saturation.
@@ -388,14 +380,14 @@ Pause or change the research representation when any of these persist:
 - self-generated data reduces diversity or unrelated capability;
 - evaluator disagreement dominates measured gain;
 - tampering or provenance failures enter accepted lineages;
-- model and harness changes cannot be causally separated;
+- component attribution remains unidentified despite a valid pair-level gain; redesign the attribution experiment;
 - additional search produces only noisy winner selection.
 
 The correct response is to change the task distribution, evaluator, editable surface, or update operator. Repeating local prompt edits does not resolve a structural failure.
 
 ## 10. Near-term priority
 
-The highest-value sequence is:
+The proposed initial sequence is:
 
 1. choose one public, inspectable harness-evolution implementation;
 2. reproduce its author-reported result;
@@ -407,3 +399,4 @@ The highest-value sequence is:
 8. compare parent and successor as improvers.
 
 Completion of this sequence would establish more than another survey or benchmark delta. It would provide direct evidence about whether model–harness co-evolution creates transferable recursive gain.
+

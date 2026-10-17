@@ -1,6 +1,6 @@
 # Evaluation standard
 
-This document defines the minimum experiment needed to claim self-improvement or recursive self-improvement.
+This document specifies the repository's operational evidence standard. D3 refers to improved improvement ability; it does not require accelerating scores or a separately mutable improver module.
 
 ## 1. Register the complete system
 
@@ -69,9 +69,9 @@ Record:
 - human interventions;
 - failed runs and retries.
 
-Every claimed persistent improvement needs an equal-total-resource parent baseline.
+Separate matched-execution, matched-improvement, and lifecycle-cost comparisons. Declare the deployment horizon for amortized cost; a one-task total-cost comparison does not settle the value of a reusable update.
 
-If producing $S_1$ costs $C_{\text{improve}}$, compare it with a parent strategy allowed to spend the same total resource through additional search, sampling, or task-time computation. Report immediate and amortized cost.
+If producing $S_1$ costs $C_{\text{improve}}$, compare lifecycle alternatives over the same future tasks and report both creation and execution cost. Resource types require a declared conversion before they can be added. For improver comparisons, match improvement budget $B$ and separately fix descendant execution budget $b$.
 
 ## 5. Use the required baselines
 
@@ -157,11 +157,11 @@ Only $\Delta_{\text{transfer}}$, net of unacceptable regressions and cost, suppo
 
 ## 9. Cross components
 
-For model $M$, harness $H$, and improver $I$, evaluate a factorial subset of:
+For target model $M$, target harness $H$, and configured improver $A$, evaluate a feasible factorial subset of:
 
 $
 
-M_i\times H_j\times I_k.
+M_i\times H_j\times A_k.
 
 $
 
@@ -181,8 +181,10 @@ Interpretation:
 - $M_1,H_0$ gain: model contribution;
 - $M_0,H_1$ gain: harness contribution;
 - excess gain of $M_1,H_1$: interaction or co-adaptation;
-- failure of $H_1$ on other models: model-specific compensation;
-- failure of $M_1$ on other harnesses: harness-conditioned model update.
+- failure of $H_1$ on other models: possible model dependence, compensation, or interface incompatibility;
+- failure of $M_1$ on other harnesses: possible harness conditioning or interface incompatibility.
+
+Hold data and task-time resources fixed and record adapters. Interaction sign alone cannot distinguish synergy, redundancy, conflict, or portability; see THEORY.md. If improver and target share components, pin a separate snapshot to realize the intended intervention.
 
 Apply analogous swaps to memory, tools, data filters, reward models, and evaluators.
 
@@ -248,32 +250,25 @@ $
 
 and the corresponding cost. A single small-model result cannot support a frontier-model claim. A single frontier-model result cannot reveal whether the method depends on capabilities absent from smaller systems.
 
-## 14. Test recursion directly
+## 14. Test improvement ability on common targets
 
-For D3, compare parent and successor as improvers on a new improvement problem.
+Record how $S_0$ produced a persistent $S_1$. Then use old and new versions as improvers on identical copies of each target $T$:
 
-$
+$$
+T'_0\sim K_{S_0}(\cdot\mid T,p,B),
+\qquad
+T'_1\sim K_{S_1}(\cdot\mid T,p,B).
+$$
 
-S_0 \xrightarrow{I_0} S_1,\qquad
-S_0 \xrightarrow[\text{new problem}]{B} C_0,\qquad
-S_1 \xrightarrow[\text{same problem}]{B} C_1.
+Estimate the paired difference $G(S_1;\mu,B,b)-G(S_0;\mu,B,b)$ using common target/problem distribution $\mu$, improvement budget $B$, and descendant execution budget $b$. Include rejected candidates and failed runs in costs. Repeat whole improvement runs; repeated scoring of a single selected child does not estimate search variability.
 
-$
+Do not substitute a comparison of $S_0$ improving itself against $S_1$ improving itself: that also changes the target and remaining headroom.
 
-Evaluate $C_0$ and $C_1$ on hidden tasks. Match the improvement budget $B$.
+For recursive reuse, continue with the current successor as improver versus a pinned ancestor improver, giving both the same current target. Freeze all ancestor dependencies, not only its outer code. Compare under equal feedback access and external assistance.
 
-Measure:
+Report gains, important regressions, uncertainty, transfer axes, and the deployment scope. If new task cohorts change difficulty, do not interpret an uncalibrated cross-generation score slope as acceleration. Use common anchors or compare both systems on the same new cohort.
 
-- quality of proposed modifications;
-- fraction of valid candidates;
-- accepted gain on held-out tasks;
-- improvement per unit cost;
-- breadth of transfer;
-- regressions;
-- time to a useful successor;
-- evaluator exploitation rate.
-
-A repeated outer loop with a fixed stronger optimizer does not establish recursion unless $S_1$ improves these quantities.
+See Experiment 003 for the full protocol.
 
 ## 15. Publish a result bundle
 
@@ -304,7 +299,8 @@ Use the strongest statement supported by the experiment.
 - **D0:** “Additional search improved current-task performance.”
 - **D1:** “The system produced a persistent successor.”
 - **D2:** “The persistent change improved specified untouched distributions under the stated budget.”
-- **D3:** “The successor produced better later successors on a new improvement problem under matched budget.”
+- **D3:** “The successor improved common reference targets more effectively than its parent under matched budgets.”
 - **D4:** reserved for sustained D3 evidence across changing task distributions and bottlenecks.
 
 Do not use “recursive self-improvement” as shorthand for one iteration of automated optimization.
+

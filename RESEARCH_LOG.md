@@ -2,6 +2,8 @@
 
 This is a distilled record of the substantive reasoning that led to the current BeforeRSI program. It preserves changes in representation, failed framings, open alternatives, and the experiments proposed to distinguish them. It is not a raw conversation transcript.
 
+**Historical status:** entries before the continuation audit at the end preserve earlier proposals, including claims now superseded. Current definitions are in THEORY.md; historical equations are not current results.
+
 ## 2026-08 — Strict self-improvement criteria
 
 An early concern was that memory, prompt editing, skill libraries, and harness changes were often called self-evolution even when they produced no transferable or persistent capability.
@@ -387,3 +389,19 @@ The current representation may still be wrong. Important alternatives include:
 - the best formalism may be information-theoretic, evolutionary, or game-theoretic rather than control-theoretic.
 
 These alternatives are reasons to run discriminating experiments, not reasons to avoid modeling.
+## 2026-10-17 — Continuation audit: roles, common targets, and generality
+
+**Derived corrections.** The former differential recursive term changes under a coordinate transformation of the same process. The sign of gain minus debt is not the growth condition in the retained nonlinear equation. Negative model–harness interaction can be redundant benefit; positive interaction can coexist with poor cross-pair performance. Exact witnesses are in THEORY.md and scripts/check_model_counterexamples.py.
+
+**Representation change.** Model, executable harness, and stored information are implementation objects. Improver is a role that can use the same objects. The kernel now distinguishes acting improver A from target T. Experiment 003 compares actor versions on identical target copies; Experiment 004 pins all ancestor actor dependencies. This prevents target headroom and target difficulty from being silently attributed to actor improvement. The program also rebuilds the new harness before evaluating its cross-pairs.
+
+**General mathematical scope.** THEORY.md gives a finite-history encoding argument for digital adaptive systems, a necessary-and-sufficient condition for exact controlled Markov summaries, a conditional multi-step approximation bound, and the pointwise condition for improvement under every task distribution. These use standard mathematical constructions. They establish representation and limits of reduction, not a universal growth law or a new physical principle.
+
+**Source corrections.** Self-Rewarding LM reports three training rounds and improved reward provision. Hyperagents reports cross-domain meta-level transfer. AlphaEvolve includes improvements to infrastructure used in underlying model training. Fixed outer code or frozen weights do not alone exclude system-level feedback.
+
+**Coverage.** COMPATIBILITY.md maps the 38 existing catalog entries plus HGM, ACE, AlphaEvolve, and OPRO, which were named in prose but absent from the machine-readable catalog. The 42 rows document representation and evidence obligations, not independent replication. The Good DOI remained inaccessible in this source pass.
+
+**Retained hypotheses.** Alternating model/harness updates, portfolios, adaptive allocation, and reduced dynamics remain candidates. The sign-only H7 is superseded. Toy simulations are relabeled as path-slope examples; every reference scenario has nonzero external forcing. They cannot establish autonomous recursive acceleration.
+
+**Next discriminating result.** Estimate a common-target actor effect and test whether proposed summary variables predict intervention responses. Cross-method prediction requires a shared measurement protocol and withheld methods/generations. No real-model run or universal empirical law is claimed by this audit.
+

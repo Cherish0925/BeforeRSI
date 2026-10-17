@@ -95,7 +95,7 @@
     {
       "id": "improvement-kernel",
       "type": "concept",
-      "label": "Resource-normalized successor-generating operator"
+      "label": "Actor-target successor distribution under declared budgets"
     },
     {
       "id": "capability-field",
@@ -105,7 +105,7 @@
     {
       "id": "improvement-efficiency",
       "type": "concept",
-      "label": "Transferable improvement efficiency"
+      "label": "Common-target gain-versus-budget comparison"
     },
     {
       "id": "resource-normalized-dynamics",
@@ -114,8 +114,8 @@
     },
     {
       "id": "coevolution-jacobian",
-      "type": "concept",
-      "label": "Model–harness–improver coupling matrix"
+      "type": "hypothesis",
+      "label": "Model–harness–improver coupling matrix (unidentified illustrative model)"
     },
     {
       "id": "model-harness-interaction",
@@ -139,18 +139,18 @@
     },
     {
       "id": "recursive-gain",
-      "type": "concept",
-      "label": "Recursive design gain"
+      "type": "hypothesis",
+      "label": "Recursive design gain (unidentified illustrative model)"
     },
     {
       "id": "complexity-debt",
-      "type": "concept",
-      "label": "Complexity and verification debt"
+      "type": "hypothesis",
+      "label": "Complexity and verification debt (unidentified illustrative model)"
     },
     {
       "id": "rsi-phase-regime",
-      "type": "concept",
-      "label": "RSI dynamical phase regimes"
+      "type": "hypothesis",
+      "label": "RSI dynamical phase regimes (unidentified illustrative model)"
     },
     {
       "id": "optimal-control",
@@ -217,12 +217,12 @@
     {
       "source": "harness-evolution",
       "target": "model-harness-coevolution",
-      "relation": "converges_to"
+      "relation": "can_contribute_to"
     },
     {
       "source": "model-update",
       "target": "model-harness-coevolution",
-      "relation": "converges_to"
+      "relation": "can_contribute_to"
     },
     {
       "source": "lineage-search",
@@ -272,7 +272,7 @@
     {
       "source": "improvement-efficiency",
       "target": "resource-normalized-dynamics",
-      "relation": "is_order_parameter_for"
+      "relation": "candidate_summary_for"
     },
     {
       "source": "model-harness-coevolution",
@@ -282,7 +282,7 @@
     {
       "source": "model-harness-interaction",
       "target": "coevolution-jacobian",
-      "relation": "localizes_into"
+      "relation": "does_not_by_itself_identify"
     },
     {
       "source": "harness-evolution",
@@ -307,17 +307,17 @@
     {
       "source": "evaluator-fidelity",
       "target": "rsi-phase-regime",
-      "relation": "controls"
+      "relation": "hypothesized_relation_to"
     },
     {
       "source": "recursive-gain",
       "target": "rsi-phase-regime",
-      "relation": "competes_with"
+      "relation": "hypothesized_relation_to"
     },
     {
       "source": "complexity-debt",
       "target": "rsi-phase-regime",
-      "relation": "opposes"
+      "relation": "hypothesized_relation_to"
     },
     {
       "source": "improver-improvement",
@@ -327,7 +327,7 @@
     {
       "source": "resource-normalized-dynamics",
       "target": "rsi-phase-regime",
-      "relation": "generates"
+      "relation": "hypothesized_relation_to"
     },
     {
       "source": "rsi-phase-regime",
@@ -337,7 +337,7 @@
     {
       "source": "system-identification",
       "target": "coevolution-jacobian",
-      "relation": "estimates"
+      "relation": "hypothesized_relation_to"
     },
     {
       "source": "system-identification",
@@ -347,7 +347,7 @@
     {
       "source": "system-identification",
       "target": "recursive-gain",
-      "relation": "estimates"
+      "relation": "hypothesized_relation_to"
     },
     {
       "source": "optimal-control",
@@ -530,6 +530,35 @@
         "lineage-search",
         "improver-improvement"
       ]
+    },
+    {
+      "work_id": "hgm",
+      "node_ids": [
+        "lineage-search",
+        "improver-improvement"
+      ]
+    },
+    {
+      "work_id": "ace",
+      "node_ids": [
+        "external-cognition",
+        "harness-evolution"
+      ]
+    },
+    {
+      "work_id": "alphaevolve",
+      "node_ids": [
+        "automated-algorithm-search",
+        "model-update"
+      ]
+    },
+    {
+      "work_id": "opro",
+      "node_ids": [
+        "automated-algorithm-search",
+        "harness-evolution"
+      ]
     }
   ]
 }
+

@@ -17,15 +17,15 @@ A deployed AI system is represented as
 
 $
 
-S_t=(M_t,H_t,I_t,D_t,E_t).
+S_t=(M_t,H_t,D_t).
 
 $
 
-- $M_t$: model weights, architecture, optimizer state, and learned policies;
-- $H_t$: prompts, context construction, memory, tools, skills, routing, agent topology, control flow, verification calls, and stopping rules;
-- $I_t$: the procedure that proposes, implements, tests, and selects changes;
-- $D_t$: persistent experience, training data, lineage, and externalized knowledge;
-- $E_t$: tasks, software, simulators, instruments, users, and other sources of feedback.
+- $M_t$: learned models and their architectures;
+- $H_t$: executable context construction, memory access, tool interfaces, search, routing, training, and stopping rules;
+- $D_t$: persistent memory contents, datasets, experience, and retained information.
+
+The improver is a role performed by a configured system, potentially the same $S_t$. It is not necessarily an additional independent component. The environment $E_t$ supplies tasks and external feedback. Optimizer state and other ambiguous artifacts receive one explicit owner in the manifest; see THEORY.md.
 
 The acceptance process is written separately:
 
@@ -85,7 +85,7 @@ flowchart TB
     G --> H[Open-ended RSI]
 ```
 
-The arrows do not imply that later work dominates earlier work. They identify missing dependencies. A model can self-train without a self-modifying harness; a harness can evolve without changing model weights; a search procedure can improve artifacts while remaining fixed. The target requires these capabilities to interact without losing attribution or trustworthy evaluation.
+The arrows do not imply that later work dominates earlier work. They identify missing dependencies. A model can self-train without a self-modifying harness; a harness can evolve without changing model weights; a search procedure can improve artifacts while remaining fixed. These branches offer different routes. The research tests which interactions help; it does not require every branch or component to change.
 
 ## 3. The five branches
 
@@ -113,7 +113,7 @@ Meta-learning trains systems to adapt rapidly across tasks. [MAML](https://proce
 
 SPIN, Self-Rewarding Language Models, and SEAL bring the source of data, preferences, or updates inside the model loop. They are direct precursors to model-level RSI. Their unresolved issue is informational closure: repeated self-training cannot create reliable new information indefinitely without external grounding, strong verification, or retained real data. Errors, preference drift, and distribution narrowing can compound across generations.
 
-Model-level RSI requires more than updated weights. The successor must generalize, retain unrelated capabilities, and improve the process that constructs later updates.
+The stronger D3 question is whether later model versions construct more useful updates on common targets. A fixed outer training algorithm does not exclude changed improvement behavior inside the learned model.
 
 ### 3.4 External cognition and harness evolution
 
@@ -188,7 +188,7 @@ HELIX, Co-Harness, OpenRSI, MASS, SIA, and related work connect harness-generate
 
 ## 6. The convergent mainline
 
-The shortest credible path to general RSI is:
+One candidate schedule for studying model–harness feedback is:
 
 ```mermaid
 flowchart LR
@@ -197,7 +197,7 @@ flowchart LR
     R --> V[Independent verification]
     V --> D[Verified successes, failures, alternatives]
     D --> M1[Update model to M_t+1]
-    D --> I1[Update improver to I_t+1]
+    D --> I1[Optional update to improvement policy]
     M1 --> H1[Rebuild harness portfolio H_t+1]
     I1 --> H1
     H1 --> Q[Hidden and time-forward tests]
@@ -205,14 +205,14 @@ flowchart LR
     G --> M0
 ```
 
-The loop has six necessary properties:
+This proposed experiment uses the following design choices and measurement controls:
 
-1. **Portfolio search:** maintain several harnesses and lineages; a single incumbent loses diversity and hides co-adaptation.
+1. **Portfolio comparison:** test multiple harnesses and lineages against a single-incumbent baseline; account for diversity and its cost.
 2. **Verified experience:** model training uses solutions, failures, near misses, and counterfactual alternatives linked to reliable outcomes.
 3. **Cross-component attribution:** evaluate $M_i\times H_j\times I_k$, not only matched versions.
 4. **Protected acceptance:** the candidate cannot rewrite the final test or its provenance.
 5. **Time-forward transfer:** evaluation includes tasks created after the candidate is frozen.
-6. **Successor-as-improver measurement:** compare parents by the quality and cost of descendants they generate.
+6. **Successor-as-improver measurement:** compare old and new improvers on identical copies of common targets, with matched budget and feedback.
 
 ## 7. What would change the field
 
@@ -224,6 +224,7 @@ The following results would materially advance the mainline:
 - a multi-generation run whose held-out gain does not saturate after one or two defect removals;
 - an improver that learns when to modify weights, harness, memory, tools, or itself;
 - a protected evaluation process that remains informative while tasks and system capabilities change;
-- a scaling law connecting base-model capability, evaluator quality, search budget, and achievable self-improvement.
+- a predictive relation connecting base-model capability, evaluator quality, search budget, and achievable self-improvement, validated on withheld interventions.
 
 Until these exist, open-ended RSI remains a research target rather than an established capability.
+

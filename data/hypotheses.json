@@ -12,8 +12,8 @@
     {
       "id": "improvement-operator",
       "status": "open",
-      "statement": "The resource-normalized successor-generating operator contains essential RSI information not captured by task capability alone.",
-      "decisive_test": "Compare systems with matched task capability but different descendant-generation performance.",
+      "statement": "Common-target improvement behavior adds predictive information beyond task performance alone.",
+      "decisive_test": "Compare actors on identical copies of common targets, then predict gains on withheld target families.",
       "files": [
         "THEORY.md",
         "experiments/003-successor-as-improver.md"
@@ -22,8 +22,8 @@
     {
       "id": "improvement-efficiency",
       "status": "open",
-      "statement": "Improvement efficiency eta is a useful macrostate for comparing recursive improvement across generations.",
-      "decisive_test": "Test whether eta predicts descendant quality across domains and scales better than current capability alone.",
+      "statement": "A gain-versus-budget curve or vector can summarize improvement behavior after testing conditional dependence on omitted state.",
+      "decisive_test": "Test state sufficiency and withheld intervention prediction before treating a scalar as a closed macrostate.",
       "files": [
         "THEORY.md",
         "SIMULATION.md"
@@ -52,8 +52,8 @@
     {
       "id": "evaluator-phase-boundary",
       "status": "open",
-      "statement": "Candidate search has a fidelity-dependent phase boundary beyond which more search mainly selects noise or exploits.",
-      "decisive_test": "Sweep evaluator fidelity and candidate count against an independent ground-truth test.",
+      "statement": "Evaluator fidelity may change cost-normalized search efficiency; a universal sharp boundary is not implied by the Gaussian model.",
+      "decisive_test": "Vary fidelity and candidate count while distinguishing absolute selected gain from gain per unit cost.",
       "files": [
         "SIMULATION.md",
         "experiments/005-evaluator-phase-boundary.md"
@@ -71,9 +71,9 @@
     },
     {
       "id": "recursive-gain-vs-debt",
-      "status": "open",
-      "statement": "The sign of recursive design gain minus complexity and verification debt predicts whether improvement efficiency grows or decays.",
-      "decisive_test": "Fit the nonlinear dynamics and test out-of-sample forecasts under different intervention schedules.",
+      "status": "superseded",
+      "statement": "The earlier sign-only growth criterion and coordinate-based recursive interpretation fail explicit mathematical counterexamples.",
+      "decisive_test": "Use identifiable interventions and state-sufficiency tests to assess replacement reduced models; see THEORY.md.",
       "files": [
         "THEORY.md",
         "SIMULATION.md"
@@ -131,3 +131,4 @@
     }
   ]
 }
+

@@ -14,7 +14,7 @@ For a claimed update $S_t\rightarrow S_{t+1}$, ask seven questions:
 6. **What regressed?** Task-level failures, cost, latency, reliability, calibration, or unrelated capabilities.
 7. **Did the successor improve later improvement?** Was $S_{t+1}$ compared with $S_t$ as an improver?
 
-A paper that does not answer the last question may establish self-improvement. It does not establish recursion.
+The last question targets this repository's stronger D3 claim. Other papers may use RSI for recursive reuse; preserve their definition and separately state what was measured.
 
 ## 2. What the historical branches establish
 
@@ -58,9 +58,9 @@ They answer “can a system learn to adapt?” They do not by themselves answer 
 
 ### AutoML and algorithm search
 
-AutoML-Zero, FunSearch, AlphaEvolve, and similar systems automate parts of algorithm discovery. Their output can be scientifically or commercially valuable. The optimizer generally remains fixed while it improves an external artifact.
+AutoML-Zero, FunSearch, AlphaEvolve, and similar systems automate parts of algorithm discovery. Their output can be scientifically or commercially valuable. The actor may remain fixed while improving an external artifact. AlphaEvolve additionally reports optimizing training components used by its underlying LLM, so feedback into later system versions or resource efficiency is a possible path that must be traced rather than excluded by definition.
 
-These systems are essential baselines for automated AI research. Calling every successful algorithm-search loop RSI erases the distinction between improving a target and improving the improver.
+These systems are essential baselines for automated AI research. The actor-target distinction preserves both external algorithm discovery and cases where discovered changes return to improve the producing system.
 
 ### Prompt, workflow, and agent search
 
@@ -95,7 +95,7 @@ The scientific question is whether lineage and clade selection improve future tr
 
 These systems move more of the meta-level into the editable program. This is closer to D3 because task-agent and meta-agent behavior, or harness and meta-evolver behavior, can both change.
 
-The crucial missing evidence is cross-problem meta-transfer: a meta-level update selected on one improvement problem should produce better descendants on another.
+Hyperagents explicitly reports meta-level improvements that transfer across domains and accumulate across runs. That report must be retained. The remaining audit is whether the experiments isolate common-target improver effects and how independently the result can be replicated; HSI must be assessed on its own evidence.
 
 ### AIDE²
 
@@ -130,7 +130,7 @@ The main uncertainty is long-run information quality. If each generation learns 
 
 These systems use the model to generate reward or preference labels and update the model from them. They test whether task ability and judging ability can improve together.
 
-The central risk is correlated error: the same model family can make and approve the same mistake. Final evaluation must be independent of the self-generated reward process.
+The primary paper reports three iterative training rounds and improvements in both instruction following and reward provision. This is positive evidence for co-improvement under a fixed outer training rule. It does not by itself establish a universal growth law or independent replication. Correlated generation/judgment errors still require external assessment.
 
 ### SEAL and self-generated updates
 
@@ -164,7 +164,7 @@ Rethinking the Evaluation of Harness Evolution shows why harness search must be 
 
 ### Statistical selection limits
 
-Repeated candidate search creates winner’s curse and adaptive overfitting. Small gains selected from many noisy evaluations are unreliable even when the final benchmark was nominally held out.
+Repeated candidate search can create winner's curse and adaptive overfitting. The cataloged paper On the Statistical Limits of Self-Improving Agents specifically studies reachable policy-family capacity under i.i.d. PAC assumptions; it must not be cited as if it only established noisy winner selection. An unrestricted state representation gives no statistical learnability guarantee.
 
 ### Harness tampering
 
@@ -222,8 +222,15 @@ As of October 2026, public work supports the following statement:
 
 > AI systems can participate in producing persistent changes to prompts, context, memory, tools, harness code, agent programs, training data, rewards, and model weights. Some changes transfer to held-out tasks, and several systems report short multi-generation improvement.
 
-Public work does not yet support this stronger statement:
+This repository has not established the stronger claim:
 
 > A general AI system repeatedly improves its model, harness, and improvement process; the successors become better improvers; gains transfer broadly across tasks and scales; and the process remains stable over many generations.
 
 BeforeRSI is organized around closing the gap between these two statements.
+
+## 10. Representation audit and source corrections (2026-10-17)
+
+[COMPATIBILITY.md](COMPATIBILITY.md) maps every catalog entry to the operational model and records the behavior it must preserve. Coverage of mechanisms is distinct from reproduction of results and prediction across methods. The audit corrected the earlier understatement of Self-Rewarding LM's reported iterations and Hyperagents' reported meta-level transfer.
+
+Four works already named in the prose are now cataloged explicitly: [HGM](https://arxiv.org/abs/2510.21614) studies descendant-informed parent selection; [ACE](https://arxiv.org/abs/2510.04618) incrementally adapts contextual playbooks; [AlphaEvolve](https://arxiv.org/abs/2506.13131) searches executable algorithms, including infrastructure used in model training; [OPRO](https://arxiv.org/abs/2309.03409) uses an LLM to propose candidates from optimization history. These are source-backed method descriptions, not independently reproduced outcomes.
+
