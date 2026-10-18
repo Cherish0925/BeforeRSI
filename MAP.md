@@ -1,10 +1,10 @@
 # The RSI map
 
-The [2026-10-18 frontier coverage review](FRONTIER_COVERAGE.md) expands the
-mainline from model–harness co-evolution to the production and reuse of
-improvements across AI development. Large-scale RL, learned evaluation,
-generated environments, research-method design and computational infrastructure
-are necessary branches. This map and its catalog are not an exhaustive survey.
+The [2026-10-18 scope correction](RSI_SCOPE.md) expands direct LLM/agent
+self-evolution coverage while separating enabling AI4AI, theory, historical
+foundations and background. It includes training-side as well as runtime
+harnesses. The 123-entry catalog is not a count of RSI systems or an exhaustive
+survey; see [the classified catalog](research/scope-catalog.md).
 
 RSI has been obscured by mixing several different questions:
 

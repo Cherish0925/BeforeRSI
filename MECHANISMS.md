@@ -7,10 +7,10 @@ comparison with existing methods. This document supplies a conditional
 mechanism model and changes the research route accordingly.
 
 **Scope correction:** these are conditional mechanisms, not a complete
-explanation of frontier AI development. [FRONTIER_COVERAGE.md](FRONTIER_COVERAGE.md)
-identifies substantive omissions in large-scale RL, learned feedback, generated
-environments and industrial research production. Mapping those processes into
-the following variables does not establish their learning dynamics or transfer.
+explanation of frontier AI development. [RSI_SCOPE.md](RSI_SCOPE.md) distinguishes
+direct self-evolution, enabling learning mechanisms and background. Coupled
+curricula, evaluators, training harnesses and runtime harnesses require different
+conditions. Mapping them into variables does not explain their learning dynamics.
 
 The common object is a **reusable computation interacting with feedback**.
 Its implementation can reside in weights, executable code, context, memory,
@@ -399,7 +399,7 @@ The mechanism interpretation and proposed separating intervention are ours.
 | [RRSI](https://arxiv.org/html/2609.24972v1) | Its ablations show higher evolve score can accompany worse OOD score and greater token cost. | Retention aligned to source score can select a worse transferable computation. Hold candidate pool fixed to isolate selection from proposal regularization. |
 | [POET](https://arxiv.org/abs/1901.01753) | Environment-agent transfer supports solutions missed by direct optimization controls. | A change to reachable learning paths. Remove cross-environment transfer at matched total optimization cost. |
 
-The complete [67-work map](research/mechanism-map.md) records a concrete
+The complete [123-entry map](research/mechanism-map.md) records a concrete
 mechanism and counterfactual for every current corpus entry. Rows whose sources
 were only previously checked at abstract/repository level are marked as such.
 Formal and evaluation papers constrain the mechanism rather than implementing

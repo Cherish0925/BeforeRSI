@@ -554,3 +554,14 @@ standard Amdahl derivation, with observables and falsification implications.
 They constrain interpretation rather than constituting a physical growth law.
 H13 asks whether production-process variables improve withheld predictions.
 No simulated dynamics were changed and no further toy experiment was run.
+
+
+## 2026-10-18 — Refocus on LLM/agent self-evolution and expand the primary-source screen
+
+**Source facts:** Four bibliography README snapshots provide 567 unique arXiv leads, not 567 verified papers. The expansion checked 61 related primary abstracts and submission histories, retained 56 entries (41 first submitted in 2026), and deferred five. A mistaken 2605/2505 query was excluded; three further source-retrieval gaps remain recorded. Ten retained entries have selected methods, definitions or result passages read; no independent reproduction was executed.
+
+**Scope correction:** The 123-entry catalog separates 63 direct self-evolution studies, 30 enabling studies, 7 evaluations, 3 theories, 14 foundations and 6 background works. Ordinary training reports and general scientific discovery are not counted as core RSI. Direct-topic classification is not certification of structural recursion, improved improvement ability or sustained growth.
+
+**Material evidence:** EvoTrainer makes training diagnostics and reusable trainer skills editable, with a fixed backbone and human-gated costly actions. DERL trains reward proposers from downstream training outcomes. Skill-SP supplies frozen-component comparisons of proposer, solver and skill feedback. The on-policy model–harness study reports full-trajectory expert-imitation regression after harness evolution. SoL-Pi explicitly places cheaper recursive successor research in future work, despite its title and engineering gains. GAI supplies prior formal work on modifier membership and external evaluation grounding; component naming is not our novelty.
+
+**Research decision:** Prioritize learned training interventions, coupled curricula/evaluators/environments/model–harness behavior, and actual reuse in successor production. Keep AI4AI targets distinct from self-improving actors. Further breadth and full-method review remain unfinished; no exhaustive coverage, quality-certified set of 100 RSI papers, or universal physical growth law is claimed.

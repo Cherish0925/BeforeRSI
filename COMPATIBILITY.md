@@ -1,6 +1,6 @@
 # Compatibility with the current research corpus
 
-**Scope:** all 67 entries in data/works.json. The 2026-10-18 frontier pass adds 14 substantial training, feedback, environment and industrial-development references to the previous 53 entries. This is a representation audit, not an exhaustive field survey. Twenty earlier entries had selected methods/results read; new entries carry exact, varying reading boundaries in data/mechanisms.json. Author reports remain distinct from reproduction. [FRONTIER_COVERAGE.md](FRONTIER_COVERAGE.md) concludes that broad mechanism coverage and cross-system prediction are not established. The earlier Good DOI retrieval limit remains.
+**Scope:** all 123 entries in data/works.json. The latest expansion adds 56 primary-source screens to the prior 67-entry catalog and classifies every entry in [RSI_SCOPE.md](RSI_SCOPE.md). Ten new entries have selected methods, definitions or results read; 46 remain abstract-level screens. Twenty earlier entries had selected methods/results read, with separate varying scopes for the earlier frontier pass. These are not 123 proven RSI systems, full-paper reviews or independent reproductions. Representation compatibility does not establish mechanism coverage or predictive generalization. The earlier Good DOI retrieval limit remains.
 
 **Reading the table:** the middle column is our encoding under THEORY.md, not terminology imposed by the original authors. The last column records behavior or an assumption the model must preserve. All empirical outcomes remain author-reported unless a separate reproduction record says otherwise. Representation is supported by Proposition 1; prediction requires fitted transition laws and withheld interventions. A score reduction additionally needs Proposition 2's state-sufficiency condition.
 
@@ -99,3 +99,67 @@ The finite-budget continuation identity in THEORY.md Section 9 uses the same
 encoded state and permits every listed update surface. That establishes the
 identity's representational scope. It does not supply the individual methods'
 unknown transition probabilities, continuation values or physical costs.
+
+<!-- scope-expansion -->
+## Scope-focused expansion mappings
+
+These mappings preserve named artifacts; they neither prove recursion nor supply a predictive theory. See RSI_SCOPE.md for distinctions.
+
+| Work | Artifacts requiring representation | Boundary |
+|---|---|---|
+| [SoL-Pi: Recursively Scaling Auto-Research Loops for Efficient Agent Harness](https://arxiv.org/abs/2609.20519) | harness_code | 论文把用新 harness 加速后继研发列为未来方向；成本下降不是已测递归复利。 |
+| [ModularRSI: Modular and Generalizable Recursive Harness Self-Improvement](https://arxiv.org/abs/2609.14857) | harness_code, function_library | 模块独立优化后存在交互；跨模型迁移不等于改进能力持续提升。 |
+| [Prime Agent: A Self-Improving RLM Harness](https://arxiv.org/abs/2608.23552) | memory, skills, prompts, subagent_specifications | 递归子代理调用本身不是 RSI；摘要没有隔离后继作为改进者的贡献。 |
+| [The Red Queen Gödel Machine: Co-Evolving Agents and Their Evaluators](https://arxiv.org/abs/2606.26294) | agent_code, evaluator_code, archive | IMO 人工评分等外部锚点仍必要；论文写作的代理评分不能等同真实科研质量。 |
+| [Dr. Zero: Self-Evolving Search Agents without Training Data](https://arxiv.org/abs/2601.07055) | proposer_weights, solver_weights | 零人工 QA 训练样本不等于零外部知识；仍依赖预训练和搜索引擎。 |
+| [Skill Self-Play: Pushing the Frontier of LLM Capability with Co-Evolving Skills](https://arxiv.org/abs/2607.22529) | proposer_weights, solver_weights, skill_library | 可执行验证与技能覆盖仍有边界，能力前沿难度代理不等于真实长期学习增益。 |
+| [RLAnything: Forge Environment, Policy, and Reward Model in Completely Dynamic RL System](https://arxiv.org/abs/2602.02488) | policy_weights, reward_weights, task_descriptions | 环境变化并非任意世界创造；GUI 部分依赖预建扰动及其验证器。 |
+| [Agent0: Unleashing Self-Evolving Agents from Zero Data via Tool-Integrated Reasoning](https://arxiv.org/abs/2511.16043) | curriculum_weights, executor_weights | 工具与预训练提供外部能力；多轮共同训练不证明通用研发递归。 |
+| [R-Zero: Self-Evolving Reasoning LLM from Zero Data](https://arxiv.org/abs/2508.05004) | challenger_weights, solver_weights | 自生成题目和标签可能共同偏误，不能由内部奖励证明正确性。 |
+| [Absolute Zero: Reinforced Self-play Reasoning with Zero Data](https://arxiv.org/abs/2505.03335) | model_weights, generated_tasks | 无需新人工数据仍依赖预训练、执行语义和初始任务表达范围。 |
+| [Tool-R0: Self-Evolving LLM Agents for Tool-Learning from Zero Data](https://arxiv.org/abs/2602.21320) | generator_weights, solver_weights | 工具接口和答案校验限定可学空间；不能把相对增幅当跨基准绝对优势。 |
+| [EvoTrainer: Co-Evolving LLM Policies and Training Harnesses for Autonomous Agentic Reinforcement Learning](https://arxiv.org/abs/2606.03108) | policy_weights, training_harness, diagnostic_skills | 基础训练代理权重固定且昂贵动作有人类把关；不支持完全无人递归。 |
+| [AutoScientists: Self-Organizing Agent Teams for Long-Running Scientific Experimentation](https://arxiv.org/abs/2605.28655) | research_memory, team_coordination, target_training_code | 生物研究部分不是本项目核心；目标 GPT 训练优化不证明研究代理自我升级。 |
+| [Dual-Evolving Reinforcement Learning for Automated Reward Design](https://arxiv.org/abs/2512.13399) | reward_proposer_weights, reward_programs, policy_weights | 奖励原语由人指定；最终策略重新训练，不能描述成同一策略连续自改。 |
+| [GEAR: Genetic AutoResearch for Agentic Code Evolution](https://arxiv.org/abs/2605.13874) | research_population, search_controller | 固定控制器的另外两个变体不是改进器自修改，不能合并宣称递归。 |
+| [Towards Execution-Grounded Automated AI Research](https://arxiv.org/abs/2601.14525) | ideator_weights, research_archive, target_training_code | RL 平均奖励上升同时出现模式坍缩，上限改善未建立；并未训练自身后继。 |
+| [Meta$^n$: Recursive Self-Improvement through Emergent Depth](https://arxiv.org/abs/2608.24735) | helper_code, layer_stack, archive | 固定元操作不自动保证整体稳定；层数与真实改进效率不可混同。 |
+| [Self-Harness: Harnesses That Improve Themselves](https://arxiv.org/abs/2606.09498) | harness_code | 自己提出修改不自动证明后继更会修改；同基准划分与跨领域迁移不同。 |
+| [Harness-Zero: Harness Distillation via Agent-as-Harness](https://arxiv.org/abs/2609.24974) | model_weights, training_demonstrations | 展示内化与部署收益，未据摘要证明多代改进器闭环。 |
+| [Harness-R1: Learning to Edit Executable Runtime Harnesses from Agent Failure Trajectories](https://arxiv.org/abs/2608.02276) | engineer_weights, harness_code | 主训练只更新编辑者、目标冻结；论文指向共同进化，未证明持续双向循环。 |
+| [SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning](https://arxiv.org/abs/2602.08234) | policy_weights, skill_library | 技能压缩可能丢失适用条件，特定基准增益不证明通用递归能力。 |
+| [SkillOpt: Executive Strategy for Self-Evolving Agent Skills](https://arxiv.org/abs/2605.23904) | skill_document, optimizer_state | 外部技能优化与优化器自改不同；重复验证选择仍需最终未触碰测试。 |
+| [Mem$^2$Evolve: Towards Self-Evolving Agents via Co-Evolutionary Capability Expansion and Experience Distillation](https://arxiv.org/abs/2604.10923) | experience_memory, asset_memory | 资产增加不保证改进速度上升，组合依赖和维护成本尚须控制。 |
+| [MemSkill: Learning and Evolving Memory Skills for Self-Evolving Agents](https://arxiv.org/abs/2602.02474) | controller_weights, memory_skills | 设计者本身是否改进未确定；技能选择和技能生成的贡献需分离。 |
+| [MemRL: Self-Evolving Agents via Runtime Reinforcement Learning on Episodic Memory](https://arxiv.org/abs/2601.03192) | episodic_memory, retrieval_values | 持久记忆学习成立不等于记忆更新规则或改进能力已自进化。 |
+| [EvoDS: Self-Evolving Autonomous Data Science Agent with Skill Learning and Context Management](https://arxiv.org/abs/2606.03841) | policy_weights, executable_skills, context_policy | 数据科学成绩与生成后继研究者能力不同；摘要定理不能代替逐项假设核查。 |
+| [Co-Evolving Harnesses and Models: On-Policy Correction Helps Weaker Models Catch Up Where Imitation Fails](https://arxiv.org/abs/2609.09134) | harness_code, model_weights | 整轨迹模仿在已进化 harness 上退化；局部纠正平均增益有限，不是普遍最优。 |
+| [Training Agents to Evolve with Their Harness: TaoLive Digital Avatar Agent Technical Report](https://arxiv.org/abs/2608.15763) | model_weights, harness_augmentation | 兼容变化中的 harness 不等于 AI 自己设计或进化该 harness。 |
+| [RewardHarness: Self-Evolving Agentic Post-Training](https://arxiv.org/abs/2605.08703) | reward_tools, reward_skills | 初始人类偏好是锚点；奖励器自改与被训练模型回馈奖励器须区分。 |
+| [WebEvolver: Enhancing Web Agent Self-Improvement with Coevolving World Model](https://arxiv.org/abs/2504.21024) | agent_weights, world_model_weights | 模型想象会积累偏差，真实网页验证不能由世界模型自身评分替代。 |
+| [WebRL: Training LLM Web Agents via Self-Evolving Online Curriculum Reinforcement Learning](https://arxiv.org/abs/2411.02337) | policy_weights, task_curriculum | 课程反馈闭环不同于训练算法自改；目标领域仍限定在网页任务。 |
+| [rStar-Math: Small LLMs Can Master Math Reasoning with Self-Evolved Deep Thinking](https://arxiv.org/abs/2501.04519) | policy_weights, process_reward_weights | 外部题库与执行验证仍支撑学习；数学域共同进化不是开放科研闭环。 |
+| [Self-Evolved Reward Learning for LLMs](https://arxiv.org/abs/2411.00418) | reward_weights, synthetic_preferences | 有限人工标注和预训练仍是信息锚点；自反馈可能积累偏差。 |
+| [Self-Evolving Curriculum for LLM Reasoning](https://arxiv.org/abs/2505.14970) | curriculum_policy, model_weights | 固定课程更新律是自适应训练，不自动构成改进器递归重写。 |
+| [SkillWeaver: Web Agents can Self-Improve by Discovering and Honing Skills](https://arxiv.org/abs/2504.07079) | executable_skill_library | 技能积累和任务迁移不等于技能发现过程效率持续上升。 |
+| [Live-SWE-agent: Can Software Engineering Agents Self-Evolve on the Fly?](https://arxiv.org/abs/2511.13646) | runtime_scaffold | 同任务内自改与跨任务继承是不同证据，不能从 solve rate 推出代际增长。 |
+| [Group-Evolving Agents: Open-Ended Self-Improvement via Experience Sharing](https://arxiv.org/abs/2602.04837) | agent_code, shared_experience | 同进化个体数不保证同算力；探索多样性的价值需与开销分开。 |
+| [Adaptive Auto-Harness: Sustained Self-Improvement for Agentic System Deployment on Open-Ended Task Streams](https://arxiv.org/abs/2606.01770) | harness_tree, evolver_state, routing | 部分信号来自人类引导；路由收益不等于改进器变强。 |
+| [Continual Harness: Online Adaptation for Self-Improving Foundation Agents](https://arxiv.org/abs/2605.09998) | prompts, subagents, skills, memory | 早期 GPP 人类参与与后续自动循环必须分开，游戏进度不直接代表通用研发能力。 |
+| [EnvHarness: Awakening Static Worlds for Agent Learning](https://arxiv.org/abs/2608.19880) | environment_wrappers, policy_weights | 环境包装保留验证器是特定设计，不保证所有新任务忠实有效。 |
+| [Agentic Discovery of Neural Architectures: AIRA-Compose and AIRA-Design](https://arxiv.org/abs/2605.15871) | target_architecture, target_training_code | 发现目标模型架构不等于将目标用作下一代设计者。 |
+| [AI4AI-Bench: Benchmarking LLM Agents in Algorithmic Design for Recursive Self-Improvement](https://arxiv.org/abs/2608.20318) | evaluation_protocol | 它测研发能力而非运行多代 RSI，归一化分数仍依赖所选任务和参照。 |
+| [Generalized Agent Iteration: One Formal Framework for Iterative Policy Improvement and Recursive Self-Improvement](https://arxiv.org/abs/2609.13406) | formal_configuration | 属于可重写组件不等于实际发生有效重写；表示统一不是经验泛化定律。 |
+| [Aspire: Can Models Self-Evolve from Vague Goals?](https://arxiv.org/abs/2608.31111) | model_weights, harness, training_data | 完成训练或编辑流程不等于提高能力；报告中增益稀疏且不稳定。 |
+| [Large Language Model Agents Are Not Always Faithful Self-Evolvers](https://arxiv.org/abs/2601.22436) | experience_interventions | 对经验不敏感可来自已有知识或压缩丢失，不能一概判为无学习。 |
+| [ShinkaEvolve: Towards Open-Ended And Sample-Efficient Program Evolution](https://arxiv.org/abs/2509.19349) | target_programs, archive, model_selection | 只有目标涉及 AI 训练/harness 时属直接 AI4AI；普通圆堆积不算自身进化。 |
+| [CoVerRL: Breaking the Consensus Trap in Label-Free Reasoning via Generator-Verifier Co-Evolution](https://arxiv.org/abs/2603.17775) | generator_weights, verifier_weights | 多数投票仍提供噪声标签，摆脱部分共识错误不保证无锚点真理发现。 |
+| [Actor-Curator: Co-adaptive Curriculum Learning via Policy-Improvement Bandits for RL Post-Training](https://arxiv.org/abs/2602.20532) | curator_weights, policy_weights | 课程控制器的学习不同于其自身更新算法被改进。 |
+| [Agent-World: Scaling Real-World Environment Synthesis for Evolving General Agent Intelligence](https://arxiv.org/abs/2604.18292) | policy_weights, generated_environments, task_curriculum | MCP 环境主题多不等于未见世界泛化，生成器和验证器来源需全文核查。 |
+| [SkillOS: Learning Skill Curation for Self-Evolving Agents](https://arxiv.org/abs/2605.06614) | curator_weights, skill_repository | 改善技能整理者是有价值的 AI4AI，但其更新流程未被自身改写。 |
+| [Socratic-SWE: Self-Evolving Coding Agents via Trace-Derived Agent Skills](https://arxiv.org/abs/2606.07412) | solver_weights, trace_skills, generated_tasks | 梯度对齐作为学习价值代理需检验；软件领域闭环未推出通用科研提升。 |
+| [Voyager: An Open-Ended Embodied Agent with Large Language Models](https://arxiv.org/abs/2305.16291) | executable_skill_library, exploration_state | 固定 GPT-4 与课程程序；技能复用不是已证元算法自改。 |
+| [AgentEvolver: Towards Efficient Self-Evolving Agent System](https://arxiv.org/abs/2511.10395) | policy_weights, task_curriculum, experience | 训练闭环的元过程仍有固定部分；高效率需全流程成本而非仅样本数。 |
+| [Teaching LLMs to Self-Evolve: Cultivating Core Meta-Skills with Reinforcement Learning](https://arxiv.org/abs/2607.21971) | model_weights, evolution_training_data | 改进目标代码不等于目标本身是改进器；需实际闭环继承证据。 |
+| [SEED: Self-Evolving On-Policy Distillation for Agentic Reinforcement Learning](https://arxiv.org/abs/2607.14777) | policy_weights, hindsight_skills | 训练期事后信息在部署不可见；内化效果与信息泄漏边界需明确。 |
+| [RL Tango: Reinforcing Generator and Verifier Together for Language Reasoning](https://arxiv.org/abs/2505.15034) | generator_weights, verifier_weights | 不是完全无标签自证；固定结果验证构成外部锚点。 |

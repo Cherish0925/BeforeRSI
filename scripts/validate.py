@@ -4,6 +4,7 @@ from __future__ import annotations
 import json
 import re
 import sys
+from collections import Counter
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -171,11 +172,40 @@ def validate_hypotheses(data: object) -> None:
             fail(f"{hypothesis_id}: files must be non-empty")
 
 
+def validate_scope_catalog(work_ids: set[str]) -> None:
+    scopes = load(ROOT / "data/scope-review.json")
+    rows = scopes["works"]
+    ids = [r["id"] for r in rows]
+    if len(ids) != len(set(ids)) or set(ids) != work_ids:
+        fail("scope catalog must classify every work exactly once")
+    if dict(Counter(r["scope"] for r in rows)) != scopes["counts"]:
+        fail("scope counts do not match classified works")
+    for r in rows:
+        if r["scope"] not in scopes["definitions"] or not r["reading_scope"]:
+            fail(f"{r['id']}: undefined scope or missing reading boundary")
+        validate_url(r["primary_source"], r["id"])
+    expanded = load(ROOT / "data/expansion-reviews.json")["works"]
+    expanded_ids = [r["id"] for r in expanded]
+    if len(expanded_ids) != len(set(expanded_ids)) or not set(expanded_ids) <= work_ids:
+        fail("expansion contains duplicate or unregistered work IDs")
+    for r in expanded:
+        if r["review_level"] not in {"abstract_screen", "selected_sections"}:
+            fail(f"{r['id']}: unsupported review level")
+        for field in ["reported_operation", "limit", "separating_intervention", "tasks_and_resources", "reading_scope"]:
+            if not r[field].strip():
+                fail(f"{r['id']}: missing {field}")
+    pool = load(ROOT / "data/discovery-pool.json")["entries"]
+    arxiv_ids = [r["arxiv_id"] for r in pool]
+    if len(arxiv_ids) != len(set(arxiv_ids)):
+        fail("discovery pool contains duplicate arXiv IDs")
+
+
 def main() -> int:
     try:
         work_ids = validate_works(load(WORKS_PATH))
         validate_graph(load(GRAPH_PATH), work_ids)
         validate_hypotheses(load(HYPOTHESES_PATH))
+        validate_scope_catalog(work_ids)
     except (OSError, json.JSONDecodeError, ValueError) as exc:
         print(f"validation failed: {exc}", file=sys.stderr)
         return 1

@@ -2,21 +2,22 @@
 
 The objective is a system that repeatedly improves both task capability and the ability to construct later improvements.
 
-**Priority correction, 2026-10-18:** [FRONTIER_COVERAGE.md](FRONTIER_COVERAGE.md)
-finds important omissions in large-scale reasoning learning, adversarial
-co-training, evaluator learning, generated worlds and industrial research.
-The main research object is the process producing later AI capabilities.
-Model–harness alternation and learned puzzle search are bounded implementation
-branches; they do not determine the general architecture or establish coverage.
+**Priority correction, 2026-10-18:** [RSI_SCOPE.md](RSI_SCOPE.md) separates
+LLM/agent self-evolution from enabling AI4AI and background science/training.
+The research object is improvement of learning/development processes with
+reuse in later improvement. Runtime harnesses and training harnesses both matter.
 
-The immediate theoretical comparisons are AlphaProof/R1/Qwen3 for learning
-and inheritance; GPT-Red/Self-Taught Evaluators/SIMA 2 for changing feedback
-and learning distributions; AlphaEvolve/AAR/Seed for Seed for actual research
-production; and MuZero/XLand/Co-Scientist for environment and validation limits.
-Explain their distinct operations and failures before promoting a universal
-schedule. Retain smaller work for unique mechanisms or counterexamples, while
-prioritizing substantial training and deployed research evidence. Further small
-experiments need a discriminating connection to these competing explanations.
+Three immediate comparisons now drive the route: SEAL/DERL/EvoTrainer for
+learning how to improve training; Skill-SP/RLAnything/RQGM/WebEvolver and
+on-policy model–harness co-evolution for coupled learning; and
+STOP/HyperAgents/ModularRSI/DGM/HGM/AIDE²/OpenRSI for successor reuse.
+Their source scopes differ and their outcomes remain author-reported.
+SoL-Pi's cheaper successor-research loop is explicitly future work; strong
+engineering results must not be promoted to demonstrated recursive compounding.
+
+General Co-Scientist results and overall R1/Qwen/o1 reports are background,
+not primary evidence of this closed loop. Model–harness alternation and learned
+puzzle search remain bounded branches. No new toy experiment is introduced.
 
 Record a versioned system and an explicit improvement role:
 

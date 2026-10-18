@@ -168,6 +168,13 @@ FRONTIER_SCOPES={'openai-o1': 'Official training/scaling description; full train
 
 FULL={"dgm","hgm","hyperagents","aide2","gepa","seal","helix","mass","openrsi","rrsi","co-harness","harness-updating-benefit","star","rest-em","expert-iteration","dreamcoder","selecting-computations","levin-tree-search","policy-guided-heuristic-search","lts-context-models"}
 
+# Expansion records separate primary-source operations from our conditions and
+# proposed interventions. Abstract screening is never promoted to full review.
+EXPANSION=json.loads((ROOT/"data/expansion-reviews.json").read_text())["works"]
+for _r in EXPANSION:
+    ROWS[_r["id"]]=(_r["reported_operation"],_r["limit"],_r["separating_intervention"])
+    FRONTIER_SCOPES[_r["id"]]=_r["reading_scope"]
+
 
 def main():
     corpus=json.loads((ROOT/"data/works.json").read_text())["works"]

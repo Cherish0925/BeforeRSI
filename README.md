@@ -7,12 +7,12 @@
 <br>
 
 [![Status](https://img.shields.io/badge/status-research%20in%20progress-111827?style=flat-square)](#status)
-[![Corpus](https://img.shields.io/badge/public%20corpus-67%20works-C58B35?style=flat-square)](EVIDENCE.md)
+[![Corpus](https://img.shields.io/badge/research%20catalog-123%20entries-C58B35?style=flat-square)](research/scope-catalog.md)
 [![Claim depth](https://img.shields.io/badge/claim%20depth-D0%E2%86%92D4-5C9C96?style=flat-square)](#claim-depth)
 [![CI](https://img.shields.io/github/actions/workflow/status/Cherish0925/BeforeRSI/validate.yml?branch=main&style=flat-square&label=data)](https://github.com/Cherish0925/BeforeRSI/actions)
 [![License](https://img.shields.io/badge/license-MIT-6B7280?style=flat-square)](LICENSE)
 
-**[Frontier coverage](FRONTIER_COVERAGE.md)** · **[Theory](THEORY.md)** · **[Mechanisms](MECHANISMS.md)** · **[Compatibility](COMPATIBILITY.md)** · **[Map](MAP.md)** · **[Evidence](EVIDENCE.md)** · **[Program](PROGRAM.md)** · **[Evaluation](EVALUATION.md)** · **[Learned search](SEARCH.md)** · **[Hypotheses](HYPOTHESES.md)**
+**[RSI scope](RSI_SCOPE.md)** · **[Frontier coverage](FRONTIER_COVERAGE.md)** · **[Theory](THEORY.md)** · **[Mechanisms](MECHANISMS.md)** · **[Compatibility](COMPATIBILITY.md)** · **[Map](MAP.md)** · **[Evidence](EVIDENCE.md)** · **[Program](PROGRAM.md)** · **[Evaluation](EVALUATION.md)** · **[Learned search](SEARCH.md)** · **[Hypotheses](HYPOTHESES.md)**
 
 </div>
 
@@ -20,14 +20,16 @@
 
 ## What must be true before RSI is real?
 
-**Current coverage judgment:** the framework does not yet explain nearly all
-important RSI-related research. The previous corpus overemphasized harness and
-search systems. [The frontier review](FRONTIER_COVERAGE.md) adds major reasoning
-RL, adversarial co-training, evaluator learning, generated-environment and
-industrial AI-development work. The general research object is **how AI changes
-the process producing later capabilities, and how those changes are reused**.
-Model–harness co-evolution is one route within that scope. The 67-entry catalog
-is not a coverage percentage or a validated universal theory.
+**Current scope and coverage:** [RSI_SCOPE.md](RSI_SCOPE.md) corrects both the
+earlier narrow search emphasis and the subsequent mixing of ordinary AI training,
+scientific discovery and RSI. The core is **LLM/agent self-evolution and the reuse
+of improvements in later improvement processes**, including runtime and training
+harnesses. The catalog now separates 63 direct self-evolution studies, 30 enabling
+AI4AI/learning studies, 7 evaluations, 3 theories, 14 foundations and 6 background
+works. These 123 entries are not 123 proven RSI systems or a coverage percentage.
+The expansion adds 56 primary-source screens, including 10 selected-section
+readings; full-review boundaries remain explicit. A universal predictive theory
+has not been established.
 
 **BeforeRSI** studies one question:
 
@@ -47,7 +49,8 @@ where **M** records learned models, **H** executable orchestration, and **D** pe
 <img src="assets/rsi-mainline.svg" width="96%" alt="BeforeRSI research spine">
 </div>
 
-The central empirical target is stronger than task performance:
+The central empirical target is stronger than task performance and than the
+structural recursive reuse that some papers call RSI:
 
 $$
 S_t \xrightarrow{\text{self-modification}} S_{t+1}
@@ -67,7 +70,7 @@ order effect; these are bounded numerical experiments, not LLM training runs.
 
 ## From representation to explanation
 
-[MECHANISMS.md](MECHANISMS.md) derives how proposal distributions, diagnostic feedback, selection, inheritance, task transfer and continuation interact. It connects representative primary-source methods and ablations to distinct predictions, with a [67-work mechanism map](research/mechanism-map.md).
+[MECHANISMS.md](MECHANISMS.md) derives how proposal distributions, diagnostic feedback, selection, inheritance, task transfer and continuation interact. It connects representative primary-source methods and ablations to distinct predictions, with a [123-entry mechanism map](research/mechanism-map.md). Scope labels and exact reading boundaries are separate from explanatory interpretations.
 
 The resulting route learns reusable research operations while preserving their decision inputs. It selects training sources by downstream update value, instead of assuming the best executing harness is the best teacher. [Experiment 007](experiments/007-feedback-structure/RESULTS.md) executes a controlled information-localization construction; it is not an LLM reproduction.
 
@@ -98,7 +101,7 @@ The history of self-improving AI is easiest to understand as five streams that n
 | **External cognition** | memory, tools, skills, context, agent control, harnesses | where durable capability should live and whether harness gains transfer across models |
 | **Verification** | exact checks, learned judges, hidden tasks, selection under uncertainty | how to prevent benchmark fitting, evaluator exploitation, and metric drift |
 
-The mainline is **the production and reuse of improvements across the AI research process**. Model–harness co-evolution, learned feedback, generated curricula, learning-algorithm design and computational infrastructure are candidate feedback paths. Each needs its own supported mechanism and conditions; none is a universal default architecture.
+The mainline is **AI improving its learning and development processes, with the result reused in subsequent improvement**. Self-editing improvers, learned training interventions, co-evolving curricula/evaluators/environments and model–harness compatibility are the main comparisons. General AI4Science and ordinary foundation-model reports remain background unless a specific feedback path justifies inclusion.
 
 Read the full historical and causal map in **[MAP.md](MAP.md)**.
 
@@ -220,7 +223,9 @@ Generality requires mechanism coverage and testable predictions across methods. 
 | **[FRONTIER_COVERAGE.md](FRONTIER_COVERAGE.md)** | major-lab mechanisms, substantive omissions, source limits and the revised research scope |
 | **[SEARCH.md](SEARCH.md)** | search-effort objectives, complete-computation preservation, and the executable learning loop |
 | **[THEORY.md](THEORY.md)** | implementation boundaries, common-target improvement tests, coupling, and mathematical counterexamples |
-| **[COMPATIBILITY.md](COMPATIBILITY.md)** | per-work representation of all 67 catalog entries and limits of universality claims |
+| **[RSI_SCOPE.md](RSI_SCOPE.md)** | Chinese scope correction, filtering results, key evidence and research consequences |
+| **[research/scope-catalog.md](research/scope-catalog.md)** | all 123 entries separated by relevance, plus deferred/excluded candidates |
+| **[COMPATIBILITY.md](COMPATIBILITY.md)** | per-work representation of all 123 catalog entries and limits of universality claims |
 | **[MECHANISMS.md](MECHANISMS.md)** | conditional explanations, derivations, interventions and learner-aware research route |
 | **[research/mechanism-map.md](research/mechanism-map.md)** | causal operation, failure condition and separating intervention for every corpus entry |
 | **[MAP.md](MAP.md)** | history, causal structure, knowledge tree and present frontier |

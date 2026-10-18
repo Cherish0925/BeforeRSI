@@ -752,6 +752,404 @@
         "improvement-kernel",
         "resource-normalized-dynamics"
       ]
+    },
+    {
+      "work_id": "sol-pi",
+      "node_ids": [
+        "harness-evolution",
+        "executable-self-modification"
+      ]
+    },
+    {
+      "work_id": "modular-rsi",
+      "node_ids": [
+        "harness-evolution",
+        "executable-self-modification"
+      ]
+    },
+    {
+      "work_id": "prime-agent",
+      "node_ids": [
+        "external-cognition",
+        "harness-evolution"
+      ]
+    },
+    {
+      "work_id": "red-queen-godel-machine",
+      "node_ids": [
+        "verification",
+        "evaluator-fidelity",
+        "self-generated-experience"
+      ]
+    },
+    {
+      "work_id": "dr-zero",
+      "node_ids": [
+        "self-generated-experience",
+        "model-update"
+      ]
+    },
+    {
+      "work_id": "skill-self-play",
+      "node_ids": [
+        "self-generated-experience",
+        "model-update"
+      ]
+    },
+    {
+      "work_id": "rlanything",
+      "node_ids": [
+        "environment-agent-coevolution",
+        "self-generated-experience"
+      ]
+    },
+    {
+      "work_id": "agent0",
+      "node_ids": [
+        "self-generated-experience",
+        "model-update"
+      ]
+    },
+    {
+      "work_id": "r-zero",
+      "node_ids": [
+        "self-generated-experience",
+        "model-update"
+      ]
+    },
+    {
+      "work_id": "absolute-zero",
+      "node_ids": [
+        "self-generated-experience",
+        "model-update"
+      ]
+    },
+    {
+      "work_id": "tool-r0",
+      "node_ids": [
+        "self-generated-experience",
+        "model-update"
+      ]
+    },
+    {
+      "work_id": "evotrainer",
+      "node_ids": [
+        "improver-improvement",
+        "model-update"
+      ]
+    },
+    {
+      "work_id": "autoscientists",
+      "node_ids": [
+        "improvement-kernel",
+        "improvement-efficiency"
+      ]
+    },
+    {
+      "work_id": "derl",
+      "node_ids": [
+        "improver-improvement",
+        "model-update"
+      ]
+    },
+    {
+      "work_id": "gear",
+      "node_ids": [
+        "improvement-kernel",
+        "improvement-efficiency"
+      ]
+    },
+    {
+      "work_id": "execution-grounded-research",
+      "node_ids": [
+        "improvement-kernel",
+        "improvement-efficiency"
+      ]
+    },
+    {
+      "work_id": "meta-n",
+      "node_ids": [
+        "harness-evolution",
+        "executable-self-modification"
+      ]
+    },
+    {
+      "work_id": "self-harness",
+      "node_ids": [
+        "harness-evolution",
+        "executable-self-modification"
+      ]
+    },
+    {
+      "work_id": "harness-zero",
+      "node_ids": [
+        "model-harness-coevolution",
+        "externalize-internalize"
+      ]
+    },
+    {
+      "work_id": "harness-r1",
+      "node_ids": [
+        "improver-improvement",
+        "model-update"
+      ]
+    },
+    {
+      "work_id": "skillrl",
+      "node_ids": [
+        "external-cognition",
+        "harness-evolution"
+      ]
+    },
+    {
+      "work_id": "skillopt",
+      "node_ids": [
+        "external-cognition",
+        "harness-evolution"
+      ]
+    },
+    {
+      "work_id": "mem2evolve",
+      "node_ids": [
+        "external-cognition",
+        "harness-evolution"
+      ]
+    },
+    {
+      "work_id": "memskill",
+      "node_ids": [
+        "external-cognition",
+        "harness-evolution"
+      ]
+    },
+    {
+      "work_id": "memrl",
+      "node_ids": [
+        "external-cognition",
+        "harness-evolution"
+      ]
+    },
+    {
+      "work_id": "evods",
+      "node_ids": [
+        "external-cognition",
+        "harness-evolution"
+      ]
+    },
+    {
+      "work_id": "on-policy-harness-coevolution",
+      "node_ids": [
+        "model-harness-coevolution",
+        "externalize-internalize"
+      ]
+    },
+    {
+      "work_id": "taolive-hat",
+      "node_ids": [
+        "model-harness-coevolution",
+        "externalize-internalize"
+      ]
+    },
+    {
+      "work_id": "rewardharness",
+      "node_ids": [
+        "verification",
+        "evaluator-fidelity",
+        "self-generated-experience"
+      ]
+    },
+    {
+      "work_id": "webevolver",
+      "node_ids": [
+        "environment-agent-coevolution",
+        "self-generated-experience"
+      ]
+    },
+    {
+      "work_id": "webrl",
+      "node_ids": [
+        "self-generated-experience",
+        "model-update"
+      ]
+    },
+    {
+      "work_id": "rstar-math",
+      "node_ids": [
+        "verification",
+        "evaluator-fidelity",
+        "self-generated-experience"
+      ]
+    },
+    {
+      "work_id": "self-evolved-reward",
+      "node_ids": [
+        "verification",
+        "evaluator-fidelity",
+        "self-generated-experience"
+      ]
+    },
+    {
+      "work_id": "self-evolving-curriculum",
+      "node_ids": [
+        "self-generated-experience",
+        "model-update"
+      ]
+    },
+    {
+      "work_id": "skillweaver",
+      "node_ids": [
+        "external-cognition",
+        "harness-evolution"
+      ]
+    },
+    {
+      "work_id": "live-swe-agent",
+      "node_ids": [
+        "harness-evolution",
+        "executable-self-modification"
+      ]
+    },
+    {
+      "work_id": "group-evolving-agents",
+      "node_ids": [
+        "harness-evolution",
+        "executable-self-modification"
+      ]
+    },
+    {
+      "work_id": "adaptive-auto-harness",
+      "node_ids": [
+        "harness-evolution",
+        "executable-self-modification"
+      ]
+    },
+    {
+      "work_id": "continual-harness",
+      "node_ids": [
+        "external-cognition",
+        "harness-evolution"
+      ]
+    },
+    {
+      "work_id": "envharness",
+      "node_ids": [
+        "environment-agent-coevolution",
+        "self-generated-experience"
+      ]
+    },
+    {
+      "work_id": "aira-design",
+      "node_ids": [
+        "improvement-kernel",
+        "improvement-efficiency"
+      ]
+    },
+    {
+      "work_id": "ai4ai-bench",
+      "node_ids": [
+        "improvement-kernel",
+        "improvement-efficiency"
+      ]
+    },
+    {
+      "work_id": "generalized-agent-iteration",
+      "node_ids": [
+        "formal-rsi",
+        "system-state"
+      ]
+    },
+    {
+      "work_id": "aspire",
+      "node_ids": [
+        "verification",
+        "protected-acceptance"
+      ]
+    },
+    {
+      "work_id": "faithful-self-evolvers",
+      "node_ids": [
+        "verification",
+        "protected-acceptance"
+      ]
+    },
+    {
+      "work_id": "shinkaevolve",
+      "node_ids": [
+        "improvement-kernel",
+        "improvement-efficiency"
+      ]
+    },
+    {
+      "work_id": "coverrl",
+      "node_ids": [
+        "verification",
+        "evaluator-fidelity",
+        "self-generated-experience"
+      ]
+    },
+    {
+      "work_id": "actor-curator",
+      "node_ids": [
+        "self-generated-experience",
+        "model-update"
+      ]
+    },
+    {
+      "work_id": "agent-world",
+      "node_ids": [
+        "environment-agent-coevolution",
+        "self-generated-experience"
+      ]
+    },
+    {
+      "work_id": "skillos",
+      "node_ids": [
+        "improver-improvement",
+        "model-update"
+      ]
+    },
+    {
+      "work_id": "socratic-swe",
+      "node_ids": [
+        "self-generated-experience",
+        "model-update"
+      ]
+    },
+    {
+      "work_id": "voyager",
+      "node_ids": [
+        "external-cognition",
+        "harness-evolution"
+      ]
+    },
+    {
+      "work_id": "agentevolver",
+      "node_ids": [
+        "self-generated-experience",
+        "model-update"
+      ]
+    },
+    {
+      "work_id": "metaevolve",
+      "node_ids": [
+        "improver-improvement",
+        "model-update"
+      ]
+    },
+    {
+      "work_id": "seed-distillation",
+      "node_ids": [
+        "model-harness-coevolution",
+        "externalize-internalize"
+      ]
+    },
+    {
+      "work_id": "rl-tango",
+      "node_ids": [
+        "verification",
+        "evaluator-fidelity",
+        "self-generated-experience"
+      ]
     }
   ]
 }

@@ -2,6 +2,8 @@
 
 This document separates scientific value from the label attached to a project. A work can be useful without being RSI. A work can also contain a genuine result while making a broader claim than its evidence supports.
 
+The current catalog separates relevance from demonstrated recursion. See [RSI_SCOPE.md](RSI_SCOPE.md): 63 direct self-evolution studies, 30 enablers, 7 evaluations, 3 theories, 14 foundations and 6 background entries. A primary abstract screen is not a full quality review.
+
 ## 1. The evidence test
 
 For a claimed update $S_t\rightarrow S_{t+1}$, ask seven questions:
@@ -359,3 +361,68 @@ The 14 additions below correct important omissions; they do not establish exhaus
 | [Seed for Seed (Seed2.1)](https://seed.bytedance.com/en/blog/seed2-1-officially-released-advancing-ai-productivity) | Officially reported agent participation in evaluation, data synthesis, RL infrastructure and research implementation. | Industrial model-development workflow; matched no-agent and repeated-generation resources not disclosed on the source page. | A deployment report supports use in AI development, not an identified causal multiplier or autonomous closed-loop growth. |
 
 The added sources support concrete mechanism and deployment claims, not a common quantitative growth law. Exact per-source reading boundaries are recorded in data/mechanisms.json.
+
+<!-- scope-expansion -->
+## Scope-focused expansion: 56 primary-source screens
+
+The operation column paraphrases author reports. Scope, limits and counterfactuals are our judgments. These entries have not been independently reproduced. Ten have selected primary sections read; the other 46 remain abstract-level screens. Full GPU/API cost accounting is not inferred where it is absent from the inspected passage.
+Read RSI_SCOPE.md and research/scope-catalog.md before interpreting the corpus count as a count of RSI systems.
+
+| Work | Reported changed operation | Tasks / resource boundary | Scope / limitation |
+|---|---|---|---|
+| [SoL-Pi: Recursively Scaling Auto-Research Loops for Efficient Agent Harness](https://arxiv.org/abs/2609.20519) | 从多环境轨迹搜索并整合执行、压缩和观察处理机制。 | EdgeBench、Terminal-Bench、IMO；报告 token/API 成本，完整搜索成本比较未建立。 | 直接支撑的 AI4AI/学习机制：论文把用新 harness 加速后继研发列为未来方向；成本下降不是已测递归复利。 |
+| [ModularRSI: Modular and Generalizable Recursive Harness Self-Improvement](https://arxiv.org/abs/2609.14857) | 当前智能体分析成功/失败对照轨迹并修改自身模块，再整合模块。 | 2000 个与评测基准分离的进化任务；TB2.0、SWE-bench Verified。 | 直接自进化研究：模块独立优化后存在交互；跨模型迁移不等于改进能力持续提升。 |
+| [Prime Agent: A Self-Improving RLM Harness](https://arxiv.org/abs/2608.23552) | 长期 REPL 与持久经验支撑跨轨迹策略修订和技能使用。 | 长上下文编码、kernel、nanoGPT、Factorio；摘要未给统一研发预算。 | 直接自进化研究：递归子代理调用本身不是 RSI；摘要没有隔离后继作为改进者的贡献。 |
+| [The Red Queen Gödel Machine: Co-Evolving Agents and Their Evaluators](https://arxiv.org/abs/2606.26294) | 共同进化任务代理与评价器，替换评价器后重估档案。 | DeepSWE、论文写作、IMO；有搜索 token 计数与固定评价器对照。 | 直接自进化研究：IMO 人工评分等外部锚点仍必要；论文写作的代理评分不能等同真实科研质量。 |
+| [Dr. Zero: Self-Evolving Search Agents without Training Data](https://arxiv.org/abs/2601.07055) | 出题者按当前求解者能力生成问题，双方交替学习。 | 多跳问答；相同底座初始化双方，HRPO 减少出题奖励估计开销。 | 直接自进化研究：零人工 QA 训练样本不等于零外部知识；仍依赖预训练和搜索引擎。 |
+| [Skill Self-Play: Pushing the Frontier of LLM Capability with Co-Evolving Skills](https://arxiv.org/abs/2607.22529) | 技能提供任务生成结构与验证程序，双方策略和技能库共同更新。 | 工具调用与推理；论文给出冻结组件消融，不提供无限任务空间保证。 | 直接自进化研究：可执行验证与技能覆盖仍有边界，能力前沿难度代理不等于真实长期学习增益。 |
+| [RLAnything: Forge Environment, Policy, and Reward Model in Completely Dynamic RL System](https://arxiv.org/abs/2602.02488) | 策略、奖励模型和任务难度通过反馈共同调整。 | OSWorld、ALFWorld、编码；方法给出模型、rollout 数及 ID/OOD 划分。 | 直接自进化研究：环境变化并非任意世界创造；GUI 部分依赖预建扰动及其验证器。 |
+| [Agent0: Unleashing Self-Evolving Agents from Zero Data via Tool-Integrated Reasoning](https://arxiv.org/abs/2511.16043) | 工具增强执行者与课程代理共同生成下一轮训练任务。 | Qwen3-8B；数学与通用推理，摘要未给总训练算力。 | 直接自进化研究：工具与预训练提供外部能力；多轮共同训练不证明通用研发递归。 |
+| [R-Zero: Self-Evolving Reasoning LLM from Zero Data](https://arxiv.org/abs/2508.05004) | 挑战者寻找求解者能力边缘任务，求解者训练后改变出题反馈。 | 多底座数学/通用推理；摘要报告 Qwen3-4B 示例，预算待全文核查。 | 直接自进化研究：自生成题目和标签可能共同偏误，不能由内部奖励证明正确性。 |
+| [Absolute Zero: Reinforced Self-play Reasoning with Zero Data](https://arxiv.org/abs/2505.03335) | 同一模型生成训练任务并求解，代码执行提供验证反馈。 | 代码与数学、多模型尺度；摘要未提取总训练成本。 | 直接自进化研究：无需新人工数据仍依赖预训练、执行语义和初始任务表达范围。 |
+| [Tool-R0: Self-Evolving LLM Agents for Tool-Learning from Zero Data](https://arxiv.org/abs/2602.21320) | 生成器针对工具求解者的能力边界构造任务，真实工具调用反馈训练双方。 | 多个工具使用基准；零预置任务不等于无预训练先验。 | 直接自进化研究：工具接口和答案校验限定可学空间；不能把相对增幅当跨基准绝对优势。 |
+| [EvoTrainer: Co-Evolving LLM Policies and Training Harnesses for Autonomous Agentic Reinforcement Learning](https://arxiv.org/abs/2606.03108) | 训练代理修改诊断、训练信号和流程，保留技能供后续训练版本使用。 | 数学、竞赛代码、SWE；同数据/代码/评测，附录讨论搜索与推理预算。 | 直接自进化研究：基础训练代理权重固定且昂贵动作有人类把关；不支持完全无人递归。 |
+| [AutoScientists: Self-Organizing Agent Teams for Long-Running Scientific Experimentation](https://arxiv.org/abs/2605.28655) | 去中心化团队共享成功和失败的实验知识，搜索目标模型训练改进。 | BioML、GPT 训练、ProteinGym；保留 GPT 训练分支及其预算对照价值。 | 直接支撑的 AI4AI/学习机制：生物研究部分不是本项目核心；目标 GPT 训练优化不证明研究代理自我升级。 |
+| [Dual-Evolving Reinforcement Learning for Automated Reward Design](https://arxiv.org/abs/2512.13399) | 奖励设计者根据内层策略训练后的验证表现学习更好的奖励提案。 | ALFWorld、ScienceWorld、GSM8K、MATH；8:2 内层/验证划分和独立测试。 | 直接自进化研究：奖励原语由人指定；最终策略重新训练，不能描述成同一策略连续自改。 |
+| [GEAR: Genetic AutoResearch for Agentic Code Evolution](https://arxiv.org/abs/2605.13874) | 维护研究状态种群并交叉重组；其中一个变体允许搜索控制器演化。 | 同环境和算力的 AutoResearch 对照；摘要未给完整预算数值。 | 直接自进化研究：固定控制器的另外两个变体不是改进器自修改，不能合并宣称递归。 |
+| [Towards Execution-Grounded Automated AI Research](https://arxiv.org/abs/2601.14525) | 执行预训练/后训练研究方案，用结果做演化搜索或训练构思模型。 | LLM 预训练与后训练；报告十轮搜索和 RL 负面结果。 | 直接支撑的 AI4AI/学习机制：RL 平均奖励上升同时出现模式坍缩，上限改善未建立；并未训练自身后继。 |
+| [Meta$^n$: Recursive Self-Improvement through Emergent Depth](https://arxiv.org/abs/2608.24735) | 固定元操作反复读取已有代码与轨迹，生成后续策略层及工具。 | 两个底座、八类基准；摘要未给完整成本及独立复现。 | 直接自进化研究：固定元操作不自动保证整体稳定；层数与真实改进效率不可混同。 |
+| [Self-Harness: Harnesses That Improve Themselves](https://arxiv.org/abs/2606.09498) | 代理从自身失败中挖掘弱点、提出最小修改并经回归测试保留。 | 三模型×TB2.0/SWE-bench Verified/AppWorld，含 held-in/held-out。 | 直接自进化研究：自己提出修改不自动证明后继更会修改；同基准划分与跨领域迁移不同。 |
+| [Harness-Zero: Harness Distillation via Agent-as-Harness](https://arxiv.org/abs/2609.24974) | harnessing agent 把复杂 harness 指导转换为目标动作空间的训练示范。 | 知识工作、工具使用、科学任务；摘要未给全部数据生成与训练成本。 | 直接支撑的 AI4AI/学习机制：展示内化与部署收益，未据摘要证明多代改进器闭环。 |
+| [Harness-R1: Learning to Edit Executable Runtime Harnesses from Agent Failure Trajectories](https://arxiv.org/abs/2608.02276) | 用目标代理重跑后的任务成功训练专门的 harness 编辑模型。 | 9B 编辑者；WebShop、ALFWorld、DBBench，另测目标微调后增益。 | 直接支撑的 AI4AI/学习机制：主训练只更新编辑者、目标冻结；论文指向共同进化，未证明持续双向循环。 |
+| [SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning](https://arxiv.org/abs/2602.08234) | 从经验提炼分层技能，并让技能库与 RL 策略共同更新。 | ALFWorld、WebShop、七个搜索增强任务；摘要未给总训练成本。 | 直接自进化研究：技能压缩可能丢失适用条件，特定基准增益不证明通用递归能力。 |
+| [SkillOpt: Executive Strategy for Self-Evolving Agent Skills](https://arxiv.org/abs/2605.23904) | 外部优化模型把评分轨迹变成受限文本编辑，验证后保留技能。 | 六基准、七目标模型、三 harness；52 个评测组合和迁移报告。 | 直接支撑的 AI4AI/学习机制：外部技能优化与优化器自改不同；重复验证选择仍需最终未触碰测试。 |
+| [Mem$^2$Evolve: Towards Self-Evolving Agents via Co-Evolutionary Capability Expansion and Experience Distillation](https://arxiv.org/abs/2604.10923) | 经验指导创建工具/专家资产，新资产反过来产生后续经验。 | 六类任务、八基准；摘要给隔离经验与资产的对照。 | 直接自进化研究：资产增加不保证改进速度上升，组合依赖和维护成本尚须控制。 |
+| [MemSkill: Learning and Evolving Memory Skills for Self-Evolving Agents](https://arxiv.org/abs/2602.02474) | 控制器学习选择记忆技能，设计者根据难例周期性修订技能集。 | LoCoMo、LongMemEval、HotpotQA、ALFWorld；预算未从摘要提取。 | 直接自进化研究：设计者本身是否改进未确定；技能选择和技能生成的贡献需分离。 |
+| [MemRL: Self-Evolving Agents via Runtime Reinforcement Learning on Episodic Memory](https://arxiv.org/abs/2601.03192) | 固定推理模型通过环境反馈更新经验检索效用。 | HLE、BigCodeBench、ALFWorld、Lifelong Agent Bench；无权重更新。 | 直接支撑的 AI4AI/学习机制：持久记忆学习成立不等于记忆更新规则或改进能力已自进化。 |
+| [EvoDS: Self-Evolving Autonomous Data Science Agent with Skill Learning and Context Management](https://arxiv.org/abs/2606.03841) | 学习生成可复用执行技能，并把上下文压缩作为训练控制策略。 | 四类数据科学基准、两阶段多代理训练；完整算力待核。 | 直接自进化研究：数据科学成绩与生成后继研究者能力不同；摘要定理不能代替逐项假设核查。 |
+| [Co-Evolving Harnesses and Models: On-Policy Correction Helps Weaker Models Catch Up Where Imitation Fails](https://arxiv.org/abs/2609.09134) | 先适配 harness，再在学生自身轨迹的失败位置提供专家局部纠正。 | 七企业任务，Qwen/Gemma LoRA，H100/H200，三次测试均值。 | 直接自进化研究：整轨迹模仿在已进化 harness 上退化；局部纠正平均增益有限，不是普遍最优。 |
+| [Training Agents to Evolve with Their Harness: TaoLive Digital Avatar Agent Technical Report](https://arxiv.org/abs/2608.15763) | 用多种 harness 状态增强训练，使紧凑模型适应独立变化的运行框架。 | 淘宝直播部署；四评测集、单 H20 延迟和线上 A/B 报告。 | 直接支撑的 AI4AI/学习机制：兼容变化中的 harness 不等于 AI 自己设计或进化该 harness。 |
+| [RewardHarness: Self-Evolving Agentic Post-Training](https://arxiv.org/abs/2605.08703) | 奖励代理依据偏好误差修订工具/技能库，再提供模型后训练奖励。 | 图像编辑偏好，100 示范，后接 FlowGRPO；非纯 LLM 输出领域。 | 直接自进化研究：初始人类偏好是锚点；奖励器自改与被训练模型回馈奖励器须区分。 |
+| [WebEvolver: Enhancing Web Agent Self-Improvement with Coevolving World Model](https://arxiv.org/abs/2504.21024) | 网页世界模型生成训练交互并帮助规划，与网页代理共同进化。 | Mind2Web-Live、WebVoyager、GAIA-web；不使用更强闭源模型蒸馏。 | 直接自进化研究：模型想象会积累偏差，真实网页验证不能由世界模型自身评分替代。 |
+| [WebRL: Training LLM Web Agents via Self-Evolving Online Curriculum Reinforcement Learning](https://arxiv.org/abs/2411.02337) | 用失败生成新课程，配合结果奖励与策略漂移控制进行在线训练。 | Llama/GLM，WebArena-Lite；摘要未提取全部训练开销。 | 直接自进化研究：课程反馈闭环不同于训练算法自改；目标领域仍限定在网页任务。 |
+| [rStar-Math: Small LLMs Can Master Math Reasoning with Self-Evolved Deep Thinking](https://arxiv.org/abs/2501.04519) | 搜索轨迹训练策略和过程偏好模型，两者四轮共同更新。 | 747k 数学题、百万合成解、四轮；Qwen/Phi 两底座。 | 直接自进化研究：外部题库与执行验证仍支撑学习；数学域共同进化不是开放科研闭环。 |
+| [Self-Evolved Reward Learning for LLMs](https://arxiv.org/abs/2411.00418) | 奖励模型生成训练反馈，迭代训练自己的评价能力。 | HH-RLHF、UltraFeedback，Mistral/Llama；总预算待全文核查。 | 直接自进化研究：有限人工标注和预训练仍是信息锚点；自反馈可能积累偏差。 |
+| [Self-Evolving Curriculum for LLM Reasoning](https://arxiv.org/abs/2505.14970) | 以估计学习收益更新非平稳 bandit 课程策略，配合模型 RL。 | 规划、归纳、数学；题目类别作为 bandit 臂。 | 直接支撑的 AI4AI/学习机制：固定课程更新律是自适应训练，不自动构成改进器递归重写。 |
+| [SkillWeaver: Web Agents can Self-Improve by Discovering and Honing Skills](https://arxiv.org/abs/2504.07079) | 网页代理探索、练习并封装 API，复用新技能继续积累能力。 | WebArena 与真实网站，另报告向弱模型迁移。 | 直接自进化研究：技能积累和任务迁移不等于技能发现过程效率持续上升。 |
+| [Live-SWE-agent: Can Software Engineering Agents Self-Evolve on the Fly?](https://arxiv.org/abs/2511.13646) | 代理在解决软件任务时修改自身运行 scaffold。 | SWE-bench Verified、SWE-bench Pro；摘要未给持续代际对照。 | 直接自进化研究：同任务内自改与跨任务继承是不同证据，不能从 solve rate 推出代际增长。 |
+| [Group-Evolving Agents: Open-Ended Self-Improvement via Experience Sharing](https://arxiv.org/abs/2602.04837) | 智能体群共享不同进化分支的经验来指导后续结构修改。 | SWE-bench Verified、Polyglot，报告跨模型迁移与错误修复。 | 直接自进化研究：同进化个体数不保证同算力；探索多样性的价值需与开销分开。 |
+| [Adaptive Auto-Harness: Sustained Self-Improvement for Agentic System Deployment on Open-Ended Task Streams](https://arxiv.org/abs/2606.01770) | 任务流驱动持续构建不同 harness，并按任务路由及保留演化经验。 | 预测市场、安全竞赛、事件预测任务流；摘要未给统一完整成本。 | 直接自进化研究：部分信号来自人类引导；路由收益不等于改进器变强。 |
+| [Continual Harness: Online Adaptation for Self-Improving Foundation Agents](https://arxiv.org/abs/2605.09998) | 代理在持续交互中交替行动并修订持久技能、提示和记忆。 | 具身长期任务/游戏；摘要报告 reset-free 流程，完整预算待核。 | 直接自进化研究：早期 GPP 人类参与与后续自动循环必须分开，游戏进度不直接代表通用研发能力。 |
+| [EnvHarness: Awakening Static Worlds for Agent Learning](https://arxiv.org/abs/2608.19880) | 根据代理失败生成环境包装组件，保留原验证器并训练策略。 | 四领域五基准；报告独立实例泛化与执行步数。 | 直接自进化研究：环境包装保留验证器是特定设计，不保证所有新任务忠实有效。 |
+| [Agentic Discovery of Neural Architectures: AIRA-Compose and AIRA-Design](https://arxiv.org/abs/2605.15871) | 研究代理设计计算原语和架构，并将候选扩展到较大模型训练。 | 24 小时搜索，候选扩展至350M/1B/3B；有1B预训练结果。 | 直接支撑的 AI4AI/学习机制：发现目标模型架构不等于将目标用作下一代设计者。 |
+| [AI4AI-Bench: Benchmarking LLM Agents in Algorithmic Design for Recursive Self-Improvement](https://arxiv.org/abs/2608.20318) | 隔离训练算法修改，用隐藏评估器重训提交代码。 | 10 冻结仓库；1 B300 搜索4小时，重训至12小时。 | 评测与反例：它测研发能力而非运行多代 RSI，归一化分数仍依赖所选任务和参照。 |
+| [Generalized Agent Iteration: One Formal Framework for Iterative Policy Improvement and Recursive Self-Improvement](https://arxiv.org/abs/2609.13406) | 统一描述策略、评价、修改机制及评价基准是否属于可修改系统。 | 形式框架，非大规模训练实验；已选读定义和边界。 | RSI 理论：属于可重写组件不等于实际发生有效重写；表示统一不是经验泛化定律。 |
+| [Aspire: Can Models Self-Evolve from Vague Goals?](https://arxiv.org/abs/2608.31111) | 让代理从模糊目标自行选数据和更新方式，再用隐藏专家任务评价。 | 六目标、520隐藏条目，支持权重与harness修改；预算待全文核查。 | 评测与反例：完成训练或编辑流程不等于提高能力；报告中增益稀疏且不稳定。 |
+| [Large Language Model Agents Are Not Always Faithful Self-Evolvers](https://arxiv.org/abs/2601.22436) | 干预原始和压缩经验，检查代理决策是否真正依赖积累经验。 | 四框架、13底座、九环境；原始摘要与实验范围已核。 | 评测与反例：对经验不敏感可来自已有知识或压缩丢失，不能一概判为无学习。 |
+| [ShinkaEvolve: Towards Open-Ended And Sample-Efficient Program Evolution](https://arxiv.org/abs/2509.19349) | 通过多样性、父代选择与模型组合提高程序演化样本效率。 | 包含 agent harness 与 MoE 损失发现，也有一般算法任务。 | 直接支撑的 AI4AI/学习机制：只有目标涉及 AI 训练/harness 时属直接 AI4AI；普通圆堆积不算自身进化。 |
+| [CoVerRL: Breaking the Consensus Trap in Label-Free Reasoning via Generator-Verifier Co-Evolution](https://arxiv.org/abs/2603.17775) | 同一模型交替学习生成与验证，以验证反馈过滤自一致错误。 | Qwen/Llama 数学推理；标签自由训练中的共识陷阱。 | 直接自进化研究：多数投票仍提供噪声标签，摆脱部分共识错误不保证无锚点真理发现。 |
+| [Actor-Curator: Co-adaptive Curriculum Learning via Policy-Improvement Bandits for RL Post-Training](https://arxiv.org/abs/2602.20532) | 神经课程选择器直接学习预计策略提升，适配非平稳题库采样。 | 推理后训练；bandit 目标与遗憾界，假设未完整审阅。 | 直接支撑的 AI4AI/学习机制：课程控制器的学习不同于其自身更新算法被改进。 |
+| [Agent-World: Scaling Real-World Environment Synthesis for Evolving General Agent Intelligence](https://arxiv.org/abs/2604.18292) | 探索真实工具生态并生成可验证任务，按能力缺口持续训练。 | 23个 agent 基准、8B/14B；预印本标注进行中。 | 直接自进化研究：MCP 环境主题多不等于未见世界泛化，生成器和验证器来源需全文核查。 |
+| [SkillOS: Learning Skill Curation for Self-Evolving Agents](https://arxiv.org/abs/2605.06614) | 用较晚关联任务的表现训练技能整理者，执行者保持冻结。 | 任务流中的延迟反馈，多轮 agent 与单轮推理；成本待核。 | 直接支撑的 AI4AI/学习机制：改善技能整理者是有价值的 AI4AI，但其更新流程未被自身改写。 |
+| [Socratic-SWE: Self-Evolving Coding Agents via Trace-Derived Agent Skills](https://arxiv.org/abs/2606.07412) | 从解题轨迹提取技能生成下一轮修复任务，执行验证后更新求解者。 | 四个 SWE/Terminal 基准；摘要报告三轮和相同算力对照。 | 直接自进化研究：梯度对齐作为学习价值代理需检验；软件领域闭环未推出通用科研提升。 |
+| [Voyager: An Open-Ended Embodied Agent with Large Language Models](https://arxiv.org/abs/2305.16291) | 在 Minecraft 中创建并复用可组合代码技能继续探索。 | Minecraft 新世界迁移；黑盒模型，无参数微调。 | 直接自进化研究：固定 GPT-4 与课程程序；技能复用不是已证元算法自改。 |
+| [AgentEvolver: Towards Efficient Self-Evolving Agent System](https://arxiv.org/abs/2511.10395) | 自提问、自导航与贡献归因让环境经验进入后续 agent 训练。 | 多环境自主学习；原摘要为初步实验描述，完整算力待核。 | 直接自进化研究：训练闭环的元过程仍有固定部分；高效率需全流程成本而非仅样本数。 |
+| [Teaching LLMs to Self-Evolve: Cultivating Core Meta-Skills with Reinforcement Learning](https://arxiv.org/abs/2607.21971) | 用执行反馈训练多轮反思与修订能力，部署时进行演化搜索。 | 七编码基准及域外算法优化；初筛未提取总训练成本。 | 直接支撑的 AI4AI/学习机制：改进目标代码不等于目标本身是改进器；需实际闭环继承证据。 |
+| [SEED: Self-Evolving On-Policy Distillation for Agentic Reinforcement Learning](https://arxiv.org/abs/2607.14777) | 当前策略同时收集轨迹和提炼事后技能，技能诱导信号训练同一策略。 | 文本与视觉 agent 任务；联合结果 RL 和 token 级自蒸馏。 | 直接自进化研究：训练期事后信息在部署不可见；内化效果与信息泄漏边界需明确。 |
+| [RL Tango: Reinforcing Generator and Verifier Together for Language Reasoning](https://arxiv.org/abs/2505.15034) | 生成者与过程验证者交替用 RL 训练，外部结果正确性监督验证者。 | 7B/8B，五数学及四域外任务，另测 ProcessBench。 | 直接自进化研究：不是完全无标签自证；固定结果验证构成外部锚点。 |

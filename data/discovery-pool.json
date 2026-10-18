@@ -1,0 +1,3481 @@
+{
+  "retrieved": "2026-10-18",
+  "purpose": "Bibliographic leads only. Not all entries are RSI, relevant, high quality, or primary-source verified. README snapshots only, not complete repository databases.",
+  "sources": [
+    {
+      "url": "https://github.com/D2I-ai/awesome-recursive-self-improving-agents",
+      "snapshot_sha256": "20a60f210675a25a871d9e72f1a74386eb6f2bb83cec75548c11ba111f39fb91"
+    },
+    {
+      "url": "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents",
+      "snapshot_sha256": "1fb0a0d3bf604675312a9fbfb167146722da38c0a2114f272ac12269b22820ca"
+    },
+    {
+      "url": "https://github.com/FrontisAI/Awesome-Self-Improving-Agents",
+      "snapshot_sha256": "1946079b9e4b3c03ecbab0ed237f6495ebd171b5740ce74dfcc02652ec9ac957"
+    },
+    {
+      "url": "https://github.com/sukoji/awesome-self-evolving-agents",
+      "snapshot_sha256": "d81c7128ae76c963a5d1d4290adfeb9a8e94c92b0f47e0fbcfd52ce2d9746833"
+    }
+  ],
+  "entries": [
+    {
+      "arxiv_id": "2609.05677",
+      "source_urls": [
+        "https://github.com/FrontisAI/Awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2609.05019",
+      "source_urls": [
+        "https://github.com/FrontisAI/Awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2609.11873",
+      "source_urls": [
+        "https://github.com/FrontisAI/Awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2609.04697",
+      "source_urls": [
+        "https://github.com/FrontisAI/Awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2609.08944",
+      "source_urls": [
+        "https://github.com/FrontisAI/Awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2609.08228",
+      "source_urls": [
+        "https://github.com/FrontisAI/Awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2609.09646",
+      "source_urls": [
+        "https://github.com/FrontisAI/Awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2609.09153",
+      "source_urls": [
+        "https://github.com/FrontisAI/Awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2609.08183",
+      "source_urls": [
+        "https://github.com/FrontisAI/Awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2609.06396",
+      "source_urls": [
+        "https://github.com/FrontisAI/Awesome-Self-Improving-Agents",
+        "https://github.com/sukoji/awesome-self-evolving-agents",
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2609.04665",
+      "source_urls": [
+        "https://github.com/FrontisAI/Awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2609.08599",
+      "source_urls": [
+        "https://github.com/FrontisAI/Awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2609.04869",
+      "source_urls": [
+        "https://github.com/FrontisAI/Awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2609.08919",
+      "source_urls": [
+        "https://github.com/FrontisAI/Awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2609.08404",
+      "source_urls": [
+        "https://github.com/FrontisAI/Awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2609.11677",
+      "source_urls": [
+        "https://github.com/FrontisAI/Awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2609.04865",
+      "source_urls": [
+        "https://github.com/FrontisAI/Awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2609.11682",
+      "source_urls": [
+        "https://github.com/FrontisAI/Awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2609.09134",
+      "source_urls": [
+        "https://github.com/FrontisAI/Awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2609.08832",
+      "source_urls": [
+        "https://github.com/FrontisAI/Awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2507.21046",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2508.07407",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2501.07278",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2607.13104",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents",
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2601.12538",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2303.17651",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents",
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2303.11366",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents",
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2304.03442",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents",
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2310.08560",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2305.16291",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents",
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2310.03714",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2211.01910",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents",
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2309.03409",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents",
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2309.16797",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents",
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2406.07496",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents",
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2203.14465",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2310.02304",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2401.10020",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2402.16823",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents",
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2408.08435",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents",
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2410.10762",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2502.04180",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2410.06153",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2502.02533",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2410.11782",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2406.14228",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2309.17288",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2503.03686",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2504.15257",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2502.04306",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2507.22606",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2510.02669",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2603.22791",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2602.06511",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2509.11079",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2604.01658",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents",
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2608.09629",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2510.07841",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2607.21461",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2510.13220",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2504.07952",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents",
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2504.16084",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents",
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2601.15808",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2505.19590",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents",
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2601.21268",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2507.19457",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents",
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2510.04618",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents",
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2601.16175",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2305.10250",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents",
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2508.16153",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2509.04439",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2507.06229",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2601.08605",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2602.15902",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2606.04536",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents",
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2603.18620",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2512.24695",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2602.07755",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2610.11373",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents",
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2605.08703",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents",
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2508.19005",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2601.18226",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2606.06741",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents",
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2603.01145",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2604.17308",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2603.02766",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2602.08234",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2604.08377",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2603.16060",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2510.15863",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2509.18133",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2505.14970",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents",
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2608.20920",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents",
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2308.10144",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents",
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2605.06614",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2602.02474",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2512.17102",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2505.03335",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2508.05004",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents",
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2506.24119",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2511.16043",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents",
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2603.09206",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2509.15194",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2510.27072",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2602.21320",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents",
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2608.19197",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2605.09959",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2607.23802",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2601.07055",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2511.00602",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2608.03392",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2410.04444",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents",
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2505.14738",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2601.07348",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2510.06261",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2603.15707",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2505.22954",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents",
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2506.13131",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents",
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2506.03136",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2510.21614",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents",
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2511.02864",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2509.19349",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents",
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2609.19526",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2609.25510",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2511.13646",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents",
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2607.07663",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2609.13406",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2609.15802",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2609.00137",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2609.14858",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2609.14857",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2608.13951",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2608.24735",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents",
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2608.07645",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2606.26294",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents",
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents",
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2609.15364",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2607.28568",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2606.20657",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2605.27276",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2608.08466",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2605.15871",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents",
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2609.18094",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2603.19461",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents",
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2609.26457",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2604.05142",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2510.04399",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2510.10232",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2603.26499",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2606.20683",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2606.09498",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2608.07545",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2608.25593",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2608.02276",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents",
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2605.09998",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents",
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2606.01770",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents",
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2609.24972",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2609.20519",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2609.24974",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents",
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2609.26760",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2604.25850",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2608.10178",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2609.20804",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2607.12227",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2605.30621",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2607.13083",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2609.20474",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2609.18366",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2605.10663",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2411.00418",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents",
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2603.17621",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2408.02632",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2510.23595",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2504.00587",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2505.16997",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2604.18292",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents",
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2602.04837",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents",
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2603.16910",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2601.03192",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents",
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2402.17574",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2605.09315",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2607.00871",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2603.11768",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2605.18421",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2510.16079",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2605.23989",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2606.06114",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2606.21090",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2605.19576",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2503.13657",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2505.00212",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2509.06822",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2505.19234",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2508.19504",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2601.22290",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2604.08906",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2603.21522",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2608.15763",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2607.24300",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2608.18066",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2607.27687",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2606.08106",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2608.20290",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2608.00017",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2607.07436",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2606.14629",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2606.28374",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents",
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2605.20086",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2609.09219",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2608.14905",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2605.27905",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2601.22436",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2603.23994",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2603.24647",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2509.26354",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2602.03224",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2605.02900",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2601.13518",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2602.12430",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2309.15817",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2608.12851",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2609.00069",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2609.02246",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2606.23075",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2608.03509",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2608.25776",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2608.30429",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2609.17817",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2609.24130",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2604.16968",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2604.15774",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2602.15654",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2602.09877",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2603.25111",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2603.28650",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2604.24618",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2511.20857",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2505.11942",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2502.14499",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2601.22964",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2608.20318",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2607.25886",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2608.04003",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents",
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2606.04455",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2608.31100",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2608.31111",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2609.04280",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2608.09096",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2605.17373",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2609.24663",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2604.12290",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2604.02369",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2601.02371",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2507.21035",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2603.08127",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2603.28986",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2504.09855",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2505.23885",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2602.04411",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2604.07767",
+      "source_urls": [
+        "https://github.com/sukoji/awesome-self-evolving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2212.10560",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2210.11610",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2306.02707",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2310.00533",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2407.12874",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2505.03059",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2503.02103",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2503.12303",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2506.10055",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2504.21561",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2505.22660",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2501.00747",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2506.10943",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2505.22453",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2503.00735",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2411.04109",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2411.00412",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2505.21493",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2603.15255",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2606.01279",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2605.13803",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2212.08073",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2312.10003",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2502.11959",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2504.02902",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2506.02918",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2505.08827",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2504.05812",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2505.21444",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2505.24726",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2502.02534",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2601.07180",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2601.03193",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2606.14302",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2605.22905",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2306.11706",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2505.16410",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2503.23145",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2504.16078",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2506.11425",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2411.02337",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents",
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2507.14172",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2504.03160",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2505.01441",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2505.21496",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents",
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2504.20073",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2508.04700",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2601.02439",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2606.07412",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2606.07367",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents",
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2607.22529",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2609.04094",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2608.19880",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2609.39306",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2610.11384",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2305.10626",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2405.14205",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2410.13232",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2411.14499",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2506.01622",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2504.21024",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents",
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2507.04370",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2501.10116",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2511.09515",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2510.15047",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2601.00930",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2606.30639",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2506.23468",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2510.01183",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2602.11075",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2407.00247",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2409.15199",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2402.08702",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2501.01329",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2510.15260",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2606.04465",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2606.18902",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2302.02676",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2405.03845",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2405.17346",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2406.11695",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2410.02748",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2412.19684",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2605.16233",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2309.08532",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2304.12244",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2506.00178",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2510.18257",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2510.21148",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2305.03495",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2412.03624",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2406.16218",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2505.18524",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2506.00400",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2605.23904",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2606.05395",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2604.20714",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2604.00830",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2305.00833",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2402.09727",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2401.07339",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2402.04624",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2409.07429",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2509.25140",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2508.09736",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2509.22315",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2509.24704",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2502.00592",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2604.12231",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2606.02215",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2606.24177",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2207.07115",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2307.16449",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2312.03003",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2304.13343",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2507.22925",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2505.09081",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2504.19413",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2506.07398",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2501.13956",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2509.21212",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2503.19878",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2504.06135",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2505.23422",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2503.08026",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2605.13941",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2605.12061",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2604.19795",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2605.22721",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2605.17721",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2603.15421",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2509.09498",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2503.21760",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2502.12110",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2501.09136",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2506.06326",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2507.20215",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2601.21557",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2607.28048",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2605.08374",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2606.09483",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2604.21725",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2606.24151",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2604.10923",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2609.15457",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2403.00839",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2506.12508",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2508.00271",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2510.24663",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2507.21836",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2510.24284",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2510.05592",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2507.00487",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2506.01056",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2503.01940",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2507.21428",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2406.03807",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2511.01854",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2410.03439",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2504.01400",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2510.21618",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2511.05271",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2604.17091",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2507.02004",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2504.07079",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2507.07998",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2410.08197",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2412.14841",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2605.27366",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2605.25430",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2604.10846",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2305.17126",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2402.07456",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2505.20286",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2510.23601",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2502.11705",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2503.10071",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2509.05941",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2312.17294",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2606.03841",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2604.15082",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2604.01687",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2406.18532",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2601.04620",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2601.07477",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2601.01126",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2605.22794",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2608.05144",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2606.15874",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2608.08311",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2607.13285",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2608.23552",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2609.01437",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2609.05903",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2609.37968",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2609.35530",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2601.11100",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2605.29790",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2306.06070",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2410.06992",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2406.04151",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2508.18993",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2412.13178",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2503.23804",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2601.08613",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2410.10934",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2311.18760",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2310.03128",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2412.02883",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2511.13998",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2406.12373",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2405.20859",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2406.06613",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2402.12348",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2504.01848",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2605.08678",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2610.10388",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2404.07972",
+      "source_urls": [
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"
+      ]
+    },
+    {
+      "arxiv_id": "2605.08083",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2403.12014",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2602.06366",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2203.01302",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2402.03479",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2605.09423",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2511.03773",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2505.20347",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2509.21543",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2401.01335",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2407.10627",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2502.05605",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2502.05400",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2511.00091",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2512.05145",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2508.09586",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2604.17739",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2602.20532",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2511.19900",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2605.16299",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2602.11524",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2510.14253",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2606.29871",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2606.03239",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2606.21262",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2602.02709",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2601.21464",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2604.26687",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2603.17775",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2511.19399",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2510.08522",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2510.05943",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2601.06794",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2605.03871",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2604.14010",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2605.29847",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2606.23038",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2605.15224",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2511.23002",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2601.13060",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2506.06292",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2108.03645",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2605.04431",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2511.01758",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2602.02488",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2603.00724",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2602.10885",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2505.15034",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2501.04519",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2408.08586",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2605.10899",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2605.30888",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2606.04507",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2604.10674",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2604.07837",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2509.22558",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2605.18851",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2504.20157",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2606.29502",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2507.17515",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2604.07864",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2502.13138",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2605.05724",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2606.31551",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2410.14660",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2604.01210",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2406.08414",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2606.03073",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2310.12931",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2603.01712",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2406.10540",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2503.21807",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2605.29293",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2606.18388",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2606.06473",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2603.23951",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2406.01309",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2602.23876",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2604.28056",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2412.13492",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2605.02073",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2602.10226",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2605.15308",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2604.14116",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2605.28655",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2512.13399",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2606.03108",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2605.13874",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2601.14525",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    },
+    {
+      "arxiv_id": "2602.12063",
+      "source_urls": [
+        "https://github.com/D2I-ai/awesome-recursive-self-improving-agents"
+      ]
+    }
+  ]
+}
