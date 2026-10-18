@@ -1,5 +1,11 @@
 # The RSI map
 
+The [2026-10-18 frontier coverage review](FRONTIER_COVERAGE.md) expands the
+mainline from model–harness co-evolution to the production and reuse of
+improvements across AI development. Large-scale RL, learned evaluation,
+generated environments, research-method design and computational infrastructure
+are necessary branches. This map and its catalog are not an exhaustive survey.
+
 RSI has been obscured by mixing several different questions:
 
 - Can software rewrite itself?

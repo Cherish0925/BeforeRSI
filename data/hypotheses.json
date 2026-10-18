@@ -133,6 +133,17 @@
         "PROGRAM.md",
         "MECHANISMS.md"
       ]
+    },
+    {
+      "id": "research-production-prediction",
+      "status": "open",
+      "statement": "Experience generation, feedback quality, learning procedures and adopted resource/workflow changes add out-of-family predictive information about useful AI research output beyond solver scores and nominal compute.",
+      "decisive_test": "Fit shared mechanisms on one set of systems and predict withheld curriculum, opponent, feedback and infrastructure interventions with complete compute and human-input accounting.",
+      "files": [
+        "THEORY.md",
+        "PROGRAM.md",
+        "FRONTIER_COVERAGE.md"
+      ]
     }
   ]
 }

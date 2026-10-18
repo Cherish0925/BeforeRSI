@@ -7,18 +7,27 @@
 <br>
 
 [![Status](https://img.shields.io/badge/status-research%20in%20progress-111827?style=flat-square)](#status)
-[![Corpus](https://img.shields.io/badge/public%20corpus-53%20works-C58B35?style=flat-square)](EVIDENCE.md)
+[![Corpus](https://img.shields.io/badge/public%20corpus-67%20works-C58B35?style=flat-square)](EVIDENCE.md)
 [![Claim depth](https://img.shields.io/badge/claim%20depth-D0%E2%86%92D4-5C9C96?style=flat-square)](#claim-depth)
 [![CI](https://img.shields.io/github/actions/workflow/status/Cherish0925/BeforeRSI/validate.yml?branch=main&style=flat-square&label=data)](https://github.com/Cherish0925/BeforeRSI/actions)
 [![License](https://img.shields.io/badge/license-MIT-6B7280?style=flat-square)](LICENSE)
 
-**[Learned search](SEARCH.md)** · **[Mechanisms](MECHANISMS.md)** · **[Theory](THEORY.md)** · **[Compatibility](COMPATIBILITY.md)** · **[Map](MAP.md)** · **[Evidence](EVIDENCE.md)** · **[Program](PROGRAM.md)** · **[Evaluation](EVALUATION.md)** · **[Simulation](SIMULATION.md)** · **[Hypotheses](HYPOTHESES.md)**
+**[Frontier coverage](FRONTIER_COVERAGE.md)** · **[Theory](THEORY.md)** · **[Mechanisms](MECHANISMS.md)** · **[Compatibility](COMPATIBILITY.md)** · **[Map](MAP.md)** · **[Evidence](EVIDENCE.md)** · **[Program](PROGRAM.md)** · **[Evaluation](EVALUATION.md)** · **[Learned search](SEARCH.md)** · **[Hypotheses](HYPOTHESES.md)**
 
 </div>
 
 ---
 
 ## What must be true before RSI is real?
+
+**Current coverage judgment:** the framework does not yet explain nearly all
+important RSI-related research. The previous corpus overemphasized harness and
+search systems. [The frontier review](FRONTIER_COVERAGE.md) adds major reasoning
+RL, adversarial co-training, evaluator learning, generated-environment and
+industrial AI-development work. The general research object is **how AI changes
+the process producing later capabilities, and how those changes are reused**.
+Model–harness co-evolution is one route within that scope. The 67-entry catalog
+is not a coverage percentage or a validated universal theory.
 
 **BeforeRSI** studies one question:
 
@@ -58,7 +67,7 @@ order effect; these are bounded numerical experiments, not LLM training runs.
 
 ## From representation to explanation
 
-[MECHANISMS.md](MECHANISMS.md) derives how proposal distributions, diagnostic feedback, selection, inheritance, task transfer and continuation interact. It connects representative primary-source methods and ablations to distinct predictions, with a [53-work mechanism map](research/mechanism-map.md).
+[MECHANISMS.md](MECHANISMS.md) derives how proposal distributions, diagnostic feedback, selection, inheritance, task transfer and continuation interact. It connects representative primary-source methods and ablations to distinct predictions, with a [67-work mechanism map](research/mechanism-map.md).
 
 The resulting route learns reusable research operations while preserving their decision inputs. It selects training sources by downstream update value, instead of assuming the best executing harness is the best teacher. [Experiment 007](experiments/007-feedback-structure/RESULTS.md) executes a controlled information-localization construction; it is not an LLM reproduction.
 
@@ -89,7 +98,7 @@ The history of self-improving AI is easiest to understand as five streams that n
 | **External cognition** | memory, tools, skills, context, agent control, harnesses | where durable capability should live and whether harness gains transfer across models |
 | **Verification** | exact checks, learned judges, hidden tasks, selection under uncertainty | how to prevent benchmark fitting, evaluator exploitation, and metric drift |
 
-The route prioritized here is their intersection: **model–harness co-evolution with measured improvement ability**. The theory must also accommodate other routes and explain their successes and failures under stated conditions.
+The mainline is **the production and reuse of improvements across the AI research process**. Model–harness co-evolution, learned feedback, generated curricula, learning-algorithm design and computational infrastructure are candidate feedback paths. Each needs its own supported mechanism and conditions; none is a universal default architecture.
 
 Read the full historical and causal map in **[MAP.md](MAP.md)**.
 
@@ -117,7 +126,7 @@ The strongest public work has already established several pieces of the puzzle:
 - **model and harness can be improved together** — recent systems expose both as editable objects and begin to test component transfer;
 - **selection quality is a first-class constraint** — hidden tasks, cost accounting, lineage and independent acceptance materially change what counts as an improvement.
 
-What is **not** yet established publicly is equally important: sustained broad transfer over many generations, frontier-scale weight-level recursion with reproducible artifacts, and a successor that repeatedly becomes better at producing later successors under matched resources.
+The checked sources now include large-scale weight-level co-training and AI-assisted production-model development. Their existence must not be denied because they fail a narrower preferred definition. What this repository **has not established** is a common predictive law across these systems, sustained broad improved improvement under comparable resources, or exhaustive coverage of public and private frontier research.
 
 The source-backed record is in **[EVIDENCE.md](EVIDENCE.md)** and the machine-readable corpus is in **[data/works.json](data/works.json)**.
 
@@ -179,7 +188,10 @@ Under the same improvement budget, does $S_1$ produce a better descendant than $
 </tr>
 </table>
 
-These experiments are ordered. Experiment 03 directly tests **improved improvement ability** on common targets; recursive reuse is a separate structural claim.
+These experiments form an ordered candidate harness branch. They are not the
+general research priority specified in FRONTIER_COVERAGE.md. Experiment 03
+directly tests **improved improvement ability** on common targets; recursive
+reuse is a separate structural claim.
 
 4. **[Repeated co-evolution](experiments/004-repeated-coevolution.md)** — run model, harness, and improver updates for several generations against model-only, harness-only, fixed-improver, and equal-compute baselines.
 5. **[Evaluator fidelity and search efficiency](experiments/005-evaluator-phase-boundary.md)** — distinguish absolute selected gain, gain per unit cost, and adaptive exploitation as search grows.
@@ -205,14 +217,15 @@ Generality requires mechanism coverage and testable predictions across methods. 
 
 | File | Purpose |
 |---|---|
+| **[FRONTIER_COVERAGE.md](FRONTIER_COVERAGE.md)** | major-lab mechanisms, substantive omissions, source limits and the revised research scope |
 | **[SEARCH.md](SEARCH.md)** | search-effort objectives, complete-computation preservation, and the executable learning loop |
 | **[THEORY.md](THEORY.md)** | implementation boundaries, common-target improvement tests, coupling, and mathematical counterexamples |
-| **[COMPATIBILITY.md](COMPATIBILITY.md)** | per-work representation of all 53 catalog entries and limits of universality claims |
+| **[COMPATIBILITY.md](COMPATIBILITY.md)** | per-work representation of all 67 catalog entries and limits of universality claims |
 | **[MECHANISMS.md](MECHANISMS.md)** | conditional explanations, derivations, interventions and learner-aware research route |
 | **[research/mechanism-map.md](research/mechanism-map.md)** | causal operation, failure condition and separating intervention for every corpus entry |
 | **[MAP.md](MAP.md)** | history, causal structure, knowledge tree and present frontier |
 | **[EVIDENCE.md](EVIDENCE.md)** | strongest public work, claim depth, limitations and primary sources |
-| **[PROGRAM.md](PROGRAM.md)** | target system, model–harness–improver co-evolution and research sequence |
+| **[PROGRAM.md](PROGRAM.md)** | research-production mechanisms and candidate implementation branches |
 | **[EVALUATION.md](EVALUATION.md)** | hidden/time-forward tests, cost controls, attribution, regression and recursion tests |
 | **[data/works.json](data/works.json)** | machine-readable public research corpus |
 | **[data/knowledge-graph.json](data/knowledge-graph.json)** | machine-readable causal knowledge graph |

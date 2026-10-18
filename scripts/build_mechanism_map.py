@@ -60,6 +60,112 @@ ROWS={
 "policy-guided-heuristic-search":("A heuristic and a policy jointly prioritize paths with bounded search loss.","Heuristic assumptions and node-dependent loss matter.","Cross the same policy with changed heuristics under measured expansion costs."),
 "lts-context-models":("A convex context policy learns from successful paths using a search-effort loss.","Fixed-path convexity does not establish global bootstrap convergence.","Compare imitation and bound objectives, and frozen versus reused collection policies."),
 }
+ROWS.update({'openai-o1': ('Policy learning changes the distribution of reasoning trajectories and the value '
+               'of later inference.',
+               'Train/test compute scaling does not identify a self-improving research process.',
+               'Cross policy checkpoints and inference budgets; separate extra training from extra '
+               'sampling.'),
+ 'deepseek-r1': ('Sampling, reward-weighted policy updates and subsequent data production jointly '
+                 'change the learning distribution.',
+                 'A fixed trainer is compatible with self-generated learning, but the paper does '
+                 'not establish indefinitely improving research ability.',
+                 'Freeze collection policy or generated data while matching training and '
+                 'generation cost.'),
+ 'qwen3': ('A learner-generated state distribution and teacher targets interact with capacity and '
+           'reasoning budget.',
+           'Teacher-provided information and small-model efficiency do not establish teacher-free '
+           'recursive discovery.',
+           'Compare on-policy and off-policy targets for the same teacher/student pair and full '
+           'data-generation budget.'),
+ 'alphaproof': ('Verification supports reusable proof learning while generated variations alter '
+                'the curriculum.',
+                'Formal proof correctness is conditional on the formal statement; it does not '
+                'establish fidelity of every autoformalization or broad research recursion.',
+                'Cross the prover and curriculum snapshots; independently check statement '
+                'fidelity.'),
+ 'muzero': ('Task-relevant dynamics learning changes both planning and the experience used for '
+            'future updates.',
+            'Planning within an imperfect learned model differs from search in a known exact '
+            'environment.',
+            'Cross world-model versions and planning budgets, measuring model error on visited '
+            'states.'),
+ 'xland': ('Task generation changes the learnable frontier and population transfer changes '
+           'reachable skills.',
+           'Broadness within a constructed environment space is not unrestricted real-world '
+           'generality.',
+           'Ablate adaptive task generation and population transfer separately at matched '
+           'resources.'),
+ 'sima2': ('Tasks, estimated rewards and visited states jointly determine the training '
+           'distribution.',
+           'The official self-improvement report does not show that Genie itself recursively '
+           'improves or that physical-world transfer is established.',
+           'Freeze task generator or reward model separately and test on independently assessed '
+           'games.'),
+ 'constitutional-ai': ('Feedback production can be delegated to AI while the objective and '
+                       'calibration remain external.',
+                       'The normative target remains externally specified; AI feedback is not '
+                       'automatically accurate or independent.',
+                       'Hold principles and learner fixed while changing the feedback source and '
+                       'independent assessment.'),
+ 'self-taught-evaluators': ('Better judgment generation changes the usable training pool for later '
+                            'evaluator versions.',
+                            'Constructed preference labels can be imperfect; the student is reset '
+                            'to the seed each round rather than simply continuing fine-tuning.',
+                            'Cross generation/evaluator checkpoints on fixed response pairs and '
+                            'separately validate constructed labels.'),
+ 'eureka': ('A proposed artifact is valued by the learning process it induces, not only by '
+            'immediate execution.',
+            'Useful reward optimization does not establish that the LLM reward designer itself '
+            'becomes a stronger designer.',
+            'Compare rewards using equal policy-training budgets and transfer to untouched tasks '
+            'or dynamics.'),
+ 'co-scientist': ('Search supplies hypotheses whose true value requires delayed external '
+                  'experimentation.',
+                  'Internal hypothesis rankings are not scientific truth; validated hypotheses do '
+                  'not alone prove an improved research policy.',
+                  'Compare internal rankings with prospective external experimental outcomes and '
+                  'later research choices.'),
+ 'gpt-red': ('Changing opponents generate a moving learning frontier; population diversity can '
+             'prevent narrow adaptation.',
+             'Task-specific robustness improvement and co-training do not establish unrestricted '
+             'recursive research acceleration.',
+             'Use the reported fixed-attacker controls and cross-checkpoint matrices, then compare '
+             'held-out defender training.'),
+ 'automated-alignment-researchers': ('A research policy chooses interventions whose value is '
+                                     'measured after target-model training.',
+                                     'Improving target models does not show that the researcher '
+                                     'improves itself; production data-efficiency claims are not '
+                                     'full research-cost ratios.',
+                                     'Hold target initialization/budget fixed and compare '
+                                     'research-agent versions across withheld training problems.'),
+ 'seed-for-seed': ('Useful model-development outputs can feed later model development through '
+                   'several operational paths.',
+                   'A deployment report supports use in AI development, not an identified causal '
+                   'multiplier or autonomous closed-loop growth.',
+                   'Trace adoption and compare complete research work at fixed compute and human '
+                   'input.')})
+FRONTIER_SCOPES={'openai-o1': 'Official training/scaling description; full training implementation unavailable.',
+ 'deepseek-r1': 'Method section 2 and retraining/distillation descriptions checked.',
+ 'qwen3': 'Post-training section 4 and relevant comparisons checked.',
+ 'alphaproof': 'Official training explanation and Nature method/abstract passages checked; not '
+               'independently reproduced.',
+ 'muzero': 'Planning mechanism and search-budget results checked.',
+ 'xland': 'Learning-process and generation/transfer results checked.',
+ 'sima2': 'Official self-improvement section checked; linked technical report not retrieved.',
+ 'constitutional-ai': 'Primary abstract and official mechanism description checked; full-method '
+                      'audit pending.',
+ 'self-taught-evaluators': 'Sections 3–4 including initialization, constructed labels and seed '
+                           'resets checked.',
+ 'eureka': 'Primary abstract and official project mechanism checked; full-method audit pending.',
+ 'co-scientist': '2026 revised primary abstract and validation scope checked; 157-page full audit '
+                 'pending.',
+ 'gpt-red': 'Paper section 5 self-play controls and checkpoint matrix checked; official deployment '
+            'scope checked.',
+ 'automated-alignment-researchers': 'Official report, paper task/transfer and production-case '
+                                    'passages checked.',
+ 'seed-for-seed': 'Official Seed for Seed section checked; observational deployment claim, not a '
+                  'controlled recursion study.'}
+
 FULL={"dgm","hgm","hyperagents","aide2","gepa","seal","helix","mass","openrsi","rrsi","co-harness","harness-updating-benefit","star","rest-em","expert-iteration","dreamcoder","selecting-computations","levin-tree-search","policy-guided-heuristic-search","lts-context-models"}
 
 
@@ -72,8 +178,8 @@ def main():
         rows.append({"id":w["id"],"name":w["name"],"sources":w["sources"],
             "mechanism_interpretation":mechanism,"condition_or_failure":condition,
             "separating_intervention":intervention,
-            "review_scope":"primary methods/results read in the mechanism passes" if w["id"] in FULL else
-            "prior corpus source check; mechanism interpretation, not a fresh full-method audit",
+            "review_scope":FRONTIER_SCOPES.get(w["id"], "primary methods/results read in the mechanism passes" if w["id"] in FULL else
+            "prior corpus source check; mechanism interpretation, not a fresh full-method audit"),
             "status":"conditional interpretation; no independent reproduction claimed"})
     (ROOT/"data/mechanisms.json").write_text(json.dumps({"updated":"2026-10-18",
         "scope":"every current corpus entry; explanatory hypotheses with explicit counterfactuals",
@@ -82,7 +188,8 @@ def main():
         f"All {len(corpus)} current corpus entries are included. These are our conditional mechanism",
         "interpretations and proposed interventions, not new empirical claims about each work.",
         "A star marks primary methods/results read in the mechanism passes; other rows retain the prior",
-        "source-review boundary. Source reports and our derivations are separated in MECHANISMS.md.","",
+        "source-review boundary. New frontier entries have exact review scopes in data/mechanisms.json.",
+        "Source reports and our judgments are separated in EVIDENCE.md and FRONTIER_COVERAGE.md.","",
         "| Work | Causal operation | Condition or failure | Separating intervention |",
         "|---|---|---|---|"]
     for r in rows:

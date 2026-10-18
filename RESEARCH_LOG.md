@@ -527,3 +527,30 @@ Training also costs more than frozen collection; deployment savings depend on
 the task cohort and search cap. No broad adaptive-allocation victory or
 open-ended recursion is inferred. Code, parameters, task identities, solved
 paths, per-task outcomes, costs and hashed manifests are preserved losslessly.
+
+
+## 2026-10-18 — Correcting frontier coverage and the main research boundary
+
+The user asked whether the model explains substantive work from major labs,
+not whether another bounded search experiment succeeds. Inspection found that
+the earlier 53-entry catalog underrepresented large-scale reasoning RL, learned
+evaluation, generated environments, adversarial co-training and industrial AI
+research. Added 14 primary-source references, with changed objects, feedback,
+assessment/resource boundaries and claim limits in EVIDENCE.md and exact reading
+scopes in the mechanism data. No independent reproduction is claimed.
+
+GPT-Red's co-training controls, Anthropic's automated post-training research,
+SIMA 2's self-generated experience and Seed for Seed's reported development
+usage make a model–harness-only mainline too narrow. AlphaEvolve also requires
+following adopted computational savings into later work. The main question is
+now the production of later capabilities and reuse of changes to that process.
+M/H/D remains artifact bookkeeping; existing actor–target comparisons remain
+useful. Neither a new label nor a larger catalog supplies a universal theory.
+
+FRONTIER_COVERAGE.md distinguishes representation, mechanism explanation and
+cross-system prediction. Important unresolved mechanisms are recorded openly.
+THEORY.md adds an exact task/judge/system score decomposition and a conditional
+standard Amdahl derivation, with observables and falsification implications.
+They constrain interpretation rather than constituting a physical growth law.
+H13 asks whether production-process variables improve withheld predictions.
+No simulated dynamics were changed and no further toy experiment was run.

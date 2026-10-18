@@ -2,6 +2,13 @@
 
 **Status:** operational definitions, mathematical counterexamples, and open empirical questions. This document does not establish a growth law for real AI systems. The 2026-10-17 audit below replaces the earlier interpretation of the differential “recursive term” and the sign-only growth threshold.
 
+**Coverage correction, 2026-10-18:** [FRONTIER_COVERAGE.md](FRONTIER_COVERAGE.md)
+identifies missing large-scale learning, co-training, environment and industrial
+research mechanisms. Model–harness co-evolution is a subclass. The general
+research object is the process producing later capabilities and the reuse of
+changes to that process. Section 10 states consequences for interpretation and
+physical resource accounting; it does not close the missing mechanism theory.
+
 The research question is: **which persistent changes make a system better at producing further useful changes, on comparable problems and budgets?**
 
 Representation and continuation value alone do not explain how a method earns
@@ -516,3 +523,97 @@ digital implementations admitted by Proposition 1; obtaining accurate and
 affordable continuation estimates is a separate computational question.
 Physical time and energy enter through measured transition costs, rather than
 through an assumed universal acceleration law.
+
+## 10. The production of later capability is the wider research boundary
+
+**Source-backed motivation:** the frontier coverage report distinguishes
+reasoning RL, learned feedback, generated environments, automated training
+research, and computational-infrastructure improvements. A fixed outer trainer
+can support changing effective learning behavior. Conversely, an AI-designed
+training method can improve a target without changing the designer. Both must
+remain within scope, with the actual feedback path stated.
+
+S=(M,H,D) continues to identify artifacts. It does not imply that a small vector
+of component scores is a sufficient state. A learned evaluator or world model
+can reside in M, while a simulator or training kernel can reside in H; this
+assignment does not explain their effects. Humans, physical experiments and
+hardware cannot be attributed to the AI merely by widening its boundary.
+If they change, record them in the full state/conditions and identify who
+caused and implemented the change. Human-designed improvements and exogenous
+resource growth must remain separately attributable.
+
+### 10.1 Changing tasks and judges prevents naive interpretation of progress
+
+**Derived consequence; an algebraic identity, not a new learning theorem.**
+Fix environment and execution budget. Let J(q,v,S) be expected score for
+system S on assessment distribution q using scoring rule v. Assuming these
+expectations exist and the indicated cross-evaluations are meaningful,
+
+$$
+\begin{aligned}
+&J(q_1,v_1,S_1)-J(q_0,v_0,S_0)\\
+={}&[J(q_0,v_0,S_1)-J(q_0,v_0,S_0)]\\
+&+[J(q_1,v_0,S_1)-J(q_0,v_0,S_1)]\\
+&+[J(q_1,v_1,S_1)-J(q_1,v_0,S_1)].
+\end{aligned}
+$$
+
+The proof adds and subtracts the two intermediate scores. The three terms
+describe system change on a fixed reference, task-mixture change at the new
+system, and judge change on the new task mixture. Their values depend on this
+chosen order; interactions are not uniquely attributable without further
+interventions. Training curricula may change even when assessment q is fixed;
+do not conflate the two distributions.
+
+**Observable:** a system-by-task-cohort-by-judge cross, with uncertainty on each
+cell. In self-play, use opponent checkpoints as part of the declared environment
+and cross them as well. GPT-Red's published checkpoint comparison is relevant
+evidence, not a proof of arbitrary future transfer.
+
+**Falsifiable implication for a reduced explanation:** a model that attributes
+all reported score change to the first term fails if the cross-evaluations
+show a material task or judge term. Stable co-training scores can coexist with
+improvement against fixed opponents. The identity itself does not predict
+whether learning succeeds; correlated judge errors and open task generation
+remain unresolved mechanism questions.
+
+### 10.2 Algorithmic improvements and physical research throughput differ
+
+**Conditional derivation; standard Amdahl accounting.** For a fixed, sequential
+workload, let T be baseline elapsed time and f the fraction spent in an
+improved stage. Suppose that stage speeds up s-fold, 0<=f<1 and s>=1, while
+all other work and outputs remain fixed and no new overhead is introduced.
+Then the new stage takes fT/s, the rest (1-f)T, and therefore
+
+$$
+\frac{T}{T'}=\frac{1}{1-f+f/s}\leq\frac{1}{1-f}.
+$$
+
+**Observable:** measured stage times, adopted implementation, end-to-end time,
+unchanged output requirements and overhead. If training is 20% of this specific
+workload, even unbounded training acceleration has a 1.25x total speedup limit
+under the assumptions. This number is an arithmetic example, not a lab estimate.
+
+**Falsifiable implication:** applying a kernel speedup to the whole research
+cycle predicts the wrong gain unless the accelerated work dominates that cycle.
+A measured violation of the conditional limit calls for checking changed work,
+other accelerated stages or the sequential assumption; it is not evidence of
+a violated physical law. Parallel pipelines require their actual dependency
+graph, bottleneck capacities and queueing behavior, not this serial formula.
+
+AlphaEvolve makes adopted computational efficiency a legitimate feedback path.
+Industrial research observations make human judgement, integration and compute
+supply legitimate constraints. The current repository does not identify a
+production function from FLOPs, energy, communication, experiment latency and
+human input to scientific progress. Neither a hardware speedup nor more code
+establishes a proportional increase in useful discoveries.
+
+### 10.3 Remaining theoretical obligation
+
+The wider scope is not an additional universal guarantee. A mechanism model
+must predict how policy updates, evaluator errors, environment generation,
+representation changes and resource constraints jointly affect later work.
+Current search bounds, inheritance inequalities and continuation identities
+cover stated subcases only. H13 tests whether this wider production model adds
+predictive value over the existing solver/harness description. No physical
+growth model is fitted or changed in SIMULATION.md by this scope correction.

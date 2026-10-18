@@ -1148,6 +1148,293 @@
           "url": "https://www.ijcai.org/proceedings/2023/0624.pdf"
         }
       ]
+    },
+    {
+      "id": "openai-o1",
+      "name": "OpenAI o1: Learning to reason with LLMs",
+      "year": 2024,
+      "role": "reasoning_rl",
+      "reported_depth": "adaptation",
+      "changed_objects": [
+        "model_weights",
+        "reasoning_policy"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "in_progress",
+      "central_limit": "Train/test compute scaling does not identify a self-improving research process.",
+      "sources": [
+        {
+          "type": "project_page",
+          "url": "https://openai.com/index/learning-to-reason-with-llms/"
+        }
+      ]
+    },
+    {
+      "id": "deepseek-r1",
+      "name": "DeepSeek-R1",
+      "year": 2025,
+      "role": "reasoning_rl",
+      "reported_depth": "adaptation",
+      "changed_objects": [
+        "model_weights",
+        "generated_training_data"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "in_progress",
+      "central_limit": "A fixed trainer is compatible with self-generated learning, but the paper does not establish indefinitely improving research ability.",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2501.12948v1"
+        }
+      ]
+    },
+    {
+      "id": "qwen3",
+      "name": "Qwen3 Technical Report",
+      "year": 2025,
+      "role": "reasoning_and_distillation",
+      "reported_depth": "adaptation",
+      "changed_objects": [
+        "model_weights",
+        "training_data",
+        "inference_budget_control"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "in_progress",
+      "central_limit": "Teacher-provided information and small-model efficiency do not establish teacher-free recursive discovery.",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2505.09388v1"
+        }
+      ]
+    },
+    {
+      "id": "alphaproof",
+      "name": "AlphaProof",
+      "year": 2024,
+      "role": "formal_proof_learning",
+      "reported_depth": "persistent",
+      "changed_objects": [
+        "prover_weights",
+        "generated_formal_problems"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "in_progress",
+      "central_limit": "Formal proof correctness is conditional on the formal statement; it does not establish fidelity of every autoformalization or broad research recursion.",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://www.nature.com/articles/s41586-025-09833-y"
+        }
+      ]
+    },
+    {
+      "id": "muzero",
+      "name": "MuZero",
+      "year": 2019,
+      "role": "learned_world_model_planning",
+      "reported_depth": "adaptation",
+      "changed_objects": [
+        "latent_dynamics",
+        "value_model",
+        "policy_parameters"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "in_progress",
+      "central_limit": "Planning within an imperfect learned model differs from search in a known exact environment.",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/1911.08265"
+        }
+      ]
+    },
+    {
+      "id": "xland",
+      "name": "Open-Ended Learning Leads to Generally Capable Agents (XLand)",
+      "year": 2021,
+      "role": "environment_agent_learning",
+      "reported_depth": "multi_generation",
+      "changed_objects": [
+        "policy_parameters",
+        "task_curriculum",
+        "population"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "in_progress",
+      "central_limit": "Broadness within a constructed environment space is not unrestricted real-world generality.",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2107.12808"
+        }
+      ]
+    },
+    {
+      "id": "sima2",
+      "name": "SIMA 2",
+      "year": 2025,
+      "role": "interactive_self_improvement",
+      "reported_depth": "multi_generation",
+      "changed_objects": [
+        "agent_weights",
+        "self_generated_experience"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "in_progress",
+      "central_limit": "The official self-improvement report does not show that Genie itself recursively improves or that physical-world transfer is established.",
+      "sources": [
+        {
+          "type": "project_page",
+          "url": "https://deepmind.google/blog/sima-2-an-agent-that-plays-reasons-and-learns-with-you-in-virtual-3d-worlds/"
+        }
+      ]
+    },
+    {
+      "id": "constitutional-ai",
+      "name": "Constitutional AI",
+      "year": 2022,
+      "role": "ai_feedback_learning",
+      "reported_depth": "persistent",
+      "changed_objects": [
+        "policy_weights",
+        "preference_model",
+        "synthetic_feedback"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "in_progress",
+      "central_limit": "The normative target remains externally specified; AI feedback is not automatically accurate or independent.",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2212.08073"
+        }
+      ]
+    },
+    {
+      "id": "self-taught-evaluators",
+      "name": "Self-Taught Evaluators",
+      "year": 2024,
+      "role": "evaluator_learning",
+      "reported_depth": "multi_generation",
+      "changed_objects": [
+        "judge_weights",
+        "synthetic_judgments"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "in_progress",
+      "central_limit": "Constructed preference labels can be imperfect; the student is reset to the seed each round rather than simply continuing fine-tuning.",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2408.02666v1"
+        }
+      ]
+    },
+    {
+      "id": "eureka",
+      "name": "Eureka",
+      "year": 2023,
+      "role": "reward_design",
+      "reported_depth": "external_optimization",
+      "changed_objects": [
+        "reward_code",
+        "trained_policy_weights"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "in_progress",
+      "central_limit": "Useful reward optimization does not establish that the LLM reward designer itself becomes a stronger designer.",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2310.12931"
+        }
+      ]
+    },
+    {
+      "id": "co-scientist",
+      "name": "Co-Scientist",
+      "year": 2025,
+      "role": "scientific_hypothesis_search",
+      "reported_depth": "external_optimization",
+      "changed_objects": [
+        "hypothesis_population",
+        "research_plans"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "in_progress",
+      "central_limit": "Internal hypothesis rankings are not scientific truth; validated hypotheses do not alone prove an improved research policy.",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2502.18864v2"
+        }
+      ]
+    },
+    {
+      "id": "gpt-red",
+      "name": "GPT-Red",
+      "year": 2026,
+      "role": "adversarial_coevolution",
+      "reported_depth": "multi_generation",
+      "changed_objects": [
+        "attacker_weights",
+        "defender_weights",
+        "training_attacks"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "in_progress",
+      "central_limit": "Task-specific robustness improvement and co-training do not establish unrestricted recursive research acceleration.",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://cdn.openai.com/pdf/gpt-red-automated-red-teaming-via-self-play-at-scale.pdf"
+        }
+      ]
+    },
+    {
+      "id": "automated-alignment-researchers",
+      "name": "Automated Alignment Researchers: mitigating alignment failures",
+      "year": 2026,
+      "role": "automated_training_research",
+      "reported_depth": "transfer",
+      "changed_objects": [
+        "training_methods",
+        "training_data",
+        "target_model_weights"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "in_progress",
+      "central_limit": "Improving target models does not show that the researcher improves itself; production data-efficiency claims are not full research-cost ratios.",
+      "sources": [
+        {
+          "type": "project_page",
+          "url": "https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures"
+        }
+      ]
+    },
+    {
+      "id": "seed-for-seed",
+      "name": "Seed for Seed (Seed2.1)",
+      "year": 2026,
+      "role": "industrial_ai_research",
+      "reported_depth": "external_optimization",
+      "changed_objects": [
+        "evaluation_software",
+        "synthetic_data",
+        "training_framework"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "in_progress",
+      "central_limit": "A deployment report supports use in AI development, not an identified causal multiplier or autonomous closed-loop growth.",
+      "sources": [
+        {
+          "type": "project_page",
+          "url": "https://seed.bytedance.com/en/blog/seed2-1-officially-released-advancing-ai-productivity"
+        }
+      ]
     }
   ]
 }

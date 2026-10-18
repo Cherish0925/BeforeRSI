@@ -2,6 +2,22 @@
 
 The objective is a system that repeatedly improves both task capability and the ability to construct later improvements.
 
+**Priority correction, 2026-10-18:** [FRONTIER_COVERAGE.md](FRONTIER_COVERAGE.md)
+finds important omissions in large-scale reasoning learning, adversarial
+co-training, evaluator learning, generated worlds and industrial research.
+The main research object is the process producing later AI capabilities.
+Model–harness alternation and learned puzzle search are bounded implementation
+branches; they do not determine the general architecture or establish coverage.
+
+The immediate theoretical comparisons are AlphaProof/R1/Qwen3 for learning
+and inheritance; GPT-Red/Self-Taught Evaluators/SIMA 2 for changing feedback
+and learning distributions; AlphaEvolve/AAR/Seed for Seed for actual research
+production; and MuZero/XLand/Co-Scientist for environment and validation limits.
+Explain their distinct operations and failures before promoting a universal
+schedule. Retain smaller work for unique mechanisms or counterexamples, while
+prioritizing substantial training and deployed research evidence. Further small
+experiments need a discriminating connection to these competing explanations.
+
 Record a versioned system and an explicit improvement role:
 
 $
@@ -14,7 +30,7 @@ with protected acceptance $V^\*$.
 
 $M_t$ records learned models, $H_t$ executable orchestration, and $D_t$ persistent information. The improver role $A_t$ names the complete snapshot that proposes and tests changes, including its model, code, and data dependencies. It may be $S_t$ itself. Environments and budgets are declared separately.
 
-The main route is now **search for useful research operations, preserve their
+One implementation branch is **search for useful research operations, preserve their
 decision inputs, and learn the operations that improve later work**. The
 mechanism derivation is in [MECHANISMS.md](MECHANISMS.md). A harness is both an
 execution policy and a producer of learning experience; these objectives can
@@ -26,7 +42,7 @@ Its individual operations are selected according to the current bottleneck
 and their measured downstream value. A portfolio is optional; its future
 branch value must justify retrieval, maintenance and evaluation costs.
 
-## Immediate implementation choice
+## Candidate implementation choice
 
 Use one shared interface for research operations during training and execution:
 available task state and evidence in; proposed operation and resulting artifact
@@ -463,9 +479,11 @@ Pause or change the research representation when any of these persist:
 
 The correct response is to change the task distribution, evaluator, editable surface, or update operator. Repeating local prompt edits does not resolve a structural failure.
 
-## 10. Near-term priority
+## 10. Retained harness-branch sequence
 
-The proposed initial sequence is:
+The following is a candidate sequence for the harness branch. It is subordinate
+to the frontier mechanism comparisons at the start of this document, and is
+not the default route for explaining all important RSI-related research:
 
 1. choose one public, inspectable harness-evolution implementation;
 2. reproduce its author-reported result;
@@ -476,4 +494,6 @@ The proposed initial sequence is:
 7. rebuild harnesses for the updated model;
 8. compare parent and successor as improvers.
 
-Completion of this sequence would establish more than another survey or benchmark delta. It would provide direct evidence about whether model–harness co-evolution creates transferable recursive gain.
+Completion would provide evidence about model–harness co-evolution under its
+tested conditions. It would not establish coverage of large-scale RL,
+evaluator/environment co-training or industrial research-production feedback.

@@ -232,6 +232,29 @@ Training data should retain intervention provenance, counterfactuals, failed alt
 
 ---
 
+## H13 — Research-production conditions add predictive information
+
+**Status:** open.
+
+For comparable AI-development tasks, measurements of experience generation,
+feedback error, learning procedure, adopted infrastructure changes and workflow
+bottlenecks improve out-of-family predictions of useful research output beyond
+solver scores, model/harness identifiers and nominal compute alone.
+
+**Alternative:** those simpler summaries predict sufficiently well; extra
+production detail merely fits each observed project separately.
+
+**Decisive test:** estimate a mechanism on one set of systems, then predict
+the effects of freezing curricula/opponents, changing training feedback or
+adopting a computation improvement in withheld systems. Charge human input,
+generation, training, failed trials, integration and assessment. Measure useful
+adopted results and successor performance, not code volume alone. No separate
+free parameter for each held-out outcome is permitted.
+
+THEORY.md Section 10 gives an exact score-change decomposition and conditional
+Amdahl accounting. Neither establishes this hypothesis or predicts indefinite
+recursion. The source coverage change is not empirical validation of H13.
+
 ## What would change the theory
 
 The current theory should be revised if experiments show any of the following repeatedly:

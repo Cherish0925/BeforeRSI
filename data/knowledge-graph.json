@@ -652,6 +652,106 @@
         "heuristic-search",
         "self-generated-experience"
       ]
+    },
+    {
+      "work_id": "openai-o1",
+      "node_ids": [
+        "model-update",
+        "resource-normalized-dynamics"
+      ]
+    },
+    {
+      "work_id": "deepseek-r1",
+      "node_ids": [
+        "model-update",
+        "self-generated-experience"
+      ]
+    },
+    {
+      "work_id": "qwen3",
+      "node_ids": [
+        "model-update",
+        "externalize-internalize"
+      ]
+    },
+    {
+      "work_id": "alphaproof",
+      "node_ids": [
+        "verification",
+        "model-update",
+        "self-generated-experience"
+      ]
+    },
+    {
+      "work_id": "muzero",
+      "node_ids": [
+        "model-update",
+        "heuristic-search"
+      ]
+    },
+    {
+      "work_id": "xland",
+      "node_ids": [
+        "environment-agent-coevolution",
+        "model-update"
+      ]
+    },
+    {
+      "work_id": "sima2",
+      "node_ids": [
+        "environment-agent-coevolution",
+        "self-generated-experience"
+      ]
+    },
+    {
+      "work_id": "constitutional-ai",
+      "node_ids": [
+        "verification",
+        "model-update"
+      ]
+    },
+    {
+      "work_id": "self-taught-evaluators",
+      "node_ids": [
+        "evaluator-fidelity",
+        "model-update"
+      ]
+    },
+    {
+      "work_id": "eureka",
+      "node_ids": [
+        "meta-learning",
+        "external-cognition"
+      ]
+    },
+    {
+      "work_id": "co-scientist",
+      "node_ids": [
+        "lineage-search",
+        "verification"
+      ]
+    },
+    {
+      "work_id": "gpt-red",
+      "node_ids": [
+        "environment-agent-coevolution",
+        "model-update",
+        "evaluator-fidelity"
+      ]
+    },
+    {
+      "work_id": "automated-alignment-researchers",
+      "node_ids": [
+        "improvement-kernel",
+        "model-update"
+      ]
+    },
+    {
+      "work_id": "seed-for-seed",
+      "node_ids": [
+        "improvement-kernel",
+        "resource-normalized-dynamics"
+      ]
     }
   ]
 }

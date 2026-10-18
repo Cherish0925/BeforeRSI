@@ -876,6 +876,216 @@
       "separating_intervention": "Compare imitation and bound objectives, and frozen versus reused collection policies.",
       "review_scope": "primary methods/results read in the mechanism passes",
       "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "openai-o1",
+      "name": "OpenAI o1: Learning to reason with LLMs",
+      "sources": [
+        {
+          "type": "project_page",
+          "url": "https://openai.com/index/learning-to-reason-with-llms/"
+        }
+      ],
+      "mechanism_interpretation": "Policy learning changes the distribution of reasoning trajectories and the value of later inference.",
+      "condition_or_failure": "Train/test compute scaling does not identify a self-improving research process.",
+      "separating_intervention": "Cross policy checkpoints and inference budgets; separate extra training from extra sampling.",
+      "review_scope": "Official training/scaling description; full training implementation unavailable.",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "deepseek-r1",
+      "name": "DeepSeek-R1",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2501.12948v1"
+        }
+      ],
+      "mechanism_interpretation": "Sampling, reward-weighted policy updates and subsequent data production jointly change the learning distribution.",
+      "condition_or_failure": "A fixed trainer is compatible with self-generated learning, but the paper does not establish indefinitely improving research ability.",
+      "separating_intervention": "Freeze collection policy or generated data while matching training and generation cost.",
+      "review_scope": "Method section 2 and retraining/distillation descriptions checked.",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "qwen3",
+      "name": "Qwen3 Technical Report",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2505.09388v1"
+        }
+      ],
+      "mechanism_interpretation": "A learner-generated state distribution and teacher targets interact with capacity and reasoning budget.",
+      "condition_or_failure": "Teacher-provided information and small-model efficiency do not establish teacher-free recursive discovery.",
+      "separating_intervention": "Compare on-policy and off-policy targets for the same teacher/student pair and full data-generation budget.",
+      "review_scope": "Post-training section 4 and relevant comparisons checked.",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "alphaproof",
+      "name": "AlphaProof",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://www.nature.com/articles/s41586-025-09833-y"
+        }
+      ],
+      "mechanism_interpretation": "Verification supports reusable proof learning while generated variations alter the curriculum.",
+      "condition_or_failure": "Formal proof correctness is conditional on the formal statement; it does not establish fidelity of every autoformalization or broad research recursion.",
+      "separating_intervention": "Cross the prover and curriculum snapshots; independently check statement fidelity.",
+      "review_scope": "Official training explanation and Nature method/abstract passages checked; not independently reproduced.",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "muzero",
+      "name": "MuZero",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/1911.08265"
+        }
+      ],
+      "mechanism_interpretation": "Task-relevant dynamics learning changes both planning and the experience used for future updates.",
+      "condition_or_failure": "Planning within an imperfect learned model differs from search in a known exact environment.",
+      "separating_intervention": "Cross world-model versions and planning budgets, measuring model error on visited states.",
+      "review_scope": "Planning mechanism and search-budget results checked.",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "xland",
+      "name": "Open-Ended Learning Leads to Generally Capable Agents (XLand)",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2107.12808"
+        }
+      ],
+      "mechanism_interpretation": "Task generation changes the learnable frontier and population transfer changes reachable skills.",
+      "condition_or_failure": "Broadness within a constructed environment space is not unrestricted real-world generality.",
+      "separating_intervention": "Ablate adaptive task generation and population transfer separately at matched resources.",
+      "review_scope": "Learning-process and generation/transfer results checked.",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "sima2",
+      "name": "SIMA 2",
+      "sources": [
+        {
+          "type": "project_page",
+          "url": "https://deepmind.google/blog/sima-2-an-agent-that-plays-reasons-and-learns-with-you-in-virtual-3d-worlds/"
+        }
+      ],
+      "mechanism_interpretation": "Tasks, estimated rewards and visited states jointly determine the training distribution.",
+      "condition_or_failure": "The official self-improvement report does not show that Genie itself recursively improves or that physical-world transfer is established.",
+      "separating_intervention": "Freeze task generator or reward model separately and test on independently assessed games.",
+      "review_scope": "Official self-improvement section checked; linked technical report not retrieved.",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "constitutional-ai",
+      "name": "Constitutional AI",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2212.08073"
+        }
+      ],
+      "mechanism_interpretation": "Feedback production can be delegated to AI while the objective and calibration remain external.",
+      "condition_or_failure": "The normative target remains externally specified; AI feedback is not automatically accurate or independent.",
+      "separating_intervention": "Hold principles and learner fixed while changing the feedback source and independent assessment.",
+      "review_scope": "Primary abstract and official mechanism description checked; full-method audit pending.",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "self-taught-evaluators",
+      "name": "Self-Taught Evaluators",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2408.02666v1"
+        }
+      ],
+      "mechanism_interpretation": "Better judgment generation changes the usable training pool for later evaluator versions.",
+      "condition_or_failure": "Constructed preference labels can be imperfect; the student is reset to the seed each round rather than simply continuing fine-tuning.",
+      "separating_intervention": "Cross generation/evaluator checkpoints on fixed response pairs and separately validate constructed labels.",
+      "review_scope": "Sections 3–4 including initialization, constructed labels and seed resets checked.",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "eureka",
+      "name": "Eureka",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2310.12931"
+        }
+      ],
+      "mechanism_interpretation": "A proposed artifact is valued by the learning process it induces, not only by immediate execution.",
+      "condition_or_failure": "Useful reward optimization does not establish that the LLM reward designer itself becomes a stronger designer.",
+      "separating_intervention": "Compare rewards using equal policy-training budgets and transfer to untouched tasks or dynamics.",
+      "review_scope": "Primary abstract and official project mechanism checked; full-method audit pending.",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "co-scientist",
+      "name": "Co-Scientist",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2502.18864v2"
+        }
+      ],
+      "mechanism_interpretation": "Search supplies hypotheses whose true value requires delayed external experimentation.",
+      "condition_or_failure": "Internal hypothesis rankings are not scientific truth; validated hypotheses do not alone prove an improved research policy.",
+      "separating_intervention": "Compare internal rankings with prospective external experimental outcomes and later research choices.",
+      "review_scope": "2026 revised primary abstract and validation scope checked; 157-page full audit pending.",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "gpt-red",
+      "name": "GPT-Red",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://cdn.openai.com/pdf/gpt-red-automated-red-teaming-via-self-play-at-scale.pdf"
+        }
+      ],
+      "mechanism_interpretation": "Changing opponents generate a moving learning frontier; population diversity can prevent narrow adaptation.",
+      "condition_or_failure": "Task-specific robustness improvement and co-training do not establish unrestricted recursive research acceleration.",
+      "separating_intervention": "Use the reported fixed-attacker controls and cross-checkpoint matrices, then compare held-out defender training.",
+      "review_scope": "Paper section 5 self-play controls and checkpoint matrix checked; official deployment scope checked.",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "automated-alignment-researchers",
+      "name": "Automated Alignment Researchers: mitigating alignment failures",
+      "sources": [
+        {
+          "type": "project_page",
+          "url": "https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures"
+        }
+      ],
+      "mechanism_interpretation": "A research policy chooses interventions whose value is measured after target-model training.",
+      "condition_or_failure": "Improving target models does not show that the researcher improves itself; production data-efficiency claims are not full research-cost ratios.",
+      "separating_intervention": "Hold target initialization/budget fixed and compare research-agent versions across withheld training problems.",
+      "review_scope": "Official report, paper task/transfer and production-case passages checked.",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "seed-for-seed",
+      "name": "Seed for Seed (Seed2.1)",
+      "sources": [
+        {
+          "type": "project_page",
+          "url": "https://seed.bytedance.com/en/blog/seed2-1-officially-released-advancing-ai-productivity"
+        }
+      ],
+      "mechanism_interpretation": "Useful model-development outputs can feed later model development through several operational paths.",
+      "condition_or_failure": "A deployment report supports use in AI development, not an identified causal multiplier or autonomous closed-loop growth.",
+      "separating_intervention": "Trace adoption and compare complete research work at fixed compute and human input.",
+      "review_scope": "Official Seed for Seed section checked; observational deployment claim, not a controlled recursion study.",
+      "status": "conditional interpretation; no independent reproduction claimed"
     }
   ]
 }
