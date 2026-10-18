@@ -200,12 +200,58 @@ def validate_scope_catalog(work_ids: set[str]) -> None:
         fail("discovery pool contains duplicate arXiv IDs")
 
 
+def validate_curated_atlas(work_ids: set[str]) -> None:
+    review = load(ROOT / "data/quality-review.json")
+    decisions = review["decisions"]
+    decision_ids = [r["id"] for r in decisions]
+    if len(decision_ids) != len(set(decision_ids)) or set(decision_ids) != work_ids:
+        fail("quality decisions must cover the complete catalog exactly once")
+    states = {"core", "pending", "historical", "background", "low_value"}
+    for row in decisions:
+        if row["admission"] not in states or not row["reason"].strip():
+            fail(f"{row['id']}: missing or invalid admission decision")
+    core = {r["id"] for r in decisions if r["admission"] == "core"}
+    cards = review["core_cards"]
+    if len(cards) != len(core) or {r["id"] for r in cards} != core:
+        fail("core cards and admission decisions disagree")
+    families = {r["id"] for r in review["families"]}
+    for card in cards:
+        if card["family"] not in families:
+            fail(f"{card['id']}: unknown mechanism family")
+        for field in ["principle", "distinct_contribution", "evidence", "scale", "limit", "insight", "source_location"]:
+            if not card[field].strip():
+                fail(f"{card['id']}: incomplete claim review ({field})")
+        validate_url(card["source_url"], card["id"])
+    for relation in review["relations"]:
+        if relation["source"] not in core or relation["target"] not in core:
+            fail("non-admitted work leaked into the core relationship graph")
+        if relation["type"].startswith("explicit"):
+            validate_url(relation.get("source_url"), "explicit relation")
+            if not relation.get("location"):
+                fail("explicit relationship lacks a primary-source locator")
+    graph = load(GRAPH_PATH)
+    if {r["work_id"] for r in graph["work_bindings"]} != core:
+        fail("canonical graph must bind exactly the admitted works")
+    if {r["id"] for r in graph["nodes"] if r["type"] == "work"} != core:
+        fail("canonical graph includes unreviewed work nodes")
+    atlas = load(ROOT / "data/research-atlas.json")
+    counts = dict(Counter(r["admission"] for r in decisions))
+    counts.setdefault("low_value", 0)
+    if atlas["counts"] != counts or {r["id"] for r in atlas["works"]} != work_ids:
+        fail("generated atlas is stale or incomplete")
+    page = (ROOT / "research/atlas/index.html").read_text(encoding="utf-8")
+    embedded = re.search(r'<script id="atlas-data" type="application/json">(.*?)</script>', page, re.S)
+    if not embedded or json.loads(embedded.group(1)) != atlas:
+        fail("offline atlas does not contain the current complete dataset")
+
+
 def main() -> int:
     try:
         work_ids = validate_works(load(WORKS_PATH))
         validate_graph(load(GRAPH_PATH), work_ids)
         validate_hypotheses(load(HYPOTHESES_PATH))
         validate_scope_catalog(work_ids)
+        validate_curated_atlas(work_ids)
     except (OSError, json.JSONDecodeError, ValueError) as exc:
         print(f"validation failed: {exc}", file=sys.stderr)
         return 1

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1440" viewBox="0 0 1500 1440" role="img"><title>BeforeRSI 核心研究地图</title><rect width="100%" height="100%" fill="#F4F7F8"/>
+<text x="60" y="84.2" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="42" fill="#152C42">BeforeRSI  /  核心研究知识树</text>
+<text x="62" y="134.4" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="24" fill="#516577">按具体贡献纳入 23 项工作；不是整个领域的完备性或质量排名</text>
+<rect x="60" y="166" width="1380" height="72" rx="14" fill="#152C42" stroke="#152C42"/>
+<text x="86" y="212.9" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="29" fill="#FFFFFF">主问题：AI 怎样改善产生后续能力的过程，并让有用改进进入下一轮？</text>
+<rect x="60" y="272" width="670" height="242" rx="14" fill="#FFFFFF" stroke="#CCD9DF"/>
+<text x="82" y="318.8" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="28" fill="#126C72">01  改进器与研发流程自修改</text>
+<text x="82" y="363.4" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="24" fill="#152C42">谁来产生下一代改进？</text>
+<text x="82" y="406.3" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="23" fill="#516577">DGM / HGM / HyperAgents / AIDE² / Frontis-MA1 / </text>
+<text x="82" y="438.3" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="23" fill="#516577">OpenMLE</text>
+<rect x="770" y="272" width="670" height="242" rx="14" fill="#FFFFFF" stroke="#CCD9DF"/>
+<text x="792" y="318.8" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="28" fill="#126C72">02  学习更新与训练过程</text>
+<text x="792" y="363.4" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="24" fill="#152C42">怎样的改动让学习者真正学得更好？</text>
+<text x="792" y="406.3" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="23" fill="#516577">SEAL / DERL / EvoTrainer / Automated Alignment </text>
+<text x="792" y="438.3" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="23" fill="#516577">Researchers</text>
+<rect x="60" y="540" width="670" height="242" rx="14" fill="#FFFFFF" stroke="#CCD9DF"/>
+<text x="82" y="586.8" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="28" fill="#126C72">03  课程、技能与环境共演</text>
+<text x="82" y="631.4" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="24" fill="#152C42">下一轮该学什么，从哪里获得新信息？</text>
+<text x="82" y="674.3" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="23" fill="#516577">Dr. Zero / Skill Self-Play / RLAnything</text>
+<rect x="770" y="540" width="670" height="242" rx="14" fill="#FFFFFF" stroke="#CCD9DF"/>
+<text x="792" y="586.8" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="28" fill="#126C72">04  评价器、奖励与对手共演</text>
+<text x="792" y="631.4" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="24" fill="#152C42">反馈为什么可信，如何跟上能力变化？</text>
+<text x="792" y="674.3" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="23" fill="#516577">Self-Taught Evaluators / GPT-Red / Red Queen Gödel </text>
+<text x="792" y="706.3" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="23" fill="#516577">Machine</text>
+<rect x="60" y="808" width="670" height="242" rx="14" fill="#FFFFFF" stroke="#CCD9DF"/>
+<text x="82" y="854.8" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="28" fill="#126C72">05  模型与 harness 的匹配</text>
+<text x="82" y="899.4" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="24" fill="#152C42">外部能力如何转成可学习、可迁移的能力？</text>
+<text x="82" y="942.3" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="23" fill="#516577">MASS / On-policy M–H Co-evolution</text>
+<rect x="770" y="808" width="670" height="242" rx="14" fill="#FFFFFF" stroke="#CCD9DF"/>
+<text x="792" y="854.8" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="28" fill="#126C72">06  可复用软件与成本机制</text>
+<text x="792" y="899.4" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="24" fill="#152C42">什么修改能跨任务保留，代价是多少？</text>
+<text x="792" y="942.3" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="23" fill="#516577">RRSI / ModularRSI / SoL-Pi</text>
+<rect x="60" y="1076" width="1380" height="242" rx="14" fill="#FFFFFF" stroke="#CCD9DF"/>
+<text x="82" y="1122.8" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="28" fill="#126C72">07  比较、反例与形式边界</text>
+<text x="82" y="1167.4" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="24" fill="#152C42">怎样知道系统真的改善了？</text>
+<text x="82" y="1210.3" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="23" fill="#516577">Harness Updating ≠ Benefit / Rethinking Harness Evaluation / Generalized Agent Iteration</text>
+<text x="82" y="1276.4" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="24" fill="#516577">图上纳入的是限定的机制/证据；待审、历史参考、背景与低价值排除均不充入主图。</text>
+<text x="62" y="1400.3" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="23" fill="#516577">2026-10-18  |  原文、定位、规模、限制与判读见逐项卡片  |  关系不自动代表论文引用</text>
+</svg>

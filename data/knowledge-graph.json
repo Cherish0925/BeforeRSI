@@ -1,1154 +1,452 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "updated": "2026-10-18",
   "nodes": [
     {
-      "id": "self-reference",
+      "id": "mechanism-research",
       "type": "concept",
-      "label": "Self-reference and self-modification"
+      "label": "改进器与研发流程自修改"
     },
     {
-      "id": "intelligence-explosion",
+      "id": "mechanism-training",
       "type": "concept",
-      "label": "Intelligence-explosion hypothesis"
+      "label": "学习更新与训练过程"
     },
     {
-      "id": "formal-rsi",
+      "id": "mechanism-curriculum",
       "type": "concept",
-      "label": "Formal self-rewrite"
+      "label": "课程、技能与环境共演"
     },
     {
-      "id": "heuristic-search",
+      "id": "mechanism-feedback",
       "type": "concept",
-      "label": "Heuristic and evolutionary search"
+      "label": "评价器、奖励与对手共演"
     },
     {
-      "id": "automated-algorithm-search",
+      "id": "mechanism-coupling",
       "type": "concept",
-      "label": "Automated algorithm and program search"
+      "label": "模型与 harness 的匹配"
     },
     {
-      "id": "meta-learning",
+      "id": "mechanism-harness",
       "type": "concept",
-      "label": "Learning to learn"
+      "label": "可复用软件与成本机制"
     },
     {
-      "id": "self-generated-experience",
+      "id": "mechanism-assessment",
       "type": "concept",
-      "label": "Self-play and self-generated data"
+      "label": "比较、反例与形式边界"
     },
     {
-      "id": "model-update",
-      "type": "concept",
-      "label": "Model-weight self-improvement"
+      "id": "dgm",
+      "type": "work",
+      "label": "DGM"
     },
     {
-      "id": "external-cognition",
-      "type": "concept",
-      "label": "Memory, tools, skills, and context"
+      "id": "hgm",
+      "type": "work",
+      "label": "HGM"
     },
     {
-      "id": "harness-evolution",
-      "type": "concept",
-      "label": "Harness evolution"
+      "id": "hyperagents",
+      "type": "work",
+      "label": "HyperAgents"
     },
     {
-      "id": "executable-self-modification",
-      "type": "concept",
-      "label": "Executable agent self-modification"
+      "id": "aide2",
+      "type": "work",
+      "label": "AIDE²"
     },
     {
-      "id": "lineage-search",
-      "type": "concept",
-      "label": "Lineage and parent selection"
+      "id": "openrsi",
+      "type": "work",
+      "label": "Frontis-MA1 / OpenMLE"
     },
     {
-      "id": "verification",
-      "type": "concept",
-      "label": "Verification and selection"
+      "id": "seal",
+      "type": "work",
+      "label": "SEAL"
     },
     {
-      "id": "protected-acceptance",
-      "type": "concept",
-      "label": "Protected acceptance and time-forward tests"
+      "id": "derl",
+      "type": "work",
+      "label": "DERL"
     },
     {
-      "id": "model-harness-coevolution",
-      "type": "concept",
-      "label": "Model–harness co-evolution"
+      "id": "evotrainer",
+      "type": "work",
+      "label": "EvoTrainer"
     },
     {
-      "id": "improver-improvement",
-      "type": "concept",
-      "label": "Improvement of the improver"
+      "id": "automated-alignment-researchers",
+      "type": "work",
+      "label": "Automated Alignment Researchers"
     },
     {
-      "id": "open-ended-rsi",
-      "type": "target",
-      "label": "Open-ended recursive self-improvement"
+      "id": "dr-zero",
+      "type": "work",
+      "label": "Dr. Zero"
     },
     {
-      "id": "system-state",
-      "type": "concept",
-      "label": "Versioned AI system state"
+      "id": "skill-self-play",
+      "type": "work",
+      "label": "Skill Self-Play"
     },
     {
-      "id": "improvement-kernel",
-      "type": "concept",
-      "label": "Actor-target successor distribution under declared budgets"
+      "id": "rlanything",
+      "type": "work",
+      "label": "RLAnything"
     },
     {
-      "id": "capability-field",
-      "type": "concept",
-      "label": "Capability as a task-budget field"
+      "id": "self-taught-evaluators",
+      "type": "work",
+      "label": "Self-Taught Evaluators"
     },
     {
-      "id": "improvement-efficiency",
-      "type": "concept",
-      "label": "Common-target gain-versus-budget comparison"
+      "id": "gpt-red",
+      "type": "work",
+      "label": "GPT-Red"
     },
     {
-      "id": "resource-normalized-dynamics",
-      "type": "concept",
-      "label": "Resource-normalized improvement dynamics"
+      "id": "red-queen-godel-machine",
+      "type": "work",
+      "label": "Red Queen Gödel Machine"
     },
     {
-      "id": "coevolution-jacobian",
-      "type": "hypothesis",
-      "label": "Model–harness–improver coupling matrix (unidentified illustrative model)"
+      "id": "mass",
+      "type": "work",
+      "label": "MASS"
     },
     {
-      "id": "model-harness-interaction",
-      "type": "concept",
-      "label": "Model–harness interaction and attribution"
+      "id": "on-policy-harness-coevolution",
+      "type": "work",
+      "label": "On-policy M–H Co-evolution"
     },
     {
-      "id": "harness-portfolio",
-      "type": "concept",
-      "label": "Harness portfolio and lineage"
+      "id": "rrsi",
+      "type": "work",
+      "label": "RRSI"
     },
     {
-      "id": "externalize-internalize",
-      "type": "concept",
-      "label": "Externalize–verify–internalize cycle"
+      "id": "modular-rsi",
+      "type": "work",
+      "label": "ModularRSI"
     },
     {
-      "id": "evaluator-fidelity",
-      "type": "concept",
-      "label": "Evaluator fidelity and search selection"
+      "id": "sol-pi",
+      "type": "work",
+      "label": "SoL-Pi"
     },
     {
-      "id": "recursive-gain",
-      "type": "hypothesis",
-      "label": "Recursive design gain (unidentified illustrative model)"
+      "id": "harness-updating-benefit",
+      "type": "work",
+      "label": "Harness Updating ≠ Benefit"
     },
     {
-      "id": "complexity-debt",
-      "type": "hypothesis",
-      "label": "Complexity and verification debt (unidentified illustrative model)"
+      "id": "rethink-harness-eval",
+      "type": "work",
+      "label": "Rethinking Harness Evaluation"
     },
     {
-      "id": "rsi-phase-regime",
-      "type": "hypothesis",
-      "label": "RSI dynamical phase regimes (unidentified illustrative model)"
-    },
-    {
-      "id": "optimal-control",
-      "type": "concept",
-      "label": "Adaptive allocation of improvement resources"
-    },
-    {
-      "id": "system-identification",
-      "type": "concept",
-      "label": "Experimental identification of RSI dynamics"
-    },
-    {
-      "id": "environment-agent-coevolution",
-      "type": "concept",
-      "label": "Evolving development environments and agent policies"
+      "id": "generalized-agent-iteration",
+      "type": "work",
+      "label": "Generalized Agent Iteration"
     }
   ],
   "edges": [
     {
-      "source": "self-reference",
-      "target": "intelligence-explosion",
-      "relation": "motivates"
+      "source": "mechanism-research",
+      "target": "dgm",
+      "relation": "curated_membership"
     },
     {
-      "source": "self-reference",
-      "target": "formal-rsi",
-      "relation": "formalized_by"
+      "source": "mechanism-research",
+      "target": "hgm",
+      "relation": "curated_membership"
     },
     {
-      "source": "formal-rsi",
-      "target": "executable-self-modification",
-      "relation": "approximated_by"
+      "source": "mechanism-research",
+      "target": "hyperagents",
+      "relation": "curated_membership"
     },
     {
-      "source": "heuristic-search",
-      "target": "automated-algorithm-search",
-      "relation": "develops_into"
+      "source": "mechanism-research",
+      "target": "aide2",
+      "relation": "curated_membership"
     },
     {
-      "source": "automated-algorithm-search",
-      "target": "harness-evolution",
-      "relation": "supplies_search_methods"
+      "source": "mechanism-research",
+      "target": "openrsi",
+      "relation": "curated_membership"
     },
     {
-      "source": "meta-learning",
-      "target": "self-generated-experience",
-      "relation": "supports"
+      "source": "mechanism-training",
+      "target": "seal",
+      "relation": "curated_membership"
     },
     {
-      "source": "self-generated-experience",
-      "target": "model-update",
-      "relation": "supplies_training_signal"
+      "source": "mechanism-training",
+      "target": "derl",
+      "relation": "curated_membership"
     },
     {
-      "source": "external-cognition",
-      "target": "harness-evolution",
-      "relation": "defines_editable_state"
+      "source": "mechanism-training",
+      "target": "evotrainer",
+      "relation": "curated_membership"
     },
     {
-      "source": "executable-self-modification",
-      "target": "lineage-search",
-      "relation": "creates_successor_space"
+      "source": "mechanism-training",
+      "target": "automated-alignment-researchers",
+      "relation": "curated_membership"
     },
     {
-      "source": "verification",
-      "target": "protected-acceptance",
-      "relation": "strengthened_by"
+      "source": "mechanism-curriculum",
+      "target": "dr-zero",
+      "relation": "curated_membership"
     },
     {
-      "source": "harness-evolution",
-      "target": "model-harness-coevolution",
-      "relation": "can_contribute_to"
+      "source": "mechanism-curriculum",
+      "target": "skill-self-play",
+      "relation": "curated_membership"
     },
     {
-      "source": "model-update",
-      "target": "model-harness-coevolution",
-      "relation": "can_contribute_to"
+      "source": "mechanism-curriculum",
+      "target": "rlanything",
+      "relation": "curated_membership"
     },
     {
-      "source": "lineage-search",
-      "target": "improver-improvement",
-      "relation": "supplies_meta_experience"
+      "source": "mechanism-feedback",
+      "target": "self-taught-evaluators",
+      "relation": "curated_membership"
     },
     {
-      "source": "protected-acceptance",
-      "target": "model-harness-coevolution",
-      "relation": "selects"
+      "source": "mechanism-feedback",
+      "target": "gpt-red",
+      "relation": "curated_membership"
     },
     {
-      "source": "model-harness-coevolution",
-      "target": "improver-improvement",
-      "relation": "produces_lineage_for"
+      "source": "mechanism-feedback",
+      "target": "red-queen-godel-machine",
+      "relation": "curated_membership"
     },
     {
-      "source": "improver-improvement",
-      "target": "open-ended-rsi",
-      "relation": "required_for"
+      "source": "mechanism-coupling",
+      "target": "mass",
+      "relation": "curated_membership"
     },
     {
-      "source": "protected-acceptance",
-      "target": "open-ended-rsi",
-      "relation": "required_for"
+      "source": "mechanism-coupling",
+      "target": "on-policy-harness-coevolution",
+      "relation": "curated_membership"
     },
     {
-      "source": "self-reference",
-      "target": "improvement-kernel",
-      "relation": "motivates"
+      "source": "mechanism-harness",
+      "target": "rrsi",
+      "relation": "curated_membership"
     },
     {
-      "source": "system-state",
-      "target": "improvement-kernel",
-      "relation": "defines_domain_for"
+      "source": "mechanism-harness",
+      "target": "modular-rsi",
+      "relation": "curated_membership"
     },
     {
-      "source": "capability-field",
-      "target": "improvement-efficiency",
-      "relation": "provides_transfer_measure_for"
+      "source": "mechanism-harness",
+      "target": "sol-pi",
+      "relation": "curated_membership"
     },
     {
-      "source": "improvement-kernel",
-      "target": "improvement-efficiency",
-      "relation": "induces"
+      "source": "mechanism-assessment",
+      "target": "harness-updating-benefit",
+      "relation": "curated_membership"
     },
     {
-      "source": "improvement-efficiency",
-      "target": "resource-normalized-dynamics",
-      "relation": "candidate_summary_for"
+      "source": "mechanism-assessment",
+      "target": "rethink-harness-eval",
+      "relation": "curated_membership"
     },
     {
-      "source": "model-harness-coevolution",
-      "target": "model-harness-interaction",
-      "relation": "requires_attribution_by"
+      "source": "mechanism-assessment",
+      "target": "generalized-agent-iteration",
+      "relation": "curated_membership"
     },
     {
-      "source": "model-harness-interaction",
-      "target": "coevolution-jacobian",
-      "relation": "does_not_by_itself_identify"
+      "source": "dgm",
+      "target": "hyperagents",
+      "relation": "explicit_extension"
     },
     {
-      "source": "harness-evolution",
-      "target": "harness-portfolio",
-      "relation": "represented_by"
+      "source": "dgm",
+      "target": "hgm",
+      "relation": "explicit_comparison"
     },
     {
-      "source": "harness-portfolio",
-      "target": "externalize-internalize",
-      "relation": "supplies_exploration_for"
+      "source": "seal",
+      "target": "derl",
+      "relation": "analytical_comparison"
     },
     {
-      "source": "model-update",
-      "target": "externalize-internalize",
-      "relation": "supplies_internalization_for"
+      "source": "hyperagents",
+      "target": "aide2",
+      "relation": "analytical_comparison"
     },
     {
-      "source": "verification",
-      "target": "evaluator-fidelity",
-      "relation": "measured_by"
+      "source": "mass",
+      "target": "on-policy-harness-coevolution",
+      "relation": "analytical_comparison"
     },
     {
-      "source": "evaluator-fidelity",
-      "target": "rsi-phase-regime",
-      "relation": "hypothesized_relation_to"
+      "source": "self-taught-evaluators",
+      "target": "red-queen-godel-machine",
+      "relation": "analytical_comparison"
     },
     {
-      "source": "recursive-gain",
-      "target": "rsi-phase-regime",
-      "relation": "hypothesized_relation_to"
+      "source": "rrsi",
+      "target": "rethink-harness-eval",
+      "relation": "analytical_comparison"
     },
     {
-      "source": "complexity-debt",
-      "target": "rsi-phase-regime",
-      "relation": "hypothesized_relation_to"
-    },
-    {
-      "source": "improver-improvement",
-      "target": "recursive-gain",
-      "relation": "can_increase"
-    },
-    {
-      "source": "resource-normalized-dynamics",
-      "target": "rsi-phase-regime",
-      "relation": "hypothesized_relation_to"
-    },
-    {
-      "source": "rsi-phase-regime",
-      "target": "optimal-control",
-      "relation": "informs"
-    },
-    {
-      "source": "system-identification",
-      "target": "coevolution-jacobian",
-      "relation": "hypothesized_relation_to"
-    },
-    {
-      "source": "system-identification",
-      "target": "evaluator-fidelity",
-      "relation": "estimates"
-    },
-    {
-      "source": "system-identification",
-      "target": "recursive-gain",
-      "relation": "hypothesized_relation_to"
-    },
-    {
-      "source": "optimal-control",
-      "target": "model-harness-coevolution",
-      "relation": "allocates_resources_across"
-    },
-    {
-      "source": "improvement-kernel",
-      "target": "open-ended-rsi",
-      "relation": "must_improve_for"
-    },
-    {
-      "source": "environment-agent-coevolution",
-      "target": "self-generated-experience",
-      "relation": "supplies_training_tasks"
+      "source": "sol-pi",
+      "target": "aide2",
+      "relation": "analytical_comparison"
     }
   ],
   "work_bindings": [
     {
-      "work_id": "good-1965",
-      "node_ids": [
-        "intelligence-explosion"
-      ]
-    },
-    {
-      "work_id": "eurisko",
-      "node_ids": [
-        "heuristic-search",
-        "self-reference"
-      ]
-    },
-    {
-      "work_id": "godel-machine",
-      "node_ids": [
-        "formal-rsi"
-      ]
-    },
-    {
-      "work_id": "maml",
-      "node_ids": [
-        "meta-learning"
-      ]
-    },
-    {
-      "work_id": "alphago-zero",
-      "node_ids": [
-        "self-generated-experience"
-      ]
-    },
-    {
-      "work_id": "automl-zero",
-      "node_ids": [
-        "automated-algorithm-search"
-      ]
-    },
-    {
-      "work_id": "funsearch",
-      "node_ids": [
-        "automated-algorithm-search"
-      ]
-    },
-    {
-      "work_id": "stop",
-      "node_ids": [
-        "executable-self-modification",
-        "improver-improvement"
-      ]
-    },
-    {
-      "work_id": "promptbreeder",
-      "node_ids": [
-        "self-reference",
-        "heuristic-search"
-      ]
-    },
-    {
-      "work_id": "spin",
-      "node_ids": [
-        "self-generated-experience",
-        "model-update"
-      ]
-    },
-    {
-      "work_id": "self-rewarding-lm",
-      "node_ids": [
-        "self-generated-experience",
-        "model-update",
-        "verification"
-      ]
-    },
-    {
-      "work_id": "godel-agent",
-      "node_ids": [
-        "executable-self-modification"
-      ]
-    },
-    {
-      "work_id": "sica",
-      "node_ids": [
-        "executable-self-modification"
-      ]
-    },
-    {
       "work_id": "dgm",
       "node_ids": [
-        "executable-self-modification",
-        "lineage-search"
-      ]
-    },
-    {
-      "work_id": "hyperagents",
-      "node_ids": [
-        "executable-self-modification",
-        "improver-improvement"
-      ]
-    },
-    {
-      "work_id": "rrsi",
-      "node_ids": [
-        "harness-evolution",
-        "verification"
-      ]
-    },
-    {
-      "work_id": "meta-harness",
-      "node_ids": [
-        "harness-evolution"
-      ]
-    },
-    {
-      "work_id": "hsi",
-      "node_ids": [
-        "harness-evolution",
-        "improver-improvement"
-      ]
-    },
-    {
-      "work_id": "helix",
-      "node_ids": [
-        "harness-evolution",
-        "model-update",
-        "model-harness-coevolution"
-      ]
-    },
-    {
-      "work_id": "co-harness",
-      "node_ids": [
-        "model-update",
-        "harness-evolution",
-        "model-harness-coevolution"
-      ]
-    },
-    {
-      "work_id": "sia",
-      "node_ids": [
-        "model-update",
-        "harness-evolution",
-        "model-harness-coevolution"
-      ]
-    },
-    {
-      "work_id": "rethink-harness-eval",
-      "node_ids": [
-        "verification",
-        "protected-acceptance"
-      ]
-    },
-    {
-      "work_id": "harness-tampering",
-      "node_ids": [
-        "verification",
-        "protected-acceptance"
-      ]
-    },
-    {
-      "work_id": "statistical-limits",
-      "node_ids": [
-        "verification"
-      ]
-    },
-    {
-      "work_id": "aide2",
-      "node_ids": [
-        "executable-self-modification",
-        "lineage-search",
-        "improver-improvement"
+        "mechanism-research"
       ]
     },
     {
       "work_id": "hgm",
       "node_ids": [
-        "lineage-search",
-        "improver-improvement"
+        "mechanism-research"
       ]
     },
     {
-      "work_id": "ace",
+      "work_id": "hyperagents",
       "node_ids": [
-        "external-cognition",
-        "harness-evolution"
+        "mechanism-research"
       ]
     },
     {
-      "work_id": "alphaevolve",
+      "work_id": "aide2",
       "node_ids": [
-        "automated-algorithm-search",
-        "model-update"
+        "mechanism-research"
       ]
     },
     {
-      "work_id": "opro",
+      "work_id": "openrsi",
       "node_ids": [
-        "automated-algorithm-search",
-        "harness-evolution"
+        "mechanism-research"
       ]
     },
     {
-      "work_id": "learned-optimizer-2016",
+      "work_id": "seal",
       "node_ids": [
-        "meta-learning",
-        "improvement-kernel"
-      ]
-    },
-    {
-      "work_id": "poet",
-      "node_ids": [
-        "environment-agent-coevolution",
-        "heuristic-search",
-        "self-generated-experience"
-      ]
-    },
-    {
-      "work_id": "self-training-optimizer-2020",
-      "node_ids": [
-        "meta-learning",
-        "self-reference",
-        "improvement-kernel"
-      ]
-    },
-    {
-      "work_id": "star",
-      "node_ids": [
-        "self-generated-experience",
-        "model-update",
-        "verification"
-      ]
-    },
-    {
-      "work_id": "rest-em",
-      "node_ids": [
-        "self-generated-experience",
-        "model-update",
-        "verification"
-      ]
-    },
-    {
-      "work_id": "expert-iteration",
-      "node_ids": [
-        "model-update",
-        "heuristic-search",
-        "self-generated-experience"
-      ]
-    },
-    {
-      "work_id": "dreamcoder",
-      "node_ids": [
-        "automated-algorithm-search",
-        "model-update",
-        "external-cognition"
-      ]
-    },
-    {
-      "work_id": "selecting-computations",
-      "node_ids": [
-        "optimal-control",
-        "resource-normalized-dynamics"
-      ]
-    },
-    {
-      "work_id": "levin-tree-search",
-      "node_ids": [
-        "heuristic-search",
-        "verification"
-      ]
-    },
-    {
-      "work_id": "policy-guided-heuristic-search",
-      "node_ids": [
-        "heuristic-search",
-        "model-update"
-      ]
-    },
-    {
-      "work_id": "lts-context-models",
-      "node_ids": [
-        "model-update",
-        "heuristic-search",
-        "self-generated-experience"
-      ]
-    },
-    {
-      "work_id": "openai-o1",
-      "node_ids": [
-        "model-update",
-        "resource-normalized-dynamics"
-      ]
-    },
-    {
-      "work_id": "deepseek-r1",
-      "node_ids": [
-        "model-update",
-        "self-generated-experience"
-      ]
-    },
-    {
-      "work_id": "qwen3",
-      "node_ids": [
-        "model-update",
-        "externalize-internalize"
-      ]
-    },
-    {
-      "work_id": "alphaproof",
-      "node_ids": [
-        "verification",
-        "model-update",
-        "self-generated-experience"
-      ]
-    },
-    {
-      "work_id": "muzero",
-      "node_ids": [
-        "model-update",
-        "heuristic-search"
-      ]
-    },
-    {
-      "work_id": "xland",
-      "node_ids": [
-        "environment-agent-coevolution",
-        "model-update"
-      ]
-    },
-    {
-      "work_id": "sima2",
-      "node_ids": [
-        "environment-agent-coevolution",
-        "self-generated-experience"
-      ]
-    },
-    {
-      "work_id": "constitutional-ai",
-      "node_ids": [
-        "verification",
-        "model-update"
-      ]
-    },
-    {
-      "work_id": "self-taught-evaluators",
-      "node_ids": [
-        "evaluator-fidelity",
-        "model-update"
-      ]
-    },
-    {
-      "work_id": "eureka",
-      "node_ids": [
-        "meta-learning",
-        "external-cognition"
-      ]
-    },
-    {
-      "work_id": "co-scientist",
-      "node_ids": [
-        "lineage-search",
-        "verification"
-      ]
-    },
-    {
-      "work_id": "gpt-red",
-      "node_ids": [
-        "environment-agent-coevolution",
-        "model-update",
-        "evaluator-fidelity"
-      ]
-    },
-    {
-      "work_id": "automated-alignment-researchers",
-      "node_ids": [
-        "improvement-kernel",
-        "model-update"
-      ]
-    },
-    {
-      "work_id": "seed-for-seed",
-      "node_ids": [
-        "improvement-kernel",
-        "resource-normalized-dynamics"
-      ]
-    },
-    {
-      "work_id": "sol-pi",
-      "node_ids": [
-        "harness-evolution",
-        "executable-self-modification"
-      ]
-    },
-    {
-      "work_id": "modular-rsi",
-      "node_ids": [
-        "harness-evolution",
-        "executable-self-modification"
-      ]
-    },
-    {
-      "work_id": "prime-agent",
-      "node_ids": [
-        "external-cognition",
-        "harness-evolution"
-      ]
-    },
-    {
-      "work_id": "red-queen-godel-machine",
-      "node_ids": [
-        "verification",
-        "evaluator-fidelity",
-        "self-generated-experience"
-      ]
-    },
-    {
-      "work_id": "dr-zero",
-      "node_ids": [
-        "self-generated-experience",
-        "model-update"
-      ]
-    },
-    {
-      "work_id": "skill-self-play",
-      "node_ids": [
-        "self-generated-experience",
-        "model-update"
-      ]
-    },
-    {
-      "work_id": "rlanything",
-      "node_ids": [
-        "environment-agent-coevolution",
-        "self-generated-experience"
-      ]
-    },
-    {
-      "work_id": "agent0",
-      "node_ids": [
-        "self-generated-experience",
-        "model-update"
-      ]
-    },
-    {
-      "work_id": "r-zero",
-      "node_ids": [
-        "self-generated-experience",
-        "model-update"
-      ]
-    },
-    {
-      "work_id": "absolute-zero",
-      "node_ids": [
-        "self-generated-experience",
-        "model-update"
-      ]
-    },
-    {
-      "work_id": "tool-r0",
-      "node_ids": [
-        "self-generated-experience",
-        "model-update"
-      ]
-    },
-    {
-      "work_id": "evotrainer",
-      "node_ids": [
-        "improver-improvement",
-        "model-update"
-      ]
-    },
-    {
-      "work_id": "autoscientists",
-      "node_ids": [
-        "improvement-kernel",
-        "improvement-efficiency"
+        "mechanism-training"
       ]
     },
     {
       "work_id": "derl",
       "node_ids": [
-        "improver-improvement",
-        "model-update"
+        "mechanism-training"
       ]
     },
     {
-      "work_id": "gear",
+      "work_id": "evotrainer",
       "node_ids": [
-        "improvement-kernel",
-        "improvement-efficiency"
+        "mechanism-training"
       ]
     },
     {
-      "work_id": "execution-grounded-research",
+      "work_id": "automated-alignment-researchers",
       "node_ids": [
-        "improvement-kernel",
-        "improvement-efficiency"
+        "mechanism-training"
       ]
     },
     {
-      "work_id": "meta-n",
+      "work_id": "dr-zero",
       "node_ids": [
-        "harness-evolution",
-        "executable-self-modification"
+        "mechanism-curriculum"
       ]
     },
     {
-      "work_id": "self-harness",
+      "work_id": "skill-self-play",
       "node_ids": [
-        "harness-evolution",
-        "executable-self-modification"
+        "mechanism-curriculum"
       ]
     },
     {
-      "work_id": "harness-zero",
+      "work_id": "rlanything",
       "node_ids": [
-        "model-harness-coevolution",
-        "externalize-internalize"
+        "mechanism-curriculum"
       ]
     },
     {
-      "work_id": "harness-r1",
+      "work_id": "self-taught-evaluators",
       "node_ids": [
-        "improver-improvement",
-        "model-update"
+        "mechanism-feedback"
       ]
     },
     {
-      "work_id": "skillrl",
+      "work_id": "gpt-red",
       "node_ids": [
-        "external-cognition",
-        "harness-evolution"
+        "mechanism-feedback"
       ]
     },
     {
-      "work_id": "skillopt",
+      "work_id": "red-queen-godel-machine",
       "node_ids": [
-        "external-cognition",
-        "harness-evolution"
+        "mechanism-feedback"
       ]
     },
     {
-      "work_id": "mem2evolve",
+      "work_id": "mass",
       "node_ids": [
-        "external-cognition",
-        "harness-evolution"
-      ]
-    },
-    {
-      "work_id": "memskill",
-      "node_ids": [
-        "external-cognition",
-        "harness-evolution"
-      ]
-    },
-    {
-      "work_id": "memrl",
-      "node_ids": [
-        "external-cognition",
-        "harness-evolution"
-      ]
-    },
-    {
-      "work_id": "evods",
-      "node_ids": [
-        "external-cognition",
-        "harness-evolution"
+        "mechanism-coupling"
       ]
     },
     {
       "work_id": "on-policy-harness-coevolution",
       "node_ids": [
-        "model-harness-coevolution",
-        "externalize-internalize"
+        "mechanism-coupling"
       ]
     },
     {
-      "work_id": "taolive-hat",
+      "work_id": "rrsi",
       "node_ids": [
-        "model-harness-coevolution",
-        "externalize-internalize"
+        "mechanism-harness"
       ]
     },
     {
-      "work_id": "rewardharness",
+      "work_id": "modular-rsi",
       "node_ids": [
-        "verification",
-        "evaluator-fidelity",
-        "self-generated-experience"
+        "mechanism-harness"
       ]
     },
     {
-      "work_id": "webevolver",
+      "work_id": "sol-pi",
       "node_ids": [
-        "environment-agent-coevolution",
-        "self-generated-experience"
+        "mechanism-harness"
       ]
     },
     {
-      "work_id": "webrl",
+      "work_id": "harness-updating-benefit",
       "node_ids": [
-        "self-generated-experience",
-        "model-update"
+        "mechanism-assessment"
       ]
     },
     {
-      "work_id": "rstar-math",
+      "work_id": "rethink-harness-eval",
       "node_ids": [
-        "verification",
-        "evaluator-fidelity",
-        "self-generated-experience"
-      ]
-    },
-    {
-      "work_id": "self-evolved-reward",
-      "node_ids": [
-        "verification",
-        "evaluator-fidelity",
-        "self-generated-experience"
-      ]
-    },
-    {
-      "work_id": "self-evolving-curriculum",
-      "node_ids": [
-        "self-generated-experience",
-        "model-update"
-      ]
-    },
-    {
-      "work_id": "skillweaver",
-      "node_ids": [
-        "external-cognition",
-        "harness-evolution"
-      ]
-    },
-    {
-      "work_id": "live-swe-agent",
-      "node_ids": [
-        "harness-evolution",
-        "executable-self-modification"
-      ]
-    },
-    {
-      "work_id": "group-evolving-agents",
-      "node_ids": [
-        "harness-evolution",
-        "executable-self-modification"
-      ]
-    },
-    {
-      "work_id": "adaptive-auto-harness",
-      "node_ids": [
-        "harness-evolution",
-        "executable-self-modification"
-      ]
-    },
-    {
-      "work_id": "continual-harness",
-      "node_ids": [
-        "external-cognition",
-        "harness-evolution"
-      ]
-    },
-    {
-      "work_id": "envharness",
-      "node_ids": [
-        "environment-agent-coevolution",
-        "self-generated-experience"
-      ]
-    },
-    {
-      "work_id": "aira-design",
-      "node_ids": [
-        "improvement-kernel",
-        "improvement-efficiency"
-      ]
-    },
-    {
-      "work_id": "ai4ai-bench",
-      "node_ids": [
-        "improvement-kernel",
-        "improvement-efficiency"
+        "mechanism-assessment"
       ]
     },
     {
       "work_id": "generalized-agent-iteration",
       "node_ids": [
-        "formal-rsi",
-        "system-state"
-      ]
-    },
-    {
-      "work_id": "aspire",
-      "node_ids": [
-        "verification",
-        "protected-acceptance"
-      ]
-    },
-    {
-      "work_id": "faithful-self-evolvers",
-      "node_ids": [
-        "verification",
-        "protected-acceptance"
-      ]
-    },
-    {
-      "work_id": "shinkaevolve",
-      "node_ids": [
-        "improvement-kernel",
-        "improvement-efficiency"
-      ]
-    },
-    {
-      "work_id": "coverrl",
-      "node_ids": [
-        "verification",
-        "evaluator-fidelity",
-        "self-generated-experience"
-      ]
-    },
-    {
-      "work_id": "actor-curator",
-      "node_ids": [
-        "self-generated-experience",
-        "model-update"
-      ]
-    },
-    {
-      "work_id": "agent-world",
-      "node_ids": [
-        "environment-agent-coevolution",
-        "self-generated-experience"
-      ]
-    },
-    {
-      "work_id": "skillos",
-      "node_ids": [
-        "improver-improvement",
-        "model-update"
-      ]
-    },
-    {
-      "work_id": "socratic-swe",
-      "node_ids": [
-        "self-generated-experience",
-        "model-update"
-      ]
-    },
-    {
-      "work_id": "voyager",
-      "node_ids": [
-        "external-cognition",
-        "harness-evolution"
-      ]
-    },
-    {
-      "work_id": "agentevolver",
-      "node_ids": [
-        "self-generated-experience",
-        "model-update"
-      ]
-    },
-    {
-      "work_id": "metaevolve",
-      "node_ids": [
-        "improver-improvement",
-        "model-update"
-      ]
-    },
-    {
-      "work_id": "seed-distillation",
-      "node_ids": [
-        "model-harness-coevolution",
-        "externalize-internalize"
-      ]
-    },
-    {
-      "work_id": "rl-tango",
-      "node_ids": [
-        "verification",
-        "evaluator-fidelity",
-        "self-generated-experience"
+        "mechanism-assessment"
       ]
     }
   ]

@@ -1,241 +1,41 @@
-# The RSI map
+# RSI 核心知识图与阅读路径
 
-The [2026-10-18 scope correction](RSI_SCOPE.md) expands direct LLM/agent
-self-evolution coverage while separating enabling AI4AI, theory, historical
-foundations and background. It includes training-side as well as runtime
-harnesses. The 123-entry catalog is not a count of RSI systems or an exhaustive
-survey; see [the classified catalog](research/scope-catalog.md).
+当前主图以 [中文研究地图](RESEARCH_ATLAS.md) 为入口，逐项资料见 [核心卡片](research/atlas/core-cards.md)。本次将主题相关性与研究价值判断分开；不再把完整目录中的候选一并放入主图。
 
-RSI has been obscured by mixing several different questions:
+![核心知识树](assets/atlas/knowledge-tree.png)
 
-- Can software rewrite itself?
-- Can a learner improve its learning rule?
-- Can an AI generate better training data or rewards?
-- Can an agent improve prompts, memory, tools, or code around a fixed model?
-- Can a successor become better at producing the next successor?
-- Can these gains persist when tasks, models, and bottlenecks change?
+## 七个机制问题
 
-The field becomes clear when the questions are arranged by causal dependency rather than by project name.
+| 分支 | 要解释的问题 |
+|---|---|
+| 改进器与研发流程自修改 | 谁产生改动；后继是否更会继续研发？ |
+| 学习更新与训练过程 | 哪种干预使学习者在实际训练后更好？ |
+| 课程、技能与环境共演 | 新信息从何而来，下一轮任务分布如何形成？ |
+| 评价器、奖励与对手共演 | 反馈为何可信，代际分数如何保持可比？ |
+| 模型与 harness 匹配 | 外部能力如何内化；为何可能负迁移？ |
+| 可复用软件与成本机制 | 哪些修改跨任务保留，研发代价能否摊销？ |
+| 比较、反例与形式边界 | 哪个观察支持哪一层结论？ |
 
-## 1. The object
+![反馈与继承](assets/atlas/feedback-map.png)
 
-A deployed AI system is represented as
+## 图的语义
 
-$
+- `curated_membership`：本项目将限定贡献归入机制分支，不表示历史传承。
+- `explicit_extension`：原文明确扩展先行工作；当前记录 DGM → HyperAgents。
+- `explicit_comparison`：原文明示对照；当前记录 DGM → HGM，不声称代码直接继承。
+- `analytical_comparison`：我们的比较阅读关系，不表示已核实引用。
 
-S_t=(M_t,H_t,D_t).
+[data/knowledge-graph.json](data/knowledge-graph.json) 只含 23 项核心工作与 7 个机制节点。
+关系的来源和定位见 [data/quality-review.json](data/quality-review.json)；整合卡片和完整目录见 [data/research-atlas.json](data/research-atlas.json)。
 
-$
+## 历史与全目录放在哪里
 
-- $M_t$: learned models and their architectures;
-- $H_t$: executable context construction, memory access, tool interfaces, search, routing, training, and stopping rules;
-- $D_t$: persistent memory contents, datasets, experience, and retained information.
+16 项历史与机制参考在离线地图的独立页中按年份排列；时间先后不是因果传承。完整 123 项参考、所有候选及来源链接在 [参考索引](research/atlas/references.md)。两者均不充作主图中已确认的当代 RSI 成果。
 
-The improver is a role performed by a configured system, potentially the same $S_t$. It is not necessarily an additional independent component. The environment $E_t$ supplies tasks and external feedback. Optimizer state and other ambiguous artifacts receive one explicit owner in the manifest; see THEORY.md.
+阅读顺序可从 SEAL / DERL 的学习价值开始，接到 DGM / HGM / HyperAgents 的改进与谱系，再读 AIDE² 的后继接管比较；最后用 MASS、on-policy co-evolution 和 Rethinking Evaluation 检验迁移、代价与负结果。
 
-The acceptance process is written separately:
+## 对模型的要求
 
-$
+M/H/D 记录工件；解释必须指明信息、学习、选择和继承发生在哪里。改进者是系统承担的角色，不必是独立模块。任务、评价、资源和人的参与均需显式声明。系统分数、改进能力与多代继续价值是不同量。
 
-V^\*(S_t,S_{t+1};Q,B),
-
-$
-
-where $Q$ specifies the assessment tasks and $B$ is a fixed resource budget. For empirical generalization claims, final test instances and outcomes remain untouched during selection; known task rules or exact formal specifications need not be hidden. $V^\*$ may be improved through a separate process, but a candidate cannot freely redefine the criterion used to substantiate its improvement claim.
-
-Map each work's changed object, improvement operator, feedback source, persistence, transfer, and recursion claims where applicable. A precise theorem, counterexample, or external-optimization result can contribute without implementing every part of an RSI loop.
-
-## 2. Historical and causal tree
-
-```mermaid
-flowchart TB
-    A[Universal computation and self-reference]
-    B[Heuristic and evolutionary search]
-    C[Learning to learn]
-    D[External cognition]
-    E[Verification and selection]
-
-    A --> A1[Good: intelligence explosion]
-    A --> A2[Self-modifying programs]
-    A2 --> A3[Gödel machine]
-    A3 --> A4[Executable self-modifying agents]
-
-    B --> B1[AM and EURISKO]
-    B --> B2[Genetic programming and AutoML]
-    B2 --> B3[Program and algorithm search]
-    B3 --> B4[Prompt, workflow, and harness search]
-
-    C --> C1[Meta-learning]
-    C --> C2[Self-play]
-    C --> C3[Self-training and self-generated reward]
-    C3 --> C4[Model-weight self-improvement]
-
-    D --> D1[Memory and retrieval]
-    D --> D2[Tools and skills]
-    D1 --> D3[Persistent harness state]
-    D2 --> D3
-    D3 --> D4[Full harness evolution]
-
-    E --> E1[Exact verifiers]
-    E --> E2[Learned judges and reward models]
-    E --> E3[Hidden and time-forward evaluation]
-    E3 --> E4[Protected acceptance]
-
-    A4 --> F[Model–harness–improver co-evolution]
-    B4 --> F
-    C4 --> F
-    D4 --> F
-    E4 --> F
-
-    F --> G[Successor improves successor generation]
-    G --> H[Open-ended RSI]
-```
-
-The arrows do not imply that later work dominates earlier work. They identify missing dependencies. A model can self-train without a self-modifying harness; a harness can evolve without changing model weights; a search procedure can improve artifacts while remaining fixed. These branches offer different routes. The research tests which interactions help; it does not require every branch or component to change.
-
-## 3. The five branches
-
-### 3.1 Self-reference and formal self-modification
-
-[I. J. Good’s 1965 argument](https://doi.org/10.1016/S0065-2458(08)60418-0) stated the qualitative possibility that an ultraintelligent machine could improve machine design and thereby initiate an “intelligence explosion.” It supplied no algorithm or empirical criterion.
-
-[Gödel machines](https://arxiv.org/abs/cs/0309048) made self-reference formal. A system may rewrite any part of itself after proving that the rewrite increases a stated utility. The result is conceptually exact and computationally restrictive: useful improvements must be expressible and provable inside the initial axiomatic system, and proof search can be intractable.
-
-Modern self-modifying agents replace proof with empirical selection. STOP, Gödel Agent, SICA, Darwin Gödel Machine, HGM, HyperAgents, and AIDE² make executable code or the improvement procedure part of the editable state. Their central scientific question is whether empirical selection produces transferable successors and whether later successors improve the improvement process itself.
-
-### 3.2 Heuristic, evolutionary, and program search
-
-The quantitative search-and-learning branch is developed in [SEARCH.md](SEARCH.md):
-Expert Iteration couples planning with learned guidance; DreamCoder also changes
-the solution language; policy-guided search relates path probabilities to
-computation. These mechanisms explain why changing weights, a library or a
-search procedure are distinct interventions even when they enter the same loop.
-
-[AM and EURISKO](https://www.cs.northwestern.edu/~mek802/papers/not-mine/Lenat_EURISKO.pdf) used heuristics to guide discovery, and EURISKO could generate or modify heuristics. The work established that a system can search over parts of its own problem-solving procedure. It also exposed dependence on human-supplied representations, heuristics, and domain structure.
-
-Genetic programming, neural architecture search, AutoML, and program synthesis expanded automated search. [AutoML-Zero](https://proceedings.mlr.press/v119/real20a.html) searched for learning algorithms from primitive operations. [FunSearch](https://www.nature.com/articles/s41586-023-06924-6) and later algorithm-search systems paired a pretrained model with an external evaluator to discover useful programs.
-
-This branch is indispensable but frequently mislabeled. A fixed optimizer that discovers a better external algorithm has automated research capability. It has not shown that the optimizer became better at improving itself.
-
-Promptbreeder, ADAS, AFlow, GEPA, and AgentBreeder move the search target closer to the deployed agent. The decisive boundary remains whether the update is persistent, transferable, and improves later update capability.
-
-### 3.3 Meta-learning, self-play, and model updates
-
-Meta-learning trains systems to adapt rapidly across tasks. [MAML](https://proceedings.mlr.press/v70/finn17a.html) learns parameters that support fast adaptation. [AlphaGo Zero](https://www.nature.com/articles/nature24270) demonstrates powerful self-play under exact game rules and rewards. These works show that learned update behavior and self-generated experience can scale, but the training algorithm and objective remain externally specified.
-
-SPIN, Self-Rewarding Language Models, and SEAL bring the source of data, preferences, or updates inside the model loop. They are direct precursors to model-level RSI. Their unresolved issue is informational closure: repeated self-training cannot create reliable new information indefinitely without external grounding, strong verification, or retained real data. Errors, preference drift, and distribution narrowing can compound across generations.
-
-The stronger D3 question is whether later model versions construct more useful updates on common targets. A fixed outer training algorithm does not exclude changed improvement behavior inside the learned model.
-
-### 3.4 External cognition and harness evolution
-
-Modern agents realize capability through software around the model. A harness decides what context is visible, which tools can be called, how state persists, how tasks are decomposed, how attempts are checked, and when execution stops.
-
-This branch progresses through four increasingly broad targets:
-
-1. a prompt or textual policy;
-2. memory, skills, and tool descriptions;
-3. workflow and agent topology;
-4. full source code and runtime behavior.
-
-ACE, EvoHarness-RL, RHI, Meta-Harness, RRSI, HSI, HarnessDev, and related systems occupy different points on this branch. Harness evolution is attractive because changes are inspectable and cheap relative to weight training. It is also vulnerable to benchmark memorization, token-budget inflation, hidden retries, parser changes, evaluator access, and model-specific compensation.
-
-The critical empirical result of 2026 is that harness production and harness use are different capabilities. A model that proposes a useful update need not be the model that benefits most from it. This makes the model–harness pair, rather than either component alone, the correct experimental unit.
-
-### 3.5 Verification and selection
-
-No improvement process can exceed the information carried by its feedback.
-
-Exact verifiers make algorithm search, games, theorem proving, and code tests unusually tractable. Learned judges broaden the task range but introduce noise, bias, self-preference, and exploitation. Hidden tests reduce direct fitting but can still be overused adaptively. Time-forward tasks are stronger because they did not exist during system construction.
-
-A credible RSI system therefore needs three feedback layers:
-
-$
-
-V_t^{\text{search}},\qquad
-V_t^{\text{validation}},\qquad
-V^\*_{\text{accept}}.
-
-$
-
-- $V^{\text{search}}$ supplies dense feedback and may be imperfect.
-- $V^{\text{validation}}$ supports model and procedure choices but must have controlled exposure.
-- $V^\*_{\text{accept}}$ is protected, sparse, and preferably time-forward or externally generated.
-
-Rethinking the Evaluation of Harness Evolution, Harness Updating Is Not Harness Benefit, On the Statistical Limits of Self-Improving Agents, and Auditing Harness Tampering are part of the mainline because they change which apparent gains can be believed.
-
-## 4. Timeline
-
-| Period | What changed | Representative work | What remained missing |
-|---|---|---|---|
-| 1965 | Intelligence explosion proposed | Good | Algorithm, evidence, operational definition |
-| 1970s–1980s | Heuristics and meta-heuristics became editable | AM, EURISKO | Scalable representations, independent replication |
-| 1987–2001 | Learning procedures became learning targets | early meta-learning, learning-to-learn | Broad tasks and strong models |
-| 2003 | Fully self-referential self-rewrite formalized | Gödel machine | Tractable proof and realistic environments |
-| 2010s | Meta-learning and self-play scaled learned adaptation | MAML, AlphaGo Zero | Persistent general self-modification |
-| 2020–2024 | Automated algorithm search and self-generated training matured | AutoML-Zero, FunSearch, SPIN, Self-Rewarding LMs | Improved improver, broad transfer |
-| 2023–2025 | LLMs began editing prompts, programs, and agent code | STOP, Promptbreeder, Gödel Agent, SICA, DGM | Multi-generation attribution and scale transfer |
-| 2026 | Harness evolution, self-modifying meta-agents, and model–harness co-evolution became explicit | RRSI, Meta-Harness, HSI, HyperAgents, AIDE², HELIX, Co-Harness | Repeated full-loop evidence, frontier-scale public replication |
-| Future | Model, harness, improver, and data update repeatedly under protected evaluation | target of BeforeRSI | Unknown |
-
-## 5. Present frontier
-
-The public frontier is distributed across four incomplete achievements.
-
-### Persistent code and harness modification
-
-This is established in bounded settings. Systems can inspect traces, propose source-level edits, evaluate variants, retain successful changes, and continue from the successor.
-
-### Limited transfer
-
-Several systems report held-out or out-of-distribution gains. The strongest evidence remains narrow compared with the desired claim: transfer is often within coding or agent benchmarks, across related task families, or across a small number of model endpoints.
-
-### Short multi-generation improvement
-
-DGM-style lineages, HyperAgents, HSI, and AIDE² make more than one generation explicit. The remaining question is whether the successor became a better improver, rather than merely inheriting a fixed strong outer search procedure.
-
-### First model–harness co-evolution loops
-
-HELIX, Co-Harness, OpenRSI, MASS, SIA, and related work connect harness-generated trajectories to model updates. Most public demonstrations cover one or a few rounds. They do not yet establish stable repeated co-evolution or a rising rate of improvement.
-
-## 6. The convergent mainline
-
-One candidate schedule for studying model–harness feedback is:
-
-```mermaid
-flowchart LR
-    M0[Model M_t] --> H0[Harness portfolio H_t]
-    H0 --> R[Matched task rollouts]
-    R --> V[Independent verification]
-    V --> D[Verified successes, failures, alternatives]
-    D --> M1[Update model to M_t+1]
-    D --> I1[Optional update to improvement policy]
-    M1 --> H1[Rebuild harness portfolio H_t+1]
-    I1 --> H1
-    H1 --> Q[Hidden and time-forward tests]
-    Q --> G[Compare successor as task solver and improver]
-    G --> M0
-```
-
-This proposed experiment uses the following design choices and measurement controls:
-
-1. **Portfolio comparison:** test multiple harnesses and lineages against a single-incumbent baseline; account for diversity and its cost.
-2. **Verified experience:** model training uses solutions, failures, near misses, and counterfactual alternatives linked to reliable outcomes.
-3. **Cross-component attribution:** evaluate $M_i\times H_j\times I_k$, not only matched versions.
-4. **Protected acceptance:** the candidate cannot rewrite the final test or its provenance.
-5. **Time-forward transfer:** evaluation includes tasks created after the candidate is frozen.
-6. **Successor-as-improver measurement:** compare old and new improvers on identical copies of common targets, with matched budget and feedback.
-
-## 7. What would change the field
-
-The following results would materially advance the mainline:
-
-- a harness improvement that transfers across unrelated task families and stronger model scales under equal total compute;
-- a model update trained from harness-generated trajectories that improves both the parent harness and independently developed harnesses;
-- a successor that generates better later successors than its parent under the same improvement procedure and budget;
-- a multi-generation run whose held-out gain does not saturate after one or two defect removals;
-- an improver that learns when to modify weights, harness, memory, tools, or itself;
-- a protected evaluation process that remains informative while tasks and system capabilities change;
-- a predictive relation connecting base-model capability, evaluator quality, search budget, and achievable self-improvement, validated on withheld interventions.
-
-Until these exist, open-ended RSI remains a research target rather than an established capability.
+通用表示尚不是普适预测。主图为理论提出具体约束，不证明所有工作已经被统一解释；详见 [THEORY.md](THEORY.md)、[MECHANISMS.md](MECHANISMS.md) 与 [研究计划](PROGRAM.md)。

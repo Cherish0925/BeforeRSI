@@ -754,7 +754,7 @@
     },
     {
       "id": "openrsi",
-      "name": "OpenRSI",
+      "name": "Frontis-MA1 / OpenMLE (catalog alias: OpenRSI)",
       "year": 2026,
       "role": "direct_model_system_coevolution",
       "reported_depth": "transfer",
@@ -773,6 +773,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2607.28568"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2607.28568v1"
         }
       ]
     },

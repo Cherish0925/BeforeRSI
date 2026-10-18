@@ -12,11 +12,24 @@
 [![CI](https://img.shields.io/github/actions/workflow/status/Cherish0925/BeforeRSI/validate.yml?branch=main&style=flat-square&label=data)](https://github.com/Cherish0925/BeforeRSI/actions)
 [![License](https://img.shields.io/badge/license-MIT-6B7280?style=flat-square)](LICENSE)
 
-**[RSI scope](RSI_SCOPE.md)** · **[Frontier coverage](FRONTIER_COVERAGE.md)** · **[Theory](THEORY.md)** · **[Mechanisms](MECHANISMS.md)** · **[Compatibility](COMPATIBILITY.md)** · **[Map](MAP.md)** · **[Evidence](EVIDENCE.md)** · **[Program](PROGRAM.md)** · **[Evaluation](EVALUATION.md)** · **[Learned search](SEARCH.md)** · **[Hypotheses](HYPOTHESES.md)**
+**[中文研究地图](RESEARCH_ATLAS.md)** · **[RSI scope](RSI_SCOPE.md)** · **[Frontier coverage](FRONTIER_COVERAGE.md)** · **[Theory](THEORY.md)** · **[Mechanisms](MECHANISMS.md)** · **[Compatibility](COMPATIBILITY.md)** · **[Map](MAP.md)** · **[Evidence](EVIDENCE.md)** · **[Program](PROGRAM.md)** · **[Evaluation](EVALUATION.md)** · **[Learned search](SEARCH.md)** · **[Hypotheses](HYPOTHESES.md)**
 
 </div>
 
 ---
+
+## 先看研究地图
+
+**[中文图文导读（26 页 PDF）](output/pdf/beforersi-research-atlas.pdf)** · **[可搜索离线地图（下载后打开）](research/atlas/index.html)** · **[23 项核心卡片](research/atlas/core-cards.md)** · **[123 项完整参考索引](research/atlas/references.md)**
+
+![核心研究知识树](assets/atlas/knowledge-tree.png)
+
+主图按具体研究贡献筛选：**23 项核心命题、78 项候选待审、16 项历史/机制参考、6 项背景**。
+核心只表示限定命题有纳入理由，不代表整篇论文已被独立验证。仅摘要筛查、尚未通过纳入门槛的条目不进入图。
+567 个去重 arXiv 发现线索单独保存，不计为已读或优质论文。当前没有完成具名低价值判定，不能由此说其他工作都优质。
+
+[RESEARCH_ATLAS.md](RESEARCH_ATLAS.md) 解释七条机制线、关系含义、规模与阅读边界。
+[data/quality-review.json](data/quality-review.json) 保存逐项决定；机器图只保留核心工作。
 
 ## What must be true before RSI is real?
 
@@ -233,7 +246,7 @@ Generality requires mechanism coverage and testable predictions across methods. 
 | **[PROGRAM.md](PROGRAM.md)** | research-production mechanisms and candidate implementation branches |
 | **[EVALUATION.md](EVALUATION.md)** | hidden/time-forward tests, cost controls, attribution, regression and recursion tests |
 | **[data/works.json](data/works.json)** | machine-readable public research corpus |
-| **[data/knowledge-graph.json](data/knowledge-graph.json)** | machine-readable causal knowledge graph |
+| **[data/knowledge-graph.json](data/knowledge-graph.json)** | curated core graph with typed relations; provenance in quality-review.json |
 | **[experiments/](experiments/)** | protocols and the executed bounded optimizer experiment |
 | **[Experiment 006](experiments/006-recursive-optimizer/RESULTS.md)** | executed numerical optimizer experiments, task-level records, resource counts and reproducible figures |
 | **[Experiment 008](experiments/008-learned-search/RESULTS.md)** | actual context-policy learning, recursive reuse, common-target data generation and measured costs |

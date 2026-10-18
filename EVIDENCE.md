@@ -426,3 +426,31 @@ Read RSI_SCOPE.md and research/scope-catalog.md before interpreting the corpus c
 | [Teaching LLMs to Self-Evolve: Cultivating Core Meta-Skills with Reinforcement Learning](https://arxiv.org/abs/2607.21971) | 用执行反馈训练多轮反思与修订能力，部署时进行演化搜索。 | 七编码基准及域外算法优化；初筛未提取总训练成本。 | 直接支撑的 AI4AI/学习机制：改进目标代码不等于目标本身是改进器；需实际闭环继承证据。 |
 | [SEED: Self-Evolving On-Policy Distillation for Agentic Reinforcement Learning](https://arxiv.org/abs/2607.14777) | 当前策略同时收集轨迹和提炼事后技能，技能诱导信号训练同一策略。 | 文本与视觉 agent 任务；联合结果 RL 和 token 级自蒸馏。 | 直接自进化研究：训练期事后信息在部署不可见；内化效果与信息泄漏边界需明确。 |
 | [RL Tango: Reinforcing Generator and Verifier Together for Language Reasoning](https://arxiv.org/abs/2505.15034) | 生成者与过程验证者交替用 RL 训练，外部结果正确性监督验证者。 | 7B/8B，五数学及四域外任务，另测 ProcessBench。 | 直接自进化研究：不是完全无标签自证；固定结果验证构成外部锚点。 |
+
+
+## 2026-10-18 — Claim-level curation and illustrated atlas
+
+The [research atlas](RESEARCH_ATLAS.md) separates 23 admitted contributions from
+78 pending reviews, 16 historical/mechanistic references and 6 background
+entries. The latter three groups do not enter the canonical core graph.
+Admission is an editorial research judgment at the claim level, not independent
+replication or certification of every claim in a paper. No named low-value
+verdict was completed in this pass; unknown quality remains pending.
+
+Further primary-source reading checked:
+
+- [DGM §4.2–4.4](https://arxiv.org/html/2505.22954v3) and [HyperAgents §3–4](https://arxiv.org/html/2603.19461v1): actual modification boundaries, fixed-meta/archive controls and the explicit DGM extension.
+- [HGM §2–4](https://arxiv.org/html/2510.21614v1): descendant-value selection, comparison to DGM and assumptions behind its oracle correspondence.
+- [SEAL §3–4](https://arxiv.org/html/2506.10943v1): learner-dependent update value, stale rewards, and the small curated ARC setting (11 training / 8 evaluation tasks).
+- [AIDE² §2.2 / §3.6](https://arxiv.org/html/2609.26457v1): fixed outer proposer and an inconclusive three-seed-per-arm common-target ignition comparison.
+- [Co-Harness §3–4](https://arxiv.org/html/2607.22688v1): two rounds, two scales, three 30-problem benchmarks; listed baselines do not isolate standalone SFT from the co-evolution contribution. It stays pending for core causal interpretation, rather than receiving a low-quality verdict.
+- [MASS Appendix C.5 Table 7](https://arxiv.org/html/2610.12176v1): research-task improvements coexist with coding-benchmark regressions.
+- [ModularRSI §6.3–6.4](https://arxiv.org/html/2609.14857v2): module integration and separate contrastive-analysis/function-management/validation ablations.
+- [Rethinking Harness Evaluation v4 §3–5](https://arxiv.org/html/2607.12227v4): terminal-task failures and positive long-horizon game adaptation. The latter is task-specific adaptation, not demonstrated held-out task transfer. Budgets use distinct units across settings.
+- [Frontis-MA1 / OpenMLE](https://arxiv.org/html/2607.28568v1): checked source title, operator training/search interface and resource convention. The existing `openrsi` ID remains stable, while the display name now records the primary title/system and old catalog alias. Sandbox GPU allocation omits remote model-serving cost.
+
+Every admitted work now has a source locator, explicit contribution, evidence,
+scale/scope, limiting condition and implication for our route. Original full
+bibliography entries remain retrievable. Full-paper/appendix review and broad
+quality screening remain incomplete; the graph does not claim exhaustive field
+coverage or a universal explanatory/predictive theory.

@@ -565,3 +565,33 @@ No simulated dynamics were changed and no further toy experiment was run.
 **Material evidence:** EvoTrainer makes training diagnostics and reusable trainer skills editable, with a fixed backbone and human-gated costly actions. DERL trains reward proposers from downstream training outcomes. Skill-SP supplies frozen-component comparisons of proposer, solver and skill feedback. The on-policy model–harness study reports full-trajectory expert-imitation regression after harness evolution. SoL-Pi explicitly places cheaper recursive successor research in future work, despite its title and engineering gains. GAI supplies prior formal work on modifier membership and external evaluation grounding; component naming is not our novelty.
 
 **Research decision:** Prioritize learned training interventions, coupled curricula/evaluators/environments/model–harness behavior, and actual reuse in successor production. Keep AI4AI targets distinct from self-improving actors. Further breadth and full-method review remain unfinished; no exhaustive coverage, quality-certified set of 100 RSI papers, or universal physical growth law is claimed.
+
+
+## 2026-10-18 — Replace the unfiltered paper map with a curated research atlas
+
+**Research decision:** A topical catalog is not a knowledge map of valuable
+results. Introduced explicit claim-level admission with 23 core contributions,
+78 pending reviews, 16 historical/mechanistic references and 6 background
+entries. No named low-value verdict is manufactured from missing evidence.
+The canonical graph now contains only admitted work nodes, with separate types
+for mechanism membership, source-explicit relations and analytical comparisons.
+
+**Source corrections and judgments:** Further method/control reading exposes
+Co-Harness's limited component attribution, so it remains outside the core map.
+The positive game results in Rethinking Harness Evaluation are task-specific
+adaptation, not held-out task transfer. SEAL is retained for the update-value
+mechanism while its very small curated ARC setting remains explicit. The
+OpenRSI catalog alias is reconciled with the checked Frontis-MA1 / OpenMLE source.
+
+**Deliverables:** Chinese entry point, seven-branch illustrated knowledge tree,
+feedback/return-path diagram, 23 substantive claim cards, 123-entry source index,
+per-item decisions, offline search/filter/detail views and a 26-page PDF. All
+views are generated from versioned sources and decisions. README and MAP now
+lead to this material; theory and prior experiment artifacts are unchanged.
+
+**Validation boundary:** Corpus/admission/graph consistency and exact embedded
+HTML-data agreement are checked. PDF pages are rendered and visually reviewed.
+Local browser rendering was unavailable because no browser binary was installed
+and the browser download returned invalid archives; JavaScript rendering and
+filter logic are checked in Node, not claimed as a real-browser interaction run.
+No new toy experiment or independent literature reproduction was performed.

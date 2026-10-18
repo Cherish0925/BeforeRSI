@@ -428,7 +428,7 @@
     },
     {
       "id": "openrsi",
-      "name": "OpenRSI",
+      "name": "Frontis-MA1 / OpenMLE (catalog alias: OpenRSI)",
       "year": 2026,
       "scope": "direct",
       "closure_assessment": "coevolution",

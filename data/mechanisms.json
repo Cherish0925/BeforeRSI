@@ -582,7 +582,7 @@
     },
     {
       "id": "openrsi",
-      "name": "OpenRSI",
+      "name": "Frontis-MA1 / OpenMLE (catalog alias: OpenRSI)",
       "sources": [
         {
           "type": "repository",
@@ -591,6 +591,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2607.28568"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2607.28568v1"
         }
       ],
       "mechanism_interpretation": "Execution-grounded training improves shared program-editing operators used by long-horizon search.",
