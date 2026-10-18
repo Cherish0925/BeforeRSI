@@ -163,3 +163,14 @@ These mappings preserve named artifacts; they neither prove recursion nor supply
 | [Teaching LLMs to Self-Evolve: Cultivating Core Meta-Skills with Reinforcement Learning](https://arxiv.org/abs/2607.21971) | model_weights, evolution_training_data | 改进目标代码不等于目标本身是改进器；需实际闭环继承证据。 |
 | [SEED: Self-Evolving On-Policy Distillation for Agentic Reinforcement Learning](https://arxiv.org/abs/2607.14777) | policy_weights, hindsight_skills | 训练期事后信息在部署不可见；内化效果与信息泄漏边界需明确。 |
 | [RL Tango: Reinforcing Generator and Verifier Together for Language Reasoning](https://arxiv.org/abs/2505.15034) | generator_weights, verifier_weights | 不是完全无标签自证；固定结果验证构成外部锚点。 |
+
+## Coverage correction: four previously missing large-model studies
+
+These four mappings extend the indexed bibliography to 127 works. Naming the artifacts establishes representational compatibility only; it does not prove a universal predictive theory or validate the reported performance.
+
+| Work | Artifacts and return path | Boundary |
+|---|---|---|
+| [Iterative RPO](https://arxiv.org/html/2404.19733v2) | Updated model M generates the next preference dataset D; fixed DPO plus positive-example likelihood procedure H updates M. | Retain external answer labels, 70B target, repeated rounds and saturation; the learning algorithm does not learn to redesign itself. |
+| [DeepSeekMath-V2](https://arxiv.org/html/2511.22570v1) | Role-indexed generator and verifier parameters in M; proofs and verified annotations in D; sampling, meta-verification and training orchestration in H. New proofs update the verifier, which supplies feedback for the generator. | Preserve informal-verification error, expert assessment and search budgets. This is not a proof of unrestricted recursive research acceleration. |
+| [Kimi K2](https://arxiv.org/html/2507.20534v1) | Actor and critic parameters in M; on-policy traces and preferences in D; rubric, verifiable feedback and RL orchestration in H. The critic updates from verifiable policy traces and feeds policy learning. | The report describes the loop, but the contribution of that loop to every final benchmark result is not causally isolated. This row concerns the post-training mechanism, not a claim that the whole training pipeline is RSI. |
+| [Large Language Models Can Self-Improve](https://aclanthology.org/2023.emnlp-main.67.pdf) | A 540B model M generates reasoning data D; self-consistency filtering and SFT in H update M. | An early large-model self-training precursor, not demonstrated indefinite or multi-generation recursive improvement. |

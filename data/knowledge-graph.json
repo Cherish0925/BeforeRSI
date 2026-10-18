@@ -18,9 +18,24 @@
       "label": "Model × Harness"
     },
     {
+      "id": "stop",
+      "type": "work",
+      "label": "STOP"
+    },
+    {
+      "id": "promptbreeder",
+      "type": "work",
+      "label": "Promptbreeder"
+    },
+    {
       "id": "self-rewarding-lm",
       "type": "work",
       "label": "Self-Rewarding LM"
+    },
+    {
+      "id": "sica",
+      "type": "work",
+      "label": "SICA"
     },
     {
       "id": "dgm",
@@ -53,6 +68,11 @@
       "label": "HGM"
     },
     {
+      "id": "ace",
+      "type": "work",
+      "label": "ACE"
+    },
+    {
       "id": "self-taught-evaluators",
       "type": "work",
       "label": "Self-Taught Evaluators"
@@ -76,12 +96,42 @@
       "id": "on-policy-harness-coevolution",
       "type": "work",
       "label": "On-policy M–H Co-evolution"
+    },
+    {
+      "id": "iterative-rpo",
+      "type": "work",
+      "label": "Iterative RPO"
+    },
+    {
+      "id": "deepseek-math-v2",
+      "type": "work",
+      "label": "DeepSeekMath-V2"
+    },
+    {
+      "id": "kimi-k2",
+      "type": "work",
+      "label": "Kimi K2 · 自评价 RL"
     }
   ],
   "edges": [
     {
+      "source": "route-harness",
+      "target": "stop",
+      "relation": "route_membership"
+    },
+    {
+      "source": "route-harness",
+      "target": "promptbreeder",
+      "relation": "route_membership"
+    },
+    {
       "source": "route-model",
       "target": "self-rewarding-lm",
+      "relation": "route_membership"
+    },
+    {
+      "source": "route-harness",
+      "target": "sica",
       "relation": "route_membership"
     },
     {
@@ -115,6 +165,11 @@
       "relation": "route_membership"
     },
     {
+      "source": "route-harness",
+      "target": "ace",
+      "relation": "route_membership"
+    },
+    {
       "source": "route-model",
       "target": "self-taught-evaluators",
       "relation": "route_membership"
@@ -137,6 +192,21 @@
     {
       "source": "route-hybrid",
       "target": "on-policy-harness-coevolution",
+      "relation": "route_membership"
+    },
+    {
+      "source": "route-model",
+      "target": "iterative-rpo",
+      "relation": "route_membership"
+    },
+    {
+      "source": "route-model",
+      "target": "deepseek-math-v2",
+      "relation": "route_membership"
+    },
+    {
+      "source": "route-model",
+      "target": "kimi-k2",
       "relation": "route_membership"
     },
     {
@@ -172,9 +242,27 @@
   ],
   "work_bindings": [
     {
+      "work_id": "stop",
+      "node_ids": [
+        "route-harness"
+      ]
+    },
+    {
+      "work_id": "promptbreeder",
+      "node_ids": [
+        "route-harness"
+      ]
+    },
+    {
       "work_id": "self-rewarding-lm",
       "node_ids": [
         "route-model"
+      ]
+    },
+    {
+      "work_id": "sica",
+      "node_ids": [
+        "route-harness"
       ]
     },
     {
@@ -214,6 +302,12 @@
       ]
     },
     {
+      "work_id": "ace",
+      "node_ids": [
+        "route-harness"
+      ]
+    },
+    {
       "work_id": "self-taught-evaluators",
       "node_ids": [
         "route-model"
@@ -241,6 +335,24 @@
       "work_id": "on-policy-harness-coevolution",
       "node_ids": [
         "route-hybrid"
+      ]
+    },
+    {
+      "work_id": "iterative-rpo",
+      "node_ids": [
+        "route-model"
+      ]
+    },
+    {
+      "work_id": "deepseek-math-v2",
+      "node_ids": [
+        "route-model"
+      ]
+    },
+    {
+      "work_id": "kimi-k2",
+      "node_ids": [
+        "route-model"
       ]
     }
   ]

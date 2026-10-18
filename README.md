@@ -7,7 +7,7 @@
 <br>
 
 [![Status](https://img.shields.io/badge/status-research%20in%20progress-111827?style=flat-square)](#status)
-[![Corpus](https://img.shields.io/badge/research%20catalog-123%20entries-C58B35?style=flat-square)](research/scope-catalog.md)
+[![Corpus](https://img.shields.io/badge/research%20catalog-127%20entries-C58B35?style=flat-square)](research/scope-catalog.md)
 [![Claim depth](https://img.shields.io/badge/claim%20depth-D0%E2%86%92D4-5C9C96?style=flat-square)](#claim-depth)
 [![CI](https://img.shields.io/github/actions/workflow/status/Cherish0925/BeforeRSI/validate.yml?branch=main&style=flat-square&label=data)](https://github.com/Cherish0925/BeforeRSI/actions)
 [![License](https://img.shields.io/badge/license-MIT-6B7280?style=flat-square)](LICENSE)
@@ -24,24 +24,17 @@
 
 ![三层研究知识树](assets/atlas/knowledge-tree.png)
 
-一级入口为 **Harness、Model、Model × Harness**。当前主图 12 项（8 / 2 / 2）；24 项限定命题保留研究卡片，完整书目 123 项。三个数字不是同一个统计。
+**调查进行中，尚无全领域最终筛选数。** 当前已核对重点案例19项：Harness 12、Model 5、Model × Harness 2。38项机制审查卡片、127项完整目录、67项候选待审。此前8/2/2不能解释成全球只有12项有价值研究。
 
-Model / 混合按实际训练目标 **总参数 ≥27B** 筛选，同时显示 MoE 激活量、全参/adapter、训练阶段、算法、采样方式和回流节奏。未知规模、小模型机制、AI4AI 支撑、评测与形式工具另列。
+新补入 Kimi K2、DeepSeekMath-V2、Iterative RPO 等原目录遗漏；补审 STOP、Promptbreeder、SICA、ACE，以及大规模自训练、AI反馈和工业具身学习谱系。
 
-[RESEARCH_ATLAS.md](RESEARCH_ATLAS.md) 展开三条主线、功能研究空间及逐项退出主图的理由。[data/layer-review.json](data/layer-review.json) 保存层级/规模审查；[data/quality-review.json](data/quality-review.json) 保存贡献判读。旧七类机制仅为辅助检索，不再担任一级导航。567 个发现线索不是已读或优质论文数。
+HTML/PDF首页直接显示三条路线的数量、机构来源、工业目标和研究问题。Model/混合仍按实际训练目标≥27B筛选；规模未公开的工业研究与关键前身保留在单独入口。参数门槛不是研究质量结论。
+
+[研究地图](RESEARCH_ATLAS.md) · [逐项证据](research/atlas/core-cards.md) · [完整索引](research/atlas/references.md) · [待审记录](research/atlas/review-queue.md)。以下理论与历史分析不等于全领域覆盖证明。
 
 ## What must be true before RSI is real?
 
-**Current scope and coverage:** [RSI_SCOPE.md](RSI_SCOPE.md) corrects both the
-earlier narrow search emphasis and the subsequent mixing of ordinary AI training,
-scientific discovery and RSI. The core is **LLM/agent self-evolution and the reuse
-of improvements in later improvement processes**, including runtime and training
-harnesses. The catalog now separates 63 direct self-evolution studies, 30 enabling
-AI4AI/learning studies, 7 evaluations, 3 theories, 14 foundations and 6 background
-works. These 123 entries are not 123 proven RSI systems or a coverage percentage.
-The expansion adds 56 primary-source screens, including 10 selected-section
-readings; full-review boundaries remain explicit. A universal predictive theory
-has not been established.
+**Current scope and coverage:** The current catalog has 127 entries. This is a research bibliography, not a count of proven RSI systems or a coverage percentage. Of these, 38 have selected-section mechanism reviews and 67 remain candidates. The three-route brief above is the current editorial entry point; [RSI_SCOPE.md](RSI_SCOPE.md) preserves the earlier search history. A universal predictive theory has not been established.
 
 **BeforeRSI** studies one question:
 
@@ -82,7 +75,7 @@ order effect; these are bounded numerical experiments, not LLM training runs.
 
 ## From representation to explanation
 
-[MECHANISMS.md](MECHANISMS.md) derives how proposal distributions, diagnostic feedback, selection, inheritance, task transfer and continuation interact. It connects representative primary-source methods and ablations to distinct predictions, with a [123-entry mechanism map](research/mechanism-map.md). Scope labels and exact reading boundaries are separate from explanatory interpretations.
+[MECHANISMS.md](MECHANISMS.md) derives how proposal distributions, diagnostic feedback, selection, inheritance, task transfer and continuation interact. It connects representative primary-source methods and ablations to distinct predictions, with a [127-entry mechanism map](research/mechanism-map.md). Scope labels and exact reading boundaries are separate from explanatory interpretations.
 
 The resulting route learns reusable research operations while preserving their decision inputs. It selects training sources by downstream update value, instead of assuming the best executing harness is the best teacher. [Experiment 007](experiments/007-feedback-structure/RESULTS.md) executes a controlled information-localization construction; it is not an LLM reproduction.
 
@@ -236,8 +229,8 @@ Generality requires mechanism coverage and testable predictions across methods. 
 | **[SEARCH.md](SEARCH.md)** | search-effort objectives, complete-computation preservation, and the executable learning loop |
 | **[THEORY.md](THEORY.md)** | implementation boundaries, common-target improvement tests, coupling, and mathematical counterexamples |
 | **[RSI_SCOPE.md](RSI_SCOPE.md)** | Chinese scope correction, filtering results, key evidence and research consequences |
-| **[research/scope-catalog.md](research/scope-catalog.md)** | all 123 entries separated by relevance, plus deferred/excluded candidates |
-| **[COMPATIBILITY.md](COMPATIBILITY.md)** | per-work representation of all 123 catalog entries and limits of universality claims |
+| **[research/scope-catalog.md](research/scope-catalog.md)** | all 127 entries separated by relevance, plus deferred/excluded candidates |
+| **[COMPATIBILITY.md](COMPATIBILITY.md)** | per-work representation of all 127 catalog entries and limits of universality claims |
 | **[MECHANISMS.md](MECHANISMS.md)** | conditional explanations, derivations, interventions and learner-aware research route |
 | **[research/mechanism-map.md](research/mechanism-map.md)** | causal operation, failure condition and separating intervention for every corpus entry |
 | **[MAP.md](MAP.md)** | history, causal structure, knowledge tree and present frontier |

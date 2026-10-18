@@ -2,7 +2,7 @@
 
 This document separates scientific value from the label attached to a project. A work can be useful without being RSI. A work can also contain a genuine result while making a broader claim than its evidence supports.
 
-The current catalog separates relevance from demonstrated recursion. See [RSI_SCOPE.md](RSI_SCOPE.md): 63 direct self-evolution studies, 30 enablers, 7 evaluations, 3 theories, 14 foundations and 6 background entries. A primary abstract screen is not a full quality review.
+The current catalog separates relevance from demonstrated recursion. See [RSI_SCOPE.md](RSI_SCOPE.md): 66 direct self-evolution studies, 31 enablers, 7 evaluations, 3 theories, 14 foundations and 6 background entries. A primary abstract screen is not a full quality review.
 
 ## 1. The evidence test
 
@@ -449,3 +449,91 @@ The main view now contains **12 works: 8 Harness, 2 Model, 2 mixed**. There are 
 Harness-role contributions retain their earlier primary-source locators. RQGM updates agent/evaluator code, whereas Self-Taught Evaluators trains evaluator weights: the word “evaluator” cannot determine the layer. The six Harness functions and eighteen research-space positions are this project's analytical organization, not author-claimed categories or proofs of worldwide research gaps.
 
 The >=27B cutoff is a user-selected main-view scope. Total and active parameters are distinct; a LoRA-trained 30B model does not mean 30B trainable adapter parameters or 30B dense compute. Small models are not added together, and frozen teacher/evaluator/API models do not satisfy the actual-target gate. Source facts remain author-reported and were not independently reproduced.
+
+## 2026-10-18 coverage correction: the 12-case view was not a field census
+
+The earlier 8/2/2 view was an incomplete editorial selection. It was not the result of rejecting the rest of the field. This update adds missing primary-source claim reviews and preserves the difference between iterative task learning, self-modification of an improver, and one-pass joint adaptation. No new result is independently reproduced.
+
+### STOP
+
+- Source fact / locator: [首页署名与脚注；§3–4、Algorithm 1、迁移实验](https://arxiv.org/pdf/2310.02304v3). 用调用冻结 GPT-4 的改进程序修改该改进程序自身。 改进程序产生后继；后继继续生成程序改进。
+- Reported evidence / distributions / resources: 作者报告后继改进程序在受限算法任务上优于种子，包含跨任务检验。 GPT-4 冻结；改进器代码可变；算法任务与规定调用预算。
+- BeforeRSI judgment: 机制和回流已核对，纳入重点案例；不等于所有递归主张均已证明。 任务规模有限；作者也未称为全部组件均可改的完整 RSI。
+
+### Promptbreeder
+
+- Source fact / locator: [首页；§3、§4、Table 1；ICML 2024 正式版另列](https://arxiv.org/pdf/2309.16797v1). 共同演化任务提示与生成变异的提示，基础模型冻结。 任务提示与对应变异提示共同进入后继种群。
+- Reported evidence / distributions / resources: 在算术、常识和分类任务上报告提示搜索收益，并分析自指成分。 PaLM 2-L 冻结；多代种群；训练样本作适应度、测试集报告结果。
+- BeforeRSI judgment: 机制和回流已核对，纳入重点案例；不等于所有递归主张均已证明。 提示演化不等于模型训练，也不证明开放任务上的持续加速。
+
+### SICA
+
+- Source fact / locator: [首页；§3、Algorithm 1；§4 与 Appendix D](https://arxiv.org/html/2504.15228v1). 从历史档案选当前最佳 agent，让它修改自己的代码库。 被选中的后继 agent 承担下一轮自修改。
+- Reported evidence / distributions / resources: 作者在 SWE-bench Verified 随机子集报告 17%→53%，并报告其他编码/推理任务结果。 冻结 LLM；SWE 子集、LiveCodeBench 与合成任务；选择效用含时间和费用。
+- BeforeRSI judgment: 机制和回流已核对，纳入重点案例；不等于所有递归主张均已证明。 不能把子集分数说成完整 SWE-bench 成绩；未证明后继改进效率持续增长。
+
+### ACE
+
+- Source fact / locator: [首页；§3–4，尤其 §3.1–3.2、§4.5–4.6](https://arxiv.org/html/2510.04618v1). 从轨迹提炼经验，以局部增量更新持久 playbook。 新任务使用已维护的经验，再把成败反馈写回经验库。
+- Reported evidence / distributions / resources: AppWorld 与金融任务报告收益；有反思、维护组件消融和成本分析。 冻结基座；离线上下文优化和在线记忆适应；不训练模型权重。
+- BeforeRSI judgment: 机制和回流已核对，纳入重点案例；不等于所有递归主张均已证明。 证据是经验积累与任务适应；反思/维护算法本身没有自动进化。
+
+### Iterative RPO
+
+- Source fact / locator: [首页；§2、§3.1–3.3、Appendix A](https://arxiv.org/html/2404.19733v2). 用当前模型生成推理候选，按答案正确性组成偏好对，再用 DPO+NLL 更新。 新权重生成下一轮偏好对，并作为下一轮参数与参考模型。
+- Reported evidence / distributions / resources: 70B 多轮训练改善三个推理任务，包含 DPO/NLL 消融；收益最终饱和。 Llama-2-70B-Chat；GSM8K、MATH、ARC-Challenge；固定训练问题和答案。
+- BeforeRSI judgment: 机制和回流已核对，纳入重点案例；不等于所有递归主张均已证明。 依赖外部正确答案；没有学习训练算法或证明通用自主科研能力。
+
+### DeepSeekMath-V2
+
+- Source fact / locator: [§2.1–2.3、§3.1–3.3；官方 Math-V2 config.json 与 V3.2-Exp 部署配置](https://arxiv.org/html/2511.22570v1). 迭代训练证明验证器与生成器，并用元验证筛选自动标注。 生成器产生更难证明→验证/元验证标注→更新验证器→再训练生成器。
+- Reported evidence / distributions / resources: 最后两轮由自动标注取代人工标注；报告数学证明表现及专家评估。 DeepSeek-V3.2-Exp-Base 的 671B 级模型；公开配置仅路由专家矩阵已超过 653.9B。
+- BeforeRSI judgment: 机制和回流已核对，纳入重点案例；不等于所有递归主张均已证明。 非形式化验证仍可能犯错；高计算搜索成绩不是单次生成分数，亦未证明全域递归加速。
+
+### Kimi K2 · 自评价 RL
+
+- Source fact / locator: [§1、§3.2.2–3.2.3、§4 与 Appendix F](https://arxiv.org/html/2507.20534v1). K2 actor 生成回答，K2 critic 按 rubric 提供偏好，critic 又从可验证的 on-policy 轨迹更新。 当前策略轨迹更新 critic；critic 的反馈继续训练策略。
+- Reported evidence / distributions / resources: 技术报告明确描述策略—critic 闭环；最终模型有广域评测。 约 1.04T 总参数、32B 激活；本卡只纳入后训练自评价机制。
+- BeforeRSI judgment: 机制和回流已核对，纳入重点案例；不等于所有递归主张均已证明。 报告未充分隔离该闭环对最终总成绩的因果贡献；人工 rubric 仍是锚点。
+
+### ReST-EM
+
+- Source fact / locator: [首页；§3 Algorithm 1、§5–6、Figure 4/7](https://arxiv.org/pdf/2312.06585v4). 生成自训练样本、用外部二元反馈筛选，再监督学习；反复交替。 每轮从原基座重训，但样本由上轮改进模型产生。
+- Reported evidence / distributions / resources: PaLM 2 的数学/编码训练与任务外迁移；重置基座的对照。 PaLM 2-S / 2-L；本论文未公开精确参数，不能将图中的 62B/540B 对照当作训练对象。
+- BeforeRSI judgment: 机制有直接证据，实际训练总参数未核准；不是低价值排除。 外部验证规则与更新程序固定；规模未知不表示低于 27B。
+
+### SIMA 2
+
+- Source fact / locator: [首页；§3.3、§4.5，Figures 15–17](https://arxiv.org/html/2512.04797v1). Gemini 出题并评价游戏轨迹；agent 从自生成经验继续训练。 更新 agent 再产生经验，任务选择可聚焦弱项；外部 Gemini 组件未证参数共演。
+- Reported evidence / distributions / resources: ASKA 技能/进度改善；Genie 3 城市场景训练后在自然场景测迁移。 Gemini 基础模型；训练目标参数未公开核准。
+- BeforeRSI judgment: 机制有直接证据，实际训练总参数未核准；不是低价值排除。 未证明 task setter、reward model 或世界模型也随 agent 共同训练。
+
+### AlphaProof
+
+- Source fact / locator: [Agent / Training / Methods: Proof network；test-time RL](https://www.nature.com/articles/s41586-025-09833-y). 证明搜索和 Lean 校验产生经验训练策略/价值网络，难题再做测试时 RL。 搜索成功轨迹与变体反馈进入证明网络训练。
+- Reported evidence / distributions / resources: 报告正式竞赛级证明与主训练、测试时学习机制。 主证明网络 3B；Gemini 自动形式化模型的规模不能替代它。
+- BeforeRSI judgment: 实际训练目标低于27B，保留机制参考；不是质量否定。 不满足本项目 ≥27B 主图门槛，但不能因此判为低质量；外部训练程序仍固定。
+
+### Constitutional AI
+
+- Source fact / locator: [§1.2、§3、§4；Figure 2 的 52B RL runs](https://arxiv.org/html/2212.08073v1). 自批评/修订样本用于 SFT；AI 偏好训练奖励模型，再用于 RL。 AI 输出和偏好进入后续权重训练；未证持续重复整个系统共演。
+- Reported evidence / distributions / resources: 52B 实验有人类对比评价；帮助性仍使用人类反馈。 含 52B 策略；不是无人工目标、无人工数据。
+- BeforeRSI judgment: 关键前身/比较基线，保留贡献但不计入直接演化重点数。 关键 AI4AI 前身；论文没有证实改进器不断自改的多代闭环。
+
+### ADAS
+
+- Source fact / locator: [首页；§3、§4.3、Appendix G](https://arxiv.org/html/2408.08435v1). 固定 meta-agent 依据档案编写、评测目标 agent 的 forward 实现。 设计结果写回档案；改进器从档案学习上下文，但其实现固定。
+- Reported evidence / distributions / resources: 报告 ARC、推理任务和跨域/跨模型迁移；有成本附录。 冻结基础模型；meta-agent 与目标 agent 分离。
+- BeforeRSI judgment: 关键前身/比较基线，保留贡献但不计入直接演化重点数。 自动设计前身；生成的目标 agent 没有替换固定 meta-agent。
+
+### GEPA
+
+- Source fact / locator: [首页；§2–4、Algorithm 1、实验与成本设置](https://arxiv.org/pdf/2507.19457v2). 反思执行轨迹、修改提示，并从 Pareto 前沿组合互补候选。 候选提示及轨迹反馈进入后续搜索；外层优化算法固定。
+- Reported evidence / distributions / resources: 六任务报告与 GRPO、MIPROv2 的比较；需要同时看反思模型成本。 提示优化基座冻结；GRPO 是对照，不应把其训练算成 GEPA 的参数更新。
+- BeforeRSI judgment: 关键前身/比较基线，保留贡献但不计入直接演化重点数。 优化器本身未证自改；较少 rollout 不等于同比总 FLOPs 或费用。
+
+### LLMs Can Self-Improve
+
+- Source fact / locator: [首页；§2–3、消融；2022 预印本 / EMNLP 2023](https://aclanthology.org/2023.emnlp-main.67.pdf). 用 self-consistency 筛选自生成推理样本，再微调同一模型。 自身生成样本回到参数更新；未证多代循环。
+- Reported evidence / distributions / resources: PaLM 540B 在多项推理任务报告改善及多样性消融。 PaLM 540B；2022 预印本、2023 正式发表。
+- BeforeRSI judgment: 关键前身/比较基线，保留贡献但不计入直接演化重点数。 一轮自训练前身；不把它计成已证持续递归系统。

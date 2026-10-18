@@ -12,6 +12,7 @@ from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.lib.pagesizes import A4
 R=Path(__file__).resolve().parents[1]
 J=lambda p:json.loads((R/p).read_text())
+BR=J('data/research-brief.json')
 Q=J('data/quality-review.json'); L=J('data/layer-review.json'); W=J('data/works.json')['works']
 S={x['id']:x for x in J('data/scope-review.json')['works']}; M={x['id']:x for x in J('data/mechanisms.json')['works']}; X={x['id']:x for x in J('data/expansion-reviews.json')['works']}
 D={x['id']:x for x in Q['decisions']}; C={x['id']:x for x in Q['core_cards']}; B={x['id']:x for x in L['works']}
@@ -26,7 +27,7 @@ counts=dict(Counter(r['admission'] for r in rows));counts.setdefault('low_value'
 placements=dict(Counter(r['layer']['placement'] for r in rows));route_counts={k:sum(r['layer']['route']==k for r in main) for k in routes}
 for r in main:
  assert r['admission']=='core' and r['layer']['route'] in routes
- if r['layer']['route']!='harness':assert any((m['total_b'] or 0)>=L['minimum_total_parameters_b'] for m in r['layer']['models'])
+ if r['layer']['route']!='harness':assert any(max(m['total_b'] or 0,m.get('total_lower_bound_b',0))>=L['minimum_total_parameters_b'] for m in r['layer']['models'])
 mainids={r['id'] for r in main}
 nodes=[{'id':'route-'+k,'type':'concept','label':v['title']} for k,v in routes.items()]+[{'id':r['id'],'type':'work','label':r['short']} for r in main]
 edges=[{'source':'route-'+r['layer']['route'],'target':r['id'],'relation':'route_membership'} for r in main]+[{'source':r['source'],'target':r['target'],'relation':r['type']} for r in Q['relations'] if r['source'] in mainids and r['target'] in mainids]
@@ -35,7 +36,8 @@ spaces=[]
 for slot in L['spaces']:
  s={**slot};s['main_ids']=[k for k in s['evidence_ids'] if k in mainids and B[k]['route']==s['route']];s['reference_ids']=[k for k in s['evidence_ids'] if k not in s['main_ids']]
  s['coverage']='主图有对应实例' if s['main_ids'] else ('只有候选 / 范围外参考' if s['reference_ids'] else '本次调查未确认实例');spaces.append(s)
-a={'updated':L['updated'],'version':'2.0.0','counts':counts,'placement_counts':placements,'route_counts':route_counts,'main_count':len(main),'reviewed_count':len(reviewed),'scope_counts':J('data/scope-review.json')['counts'],'discovery_count':len(J('data/discovery-pool.json')['entries']),'warning':Q['status'],'criteria':Q['criteria'],'families':Q['families'],'works':rows,'nodes':nodes,'edges':edges,'relations':Q['relations'],'routes':L['routes'],'spaces':spaces,'placement_labels':PL,'contribution_axes':L['contribution_axes'],'threshold':L['threshold_basis'],'minimum_total_parameters_b':L['minimum_total_parameters_b'],'priority_queue':Q['priority_queue'],'rejection_policy':Q['rejection_policy']}
+sector_counts={k:dict(Counter(r['layer']['provenance']['sector'] for r in main if r['layer']['route']==k)) for k in routes}
+a={'brief':BR,'sector_counts':sector_counts,'updated':L['updated'],'version':'3.0.0','counts':counts,'placement_counts':placements,'route_counts':route_counts,'main_count':len(main),'reviewed_count':len(reviewed),'scope_counts':J('data/scope-review.json')['counts'],'discovery_count':len(J('data/discovery-pool.json')['entries']),'warning':Q['status'],'criteria':Q['criteria'],'families':Q['families'],'works':rows,'nodes':nodes,'edges':edges,'relations':Q['relations'],'routes':L['routes'],'spaces':spaces,'placement_labels':PL,'contribution_axes':L['contribution_axes'],'threshold':L['threshold_basis'],'minimum_total_parameters_b':L['minimum_total_parameters_b'],'priority_queue':Q['priority_queue'],'rejection_policy':Q['rejection_policy']}
 for p,obj in [('data/research-atlas.json',a),('data/knowledge-graph.json',canonical)]: (R/p).write_text(json.dumps(obj,ensure_ascii=False,indent=2)+'\n')
 fontpath=os.environ.get('ATLAS_CJK_FONT','/usr/local/share/fonts/qiushi/NotoSansCJKsc-Report.ttf')
 if not Path(fontpath).exists():raise SystemExit('Set ATLAS_CJK_FONT to a Chinese-capable TrueType font.')
@@ -62,18 +64,18 @@ f=Figure(1500,1220)
 f.text(60,38,'BeforeRSI  /  三层研究地图',42)
 f.text(62,110,'按实际更新对象组织；闭环深度、贡献与规模另行核验',25,MUTED)
 for i,(k,rt) in enumerate(routes.items()):
- y=180+i*280;f.rect(60,y,1380,250);f.text(85,y+18,f'{i+1:02d}  {rt["title"]}',34,TEAL)
+ y=180+i*280;f.rect(60,y,1380,250);f.text(85,y+18,f'{i+1:02d}  {rt["title"]} · {route_counts[k]}项',34,TEAL)
  f.text(85,y+75,rt['subtitle'],25,INK)
  f.para(85,y+120,rt['criterion'],410,23)
  f.line(530,y+26,530,y+224)
  names=' / '.join(r['short'] for r in main if r['layer']['route']==k)
  yy=f.para(560,y+24,names,850,26,INK)
- details={'harness':'功能：信息记忆 · 工具行动 · 组织搜索 · 学习研发 · 评价选择 · 执行资源','model':'已纳入：70B 自评价 SFT；70B 迭代 DPO。参数化评价器归 Model。','hybrid':'27B MASS：两轮交替；30B-A3B：序列联合适配。后者未实证持续多轮闭环。'}
+ details={'harness':'包括提示、经验与代码的更新；改进器自改与固定外层搜索分别注明。','model':'反馈主线：自生成数据 → 偏好 / 奖励 → 评价器与生成器共同训练。','hybrid':'27B MASS：两轮交替；30B-A3B：序列联合适配。后者未实证持续多轮闭环。'}
  f.para(560,max(y+132,yy+16),details[k],850,23,TEAL)
 f.rect(60,1050,1380,105,INK,INK)
-f.text(84,1066,f'{len(main)} 项主视图  /  {len(reviewed)} 项命题卡片  /  {len(rows)} 项书目',28,WHITE)
+f.text(84,1066,f'{len(main)} 项重点案例  /  {len(reviewed)} 项机制审查  /  {len(rows)} 项书目',28,WHITE)
 f.text(84,1110,'Model / 混合：实际训练总参数 ≥27B；未知、低于门槛与非闭环支撑另列。',23,WHITE)
-f.text(62,1180,'2026-10-18  |  这是已审样本，不是全领域分布或完备性证明。',21,MUTED);f.save('knowledge-tree')
+f.text(62,1180,'调查进行中；重点案例包括不同证据强度的机制研究，不是全球 RSI 总数。',21,MUTED);f.save('knowledge-tree')
 g=Figure(1500,1040);g.text(60,38,'同一个角色，可能在不同层实现',40);g.text(62,105,'判断“改了哪里”之后，还要追踪“为什么改善、是否进入下一轮”。',25,MUTED)
 for x,title,body,example in [(60,'Model：参数化组件','执行者、评价模型、世界模型、提案模型；权重 / adapter / 模型结构','自评价 SFT、偏好学习、RL、蒸馏、元学习'),(800,'Harness：外部机制','知识与记忆、工具、组织控制、学习研发、评价选择、执行资源','代码、提示、skills、MCP、数据库、runtime')]:
  g.rect(x,190,640,235);g.text(x+24,211,title,30,TEAL);g.para(x+24,268,body,590,25);g.para(x+24,365,example,590,21)
@@ -85,20 +87,19 @@ g.rect(60,730,670,190);g.text(84,750,'评价既是可改对象，也是外部检
 g.rect(770,730,670,190);g.text(794,750,'结构共演不保证正协同',28,TEAL);g.para(794,805,'交叉替换 M / H，检查收益、回退、迁移和总成本；后继改进能力另做共同目标比较。',618,25)
 g.text(62,975,'本图是分析框架；箭头表示待追踪的作用方向，不代表所有论文已证明闭环。',23,MUTED);g.save('feedback-map')
 # Markdown: main view and exhaustive audit trail are distinct.
-md=['# BeforeRSI 三层研究地图','',f'更新：{L["updated"]}。入口为 Harness、Model、Model × Harness；角色、算法、时间尺度、闭环与证据在各层内部说明。','', '**[打开可搜索离线 HTML](research/atlas/index.html)** · [图文导读 PDF](output/pdf/beforersi-research-atlas.pdf) · [分类原理与边界](research/atlas/classification.md)','', '![三层研究地图](assets/atlas/knowledge-tree.png)','', '## 先区分三个统计','',f'- 主视图 **{len(main)} 项**：Harness {route_counts["harness"]}、Model {route_counts["model"]}、混合 {route_counts["hybrid"]}。混合中的一次联合适配不冒充多轮递归。',f'- 已有 **{len(reviewed)} 项限定命题卡片**；有价值的参考不一定满足主图的规模与 RSI 边界。',f'- 完整书目 **{len(rows)} 项**，另有 {a["discovery_count"]} 个去重发现线索；线索与书目重叠，不相加、不作为覆盖率分母。','', '## 主线及其功能结构','', '| 主线 | 核心问题 | 主视图实例 |','|---|---|---|']
-for k,rt in routes.items():md.append('| '+rt['title']+' | '+rt['question']+' | '+'、'.join(r['short'] for r in main if r['layer']['route']==k)+' |')
-md+=['','Model / 混合的实际训练目标按总参数 ≥27B 筛选；MoE 激活量另报，教师/评审规模不能替代。Harness 主线不训练基座，不能套用被训练模型的门槛。该门槛是研究范围，不是质量定理。','', '## 三层之下不能再混淆的维度','', '- **Harness 的六类功能**：信息与记忆；工具与行动；组织与搜索；学习与研发；评价与选择；执行与资源。文件、MCP、skills 等是具体载体。','- **Model 的六个描述轴**：被训练角色；训练阶段；学习目标；参数更新算法；数据/时间方式；继承回流。on-policy 采样不等于在线 RL。','- **混合的关系强度**：并存 → 单向作用 → 序列联合适配 → 双向多轮回流；协同收益须另测。','- **A–F 贡献标签**：每项只提炼 1–3 个主要贡献，不填写六大类全部子项，不推测作者个人品味。','', '![对象与反馈关系](assets/atlas/feedback-map.png)','', '## 研究空间与未确认的位置','', '下表的候选与背景关联仅作检索线索，不能读成已审实例或全球研究空白。','', '| 主线 / 功能位置 | 当前证据状态 | 下一步应回答的问题 |','|---|---|---|']
-for s in spaces:md.append('| '+routes[s['route']]['title']+' / '+s['title']+' | '+s['coverage']+' | '+s['open_question']+' |')
-md+=['','## 逐项退出主图的理由','', '| 工作 | 当前去向 | 理由 |','|---|---|---|']
-for r in reviewed:
- if not r['main_view']:md.append(f'| {r["short"]} | {PL[r["layer"]["placement"]]} | {r["layer"]["why"]} |')
-md+=['','## 文件与证据','', '- [完整研究卡片](research/atlas/core-cards.md)：先列主图，后列规模参考、AI4AI 支撑与横向工具。','- [完整参考索引](research/atlas/references.md)：保留全部条目、阅读范围、纳入和规模决定。','- [筛选与待审](research/atlas/review-queue.md)：未知不伪装成低质量。','- [分类与原理](research/atlas/classification.md)：对象划分的相对完备性，以及它不能证明的事情。','- [层级和规模人工记录](data/layer-review.json)、[贡献记录](data/quality-review.json)、[生成图谱](data/research-atlas.json)。','', '三分法只解决对象表示；统一解释还需要机制和失效条件，统一预测还需要实测参数与跨分布检验。当前不宣称全领域已穷尽，亦不宣称建立了普适增长定律。','']
+md=['# RSI 三条路线：数量、团队与研究方向','', '**调查仍在进行。以下是已核对的重点案例，不是最终领域总数。**','', '[离线 HTML](research/atlas/index.html) · [简明 PDF](output/pdf/beforersi-research-atlas.pdf)','',BR['correction'],'','| 路线 | 重点案例 | 工业独立 | 学术独立 | 产学联合 |','|---|---:|---:|---:|---:|']
+for k,rt in routes.items():
+ sc=sector_counts[k];md.append(f'| {rt["title"]} | {route_counts[k]} | {sc.get("industry",0)} | {sc.get("academic",0)} | {sc.get("joint",0)} |')
+md+=['',BR['sector_rule'],'','## 三条路线分别在推进什么','']
+for k,rt in routes.items():
+ b=BR['routes'][k];md += ['### '+rt['title'],'',b['essence']+' '+b['direction'],'','- 工业应用目标：'+b['industry_goal'],'- 研究问题：'+b['research_goal'],'- 当前证据：'+b['evidence'],'- 判断边界：'+b['caution'],'','**已核对重点名单：** '+ '、'.join(r['short'] for r in main if r['layer']['route']==k),'']
+md+=['目标与方向为对所列论文的综合判断，不是全行业意见调查，也不是按论文数量推算的趋势。','','## 调查账本','',f'完整目录 {len(rows)} 项；其中 {len(reviewed)} 项有机制审查卡片，{counts.get("pending",0)} 项仍待审，另有 {counts.get("historical",0)} 项历史材料与 {counts.get("background",0)} 项背景。已审卡片中只有 {len(main)} 项进入重点视图。','',f'另有 {placements.get("scale_unverified",0)} 项已审机制但规模待核准；{placements.get("adjacent",0)} 项关键前身/支撑；{placements.get("small",0)} 项低于27B的机制参考；{placements.get("crosscut",0)} 项评测/形式工具。','', 'Model / 混合规模门槛保留。AlphaProof 的3B主网络说明：不满足门槛不等于研究劣质。','', '## 原文与审查记录','', '- [逐项研究卡片](research/atlas/core-cards.md)','- [完整参考索引](research/atlas/references.md)','- [待审和筛选理由](research/atlas/review-queue.md)','- [分类原理附录](research/atlas/classification.md)','']
 (R/'RESEARCH_ATLAS.md').write_text('\n'.join(md))
 fields=[('principle','原理与操作'),('distinct_contribution','最值得保留的贡献'),('evidence','证据'),('scale','规模'),('limit','边界'),('insight','研究含义')]
 ordered=main+[r for r in reviewed if not r['main_view']]
 cm=['# 研究卡片：主视图与参考分列','',f'{len(main)} 项进入三层主图；共 {len(reviewed)} 项限定命题有卡片。结果为作者报告，未在本项目独立复现。','']
 for r in ordered:
- b=r['layer'];cm+=['<a id="'+r['id']+'"></a>',f'## [{r["number"]:03d}] {r["short"]}','',f'**位置：** {routes.get(b["route"],{}).get("title","横向工具")} / {PL[b["placement"]]}。{b["why"]}','', '**主要贡献点：** '+'；'.join(k+' '+L['contribution_axes'][k] for k in b['focus'])+'。此为编辑判断，非作者个人能力评分。','', '**改变与回流：** '+b['changed']+'。'+b['return_path'],'']
+ b=r['layer'];cm+=['<a id="'+r['id']+'"></a>',f'## [{r["number"]:03d}] {r["short"]}','',f'**位置：** {routes.get(b["route"],{}).get("title","横向工具")} / {PL[b["placement"]]}。{b["why"]}','', '**团队：** '+r.get('institutions','未核准'),'', '**改变与回流：** '+b['changed']+'。'+b['return_path'],'']
  for key,title in fields:cm+=['**'+title+'：** '+r[key],'']
  if b['route'] in ['model','hybrid']:cm+=['**训练说明：** '+'；'.join(b['training'].values()),'']
  cm+=['**定位：** ['+b['source_location']+']('+b['source_url']+')；方法/证据摘读，未声明完整逐页审核。','']
@@ -125,35 +126,33 @@ def page(title,sub=None):
  if story:story.append(PageBreak())
  story.append(P(title,'h1'))
  if sub:story.append(P(sub,'small'))
-page('BeforeRSI<br/>三层研究地图','2026-10-18 / v2.0 / 对象 → 机制 → 反馈 → 证据')
-story += [P('Harness · Model · Model × Harness','h2'),P(f'{len(main)} 项主视图，{len(reviewed)} 项命题卡片，{len(rows)} 项完整书目。主图按实际改变的对象组织；规模、闭环与贡献分别核验。'),RLImage(str(R/'assets/atlas/knowledge-tree.png'),width=490,height=398.5),P('Model / 混合主视图：实际训练模型总参数 ≥27B。MoE 激活量单列；教师和评审的规模不替代训练对象。'),P('主图包含有明确边界的联合适配研究，不把一次联合适配说成多轮闭环。未声明全领域覆盖或独立复现。','small')]
-page('01  分类简洁，解释不能简化','相对于已声明的系统边界，模型改变 / 外部机制改变组成三个非空组合。对象覆盖不等于机制解释或预测。')
-story +=[RLImage(str(R/'assets/atlas/feedback-map.png'),width=490,height=339.7),P('Harness 的六类功能','h2'),P('信息与记忆；工具与行动；组织与搜索；学习与研发；评价与选择；执行、环境与资源。知识库、数据库、skills、MCP 和文件属于具体载体。'),P('评价为什么不能单独固定归类？','h2'),P('改测评代码是 H；训练评价器是 M；二者都更新才可能是混合。内部评分变化还需独立评价锚点。'),P('A–F 只标主要贡献','h2'),P('每项只选 1–3 个贡献点。不逐篇填写所有目标、思想、理论、创新和迁移维度；不据机构推断作者的个人品味。')]
-page('02  Model 与混合：怎样读训练')
-for title,body in [('谁在学','执行者、评价者、奖励模型、世界模型、出题者或改进者。按实际改变的参数记录。'),('什么时候学','从零/继续预训练、后训练、测试时与持续适应；阶段与算法是两条轴。'),('怎样学','SFT、DPO、RL、蒸馏、元学习、结构变化；全参或 adapter 另报。on-policy 描述数据分布，不自动意味着 RL。'),('怎样进入下一轮','接续上轮参数；每轮重置学生但继承教师；群体继承；数据、奖励或改进行为反馈。'),('混合的证据强度','同时拥有 M/H → 单向作用 → 一次联合适配 → 实际双向多轮 → 在可比预算下测协同收益。每一步都需要新证据。'),('完备性的正确边界','三分法可覆盖已声明系统边界内的非空对象变化；不能据此声称已读完全部研究、已证明递归增长或建立物理普适定律。')]:story +=[P(title,'h2'),P(body)]
-for k,rt in routes.items():
- page('03  研究空间 / '+rt['title'],'有主图实例、只有候选/范围外参考、本次未确认，三种状态分开。不能由本次缺项推出全球空白。')
- for s in [s for s in spaces if s['route']==k]:
-  story +=[P(s['title']+' · '+s['coverage'],'h2'),P(s['objects'],'small'),P(s['open_question']),P('主图实例：'+(' / '.join(byid[x].get('short',byid[x]['name']) for x in s['main_ids']) or '无已确认主图实例')+'。候选/参考：'+(' / '.join(byid[x].get('short',byid[x]['name']) for x in s['reference_ids']) or '本次未确认'),'small')]
+page('RSI 三条研究路线','2026-10-18 / 调查进度版 / 数量 · 团队 · 方向')
+story += [P('数量、团队与研究方向','title'),P('调查进行中。此前 8 / 2 / 2 的案例视图遗漏了重要工业研究；以下更新反映当前审阅进度，尚不能给出全球最终筛选总数。'),P('当前已核对重点案例','h2')]
+from reportlab.platypus import Table,TableStyle
+def tbl(headers,items,widths):
+ t=Table([[P(safe(v),'small') for v in headers]]+[[P(safe(v),'small') for v in row] for row in items],colWidths=widths,repeatRows=1,hAlign='LEFT')
+ t.setStyle(TableStyle([('BACKGROUND',(0,0),(-1,0),colors.HexColor('#EAF0F3')),('VALIGN',(0,0),(-1,-1),'TOP'),('BOTTOMPADDING',(0,0),(-1,-1),8),('TOPPADDING',(0,0),(-1,-1),8),('LINEBELOW',(0,0),(-1,-1),.4,colors.HexColor(LINE))]));return t
+story.append(tbl(['路线','重点数','工业独立','学术独立','产学联合'],[[routes[k]['title'],route_counts[k],sector_counts[k].get('industry',0),sector_counts[k].get('academic',0),sector_counts[k].get('joint',0)] for k in routes],[175,65,82,82,90]))
+story +=[Spacer(1,12),P(BR['sector_rule'],'small'),P('三条方向','h2')]
+for k,rt in routes.items():story +=[P(rt['title']+'：'+BR['routes'][k]['direction'])]
+story +=[P(f'调查账本：{len(rows)} 项书目；{len(reviewed)} 项机制审查；{counts.get("pending",0)} 项候选待审。重点案例含不同证据强度，不代表 {len(main)} 个已实现强 RSI 的系统。','small'),P('工业和研究目标依据论文综合提炼；不是全行业意见调查或按数量外推的增长趋势。','small')]
 for k,rt in routes.items():
  rs=[r for r in main if r['layer']['route']==k]
- for start in range(0,len(rs),2):
-  page('04  主视图 / '+rt['title'],'限定命题；证据为作者报告。主要贡献标签为本项目判读。')
-  for r in rs[start:start+2]:
-   b=r['layer'];story +=[P(f'[{r["number"]:03d}] '+safe(r['short']),'h2'),P('贡献点：'+' / '.join(x+' '+L['contribution_axes'][x] for x in b['focus']),'small'),P('<b>改变：</b>'+safe(b['changed'])),P('<b>回流：</b>'+safe(b['return_path'])),P('<b>价值：</b>'+safe(r['distinct_contribution'])),P('<b>证据：</b>'+safe(r['evidence'])),P('<b>边界：</b>'+safe(r['limit']))]
-   if k!='harness':story +=[P('<b>训练：</b>'+safe(b['training']['algorithm']+'；'+b['training']['data_regime']),'small'),P('<b>规模：</b>'+safe(r['scale']),'small')]
-   story +=[P(f'<link href="{safe(b["source_url"])}" color="{TEAL}">原文定位</link>：'+safe(b['source_location']),'small'),Spacer(1,13)]
-excluded=[r for r in reviewed if not r['main_view']]
-for start in range(0,len(excluded),4):
- page('05  保留参考，退出主图','范围或证据不满足主图，不等于具名质量否定。完整贡献卡片在离线 HTML 与 Markdown。')
- for r in excluded[start:start+4]:
-  b=r['layer'];story +=[P(f'[{r["number"]:03d}] '+safe(r['short']),'h2'),P(PL[b['placement']]+'：'+safe(b['why'])),P('<b>可保留的机制：</b>'+safe(r['principle']),'small'),P(f'<link href="{safe(b["source_url"])}" color="{TEAL}">来源</link>：'+safe(b['source_location']),'small'),Spacer(1,12)]
-for start in range(0,len(rows),12):
- page(f'06  完整书目 {start+1:03d}–{min(start+12,len(rows)):03d}','编号稳定，不代表重要性；尚未统一核准所有条目的首次发表年份。')
- for r in rows[start:start+12]:
-  u=r.get('source_url') or r['primary_source'];story.append(KeepTogether([P(f'[{r["number"]:03d}] <link href="{safe(u)}" color="{TEAL}">{safe(r["name"])}</link> · {r["year"]}'),P(PL[r['layer']['placement']]+' | '+LABEL[r['admission']],'small')]))
+ chunk=3 if k=='model' else 4
+ for start in range(0,len(rs),chunk):
+  page(rt['title']+' / 已核对重点案例',f'{start+1}–{min(start+chunk,len(rs))} / {len(rs)}；结果均为作者报告，未独立复现。')
+  if start==0:story +=[P('<b>工业目标：</b>'+safe(BR['routes'][k]['industry_goal'])),P('<b>研究问题：</b>'+safe(BR['routes'][k]['research_goal']))]
+  for r in rs[start:start+chunk]:
+   b=r['layer'];story +=[P(f'[{r["number"]:03d}] '+safe(r['short'])+' · '+safe(BR['claim_labels'][r['id']]),'h2'),P(safe(b['provenance']['institutions']),'small'),P(safe(r['principle']))]
+   if k!='harness':story +=[P('<b>规模：</b>'+safe(r['scale']),'small')]
+   story +=[P('<b>证据：</b>'+safe(r['evidence']),'small'),P('<b>边界：</b>'+safe(r['limit']),'small'),P(f'<link href="{safe(b["source_url"])}" color="{TEAL}">原文</link> · '+safe(b['source_location']),'small'),Spacer(1,7)]
+page('主图之外：哪些重要工作仍须看','规模未核准、机制前身与证据待审，不能笼统写成“低质量”。')
+for k in ['rest-em','sima2','gpt-red','evotrainer','constitutional-ai','llm-can-self-improve','alphaproof','co-harness']:
+ r=byid[k];b=r['layer'];story +=[P(r.get('short',r['name'])+' · '+PL[b['placement']],'h2'),P(safe(b['why']),'small'),P(safe(r.get('scale',r.get('tasks_and_resources',''))),'small'),P(f'<link href="{safe(b.get("source_url") or r["primary_source"])}" color="{TEAL}">原文与机制依据</link>','small')]
+page('完整名单与调查缺口','本页不把未审论文假装成已淘汰论文。')
+story +=[P('当前统计','h2'),tbl(['状态','数量'],[[PL[k],v] for k,v in placements.items()],[390,104]),Spacer(1,14),P('缺口仍然实质存在','h2'),P('本轮补入 STOP、Promptbreeder、SICA、ACE、Iterative RPO、DeepSeekMath-V2 与 Kimi K2 的重点记录，补审自训练、AI反馈和工业具身学习谱系。尚有67项候选未完成同等审查；也未穷尽目录外工作。'),P('下一步统计必须以明确检索范围、去重、机制与证据审查为基础；不能预设“应有100项”，也不能把小样本包装成“只剩19项”。'),P('详细研究卡片、127项索引和分类附录均保留在离线HTML与仓库。','small'),P('<link href="https://github.com/Cherish0925/BeforeRSI/pull/5" color="'+TEAL+'">研究 PR #5 / 全部证据文件</link>','small')]
 def footer(c,doc):
- width,height=A4;c.setStrokeColor(colors.HexColor(LINE));c.line(46,39,width-46,39);c.setFont('CJK',8);c.setFillColor(colors.HexColor(MUTED));c.drawString(46,25,'BeforeRSI / 2026-10-18 / 三层研究地图 v2');c.drawRightString(width-46,25,str(doc.page))
+ width,height=A4;c.setStrokeColor(colors.HexColor(LINE));c.line(46,39,width-46,39);c.setFont('CJK',8);c.setFillColor(colors.HexColor(MUTED));c.drawString(46,25,'BeforeRSI / 2026-10-18 / 三条路线 · 调查进度版');c.drawRightString(width-46,25,str(doc.page))
 out=R/'output/pdf/beforersi-research-atlas.pdf'
-SimpleDocTemplate(str(out),pagesize=A4,rightMargin=46,leftMargin=46,topMargin=42,bottomMargin=52,title='BeforeRSI 三层研究地图',author='BeforeRSI research').build(story,onFirstPage=footer,onLaterPages=footer)
+SimpleDocTemplate(str(out),pagesize=A4,rightMargin=46,leftMargin=46,topMargin=42,bottomMargin=52,title='BeforeRSI 三条路线：数量、团队与方向',author='BeforeRSI research').build(story,onFirstPage=footer,onLaterPages=footer)
 print(json.dumps({'main':len(main),'route_counts':route_counts,'reviewed':len(reviewed),'counts':counts,'placements':placements,'pdf_bytes':out.stat().st_size},ensure_ascii=False))

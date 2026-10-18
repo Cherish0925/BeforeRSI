@@ -1,13 +1,13 @@
-# RSI 与 AI4AI 分层研究目录
+# RSI 与 AI4AI 范围目录
 
-共 123 条。56 条为本轮新增原始来源初筛，其中 10 条选读关键方法、定义或结果段落；不是 123 篇全文审查或独立复现。
-旧条目保留原有阅读深度；范围重新分类不提升证据等级。直接自进化研究是主题标签，不等于已证实更强的递归改进能力。
-完整阅读边界见 data/scope-review.json；新增工作的任务、资源和干预见 data/expansion-reviews.json。
+当前目录 127 项；主题相关性不等于已证实 RSI，也不是质量排名。
+三条路线的重点案例、审查进度与规模条件见 [研究导读](../RESEARCH_ATLAS.md)。
+本文件从人工维护的 data/scope-review.json 生成；不改变阅读深度，不重写 EVIDENCE.md。
 
-| 分层 | 数量 |
+| 范围 | 数量 |
 |---|---:|
-| 直接自进化研究 | 63 |
-| 直接支撑的 AI4AI/学习机制 | 30 |
+| 直接自进化研究 | 66 |
+| 直接支撑的 AI4AI/学习机制 | 31 |
 | 评测与反例 | 7 |
 | RSI 理论 | 3 |
 | 历史/机制基础 | 14 |
@@ -15,13 +15,13 @@
 
 ## 直接自进化研究
 
-| 工作（首次公开年份） | 改了什么、如何反馈 | 尚不能推出什么 |
+| 工作（首次公开年份） | 改了什么、如何反馈 | 证据边界 |
 |---|---|---|
-| [STOP](https://github.com/microsoft/stop)（2023） | An improver edits an executable improver, potentially retaining better candidate-generation operations. | Underlying language model is fixed and evidence is bounded to the supplied task setting. |
-| [Promptbreeder](https://proceedings.mlr.press/v235/fernando24a.html)（2023） | Mutation prompts alter the proposal distribution used to evolve task prompts. | Self-reference is prompt-level; broad transfer and successor-as-improver performance are not established. |
+| [STOP](https://arxiv.org/pdf/2310.02304v3)（2023） | 用调用冻结 GPT-4 的改进程序修改该改进程序自身。 | 任务规模有限；作者也未称为全部组件均可改的完整 RSI。 |
+| [Promptbreeder](https://arxiv.org/pdf/2309.16797v1)（2023） | 共同演化任务提示与生成变异的提示，基础模型冻结。 | 提示演化不等于模型训练，也不证明开放任务上的持续加速。 |
 | [Self-Rewarding Language Models](https://proceedings.mlr.press/v235/yuan24d.html)（2024） | Self-generated preferences reweight the training target; learning changes both answer and judgment behavior. | 实际新题由固定 Llama 2-Chat 70B 生成；有人类种子、外部评审和早停。不证明无外部信息或无限递归增长。 规模核对：Llama 2 70B；两轮偏好集分别 3,964 / 6,942 对；256 题成对比较与 805 题 AlpacaEval 2。 |
 | [Gödel Agent](https://github.com/Arvid-pku/Godel_Agent)（2024） | Self-edited control logic changes accessible actions and the way feedback is used. | Transfer across unrelated tasks, models, and improvement problems remains limited. |
-| [SICA](https://github.com/MaximeRobeyns/self_improving_coding_agent)（2025） | Code and tool changes can reduce execution failures and improve useful work per budget. | Coding-benchmark evidence does not establish scale transfer or improved successor generation. |
+| [SICA](https://arxiv.org/html/2504.15228v1)（2025） | 从历史档案选当前最佳 agent，让它修改自己的代码库。 | 不能把子集分数说成完整 SWE-bench 成绩；未证明后继改进效率持续增长。 |
 | [Darwin Gödel Machine](https://github.com/jennyzzt/dgm)（2025） | Reusable coding operations and retained alternative parents change subsequent proposal opportunities. | Open lineage must be separated from extra candidate and evaluation budget; broad transfer and rising improvement ability remain open. |
 | [SEAL](https://github.com/Continual-Intelligence/SEAL)（2025） | Self-edit generation is trained on utility after the learner consumes that edit. | 小规模且筛选的 ARC 结果不能外推一般智能；旧编辑奖励对新学习者可能失效。 规模核对：知识吸收为 Qwen2.5-7B；ARC 为 Llama-3.2-1B，筛选后 11 个训练 / 8 个评测任务。 |
 | [HyperAgents](https://github.com/facebookresearch/HyperAgents)（2026） | Editable meta code changes diagnosis, proposal and reuse, with task and meta roles sharing a program. | Cross-domain meta-level transfer is author-reported; common-target attribution and independent matched-budget reproduction remain to be audited. |
@@ -39,7 +39,7 @@
 | [RSI-Anything](https://github.com/Gen-Verse/RSI-Anything)（2026） | Interaction and world-model predictions guide updates in an environment. | Cross-environment transfer and resistance to simulator or evaluator exploitation need independent replication. |
 | [Dream-RSI](https://github.com/zhengkid/Dream-RSI)（2026） | Replayed discovery trees train exploration choices before expensive online research. | The relation between simulated rehearsal and real improvement, and successor-as-improver gain, remains open. |
 | [Huxley–Gödel Machine (HGM)](https://arxiv.org/abs/2510.21614)（2025） | Descendant-informed allocation estimates future branch value instead of current score alone. | Reported descendant-informed search and transfer need controlled actor-target comparisons and independent reproduction. |
-| [SIMA 2](https://deepmind.google/blog/sima-2-an-agent-that-plays-reasons-and-learns-with-you-in-virtual-3d-worlds/)（2025） | Tasks, estimated rewards and visited states jointly determine the training distribution. | The official self-improvement report does not show that Genie itself recursively improves or that physical-world transfer is established. |
+| [SIMA 2](https://arxiv.org/html/2512.04797v1)（2025） | Gemini 出题并评价游戏轨迹；agent 从自生成经验继续训练。 | 未证明 task setter、reward model 或世界模型也随 agent 共同训练。 |
 | [Self-Taught Evaluators](https://arxiv.org/html/2408.02666v1)（2024） | Better judgment generation changes the usable training pool for later evaluator versions. | Constructed preference labels can be imperfect; the student is reset to the seed each round rather than simply continuing fine-tuning. |
 | [GPT-Red](https://cdn.openai.com/pdf/gpt-red-automated-red-teaming-via-self-play-at-scale.pdf)（2026） | Changing opponents generate a moving learning frontier; population diversity can prevent narrow adaptation. | Task-specific robustness improvement and co-training do not establish unrestricted recursive research acceleration. |
 | [ModularRSI: Modular and Generalizable Recursive Harness Self-Improvement](https://arxiv.org/abs/2609.14857)（2026） | 当前智能体分析成功/失败对照轨迹并修改自身模块，再整合模块。 | 模块独立优化后存在交互；跨模型迁移不等于改进能力持续提升。 |
@@ -80,24 +80,27 @@
 | [AgentEvolver: Towards Efficient Self-Evolving Agent System](https://arxiv.org/abs/2511.10395)（2025） | 自提问、自导航与贡献归因让环境经验进入后续 agent 训练。 | 训练闭环的元过程仍有固定部分；高效率需全流程成本而非仅样本数。 |
 | [SEED: Self-Evolving On-Policy Distillation for Agentic Reinforcement Learning](https://arxiv.org/abs/2607.14777)（2026） | 当前策略同时收集轨迹和提炼事后技能，技能诱导信号训练同一策略。 | 训练期事后信息在部署不可见；内化效果与信息泄漏边界需明确。 |
 | [RL Tango: Reinforcing Generator and Verifier Together for Language Reasoning](https://arxiv.org/abs/2505.15034)（2025） | 生成者与过程验证者交替用 RL 训练，外部结果正确性监督验证者。 | 不是完全无标签自证；固定结果验证构成外部锚点。 |
+| [Iterative RPO](https://arxiv.org/html/2404.19733v2)（2024） | 用当前模型生成推理候选，按答案正确性组成偏好对，再用 DPO+NLL 更新。 | 依赖外部正确答案；没有学习训练算法或证明通用自主科研能力。 |
+| [DeepSeekMath-V2](https://arxiv.org/html/2511.22570v1)（2025） | 迭代训练证明验证器与生成器，并用元验证筛选自动标注。 | 非形式化验证仍可能犯错；高计算搜索成绩不是单次生成分数，亦未证明全域递归加速。 |
+| [Kimi K2 · 自评价 RL](https://arxiv.org/html/2507.20534v1)（2025） | K2 actor 生成回答，K2 critic 按 rubric 提供偏好，critic 又从可验证的 on-policy 轨迹更新。 | 报告未充分隔离该闭环对最终总成绩的因果贡献；人工 rubric 仍是锚点。 |
 
 ## 直接支撑的 AI4AI/学习机制
 
-| 工作（首次公开年份） | 改了什么、如何反馈 | 尚不能推出什么 |
+| 工作（首次公开年份） | 改了什么、如何反馈 | 证据边界 |
 |---|---|---|
 | [SPIN](https://github.com/uclaml/SPIN)（2024） | Training contrasts generated responses with a reference data distribution and changes later response probabilities. | The iterative training rule is externally fixed; long-run diversity, retention, and recursive update quality remain open. |
-| [ADAS](https://github.com/ShengranHu/ADAS)（2024） | A fixed designer conditions architecture proposals on an archive of previous designs and outcomes. | The outer designer remains fixed; persistent target improvement is not evidence that the improver improved. |
+| [ADAS](https://arxiv.org/html/2408.08435v1)（2024） | 固定 meta-agent 依据档案编写、评测目标 agent 的 forward 实现。 | 自动设计前身；生成的目标 agent 没有替换固定 meta-agent。 |
 | [AFlow](https://github.com/FoundationAgents/AFlow)（2024） | Tree search allocates trials among workflow designs and composes available operators. | Workflow gains require held-out transfer and comparison with recursive improvement of the generator. |
-| [GEPA](https://github.com/gepa-ai/gepa)（2025） | Trace-conditioned reflection localizes repairs; instance-specialist parents preserve alternative solutions. | A strong fixed optimizer and baseline for RSI; the optimizer itself is not shown to improve. |
+| [GEPA](https://arxiv.org/pdf/2507.19457v2)（2025） | 反思执行轨迹、修改提示，并从 Pareto 前沿组合互补候选。 | 优化器本身未证自改；较少 rollout 不等于同比总 FLOPs 或费用。 |
 | [AgentBreeder](https://arxiv.org/abs/2502.00757)（2025） | Evolution changes coordination and communication among component agents. | Evolution of a target scaffold does not establish recursive improvement of the evolutionary process. |
 | [EvoHarness-RL](https://arxiv.org/abs/2608.05446)（2026） | Learned coordination changes when external state is written, retrieved and used. | Transfer beyond the reported long-horizon environments and recursive update quality are not established. |
-| [Agentic Context Engineering (ACE)](https://arxiv.org/abs/2510.04618)（2025） | Persistent contextual lessons alter later decisions without changing weights. | Persistent context gains do not alone establish improved common-target improver performance or indefinite growth. |
+| [Agentic Context Engineering (ACE)](https://arxiv.org/html/2510.04618v1)（2025） | 从轨迹提炼经验，以局部增量更新持久 playbook。 | 证据是经验积累与任务适应；反思/维护算法本身没有自动进化。 |
 | [AlphaEvolve](https://arxiv.org/abs/2506.13131)（2025） | Executable search can improve algorithms or infrastructure reused by later model development. | Reported improvements to underlying model-training infrastructure provide a possible feedback path; repeated actor improvements require explicit lineage and budget accounting. |
 | [Optimization by PROmpting (OPRO)](https://arxiv.org/abs/2309.03409)（2023） | The optimizer conditions proposals on a history of candidate-value pairs. | History-conditioned optimization of a target does not by itself establish a persistent improvement of the producing system. |
 | [STaR: Bootstrapping Reasoning With Reasoning](https://arxiv.org/abs/2203.14465)（2022） | Correctness-filtered rationales and answer-conditioned rationalization alter the learning target. | Filtering and answer-conditioned rationalization change the learning target; repeated general improvement of the improver is not established. |
-| [Beyond Human Data: Scaling Self-Training for Problem-Solving with Language Models](https://arxiv.org/abs/2312.06585)（2023） | Reward-weighted sampling and likelihood projection alternate as an approximate EM procedure. | Its EM interpretation depends on the reward and learning approximation; finite filtered data can change task coverage and transfer. |
-| [AlphaProof](https://www.nature.com/articles/s41586-025-09833-y)（2024） | Verification supports reusable proof learning while generated variations alter the curriculum. | Formal proof correctness is conditional on the formal statement; it does not establish fidelity of every autoformalization or broad research recursion. |
-| [Constitutional AI](https://arxiv.org/abs/2212.08073)（2022） | Feedback production can be delegated to AI while the objective and calibration remain external. | The normative target remains externally specified; AI feedback is not automatically accurate or independent. |
+| [Beyond Human Data: Scaling Self-Training for Problem-Solving with Language Models](https://arxiv.org/pdf/2312.06585v4)（2023） | 生成自训练样本、用外部二元反馈筛选，再监督学习；反复交替。 | 外部验证规则与更新程序固定；规模未知不表示低于 27B。 |
+| [AlphaProof](https://www.nature.com/articles/s41586-025-09833-y)（2024） | 证明搜索和 Lean 校验产生经验训练策略/价值网络，难题再做测试时 RL。 | 不满足本项目 ≥27B 主图门槛，但不能因此判为低质量；外部训练程序仍固定。 |
+| [Constitutional AI](https://arxiv.org/html/2212.08073v1)（2022） | 自批评/修订样本用于 SFT；AI 偏好训练奖励模型，再用于 RL。 | 关键 AI4AI 前身；论文没有证实改进器不断自改的多代闭环。 |
 | [Eureka](https://arxiv.org/abs/2310.12931)（2023） | A proposed artifact is valued by the learning process it induces, not only by immediate execution. | Useful reward optimization does not establish that the LLM reward designer itself becomes a stronger designer. |
 | [Automated Alignment Researchers: mitigating alignment failures](https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures)（2026） | A research policy chooses interventions whose value is measured after target-model training. | Improving target models does not show that the researcher improves itself; production data-efficiency claims are not full research-cost ratios. |
 | [Seed for Seed (Seed2.1)](https://seed.bytedance.com/en/blog/seed2-1-officially-released-advancing-ai-productivity)（2026） | Useful model-development outputs can feed later model development through several operational paths. | A deployment report supports use in AI development, not an identified causal multiplier or autonomous closed-loop growth. |
@@ -115,10 +118,11 @@
 | [Actor-Curator: Co-adaptive Curriculum Learning via Policy-Improvement Bandits for RL Post-Training](https://arxiv.org/abs/2602.20532)（2026） | 神经课程选择器直接学习预计策略提升，适配非平稳题库采样。 | 课程控制器的学习不同于其自身更新算法被改进。 |
 | [SkillOS: Learning Skill Curation for Self-Evolving Agents](https://arxiv.org/abs/2605.06614)（2026） | 用较晚关联任务的表现训练技能整理者，执行者保持冻结。 | 改善技能整理者是有价值的 AI4AI，但其更新流程未被自身改写。 |
 | [Teaching LLMs to Self-Evolve: Cultivating Core Meta-Skills with Reinforcement Learning](https://arxiv.org/abs/2607.21971)（2026） | 用执行反馈训练多轮反思与修订能力，部署时进行演化搜索。 | 改进目标代码不等于目标本身是改进器；需实际闭环继承证据。 |
+| [LLMs Can Self-Improve](https://aclanthology.org/2023.emnlp-main.67.pdf)（2022） | 用 self-consistency 筛选自生成推理样本，再微调同一模型。 | 一轮自训练前身；不把它计成已证持续递归系统。 |
 
 ## 评测与反例
 
-| 工作（首次公开年份） | 改了什么、如何反馈 | 尚不能推出什么 |
+| 工作（首次公开年份） | 改了什么、如何反馈 | 证据边界 |
 |---|---|---|
 | [On the Statistical Limits of Self-Improving Agents](https://arxiv.org/abs/2510.04399)（2025） | The reachable hypothesis class and feedback sample determine what generalization can be learned. | The result concerns reachable policy-family capacity under stated i.i.d. PAC assumptions; it does not guarantee unrestricted self-improvement. |
 | [Harness Updating Is Not Harness Benefit](https://arxiv.org/abs/2605.30621)（2026） | Proposal competence and ability to execute the proposed computation are distinct causal factors. | Establishes an important separation and scale pattern; further models, tasks, and independent replication are needed. |
@@ -130,7 +134,7 @@
 
 ## RSI 理论
 
-| 工作（首次公开年份） | 改了什么、如何反馈 | 尚不能推出什么 |
+| 工作（首次公开年份） | 改了什么、如何反馈 | 证据边界 |
 |---|---|---|
 | [Speculations Concerning the First Ultraintelligent Machine](https://doi.org/10.1016/S0065-2458(08)60418-0)（1965） | Reuse of improved design operations can increase future design yield. | Qualitative positive-feedback argument; no operational update process or empirical test. |
 | [Gödel Machine](https://arxiv.org/abs/cs/0309048)（2003） | A proof can authorize a change by comparing future utility, including continued proof search. | Useful self-rewrites must be provable in the encoded axiomatic system; proof search is not shown tractable for modern AI. |
@@ -138,7 +142,7 @@
 
 ## 历史/机制基础
 
-| 工作（首次公开年份） | 改了什么、如何反馈 | 尚不能推出什么 |
+| 工作（首次公开年份） | 改了什么、如何反馈 | 证据边界 |
 |---|---|---|
 | [EURISKO](https://www.cs.northwestern.edu/~mek802/papers/not-mine/Lenat_EURISKO.pdf)（1983） | Retained heuristics alter which future hypotheses are generated and pursued. | Bounded hand-engineered representations, incomplete modern reproduction, and no evidence of scalable general recursion. |
 | [MAML](https://proceedings.mlr.press/v70/finn17a.html)（2017） | Initialization shapes the effect of a later task-specific gradient update. | Learns fast adaptation under a fixed human-designed meta-training algorithm; does not improve the improver. |
@@ -157,7 +161,7 @@
 
 ## 移出核心的背景
 
-| 工作（首次公开年份） | 改了什么、如何反馈 | 尚不能推出什么 |
+| 工作（首次公开年份） | 改了什么、如何反馈 | 证据边界 |
 |---|---|---|
 | [OpenAI o1: Learning to reason with LLMs](https://openai.com/index/learning-to-reason-with-llms/)（2024） | Policy learning changes the distribution of reasoning trajectories and the value of later inference. | Train/test compute scaling does not identify a self-improving research process. |
 | [DeepSeek-R1](https://arxiv.org/html/2501.12948v1)（2025） | Sampling, reward-weighted policy updates and subsequent data production jointly change the learning distribution. | A fixed trainer is compatible with self-generated learning, but the paper does not establish indefinitely improving research ability. |

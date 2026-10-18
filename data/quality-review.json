@@ -1,7 +1,7 @@
 {
   "updated": "2026-10-18",
-  "version": "2.0.0",
-  "status": "24 项限定命题有研究卡片；是否进入三层主图另按路线、闭环边界及 ≥27B 规模筛选。未宣称完整精读、独立复现或穷尽领域。",
+  "version": "3.0.0",
+  "status": "38 项限定机制命题有卡片；重点案例数不代表全领域最终筛选数量。",
   "criteria": [
     "原始方法/关键对照或完整定义有可定位依据；仅摘要不进入核心图。",
     "有可明确陈述的机制差异、可靠反例、形式边界或真实研发用途，能够改变研究判断。",
@@ -79,7 +79,7 @@
       "source_location": "§3–4，尤其 §4.2–4.4 与谱系图",
       "source_url": "https://arxiv.org/html/2505.22954v3",
       "contribution_kind": "mechanism",
-      "institutions": "Sakana AI / UBC 等；本卡不做机构排名",
+      "institutions": "Sakana AI / UBC / Vector Institute",
       "reading_depth": "selected_methods_and_evidence",
       "admission": "core",
       "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证"
@@ -115,7 +115,7 @@
       "source_location": "§3–5；§4.1 对照；Appendix D / E 元层变化",
       "source_url": "https://arxiv.org/html/2603.19461v1",
       "contribution_kind": "mechanism",
-      "institutions": "Meta 研究仓库 facebookresearch/HyperAgents；完整作者单位见原文",
+      "institutions": "Meta / UBC / Vector / Edinburgh / NYU",
       "reading_depth": "selected_methods_and_evidence",
       "admission": "core",
       "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证"
@@ -133,7 +133,7 @@
       "source_location": "§2.1–2.2，§3.6 ignition test",
       "source_url": "https://arxiv.org/html/2609.26457v1",
       "contribution_kind": "mechanism_and_counterexample",
-      "institutions": "Weco",
+      "institutions": "Weco AI",
       "reading_depth": "selected_methods_and_evidence",
       "admission": "core",
       "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证"
@@ -331,7 +331,7 @@
       "source_location": "评价器切换段落；Appendix D 消融与成本边界",
       "source_url": "https://arxiv.org/html/2606.26294v3",
       "contribution_kind": "coupled_learning",
-      "institutions": "未在本轮独立核对全部机构",
+      "institutions": "Cambridge / NVIDIA / Flower Labs / MBZUAI / Inria",
       "reading_depth": "selected_methods_and_evidence",
       "admission": "core",
       "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证"
@@ -349,7 +349,7 @@
       "source_location": "§4.4、Appendix C.5 Table 7 / D.2",
       "source_url": "https://arxiv.org/html/2610.12176v1",
       "contribution_kind": "mechanism_and_counterexample",
-      "institutions": "Sakana AI",
+      "institutions": "Sakana AI / UC Berkeley",
       "reading_depth": "selected_methods_and_evidence",
       "admission": "core",
       "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证"
@@ -367,7 +367,7 @@
       "source_location": "§3.1–3.4，Tables 1–3",
       "source_url": "https://arxiv.org/html/2609.09134",
       "contribution_kind": "mechanism_and_counterexample",
-      "institutions": "未在本轮独立核对全部机构",
+      "institutions": "Salesforce AI",
       "reading_depth": "selected_methods_and_evidence",
       "admission": "core",
       "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证"
@@ -385,7 +385,7 @@
       "source_location": "Table 2；提案 / 接受约束及消融",
       "source_url": "https://arxiv.org/html/2609.24972v1",
       "contribution_kind": "mechanism",
-      "institutions": "未在本轮独立核对全部机构",
+      "institutions": "Google Cloud AI Research / Stanford / Washington University / UNC",
       "reading_depth": "selected_methods_and_evidence",
       "admission": "core",
       "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证"
@@ -403,7 +403,7 @@
       "source_location": "§3.1、§6.3–6.4，Table 5",
       "source_url": "https://arxiv.org/html/2609.14857v2",
       "contribution_kind": "mechanism",
-      "institutions": "IQuestLab 公开仓库；完整作者单位见原文",
+      "institutions": "IQuest Research / Langboat / Beihang / Manchester / Hohai / M-A-P",
       "reading_depth": "selected_methods_and_evidence",
       "admission": "core",
       "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证"
@@ -497,6 +497,258 @@
       "reading_depth": "selected_methods_and_evidence",
       "admission": "core",
       "judgment": "方法、规模和两次参数回流已定位；限定纳入自奖励的迭代 DPO 机制。"
+    },
+    {
+      "id": "stop",
+      "family": "research",
+      "short": "STOP",
+      "principle": "用调用冻结 GPT-4 的改进程序修改该改进程序自身。",
+      "distinct_contribution": "把“更好的解”推进到“更好的产生改进的程序”。",
+      "evidence": "作者报告后继改进程序在受限算法任务上优于种子，包含跨任务检验。",
+      "scale": "GPT-4 冻结；改进器代码可变；算法任务与规定调用预算。",
+      "limit": "任务规模有限；作者也未称为全部组件均可改的完整 RSI。",
+      "insight": "把“更好的解”推进到“更好的产生改进的程序”。",
+      "source_location": "首页署名与脚注；§3–4、Algorithm 1、迁移实验",
+      "source_url": "https://arxiv.org/pdf/2310.02304v3",
+      "contribution_kind": "mechanism",
+      "institutions": "Microsoft Research / Stanford / OpenAI（研究在微软期间完成）",
+      "reading_depth": "selected_methods_and_evidence",
+      "admission": "core",
+      "judgment": "限定机制命题经原文核对；作者报告，未独立复现。"
+    },
+    {
+      "id": "promptbreeder",
+      "family": "research",
+      "short": "Promptbreeder",
+      "principle": "共同演化任务提示与生成变异的提示，基础模型冻结。",
+      "distinct_contribution": "明确让变异机制成为可继承的搜索对象。",
+      "evidence": "在算术、常识和分类任务上报告提示搜索收益，并分析自指成分。",
+      "scale": "PaLM 2-L 冻结；多代种群；训练样本作适应度、测试集报告结果。",
+      "limit": "提示演化不等于模型训练，也不证明开放任务上的持续加速。",
+      "insight": "明确让变异机制成为可继承的搜索对象。",
+      "source_location": "首页；§3、§4、Table 1；ICML 2024 正式版另列",
+      "source_url": "https://arxiv.org/pdf/2309.16797v1",
+      "contribution_kind": "mechanism",
+      "institutions": "Google DeepMind",
+      "reading_depth": "selected_methods_and_evidence",
+      "admission": "core",
+      "judgment": "限定机制命题经原文核对；作者报告，未独立复现。"
+    },
+    {
+      "id": "sica",
+      "family": "research",
+      "short": "SICA",
+      "principle": "从历史档案选当前最佳 agent，让它修改自己的代码库。",
+      "distinct_contribution": "执行者与改进者共享可编辑实现；成本和速度也进入选择。",
+      "evidence": "作者在 SWE-bench Verified 随机子集报告 17%→53%，并报告其他编码/推理任务结果。",
+      "scale": "冻结 LLM；SWE 子集、LiveCodeBench 与合成任务；选择效用含时间和费用。",
+      "limit": "不能把子集分数说成完整 SWE-bench 成绩；未证明后继改进效率持续增长。",
+      "insight": "执行者与改进者共享可编辑实现；成本和速度也进入选择。",
+      "source_location": "首页；§3、Algorithm 1；§4 与 Appendix D",
+      "source_url": "https://arxiv.org/html/2504.15228v1",
+      "contribution_kind": "mechanism",
+      "institutions": "iGent AI / University of Bristol",
+      "reading_depth": "selected_methods_and_evidence",
+      "admission": "core",
+      "judgment": "限定机制命题经原文核对；作者报告，未独立复现。"
+    },
+    {
+      "id": "ace",
+      "family": "harness",
+      "short": "ACE",
+      "principle": "从轨迹提炼经验，以局部增量更新持久 playbook。",
+      "distinct_contribution": "避免整段重写导致经验丢失；把上下文作为可积累能力。",
+      "evidence": "AppWorld 与金融任务报告收益；有反思、维护组件消融和成本分析。",
+      "scale": "冻结基座；离线上下文优化和在线记忆适应；不训练模型权重。",
+      "limit": "证据是经验积累与任务适应；反思/维护算法本身没有自动进化。",
+      "insight": "避免整段重写导致经验丢失；把上下文作为可积累能力。",
+      "source_location": "首页；§3–4，尤其 §3.1–3.2、§4.5–4.6",
+      "source_url": "https://arxiv.org/html/2510.04618v1",
+      "contribution_kind": "mechanism",
+      "institutions": "Stanford / SambaNova / UC Berkeley",
+      "reading_depth": "selected_methods_and_evidence",
+      "admission": "core",
+      "judgment": "限定机制命题经原文核对；作者报告，未独立复现。"
+    },
+    {
+      "id": "iterative-rpo",
+      "family": "training",
+      "short": "Iterative RPO",
+      "principle": "用当前模型生成推理候选，按答案正确性组成偏好对，再用 DPO+NLL 更新。",
+      "distinct_contribution": "正例似然项与偏好项结合；解释直接套 DPO 对推理不稳定的问题。",
+      "evidence": "70B 多轮训练改善三个推理任务，包含 DPO/NLL 消融；收益最终饱和。",
+      "scale": "Llama-2-70B-Chat；GSM8K、MATH、ARC-Challenge；固定训练问题和答案。",
+      "limit": "依赖外部正确答案；没有学习训练算法或证明通用自主科研能力。",
+      "insight": "正例似然项与偏好项结合；解释直接套 DPO 对推理不稳定的问题。",
+      "source_location": "首页；§2、§3.1–3.3、Appendix A",
+      "source_url": "https://arxiv.org/html/2404.19733v2",
+      "contribution_kind": "mechanism",
+      "institutions": "Meta FAIR / NYU",
+      "reading_depth": "selected_methods_and_evidence",
+      "admission": "core",
+      "judgment": "限定机制命题经原文核对；作者报告，未独立复现。"
+    },
+    {
+      "id": "deepseek-math-v2",
+      "family": "feedback",
+      "short": "DeepSeekMath-V2",
+      "principle": "迭代训练证明验证器与生成器，并用元验证筛选自动标注。",
+      "distinct_contribution": "反馈能力也随生成能力更新；不只奖励最终数值答案。",
+      "evidence": "最后两轮由自动标注取代人工标注；报告数学证明表现及专家评估。",
+      "scale": "DeepSeek-V3.2-Exp-Base 的 671B 级模型；公开配置仅路由专家矩阵已超过 653.9B。",
+      "limit": "非形式化验证仍可能犯错；高计算搜索成绩不是单次生成分数，亦未证明全域递归加速。",
+      "insight": "反馈能力也随生成能力更新；不只奖励最终数值答案。",
+      "source_location": "§2.1–2.3、§3.1–3.3；官方 Math-V2 config.json 与 V3.2-Exp 部署配置",
+      "source_url": "https://arxiv.org/html/2511.22570v1",
+      "contribution_kind": "mechanism",
+      "institutions": "DeepSeek-AI",
+      "reading_depth": "selected_methods_and_evidence",
+      "admission": "core",
+      "judgment": "限定机制命题经原文核对；作者报告，未独立复现。"
+    },
+    {
+      "id": "kimi-k2",
+      "family": "feedback",
+      "short": "Kimi K2 · 自评价 RL",
+      "principle": "K2 actor 生成回答，K2 critic 按 rubric 提供偏好，critic 又从可验证的 on-policy 轨迹更新。",
+      "distinct_contribution": "把可验证任务的反馈迁入开放任务评价，并避免评价器完全冻结。",
+      "evidence": "技术报告明确描述策略—critic 闭环；最终模型有广域评测。",
+      "scale": "约 1.04T 总参数、32B 激活；本卡只纳入后训练自评价机制。",
+      "limit": "报告未充分隔离该闭环对最终总成绩的因果贡献；人工 rubric 仍是锚点。",
+      "insight": "把可验证任务的反馈迁入开放任务评价，并避免评价器完全冻结。",
+      "source_location": "§1、§3.2.2–3.2.3、§4 与 Appendix F",
+      "source_url": "https://arxiv.org/html/2507.20534v1",
+      "contribution_kind": "mechanism",
+      "institutions": "Moonshot AI（月之暗面）",
+      "reading_depth": "selected_methods_and_evidence",
+      "admission": "core",
+      "judgment": "限定机制命题经原文核对；作者报告，未独立复现。"
+    },
+    {
+      "id": "rest-em",
+      "family": "training",
+      "short": "ReST-EM",
+      "principle": "生成自训练样本、用外部二元反馈筛选，再监督学习；反复交替。",
+      "distinct_contribution": "展示自生成数据的规模效应，同时报告轮数增加后的饱和和过拟合。",
+      "evidence": "PaLM 2 的数学/编码训练与任务外迁移；重置基座的对照。",
+      "scale": "PaLM 2-S / 2-L；本论文未公开精确参数，不能将图中的 62B/540B 对照当作训练对象。",
+      "limit": "外部验证规则与更新程序固定；规模未知不表示低于 27B。",
+      "insight": "展示自生成数据的规模效应，同时报告轮数增加后的饱和和过拟合。",
+      "source_location": "首页；§3 Algorithm 1、§5–6、Figure 4/7",
+      "source_url": "https://arxiv.org/pdf/2312.06585v4",
+      "contribution_kind": "mechanism",
+      "institutions": "Google DeepMind / Mila",
+      "reading_depth": "selected_methods_and_evidence",
+      "admission": "core",
+      "judgment": "限定机制命题经原文核对；作者报告，未独立复现。"
+    },
+    {
+      "id": "sima2",
+      "family": "curriculum",
+      "short": "SIMA 2",
+      "principle": "Gemini 出题并评价游戏轨迹；agent 从自生成经验继续训练。",
+      "distinct_contribution": "把 AI 任务生成和反馈接入具身技能学习，并在生成世界检查迁移。",
+      "evidence": "ASKA 技能/进度改善；Genie 3 城市场景训练后在自然场景测迁移。",
+      "scale": "Gemini 基础模型；训练目标参数未公开核准。",
+      "limit": "未证明 task setter、reward model 或世界模型也随 agent 共同训练。",
+      "insight": "把 AI 任务生成和反馈接入具身技能学习，并在生成世界检查迁移。",
+      "source_location": "首页；§3.3、§4.5，Figures 15–17",
+      "source_url": "https://arxiv.org/html/2512.04797v1",
+      "contribution_kind": "mechanism",
+      "institutions": "Google DeepMind",
+      "reading_depth": "selected_methods_and_evidence",
+      "admission": "core",
+      "judgment": "限定机制命题经原文核对；作者报告，未独立复现。"
+    },
+    {
+      "id": "alphaproof",
+      "family": "training",
+      "short": "AlphaProof",
+      "principle": "证明搜索和 Lean 校验产生经验训练策略/价值网络，难题再做测试时 RL。",
+      "distinct_contribution": "把可验证的自生成经验与题目变体课程结合。",
+      "evidence": "报告正式竞赛级证明与主训练、测试时学习机制。",
+      "scale": "主证明网络 3B；Gemini 自动形式化模型的规模不能替代它。",
+      "limit": "不满足本项目 ≥27B 主图门槛，但不能因此判为低质量；外部训练程序仍固定。",
+      "insight": "把可验证的自生成经验与题目变体课程结合。",
+      "source_location": "Agent / Training / Methods: Proof network；test-time RL",
+      "source_url": "https://www.nature.com/articles/s41586-025-09833-y",
+      "contribution_kind": "mechanism",
+      "institutions": "Google DeepMind",
+      "reading_depth": "selected_methods_and_evidence",
+      "admission": "core",
+      "judgment": "限定机制命题经原文核对；作者报告，未独立复现。"
+    },
+    {
+      "id": "constitutional-ai",
+      "family": "feedback",
+      "short": "Constitutional AI",
+      "principle": "自批评/修订样本用于 SFT；AI 偏好训练奖励模型，再用于 RL。",
+      "distinct_contribution": "建立减少人工危害偏好标签的 AI 监督路线。",
+      "evidence": "52B 实验有人类对比评价；帮助性仍使用人类反馈。",
+      "scale": "含 52B 策略；不是无人工目标、无人工数据。",
+      "limit": "关键 AI4AI 前身；论文没有证实改进器不断自改的多代闭环。",
+      "insight": "建立减少人工危害偏好标签的 AI 监督路线。",
+      "source_location": "§1.2、§3、§4；Figure 2 的 52B RL runs",
+      "source_url": "https://arxiv.org/html/2212.08073v1",
+      "contribution_kind": "mechanism",
+      "institutions": "Anthropic",
+      "reading_depth": "selected_methods_and_evidence",
+      "admission": "core",
+      "judgment": "限定机制命题经原文核对；作者报告，未独立复现。"
+    },
+    {
+      "id": "adas",
+      "family": "research",
+      "short": "ADAS",
+      "principle": "固定 meta-agent 依据档案编写、评测目标 agent 的 forward 实现。",
+      "distinct_contribution": "把完整控制流的自动设计与跨域、跨模型迁移连接起来。",
+      "evidence": "报告 ARC、推理任务和跨域/跨模型迁移；有成本附录。",
+      "scale": "冻结基础模型；meta-agent 与目标 agent 分离。",
+      "limit": "自动设计前身；生成的目标 agent 没有替换固定 meta-agent。",
+      "insight": "把完整控制流的自动设计与跨域、跨模型迁移连接起来。",
+      "source_location": "首页；§3、§4.3、Appendix G",
+      "source_url": "https://arxiv.org/html/2408.08435v1",
+      "contribution_kind": "mechanism",
+      "institutions": "UBC / Vector Institute",
+      "reading_depth": "selected_methods_and_evidence",
+      "admission": "core",
+      "judgment": "限定机制命题经原文核对；作者报告，未独立复现。"
+    },
+    {
+      "id": "gepa",
+      "family": "harness",
+      "short": "GEPA",
+      "principle": "反思执行轨迹、修改提示，并从 Pareto 前沿组合互补候选。",
+      "distinct_contribution": "以语言反馈改善搜索样本效率，是 harness 优化的重要比较基线。",
+      "evidence": "六任务报告与 GRPO、MIPROv2 的比较；需要同时看反思模型成本。",
+      "scale": "提示优化基座冻结；GRPO 是对照，不应把其训练算成 GEPA 的参数更新。",
+      "limit": "优化器本身未证自改；较少 rollout 不等于同比总 FLOPs 或费用。",
+      "insight": "以语言反馈改善搜索样本效率，是 harness 优化的重要比较基线。",
+      "source_location": "首页；§2–4、Algorithm 1、实验与成本设置",
+      "source_url": "https://arxiv.org/pdf/2507.19457v2",
+      "contribution_kind": "mechanism",
+      "institutions": "UC Berkeley / Stanford / Notre Dame / MIT / Databricks / Bespoke Labs",
+      "reading_depth": "selected_methods_and_evidence",
+      "admission": "core",
+      "judgment": "限定机制命题经原文核对；作者报告，未独立复现。"
+    },
+    {
+      "id": "llm-can-self-improve",
+      "family": "training",
+      "short": "LLMs Can Self-Improve",
+      "principle": "用 self-consistency 筛选自生成推理样本，再微调同一模型。",
+      "distinct_contribution": "早期大规模自训练证据，不能被误写成小模型现象。",
+      "evidence": "PaLM 540B 在多项推理任务报告改善及多样性消融。",
+      "scale": "PaLM 540B；2022 预印本、2023 正式发表。",
+      "limit": "一轮自训练前身；不把它计成已证持续递归系统。",
+      "insight": "早期大规模自训练证据，不能被误写成小模型现象。",
+      "source_location": "首页；§2–3、消融；2022 预印本 / EMNLP 2023",
+      "source_url": "https://aclanthology.org/2023.emnlp-main.67.pdf",
+      "contribution_kind": "mechanism",
+      "institutions": "Google / UIUC",
+      "reading_depth": "selected_methods_and_evidence",
+      "admission": "core",
+      "judgment": "限定机制命题经原文核对；作者报告，未独立复现。"
     }
   ],
   "decisions": [
@@ -532,13 +784,13 @@
     },
     {
       "id": "stop",
-      "admission": "pending",
-      "reason": "尚未完成当前质量门槛所需的差异性、关键对照、资源与泛化联合审查；不进入核心图。"
+      "admission": "core",
+      "reason": "机制和回流已核对，纳入重点案例；不等于所有递归主张均已证明。"
     },
     {
       "id": "promptbreeder",
-      "admission": "pending",
-      "reason": "尚未完成当前质量门槛所需的差异性、关键对照、资源与泛化联合审查；不进入核心图。"
+      "admission": "core",
+      "reason": "机制和回流已核对，纳入重点案例；不等于所有递归主张均已证明。"
     },
     {
       "id": "funsearch",
@@ -562,8 +814,8 @@
     },
     {
       "id": "adas",
-      "admission": "pending",
-      "reason": "尚未完成当前质量门槛所需的差异性、关键对照、资源与泛化联合审查；不进入核心图。"
+      "admission": "core",
+      "reason": "关键前身/比较基线，保留贡献但不计入直接演化重点数。"
     },
     {
       "id": "aflow",
@@ -572,8 +824,8 @@
     },
     {
       "id": "sica",
-      "admission": "pending",
-      "reason": "尚未完成当前质量门槛所需的差异性、关键对照、资源与泛化联合审查；不进入核心图。"
+      "admission": "core",
+      "reason": "机制和回流已核对，纳入重点案例；不等于所有递归主张均已证明。"
     },
     {
       "id": "dgm",
@@ -582,8 +834,8 @@
     },
     {
       "id": "gepa",
-      "admission": "pending",
-      "reason": "尚未完成当前质量门槛所需的差异性、关键对照、资源与泛化联合审查；不进入核心图。"
+      "admission": "core",
+      "reason": "关键前身/比较基线，保留贡献但不计入直接演化重点数。"
     },
     {
       "id": "agentbreeder",
@@ -697,8 +949,8 @@
     },
     {
       "id": "ace",
-      "admission": "pending",
-      "reason": "尚未完成当前质量门槛所需的差异性、关键对照、资源与泛化联合审查；不进入核心图。"
+      "admission": "core",
+      "reason": "机制和回流已核对，纳入重点案例；不等于所有递归主张均已证明。"
     },
     {
       "id": "alphaevolve",
@@ -732,8 +984,8 @@
     },
     {
       "id": "rest-em",
-      "admission": "pending",
-      "reason": "尚未完成当前质量门槛所需的差异性、关键对照、资源与泛化联合审查；不进入核心图。"
+      "admission": "core",
+      "reason": "机制有直接证据，实际训练总参数未核准；不是低价值排除。"
     },
     {
       "id": "expert-iteration",
@@ -782,8 +1034,8 @@
     },
     {
       "id": "alphaproof",
-      "admission": "pending",
-      "reason": "尚未完成当前质量门槛所需的差异性、关键对照、资源与泛化联合审查；不进入核心图。"
+      "admission": "core",
+      "reason": "实际训练目标低于27B，保留机制参考；不是质量否定。"
     },
     {
       "id": "muzero",
@@ -797,13 +1049,13 @@
     },
     {
       "id": "sima2",
-      "admission": "pending",
-      "reason": "尚未完成当前质量门槛所需的差异性、关键对照、资源与泛化联合审查；不进入核心图。"
+      "admission": "core",
+      "reason": "机制有直接证据，实际训练总参数未核准；不是低价值排除。"
     },
     {
       "id": "constitutional-ai",
-      "admission": "pending",
-      "reason": "尚未完成当前质量门槛所需的差异性、关键对照、资源与泛化联合审查；不进入核心图。"
+      "admission": "core",
+      "reason": "关键前身/比较基线，保留贡献但不计入直接演化重点数。"
     },
     {
       "id": "self-taught-evaluators",
@@ -1114,6 +1366,26 @@
       "id": "rl-tango",
       "admission": "pending",
       "reason": "尚未完成当前质量门槛所需的差异性、关键对照、资源与泛化联合审查；不进入核心图。"
+    },
+    {
+      "id": "iterative-rpo",
+      "admission": "core",
+      "reason": "机制和回流已核对，纳入重点案例；不等于所有递归主张均已证明。"
+    },
+    {
+      "id": "deepseek-math-v2",
+      "admission": "core",
+      "reason": "机制和回流已核对，纳入重点案例；不等于所有递归主张均已证明。"
+    },
+    {
+      "id": "kimi-k2",
+      "admission": "core",
+      "reason": "机制和回流已核对，纳入重点案例；不等于所有递归主张均已证明。"
+    },
+    {
+      "id": "llm-can-self-improve",
+      "admission": "core",
+      "reason": "关键前身/比较基线，保留贡献但不计入直接演化重点数。"
     }
   ],
   "priority_queue": [

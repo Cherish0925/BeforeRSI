@@ -607,3 +607,15 @@ No new toy experiment or independent literature reproduction was performed.
 **Scope:** Six Harness functions, orthogonal Model descriptors and eighteen functional/feedback research positions expose both populated and unconfirmed locations. These are analytical coordinates, not proof of universal predictive coverage or worldwide novelty. A–F tags select 1–3 contribution foci; no per-paper personality or exhaustive-dimension scoring.
 
 **Artifacts:** Rebuilt offline HTML, PNG/SVG diagrams, PDF, main Markdown, cards, complete index and review queue from the same data. New validation enforces actual-target size, separate claim/main membership, graph filtering and exact embedded JSON consistency. Browser-engine layout verification remains unavailable in this environment; functional JavaScript and PDF/diagram rendering are checked separately.
+
+## 2026-10-18 — Correct the 12-case coverage impression and add missing model research
+
+The 8/2/2 display was an unfinished selection, not a final rejection of all other research. Primary-source checks exposed missing Kimi K2, DeepSeekMath-V2, Iterative RPO, and the 540B self-training precursor. Four new catalog records and fourteen selected-section claim reviews bring the catalog to 127 and reviewed claims to 38; seven additional cases enter the main view (12/5/2). Sixty-seven candidates still await review. No field-wide final count or paper-quality rejection count is inferred.
+
+Institutional provenance is sourced from paper affiliations and joint work is counted once. Current main-view counts: industry-only 6, academic/nonprofit-only 1, joint 12. These are selection composition, not estimates of sector activity. Industrial goals and research directions are editorial syntheses of the cited objectives.
+
+ReST-EM and SIMA 2 remain visible as size-unverified mechanism evidence. AlphaProof's actual 3B proof network fails the user-selected size scope without becoming a low-quality judgment. The DeepSeekMath-V2 gate uses a conservative >653.9B lower bound from its released expert dimensions; full checkpoint size is not invented. Co-Harness's 32B branch does not automatically pass causal evidence review.
+
+The HTML front page now leads with counts, teams and goals; A–F labels and long classification essays leave the main reading path. The PDF is a concise nine-page guide, with full references and claim cards retained in HTML/Markdown. Validation checks provenance totals, the parameter lower-bound justification, membership, filters, dialogs and exact embedded data. PDF pages are rendered for visual inspection; no real-browser layout test or independent paper replication is claimed.
+
+The secondary scope/mechanism renderers now consume the canonical reviewed JSON records instead of hard-coded historical inventories. Rebuilding them preserves manual evidence and compatibility notes. Updated the 14 reviewed records in both indexes; no old review depth is silently promoted.

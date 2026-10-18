@@ -2,26 +2,27 @@
 <text x="60" y="84.2" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="42" fill="#152C42">BeforeRSI  /  三层研究地图</text>
 <text x="62" y="137.5" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="25" fill="#516577">按实际更新对象组织；闭环深度、贡献与规模另行核验</text>
 <rect x="60" y="180" width="1380" height="250" rx="14" fill="#FFFFFF" stroke="#CCD9DF"/>
-<text x="85" y="235.4" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="34" fill="#126C72">01  Harness</text>
+<text x="85" y="235.4" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="34" fill="#126C72">01  Harness · 12项</text>
 <text x="85" y="282.5" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="25" fill="#152C42">外部机制与持久状态进化</text>
 <text x="85" y="325.3" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="23" fill="#516577">模型参数固定；改进被保留在系统边界</text>
 <text x="85" y="357.3" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="23" fill="#516577">内的代码、规则、外部记忆、工具或执</text>
 <text x="85" y="389.3" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="23" fill="#516577">行设施中。</text>
 <line x1="530" y1="206" x2="530" y2="404" stroke="#CCD9DF" stroke-width="3"/>
-<text x="560" y="232.6" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="26" fill="#152C42">DGM / HyperAgents / RRSI / AIDE² / HGM / SoL-Pi / ModularRSI / Red </text>
-<text x="560" y="268.6" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="26" fill="#152C42">Queen Gödel Machine</text>
-<text x="560" y="337.3" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="23" fill="#126C72">功能：信息记忆 · 工具行动 · 组织搜索 · 学习研发 · 评价选择 · 执行资源</text>
+<text x="560" y="232.6" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="26" fill="#152C42">STOP / Promptbreeder / SICA / DGM / HyperAgents / RRSI / AIDE² / </text>
+<text x="560" y="268.6" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="26" fill="#152C42">HGM / ACE / SoL-Pi / ModularRSI / Red Queen Gödel Machine</text>
+<text x="560" y="337.3" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="23" fill="#126C72">包括提示、经验与代码的更新；改进器自改与固定外层搜索分别注明。</text>
 <rect x="60" y="460" width="1380" height="250" rx="14" fill="#FFFFFF" stroke="#CCD9DF"/>
-<text x="85" y="515.4" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="34" fill="#126C72">02  Model</text>
+<text x="85" y="515.4" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="34" fill="#126C72">02  Model · 5项</text>
 <text x="85" y="562.5" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="25" fill="#152C42">模型权重与学习机制</text>
 <text x="85" y="605.3" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="23" fill="#516577">实际更新参数化组件；下一代参与产生</text>
 <text x="85" y="637.3" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="23" fill="#516577">后续训练、反馈或改进。数据流变化本</text>
 <text x="85" y="669.3" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="23" fill="#516577">身不等于 harness 自改。</text>
 <line x1="530" y1="486" x2="530" y2="684" stroke="#CCD9DF" stroke-width="3"/>
-<text x="560" y="512.6" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="26" fill="#152C42">Self-Rewarding LM / Self-Taught Evaluators</text>
-<text x="560" y="617.3" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="23" fill="#126C72">已纳入：70B 自评价 SFT；70B 迭代 DPO。参数化评价器归 Model。</text>
+<text x="560" y="512.6" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="26" fill="#152C42">Self-Rewarding LM / Self-Taught Evaluators / Iterative RPO / </text>
+<text x="560" y="548.6" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="26" fill="#152C42">DeepSeekMath-V2 / Kimi K2 · 自评价 RL</text>
+<text x="560" y="617.3" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="23" fill="#126C72">反馈主线：自生成数据 → 偏好 / 奖励 → 评价器与生成器共同训练。</text>
 <rect x="60" y="740" width="1380" height="250" rx="14" fill="#FFFFFF" stroke="#CCD9DF"/>
-<text x="85" y="795.4" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="34" fill="#126C72">03  Model × Harness</text>
+<text x="85" y="795.4" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="34" fill="#126C72">03  Model × Harness · 2项</text>
 <text x="85" y="842.5" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="25" fill="#152C42">联合适配与闭环共演</text>
 <text x="85" y="885.3" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="23" fill="#516577">权重与外部机制均实际更新；另区分单</text>
 <text x="85" y="917.3" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="23" fill="#516577">向内化、序列适配、互相回流和持续多</text>
@@ -30,7 +31,7 @@
 <text x="560" y="792.6" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="26" fill="#152C42">MASS / On-policy M–H Co-evolution</text>
 <text x="560" y="897.3" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="23" fill="#126C72">27B MASS：两轮交替；30B-A3B：序列联合适配。后者未实证持续多轮闭环。</text>
 <rect x="60" y="1050" width="1380" height="105" rx="14" fill="#152C42" stroke="#152C42"/>
-<text x="84" y="1096.8" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="28" fill="#FFFFFF">12 项主视图  /  24 项命题卡片  /  123 项书目</text>
+<text x="84" y="1096.8" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="28" fill="#FFFFFF">19 项重点案例  /  38 项机制审查  /  127 项书目</text>
 <text x="84" y="1135.3" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="23" fill="#FFFFFF">Model / 混合：实际训练总参数 ≥27B；未知、低于门槛与非闭环支撑另列。</text>
-<text x="62" y="1203.1" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="21" fill="#516577">2026-10-18  |  这是已审样本，不是全领域分布或完备性证明。</text>
+<text x="62" y="1203.1" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="21" fill="#516577">调查进行中；重点案例包括不同证据强度的机制研究，不是全球 RSI 总数。</text>
 </svg>

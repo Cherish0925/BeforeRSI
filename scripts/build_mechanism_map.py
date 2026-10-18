@@ -1,211 +1,26 @@
 #!/usr/bin/env python3
-"""Explicit per-work mechanism interpretations; no automatic literature claims."""
+"""Render canonical mechanism reviews; do not regenerate editorial decisions."""
 import json
 from pathlib import Path
-
-ROOT=Path(__file__).resolve().parents[1]
-# Each entry supplies cause, condition/failure, and a separating counterfactual.
-ROWS={
-"good-1965":("Reuse of improved design operations can increase future design yield.","The feedback coefficient and resource costs are unspecified; positive feedback need not outrun difficulty.","Instantiate a design operation, pin its ancestor and compare continuation yield."),
-"eurisko":("Retained heuristics alter which future hypotheses are generated and pursued.","Useful edits must remain expressible in the heuristic representation and interpretable by its runtime.","Freeze meta-heuristics while giving both arms the same discovered object-level rules."),
-"godel-machine":("A proof can authorize a change by comparing future utility, including continued proof search.","The relevant claim must be provable in the axioms and discoverable within available resources.","Hold utility and axioms fixed; compare rewrite availability under different proof-search allocations."),
-"maml":("Initialization shapes the effect of a later task-specific gradient update.","Source and target adaptation geometry must align; a good initial score alone is insufficient.","Compare initializations with matched initial task score under the same adaptation examples and steps."),
-"alphago-zero":("Search improves behavior; self-play supplies consequences; policy/value training amortizes this computation.","Search quality, imitation error and the evolving opponent distribution jointly matter.","Match search calls and independently vary search-target quality and training fit."),
-"automl-zero":("Program mutation and selection discover reusable learning procedures.","The primitive language, task distribution and evolutionary search determine accessible algorithms.","Change the primitive representation while fixing evaluation and total search budget."),
-"stop":("An improver edits an executable improver, potentially retaining better candidate-generation operations.","The edit must improve future output distributions rather than only the currently edited target.","Run old and revised improver programs on identical external target copies."),
-"promptbreeder":("Mutation prompts alter the proposal distribution used to evolve task prompts.","A better task prompt need not be a better mutation instruction on other targets.","Cross mutation-prompt versions with a fixed panel of task prompts."),
-"funsearch":("A language prior proposes programs; executable scoring and an archive retain useful discoveries.","Evaluation must represent the intended property and the representation must expose useful programs.","Remove evaluator detail or archive diversity separately, matching generated candidates or compute."),
-"spin":("Training contrasts generated responses with a reference data distribution and changes later response probabilities.","The reference data are an anchor; this is not unfiltered self-copying.","Replace reference responses by draws from the current model while holding the optimizer fixed."),
-"self-rewarding-lm":("Self-generated preferences reweight the training target; learning changes both answer and judgment behavior.","Judge-answer dependence can retain systematic errors even when internal reward increases.","Pin the judge while updating the answerer, then reverse the intervention on the same candidates."),
-"godel-agent":("Self-edited control logic changes accessible actions and the way feedback is used.","Arbitrary editability does not imply positive proposal or transfer quality.","Transplant the retained code change across unchanged target models and tasks."),
-"adas":("A fixed designer conditions architecture proposals on an archive of previous designs and outcomes.","Target-agent gains can arise without any learned change to the designer.","Reset or shuffle archive information while retaining the same designer and search budget."),
-"aflow":("Tree search allocates trials among workflow designs and composes available operators.","Search efficiency depends on branching, feedback and the expressiveness of workflow operators.","Hold operators fixed and replace tree allocation by equal-budget flat search."),
-"sica":("Code and tool changes can reduce execution failures and improve useful work per budget.","A local repair may not improve successor production or transfer outside its failure mode.","Replay matched failure states through ancestor and successor tools before a common-target actor test."),
-"dgm":("Reusable coding operations and retained alternative parents change subsequent proposal opportunities.","Archive cost and target difficulty can confound the benefit of successor reuse.","Cross pinned/refreshed actor with archive/last-parent policies on common starting targets."),
-"gepa":("Trace-conditioned reflection localizes repairs; instance-specialist parents preserve alternative solutions.","Diagnostics must contain usable information, and specialist branches must justify their cost.","Return the same final score but remove diagnostic content; separately replace specialist selection by greedy selection."),
-"agentbreeder":("Evolution changes coordination and communication among component agents.","Extra roles can add redundant errors and overhead rather than independent information.","Match total calls and change routing while holding component models and candidate counts fixed."),
-"statistical-limits":("The reachable hypothesis class and feedback sample determine what generalization can be learned.","Its stated capacity and sampling assumptions cannot be discarded when applying the bound.","Vary reachable policy capacity and sample size within the theorem's task assumptions."),
-"seal":("Self-edit generation is trained on utility after the learner consumes that edit.","Teaching value depends on learner state; old edit rewards can become stale.","Compare current-learner rewards with stale rewards for the same edit pool and adaptation budget."),
-"hyperagents":("Editable meta code changes diagnosis, proposal and reuse, with task and meta roles sharing a program.","Transfer requires reusable improvement operations, not merely source-domain facts.","Transfer meta code to new task-agent initializations while preserving the target evaluation interface."),
-"harness-updating-benefit":("Proposal competence and ability to execute the proposed computation are distinct causal factors.","Weak executors may not follow a harness; strong executors may have less recoverable headroom.","Cross creator and executor versions and measure adherence as well as final score."),
-"sia":("Feedback directs updates to code or weights, changing execution and later learning data.","Different update surfaces may repair different bottlenecks and interfere on other tasks.","Apply matched model-only, harness-only and combined changes with crossed execution."),
-"rhi":("Workflow specifications condition information flow and are revised from outcome comparisons.","A weak proposal distribution can bottleneck progress even under improved evaluation.","Replace proposer and evaluator separately with the executor fixed."),
-"rethink-harness-eval":("Task-time search and persistent harness changes compete for the same resource budget.","A persistent update only amortizes if reused enough and still relevant.","Vary future reuse count and include development cost in the comparison."),
-"co-harness":("Diagnosed runtime failures guide harness repairs that change subsequent model-training experience.","Schema, memory and middleware fixes differ from weight-level skill acquisition.","Preserve final rewards while hiding failure localization; compare training on repaired versus original traces."),
-"helix":("Harness variants yield both task outcomes and contrasting records potentially useful for learning.","Portfolio coverage and record count do not measure post-update student improvement.","Train matched students from competing harness sources with decision inputs and task mixtures controlled."),
-"hsi":("Meta-evolver changes can alter the distribution and allocation of future harness edits.","Meta-level code change may overfit the particular improvement problem.","Move only the meta-evolver to new target harnesses under matched budgets."),
-"evoharness-rl":("Learned coordination changes when external state is written, retrieved and used.","External support can become redundant or harmful as policy competence changes.","Cross policy checkpoints with fixed external-state interfaces and measure redundant operations."),
-"harness-tampering":("Changing the measurement path can increase observed score without improving intended utility.","Selection covariance with true utility can become nonpositive.","Recompute outcomes through an independently preserved measurement path."),
-"harnessdev":("Creator search changes executable scaffolds consumed by a potentially different executor.","A creator's design can exceed the executor's interface-following capacity.","Run a creator-by-executor matrix at fixed runtime budgets."),
-"rrsi":("Proposal and acceptance constraints favor transferable, affordable edits over source-score fitting.","Edit size alone is not the mechanism; overly restrictive search can also exclude useful changes.","Hold a candidate pool fixed to separate acceptance effects from changes to proposal distribution."),
-"meta-harness":("Search changes which information is stored, retrieved and exposed to a fixed model.","Interface changes must preserve decision-relevant inputs and avoid costly irrelevant context.","Replay histories through competing context policies while matching model calls and task distribution."),
-"aide2":("Search and memory rewrites improve the inner research agent under a fixed main outer proposer.","A stronger research target need not beat the original outer proposer at producing later agents.","Separate equal-call memory/search comparisons from the common-target outer-agent ignition test."),
-"openrsi":("Execution-grounded training improves shared program-editing operators used by long-horizon search.","Operator competence and search allocation both contribute and can saturate separately.","Cross trained/base operators with fixed/changed search control on held-out research tasks."),
-"mass":("Workflow-conditioned trajectories train shared weights used in solving, proposing and judging.","Training value depends on retained inputs and task alignment; correlated errors can persist.","Hold teacher quality approximately fixed while altering context preservation and source-task weighting."),
-"rsi-anything":("Interaction and world-model predictions guide updates in an environment.","Simulated utility must predict external consequences; model error can steer search incorrectly.","Compare predicted and actual update rankings on interventions not used to fit the world model."),
-"dream-rsi":("Replayed discovery trees train exploration choices before expensive online research.","Historical branching support and changed task dynamics limit off-policy transfer.","Evaluate exploration policies on new live branches with replay cost counted."),
-"hgm":("Descendant-informed allocation estimates future branch value instead of current score alone.","Adaptive descendant sampling can bias the estimate; larger clades have unequal opportunity.","Predict later, unobserved branch outcomes under equal continuation budgets."),
-"ace":("Persistent contextual lessons alter later decisions without changing weights.","Destructive compression or missing prerequisites can erase useful distinctions.","Compare incremental retention against full rewriting with the same new experiences and context cap."),
-"alphaevolve":("Executable search can improve algorithms or infrastructure reused by later model development.","Feedback through infrastructure depends on real deployment and resource savings, not the label of the target.","Measure downstream work completed under the same physical resource budget before and after adoption."),
-"opro":("The optimizer conditions proposals on a history of candidate-value pairs.","History is useful only insofar as it predicts better candidates within the new target problem.","Compare true, shuffled and reset histories with the same model and evaluation allowance."),
-"learned-optimizer-2016":("A learned update rule exploits structure shared among training optimizees.","Meta-training distribution and recurrent state affect transfer and stability.","Hold optimizee initialization fixed and change optimizer weights on unseen loss geometries."),
-"poet":("Environment generation and cross-environment transfer create alternative learning paths.","Transfer must connect useful states; environmental novelty alone is insufficient.","Remove cross-environment transfer while preserving total optimization work."),
-"self-training-optimizer-2020":("A learned optimizer can execute the updates that train another optimizer.","Longer horizons can shift state distributions and stability beyond its training regime.","Cross optimizer versions, clipping rules and training horizons on common optimizer targets."),
-"star":("Correctness-filtered rationales and answer-conditioned rationalization alter the learning target.","Hints can expose solutions but training must support inference without those hints.","Separate rationalization, filtering and per-task sample balancing at equal generation cost."),
-"rest-em":("Reward-weighted sampling and likelihood projection alternate as an approximate EM procedure.","Approximate learning, rare success and changed task weights can prevent practical improvement.","Compare pooled filtering with per-task-balanced filtering and measure projection error."),
-"expert-iteration":("A planner supplies targets to a policy that guides later planning.","Search advantage must survive learning and shared task structure.","Freeze the policy used by search while training otherwise identical learners."),
-"dreamcoder":("Library abstraction changes the search language while a recognition policy guides its use.","Shorter expressions help only if abstraction and execution costs are worthwhile.","Hold either the learned library or recognition policy fixed across cycles."),
-"selecting-computations":("Compute is spent where information can change the selected action.","Selection overhead and multistep information complementarity affect stopping.","Charge probe cost and compare metalevel selection with fixed allocation."),
-"levin-tree-search":("Depth divided by path probability controls search order and bounds effort.","Solution support, deterministic verification and admissible pruning are required.","Hold the tree fixed and change the learned probability of successful paths."),
-"policy-guided-heuristic-search":("A heuristic and a policy jointly prioritize paths with bounded search loss.","Heuristic assumptions and node-dependent loss matter.","Cross the same policy with changed heuristics under measured expansion costs."),
-"lts-context-models":("A convex context policy learns from successful paths using a search-effort loss.","Fixed-path convexity does not establish global bootstrap convergence.","Compare imitation and bound objectives, and frozen versus reused collection policies."),
-}
-ROWS.update({'openai-o1': ('Policy learning changes the distribution of reasoning trajectories and the value '
-               'of later inference.',
-               'Train/test compute scaling does not identify a self-improving research process.',
-               'Cross policy checkpoints and inference budgets; separate extra training from extra '
-               'sampling.'),
- 'deepseek-r1': ('Sampling, reward-weighted policy updates and subsequent data production jointly '
-                 'change the learning distribution.',
-                 'A fixed trainer is compatible with self-generated learning, but the paper does '
-                 'not establish indefinitely improving research ability.',
-                 'Freeze collection policy or generated data while matching training and '
-                 'generation cost.'),
- 'qwen3': ('A learner-generated state distribution and teacher targets interact with capacity and '
-           'reasoning budget.',
-           'Teacher-provided information and small-model efficiency do not establish teacher-free '
-           'recursive discovery.',
-           'Compare on-policy and off-policy targets for the same teacher/student pair and full '
-           'data-generation budget.'),
- 'alphaproof': ('Verification supports reusable proof learning while generated variations alter '
-                'the curriculum.',
-                'Formal proof correctness is conditional on the formal statement; it does not '
-                'establish fidelity of every autoformalization or broad research recursion.',
-                'Cross the prover and curriculum snapshots; independently check statement '
-                'fidelity.'),
- 'muzero': ('Task-relevant dynamics learning changes both planning and the experience used for '
-            'future updates.',
-            'Planning within an imperfect learned model differs from search in a known exact '
-            'environment.',
-            'Cross world-model versions and planning budgets, measuring model error on visited '
-            'states.'),
- 'xland': ('Task generation changes the learnable frontier and population transfer changes '
-           'reachable skills.',
-           'Broadness within a constructed environment space is not unrestricted real-world '
-           'generality.',
-           'Ablate adaptive task generation and population transfer separately at matched '
-           'resources.'),
- 'sima2': ('Tasks, estimated rewards and visited states jointly determine the training '
-           'distribution.',
-           'The official self-improvement report does not show that Genie itself recursively '
-           'improves or that physical-world transfer is established.',
-           'Freeze task generator or reward model separately and test on independently assessed '
-           'games.'),
- 'constitutional-ai': ('Feedback production can be delegated to AI while the objective and '
-                       'calibration remain external.',
-                       'The normative target remains externally specified; AI feedback is not '
-                       'automatically accurate or independent.',
-                       'Hold principles and learner fixed while changing the feedback source and '
-                       'independent assessment.'),
- 'self-taught-evaluators': ('Better judgment generation changes the usable training pool for later '
-                            'evaluator versions.',
-                            'Constructed preference labels can be imperfect; the student is reset '
-                            'to the seed each round rather than simply continuing fine-tuning.',
-                            'Cross generation/evaluator checkpoints on fixed response pairs and '
-                            'separately validate constructed labels.'),
- 'eureka': ('A proposed artifact is valued by the learning process it induces, not only by '
-            'immediate execution.',
-            'Useful reward optimization does not establish that the LLM reward designer itself '
-            'becomes a stronger designer.',
-            'Compare rewards using equal policy-training budgets and transfer to untouched tasks '
-            'or dynamics.'),
- 'co-scientist': ('Search supplies hypotheses whose true value requires delayed external '
-                  'experimentation.',
-                  'Internal hypothesis rankings are not scientific truth; validated hypotheses do '
-                  'not alone prove an improved research policy.',
-                  'Compare internal rankings with prospective external experimental outcomes and '
-                  'later research choices.'),
- 'gpt-red': ('Changing opponents generate a moving learning frontier; population diversity can '
-             'prevent narrow adaptation.',
-             'Task-specific robustness improvement and co-training do not establish unrestricted '
-             'recursive research acceleration.',
-             'Use the reported fixed-attacker controls and cross-checkpoint matrices, then compare '
-             'held-out defender training.'),
- 'automated-alignment-researchers': ('A research policy chooses interventions whose value is '
-                                     'measured after target-model training.',
-                                     'Improving target models does not show that the researcher '
-                                     'improves itself; production data-efficiency claims are not '
-                                     'full research-cost ratios.',
-                                     'Hold target initialization/budget fixed and compare '
-                                     'research-agent versions across withheld training problems.'),
- 'seed-for-seed': ('Useful model-development outputs can feed later model development through '
-                   'several operational paths.',
-                   'A deployment report supports use in AI development, not an identified causal '
-                   'multiplier or autonomous closed-loop growth.',
-                   'Trace adoption and compare complete research work at fixed compute and human '
-                   'input.')})
-FRONTIER_SCOPES={'openai-o1': 'Official training/scaling description; full training implementation unavailable.',
- 'deepseek-r1': 'Method section 2 and retraining/distillation descriptions checked.',
- 'qwen3': 'Post-training section 4 and relevant comparisons checked.',
- 'alphaproof': 'Official training explanation and Nature method/abstract passages checked; not '
-               'independently reproduced.',
- 'muzero': 'Planning mechanism and search-budget results checked.',
- 'xland': 'Learning-process and generation/transfer results checked.',
- 'sima2': 'Official self-improvement section checked; linked technical report not retrieved.',
- 'constitutional-ai': 'Primary abstract and official mechanism description checked; full-method '
-                      'audit pending.',
- 'self-taught-evaluators': 'Sections 3–4 including initialization, constructed labels and seed '
-                           'resets checked.',
- 'eureka': 'Primary abstract and official project mechanism checked; full-method audit pending.',
- 'co-scientist': '2026 revised primary abstract and validation scope checked; 157-page full audit '
-                 'pending.',
- 'gpt-red': 'Paper section 5 self-play controls and checkpoint matrix checked; official deployment '
-            'scope checked.',
- 'automated-alignment-researchers': 'Official report, paper task/transfer and production-case '
-                                    'passages checked.',
- 'seed-for-seed': 'Official Seed for Seed section checked; observational deployment claim, not a '
-                  'controlled recursion study.'}
-
-FULL={"dgm","hgm","hyperagents","aide2","gepa","seal","helix","mass","openrsi","rrsi","co-harness","harness-updating-benefit","star","rest-em","expert-iteration","dreamcoder","selecting-computations","levin-tree-search","policy-guided-heuristic-search","lts-context-models"}
-
-# Expansion records separate primary-source operations from our conditions and
-# proposed interventions. Abstract screening is never promoted to full review.
-EXPANSION=json.loads((ROOT/"data/expansion-reviews.json").read_text())["works"]
-for _r in EXPANSION:
-    ROWS[_r["id"]]=(_r["reported_operation"],_r["limit"],_r["separating_intervention"])
-    FRONTIER_SCOPES[_r["id"]]=_r["reading_scope"]
-
+ROOT = Path(__file__).resolve().parents[1]
 
 def main():
-    corpus=json.loads((ROOT/"data/works.json").read_text())["works"]
-    assert set(ROWS)=={w["id"] for w in corpus}
-    rows=[]
-    for w in corpus:
-        mechanism,condition,intervention=ROWS[w["id"]]
-        rows.append({"id":w["id"],"name":w["name"],"sources":w["sources"],
-            "mechanism_interpretation":mechanism,"condition_or_failure":condition,
-            "separating_intervention":intervention,
-            "review_scope":FRONTIER_SCOPES.get(w["id"], "primary methods/results read in the mechanism passes" if w["id"] in FULL else
-            "prior corpus source check; mechanism interpretation, not a fresh full-method audit"),
-            "status":"conditional interpretation; no independent reproduction claimed"})
-    (ROOT/"data/mechanisms.json").write_text(json.dumps({"updated":"2026-10-18",
-        "scope":"every current corpus entry; explanatory hypotheses with explicit counterfactuals",
-        "works":rows},indent=2,ensure_ascii=False)+"\n")
-    lines=["# Per-work mechanism map","",
-        f"All {len(corpus)} current corpus entries are included. These are our conditional mechanism",
-        "interpretations and proposed interventions, not new empirical claims about each work.",
-        "A star marks primary methods/results read in the mechanism passes; other rows retain the prior",
-        "source-review boundary. New frontier entries have exact review scopes in data/mechanisms.json.",
-        "Source reports and our judgments are separated in EVIDENCE.md and FRONTIER_COVERAGE.md.","",
-        "| Work | Causal operation | Condition or failure | Separating intervention |",
-        "|---|---|---|---|"]
+    rows = json.loads((ROOT / 'data/mechanisms.json').read_text())['works']
+    works = json.loads((ROOT / 'data/works.json').read_text())['works']
+    assert len(rows) == len(works)
+    assert {r['id'] for r in rows} == {w['id'] for w in works}
+    lines = ['# Per-work mechanism map', '',
+             f'All {len(rows)} current bibliography entries are indexed. Indexing is not a full-paper review.',
+             'Mechanism interpretations and proposed interventions are not independently reproduced results.',
+             'Exact reading boundaries are preserved in data/mechanisms.json; selected claim reviews are in data/quality-review.json.',
+             'Use [the concise research guide](../RESEARCH_ATLAS.md) for current route counts and screening status.', '',
+             '| Work | Causal operation | Condition or failure | Separating intervention |',
+             '|---|---|---|---|']
     for r in rows:
-        name=r["name"]+(" *" if r["id"] in FULL else "")
-        lines.append(f"| [{name}]({r['sources'][0]['url']}) | {r['mechanism_interpretation']} | {r['condition_or_failure']} | {r['separating_intervention']} |")
-    lines += ["","The next research question is which of these conditions is shared across tasks",
-        "and predicts interventions, not how many entries can be assigned a label.",
-        "See ../MECHANISMS.md for derivations and ../PROGRAM.md for the resulting route."]
-    (ROOT/"research/mechanism-map.md").write_text("\n".join(lines)+"\n")
+        lines.append(f"| [{r['name']}]({r['sources'][0]['url']}) | {r['mechanism_interpretation']} | {r['condition_or_failure']} | {r['separating_intervention']} |")
+    lines += ['', 'The separating interventions are proposals, not claims that those experiments were performed.']
+    (ROOT / 'research/mechanism-map.md').write_text('\n'.join(lines) + '\n')
+    print(f'Rendered {len(rows)} mechanism records; manual data unchanged.')
 
-
-if __name__=="__main__":main()
+if __name__ == '__main__':
+    main()

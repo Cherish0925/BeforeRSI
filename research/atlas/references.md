@@ -1,4 +1,4 @@
-# 全部 123 项参考索引
+# 全部 127 项参考索引
 
 稳定编号不代表名次；候选不进入主图。旧主题归类保留为历史相关性记录；新层级由人工审查单独给出。
 
@@ -39,16 +39,18 @@
 [来源 1](https://proceedings.mlr.press/v119/real20a.html)
 
 ### [007] STOP (2023)
-阅读/贡献状态：候选待审；展示位置：**候选待审**。
-尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。
-既有阅读：prior corpus source check; mechanism interpretation, not a fresh full-method audit
-[来源 1](https://github.com/microsoft/stop) · [来源 2](https://arxiv.org/abs/2310.02304)
+阅读/贡献状态：有命题研究卡片；展示位置：**已核对重点案例**。
+机制和回流已核对，纳入重点案例；不等于所有递归主张均已证明。
+既有阅读：首页署名与脚注；§3–4、Algorithm 1、迁移实验；选定方法/证据阅读，未声明全文与附录全部精读。
+层级/规模定位：首页署名与脚注；§3–4、Algorithm 1、迁移实验
+[来源 1](https://github.com/microsoft/stop) · [来源 2](https://arxiv.org/abs/2310.02304) · [来源 3](https://arxiv.org/pdf/2310.02304v3)
 
 ### [008] Promptbreeder (2023)
-阅读/贡献状态：候选待审；展示位置：**候选待审**。
-尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。
-既有阅读：prior corpus source check; mechanism interpretation, not a fresh full-method audit
-[来源 1](https://proceedings.mlr.press/v235/fernando24a.html)
+阅读/贡献状态：有命题研究卡片；展示位置：**已核对重点案例**。
+机制和回流已核对，纳入重点案例；不等于所有递归主张均已证明。
+既有阅读：首页；§3、§4、Table 1；ICML 2024 正式版另列；选定方法/证据阅读，未声明全文与附录全部精读。
+层级/规模定位：首页；§3、§4、Table 1；ICML 2024 正式版另列
+[来源 1](https://proceedings.mlr.press/v235/fernando24a.html) · [来源 2](https://arxiv.org/pdf/2309.16797v1)
 
 ### [009] FunSearch (2024)
 阅读/贡献状态：历史与机制参考；展示位置：**历史与机制参考**。
@@ -63,7 +65,7 @@
 [来源 1](https://github.com/uclaml/SPIN) · [来源 2](https://proceedings.mlr.press/v235/chen24j.html)
 
 ### [011] Self-Rewarding Language Models (2024)
-阅读/贡献状态：有命题研究卡片；展示位置：**三层主视图**。
+阅读/贡献状态：有命题研究卡片；展示位置：**已核对重点案例**。
 70B 的回答与自奖励参数共同继承；外部训练程序固定。
 既有阅读：§2.1–2.4，§3.1–3.2；特别是 §3.1.3 的固定出题模型。；选定方法/证据阅读，未声明全文与附录全部精读。
 层级/规模定位：§2.1–2.4，§3.1–3.2；特别是 §3.1.3 的固定出题模型。
@@ -76,10 +78,11 @@
 [来源 1](https://github.com/Arvid-pku/Godel_Agent) · [来源 2](https://aclanthology.org/2025.acl-long.1354/)
 
 ### [013] ADAS (2024)
-阅读/贡献状态：候选待审；展示位置：**候选待审**。
-尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。
-既有阅读：prior corpus source check; mechanism interpretation, not a fresh full-method audit
-[来源 1](https://github.com/ShengranHu/ADAS)
+阅读/贡献状态：有命题研究卡片；展示位置：**关键前身 / AI4AI 支撑**。
+关键前身/比较基线，保留贡献但不计入直接演化重点数。
+既有阅读：首页；§3、§4.3、Appendix G；选定方法/证据阅读，未声明全文与附录全部精读。
+层级/规模定位：首页；§3、§4.3、Appendix G
+[来源 1](https://github.com/ShengranHu/ADAS) · [来源 2](https://arxiv.org/html/2408.08435v1)
 
 ### [014] AFlow (2024)
 阅读/贡献状态：候选待审；展示位置：**候选待审**。
@@ -88,23 +91,25 @@
 [来源 1](https://github.com/FoundationAgents/AFlow) · [来源 2](https://arxiv.org/abs/2410.10762)
 
 ### [015] SICA (2025)
-阅读/贡献状态：候选待审；展示位置：**候选待审**。
-尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。
-既有阅读：prior corpus source check; mechanism interpretation, not a fresh full-method audit
-[来源 1](https://github.com/MaximeRobeyns/self_improving_coding_agent) · [来源 2](https://arxiv.org/abs/2504.15228)
+阅读/贡献状态：有命题研究卡片；展示位置：**已核对重点案例**。
+机制和回流已核对，纳入重点案例；不等于所有递归主张均已证明。
+既有阅读：首页；§3、Algorithm 1；§4 与 Appendix D；选定方法/证据阅读，未声明全文与附录全部精读。
+层级/规模定位：首页；§3、Algorithm 1；§4 与 Appendix D
+[来源 1](https://github.com/MaximeRobeyns/self_improving_coding_agent) · [来源 2](https://arxiv.org/abs/2504.15228) · [来源 3](https://arxiv.org/html/2504.15228v1)
 
 ### [016] Darwin Gödel Machine (2025)
-阅读/贡献状态：有命题研究卡片；展示位置：**三层主视图**。
+阅读/贡献状态：有命题研究卡片；展示位置：**已核对重点案例**。
 已定位的改动在外部软件/状态；未训练基础模型权重。
 既有阅读：§3–4，尤其 §4.2–4.4 与谱系图；选定方法/证据阅读，未声明全文与附录全部精读。
 层级/规模定位：§3–4，尤其 §4.2–4.4 与谱系图
 [来源 1](https://github.com/jennyzzt/dgm) · [来源 2](https://arxiv.org/abs/2505.22954) · [来源 3](https://arxiv.org/html/2505.22954v3)
 
 ### [017] GEPA (2025)
-阅读/贡献状态：候选待审；展示位置：**候选待审**。
-尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。
-既有阅读：primary methods/results read in the mechanism passes
-[来源 1](https://github.com/gepa-ai/gepa) · [来源 2](https://arxiv.org/abs/2507.19457)
+阅读/贡献状态：有命题研究卡片；展示位置：**关键前身 / AI4AI 支撑**。
+关键前身/比较基线，保留贡献但不计入直接演化重点数。
+既有阅读：首页；§2–4、Algorithm 1、实验与成本设置；选定方法/证据阅读，未声明全文与附录全部精读。
+层级/规模定位：首页；§2–4、Algorithm 1、实验与成本设置
+[来源 1](https://github.com/gepa-ai/gepa) · [来源 2](https://arxiv.org/abs/2507.19457) · [来源 3](https://arxiv.org/pdf/2507.19457v2)
 
 ### [018] AgentBreeder (2025)
 阅读/贡献状态：候选待审；展示位置：**候选待审**。
@@ -126,7 +131,7 @@
 [来源 1](https://github.com/Continual-Intelligence/SEAL) · [来源 2](https://arxiv.org/abs/2506.10943) · [来源 3](https://arxiv.org/html/2506.10943v1)
 
 ### [021] HyperAgents (2026)
-阅读/贡献状态：有命题研究卡片；展示位置：**三层主视图**。
+阅读/贡献状态：有命题研究卡片；展示位置：**已核对重点案例**。
 已定位的改动在外部软件/状态；未训练基础模型权重。
 既有阅读：§3–5；§4.1 对照；Appendix D / E 元层变化；选定方法/证据阅读，未声明全文与附录全部精读。
 层级/规模定位：§3–5；§4.1 对照；Appendix D / E 元层变化
@@ -160,9 +165,9 @@
 
 ### [026] Co-Evolving Harnesses and Model Weights for LLM Agents (2026)
 阅读/贡献状态：候选待审；展示位置：**候选待审**。
-32B 分支满足规模、8B 分支不满足；协同因果证据仍待进一步审查，规模达标不等于自动纳入。
+已读双循环方法及32B结果；两轮报告不能替代训练/选择/最终测试隔离、等预算对照和可追溯工件审查，暂不晋升精选。
 既有阅读：primary methods/results read in the mechanism passes
-层级/规模定位：§3–4、Table 1；缺充分分离 SFT 与协同的基线。
+层级/规模定位：§3–4、Table 5、Appendices E/G/H；32B 分支与8B案例分开；证据审查未完成。
 [来源 1](https://arxiv.org/abs/2607.22688)
 
 ### [027] HELIX (2026)
@@ -196,7 +201,7 @@
 [来源 1](https://arxiv.org/abs/2609.01437)
 
 ### [032] RRSI (2026)
-阅读/贡献状态：有命题研究卡片；展示位置：**三层主视图**。
+阅读/贡献状态：有命题研究卡片；展示位置：**已核对重点案例**。
 已定位的改动在外部软件/状态；未训练基础模型权重。
 既有阅读：Table 2；提案 / 接受约束及消融；选定方法/证据阅读，未声明全文与附录全部精读。
 层级/规模定位：Table 2；提案 / 接受约束及消融
@@ -209,21 +214,21 @@
 [来源 1](https://github.com/stanford-iris-lab/meta-harness) · [来源 2](https://arxiv.org/abs/2603.28052)
 
 ### [034] AIDE² (2026)
-阅读/贡献状态：有命题研究卡片；展示位置：**三层主视图**。
+阅读/贡献状态：有命题研究卡片；展示位置：**已核对重点案例**。
 已定位的改动在外部软件/状态；未训练基础模型权重。
 既有阅读：§2.1–2.2，§3.6 ignition test；选定方法/证据阅读，未声明全文与附录全部精读。
 层级/规模定位：§2.1–2.2，§3.6 ignition test
 [来源 1](https://arxiv.org/abs/2609.26457) · [来源 2](https://www.weco.ai/blog/first-evidence-of-recursive-self-improvement) · [来源 3](https://arxiv.org/html/2609.26457v1)
 
 ### [035] Frontis-MA1 / OpenMLE (catalog alias: OpenRSI) (2026)
-阅读/贡献状态：有命题研究卡片；展示位置：**AI4AI 支撑 / 非已证闭环**。
+阅读/贡献状态：有命题研究卡片；展示位置：**关键前身 / AI4AI 支撑**。
 35B/30B 达规模门槛，但 §8 明示外部演化系统基本固定；主图不算闭环 RSI。
 既有阅读：§3–6，Appendix B / E；本轮核对标题与系统名；选定方法/证据阅读，未声明全文与附录全部精读。
 层级/规模定位：§4–6、§8 Limitations、Appendix B.2–B.3。
 [来源 1](https://github.com/FrontisAI/OpenRSI) · [来源 2](https://arxiv.org/abs/2607.28568) · [来源 3](https://arxiv.org/html/2607.28568v1)
 
 ### [036] MASS (2026)
-阅读/贡献状态：有命题研究卡片；展示位置：**三层主视图**。
+阅读/贡献状态：有命题研究卡片；展示位置：**已核对重点案例**。
 27B 模型与多智能体工作流均更新，已报告两轮。
 既有阅读：§4.4、Appendix C.5 Table 7 / D.2；选定方法/证据阅读，未声明全文与附录全部精读。
 层级/规模定位：§3–4；Appendix C 轨迹与 SFT；Appendix C.5 跨基准回退。
@@ -242,17 +247,18 @@
 [来源 1](https://github.com/zhengkid/Dream-RSI) · [来源 2](https://arxiv.org/abs/2609.14858)
 
 ### [039] Huxley–Gödel Machine (HGM) (2025)
-阅读/贡献状态：有命题研究卡片；展示位置：**三层主视图**。
+阅读/贡献状态：有命题研究卡片；展示位置：**已核对重点案例**。
 已定位的改动在外部软件/状态；未训练基础模型权重。
 既有阅读：§2–4，Assumption 1 / Theorem 1；对照与资源口径；选定方法/证据阅读，未声明全文与附录全部精读。
 层级/规模定位：§2–4，Assumption 1 / Theorem 1；对照与资源口径
 [来源 1](https://arxiv.org/abs/2510.21614) · [来源 2](https://arxiv.org/html/2510.21614v1)
 
 ### [040] Agentic Context Engineering (ACE) (2025)
-阅读/贡献状态：候选待审；展示位置：**候选待审**。
-尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。
-既有阅读：prior corpus source check; mechanism interpretation, not a fresh full-method audit
-[来源 1](https://arxiv.org/abs/2510.04618)
+阅读/贡献状态：有命题研究卡片；展示位置：**已核对重点案例**。
+机制和回流已核对，纳入重点案例；不等于所有递归主张均已证明。
+既有阅读：首页；§3–4，尤其 §3.1–3.2、§4.5–4.6；选定方法/证据阅读，未声明全文与附录全部精读。
+层级/规模定位：首页；§3–4，尤其 §3.1–3.2、§4.5–4.6
+[来源 1](https://arxiv.org/abs/2510.04618) · [来源 2](https://arxiv.org/html/2510.04618v1)
 
 ### [041] AlphaEvolve (2025)
 阅读/贡献状态：候选待审；展示位置：**候选待审**。
@@ -291,10 +297,11 @@
 [来源 1](https://arxiv.org/abs/2203.14465)
 
 ### [047] Beyond Human Data: Scaling Self-Training for Problem-Solving with Language Models (2023)
-阅读/贡献状态：候选待审；展示位置：**候选待审**。
-尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。
-既有阅读：primary methods/results read in the mechanism passes
-[来源 1](https://arxiv.org/abs/2312.06585)
+阅读/贡献状态：有命题研究卡片；展示位置：**规模未核准**。
+机制有直接证据，实际训练总参数未核准；不是低价值排除。
+既有阅读：首页；§3 Algorithm 1、§5–6、Figure 4/7；选定方法/证据阅读，未声明全文与附录全部精读。
+层级/规模定位：首页；§3 Algorithm 1、§5–6、Figure 4/7
+[来源 1](https://arxiv.org/abs/2312.06585) · [来源 2](https://arxiv.org/pdf/2312.06585v4)
 
 ### [048] Thinking Fast and Slow with Deep Learning and Tree Search (2017)
 阅读/贡献状态：历史与机制参考；展示位置：**历史与机制参考**。
@@ -351,9 +358,10 @@
 [来源 1](https://arxiv.org/html/2505.09388v1)
 
 ### [057] AlphaProof (2024)
-阅读/贡献状态：候选待审；展示位置：**候选待审**。
-尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。
-既有阅读：Official training explanation and Nature method/abstract passages checked; not independently reproduced.
+阅读/贡献状态：有命题研究卡片；展示位置：**<27B 机制参考**。
+实际训练目标低于27B，保留机制参考；不是质量否定。
+既有阅读：Agent / Training / Methods: Proof network；test-time RL；选定方法/证据阅读，未声明全文与附录全部精读。
+层级/规模定位：Agent / Training / Methods: Proof network；test-time RL
 [来源 1](https://www.nature.com/articles/s41586-025-09833-y)
 
 ### [058] MuZero (2019)
@@ -369,19 +377,21 @@
 [来源 1](https://arxiv.org/abs/2107.12808)
 
 ### [060] SIMA 2 (2025)
-阅读/贡献状态：候选待审；展示位置：**候选待审**。
-尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。
-既有阅读：Official self-improvement section checked; linked technical report not retrieved.
-[来源 1](https://deepmind.google/blog/sima-2-an-agent-that-plays-reasons-and-learns-with-you-in-virtual-3d-worlds/)
+阅读/贡献状态：有命题研究卡片；展示位置：**规模未核准**。
+机制有直接证据，实际训练总参数未核准；不是低价值排除。
+既有阅读：首页；§3.3、§4.5，Figures 15–17；选定方法/证据阅读，未声明全文与附录全部精读。
+层级/规模定位：首页；§3.3、§4.5，Figures 15–17
+[来源 1](https://deepmind.google/blog/sima-2-an-agent-that-plays-reasons-and-learns-with-you-in-virtual-3d-worlds/) · [来源 2](https://arxiv.org/html/2512.04797v1)
 
 ### [061] Constitutional AI (2022)
-阅读/贡献状态：候选待审；展示位置：**候选待审**。
-尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。
-既有阅读：Primary abstract and official mechanism description checked; full-method audit pending.
-[来源 1](https://arxiv.org/abs/2212.08073)
+阅读/贡献状态：有命题研究卡片；展示位置：**关键前身 / AI4AI 支撑**。
+关键前身/比较基线，保留贡献但不计入直接演化重点数。
+既有阅读：§1.2、§3、§4；Figure 2 的 52B RL runs；选定方法/证据阅读，未声明全文与附录全部精读。
+层级/规模定位：§1.2、§3、§4；Figure 2 的 52B RL runs
+[来源 1](https://arxiv.org/abs/2212.08073) · [来源 2](https://arxiv.org/html/2212.08073v1)
 
 ### [062] Self-Taught Evaluators (2024)
-阅读/贡献状态：有命题研究卡片；展示位置：**三层主视图**。
+阅读/贡献状态：有命题研究卡片；展示位置：**已核对重点案例**。
 实际训练 70B 评价器；属于评价角色的模型更新。
 既有阅读：§3–4：构造标签、种子重置、实验；选定方法/证据阅读，未声明全文与附录全部精读。
 层级/规模定位：§3.3–3.5、§4.1、§5–6；70B 与种子重置在 §4.1。
@@ -407,7 +417,7 @@
 [来源 1](https://cdn.openai.com/pdf/gpt-red-automated-red-teaming-via-self-play-at-scale.pdf)
 
 ### [066] Automated Alignment Researchers: mitigating alignment failures (2026)
-阅读/贡献状态：有命题研究卡片；展示位置：**AI4AI 支撑 / 非已证闭环**。
+阅读/贡献状态：有命题研究卡片；展示位置：**关键前身 / AI4AI 支撑**。
 自动研究者训练其他目标模型有实际价值；未核实后继接管研究者的闭环，参数也未核准。
 既有阅读：官方研究报告；链接论文 task / transfer / production 段落；选定方法/证据阅读，未声明全文与附录全部精读。
 层级/规模定位：官方研究报告；链接论文 task / transfer / production 段落
@@ -420,14 +430,14 @@
 [来源 1](https://seed.bytedance.com/en/blog/seed2-1-officially-released-advancing-ai-productivity)
 
 ### [068] SoL-Pi: Recursively Scaling Auto-Research Loops for Efficient Agent Harness (2026)
-阅读/贡献状态：有命题研究卡片；展示位置：**三层主视图**。
+阅读/贡献状态：有命题研究卡片；展示位置：**已核对重点案例**。
 已定位的改动在外部软件/状态；未训练基础模型权重。
 既有阅读：§2.2、§3、§5.1；选定方法/证据阅读，未声明全文与附录全部精读。
 层级/规模定位：§2.2、§3、§5.1
 [来源 1](https://arxiv.org/abs/2609.20519) · [来源 2](https://arxiv.org/html/2609.20519v1)
 
 ### [069] ModularRSI: Modular and Generalizable Recursive Harness Self-Improvement (2026)
-阅读/贡献状态：有命题研究卡片；展示位置：**三层主视图**。
+阅读/贡献状态：有命题研究卡片；展示位置：**已核对重点案例**。
 已定位的改动在外部软件/状态；未训练基础模型权重。
 既有阅读：§3.1、§6.3–6.4，Table 5；选定方法/证据阅读，未声明全文与附录全部精读。
 层级/规模定位：§3.1、§6.3–6.4，Table 5
@@ -440,7 +450,7 @@
 [来源 1](https://arxiv.org/abs/2608.23552)
 
 ### [071] The Red Queen Gödel Machine: Co-Evolving Agents and Their Evaluators (2026)
-阅读/贡献状态：有命题研究卡片；展示位置：**三层主视图**。
+阅读/贡献状态：有命题研究卡片；展示位置：**已核对重点案例**。
 已定位的改动在外部软件/状态；未训练基础模型权重。
 既有阅读：评价器切换段落；Appendix D 消融与成本边界；选定方法/证据阅读，未声明全文与附录全部精读。
 层级/规模定位：评价器切换段落；Appendix D 消融与成本边界
@@ -584,7 +594,7 @@
 [来源 1](https://arxiv.org/abs/2606.03841)
 
 ### [094] Co-Evolving Harnesses and Models: On-Policy Correction Helps Weaker Models Catch Up Where Imitation Fails (2026)
-阅读/贡献状态：有命题研究卡片；展示位置：**三层主视图**。
+阅读/贡献状态：有命题研究卡片；展示位置：**已核对重点案例**。
 30B 分支达标；按序列联合适配纳入，不冒充多轮递归实证。
 既有阅读：§3.1–3.4，Tables 1–3；选定方法/证据阅读，未声明全文与附录全部精读。
 层级/规模定位：§3.1–3.4、Table 1、开头脚注；主结果和 proposed next round 分开。
@@ -764,3 +774,31 @@
 尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。
 既有阅读：Primary abstract and submission history screened; full methods, costs and robustness not yet reviewed.
 [来源 1](https://arxiv.org/abs/2505.15034)
+
+### [124] Iterative RPO (2024)
+阅读/贡献状态：有命题研究卡片；展示位置：**已核对重点案例**。
+机制和回流已核对，纳入重点案例；不等于所有递归主张均已证明。
+既有阅读：首页；§2、§3.1–3.3、Appendix A；选定方法/证据阅读，未声明全文与附录全部精读。
+层级/规模定位：首页；§2、§3.1–3.3、Appendix A
+[来源 1](https://arxiv.org/html/2404.19733v2)
+
+### [125] DeepSeekMath-V2 (2025)
+阅读/贡献状态：有命题研究卡片；展示位置：**已核对重点案例**。
+机制和回流已核对，纳入重点案例；不等于所有递归主张均已证明。
+既有阅读：§2.1–2.3、§3.1–3.3；官方 Math-V2 config.json 与 V3.2-Exp 部署配置；选定方法/证据阅读，未声明全文与附录全部精读。
+层级/规模定位：§2.1–2.3、§3.1–3.3；官方 Math-V2 config.json 与 V3.2-Exp 部署配置
+[来源 1](https://arxiv.org/html/2511.22570v1) · [来源 2](https://huggingface.co/deepseek-ai/DeepSeek-Math-V2/blob/main/config.json) · [来源 3](https://github.com/deepseek-ai/DeepSeek-V3.2-Exp)
+
+### [126] Kimi K2 · 自评价 RL (2025)
+阅读/贡献状态：有命题研究卡片；展示位置：**已核对重点案例**。
+机制和回流已核对，纳入重点案例；不等于所有递归主张均已证明。
+既有阅读：§1、§3.2.2–3.2.3、§4 与 Appendix F；选定方法/证据阅读，未声明全文与附录全部精读。
+层级/规模定位：§1、§3.2.2–3.2.3、§4 与 Appendix F
+[来源 1](https://arxiv.org/html/2507.20534v1)
+
+### [127] LLMs Can Self-Improve (2022)
+阅读/贡献状态：有命题研究卡片；展示位置：**关键前身 / AI4AI 支撑**。
+关键前身/比较基线，保留贡献但不计入直接演化重点数。
+既有阅读：首页；§2–3、消融；2022 预印本 / EMNLP 2023；选定方法/证据阅读，未声明全文与附录全部精读。
+层级/规模定位：首页；§2–3、消融；2022 预印本 / EMNLP 2023
+[来源 1](https://aclanthology.org/2023.emnlp-main.67.pdf)

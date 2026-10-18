@@ -148,8 +148,8 @@
         "improver_program"
       ],
       "evidence_status": "reported",
-      "audit_status": "pending",
-      "central_limit": "Underlying language model is fixed and evidence is bounded to the supplied task setting.",
+      "audit_status": "in_progress",
+      "central_limit": "任务规模有限；作者也未称为全部组件均可改的完整 RSI。",
       "sources": [
         {
           "type": "repository",
@@ -158,6 +158,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2310.02304"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2310.02304v3"
         }
       ]
     },
@@ -172,12 +176,16 @@
         "mutation_prompts"
       ],
       "evidence_status": "reported",
-      "audit_status": "pending",
-      "central_limit": "Self-reference is prompt-level; broad transfer and successor-as-improver performance are not established.",
+      "audit_status": "in_progress",
+      "central_limit": "提示演化不等于模型训练，也不证明开放任务上的持续加速。",
       "sources": [
         {
           "type": "paper",
           "url": "https://proceedings.mlr.press/v235/fernando24a.html"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2309.16797v1"
         }
       ]
     },
@@ -286,12 +294,16 @@
         "agent_architecture"
       ],
       "evidence_status": "reported",
-      "audit_status": "pending",
-      "central_limit": "The outer designer remains fixed; persistent target improvement is not evidence that the improver improved.",
+      "audit_status": "in_progress",
+      "central_limit": "自动设计前身；生成的目标 agent 没有替换固定 meta-agent。",
       "sources": [
         {
           "type": "repository",
           "url": "https://github.com/ShengranHu/ADAS"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2408.08435v1"
         }
       ]
     },
@@ -330,8 +342,8 @@
         "agent_policy"
       ],
       "evidence_status": "reported",
-      "audit_status": "pending",
-      "central_limit": "Coding-benchmark evidence does not establish scale transfer or improved successor generation.",
+      "audit_status": "in_progress",
+      "central_limit": "不能把子集分数说成完整 SWE-bench 成绩；未证明后继改进效率持续增长。",
       "sources": [
         {
           "type": "repository",
@@ -340,6 +352,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2504.15228"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2504.15228v1"
         }
       ]
     },
@@ -384,7 +400,7 @@
       ],
       "evidence_status": "reported",
       "audit_status": "in_progress",
-      "central_limit": "A strong fixed optimizer and baseline for RSI; the optimizer itself is not shown to improve.",
+      "central_limit": "优化器本身未证自改；较少 rollout 不等于同比总 FLOPs 或费用。",
       "sources": [
         {
           "type": "repository",
@@ -393,6 +409,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2507.19457"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2507.19457v2"
         }
       ]
     },
@@ -922,12 +942,16 @@
         "playbooks"
       ],
       "evidence_status": "reported",
-      "audit_status": "pending",
-      "central_limit": "Persistent context gains do not alone establish improved common-target improver performance or indefinite growth.",
+      "audit_status": "in_progress",
+      "central_limit": "证据是经验积累与任务适应；反思/维护算法本身没有自动进化。",
       "sources": [
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2510.04618"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2510.04618v1"
         }
       ]
     },
@@ -1064,11 +1088,15 @@
       ],
       "evidence_status": "reported",
       "audit_status": "in_progress",
-      "central_limit": "Its EM interpretation depends on the reward and learning approximation; finite filtered data can change task coverage and transfer.",
+      "central_limit": "外部验证规则与更新程序固定；规模未知不表示低于 27B。",
       "sources": [
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2312.06585"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2312.06585v4"
         }
       ]
     },
@@ -1266,7 +1294,7 @@
       ],
       "evidence_status": "reported",
       "audit_status": "in_progress",
-      "central_limit": "Formal proof correctness is conditional on the formal statement; it does not establish fidelity of every autoformalization or broad research recursion.",
+      "central_limit": "不满足本项目 ≥27B 主图门槛，但不能因此判为低质量；外部训练程序仍固定。",
       "sources": [
         {
           "type": "paper",
@@ -1328,11 +1356,15 @@
       ],
       "evidence_status": "reported",
       "audit_status": "in_progress",
-      "central_limit": "The official self-improvement report does not show that Genie itself recursively improves or that physical-world transfer is established.",
+      "central_limit": "未证明 task setter、reward model 或世界模型也随 agent 共同训练。",
       "sources": [
         {
           "type": "project_page",
           "url": "https://deepmind.google/blog/sima-2-an-agent-that-plays-reasons-and-learns-with-you-in-virtual-3d-worlds/"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2512.04797v1"
         }
       ]
     },
@@ -1349,11 +1381,15 @@
       ],
       "evidence_status": "reported",
       "audit_status": "in_progress",
-      "central_limit": "The normative target remains externally specified; AI feedback is not automatically accurate or independent.",
+      "central_limit": "关键 AI4AI 前身；论文没有证实改进器不断自改的多代闭环。",
       "sources": [
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2212.08073"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2212.08073v1"
         }
       ]
     },
@@ -2649,6 +2685,94 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2505.15034"
+        }
+      ]
+    },
+    {
+      "id": "iterative-rpo",
+      "name": "Iterative RPO",
+      "year": 2024,
+      "role": "self_learning_evidence",
+      "reported_depth": "multi_generation",
+      "changed_objects": [
+        "model_weights",
+        "synthetic_feedback"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "in_progress",
+      "central_limit": "依赖外部正确答案；没有学习训练算法或证明通用自主科研能力。",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2404.19733v2"
+        }
+      ]
+    },
+    {
+      "id": "deepseek-math-v2",
+      "name": "DeepSeekMath-V2",
+      "year": 2025,
+      "role": "self_learning_evidence",
+      "reported_depth": "multi_generation",
+      "changed_objects": [
+        "model_weights",
+        "synthetic_feedback"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "in_progress",
+      "central_limit": "非形式化验证仍可能犯错；高计算搜索成绩不是单次生成分数，亦未证明全域递归加速。",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2511.22570v1"
+        },
+        {
+          "type": "repository",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-Math-V2/blob/main/config.json"
+        },
+        {
+          "type": "repository",
+          "url": "https://github.com/deepseek-ai/DeepSeek-V3.2-Exp"
+        }
+      ]
+    },
+    {
+      "id": "kimi-k2",
+      "name": "Kimi K2 · 自评价 RL",
+      "year": 2025,
+      "role": "self_learning_evidence",
+      "reported_depth": "multi_generation",
+      "changed_objects": [
+        "model_weights",
+        "synthetic_feedback"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "in_progress",
+      "central_limit": "报告未充分隔离该闭环对最终总成绩的因果贡献；人工 rubric 仍是锚点。",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2507.20534v1"
+        }
+      ]
+    },
+    {
+      "id": "llm-can-self-improve",
+      "name": "LLMs Can Self-Improve",
+      "year": 2022,
+      "role": "self_learning_precursor",
+      "reported_depth": "persistent",
+      "changed_objects": [
+        "model_weights",
+        "synthetic_feedback"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "in_progress",
+      "central_limit": "一轮自训练前身；不把它计成已证持续递归系统。",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://aclanthology.org/2023.emnlp-main.67.pdf"
         }
       ]
     }

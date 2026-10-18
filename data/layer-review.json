@@ -1,8 +1,8 @@
 {
   "updated": "2026-10-18",
-  "version": "1.0.0",
+  "version": "3.0.0",
   "minimum_total_parameters_b": 27,
-  "threshold_basis": "实际被更新的目标模型总参数；LoRA 按基座总参数计，另报可训练方式；MoE 另报激活量。不把教师、评审、服务 API 或多个小模型相加达标。",
+  "threshold_basis": "Model / 混合重点案例要求实际训练目标总参数≥27B；可由公开总量或可验证的架构下界核准。MoE激活量另列，教师大小不能替代；未公开规模的工业研究单列保留。",
   "routes": [
     {
       "id": "harness",
@@ -27,10 +27,10 @@
     }
   ],
   "placement_labels": {
-    "main": "三层主视图",
+    "main": "已核对重点案例",
     "small": "<27B 机制参考",
     "scale_unverified": "规模未核准",
-    "adjacent": "AI4AI 支撑 / 非已证闭环",
+    "adjacent": "关键前身 / AI4AI 支撑",
     "crosscut": "评测与形式工具",
     "pending": "候选待审",
     "historical": "历史与机制参考",
@@ -135,23 +135,55 @@
     },
     {
       "id": "stop",
-      "route": "unresolved",
-      "placement": "pending",
-      "audit": "not_layer_audited",
-      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "route": "harness",
+      "placement": "main",
+      "audit": "selected_sections",
+      "why": "机制和回流已核对，纳入重点案例；不等于所有递归主张均已证明。",
       "models": [],
-      "scale_status": "unverified",
-      "focus": []
+      "scale_status": "not_applicable",
+      "focus": [],
+      "changed": "用调用冻结 GPT-4 的改进程序修改该改进程序自身。",
+      "return_path": "改进程序产生后继；后继继续生成程序改进。",
+      "training": {
+        "stage": "不训练权重",
+        "algorithm": "外部状态/代码更新",
+        "data_regime": "执行轨迹与任务反馈",
+        "cadence": "按轮更新"
+      },
+      "source_url": "https://arxiv.org/pdf/2310.02304v3",
+      "source_location": "首页署名与脚注；§3–4、Algorithm 1、迁移实验",
+      "provenance": {
+        "institutions": "Microsoft Research / Stanford / OpenAI（研究在微软期间完成）",
+        "sector": "joint",
+        "source_url": "https://arxiv.org/pdf/2310.02304v3",
+        "location": "论文首页作者署名；STOP 同时记录研究期间脚注"
+      }
     },
     {
       "id": "promptbreeder",
-      "route": "unresolved",
-      "placement": "pending",
-      "audit": "not_layer_audited",
-      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "route": "harness",
+      "placement": "main",
+      "audit": "selected_sections",
+      "why": "机制和回流已核对，纳入重点案例；不等于所有递归主张均已证明。",
       "models": [],
-      "scale_status": "unverified",
-      "focus": []
+      "scale_status": "not_applicable",
+      "focus": [],
+      "changed": "共同演化任务提示与生成变异的提示，基础模型冻结。",
+      "return_path": "任务提示与对应变异提示共同进入后继种群。",
+      "training": {
+        "stage": "不训练权重",
+        "algorithm": "外部状态/代码更新",
+        "data_regime": "执行轨迹与任务反馈",
+        "cadence": "按轮更新"
+      },
+      "source_url": "https://arxiv.org/pdf/2309.16797v1",
+      "source_location": "首页；§3、§4、Table 1；ICML 2024 正式版另列",
+      "provenance": {
+        "institutions": "Google DeepMind",
+        "sector": "industry",
+        "source_url": "https://arxiv.org/pdf/2309.16797v1",
+        "location": "论文首页作者署名；STOP 同时记录研究期间脚注"
+      }
     },
     {
       "id": "funsearch",
@@ -201,7 +233,13 @@
         "cadence": "一次种子 SFT + 两轮 DPO"
       },
       "source_url": "https://arxiv.org/html/2401.10020v1",
-      "source_location": "§2.1–2.4，§3.1–3.2；特别是 §3.1.3 的固定出题模型。"
+      "source_location": "§2.1–2.4，§3.1–3.2；特别是 §3.1.3 的固定出题模型。",
+      "provenance": {
+        "institutions": "Meta / NYU",
+        "sector": "joint",
+        "source_url": "https://arxiv.org/html/2401.10020v1",
+        "location": "论文首页作者署名；STOP 同时记录研究期间脚注"
+      }
     },
     {
       "id": "godel-agent",
@@ -215,13 +253,29 @@
     },
     {
       "id": "adas",
-      "route": "unresolved",
-      "placement": "pending",
-      "audit": "not_layer_audited",
-      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "route": "harness",
+      "placement": "adjacent",
+      "audit": "selected_sections",
+      "why": "关键前身/比较基线，保留贡献但不计入直接演化重点数。",
       "models": [],
-      "scale_status": "unverified",
-      "focus": []
+      "scale_status": "not_applicable",
+      "focus": [],
+      "changed": "固定 meta-agent 依据档案编写、评测目标 agent 的 forward 实现。",
+      "return_path": "设计结果写回档案；改进器从档案学习上下文，但其实现固定。",
+      "training": {
+        "stage": "不训练权重",
+        "algorithm": "外部状态/代码更新",
+        "data_regime": "执行轨迹与任务反馈",
+        "cadence": "按轮更新"
+      },
+      "source_url": "https://arxiv.org/html/2408.08435v1",
+      "source_location": "首页；§3、§4.3、Appendix G",
+      "provenance": {
+        "institutions": "UBC / Vector Institute",
+        "sector": "academic",
+        "source_url": "https://arxiv.org/html/2408.08435v1",
+        "location": "论文首页作者署名；STOP 同时记录研究期间脚注"
+      }
     },
     {
       "id": "aflow",
@@ -235,13 +289,29 @@
     },
     {
       "id": "sica",
-      "route": "unresolved",
-      "placement": "pending",
-      "audit": "not_layer_audited",
-      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "route": "harness",
+      "placement": "main",
+      "audit": "selected_sections",
+      "why": "机制和回流已核对，纳入重点案例；不等于所有递归主张均已证明。",
       "models": [],
-      "scale_status": "unverified",
-      "focus": []
+      "scale_status": "not_applicable",
+      "focus": [],
+      "changed": "从历史档案选当前最佳 agent，让它修改自己的代码库。",
+      "return_path": "被选中的后继 agent 承担下一轮自修改。",
+      "training": {
+        "stage": "不训练权重",
+        "algorithm": "外部状态/代码更新",
+        "data_regime": "执行轨迹与任务反馈",
+        "cadence": "按轮更新"
+      },
+      "source_url": "https://arxiv.org/html/2504.15228v1",
+      "source_location": "首页；§3、Algorithm 1；§4 与 Appendix D",
+      "provenance": {
+        "institutions": "iGent AI / University of Bristol",
+        "sector": "joint",
+        "source_url": "https://arxiv.org/html/2504.15228v1",
+        "location": "论文首页作者署名；STOP 同时记录研究期间脚注"
+      }
     },
     {
       "id": "dgm",
@@ -264,17 +334,39 @@
         "cadence": "离散候选 / 评价 / 继承"
       },
       "source_url": "https://arxiv.org/html/2505.22954v3",
-      "source_location": "§3–4，尤其 §4.2–4.4 与谱系图"
+      "source_location": "§3–4，尤其 §4.2–4.4 与谱系图",
+      "provenance": {
+        "institutions": "Sakana AI / UBC / Vector Institute",
+        "sector": "joint",
+        "source_url": "https://arxiv.org/html/2505.22954v3",
+        "location": "论文首页作者署名；STOP 同时记录研究期间脚注"
+      }
     },
     {
       "id": "gepa",
-      "route": "unresolved",
-      "placement": "pending",
-      "audit": "not_layer_audited",
-      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "route": "harness",
+      "placement": "adjacent",
+      "audit": "selected_sections",
+      "why": "关键前身/比较基线，保留贡献但不计入直接演化重点数。",
       "models": [],
-      "scale_status": "unverified",
-      "focus": []
+      "scale_status": "not_applicable",
+      "focus": [],
+      "changed": "反思执行轨迹、修改提示，并从 Pareto 前沿组合互补候选。",
+      "return_path": "候选提示及轨迹反馈进入后续搜索；外层优化算法固定。",
+      "training": {
+        "stage": "不训练权重",
+        "algorithm": "外部状态/代码更新",
+        "data_regime": "执行轨迹与任务反馈",
+        "cadence": "按轮更新"
+      },
+      "source_url": "https://arxiv.org/pdf/2507.19457v2",
+      "source_location": "首页；§2–4、Algorithm 1、实验与成本设置",
+      "provenance": {
+        "institutions": "UC Berkeley / Stanford / Notre Dame / MIT / Databricks / Bespoke Labs",
+        "sector": "joint",
+        "source_url": "https://arxiv.org/pdf/2507.19457v2",
+        "location": "论文首页作者署名；STOP 同时记录研究期间脚注"
+      }
     },
     {
       "id": "agentbreeder",
@@ -353,7 +445,13 @@
         "cadence": "离散候选 / 评价 / 继承"
       },
       "source_url": "https://arxiv.org/html/2603.19461v1",
-      "source_location": "§3–5；§4.1 对照；Appendix D / E 元层变化"
+      "source_location": "§3–5；§4.1 对照；Appendix D / E 元层变化",
+      "provenance": {
+        "institutions": "Meta / UBC / Vector / Edinburgh / NYU",
+        "sector": "joint",
+        "source_url": "https://arxiv.org/html/2603.19461v1",
+        "location": "论文首页作者署名；STOP 同时记录研究期间脚注"
+      }
     },
     {
       "id": "harness-updating-benefit",
@@ -426,7 +524,7 @@
       "route": "hybrid",
       "placement": "pending",
       "audit": "selected_sections",
-      "why": "32B 分支满足规模、8B 分支不满足；协同因果证据仍待进一步审查，规模达标不等于自动纳入。",
+      "why": "已读双循环方法及32B结果；两轮报告不能替代训练/选择/最终测试隔离、等预算对照和可追溯工件审查，暂不晋升精选。",
       "models": [
         {
           "name": "Qwen3-32B",
@@ -455,7 +553,7 @@
         "cadence": "两轮，每轮 harness 内循环 K=5"
       },
       "source_url": "https://arxiv.org/abs/2607.22688",
-      "source_location": "§3–4、Table 1；缺充分分离 SFT 与协同的基线。"
+      "source_location": "§3–4、Table 5、Appendices E/G/H；32B 分支与8B案例分开；证据审查未完成。"
     },
     {
       "id": "helix",
@@ -528,7 +626,13 @@
         "cadence": "离散候选 / 评价 / 继承"
       },
       "source_url": "https://arxiv.org/html/2609.24972v1",
-      "source_location": "Table 2；提案 / 接受约束及消融"
+      "source_location": "Table 2；提案 / 接受约束及消融",
+      "provenance": {
+        "institutions": "Google Cloud AI Research / Stanford / Washington University / UNC",
+        "sector": "joint",
+        "source_url": "https://arxiv.org/html/2609.24972v1",
+        "location": "论文首页作者署名；STOP 同时记录研究期间脚注"
+      }
     },
     {
       "id": "meta-harness",
@@ -561,7 +665,13 @@
         "cadence": "离散候选 / 评价 / 继承"
       },
       "source_url": "https://arxiv.org/html/2609.26457v1",
-      "source_location": "§2.1–2.2，§3.6 ignition test"
+      "source_location": "§2.1–2.2，§3.6 ignition test",
+      "provenance": {
+        "institutions": "Weco AI",
+        "sector": "industry",
+        "source_url": "https://arxiv.org/html/2609.26457v1",
+        "location": "论文首页作者署名；STOP 同时记录研究期间脚注"
+      }
     },
     {
       "id": "openrsi",
@@ -627,7 +737,13 @@
         "cadence": "2 个交替周期；非同时异步训练"
       },
       "source_url": "https://arxiv.org/html/2610.12176v1",
-      "source_location": "§3–4；Appendix C 轨迹与 SFT；Appendix C.5 跨基准回退。"
+      "source_location": "§3–4；Appendix C 轨迹与 SFT；Appendix C.5 跨基准回退。",
+      "provenance": {
+        "institutions": "Sakana AI / UC Berkeley",
+        "sector": "joint",
+        "source_url": "https://arxiv.org/html/2610.12176v1",
+        "location": "论文首页作者署名；STOP 同时记录研究期间脚注"
+      }
     },
     {
       "id": "rsi-anything",
@@ -670,17 +786,39 @@
         "cadence": "离散候选 / 评价 / 继承"
       },
       "source_url": "https://arxiv.org/html/2510.21614v1",
-      "source_location": "§2–4，Assumption 1 / Theorem 1；对照与资源口径"
+      "source_location": "§2–4，Assumption 1 / Theorem 1；对照与资源口径",
+      "provenance": {
+        "institutions": "KAUST",
+        "sector": "academic",
+        "source_url": "https://arxiv.org/html/2510.21614v1",
+        "location": "论文首页作者署名；STOP 同时记录研究期间脚注"
+      }
     },
     {
       "id": "ace",
-      "route": "unresolved",
-      "placement": "pending",
-      "audit": "not_layer_audited",
-      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "route": "harness",
+      "placement": "main",
+      "audit": "selected_sections",
+      "why": "机制和回流已核对，纳入重点案例；不等于所有递归主张均已证明。",
       "models": [],
-      "scale_status": "unverified",
-      "focus": []
+      "scale_status": "not_applicable",
+      "focus": [],
+      "changed": "从轨迹提炼经验，以局部增量更新持久 playbook。",
+      "return_path": "新任务使用已维护的经验，再把成败反馈写回经验库。",
+      "training": {
+        "stage": "不训练权重",
+        "algorithm": "外部状态/代码更新",
+        "data_regime": "执行轨迹与任务反馈",
+        "cadence": "按轮更新"
+      },
+      "source_url": "https://arxiv.org/html/2510.04618v1",
+      "source_location": "首页；§3–4，尤其 §3.1–3.2、§4.5–4.6",
+      "provenance": {
+        "institutions": "Stanford / SambaNova / UC Berkeley",
+        "sector": "joint",
+        "source_url": "https://arxiv.org/html/2510.04618v1",
+        "location": "论文首页作者署名；STOP 同时记录研究期间脚注"
+      }
     },
     {
       "id": "alphaevolve",
@@ -744,13 +882,36 @@
     },
     {
       "id": "rest-em",
-      "route": "unresolved",
-      "placement": "pending",
-      "audit": "not_layer_audited",
-      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
-      "models": [],
+      "route": "model",
+      "placement": "scale_unverified",
+      "audit": "selected_sections",
+      "why": "机制有直接证据，实际训练总参数未核准；不是低价值排除。",
+      "models": [
+        {
+          "name": "PaLM 2-S / 2-L",
+          "total_b": null,
+          "active_b": null,
+          "role": "实际训练对象"
+        }
+      ],
       "scale_status": "unverified",
-      "focus": []
+      "focus": [],
+      "changed": "生成自训练样本、用外部二元反馈筛选，再监督学习；反复交替。",
+      "return_path": "每轮从原基座重训，但样本由上轮改进模型产生。",
+      "training": {
+        "stage": "后训练",
+        "algorithm": "反馈筛选 SFT / EM 式自训练",
+        "data_regime": "按轮刷新数据；非连续 on-policy 梯度更新。",
+        "cadence": "多轮，学生重置基座"
+      },
+      "source_url": "https://arxiv.org/pdf/2312.06585v4",
+      "source_location": "首页；§3 Algorithm 1、§5–6、Figure 4/7",
+      "provenance": {
+        "institutions": "Google DeepMind / Mila",
+        "sector": "joint",
+        "source_url": "https://arxiv.org/pdf/2312.06585v4",
+        "location": "论文首页作者署名；STOP 同时记录研究期间脚注"
+      }
     },
     {
       "id": "expert-iteration",
@@ -844,13 +1005,36 @@
     },
     {
       "id": "alphaproof",
-      "route": "unresolved",
-      "placement": "pending",
-      "audit": "not_layer_audited",
-      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
-      "models": [],
-      "scale_status": "unverified",
-      "focus": []
+      "route": "model",
+      "placement": "small",
+      "audit": "selected_sections",
+      "why": "实际训练目标低于27B，保留机制参考；不是质量否定。",
+      "models": [
+        {
+          "name": "AlphaProof proof network",
+          "total_b": 3,
+          "active_b": null,
+          "role": "实际训练对象"
+        }
+      ],
+      "scale_status": "below",
+      "focus": [],
+      "changed": "证明搜索和 Lean 校验产生经验训练策略/价值网络，难题再做测试时 RL。",
+      "return_path": "搜索成功轨迹与变体反馈进入证明网络训练。",
+      "training": {
+        "stage": "后训练",
+        "algorithm": "搜索引导 RL + 测试时 RL",
+        "data_regime": "Lean 提供外部可验证信号。",
+        "cadence": "主训练与问题特定训练"
+      },
+      "source_url": "https://www.nature.com/articles/s41586-025-09833-y",
+      "source_location": "Agent / Training / Methods: Proof network；test-time RL",
+      "provenance": {
+        "institutions": "Google DeepMind",
+        "sector": "industry",
+        "source_url": "https://www.nature.com/articles/s41586-025-09833-y",
+        "location": "论文首页作者署名；STOP 同时记录研究期间脚注"
+      }
     },
     {
       "id": "muzero",
@@ -874,23 +1058,69 @@
     },
     {
       "id": "sima2",
-      "route": "unresolved",
-      "placement": "pending",
-      "audit": "not_layer_audited",
-      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
-      "models": [],
+      "route": "model",
+      "placement": "scale_unverified",
+      "audit": "selected_sections",
+      "why": "机制有直接证据，实际训练总参数未核准；不是低价值排除。",
+      "models": [
+        {
+          "name": "SIMA 2 / Gemini backbone",
+          "total_b": null,
+          "active_b": null,
+          "role": "实际训练对象"
+        }
+      ],
       "scale_status": "unverified",
-      "focus": []
+      "focus": [],
+      "changed": "Gemini 出题并评价游戏轨迹；agent 从自生成经验继续训练。",
+      "return_path": "更新 agent 再产生经验，任务选择可聚焦弱项；外部 Gemini 组件未证参数共演。",
+      "training": {
+        "stage": "后训练",
+        "algorithm": "自生成经验训练；报告另含 RL 阶段",
+        "data_regime": "本卡不将所有训练阶段笼统写成同一个 RL 算法。",
+        "cadence": "多轮自改实验"
+      },
+      "source_url": "https://arxiv.org/html/2512.04797v1",
+      "source_location": "首页；§3.3、§4.5，Figures 15–17",
+      "provenance": {
+        "institutions": "Google DeepMind",
+        "sector": "industry",
+        "source_url": "https://arxiv.org/html/2512.04797v1",
+        "location": "论文首页作者署名；STOP 同时记录研究期间脚注"
+      }
     },
     {
       "id": "constitutional-ai",
-      "route": "unresolved",
-      "placement": "pending",
-      "audit": "not_layer_audited",
-      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
-      "models": [],
-      "scale_status": "unverified",
-      "focus": []
+      "route": "model",
+      "placement": "adjacent",
+      "audit": "selected_sections",
+      "why": "关键前身/比较基线，保留贡献但不计入直接演化重点数。",
+      "models": [
+        {
+          "name": "Anthropic 52B policy",
+          "total_b": 52,
+          "active_b": null,
+          "role": "实际训练对象"
+        }
+      ],
+      "scale_status": "eligible",
+      "focus": [],
+      "changed": "自批评/修订样本用于 SFT；AI 偏好训练奖励模型，再用于 RL。",
+      "return_path": "AI 输出和偏好进入后续权重训练；未证持续重复整个系统共演。",
+      "training": {
+        "stage": "后训练",
+        "algorithm": "自修订 SFT + RLAIF",
+        "data_regime": "固定 constitution；帮助性反馈含人工标注。",
+        "cadence": "分阶段训练"
+      },
+      "source_url": "https://arxiv.org/html/2212.08073v1",
+      "source_location": "§1.2、§3、§4；Figure 2 的 52B RL runs",
+      "provenance": {
+        "institutions": "Anthropic",
+        "sector": "industry",
+        "source_url": "https://arxiv.org/html/2212.08073v1",
+        "location": "论文首页作者署名；STOP 同时记录研究期间脚注"
+      }
     },
     {
       "id": "self-taught-evaluators",
@@ -920,7 +1150,13 @@
         "cadence": "5 轮；生成与训练交替"
       },
       "source_url": "https://arxiv.org/html/2408.02666v1",
-      "source_location": "§3.3–3.5、§4.1、§5–6；70B 与种子重置在 §4.1。"
+      "source_location": "§3.3–3.5、§4.1、§5–6；70B 与种子重置在 §4.1。",
+      "provenance": {
+        "institutions": "Meta FAIR",
+        "sector": "industry",
+        "source_url": "https://arxiv.org/html/2408.02666v1",
+        "location": "论文首页作者署名；STOP 同时记录研究期间脚注"
+      }
     },
     {
       "id": "eureka",
@@ -1033,7 +1269,13 @@
         "cadence": "离散候选 / 评价 / 继承"
       },
       "source_url": "https://arxiv.org/html/2609.20519v1",
-      "source_location": "§2.2、§3、§5.1"
+      "source_location": "§2.2、§3、§5.1",
+      "provenance": {
+        "institutions": "NVIDIA / NTU / MIT",
+        "sector": "joint",
+        "source_url": "https://arxiv.org/html/2609.20519v1",
+        "location": "论文首页作者署名；STOP 同时记录研究期间脚注"
+      }
     },
     {
       "id": "modular-rsi",
@@ -1056,7 +1298,13 @@
         "cadence": "离散候选 / 评价 / 继承"
       },
       "source_url": "https://arxiv.org/html/2609.14857v2",
-      "source_location": "§3.1、§6.3–6.4，Table 5"
+      "source_location": "§3.1、§6.3–6.4，Table 5",
+      "provenance": {
+        "institutions": "IQuest Research / Langboat / Beihang / Manchester / Hohai / M-A-P",
+        "sector": "joint",
+        "source_url": "https://arxiv.org/html/2609.14857v2",
+        "location": "论文首页作者署名；STOP 同时记录研究期间脚注"
+      }
     },
     {
       "id": "prime-agent",
@@ -1089,7 +1337,13 @@
         "cadence": "离散候选 / 评价 / 继承"
       },
       "source_url": "https://arxiv.org/html/2606.26294v3",
-      "source_location": "评价器切换段落；Appendix D 消融与成本边界"
+      "source_location": "评价器切换段落；Appendix D 消融与成本边界",
+      "provenance": {
+        "institutions": "Cambridge / NVIDIA / Flower Labs / MBZUAI / Inria",
+        "sector": "joint",
+        "source_url": "https://arxiv.org/pdf/2606.26294v3",
+        "location": "论文首页作者署名；STOP 同时记录研究期间脚注"
+      }
     },
     {
       "id": "dr-zero",
@@ -1505,7 +1759,13 @@
         "cadence": "主要表格为一次联合适配；反复多轮未核准"
       },
       "source_url": "https://arxiv.org/html/2609.09134",
-      "source_location": "§3.1–3.4、Table 1、开头脚注；主结果和 proposed next round 分开。"
+      "source_location": "§3.1–3.4、Table 1、开头脚注；主结果和 proposed next round 分开。",
+      "provenance": {
+        "institutions": "Salesforce AI",
+        "sector": "industry",
+        "source_url": "https://arxiv.org/html/2609.09134",
+        "location": "论文首页作者署名；STOP 同时记录研究期间脚注"
+      }
     },
     {
       "id": "taolive-hat",
@@ -1809,6 +2069,141 @@
       "models": [],
       "scale_status": "unverified",
       "focus": []
+    },
+    {
+      "id": "iterative-rpo",
+      "route": "model",
+      "placement": "main",
+      "audit": "selected_sections",
+      "why": "机制和回流已核对，纳入重点案例；不等于所有递归主张均已证明。",
+      "models": [
+        {
+          "name": "Llama-2-70B-Chat",
+          "total_b": 70,
+          "active_b": null,
+          "role": "实际训练对象"
+        }
+      ],
+      "scale_status": "eligible",
+      "focus": [],
+      "changed": "用当前模型生成推理候选，按答案正确性组成偏好对，再用 DPO+NLL 更新。",
+      "return_path": "新权重生成下一轮偏好对，并作为下一轮参数与参考模型。",
+      "training": {
+        "stage": "后训练",
+        "algorithm": "迭代 DPO + 正例 NLL",
+        "data_regime": "每轮重新采样；轮内偏好数据固定；不是 PPO。",
+        "cadence": "多轮，直至饱和"
+      },
+      "source_url": "https://arxiv.org/html/2404.19733v2",
+      "source_location": "首页；§2、§3.1–3.3、Appendix A",
+      "provenance": {
+        "institutions": "Meta FAIR / NYU",
+        "sector": "joint",
+        "source_url": "https://arxiv.org/html/2404.19733v2",
+        "location": "论文首页作者署名；STOP 同时记录研究期间脚注"
+      }
+    },
+    {
+      "id": "deepseek-math-v2",
+      "route": "model",
+      "placement": "main",
+      "audit": "selected_sections",
+      "why": "机制和回流已核对，纳入重点案例；不等于所有递归主张均已证明。",
+      "models": [
+        {
+          "name": "DeepSeek-V3.2-Exp-Base / Math-V2",
+          "total_b": null,
+          "active_b": null,
+          "role": "实际训练对象",
+          "total_lower_bound_b": 653.9,
+          "size_label": "671B级；架构下界 >653.9B"
+        }
+      ],
+      "scale_status": "eligible",
+      "focus": [],
+      "changed": "迭代训练证明验证器与生成器，并用元验证筛选自动标注。",
+      "return_path": "生成器产生更难证明→验证/元验证标注→更新验证器→再训练生成器。",
+      "training": {
+        "stage": "后训练",
+        "algorithm": "GRPO + 轮间 rejection fine-tuning",
+        "data_regime": "每轮生成器从验证器初始化；次轮验证器继承融合后的前轮能力。",
+        "cadence": "迭代验证与生成；末两轮自动标注"
+      },
+      "source_url": "https://arxiv.org/html/2511.22570v1",
+      "source_location": "§2.1–2.3、§3.1–3.3；官方 Math-V2 config.json 与 V3.2-Exp 部署配置",
+      "provenance": {
+        "institutions": "DeepSeek-AI",
+        "sector": "industry",
+        "source_url": "https://arxiv.org/html/2511.22570v1",
+        "location": "论文首页作者署名；STOP 同时记录研究期间脚注"
+      },
+      "parameter_check": "架构下界：58个MoE层 ×256路由专家 ×3个矩阵 ×7168×2048 =653,908,770,816个参数；未计共享专家、注意力、嵌入、MTP，因此足以核准≥27B，不声称这是完整总参数。"
+    },
+    {
+      "id": "kimi-k2",
+      "route": "model",
+      "placement": "main",
+      "audit": "selected_sections",
+      "why": "机制和回流已核对，纳入重点案例；不等于所有递归主张均已证明。",
+      "models": [
+        {
+          "name": "Kimi K2",
+          "total_b": 1040,
+          "active_b": 32,
+          "role": "实际训练对象"
+        }
+      ],
+      "scale_status": "eligible",
+      "focus": [],
+      "changed": "K2 actor 生成回答，K2 critic 按 rubric 提供偏好，critic 又从可验证的 on-policy 轨迹更新。",
+      "return_path": "当前策略轨迹更新 critic；critic 的反馈继续训练策略。",
+      "training": {
+        "stage": "后训练",
+        "algorithm": "策略 RL + critic 在线校准",
+        "data_regime": "可验证 on-policy 轨迹训练 critic；critic 为开放任务提供偏好。",
+        "cadence": "RL 训练期间持续更新"
+      },
+      "source_url": "https://arxiv.org/html/2507.20534v1",
+      "source_location": "§1、§3.2.2–3.2.3、§4 与 Appendix F",
+      "provenance": {
+        "institutions": "Moonshot AI（月之暗面）",
+        "sector": "industry",
+        "source_url": "https://arxiv.org/html/2507.20534v1",
+        "location": "论文首页作者署名；STOP 同时记录研究期间脚注"
+      }
+    },
+    {
+      "id": "llm-can-self-improve",
+      "route": "model",
+      "placement": "adjacent",
+      "audit": "selected_sections",
+      "why": "关键前身/比较基线，保留贡献但不计入直接演化重点数。",
+      "models": [
+        {
+          "name": "PaLM 540B",
+          "total_b": 540,
+          "active_b": null,
+          "role": "实际训练对象"
+        }
+      ],
+      "scale_status": "eligible",
+      "focus": [],
+      "changed": "用 self-consistency 筛选自生成推理样本，再微调同一模型。",
+      "return_path": "自身生成样本回到参数更新；未证多代循环。",
+      "training": {
+        "stage": "后训练",
+        "algorithm": "自一致性筛选 + SFT",
+        "data_regime": "无答案标签的训练问题，仍使用提示/选择规则。",
+        "cadence": "主要是一轮训练"
+      },
+      "source_url": "https://aclanthology.org/2023.emnlp-main.67.pdf",
+      "source_location": "首页；§2–3、消融；2022 预印本 / EMNLP 2023",
+      "provenance": {
+        "institutions": "Google / UIUC",
+        "sector": "joint",
+        "source_url": "https://aclanthology.org/2023.emnlp-main.67.pdf",
+        "location": "论文首页作者署名；STOP 同时记录研究期间脚注"
+      }
     }
   ],
   "spaces": [

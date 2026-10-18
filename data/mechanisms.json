@@ -101,6 +101,10 @@
       "name": "STOP",
       "sources": [
         {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2310.02304v3"
+        },
+        {
           "type": "repository",
           "url": "https://github.com/microsoft/stop"
         },
@@ -109,10 +113,10 @@
           "url": "https://arxiv.org/abs/2310.02304"
         }
       ],
-      "mechanism_interpretation": "An improver edits an executable improver, potentially retaining better candidate-generation operations.",
-      "condition_or_failure": "The edit must improve future output distributions rather than only the currently edited target.",
+      "mechanism_interpretation": "用调用冻结 GPT-4 的改进程序修改该改进程序自身。",
+      "condition_or_failure": "任务规模有限；作者也未称为全部组件均可改的完整 RSI。",
       "separating_intervention": "Run old and revised improver programs on identical external target copies.",
-      "review_scope": "prior corpus source check; mechanism interpretation, not a fresh full-method audit",
+      "review_scope": "首页署名与脚注；§3–4、Algorithm 1、迁移实验；selected sections, not a full-paper audit.",
       "status": "conditional interpretation; no independent reproduction claimed"
     },
     {
@@ -121,13 +125,17 @@
       "sources": [
         {
           "type": "paper",
+          "url": "https://arxiv.org/pdf/2309.16797v1"
+        },
+        {
+          "type": "paper",
           "url": "https://proceedings.mlr.press/v235/fernando24a.html"
         }
       ],
-      "mechanism_interpretation": "Mutation prompts alter the proposal distribution used to evolve task prompts.",
-      "condition_or_failure": "A better task prompt need not be a better mutation instruction on other targets.",
+      "mechanism_interpretation": "共同演化任务提示与生成变异的提示，基础模型冻结。",
+      "condition_or_failure": "提示演化不等于模型训练，也不证明开放任务上的持续加速。",
       "separating_intervention": "Cross mutation-prompt versions with a fixed panel of task prompts.",
-      "review_scope": "prior corpus source check; mechanism interpretation, not a fresh full-method audit",
+      "review_scope": "首页；§3、§4、Table 1；ICML 2024 正式版另列；selected sections, not a full-paper audit.",
       "status": "conditional interpretation; no independent reproduction claimed"
     },
     {
@@ -211,14 +219,18 @@
       "name": "ADAS",
       "sources": [
         {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2408.08435v1"
+        },
+        {
           "type": "repository",
           "url": "https://github.com/ShengranHu/ADAS"
         }
       ],
-      "mechanism_interpretation": "A fixed designer conditions architecture proposals on an archive of previous designs and outcomes.",
-      "condition_or_failure": "Target-agent gains can arise without any learned change to the designer.",
+      "mechanism_interpretation": "固定 meta-agent 依据档案编写、评测目标 agent 的 forward 实现。",
+      "condition_or_failure": "自动设计前身；生成的目标 agent 没有替换固定 meta-agent。",
       "separating_intervention": "Reset or shuffle archive information while retaining the same designer and search budget.",
-      "review_scope": "prior corpus source check; mechanism interpretation, not a fresh full-method audit",
+      "review_scope": "首页；§3、§4.3、Appendix G；selected sections, not a full-paper audit.",
       "status": "conditional interpretation; no independent reproduction claimed"
     },
     {
@@ -245,6 +257,10 @@
       "name": "SICA",
       "sources": [
         {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2504.15228v1"
+        },
+        {
           "type": "repository",
           "url": "https://github.com/MaximeRobeyns/self_improving_coding_agent"
         },
@@ -253,10 +269,10 @@
           "url": "https://arxiv.org/abs/2504.15228"
         }
       ],
-      "mechanism_interpretation": "Code and tool changes can reduce execution failures and improve useful work per budget.",
-      "condition_or_failure": "A local repair may not improve successor production or transfer outside its failure mode.",
+      "mechanism_interpretation": "从历史档案选当前最佳 agent，让它修改自己的代码库。",
+      "condition_or_failure": "不能把子集分数说成完整 SWE-bench 成绩；未证明后继改进效率持续增长。",
       "separating_intervention": "Replay matched failure states through ancestor and successor tools before a common-target actor test.",
-      "review_scope": "prior corpus source check; mechanism interpretation, not a fresh full-method audit",
+      "review_scope": "首页；§3、Algorithm 1；§4 与 Appendix D；selected sections, not a full-paper audit.",
       "status": "conditional interpretation; no independent reproduction claimed"
     },
     {
@@ -287,6 +303,10 @@
       "name": "GEPA",
       "sources": [
         {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2507.19457v2"
+        },
+        {
           "type": "repository",
           "url": "https://github.com/gepa-ai/gepa"
         },
@@ -295,10 +315,10 @@
           "url": "https://arxiv.org/abs/2507.19457"
         }
       ],
-      "mechanism_interpretation": "Trace-conditioned reflection localizes repairs; instance-specialist parents preserve alternative solutions.",
-      "condition_or_failure": "Diagnostics must contain usable information, and specialist branches must justify their cost.",
+      "mechanism_interpretation": "反思执行轨迹、修改提示，并从 Pareto 前沿组合互补候选。",
+      "condition_or_failure": "优化器本身未证自改；较少 rollout 不等于同比总 FLOPs 或费用。",
       "separating_intervention": "Return the same final score but remove diagnostic content; separately replace specialist selection by greedy selection.",
-      "review_scope": "primary methods/results read in the mechanism passes",
+      "review_scope": "首页；§2–4、Algorithm 1、实验与成本设置；selected sections, not a full-paper audit.",
       "status": "conditional interpretation; no independent reproduction claimed"
     },
     {
@@ -717,13 +737,17 @@
       "sources": [
         {
           "type": "paper",
+          "url": "https://arxiv.org/html/2510.04618v1"
+        },
+        {
+          "type": "paper",
           "url": "https://arxiv.org/abs/2510.04618"
         }
       ],
-      "mechanism_interpretation": "Persistent contextual lessons alter later decisions without changing weights.",
-      "condition_or_failure": "Destructive compression or missing prerequisites can erase useful distinctions.",
+      "mechanism_interpretation": "从轨迹提炼经验，以局部增量更新持久 playbook。",
+      "condition_or_failure": "证据是经验积累与任务适应；反思/维护算法本身没有自动进化。",
       "separating_intervention": "Compare incremental retention against full rewriting with the same new experiences and context cap.",
-      "review_scope": "prior corpus source check; mechanism interpretation, not a fresh full-method audit",
+      "review_scope": "首页；§3–4，尤其 §3.1–3.2、§4.5–4.6；selected sections, not a full-paper audit.",
       "status": "conditional interpretation; no independent reproduction claimed"
     },
     {
@@ -822,13 +846,17 @@
       "sources": [
         {
           "type": "paper",
+          "url": "https://arxiv.org/pdf/2312.06585v4"
+        },
+        {
+          "type": "paper",
           "url": "https://arxiv.org/abs/2312.06585"
         }
       ],
-      "mechanism_interpretation": "Reward-weighted sampling and likelihood projection alternate as an approximate EM procedure.",
-      "condition_or_failure": "Approximate learning, rare success and changed task weights can prevent practical improvement.",
+      "mechanism_interpretation": "生成自训练样本、用外部二元反馈筛选，再监督学习；反复交替。",
+      "condition_or_failure": "外部验证规则与更新程序固定；规模未知不表示低于 27B。",
       "separating_intervention": "Compare pooled filtering with per-task-balanced filtering and measure projection error.",
-      "review_scope": "primary methods/results read in the mechanism passes",
+      "review_scope": "首页；§3 Algorithm 1、§5–6、Figure 4/7；selected sections, not a full-paper audit.",
       "status": "conditional interpretation; no independent reproduction claimed"
     },
     {
@@ -975,10 +1003,10 @@
           "url": "https://www.nature.com/articles/s41586-025-09833-y"
         }
       ],
-      "mechanism_interpretation": "Verification supports reusable proof learning while generated variations alter the curriculum.",
-      "condition_or_failure": "Formal proof correctness is conditional on the formal statement; it does not establish fidelity of every autoformalization or broad research recursion.",
+      "mechanism_interpretation": "证明搜索和 Lean 校验产生经验训练策略/价值网络，难题再做测试时 RL。",
+      "condition_or_failure": "不满足本项目 ≥27B 主图门槛，但不能因此判为低质量；外部训练程序仍固定。",
       "separating_intervention": "Cross the prover and curriculum snapshots; independently check statement fidelity.",
-      "review_scope": "Official training explanation and Nature method/abstract passages checked; not independently reproduced.",
+      "review_scope": "Agent / Training / Methods: Proof network；test-time RL；selected sections, not a full-paper audit.",
       "status": "conditional interpretation; no independent reproduction claimed"
     },
     {
@@ -1016,14 +1044,18 @@
       "name": "SIMA 2",
       "sources": [
         {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2512.04797v1"
+        },
+        {
           "type": "project_page",
           "url": "https://deepmind.google/blog/sima-2-an-agent-that-plays-reasons-and-learns-with-you-in-virtual-3d-worlds/"
         }
       ],
-      "mechanism_interpretation": "Tasks, estimated rewards and visited states jointly determine the training distribution.",
-      "condition_or_failure": "The official self-improvement report does not show that Genie itself recursively improves or that physical-world transfer is established.",
+      "mechanism_interpretation": "Gemini 出题并评价游戏轨迹；agent 从自生成经验继续训练。",
+      "condition_or_failure": "未证明 task setter、reward model 或世界模型也随 agent 共同训练。",
       "separating_intervention": "Freeze task generator or reward model separately and test on independently assessed games.",
-      "review_scope": "Official self-improvement section checked; linked technical report not retrieved.",
+      "review_scope": "首页；§3.3、§4.5，Figures 15–17；selected sections, not a full-paper audit.",
       "status": "conditional interpretation; no independent reproduction claimed"
     },
     {
@@ -1032,13 +1064,17 @@
       "sources": [
         {
           "type": "paper",
+          "url": "https://arxiv.org/html/2212.08073v1"
+        },
+        {
+          "type": "paper",
           "url": "https://arxiv.org/abs/2212.08073"
         }
       ],
-      "mechanism_interpretation": "Feedback production can be delegated to AI while the objective and calibration remain external.",
-      "condition_or_failure": "The normative target remains externally specified; AI feedback is not automatically accurate or independent.",
+      "mechanism_interpretation": "自批评/修订样本用于 SFT；AI 偏好训练奖励模型，再用于 RL。",
+      "condition_or_failure": "关键 AI4AI 前身；论文没有证实改进器不断自改的多代闭环。",
       "separating_intervention": "Hold principles and learner fixed while changing the feedback source and independent assessment.",
-      "review_scope": "Primary abstract and official mechanism description checked; full-method audit pending.",
+      "review_scope": "§1.2、§3、§4；Figure 2 的 52B RL runs；selected sections, not a full-paper audit.",
       "status": "conditional interpretation; no independent reproduction claimed"
     },
     {
@@ -2010,6 +2046,74 @@
       "separating_intervention": "交叉冻结两方并测试不同难度和域外校准。",
       "review_scope": "Primary abstract and submission history screened; full methods, costs and robustness not yet reviewed.",
       "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "iterative-rpo",
+      "name": "Iterative RPO",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2404.19733v2"
+        }
+      ],
+      "mechanism_interpretation": "用当前模型生成推理候选，按答案正确性组成偏好对，再用 DPO+NLL 更新。",
+      "condition_or_failure": "依赖外部正确答案；没有学习训练算法或证明通用自主科研能力。",
+      "separating_intervention": "固定任务、资源和基座，分别移除反馈更新与参数继承，比较后续训练收益。",
+      "review_scope": "首页；§2、§3.1–3.3、Appendix A；selected sections, not a full-paper audit.",
+      "status": "conditional interpretation; no independent reproduction"
+    },
+    {
+      "id": "deepseek-math-v2",
+      "name": "DeepSeekMath-V2",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2511.22570v1"
+        },
+        {
+          "type": "repository",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-Math-V2/blob/main/config.json"
+        },
+        {
+          "type": "repository",
+          "url": "https://github.com/deepseek-ai/DeepSeek-V3.2-Exp"
+        }
+      ],
+      "mechanism_interpretation": "迭代训练证明验证器与生成器，并用元验证筛选自动标注。",
+      "condition_or_failure": "非形式化验证仍可能犯错；高计算搜索成绩不是单次生成分数，亦未证明全域递归加速。",
+      "separating_intervention": "固定任务、资源和基座，分别移除反馈更新与参数继承，比较后续训练收益。",
+      "review_scope": "§2.1–2.3、§3.1–3.3；官方 Math-V2 config.json 与 V3.2-Exp 部署配置；selected sections, not a full-paper audit.",
+      "status": "conditional interpretation; no independent reproduction"
+    },
+    {
+      "id": "kimi-k2",
+      "name": "Kimi K2 · 自评价 RL",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2507.20534v1"
+        }
+      ],
+      "mechanism_interpretation": "K2 actor 生成回答，K2 critic 按 rubric 提供偏好，critic 又从可验证的 on-policy 轨迹更新。",
+      "condition_or_failure": "报告未充分隔离该闭环对最终总成绩的因果贡献；人工 rubric 仍是锚点。",
+      "separating_intervention": "固定任务、资源和基座，分别移除反馈更新与参数继承，比较后续训练收益。",
+      "review_scope": "§1、§3.2.2–3.2.3、§4 与 Appendix F；selected sections, not a full-paper audit.",
+      "status": "conditional interpretation; no independent reproduction"
+    },
+    {
+      "id": "llm-can-self-improve",
+      "name": "LLMs Can Self-Improve",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://aclanthology.org/2023.emnlp-main.67.pdf"
+        }
+      ],
+      "mechanism_interpretation": "用 self-consistency 筛选自生成推理样本，再微调同一模型。",
+      "condition_or_failure": "一轮自训练前身；不把它计成已证持续递归系统。",
+      "separating_intervention": "固定任务、资源和基座，分别移除反馈更新与参数继承，比较后续训练收益。",
+      "review_scope": "首页；§2–3、消融；2022 预印本 / EMNLP 2023；selected sections, not a full-paper audit.",
+      "status": "conditional interpretation; no independent reproduction"
     }
   ]
 }

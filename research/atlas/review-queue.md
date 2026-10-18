@@ -5,13 +5,13 @@
 | 展示位置 | 数量 |
 |---|---:|
 | 历史与机制参考 | 16 |
-| 候选待审 | 77 |
-| 三层主视图 | 12 |
-| <27B 机制参考 | 5 |
+| 已核对重点案例 | 19 |
+| 候选待审 | 67 |
+| 关键前身 / AI4AI 支撑 | 6 |
+| <27B 机制参考 | 6 |
 | 评测与形式工具 | 3 |
-| AI4AI 支撑 / 非已证闭环 | 2 |
+| 规模未核准 | 4 |
 | 外围背景 | 6 |
-| 规模未核准 | 2 |
 
 未做新层级核准的条目保持 unresolved；不自动用标题推断模型大小和更新对象。以下是完整的非主图记录。
 
@@ -23,15 +23,12 @@
 | 004 | [MAML](https://proceedings.mlr.press/v70/finn17a.html) | 历史与机制参考：尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。 |
 | 005 | [AlphaGo Zero](https://www.nature.com/articles/nature24270) | 历史与机制参考：尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。 |
 | 006 | [AutoML-Zero](https://proceedings.mlr.press/v119/real20a.html) | 历史与机制参考：尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。 |
-| 007 | [STOP](https://github.com/microsoft/stop) | 候选待审：尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。 |
-| 008 | [Promptbreeder](https://proceedings.mlr.press/v235/fernando24a.html) | 候选待审：尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。 |
 | 009 | [FunSearch](https://www.nature.com/articles/s41586-023-06924-6) | 历史与机制参考：尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。 |
 | 010 | [SPIN](https://github.com/uclaml/SPIN) | 候选待审：尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。 |
 | 012 | [Gödel Agent](https://github.com/Arvid-pku/Godel_Agent) | 候选待审：尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。 |
-| 013 | [ADAS](https://github.com/ShengranHu/ADAS) | 候选待审：尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。 |
+| 013 | [ADAS](https://arxiv.org/html/2408.08435v1) | 关键前身 / AI4AI 支撑：关键前身/比较基线，保留贡献但不计入直接演化重点数。 |
 | 014 | [AFlow](https://github.com/FoundationAgents/AFlow) | 候选待审：尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。 |
-| 015 | [SICA](https://github.com/MaximeRobeyns/self_improving_coding_agent) | 候选待审：尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。 |
-| 017 | [GEPA](https://github.com/gepa-ai/gepa) | 候选待审：尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。 |
+| 017 | [GEPA](https://arxiv.org/pdf/2507.19457v2) | 关键前身 / AI4AI 支撑：关键前身/比较基线，保留贡献但不计入直接演化重点数。 |
 | 018 | [AgentBreeder](https://arxiv.org/abs/2502.00757) | 候选待审：尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。 |
 | 019 | [On the Statistical Limits of Self-Improving Agents](https://arxiv.org/abs/2510.04399) | 候选待审：尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。 |
 | 020 | [SEAL](https://github.com/Continual-Intelligence/SEAL) | <27B 机制参考：已核对的 1B / 7B 训练实验均低于 27B。 |
@@ -39,24 +36,23 @@
 | 023 | [SIA](https://github.com/hexo-ai/sia) | 候选待审：尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。 |
 | 024 | [Recursive Harness Self-Improvement](https://arxiv.org/abs/2607.15524) | 候选待审：尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。 |
 | 025 | [Rethinking the Evaluation of Harness Evolution for Agents](https://arxiv.org/abs/2607.12227) | 评测与形式工具：作为评价/形式分析工具单列，不新增一种自改进系统路线。 |
-| 026 | [Co-Evolving Harnesses and Model Weights for LLM Agents](https://arxiv.org/abs/2607.22688) | 候选待审：32B 分支满足规模、8B 分支不满足；协同因果证据仍待进一步审查，规模达标不等于自动纳入。 |
+| 026 | [Co-Evolving Harnesses and Model Weights for LLM Agents](https://arxiv.org/abs/2607.22688) | 候选待审：已读双循环方法及32B结果；两轮报告不能替代训练/选择/最终测试隔离、等预算对照和可追溯工件审查，暂不晋升精选。 |
 | 027 | [HELIX](https://github.com/HKUDS/HELIX) | 候选待审：尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。 |
 | 028 | [HSI](https://github.com/TailinZhou/hsi) | 候选待审：尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。 |
 | 029 | [EvoHarness-RL](https://arxiv.org/abs/2608.05446) | 候选待审：尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。 |
 | 030 | [Auditing Harness Tampering in Self-Improving Agents](https://arxiv.org/abs/2609.00069) | 候选待审：尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。 |
 | 031 | [HarnessDev](https://arxiv.org/abs/2609.01437) | 候选待审：尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。 |
 | 033 | [Meta-Harness](https://github.com/stanford-iris-lab/meta-harness) | 候选待审：尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。 |
-| 035 | [Frontis-MA1 / OpenMLE (catalog alias: OpenRSI)](https://github.com/FrontisAI/OpenRSI) | AI4AI 支撑 / 非已证闭环：35B/30B 达规模门槛，但 §8 明示外部演化系统基本固定；主图不算闭环 RSI。 |
+| 035 | [Frontis-MA1 / OpenMLE (catalog alias: OpenRSI)](https://github.com/FrontisAI/OpenRSI) | 关键前身 / AI4AI 支撑：35B/30B 达规模门槛，但 §8 明示外部演化系统基本固定；主图不算闭环 RSI。 |
 | 037 | [RSI-Anything](https://github.com/Gen-Verse/RSI-Anything) | 候选待审：尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。 |
 | 038 | [Dream-RSI](https://github.com/zhengkid/Dream-RSI) | 候选待审：尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。 |
-| 040 | [Agentic Context Engineering (ACE)](https://arxiv.org/abs/2510.04618) | 候选待审：尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。 |
 | 041 | [AlphaEvolve](https://arxiv.org/abs/2506.13131) | 候选待审：尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。 |
 | 042 | [Optimization by PROmpting (OPRO)](https://arxiv.org/abs/2309.03409) | 候选待审：尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。 |
 | 043 | [Learning to learn by gradient descent by gradient descent](https://arxiv.org/abs/1606.04474) | 历史与机制参考：尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。 |
 | 044 | [Paired Open-Ended Trailblazer (POET): Endlessly Generating Increasingly Complex and Diverse Learning Environments and Their Solutions](https://arxiv.org/abs/1901.01753) | 历史与机制参考：尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。 |
 | 045 | [Tasks, stability, architecture, and compute: Training more effective learned optimizers, and using them to train themselves](https://arxiv.org/abs/2009.11243) | 历史与机制参考：尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。 |
 | 046 | [STaR: Bootstrapping Reasoning With Reasoning](https://arxiv.org/abs/2203.14465) | 候选待审：尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。 |
-| 047 | [Beyond Human Data: Scaling Self-Training for Problem-Solving with Language Models](https://arxiv.org/abs/2312.06585) | 候选待审：尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。 |
+| 047 | [Beyond Human Data: Scaling Self-Training for Problem-Solving with Language Models](https://arxiv.org/pdf/2312.06585v4) | 规模未核准：机制有直接证据，实际训练总参数未核准；不是低价值排除。 |
 | 048 | [Thinking Fast and Slow with Deep Learning and Tree Search](https://arxiv.org/abs/1705.08439) | 历史与机制参考：尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。 |
 | 049 | [DreamCoder: Bootstrapping Inductive Program Synthesis with Wake-Sleep Library Learning](https://www.neurosymbolic.org/papers/EllisWNSMHCST21.pdf) | 历史与机制参考：尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。 |
 | 050 | [Selecting Computations: Theory and Applications](https://arxiv.org/abs/1207.5879) | 历史与机制参考：尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。 |
@@ -66,15 +62,15 @@
 | 054 | [OpenAI o1: Learning to reason with LLMs](https://openai.com/index/learning-to-reason-with-llms/) | 外围背景：尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。 |
 | 055 | [DeepSeek-R1](https://arxiv.org/html/2501.12948v1) | 外围背景：尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。 |
 | 056 | [Qwen3 Technical Report](https://arxiv.org/html/2505.09388v1) | 外围背景：尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。 |
-| 057 | [AlphaProof](https://www.nature.com/articles/s41586-025-09833-y) | 候选待审：尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。 |
+| 057 | [AlphaProof](https://www.nature.com/articles/s41586-025-09833-y) | <27B 机制参考：实际训练目标低于27B，保留机制参考；不是质量否定。 |
 | 058 | [MuZero](https://arxiv.org/abs/1911.08265) | 外围背景：尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。 |
 | 059 | [Open-Ended Learning Leads to Generally Capable Agents (XLand)](https://arxiv.org/abs/2107.12808) | 外围背景：尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。 |
-| 060 | [SIMA 2](https://deepmind.google/blog/sima-2-an-agent-that-plays-reasons-and-learns-with-you-in-virtual-3d-worlds/) | 候选待审：尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。 |
-| 061 | [Constitutional AI](https://arxiv.org/abs/2212.08073) | 候选待审：尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。 |
+| 060 | [SIMA 2](https://arxiv.org/html/2512.04797v1) | 规模未核准：机制有直接证据，实际训练总参数未核准；不是低价值排除。 |
+| 061 | [Constitutional AI](https://arxiv.org/html/2212.08073v1) | 关键前身 / AI4AI 支撑：关键前身/比较基线，保留贡献但不计入直接演化重点数。 |
 | 063 | [Eureka](https://arxiv.org/abs/2310.12931) | 候选待审：尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。 |
 | 064 | [Co-Scientist](https://arxiv.org/abs/2502.18864v2) | 外围背景：尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。 |
 | 065 | [GPT-Red](https://cdn.openai.com/pdf/gpt-red-automated-red-teaming-via-self-play-at-scale.pdf) | 规模未核准：工业级规模描述不能替代实际被训练模型的公开参数量。 |
-| 066 | [Automated Alignment Researchers: mitigating alignment failures](https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures) | AI4AI 支撑 / 非已证闭环：自动研究者训练其他目标模型有实际价值；未核实后继接管研究者的闭环，参数也未核准。 |
+| 066 | [Automated Alignment Researchers: mitigating alignment failures](https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures) | 关键前身 / AI4AI 支撑：自动研究者训练其他目标模型有实际价值；未核实后继接管研究者的闭环，参数也未核准。 |
 | 067 | [Seed for Seed (Seed2.1)](https://seed.bytedance.com/en/blog/seed2-1-officially-released-advancing-ai-productivity) | 候选待审：尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。 |
 | 070 | [Prime Agent: A Self-Improving RLM Harness](https://arxiv.org/abs/2608.23552) | 候选待审：尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。 |
 | 072 | [Dr. Zero: Self-Evolving Search Agents without Training Data](https://arxiv.org/abs/2601.07055) | <27B 机制参考：3B / 7B 训练实验均低于规模门槛。 |
@@ -128,5 +124,6 @@
 | 121 | [Teaching LLMs to Self-Evolve: Cultivating Core Meta-Skills with Reinforcement Learning](https://arxiv.org/abs/2607.21971) | 候选待审：尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。 |
 | 122 | [SEED: Self-Evolving On-Policy Distillation for Agentic Reinforcement Learning](https://arxiv.org/abs/2607.14777) | 候选待审：尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。 |
 | 123 | [RL Tango: Reinforcing Generator and Verifier Together for Language Reasoning](https://arxiv.org/abs/2505.15034) | 候选待审：尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。 |
+| 127 | [LLMs Can Self-Improve](https://aclanthology.org/2023.emnlp-main.67.pdf) | 关键前身 / AI4AI 支撑：关键前身/比较基线，保留贡献但不计入直接演化重点数。 |
 
 具名低价值判定仍为 0；待审、规模不符、非闭环支撑、已证低价值不互相替代。完整理解仍需全文附录、实现、消融统计、资源账本和复现。

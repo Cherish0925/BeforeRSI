@@ -252,9 +252,16 @@ def validate_curated_atlas(work_ids: set[str]) -> None:
             if r["id"] not in core or r["route"] not in route_ids or r["audit"] != "selected_sections":
                 fail(f"{r['id']}: unreviewed or invalid main-view work")
             if r["route"] in {"model", "hybrid"}:
-                eligible = [m for m in r["models"] if m["total_b"] is not None and m["total_b"] >= layer["minimum_total_parameters_b"] and m["role"] == "实际训练对象"]
+                eligible = [m for m in r["models"] if max(m["total_b"] or 0, m.get("total_lower_bound_b",0)) >= layer["minimum_total_parameters_b"] and m["role"] == "实际训练对象"]
                 if not eligible or r["scale_status"] != "eligible":
                     fail(f"{r['id']}: no verified >=27B trained target")
+                for m in eligible:
+                    if m.get("total_lower_bound_b") and not r.get("parameter_check"):
+                        fail(f"{r['id']}: parameter lower bound needs a derivation")
+            provenance = r.get("provenance", {})
+            if provenance.get("sector") not in {"industry", "academic", "joint"} or not provenance.get("institutions"):
+                fail(f"{r['id']}: main-view institutional provenance missing")
+            validate_url(provenance.get("source_url"), r["id"])
         if r["scale_status"] == "below" and any(m["total_b"] is None or m["total_b"] >= layer["minimum_total_parameters_b"] for m in r["models"]):
             fail(f"{r['id']}: invalid below-threshold label")
     for slot in layer["spaces"]:
@@ -280,6 +287,12 @@ def validate_curated_atlas(work_ids: set[str]) -> None:
         fail("placement counts disagree")
     if atlas["route_counts"] != {k: sum(r["route"] == k and r["placement"] == "main" for r in layers) for k in route_ids}:
         fail("route counts disagree")
+    expected_sectors = {k:dict(Counter(r['provenance']['sector'] for r in layers if r['placement']=='main' and r['route']==k)) for k in route_ids}
+    if atlas.get("sector_counts") != expected_sectors:
+        fail("mutually exclusive institutional counts disagree")
+    brief = load(ROOT / "data/research-brief.json")
+    if atlas.get("brief") != brief or set(brief['claim_labels']) != main:
+        fail("brief or per-case evidence labels disagree")
     source_layers = {r["id"]:r for r in layers}
     if any(r["layer"] != source_layers[r["id"]] for r in atlas["works"]):
         fail("generated layer record differs from reviewed source")
