@@ -7,12 +7,12 @@
 <br>
 
 [![Status](https://img.shields.io/badge/status-research%20in%20progress-111827?style=flat-square)](#status)
-[![Corpus](https://img.shields.io/badge/public%20corpus-47%20works-C58B35?style=flat-square)](EVIDENCE.md)
+[![Corpus](https://img.shields.io/badge/public%20corpus-53%20works-C58B35?style=flat-square)](EVIDENCE.md)
 [![Claim depth](https://img.shields.io/badge/claim%20depth-D0%E2%86%92D4-5C9C96?style=flat-square)](#claim-depth)
 [![CI](https://img.shields.io/github/actions/workflow/status/Cherish0925/BeforeRSI/validate.yml?branch=main&style=flat-square&label=data)](https://github.com/Cherish0925/BeforeRSI/actions)
 [![License](https://img.shields.io/badge/license-MIT-6B7280?style=flat-square)](LICENSE)
 
-**[Mechanisms](MECHANISMS.md)** · **[Theory](THEORY.md)** · **[Compatibility](COMPATIBILITY.md)** · **[Map](MAP.md)** · **[Evidence](EVIDENCE.md)** · **[Program](PROGRAM.md)** · **[Evaluation](EVALUATION.md)** · **[Simulation](SIMULATION.md)** · **[Hypotheses](HYPOTHESES.md)**
+**[Learned search](SEARCH.md)** · **[Mechanisms](MECHANISMS.md)** · **[Theory](THEORY.md)** · **[Compatibility](COMPATIBILITY.md)** · **[Map](MAP.md)** · **[Evidence](EVIDENCE.md)** · **[Program](PROGRAM.md)** · **[Evaluation](EVALUATION.md)** · **[Simulation](SIMULATION.md)** · **[Hypotheses](HYPOTHESES.md)**
 
 </div>
 
@@ -58,9 +58,24 @@ order effect; these are bounded numerical experiments, not LLM training runs.
 
 ## From representation to explanation
 
-[MECHANISMS.md](MECHANISMS.md) derives how proposal distributions, diagnostic feedback, selection, inheritance, task transfer and continuation interact. It connects representative primary-source methods and ablations to distinct predictions, with a [47-work mechanism map](research/mechanism-map.md).
+[MECHANISMS.md](MECHANISMS.md) derives how proposal distributions, diagnostic feedback, selection, inheritance, task transfer and continuation interact. It connects representative primary-source methods and ablations to distinct predictions, with a [53-work mechanism map](research/mechanism-map.md).
 
 The resulting route learns reusable research operations while preserving their decision inputs. It selects training sources by downstream update value, instead of assuming the best executing harness is the best teacher. [Experiment 007](experiments/007-feedback-structure/RESULTS.md) executes a controlled information-localization construction; it is not an LLM reproduction.
+
+## An executable bridge from learning to improvement cost
+
+[SEARCH.md](SEARCH.md) connects existing policy-guided search bounds to an
+actual learned search-and-reuse loop. It also distinguishes retaining a whole
+ancestor computation from mixing ancestor actions locally; the former admits
+a pointwise completion guarantee under explicit scheduling assumptions.
+
+[Experiment 008](experiments/008-learned-search/RESULTS.md) trains 2,592-parameter
+context policies from solutions found by search. Four paired lineages compare
+frozen and reused collection, imitation and search-bound losses, and local
+versus whole-search preservation. A common-target intervention trains identical
+fresh learners from each final actor's search results. Reuse improves both
+solver and data-producing actor performance in this bounded puzzle domain;
+resource measurements and a declared distribution-shift follow-up are included.
 
 ## The research spine
 
@@ -190,8 +205,9 @@ Generality requires mechanism coverage and testable predictions across methods. 
 
 | File | Purpose |
 |---|---|
+| **[SEARCH.md](SEARCH.md)** | search-effort objectives, complete-computation preservation, and the executable learning loop |
 | **[THEORY.md](THEORY.md)** | implementation boundaries, common-target improvement tests, coupling, and mathematical counterexamples |
-| **[COMPATIBILITY.md](COMPATIBILITY.md)** | per-work representation of all 47 catalog entries and limits of universality claims |
+| **[COMPATIBILITY.md](COMPATIBILITY.md)** | per-work representation of all 53 catalog entries and limits of universality claims |
 | **[MECHANISMS.md](MECHANISMS.md)** | conditional explanations, derivations, interventions and learner-aware research route |
 | **[research/mechanism-map.md](research/mechanism-map.md)** | causal operation, failure condition and separating intervention for every corpus entry |
 | **[MAP.md](MAP.md)** | history, causal structure, knowledge tree and present frontier |
@@ -202,6 +218,7 @@ Generality requires mechanism coverage and testable predictions across methods. 
 | **[data/knowledge-graph.json](data/knowledge-graph.json)** | machine-readable causal knowledge graph |
 | **[experiments/](experiments/)** | protocols and the executed bounded optimizer experiment |
 | **[Experiment 006](experiments/006-recursive-optimizer/RESULTS.md)** | executed numerical optimizer experiments, task-level records, resource counts and reproducible figures |
+| **[Experiment 008](experiments/008-learned-search/RESULTS.md)** | actual context-policy learning, recursive reuse, common-target data generation and measured costs |
 | **[SIMULATION.md](SIMULATION.md)** | illustrative trajectories, identification limits, and reproducible plots |
 | **[HYPOTHESES.md](HYPOTHESES.md)** | working propositions, alternatives and decisive tests |
 | **[RESEARCH_LOG.md](RESEARCH_LOG.md)** | distilled lineage of the project's changing representations and decisions |
@@ -213,10 +230,11 @@ The repository stays small on purpose. New files are added when they contain a n
 
 **October 2026.** The historical map and experimental program are established; the corpus is still being audited claim by claim. Author-reported results remain labeled reported until they are independently rerun or replicated.
 
-The numerical experiment is now executable and has been run. It does not
-establish a positive common-target improver advantage or a generally superior
-schedule. Future claims must preserve this measured baseline and the distinction
-between current score, improvement ability and finite-budget continuation value.
+Experiment 006 did not establish a positive common-target improver advantage
+or a generally superior schedule. Experiment 008 establishes a positive bounded
+search-and-learning result under its declared conditions, including a common
+fresh-learner comparison. These different outcomes constrain different routes;
+neither is a universal claim about open-ended RSI.
 
 ---
 

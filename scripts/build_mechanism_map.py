@@ -53,8 +53,14 @@ ROWS={
 "self-training-optimizer-2020":("A learned optimizer can execute the updates that train another optimizer.","Longer horizons can shift state distributions and stability beyond its training regime.","Cross optimizer versions, clipping rules and training horizons on common optimizer targets."),
 "star":("Correctness-filtered rationales and answer-conditioned rationalization alter the learning target.","Hints can expose solutions but training must support inference without those hints.","Separate rationalization, filtering and per-task sample balancing at equal generation cost."),
 "rest-em":("Reward-weighted sampling and likelihood projection alternate as an approximate EM procedure.","Approximate learning, rare success and changed task weights can prevent practical improvement.","Compare pooled filtering with per-task-balanced filtering and measure projection error."),
+"expert-iteration":("A planner supplies targets to a policy that guides later planning.","Search advantage must survive learning and shared task structure.","Freeze the policy used by search while training otherwise identical learners."),
+"dreamcoder":("Library abstraction changes the search language while a recognition policy guides its use.","Shorter expressions help only if abstraction and execution costs are worthwhile.","Hold either the learned library or recognition policy fixed across cycles."),
+"selecting-computations":("Compute is spent where information can change the selected action.","Selection overhead and multistep information complementarity affect stopping.","Charge probe cost and compare metalevel selection with fixed allocation."),
+"levin-tree-search":("Depth divided by path probability controls search order and bounds effort.","Solution support, deterministic verification and admissible pruning are required.","Hold the tree fixed and change the learned probability of successful paths."),
+"policy-guided-heuristic-search":("A heuristic and a policy jointly prioritize paths with bounded search loss.","Heuristic assumptions and node-dependent loss matter.","Cross the same policy with changed heuristics under measured expansion costs."),
+"lts-context-models":("A convex context policy learns from successful paths using a search-effort loss.","Fixed-path convexity does not establish global bootstrap convergence.","Compare imitation and bound objectives, and frozen versus reused collection policies."),
 }
-FULL={"dgm","hgm","hyperagents","aide2","gepa","seal","helix","mass","openrsi","rrsi","co-harness","harness-updating-benefit","star","rest-em"}
+FULL={"dgm","hgm","hyperagents","aide2","gepa","seal","helix","mass","openrsi","rrsi","co-harness","harness-updating-benefit","star","rest-em","expert-iteration","dreamcoder","selecting-computations","levin-tree-search","policy-guided-heuristic-search","lts-context-models"}
 
 
 def main():
@@ -66,16 +72,16 @@ def main():
         rows.append({"id":w["id"],"name":w["name"],"sources":w["sources"],
             "mechanism_interpretation":mechanism,"condition_or_failure":condition,
             "separating_intervention":intervention,
-            "review_scope":"primary methods/results read this pass" if w["id"] in FULL else
+            "review_scope":"primary methods/results read in the mechanism passes" if w["id"] in FULL else
             "prior corpus source check; mechanism interpretation, not a fresh full-method audit",
             "status":"conditional interpretation; no independent reproduction claimed"})
     (ROOT/"data/mechanisms.json").write_text(json.dumps({"updated":"2026-10-18",
         "scope":"every current corpus entry; explanatory hypotheses with explicit counterfactuals",
         "works":rows},indent=2,ensure_ascii=False)+"\n")
     lines=["# Per-work mechanism map","",
-        "All 47 current corpus entries are included. These are our conditional mechanism",
+        f"All {len(corpus)} current corpus entries are included. These are our conditional mechanism",
         "interpretations and proposed interventions, not new empirical claims about each work.",
-        "A star marks primary methods/results read in this pass; other rows retain the prior",
+        "A star marks primary methods/results read in the mechanism passes; other rows retain the prior",
         "source-review boundary. Source reports and our derivations are separated in MECHANISMS.md.","",
         "| Work | Causal operation | Condition or failure | Separating intervention |",
         "|---|---|---|---|"]

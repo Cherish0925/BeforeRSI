@@ -490,3 +490,40 @@ greedy decisions). Tasks, observations and exact likelihood optimization are
 held fixed. This isolates loss/class mismatch; it is not a neural experiment
 or a claim to have discovered teacher-capacity mismatch. Cho and Hariharan
 (2019) are cited for the established distillation phenomenon.
+
+
+## 2026-10-18 — Search effort, complete-computation retention, and learned reuse
+
+The mechanism model lacked an executable quantitative bridge between learning
+and the cost of later improvements. Added six foundations, including Expert
+Iteration and DreamCoder, and connected the policy-guided search bound to a
+trainable context policy. This changes the route from awaiting a general
+metacontroller to implementing an operation with a defensible cost objective.
+The bound, context-model convexity and value-of-computation framework are
+established prior work, explicitly attributed in SEARCH.md.
+
+A further structural distinction matters for preservation: mixing whole path
+distributions protects an old path with a constant probability factor, whereas
+mixing actions independently can pay that factor at every step. Fairly
+interleaving complete search processes supplies a pointwise completion bound
+without knowing which process will win. It compares the ancestor at its budget
+share, not at the entire budget; process state, acceptance and overhead matter.
+The exact witnesses are executable in scripts/check_search_preservation.py.
+
+Experiment 008 is an actual five-round learned search loop with a 2,592-parameter
+context model. It preserves its pilot and four paired runs. Reuse improves
+held-out solver performance and the value of generated data for identical
+fresh learners. Original random-walk tests approach a ceiling, so a documented
+follow-up freezes the system and draws new uniform solvable states. At 256
+pops, the common-target descendants solve 344/512 with data from the reused CE
+actor, versus 176/512 from the frozen-collection actor. This is conditional on
+the learner, task distribution and pop-budget convention; quantities of data
+and arithmetic differ and are reported.
+
+The harder follow-up exposes a benefit of the bound objective at small budgets
+that the near-ceiling test obscures. Complete-process retention beats local
+mixing here but costs performance relative to the best new search alone.
+Training also costs more than frozen collection; deployment savings depend on
+the task cohort and search cap. No broad adaptive-allocation victory or
+open-ended recursion is inferred. Code, parameters, task identities, solved
+paths, per-task outcomes, costs and hashed manifests are preserved losslessly.

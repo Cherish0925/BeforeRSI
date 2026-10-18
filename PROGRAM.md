@@ -52,6 +52,34 @@ representation rather than assuming another identical cycle will repair it.
 This replaces the previous presumption that every cycle should execute A–G
 in a fixed order. The component interventions below remain useful controls.
 
+## Executed search-and-learn branch
+
+[Experiment 008](experiments/008-learned-search/RESULTS.md) implements a bounded
+version with 2,592 learned context parameters. Its reused policy collects new
+verified paths and supplies later updates. Under shared search-pop caps it
+outperforms frozen collection on unseen puzzle starts, including a declared
+uniform-state follow-up. On common fresh learners, data from the reused actor
+also produce stronger descendants. This is a real parameter-update and search
+loop in one small deterministic environment; it does not establish broad RSI.
+
+Use a loss tied to the operation being improved when such a connection exists.
+Here an existing search-bound objective helps particularly at low budgets on
+the harder follow-up. Keep CE as a baseline: a bound is not the actual search
+cost, and stronger conclusions do not follow from convexity alone.
+
+When preserving an ancestor, retain its whole resumable search with an explicit
+compute share. Mixing a little old-policy probability into every new action can
+destroy coherent long paths exponentially; the whole-process schedule has a
+constant completion-overhead guarantee in its stated work unit. The experiment
+finds that this protection still costs performance relative to learned search
+alone. [SEARCH.md](SEARCH.md) states the proofs and execution assumptions.
+
+Report build plus subsequent use. At a small search cap the more capable route
+can still consume more total CPU after including training; at a larger cap,
+faster solution finding can repay the build. A metacontroller that trial-trains
+several candidates must pay for all trials. Do not assume an elaborate selector
+is worthwhile before measuring that reuse horizon.
+
 An initial bounded implementation has now been executed:
 [Experiment 006](experiments/006-recursive-optimizer/RESULTS.md). The tested
 recursive optimizer did not establish an advantage over a pinned ancestor.

@@ -1,5 +1,11 @@
 # Illustrative trajectories and model identification
 
+[Experiment 008](experiments/008-learned-search/RESULTS.md) performs actual
+parameter optimization and tree search in a synthetic sliding-tile environment.
+Its gains are measured algorithm outcomes, not samples from an assumed growth
+equation. The distribution-shift follow-up is separated from the initial run.
+It does not forecast frontier-model behavior or open-ended recursion.
+
 [Experiment 007](experiments/007-feedback-structure/RESULTS.md) is a separate
 finite active-identification construction. It executes feedback interfaces and
 compares outcomes against exact query laws, rather than assuming a capability

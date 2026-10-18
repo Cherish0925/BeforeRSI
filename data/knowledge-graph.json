@@ -607,6 +607,51 @@
         "model-update",
         "verification"
       ]
+    },
+    {
+      "work_id": "expert-iteration",
+      "node_ids": [
+        "model-update",
+        "heuristic-search",
+        "self-generated-experience"
+      ]
+    },
+    {
+      "work_id": "dreamcoder",
+      "node_ids": [
+        "automated-algorithm-search",
+        "model-update",
+        "external-cognition"
+      ]
+    },
+    {
+      "work_id": "selecting-computations",
+      "node_ids": [
+        "optimal-control",
+        "resource-normalized-dynamics"
+      ]
+    },
+    {
+      "work_id": "levin-tree-search",
+      "node_ids": [
+        "heuristic-search",
+        "verification"
+      ]
+    },
+    {
+      "work_id": "policy-guided-heuristic-search",
+      "node_ids": [
+        "heuristic-search",
+        "model-update"
+      ]
+    },
+    {
+      "work_id": "lts-context-models",
+      "node_ids": [
+        "model-update",
+        "heuristic-search",
+        "self-generated-experience"
+      ]
     }
   ]
 }

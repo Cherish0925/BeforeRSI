@@ -99,6 +99,12 @@ Modern self-modifying agents replace proof with empirical selection. STOP, Göde
 
 ### 3.2 Heuristic, evolutionary, and program search
 
+The quantitative search-and-learning branch is developed in [SEARCH.md](SEARCH.md):
+Expert Iteration couples planning with learned guidance; DreamCoder also changes
+the solution language; policy-guided search relates path probabilities to
+computation. These mechanisms explain why changing weights, a library or a
+search procedure are distinct interventions even when they enter the same loop.
+
 [AM and EURISKO](https://www.cs.northwestern.edu/~mek802/papers/not-mine/Lenat_EURISKO.pdf) used heuristics to guide discovery, and EURISKO could generate or modify heuristics. The work established that a system can search over parts of its own problem-solving procedure. It also exposed dependence on human-supplied representations, heuristics, and domain structure.
 
 Genetic programming, neural architecture search, AutoML, and program synthesis expanded automated search. [AutoML-Zero](https://proceedings.mlr.press/v119/real20a.html) searched for learning algorithms from primitive operations. [FunSearch](https://www.nature.com/articles/s41586-023-06924-6) and later algorithm-search systems paired a pretrained model with an external evaluator to discover useful programs.
@@ -227,4 +233,3 @@ The following results would materially advance the mainline:
 - a predictive relation connecting base-model capability, evaluator quality, search budget, and achievable self-improvement, validated on withheld interventions.
 
 Until these exist, open-ended RSI remains a research target rather than an established capability.
-

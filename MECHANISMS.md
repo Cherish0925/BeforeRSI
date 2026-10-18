@@ -393,7 +393,7 @@ The mechanism interpretation and proposed separating intervention are ours.
 | [RRSI](https://arxiv.org/html/2609.24972v1) | Its ablations show higher evolve score can accompany worse OOD score and greater token cost. | Retention aligned to source score can select a worse transferable computation. Hold candidate pool fixed to isolate selection from proposal regularization. |
 | [POET](https://arxiv.org/abs/1901.01753) | Environment-agent transfer supports solutions missed by direct optimization controls. | A change to reachable learning paths. Remove cross-environment transfer at matched total optimization cost. |
 
-The complete [47-work map](research/mechanism-map.md) records a concrete
+The complete [53-work map](research/mechanism-map.md) records a concrete
 mechanism and counterfactual for every current corpus entry. Rows whose sources
 were only previously checked at abstract/repository level are marked as such.
 Formal and evaluation papers constrain the mechanism rather than implementing
@@ -401,6 +401,13 @@ every operation. Mapping is not a calibrated quantitative explanation of all
 published outcomes.
 
 ## 8. The route this supports
+
+[SEARCH.md](SEARCH.md) now makes one branch of this route executable: search
+effort is related to the probability of successful paths, and a complete
+ancestor computation can be retained with a known scheduling overhead. It
+adds Expert Iteration, DreamCoder, metareasoning and policy-guided search to
+the source explanation. Experiment 008 trains and repeatedly reuses real
+context-policy parameters and tests the final actors on common learner targets.
 
 The next system should learn **reusable research operations with preserved
 decision inputs**, while retaining executable alternatives. Its unit of learning

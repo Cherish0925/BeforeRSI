@@ -293,3 +293,45 @@ different precedents for inheritance. Their original papers are now linked
 in data/works.json. The mechanism map identifies what would distinguish
 teacher quality, learnability, task-mixture shifts and improved search control.
 A nominally complete feedback loop does not identify which effect occurred.
+
+
+## Search-and-learning foundations added on 2026-10-18
+
+These six additions supply algorithms and conditional results needed to explain
+co-evolution, rather than new instances of the same label.
+
+| Primary work | Source-supported contribution | What it changes here |
+|---|---|---|
+| [Expert Iteration, 2017](https://arxiv.org/pdf/1705.08439) | Search supplies learning targets; the learned policy guides subsequent search. | The external planner can stay fixed while effective improvement behavior changes. |
+| [DreamCoder, 2021](https://www.neurosymbolic.org/papers/EllisWNSMHCST21.pdf) | Learns reusable program abstractions and a recognition model; the paper separates their contributions. | A co-evolving representation must be allowed to change the available search paths. |
+| [Selecting Computations, 2012](https://arxiv.org/pdf/1207.5879) | Formalizes costly information gathering for a final choice and derives scoped stopping results. | Evaluating update choices consumes resources; information and candidate improvement differ. |
+| [LevinTS, 2018](https://arxiv.org/pdf/1811.10928) | Relates policy-guided search effort to solution-path probability. | Gives an explicit bridge from learned behavior to later computation. |
+| [PHS, 2021](https://cdn.aaai.org/ojs/17469/17469-13-20963-1-2-20210518.pdf) | Combines policy and heuristic guidance with search-loss guarantees. | Search cost and returned-solution cost need separate objectives. |
+| [LTS-CM, 2023](https://www.ijcai.org/proceedings/2023/0624.pdf) | Uses context models with a convex fixed-path search-effort loss in a bootstrap loop. | Supplies a tractable learner; fixed-path convexity does not prove whole-loop convergence. |
+
+Original empirical findings remain author-reported. Experiment 008 is our own
+small implementation in a different puzzle setting and is not recorded as a
+reproduction of these papers. SEARCH.md attributes the existing bounds and
+objectives, then derives the retention and cost consequences used here.
+
+## Executed learned-search result
+
+[Experiment 008](experiments/008-learned-search/RESULTS.md) performs five rounds
+of actual context-policy fitting and solution search. Four paired lineages
+compare frozen versus reused collection, CE versus a regularized search-bound
+objective, and local versus whole-search preservation. The model has 2,592
+parameters and no optimal-distance oracle supplies its labels.
+
+On the declared uniform-state follow-up at 256 pops, reuse-CE solves 369/512
+starts and frozen-collection CE solves 25/512. To assess the data-producing
+actor on common targets, the final policies collect paths for identical new
+zero-initialized learners. Those students solve 344/512 versus 176/512 under
+the same assessment cap. All four paired differences have the same sign.
+
+The bound-loss route solves 404/512 in the direct comparison at that cap.
+Complete-search preservation performs better than local mixing in this run,
+but usually worse than the learned solver alone. Its overhead guarantee is a
+different statement from empirical same-budget superiority. Common search caps
+and optimization ceilings do not match physical compute: process CPU times,
+fit work and build-plus-deployment totals are included. These observations
+establish a bounded mechanism, not an original general RSI result.

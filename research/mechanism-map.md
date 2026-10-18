@@ -1,8 +1,8 @@
 # Per-work mechanism map
 
-All 47 current corpus entries are included. These are our conditional mechanism
+All 53 current corpus entries are included. These are our conditional mechanism
 interpretations and proposed interventions, not new empirical claims about each work.
-A star marks primary methods/results read in this pass; other rows retain the prior
+A star marks primary methods/results read in the mechanism passes; other rows retain the prior
 source-review boundary. Source reports and our derivations are separated in MECHANISMS.md.
 
 | Work | Causal operation | Condition or failure | Separating intervention |
@@ -54,6 +54,12 @@ source-review boundary. Source reports and our derivations are separated in MECH
 | [Tasks, stability, architecture, and compute: Training more effective learned optimizers, and using them to train themselves](https://arxiv.org/abs/2009.11243) | A learned optimizer can execute the updates that train another optimizer. | Longer horizons can shift state distributions and stability beyond its training regime. | Cross optimizer versions, clipping rules and training horizons on common optimizer targets. |
 | [STaR: Bootstrapping Reasoning With Reasoning *](https://arxiv.org/abs/2203.14465) | Correctness-filtered rationales and answer-conditioned rationalization alter the learning target. | Hints can expose solutions but training must support inference without those hints. | Separate rationalization, filtering and per-task sample balancing at equal generation cost. |
 | [Beyond Human Data: Scaling Self-Training for Problem-Solving with Language Models *](https://arxiv.org/abs/2312.06585) | Reward-weighted sampling and likelihood projection alternate as an approximate EM procedure. | Approximate learning, rare success and changed task weights can prevent practical improvement. | Compare pooled filtering with per-task-balanced filtering and measure projection error. |
+| [Thinking Fast and Slow with Deep Learning and Tree Search *](https://arxiv.org/abs/1705.08439) | A planner supplies targets to a policy that guides later planning. | Search advantage must survive learning and shared task structure. | Freeze the policy used by search while training otherwise identical learners. |
+| [DreamCoder: Bootstrapping Inductive Program Synthesis with Wake-Sleep Library Learning *](https://www.neurosymbolic.org/papers/EllisWNSMHCST21.pdf) | Library abstraction changes the search language while a recognition policy guides its use. | Shorter expressions help only if abstraction and execution costs are worthwhile. | Hold either the learned library or recognition policy fixed across cycles. |
+| [Selecting Computations: Theory and Applications *](https://arxiv.org/abs/1207.5879) | Compute is spent where information can change the selected action. | Selection overhead and multistep information complementarity affect stopping. | Charge probe cost and compare metalevel selection with fixed allocation. |
+| [Single-Agent Policy Tree Search With Guarantees *](https://arxiv.org/abs/1811.10928) | Depth divided by path probability controls search order and bounds effort. | Solution support, deterministic verification and admissible pruning are required. | Hold the tree fixed and change the learned probability of successful paths. |
+| [Policy-Guided Heuristic Search with Guarantees *](https://arxiv.org/abs/2103.11505) | A heuristic and a policy jointly prioritize paths with bounded search loss. | Heuristic assumptions and node-dependent loss matter. | Cross the same policy with changed heuristics under measured expansion costs. |
+| [Levin Tree Search with Context Models *](https://www.ijcai.org/proceedings/2023/0624.pdf) | A convex context policy learns from successful paths using a search-effort loss. | Fixed-path convexity does not establish global bootstrap convergence. | Compare imitation and bound objectives, and frozen versus reused collection policies. |
 
 The next research question is which of these conditions is shared across tasks
 and predicts interventions, not how many entries can be assigned a label.

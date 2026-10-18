@@ -1,0 +1,47 @@
+{
+  "mixture_rows": [
+    {
+      "depth": 4,
+      "whole_path_probability": "1/4",
+      "local_path_probability": "1/256",
+      "bound_ratio_local_over_whole": "64"
+    },
+    {
+      "depth": 8,
+      "whole_path_probability": "1/4",
+      "local_path_probability": "1/65536",
+      "bound_ratio_local_over_whole": "16384"
+    },
+    {
+      "depth": 16,
+      "whole_path_probability": "1/4",
+      "local_path_probability": "1/4294967296",
+      "bound_ratio_local_over_whole": "1073741824"
+    },
+    {
+      "depth": 32,
+      "whole_path_probability": "1/4",
+      "local_path_probability": "1/18446744073709551616",
+      "bound_ratio_local_over_whole": "4611686018427387904"
+    }
+  ],
+  "exact_checks": 3545,
+  "loss_reversal": [
+    {
+      "probabilities": [
+        0.1,
+        0.1
+      ],
+      "mean_nll": 2.3025850929940455,
+      "mean_inverse_probability": 10.0
+    },
+    {
+      "probabilities": [
+        0.99,
+        0.02
+      ],
+      "mean_nll": 1.9610366706408238,
+      "mean_inverse_probability": 25.505050505050505
+    }
+  ]
+}

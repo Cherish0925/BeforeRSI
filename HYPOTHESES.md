@@ -92,6 +92,13 @@ optimizer. It finds an M-then-H advantage over H-then-M on new instances but
 does not establish an advantage over joint search or across new families.
 It does not implement weight distillation from LLM trajectories.
 
+**Further bounded result:** Experiment 008 executes search-generated context
+policy learning. Reusing the learned policy improves held-out search and the
+value of data it generates for common fresh learners in the 8-puzzle. Shared
+pop caps do not equalize training arithmetic or CPU time; both are reported.
+This supports a particular inheritance mechanism, not the general hypothesis
+across language models and research domains.
+
 ## H5 — Feedback correctness and localization change different mechanisms
 
 **Status:** open.
@@ -120,6 +127,12 @@ When the model and task distribution change, a previously rejected harness branc
 **Alternative:** the cost of preserving and revisiting branches may outweigh the benefit; a well-regularized greedy strategy may be sufficient.
 
 **Decisive test:** compare greedy, beam, lineage-aware, and diversity-preserving search across several model updates under identical candidate and evaluation budgets.
+
+SEARCH.md distinguishes preserving complete computations from locally mixing
+their action probabilities. Fair interleaving has a scoped constant-overhead
+completion guarantee. Experiment 008 finds whole-search preservation better
+than local mixing but usually worse than the best learned search at equal pops.
+This does not settle H6's nonstationary archive hypothesis.
 
 ## H7 — The earlier sign-only gain-versus-debt criterion
 
@@ -184,6 +197,12 @@ two feasible policies without assuming a universal growth equation.
 **Alternative:** model uncertainty may be so large that adaptive optimal control offers little advantage over robust fixed schedules.
 
 **Decisive test:** compare fixed schedules, greedy one-step allocation, and model-predictive allocation on the same multi-generation budget.
+
+SEARCH.md adds established value-of-computation reasoning and an alternative
+to expensive winner prediction: preserve a complete baseline with a fixed
+budget share. Experiment 008 records build-plus-deployment CPU costs and shows
+that the cost comparison changes with the deployment cap. It does not test a
+general learned allocation controller or establish that adaptive selection wins.
 
 ## H11 — Scale transfer is non-monotone
 

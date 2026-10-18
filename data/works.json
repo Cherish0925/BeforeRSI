@@ -1027,6 +1027,127 @@
           "url": "https://arxiv.org/abs/2312.06585"
         }
       ]
+    },
+    {
+      "id": "expert-iteration",
+      "name": "Thinking Fast and Slow with Deep Learning and Tree Search",
+      "year": 2017,
+      "role": "search_and_learning",
+      "reported_depth": "multi_generation",
+      "changed_objects": [
+        "policy_weights",
+        "search_policy"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "in_progress",
+      "central_limit": "Search and imitation are coupled under a declared planner; bounded game results do not establish open-ended improvement across domains.",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/1705.08439"
+        }
+      ]
+    },
+    {
+      "id": "dreamcoder",
+      "name": "DreamCoder: Bootstrapping Inductive Program Synthesis with Wake-Sleep Library Learning",
+      "year": 2021,
+      "role": "program_learning",
+      "reported_depth": "multi_generation",
+      "changed_objects": [
+        "program_library",
+        "recognition_model",
+        "search_language"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "in_progress",
+      "central_limit": "Library abstraction and policy learning are jointly useful in tested synthesis domains; representation and search costs remain domain dependent.",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://www.neurosymbolic.org/papers/EllisWNSMHCST21.pdf"
+        }
+      ]
+    },
+    {
+      "id": "selecting-computations",
+      "name": "Selecting Computations: Theory and Applications",
+      "year": 2012,
+      "role": "metareasoning",
+      "reported_depth": "conceptual",
+      "changed_objects": [
+        "computation_selection"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "in_progress",
+      "central_limit": "Value-of-computation results depend on a specified uncertainty and cost model; solving the metalevel decision can itself be expensive.",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/1207.5879"
+        }
+      ]
+    },
+    {
+      "id": "levin-tree-search",
+      "name": "Single-Agent Policy Tree Search With Guarantees",
+      "year": 2018,
+      "role": "policy_guided_search",
+      "reported_depth": "adaptation",
+      "changed_objects": [
+        "search_order",
+        "search_policy"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "in_progress",
+      "central_limit": "The guarantee concerns deterministic verifiable search, positive solution-path mass and valid pruning, not arbitrary unknown scientific environments.",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/1811.10928"
+        }
+      ]
+    },
+    {
+      "id": "policy-guided-heuristic-search",
+      "name": "Policy-Guided Heuristic Search with Guarantees",
+      "year": 2021,
+      "role": "policy_guided_search",
+      "reported_depth": "multi_generation",
+      "changed_objects": [
+        "search_policy",
+        "heuristic",
+        "learned_parameters"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "in_progress",
+      "central_limit": "Search-loss guarantees and empirical learning depend on the policy, heuristic and task assumptions; an expansion is not automatically equal physical cost.",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2103.11505"
+        }
+      ]
+    },
+    {
+      "id": "lts-context-models",
+      "name": "Levin Tree Search with Context Models",
+      "year": 2023,
+      "role": "search_and_learning",
+      "reported_depth": "multi_generation",
+      "changed_objects": [
+        "context_policy_parameters",
+        "training_objective"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "in_progress",
+      "central_limit": "Convexity holds for the specified context parameterization and fixed solution paths; it is not a global guarantee for the full bootstrapping process.",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://www.ijcai.org/proceedings/2023/0624.pdf"
+        }
+      ]
     }
   ]
 }

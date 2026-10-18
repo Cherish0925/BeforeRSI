@@ -11,6 +11,12 @@ system, transfer across tasks, and future branch value. It derives explicit
 conditions, links them to primary-source interventions, and replaces automatic
 model/harness alternation by a learner-aware choice of research operations.
 
+[SEARCH.md](SEARCH.md) supplies a tractable subclass: verifiable search with
+learned path probabilities. It recovers existing search-effort bounds, derives
+the difference between local action mixing and whole-computation retention,
+and connects the theory to executed search-and-learn and common-target updates
+in Experiment 008. Its assumptions are narrower than the state-kernel model.
+
 ## 1. Implementation and role are different distinctions
 
 A versioned system can be packaged as
