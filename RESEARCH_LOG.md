@@ -455,3 +455,38 @@ optimizers training optimizers, with the authors' horizon and clipping limits.
 The corpus now contains 45 entries. The present numerical experiment is a
 separate implementation, not a neural-optimizer replication.
 
+## 2026-10-18 — From universal encoding to explanatory mechanisms
+
+The full-state kernel and continuation identity remained insufficient to
+explain why existing methods work. The research now distinguishes changes
+to accessible computations, actionable feedback, selection, inheritance,
+task transfer and future branch value. MECHANISMS.md derives the corresponding
+conditional laws and links them to source interventions. Standard tools are
+attributed; selection/projection, downstream teaching value and descendant
+value already have explicit precedents in ReST-EM, SEAL and HGM.
+
+Primary methods/results were read for 14 selected entries. A per-work map
+now supplies an explicit mechanism, condition and separating intervention
+for all 47 entries, while marking the remaining source-review boundaries.
+STaR and ReST-EM fill a missing verified-self-training branch. AIDE2's fixed
+main outer proposer is recorded, and HELIX is no longer labelled a completed
+model-update/rebuild demonstration.
+
+Experiment 007 executed 4,635,614 primitive checks over 8,000 finite hidden
+specifications. Correct localization follows the exact linear query law;
+scalar pass/fail follows the equality-oracle law. This is a controlled
+computational construction, not an LLM reproduction. Published aggregate
+RRSI/MASS comparisons were calculated separately without pseudo-replication.
+
+The route changes from presumed alternating model/harness cycles to reusable
+research operations with preserved decision inputs, explicit source-task
+weights, and data selection by post-update learner value. No frontier-model
+training, universal speedup or new physical growth law has been established.
+
+The teacher-selection distinction is also witnessed exactly in a finite learner
+class: a perfect teacher projects to a 50%-accuracy student, while a weaker
+compatible teacher projects to a 74.275%-expected-accuracy student (75% under
+greedy decisions). Tasks, observations and exact likelihood optimization are
+held fixed. This isolates loss/class mismatch; it is not a neural experiment
+or a claim to have discovered teacher-capacity mismatch. Cho and Hariharan
+(2019) are cited for the established distillation phenomenon.

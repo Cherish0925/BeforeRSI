@@ -7,12 +7,12 @@
 <br>
 
 [![Status](https://img.shields.io/badge/status-research%20in%20progress-111827?style=flat-square)](#status)
-[![Corpus](https://img.shields.io/badge/public%20corpus-45%20works-C58B35?style=flat-square)](EVIDENCE.md)
+[![Corpus](https://img.shields.io/badge/public%20corpus-47%20works-C58B35?style=flat-square)](EVIDENCE.md)
 [![Claim depth](https://img.shields.io/badge/claim%20depth-D0%E2%86%92D4-5C9C96?style=flat-square)](#claim-depth)
 [![CI](https://img.shields.io/github/actions/workflow/status/Cherish0925/BeforeRSI/validate.yml?branch=main&style=flat-square&label=data)](https://github.com/Cherish0925/BeforeRSI/actions)
 [![License](https://img.shields.io/badge/license-MIT-6B7280?style=flat-square)](LICENSE)
 
-**[Theory](THEORY.md)** · **[Compatibility](COMPATIBILITY.md)** · **[Map](MAP.md)** · **[Evidence](EVIDENCE.md)** · **[Program](PROGRAM.md)** · **[Evaluation](EVALUATION.md)** · **[Simulation](SIMULATION.md)** · **[Hypotheses](HYPOTHESES.md)**
+**[Mechanisms](MECHANISMS.md)** · **[Theory](THEORY.md)** · **[Compatibility](COMPATIBILITY.md)** · **[Map](MAP.md)** · **[Evidence](EVIDENCE.md)** · **[Program](PROGRAM.md)** · **[Evaluation](EVALUATION.md)** · **[Simulation](SIMULATION.md)** · **[Hypotheses](HYPOTHESES.md)**
 
 </div>
 
@@ -55,6 +55,12 @@ comparison, including a counterexample with monotone gains under both routes.
 executed numerical-optimizer self-reuse, training-objective and update-order
 comparisons. It reports negative and inconclusive results alongside the measured
 order effect; these are bounded numerical experiments, not LLM training runs.
+
+## From representation to explanation
+
+[MECHANISMS.md](MECHANISMS.md) derives how proposal distributions, diagnostic feedback, selection, inheritance, task transfer and continuation interact. It connects representative primary-source methods and ablations to distinct predictions, with a [47-work mechanism map](research/mechanism-map.md).
+
+The resulting route learns reusable research operations while preserving their decision inputs. It selects training sources by downstream update value, instead of assuming the best executing harness is the best teacher. [Experiment 007](experiments/007-feedback-structure/RESULTS.md) executes a controlled information-localization construction; it is not an LLM reproduction.
 
 ## The research spine
 
@@ -185,7 +191,9 @@ Generality requires mechanism coverage and testable predictions across methods. 
 | File | Purpose |
 |---|---|
 | **[THEORY.md](THEORY.md)** | implementation boundaries, common-target improvement tests, coupling, and mathematical counterexamples |
-| **[COMPATIBILITY.md](COMPATIBILITY.md)** | per-work mapping of all 45 catalog entries and limits of universality claims |
+| **[COMPATIBILITY.md](COMPATIBILITY.md)** | per-work representation of all 47 catalog entries and limits of universality claims |
+| **[MECHANISMS.md](MECHANISMS.md)** | conditional explanations, derivations, interventions and learner-aware research route |
+| **[research/mechanism-map.md](research/mechanism-map.md)** | causal operation, failure condition and separating intervention for every corpus entry |
 | **[MAP.md](MAP.md)** | history, causal structure, knowledge tree and present frontier |
 | **[EVIDENCE.md](EVIDENCE.md)** | strongest public work, claim depth, limitations and primary sources |
 | **[PROGRAM.md](PROGRAM.md)** | target system, model–harness–improver co-evolution and research sequence |
@@ -215,4 +223,3 @@ between current score, improvement ability and finite-budget continuation value.
 <div align="center">
 <sub>BeforeRSI asks for stronger evidence before stronger words.</sub>
 </div>
-

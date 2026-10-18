@@ -57,11 +57,16 @@ The empirical hypothesis is that substantial model updates often alter harness r
 
 **Decisive test:** evaluate a harness portfolio across successive model versions and estimate rank stability, interaction effects, and transfer.
 
-## H4 — Externalize, verify, internalize, re-externalize is an efficient long-run cycle
+## H4 — Execution advantage can be inherited at a useful total cost
 
 **Status:** open.
 
-New strategies should often appear first in the harness because harness changes are cheap and inspectable. Stable, high-frequency, transferable behavior can later be compressed into model weights. The updated model then changes which external structures are useful.
+Harness exploration can produce behavior worth learning, but the execution
+advantage must survive projection into the learner, preservation of decision
+inputs, and transfer to future tasks. The total generation and training cost
+must be amortized. MECHANISMS.md derives a sufficient bounded-utility condition
+and an exact missing-input obstruction. The strongest executing harness and
+the most useful teaching harness need not coincide.
 
 The proposed cycle is:
 
@@ -77,22 +82,34 @@ $$
 
 **Alternative:** direct model training may dominate once models are sufficiently capable, or external computation may remain permanently more efficient than internalization.
 
-**Decisive test:** compare long-horizon capability and total cost for harness-only, model-only, and alternating externalize/internalize schedules under equal resource budgets.
+**Decisive test:** compare execution-selected and post-update-value-selected
+training sources under equal generation/training budgets. Independently vary
+preserved decision inputs and source-task weights. Then compare their full
+continuation value with model-only and harness-only alternatives.
 
 **Bounded result:** Experiment 006 compares update orders in a numerical
 optimizer. It finds an M-then-H advantage over H-then-M on new instances but
 does not establish an advantage over joint search or across new families.
 It does not implement weight distillation from LLM trajectories.
 
-## H5 — Evaluator fidelity changes search efficiency
+## H5 — Feedback correctness and localization change different mechanisms
 
 **Status:** open.
 
 Feedback quality may change which candidate count is most useful under a fixed total budget. Absolute selected gain and gain per unit cost must be measured separately.
 
+An exact final pass/fail bit need not identify how to repair a candidate.
+MECHANISMS.md gives an exponential-versus-linear query separation when local
+decisions compose and feedback identifies the first failed component.
+Experiment 007 executes that construction. Whether agent traces supply
+similarly useful localization remains an empirical question.
+
 **Alternative:** candidate diversity, generation cost, or adaptive task fitting dominates fidelity; there may be no sharp threshold.
 
 **Decisive test:** vary evaluator fidelity and candidate count independently with external final assessment. The i.i.d. joint Gaussian model predicts increasing absolute true gain at fixed positive fidelity, even when cost-normalized efficiency eventually falls. A universal phase boundary does not follow from that model.
+
+Also hold final correctness and query cost fixed while removing diagnostic
+localization; this distinguishes better judgment from more actionable feedback.
 
 ## H6 — Portfolio plus lineage beats greedy replacement in nonstationary systems
 

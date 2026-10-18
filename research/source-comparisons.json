@@ -1,0 +1,22 @@
+{
+  "status": "Transcribed author-reported aggregate tables; not independent runs",
+  "rrsi": {
+    "source": "https://arxiv.org/html/2609.24972v1",
+    "location": "Table 2",
+    "columns": ["variant", "evolve_percent", "heldout_percent", "ood_percent", "million_tokens_per_trial"],
+    "rows": [
+      ["initial",89.4,86.9,39.7,1.56],
+      ["unregularized",92.8,88.9,40.3,3.80],
+      ["without_proposal_regularizers",90.7,88.8,41.9,2.69],
+      ["without_acceptance_regularizers",91.5,88.7,41.0,3.59],
+      ["rrsi",90.5,89.2,43.6,2.42]
+    ]
+  },
+  "mass": {
+    "source": "https://arxiv.org/html/2610.12176v1",
+    "location": "Section 4.4 and Appendix D.2",
+    "columns": ["student", "processed_supervised_tokens", "win_rate_percent_against_base"],
+    "rows": [["S",1824747,44.0],["S_plus",9110286,59.0],["S_double_plus",42000000,64.0],["M_plus",28818370,68.3]],
+    "limits": "42M is rounded in the source. Data coverage and checkpoint selection differ. These are scores against a common base, not direct head-to-head or equal-total-compute trials. No error bars are derived from these aggregates."
+  }
+}

@@ -350,7 +350,7 @@
         "lineage"
       ],
       "evidence_status": "reported",
-      "audit_status": "pending",
+      "audit_status": "in_progress",
       "central_limit": "Open lineage must be separated from extra candidate and evaluation budget; broad transfer and rising improvement ability remain open.",
       "sources": [
         {
@@ -375,7 +375,7 @@
         "agent_configuration"
       ],
       "evidence_status": "reported",
-      "audit_status": "pending",
+      "audit_status": "in_progress",
       "central_limit": "A strong fixed optimizer and baseline for RSI; the optimizer itself is not shown to improve.",
       "sources": [
         {
@@ -435,12 +435,16 @@
         "self_generated_update_data"
       ],
       "evidence_status": "reported",
-      "audit_status": "pending",
+      "audit_status": "in_progress",
       "central_limit": "Repeated generations, broad transfer, retention, and improved update construction remain open.",
       "sources": [
         {
           "type": "repository",
           "url": "https://github.com/Continual-Intelligence/SEAL"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2506.10943"
         }
       ]
     },
@@ -455,7 +459,7 @@
         "meta_agent_program"
       ],
       "evidence_status": "reported",
-      "audit_status": "pending",
+      "audit_status": "in_progress",
       "central_limit": "Cross-domain meta-level transfer is author-reported; common-target attribution and independent matched-budget reproduction remain to be audited.",
       "sources": [
         {
@@ -476,7 +480,7 @@
       "reported_depth": "evaluation",
       "changed_objects": [],
       "evidence_status": "reported",
-      "audit_status": "pending",
+      "audit_status": "in_progress",
       "central_limit": "Establishes an important separation and scale pattern; further models, tasks, and independent replication are needed.",
       "sources": [
         {
@@ -556,7 +560,7 @@
         "harness"
       ],
       "evidence_status": "reported",
-      "audit_status": "pending",
+      "audit_status": "in_progress",
       "central_limit": "Repeated co-evolution, structural harness redesign, and broad cross-model transfer remain open.",
       "sources": [
         {
@@ -570,14 +574,14 @@
       "name": "HELIX",
       "year": 2026,
       "role": "direct_model_harness_coevolution",
-      "reported_depth": "one_round_coevolution",
+      "reported_depth": "persistent",
       "changed_objects": [
         "harness_portfolio",
         "model_training_data"
       ],
       "evidence_status": "reported",
-      "audit_status": "pending",
-      "central_limit": "Public evidence covers one co-evolution round; repeated model updates and successor-improver gains are not established.",
+      "audit_status": "in_progress",
+      "central_limit": "The paper reports harness execution and training-record production; a completed model update and rebuild is not measured in the reported experiment.",
       "sources": [
         {
           "type": "repository",
@@ -687,7 +691,7 @@
         "subagents"
       ],
       "evidence_status": "reported",
-      "audit_status": "pending",
+      "audit_status": "in_progress",
       "central_limit": "Frozen-model, finite-evolve-set results need independent reruns, time-forward tasks, and stronger scale transfer.",
       "sources": [
         {
@@ -716,6 +720,10 @@
         {
           "type": "repository",
           "url": "https://github.com/stanford-iris-lab/meta-harness"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2603.28052"
         }
       ]
     },
@@ -731,8 +739,8 @@
         "memory"
       ],
       "evidence_status": "reported",
-      "audit_status": "pending",
-      "central_limit": "Strong author-reported multi-generation evidence; complete independent end-to-end reproduction remains absent.",
+      "audit_status": "in_progress",
+      "central_limit": "Main outer proposer is fixed while the inner research agent evolves; the separate common-target ignition test does not decisively establish superiority over the strong outer baseline.",
       "sources": [
         {
           "type": "paper",
@@ -755,12 +763,16 @@
         "search_system"
       ],
       "evidence_status": "reported",
-      "audit_status": "pending",
+      "audit_status": "in_progress",
       "central_limit": "Model and system contributions, scale transfer, and repeated recursive gain require independent component crossing.",
       "sources": [
         {
           "type": "repository",
           "url": "https://github.com/FrontisAI/OpenRSI"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2607.28568"
         }
       ]
     },
@@ -775,12 +787,16 @@
         "multi_agent_workflow"
       ],
       "evidence_status": "reported",
-      "audit_status": "pending",
+      "audit_status": "in_progress",
       "central_limit": "Reported cross-domain regressions show that joint updating can redistribute capability; repeated broad transfer remains open.",
       "sources": [
         {
           "type": "repository",
           "url": "https://github.com/SakanaAI/mass"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2610.12176"
         }
       ]
     },
@@ -841,7 +857,7 @@
         "lineage"
       ],
       "evidence_status": "reported",
-      "audit_status": "pending",
+      "audit_status": "in_progress",
       "central_limit": "Reported descendant-informed search and transfer need controlled actor-target comparisons and independent reproduction.",
       "sources": [
         {
@@ -969,6 +985,46 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2009.11243"
+        }
+      ]
+    },
+    {
+      "id": "star",
+      "name": "STaR: Bootstrapping Reasoning With Reasoning",
+      "year": 2022,
+      "role": "precursor_verified_self_training",
+      "reported_depth": "persistent",
+      "changed_objects": [
+        "model_weights",
+        "generated_rationales"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "in_progress",
+      "central_limit": "Filtering and answer-conditioned rationalization change the learning target; repeated general improvement of the improver is not established.",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2203.14465"
+        }
+      ]
+    },
+    {
+      "id": "rest-em",
+      "name": "Beyond Human Data: Scaling Self-Training for Problem-Solving with Language Models",
+      "year": 2023,
+      "role": "precursor_verified_self_training",
+      "reported_depth": "persistent",
+      "changed_objects": [
+        "model_weights",
+        "filtered_training_data"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "in_progress",
+      "central_limit": "Its EM interpretation depends on the reward and learning approximation; finite filtered data can change task coverage and transfer.",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2312.06585"
         }
       ]
     }

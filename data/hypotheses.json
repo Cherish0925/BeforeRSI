@@ -42,21 +42,24 @@
     {
       "id": "externalize-internalize",
       "status": "open",
-      "statement": "Alternating cheap harness exploration with verified model internalization is more efficient long-run than model-only or harness-only updating.",
-      "decisive_test": "Run equal-budget multi-generation schedule comparisons.",
+      "statement": "Harness-generated experience improves later system value when its execution advantage survives inheritance and transfer at an amortizable total cost.",
+      "decisive_test": "Compare execution-optimal and post-update-value-selected data sources under equal generation/training budgets; vary preserved decision inputs and source-task weights.",
       "files": [
         "PROGRAM.md",
-        "experiments/004-repeated-coevolution.md"
+        "experiments/004-repeated-coevolution.md",
+        "MECHANISMS.md"
       ]
     },
     {
       "id": "evaluator-phase-boundary",
       "status": "open",
-      "statement": "Evaluator fidelity may change cost-normalized search efficiency; a universal sharp boundary is not implied by the Gaussian model.",
-      "decisive_test": "Vary fidelity and candidate count while distinguishing absolute selected gain from gain per unit cost.",
+      "statement": "Feedback fidelity and actionable localization affect different parts of search; scalar correctness alone need not predict improvement efficiency.",
+      "decisive_test": "Hold final correctness and per-query cost fixed while removing failure localization; separately vary label error and proposal quality.",
       "files": [
         "SIMULATION.md",
-        "experiments/005-evaluator-phase-boundary.md"
+        "experiments/005-evaluator-phase-boundary.md",
+        "MECHANISMS.md",
+        "experiments/007-feedback-structure/RESULTS.md"
       ]
     },
     {
@@ -124,10 +127,11 @@
       "id": "verified-causal-experience",
       "status": "open",
       "statement": "Evidence-bearing matched trajectories produce more transferable learning than equal-token successful-trace training.",
-      "decisive_test": "Train matched model updates on causal/evidence-rich versus success-only datasets.",
+      "decisive_test": "Hold teacher quality and training tokens approximately fixed while removing decision-relevant inputs or reweighting tasks, then test student behavior on new tasks.",
       "files": [
         "THEORY.md",
-        "PROGRAM.md"
+        "PROGRAM.md",
+        "MECHANISMS.md"
       ]
     }
   ]

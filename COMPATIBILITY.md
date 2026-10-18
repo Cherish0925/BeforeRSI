@@ -1,6 +1,6 @@
 # Compatibility with the current research corpus
 
-**Scope:** all 45 entries in data/works.json: the previous 42-work audit plus learned parameter-update rules, environment–agent co-evolution, and learned optimizers training optimizers. This is a per-work representation audit, not a claim that these are all RSI papers or that their results have been independently reproduced. Primary abstracts or official repository descriptions were checked for implementation objects and reported scope; the three additions were checked against their full papers. Author/project sources were used where publisher pages failed. The Good DOI could not be retrieved in the earlier pass; its row remains a conceptual mapping from the existing record. Full methodological audits remain pending.
+**Scope:** all 47 entries in data/works.json: the previous 45-work audit plus STaR and ReST-EM. This is a per-work representation audit, not a claim that these are all RSI papers or that their results have been independently reproduced. Primary abstracts or official repository descriptions were checked for implementation objects and reported scope; the earlier three structural additions were checked against their full papers. Author/project sources were used where publisher pages failed. The Good DOI could not be retrieved in the earlier pass; its row remains a conceptual mapping from the existing record. The current mechanism pass reads methods/results for 14 selected entries and marks that scope in research/mechanism-map.md; full methodological audits for other entries remain pending.
 
 **Reading the table:** the middle column is our encoding under THEORY.md, not terminology imposed by the original authors. The last column records behavior or an assumption the model must preserve. All empirical outcomes remain author-reported unless a separate reproduction record says otherwise. Representation is supported by Proposition 1; prediction requires fitted transition laws and withheld interventions. A score reduction additionally needs Proposition 2's state-sufficiency condition.
 
@@ -35,7 +35,7 @@
 | [Recursive Harness Self-Improvement](https://arxiv.org/abs/2607.15524) | A prompt-level agent-loop specification is revised using history and pairwise feedback. | Retain task-specific context/information-flow changes; weight updates are not required for this route. |
 | [Rethinking the Evaluation of Harness Evolution for Agents](https://arxiv.org/abs/2607.12227) | Alternative resource/feedback policies and held-out task distributions. | The theory must admit domain-dependent wins and losses against task-time search, not guarantee harness superiority. |
 | [Co-Evolving Harnesses and Model Weights for LLM Agents](https://arxiv.org/abs/2607.22688) | H changes trajectory generation; selected D trains M; the schedule alternates. | An actual alternating implementation is an instance, not proof that alternation is universally optimal. |
-| [HELIX](https://arxiv.org/abs/2608.13951) | Source-traceable H portfolio produces matched trajectories and training records D. | Reported one-round harness results/data preparation must not be upgraded to repeated weight-level recursion. |
+| [HELIX](https://arxiv.org/abs/2608.13951) | Source-traceable H portfolio produces matched trajectories and training records D. | Reported harness execution and data preparation do not establish a completed model update and rebuild. |
 | [HSI](https://arxiv.org/abs/2608.08466) | Task harness, evolver, and meta-evolver are code roles within H under a fixed anchor. | A fixed outer anchor is compatible with changing effective improvement behavior. |
 | [EvoHarness-RL](https://arxiv.org/abs/2608.05446) | External workspace D, access interfaces H, and learned coordination policy M. | The boundary between learned policy and external support is declared; learning can reduce redundant harness use. |
 | [Auditing Harness Tampering in Self-Improving Agents](https://arxiv.org/abs/2609.00069) | Editable execution/logging paths and an independently recorded assessment protocol. | Observed score can diverge from intended outcomes; changes to measurement are explicit interventions. |
@@ -51,6 +51,10 @@
 | [Agentic Context Engineering (ACE)](https://arxiv.org/abs/2510.04618) | Contextual playbooks D and generation/reflection/curation procedures H. | Persistent context learning is represented even with unchanged weights; include information loss from destructive rewriting. |
 | [AlphaEvolve](https://arxiv.org/abs/2506.13131) | Actor A searches target programs T, including infrastructure used by later model training. | Allow feedback through training efficiency and physical resources; trace actual reuse instead of excluding it as merely external optimization. |
 | [Optimization by PROmpting (OPRO)](https://arxiv.org/abs/2309.03409) | Candidate/value history D conditions an LLM optimizer A; prompt or other solution is target T. | A fixed model with changing optimization context is representable; persistent actor change remains a separate empirical claim. |
+| [STaR](https://arxiv.org/abs/2203.14465) | Generated rationales and answer conditioning in D/H train M. | Preserve the distinction between generated reasoning, correctness filtering, and answer-conditioned rationalization. |
+| [ReST-EM](https://arxiv.org/abs/2312.06585) | Reward-filtered D supplies likelihood updates to M. | Preserve the paper's EM assumptions and approximate learning; pooled filtering may change task marginals. |
+
+See [MECHANISMS.md](MECHANISMS.md) and the [per-work mechanism map](research/mechanism-map.md) for conditional explanations and separating interventions beyond this representation table.
 
 ## What would count as cross-method prediction
 
@@ -74,4 +78,3 @@ The finite-budget continuation identity in THEORY.md Section 9 uses the same
 encoded state and permits every listed update surface. That establishes the
 identity's representational scope. It does not supply the individual methods'
 unknown transition probabilities, continuation values or physical costs.
-

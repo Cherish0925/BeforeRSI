@@ -1,0 +1,791 @@
+{
+  "updated": "2026-10-18",
+  "scope": "every current corpus entry; explanatory hypotheses with explicit counterfactuals",
+  "works": [
+    {
+      "id": "good-1965",
+      "name": "Speculations Concerning the First Ultraintelligent Machine",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://doi.org/10.1016/S0065-2458(08)60418-0"
+        }
+      ],
+      "mechanism_interpretation": "Reuse of improved design operations can increase future design yield.",
+      "condition_or_failure": "The feedback coefficient and resource costs are unspecified; positive feedback need not outrun difficulty.",
+      "separating_intervention": "Instantiate a design operation, pin its ancestor and compare continuation yield.",
+      "review_scope": "prior corpus source check; mechanism interpretation, not a fresh full-method audit",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "eurisko",
+      "name": "EURISKO",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://www.cs.northwestern.edu/~mek802/papers/not-mine/Lenat_EURISKO.pdf"
+        }
+      ],
+      "mechanism_interpretation": "Retained heuristics alter which future hypotheses are generated and pursued.",
+      "condition_or_failure": "Useful edits must remain expressible in the heuristic representation and interpretable by its runtime.",
+      "separating_intervention": "Freeze meta-heuristics while giving both arms the same discovered object-level rules.",
+      "review_scope": "prior corpus source check; mechanism interpretation, not a fresh full-method audit",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "godel-machine",
+      "name": "Gödel Machine",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/cs/0309048"
+        }
+      ],
+      "mechanism_interpretation": "A proof can authorize a change by comparing future utility, including continued proof search.",
+      "condition_or_failure": "The relevant claim must be provable in the axioms and discoverable within available resources.",
+      "separating_intervention": "Hold utility and axioms fixed; compare rewrite availability under different proof-search allocations.",
+      "review_scope": "prior corpus source check; mechanism interpretation, not a fresh full-method audit",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "maml",
+      "name": "MAML",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://proceedings.mlr.press/v70/finn17a.html"
+        }
+      ],
+      "mechanism_interpretation": "Initialization shapes the effect of a later task-specific gradient update.",
+      "condition_or_failure": "Source and target adaptation geometry must align; a good initial score alone is insufficient.",
+      "separating_intervention": "Compare initializations with matched initial task score under the same adaptation examples and steps.",
+      "review_scope": "prior corpus source check; mechanism interpretation, not a fresh full-method audit",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "alphago-zero",
+      "name": "AlphaGo Zero",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://www.nature.com/articles/nature24270"
+        },
+        {
+          "type": "project_page",
+          "url": "https://deepmind.google/blog/alphago-zero-starting-from-scratch/"
+        }
+      ],
+      "mechanism_interpretation": "Search improves behavior; self-play supplies consequences; policy/value training amortizes this computation.",
+      "condition_or_failure": "Search quality, imitation error and the evolving opponent distribution jointly matter.",
+      "separating_intervention": "Match search calls and independently vary search-target quality and training fit.",
+      "review_scope": "prior corpus source check; mechanism interpretation, not a fresh full-method audit",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "automl-zero",
+      "name": "AutoML-Zero",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://proceedings.mlr.press/v119/real20a.html"
+        }
+      ],
+      "mechanism_interpretation": "Program mutation and selection discover reusable learning procedures.",
+      "condition_or_failure": "The primitive language, task distribution and evolutionary search determine accessible algorithms.",
+      "separating_intervention": "Change the primitive representation while fixing evaluation and total search budget.",
+      "review_scope": "prior corpus source check; mechanism interpretation, not a fresh full-method audit",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "stop",
+      "name": "STOP",
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://github.com/microsoft/stop"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2310.02304"
+        }
+      ],
+      "mechanism_interpretation": "An improver edits an executable improver, potentially retaining better candidate-generation operations.",
+      "condition_or_failure": "The edit must improve future output distributions rather than only the currently edited target.",
+      "separating_intervention": "Run old and revised improver programs on identical external target copies.",
+      "review_scope": "prior corpus source check; mechanism interpretation, not a fresh full-method audit",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "promptbreeder",
+      "name": "Promptbreeder",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://proceedings.mlr.press/v235/fernando24a.html"
+        }
+      ],
+      "mechanism_interpretation": "Mutation prompts alter the proposal distribution used to evolve task prompts.",
+      "condition_or_failure": "A better task prompt need not be a better mutation instruction on other targets.",
+      "separating_intervention": "Cross mutation-prompt versions with a fixed panel of task prompts.",
+      "review_scope": "prior corpus source check; mechanism interpretation, not a fresh full-method audit",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "funsearch",
+      "name": "FunSearch",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://www.nature.com/articles/s41586-023-06924-6"
+        },
+        {
+          "type": "repository",
+          "url": "https://github.com/google-deepmind/funsearch"
+        }
+      ],
+      "mechanism_interpretation": "A language prior proposes programs; executable scoring and an archive retain useful discoveries.",
+      "condition_or_failure": "Evaluation must represent the intended property and the representation must expose useful programs.",
+      "separating_intervention": "Remove evaluator detail or archive diversity separately, matching generated candidates or compute.",
+      "review_scope": "prior corpus source check; mechanism interpretation, not a fresh full-method audit",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "spin",
+      "name": "SPIN",
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://github.com/uclaml/SPIN"
+        },
+        {
+          "type": "paper",
+          "url": "https://proceedings.mlr.press/v235/chen24j.html"
+        }
+      ],
+      "mechanism_interpretation": "Training contrasts generated responses with a reference data distribution and changes later response probabilities.",
+      "condition_or_failure": "The reference data are an anchor; this is not unfiltered self-copying.",
+      "separating_intervention": "Replace reference responses by draws from the current model while holding the optimizer fixed.",
+      "review_scope": "prior corpus source check; mechanism interpretation, not a fresh full-method audit",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "self-rewarding-lm",
+      "name": "Self-Rewarding Language Models",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://proceedings.mlr.press/v235/yuan24d.html"
+        }
+      ],
+      "mechanism_interpretation": "Self-generated preferences reweight the training target; learning changes both answer and judgment behavior.",
+      "condition_or_failure": "Judge-answer dependence can retain systematic errors even when internal reward increases.",
+      "separating_intervention": "Pin the judge while updating the answerer, then reverse the intervention on the same candidates.",
+      "review_scope": "prior corpus source check; mechanism interpretation, not a fresh full-method audit",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "godel-agent",
+      "name": "Gödel Agent",
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://github.com/Arvid-pku/Godel_Agent"
+        },
+        {
+          "type": "paper",
+          "url": "https://aclanthology.org/2025.acl-long.1354/"
+        }
+      ],
+      "mechanism_interpretation": "Self-edited control logic changes accessible actions and the way feedback is used.",
+      "condition_or_failure": "Arbitrary editability does not imply positive proposal or transfer quality.",
+      "separating_intervention": "Transplant the retained code change across unchanged target models and tasks.",
+      "review_scope": "prior corpus source check; mechanism interpretation, not a fresh full-method audit",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "adas",
+      "name": "ADAS",
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://github.com/ShengranHu/ADAS"
+        }
+      ],
+      "mechanism_interpretation": "A fixed designer conditions architecture proposals on an archive of previous designs and outcomes.",
+      "condition_or_failure": "Target-agent gains can arise without any learned change to the designer.",
+      "separating_intervention": "Reset or shuffle archive information while retaining the same designer and search budget.",
+      "review_scope": "prior corpus source check; mechanism interpretation, not a fresh full-method audit",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "aflow",
+      "name": "AFlow",
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://github.com/FoundationAgents/AFlow"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2410.10762"
+        }
+      ],
+      "mechanism_interpretation": "Tree search allocates trials among workflow designs and composes available operators.",
+      "condition_or_failure": "Search efficiency depends on branching, feedback and the expressiveness of workflow operators.",
+      "separating_intervention": "Hold operators fixed and replace tree allocation by equal-budget flat search.",
+      "review_scope": "prior corpus source check; mechanism interpretation, not a fresh full-method audit",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "sica",
+      "name": "SICA",
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://github.com/MaximeRobeyns/self_improving_coding_agent"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2504.15228"
+        }
+      ],
+      "mechanism_interpretation": "Code and tool changes can reduce execution failures and improve useful work per budget.",
+      "condition_or_failure": "A local repair may not improve successor production or transfer outside its failure mode.",
+      "separating_intervention": "Replay matched failure states through ancestor and successor tools before a common-target actor test.",
+      "review_scope": "prior corpus source check; mechanism interpretation, not a fresh full-method audit",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "dgm",
+      "name": "Darwin Gödel Machine",
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://github.com/jennyzzt/dgm"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2505.22954"
+        }
+      ],
+      "mechanism_interpretation": "Reusable coding operations and retained alternative parents change subsequent proposal opportunities.",
+      "condition_or_failure": "Archive cost and target difficulty can confound the benefit of successor reuse.",
+      "separating_intervention": "Cross pinned/refreshed actor with archive/last-parent policies on common starting targets.",
+      "review_scope": "primary methods/results read this pass",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "gepa",
+      "name": "GEPA",
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://github.com/gepa-ai/gepa"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2507.19457"
+        }
+      ],
+      "mechanism_interpretation": "Trace-conditioned reflection localizes repairs; instance-specialist parents preserve alternative solutions.",
+      "condition_or_failure": "Diagnostics must contain usable information, and specialist branches must justify their cost.",
+      "separating_intervention": "Return the same final score but remove diagnostic content; separately replace specialist selection by greedy selection.",
+      "review_scope": "primary methods/results read this pass",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "agentbreeder",
+      "name": "AgentBreeder",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2502.00757"
+        }
+      ],
+      "mechanism_interpretation": "Evolution changes coordination and communication among component agents.",
+      "condition_or_failure": "Extra roles can add redundant errors and overhead rather than independent information.",
+      "separating_intervention": "Match total calls and change routing while holding component models and candidate counts fixed.",
+      "review_scope": "prior corpus source check; mechanism interpretation, not a fresh full-method audit",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "statistical-limits",
+      "name": "On the Statistical Limits of Self-Improving Agents",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2510.04399"
+        }
+      ],
+      "mechanism_interpretation": "The reachable hypothesis class and feedback sample determine what generalization can be learned.",
+      "condition_or_failure": "Its stated capacity and sampling assumptions cannot be discarded when applying the bound.",
+      "separating_intervention": "Vary reachable policy capacity and sample size within the theorem's task assumptions.",
+      "review_scope": "prior corpus source check; mechanism interpretation, not a fresh full-method audit",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "seal",
+      "name": "SEAL",
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://github.com/Continual-Intelligence/SEAL"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2506.10943"
+        }
+      ],
+      "mechanism_interpretation": "Self-edit generation is trained on utility after the learner consumes that edit.",
+      "condition_or_failure": "Teaching value depends on learner state; old edit rewards can become stale.",
+      "separating_intervention": "Compare current-learner rewards with stale rewards for the same edit pool and adaptation budget.",
+      "review_scope": "primary methods/results read this pass",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "hyperagents",
+      "name": "HyperAgents",
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://github.com/facebookresearch/HyperAgents"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2603.19461"
+        }
+      ],
+      "mechanism_interpretation": "Editable meta code changes diagnosis, proposal and reuse, with task and meta roles sharing a program.",
+      "condition_or_failure": "Transfer requires reusable improvement operations, not merely source-domain facts.",
+      "separating_intervention": "Transfer meta code to new task-agent initializations while preserving the target evaluation interface.",
+      "review_scope": "primary methods/results read this pass",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "harness-updating-benefit",
+      "name": "Harness Updating Is Not Harness Benefit",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2605.30621"
+        }
+      ],
+      "mechanism_interpretation": "Proposal competence and ability to execute the proposed computation are distinct causal factors.",
+      "condition_or_failure": "Weak executors may not follow a harness; strong executors may have less recoverable headroom.",
+      "separating_intervention": "Cross creator and executor versions and measure adherence as well as final score.",
+      "review_scope": "primary methods/results read this pass",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "sia",
+      "name": "SIA",
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://github.com/hexo-ai/sia"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2605.27276"
+        }
+      ],
+      "mechanism_interpretation": "Feedback directs updates to code or weights, changing execution and later learning data.",
+      "condition_or_failure": "Different update surfaces may repair different bottlenecks and interfere on other tasks.",
+      "separating_intervention": "Apply matched model-only, harness-only and combined changes with crossed execution.",
+      "review_scope": "prior corpus source check; mechanism interpretation, not a fresh full-method audit",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "rhi",
+      "name": "Recursive Harness Self-Improvement",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2607.15524"
+        }
+      ],
+      "mechanism_interpretation": "Workflow specifications condition information flow and are revised from outcome comparisons.",
+      "condition_or_failure": "A weak proposal distribution can bottleneck progress even under improved evaluation.",
+      "separating_intervention": "Replace proposer and evaluator separately with the executor fixed.",
+      "review_scope": "prior corpus source check; mechanism interpretation, not a fresh full-method audit",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "rethink-harness-eval",
+      "name": "Rethinking the Evaluation of Harness Evolution for Agents",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2607.12227"
+        }
+      ],
+      "mechanism_interpretation": "Task-time search and persistent harness changes compete for the same resource budget.",
+      "condition_or_failure": "A persistent update only amortizes if reused enough and still relevant.",
+      "separating_intervention": "Vary future reuse count and include development cost in the comparison.",
+      "review_scope": "prior corpus source check; mechanism interpretation, not a fresh full-method audit",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "co-harness",
+      "name": "Co-Evolving Harnesses and Model Weights for LLM Agents",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2607.22688"
+        }
+      ],
+      "mechanism_interpretation": "Diagnosed runtime failures guide harness repairs that change subsequent model-training experience.",
+      "condition_or_failure": "Schema, memory and middleware fixes differ from weight-level skill acquisition.",
+      "separating_intervention": "Preserve final rewards while hiding failure localization; compare training on repaired versus original traces.",
+      "review_scope": "primary methods/results read this pass",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "helix",
+      "name": "HELIX",
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://github.com/HKUDS/HELIX"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2608.13951"
+        }
+      ],
+      "mechanism_interpretation": "Harness variants yield both task outcomes and contrasting records potentially useful for learning.",
+      "condition_or_failure": "Portfolio coverage and record count do not measure post-update student improvement.",
+      "separating_intervention": "Train matched students from competing harness sources with decision inputs and task mixtures controlled.",
+      "review_scope": "primary methods/results read this pass",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "hsi",
+      "name": "HSI",
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://github.com/TailinZhou/hsi"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2608.08466"
+        }
+      ],
+      "mechanism_interpretation": "Meta-evolver changes can alter the distribution and allocation of future harness edits.",
+      "condition_or_failure": "Meta-level code change may overfit the particular improvement problem.",
+      "separating_intervention": "Move only the meta-evolver to new target harnesses under matched budgets.",
+      "review_scope": "prior corpus source check; mechanism interpretation, not a fresh full-method audit",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "evoharness-rl",
+      "name": "EvoHarness-RL",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2608.05446"
+        }
+      ],
+      "mechanism_interpretation": "Learned coordination changes when external state is written, retrieved and used.",
+      "condition_or_failure": "External support can become redundant or harmful as policy competence changes.",
+      "separating_intervention": "Cross policy checkpoints with fixed external-state interfaces and measure redundant operations.",
+      "review_scope": "prior corpus source check; mechanism interpretation, not a fresh full-method audit",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "harness-tampering",
+      "name": "Auditing Harness Tampering in Self-Improving Agents",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2609.00069"
+        }
+      ],
+      "mechanism_interpretation": "Changing the measurement path can increase observed score without improving intended utility.",
+      "condition_or_failure": "Selection covariance with true utility can become nonpositive.",
+      "separating_intervention": "Recompute outcomes through an independently preserved measurement path.",
+      "review_scope": "prior corpus source check; mechanism interpretation, not a fresh full-method audit",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "harnessdev",
+      "name": "HarnessDev",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2609.01437"
+        }
+      ],
+      "mechanism_interpretation": "Creator search changes executable scaffolds consumed by a potentially different executor.",
+      "condition_or_failure": "A creator's design can exceed the executor's interface-following capacity.",
+      "separating_intervention": "Run a creator-by-executor matrix at fixed runtime budgets.",
+      "review_scope": "prior corpus source check; mechanism interpretation, not a fresh full-method audit",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "rrsi",
+      "name": "RRSI",
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://github.com/google-research/rrsi"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2609.24972"
+        }
+      ],
+      "mechanism_interpretation": "Proposal and acceptance constraints favor transferable, affordable edits over source-score fitting.",
+      "condition_or_failure": "Edit size alone is not the mechanism; overly restrictive search can also exclude useful changes.",
+      "separating_intervention": "Hold a candidate pool fixed to separate acceptance effects from changes to proposal distribution.",
+      "review_scope": "primary methods/results read this pass",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "meta-harness",
+      "name": "Meta-Harness",
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://github.com/stanford-iris-lab/meta-harness"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2603.28052"
+        }
+      ],
+      "mechanism_interpretation": "Search changes which information is stored, retrieved and exposed to a fixed model.",
+      "condition_or_failure": "Interface changes must preserve decision-relevant inputs and avoid costly irrelevant context.",
+      "separating_intervention": "Replay histories through competing context policies while matching model calls and task distribution.",
+      "review_scope": "prior corpus source check; mechanism interpretation, not a fresh full-method audit",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "aide2",
+      "name": "AIDE²",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2609.26457"
+        },
+        {
+          "type": "project_page",
+          "url": "https://www.weco.ai/blog/first-evidence-of-recursive-self-improvement"
+        }
+      ],
+      "mechanism_interpretation": "Search and memory rewrites improve the inner research agent under a fixed main outer proposer.",
+      "condition_or_failure": "A stronger research target need not beat the original outer proposer at producing later agents.",
+      "separating_intervention": "Separate equal-call memory/search comparisons from the common-target outer-agent ignition test.",
+      "review_scope": "primary methods/results read this pass",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "openrsi",
+      "name": "OpenRSI",
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://github.com/FrontisAI/OpenRSI"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2607.28568"
+        }
+      ],
+      "mechanism_interpretation": "Execution-grounded training improves shared program-editing operators used by long-horizon search.",
+      "condition_or_failure": "Operator competence and search allocation both contribute and can saturate separately.",
+      "separating_intervention": "Cross trained/base operators with fixed/changed search control on held-out research tasks.",
+      "review_scope": "primary methods/results read this pass",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "mass",
+      "name": "MASS",
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://github.com/SakanaAI/mass"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2610.12176"
+        }
+      ],
+      "mechanism_interpretation": "Workflow-conditioned trajectories train shared weights used in solving, proposing and judging.",
+      "condition_or_failure": "Training value depends on retained inputs and task alignment; correlated errors can persist.",
+      "separating_intervention": "Hold teacher quality approximately fixed while altering context preservation and source-task weighting.",
+      "review_scope": "primary methods/results read this pass",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "rsi-anything",
+      "name": "RSI-Anything",
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://github.com/Gen-Verse/RSI-Anything"
+        }
+      ],
+      "mechanism_interpretation": "Interaction and world-model predictions guide updates in an environment.",
+      "condition_or_failure": "Simulated utility must predict external consequences; model error can steer search incorrectly.",
+      "separating_intervention": "Compare predicted and actual update rankings on interventions not used to fit the world model.",
+      "review_scope": "prior corpus source check; mechanism interpretation, not a fresh full-method audit",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "dream-rsi",
+      "name": "Dream-RSI",
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://github.com/zhengkid/Dream-RSI"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2609.14858"
+        }
+      ],
+      "mechanism_interpretation": "Replayed discovery trees train exploration choices before expensive online research.",
+      "condition_or_failure": "Historical branching support and changed task dynamics limit off-policy transfer.",
+      "separating_intervention": "Evaluate exploration policies on new live branches with replay cost counted.",
+      "review_scope": "prior corpus source check; mechanism interpretation, not a fresh full-method audit",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "hgm",
+      "name": "Huxley–Gödel Machine (HGM)",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2510.21614"
+        }
+      ],
+      "mechanism_interpretation": "Descendant-informed allocation estimates future branch value instead of current score alone.",
+      "condition_or_failure": "Adaptive descendant sampling can bias the estimate; larger clades have unequal opportunity.",
+      "separating_intervention": "Predict later, unobserved branch outcomes under equal continuation budgets.",
+      "review_scope": "primary methods/results read this pass",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "ace",
+      "name": "Agentic Context Engineering (ACE)",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2510.04618"
+        }
+      ],
+      "mechanism_interpretation": "Persistent contextual lessons alter later decisions without changing weights.",
+      "condition_or_failure": "Destructive compression or missing prerequisites can erase useful distinctions.",
+      "separating_intervention": "Compare incremental retention against full rewriting with the same new experiences and context cap.",
+      "review_scope": "prior corpus source check; mechanism interpretation, not a fresh full-method audit",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "alphaevolve",
+      "name": "AlphaEvolve",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2506.13131"
+        }
+      ],
+      "mechanism_interpretation": "Executable search can improve algorithms or infrastructure reused by later model development.",
+      "condition_or_failure": "Feedback through infrastructure depends on real deployment and resource savings, not the label of the target.",
+      "separating_intervention": "Measure downstream work completed under the same physical resource budget before and after adoption.",
+      "review_scope": "prior corpus source check; mechanism interpretation, not a fresh full-method audit",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "opro",
+      "name": "Optimization by PROmpting (OPRO)",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2309.03409"
+        }
+      ],
+      "mechanism_interpretation": "The optimizer conditions proposals on a history of candidate-value pairs.",
+      "condition_or_failure": "History is useful only insofar as it predicts better candidates within the new target problem.",
+      "separating_intervention": "Compare true, shuffled and reset histories with the same model and evaluation allowance.",
+      "review_scope": "prior corpus source check; mechanism interpretation, not a fresh full-method audit",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "learned-optimizer-2016",
+      "name": "Learning to learn by gradient descent by gradient descent",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/1606.04474"
+        }
+      ],
+      "mechanism_interpretation": "A learned update rule exploits structure shared among training optimizees.",
+      "condition_or_failure": "Meta-training distribution and recurrent state affect transfer and stability.",
+      "separating_intervention": "Hold optimizee initialization fixed and change optimizer weights on unseen loss geometries.",
+      "review_scope": "prior corpus source check; mechanism interpretation, not a fresh full-method audit",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "poet",
+      "name": "Paired Open-Ended Trailblazer (POET): Endlessly Generating Increasingly Complex and Diverse Learning Environments and Their Solutions",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/1901.01753"
+        }
+      ],
+      "mechanism_interpretation": "Environment generation and cross-environment transfer create alternative learning paths.",
+      "condition_or_failure": "Transfer must connect useful states; environmental novelty alone is insufficient.",
+      "separating_intervention": "Remove cross-environment transfer while preserving total optimization work.",
+      "review_scope": "prior corpus source check; mechanism interpretation, not a fresh full-method audit",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "self-training-optimizer-2020",
+      "name": "Tasks, stability, architecture, and compute: Training more effective learned optimizers, and using them to train themselves",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2009.11243"
+        }
+      ],
+      "mechanism_interpretation": "A learned optimizer can execute the updates that train another optimizer.",
+      "condition_or_failure": "Longer horizons can shift state distributions and stability beyond its training regime.",
+      "separating_intervention": "Cross optimizer versions, clipping rules and training horizons on common optimizer targets.",
+      "review_scope": "prior corpus source check; mechanism interpretation, not a fresh full-method audit",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "star",
+      "name": "STaR: Bootstrapping Reasoning With Reasoning",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2203.14465"
+        }
+      ],
+      "mechanism_interpretation": "Correctness-filtered rationales and answer-conditioned rationalization alter the learning target.",
+      "condition_or_failure": "Hints can expose solutions but training must support inference without those hints.",
+      "separating_intervention": "Separate rationalization, filtering and per-task sample balancing at equal generation cost.",
+      "review_scope": "primary methods/results read this pass",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    },
+    {
+      "id": "rest-em",
+      "name": "Beyond Human Data: Scaling Self-Training for Problem-Solving with Language Models",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2312.06585"
+        }
+      ],
+      "mechanism_interpretation": "Reward-weighted sampling and likelihood projection alternate as an approximate EM procedure.",
+      "condition_or_failure": "Approximate learning, rare success and changed task weights can prevent practical improvement.",
+      "separating_intervention": "Compare pooled filtering with per-task-balanced filtering and measure projection error.",
+      "review_scope": "primary methods/results read this pass",
+      "status": "conditional interpretation; no independent reproduction claimed"
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-# Research program: model–harness co-evolution
+# Research program: learning reusable research operations
 
 The objective is a system that repeatedly improves both task capability and the ability to construct later improvements.
 
@@ -14,7 +14,43 @@ with protected acceptance $V^\*$.
 
 $M_t$ records learned models, $H_t$ executable orchestration, and $D_t$ persistent information. The improver role $A_t$ names the complete snapshot that proposes and tests changes, including its model, code, and data dependencies. It may be $S_t$ itself. Environments and budgets are declared separately.
 
-The schedule below tests a portfolio $\mathcal H_t$ of harness candidates. A portfolio is optional: compare its diversity benefits with its extra cost and a single-incumbent baseline. Model-only, harness-only, simultaneous, and adaptive updates remain alternative schedules.
+The main route is now **search for useful research operations, preserve their
+decision inputs, and learn the operations that improve later work**. The
+mechanism derivation is in [MECHANISMS.md](MECHANISMS.md). A harness is both an
+execution policy and a producer of learning experience; these objectives can
+rank harnesses differently. An excellent executor is not automatically the
+best teacher for the current learner.
+
+The alternating portfolio schedule below remains a candidate implementation.
+Its individual operations are selected according to the current bottleneck
+and their measured downstream value. A portfolio is optional; its future
+branch value must justify retrieval, maintenance and evaluation costs.
+
+## Immediate implementation choice
+
+Use one shared interface for research operations during training and execution:
+available task state and evidence in; proposed operation and resulting artifact
+out. Start with propose, repair, compare, combine and next-experiment choice.
+Store the decision-time inputs, tool feedback, artifact dependencies and the
+observed consequence. Training records must not omit an input that justified
+the action or insert a future outcome into the input.
+
+Collect candidate data sources through alternative harnesses. Make a small,
+reversible learner update from each source under equal generation/training
+budgets. Choose sources using resulting task and common-target operator gains
+on a development panel, with regressions and task weights explicit. The panel
+is selection data; external final tests remain separate. Charge these trial
+updates to the research budget. SEAL supplies a precedent for downstream edit
+value; OpenRSI supplies a precedent for shared trainable research operators.
+
+When execution quality is weak, improve proposal support or local feedback.
+When good executions fail to train a better learner, inspect missing decision
+inputs, projection error and task mixture before generating more of the same
+traces. When learned changes fail to transfer, change source allocation or
+representation rather than assuming another identical cycle will repair it.
+
+This replaces the previous presumption that every cycle should execute A–G
+in a fixed order. The component interventions below remain useful controls.
 
 An initial bounded implementation has now been executed:
 [Experiment 006](experiments/006-recursive-optimizer/RESULTS.md). The tested
@@ -413,4 +449,3 @@ The proposed initial sequence is:
 8. compare parent and successor as improvers.
 
 Completion of this sequence would establish more than another survey or benchmark delta. It would provide direct evidence about whether model–harness co-evolution creates transferable recursive gain.
-

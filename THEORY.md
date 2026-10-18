@@ -4,6 +4,13 @@
 
 The research question is: **which persistent changes make a system better at producing further useful changes, on comparable problems and budgets?**
 
+Representation and continuation value alone do not explain how a method earns
+its gains. [MECHANISMS.md](MECHANISMS.md) adds the mechanism model: reachable
+behavior, feedback localization and selection, inheritance into a later
+system, transfer across tasks, and future branch value. It derives explicit
+conditions, links them to primary-source interventions, and replaces automatic
+model/harness alternation by a learner-aware choice of research operations.
+
 ## 1. Implementation and role are different distinctions
 
 A versioned system can be packaged as
@@ -503,4 +510,3 @@ digital implementations admitted by Proposition 1; obtaining accurate and
 affordable continuation estimates is a separate computational question.
 Physical time and energy enter through measured transition costs, rather than
 through an assumed universal acceleration law.
-

@@ -591,6 +591,22 @@
         "self-reference",
         "improvement-kernel"
       ]
+    },
+    {
+      "work_id": "star",
+      "node_ids": [
+        "self-generated-experience",
+        "model-update",
+        "verification"
+      ]
+    },
+    {
+      "work_id": "rest-em",
+      "node_ids": [
+        "self-generated-experience",
+        "model-update",
+        "verification"
+      ]
     }
   ]
 }

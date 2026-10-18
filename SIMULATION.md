@@ -1,5 +1,11 @@
 # Illustrative trajectories and model identification
 
+[Experiment 007](experiments/007-feedback-structure/RESULTS.md) is a separate
+finite active-identification construction. It executes feedback interfaces and
+compares outcomes against exact query laws, rather than assuming a capability
+growth curve. Its missing-input and task-reweighting examples are mathematical
+witnesses. They do not forecast real agent performance.
+
 For computed algorithm outcomes rather than assumed growth trajectories, see
 [Experiment 006](experiments/006-recursive-optimizer/RESULTS.md). It executes
 numeric objectives, nested optimizer updates and held-out assessments. Its
@@ -128,4 +134,3 @@ python scripts/check_model_counterexamples.py
 ~~~
 
 The simulation writes plots and parameter summaries under simulations/output/. The counterexample script checks deterministic mathematical witnesses using only the Python standard library. Neither command runs a model or establishes empirical RSI.
-

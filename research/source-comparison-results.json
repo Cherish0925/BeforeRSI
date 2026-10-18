@@ -1,0 +1,24 @@
+{
+  "status": "derived from reported aggregate points; no statistical significance inferred",
+  "rrsi": {
+    "full_minus_unregularized": {
+      "evolve_pp": -2.299999999999997,
+      "heldout_pp": 0.29999999999999716,
+      "ood_pp": 3.3000000000000043,
+      "million_tokens": -1.38
+    },
+    "dominated_on_heldout_ood_and_cost": [
+      "unregularized",
+      "without_proposal_regularizers",
+      "without_acceptance_regularizers"
+    ],
+    "maximum_evolve_weight_favoring_rrsi_without_cost_penalty": 0.5892857142857149
+  },
+  "mass": {
+    "M_plus_minus_S_double_plus_score_pp": 4.299999999999997,
+    "processed_token_reduction_fraction": 0.3138483333333333,
+    "single_agent_interpolated_score_at_M_plus_tokens": 61.99608625359284,
+    "M_plus_above_interpolation_pp": 6.303913746407154,
+    "interpretation": "interpolation is not a measured matched-budget control"
+  }
+}

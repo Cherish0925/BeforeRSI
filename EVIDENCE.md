@@ -101,6 +101,12 @@ Hyperagents explicitly reports meta-level improvements that transfer across doma
 
 AIDE² is one of the strongest public multi-generation claims. The authors report repeated accepted rewrites of an AI research agent, fixed-budget evaluation, and transfer to held-out AI-R&D benchmarks.
 
+The [full method](https://arxiv.org/html/2609.26457v1) keeps the main outer
+proposer fixed while editing the inner research agent. Its separate ignition
+test replaces the outer proposer on common starting targets; superiority over
+the strong reference proposer is not decisively established. Thus improved
+research behavior and improved outer-agent production remain distinct findings.
+
 The result changes the prior belief that self-rewriting research agents can only produce isolated one-step gains. It does not yet establish open-ended RSI. The reported run is author-produced, the task family is AI R&D, the number of accepted generations is small, and independent end-to-end reproduction is still needed.
 
 ### RRSI, Meta-Harness, RHI, and related harness systems
@@ -142,7 +148,7 @@ Recursive reuse is distinct from increased update-producing ability. The stronge
 
 HELIX, Co-Harness, OpenRSI, MASS, SIA, and related work identify the correct deployed unit: model and harness jointly determine behavior, and harness rollouts determine part of the data available for later model training.
 
-The core loop is sound:
+One possible implementation is:
 
 $
 
@@ -155,6 +161,10 @@ $
 Current public evidence is early. Common limitations include one-round demonstrations, task-specific evaluators, incomplete $M\times H$ crossing, no time-forward tasks, and no comparison of parent and successor as improvers.
 
 The direction deserves priority because it can combine cheap external adaptation with durable parameter learning. It should not be described as solved RSI until the repeated loop is measured.
+
+HELIX's [reported experiment](https://arxiv.org/html/2608.13951v1) measures
+harness execution and training-record production, not a completed trained-model
+update and rebuild. Its corpus depth label is corrected accordingly.
 
 ## 7. Evaluation results that change the research program
 
@@ -260,3 +270,26 @@ Positive feedback-task gains did not establish transferable recursive gains.
 The report separates measured effects, descriptive uncertainty and scope;
 it is not a reproduction of the neural optimizer paper.
 
+## 13. Mechanism explanations and source comparisons (2026-10-18)
+
+[MECHANISMS.md](MECHANISMS.md) connects source facts to explicit conditional
+explanations and interventions. The corpus now includes
+[STaR](https://arxiv.org/abs/2203.14465) and
+[ReST-EM](https://arxiv.org/abs/2312.06585): correctness filtering,
+answer-conditioned rationalization where used, and likelihood projection
+explain a route from generated reasoning to persistent weights. These are
+source mechanisms, not inventions of this project.
+
+[RRSI Table 2](https://arxiv.org/html/2609.24972v1) reports a useful reversal:
+unregularized search has the higher evolve score (92.8 versus 90.5), whereas
+RRSI has the higher OOD average (43.6 versus 40.3) and lower token cost
+(2.42M versus 3.80M). The calculation in research/source-comparison-results.json
+shows dominance on held-out score, OOD score and execution tokens over the
+three regularizer-removal arms. This is arithmetic on reported aggregate
+points, not an uncertainty estimate or a rerun.
+
+MASS's training-token comparison and OpenRSI's shared learned operators supply
+different precedents for inheritance. Their original papers are now linked
+in data/works.json. The mechanism map identifies what would distinguish
+teacher quality, learnability, task-mixture shifts and improved search control.
+A nominally complete feedback loop does not identify which effect occurred.
