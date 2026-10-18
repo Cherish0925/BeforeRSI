@@ -20,6 +20,11 @@ The actor-target kernel $T'\sim K_A(\cdot\mid T,p,B)$ records how a configured s
 
 **Decisive test:** compare actors with similar task capability on identical copies of common targets, then predict descendant quality on withheld target families. The actor-target distinction is a definition; predictive value is the hypothesis.
 
+**Derived boundary:** one-step gain cannot determine multi-step route quality,
+even if it is larger at every target and both routes preserve current utility.
+THEORY.md Proposition 5 gives the exact witness and continuation comparison.
+This does not decide whether G has incremental statistical predictive value.
+
 ## H2 — Improvement performance admits a useful low-dimensional summary
 
 **Status:** open.
@@ -73,6 +78,11 @@ $$
 **Alternative:** direct model training may dominate once models are sufficiently capable, or external computation may remain permanently more efficient than internalization.
 
 **Decisive test:** compare long-horizon capability and total cost for harness-only, model-only, and alternating externalize/internalize schedules under equal resource budgets.
+
+**Bounded result:** Experiment 006 compares update orders in a numerical
+optimizer. It finds an M-then-H advantage over H-then-M on new instances but
+does not establish an advantage over joint search or across new families.
+It does not implement weight distillation from LLM trajectories.
 
 ## H5 — Evaluator fidelity changes search efficiency
 
@@ -142,15 +152,17 @@ A stronger task solver is not necessarily a stronger improver. Proposal generati
 
 At each generation, resources can be allocated to model training, harness search, improver improvement, data/environment construction, or evaluation. The best allocation should depend on marginal future-improvement value rather than a fixed recipe.
 
-For control vector $u$:
+For a declared terminal objective, compare admissible policies by
 
 $$
-\max_{u_{0:T}}
-\mathbb E
-\left[
-J(S_T)+\lambda G(S_T;\mu,B,b)-\sum_t C(u_t)
-\right].
+\max_{\pi:\,\sum_t c_t\preceq B}\;
+\mathbb E_\pi[J(X_\tau)].
 $$
+
+Here $c_t$ and $B$ may be resource vectors; $\tau$ is the declared stopping
+time. A scalar cost penalty or an extra reward for G is a chosen objective,
+not a necessary law. THEORY.md Proposition 5 decomposes the difference between
+two feasible policies without assuming a universal growth equation.
 
 **Alternative:** model uncertainty may be so large that adaptive optimal control offers little advantage over robust fixed schedules.
 
@@ -197,5 +209,10 @@ The current theory should be revised if experiments show any of the following re
 - a proposed reduced model fails state-sufficiency checks or withheld intervention prediction.
 
 H7's earlier sign-only criterion and coordinate-based recursion interpretation have already been superseded by mathematical counterexamples. This is a model correction, not an empirical claim about AI.
+
+Experiment 006 now provides an empirical record within one bounded numerical
+search class. Recursive reuse and direct improver-objective training did not
+establish the intended improvement advantage. No broad hypothesis is promoted
+to established on the basis of that experiment.
 
 A theory that cannot lose is not useful.

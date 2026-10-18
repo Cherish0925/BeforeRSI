@@ -1,0 +1,19 @@
+{
+  "config": {
+    "seed": 20261021,
+    "lineages": 32,
+    "task_budget": 32,
+    "meta_budget": 17,
+    "dimension": 6,
+    "feedback_each": 2,
+    "assessment_each": 4
+  },
+  "source_sha256": "5a11675c6b1b021f00855fc293232868ef4607e6981a333840d3b42a131e2843",
+  "optimizer_source_sha256": "9d2714f449a103e562d9f61318cb80b1f44cb2761dde930dfe552489f1815ff2",
+  "equal_budget_paths": [
+    "MH",
+    "HM",
+    "joint"
+  ],
+  "meta_evaluations_per_path": 34
+}

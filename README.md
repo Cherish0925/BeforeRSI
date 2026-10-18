@@ -7,7 +7,7 @@
 <br>
 
 [![Status](https://img.shields.io/badge/status-research%20in%20progress-111827?style=flat-square)](#status)
-[![Corpus](https://img.shields.io/badge/public%20corpus-44%20works-C58B35?style=flat-square)](EVIDENCE.md)
+[![Corpus](https://img.shields.io/badge/public%20corpus-45%20works-C58B35?style=flat-square)](EVIDENCE.md)
 [![Claim depth](https://img.shields.io/badge/claim%20depth-D0%E2%86%92D4-5C9C96?style=flat-square)](#claim-depth)
 [![CI](https://img.shields.io/github/actions/workflow/status/Cherish0925/BeforeRSI/validate.yml?branch=main&style=flat-square&label=data)](https://github.com/Cherish0925/BeforeRSI/actions)
 [![License](https://img.shields.io/badge/license-MIT-6B7280?style=flat-square)](LICENSE)
@@ -47,6 +47,14 @@ S_{t+1}\ \text{must be a better improver than}\ S_t.
 $$
 
 Test that second statement by letting parent and successor improve identical copies of common targets under matched budgets. **[THEORY.md](THEORY.md)** defines this comparison and gives counterexamples to the previous growth interpretation. It does not claim an identified law of RSI.
+
+One-step improvement ability does not guarantee a better multi-generation
+endpoint. THEORY.md Section 9 gives the exact finite-budget continuation
+comparison, including a counterexample with monotone gains under both routes.
+[Experiment 006](experiments/006-recursive-optimizer/RESULTS.md) now contains
+executed numerical-optimizer self-reuse, training-objective and update-order
+comparisons. It reports negative and inconclusive results alongside the measured
+order effect; these are bounded numerical experiments, not LLM training runs.
 
 ## The research spine
 
@@ -177,14 +185,15 @@ Generality requires mechanism coverage and testable predictions across methods. 
 | File | Purpose |
 |---|---|
 | **[THEORY.md](THEORY.md)** | implementation boundaries, common-target improvement tests, coupling, and mathematical counterexamples |
-| **[COMPATIBILITY.md](COMPATIBILITY.md)** | per-work mapping of all 44 catalog entries and limits of universality claims |
+| **[COMPATIBILITY.md](COMPATIBILITY.md)** | per-work mapping of all 45 catalog entries and limits of universality claims |
 | **[MAP.md](MAP.md)** | history, causal structure, knowledge tree and present frontier |
 | **[EVIDENCE.md](EVIDENCE.md)** | strongest public work, claim depth, limitations and primary sources |
 | **[PROGRAM.md](PROGRAM.md)** | target system, model–harness–improver co-evolution and research sequence |
 | **[EVALUATION.md](EVALUATION.md)** | hidden/time-forward tests, cost controls, attribution, regression and recursion tests |
 | **[data/works.json](data/works.json)** | machine-readable public research corpus |
 | **[data/knowledge-graph.json](data/knowledge-graph.json)** | machine-readable causal knowledge graph |
-| **[experiments/](experiments/)** | experimental protocols; real-system runs are not implemented here |
+| **[experiments/](experiments/)** | protocols and the executed bounded optimizer experiment |
+| **[Experiment 006](experiments/006-recursive-optimizer/RESULTS.md)** | executed numerical optimizer experiments, task-level records, resource counts and reproducible figures |
 | **[SIMULATION.md](SIMULATION.md)** | illustrative trajectories, identification limits, and reproducible plots |
 | **[HYPOTHESES.md](HYPOTHESES.md)** | working propositions, alternatives and decisive tests |
 | **[RESEARCH_LOG.md](RESEARCH_LOG.md)** | distilled lineage of the project's changing representations and decisions |
@@ -196,9 +205,10 @@ The repository stays small on purpose. New files are added when they contain a n
 
 **October 2026.** The historical map and experimental program are established; the corpus is still being audited claim by claim. Author-reported results remain labeled reported until they are independently rerun or replicated.
 
-The immediate work is deliberately narrow:
-
-**audit → reproduce → transfer → attribute → test the successor as an improver → repeat.**
+The numerical experiment is now executable and has been run. It does not
+establish a positive common-target improver advantage or a generally superior
+schedule. Future claims must preserve this measured baseline and the distinction
+between current score, improvement ability and finite-budget continuation value.
 
 ---
 

@@ -103,10 +103,11 @@
       "id": "adaptive-resource-allocation",
       "status": "open",
       "statement": "Adaptive resource allocation across model, harness, improver, data, and evaluation outperforms fixed update schedules.",
-      "decisive_test": "Compare fixed, greedy, and model-predictive allocation under equal multi-generation budgets.",
+      "decisive_test": "Compare expected terminal utility of fixed, greedy, and adaptive policies under the same resource budget; account for continuation value and the cost of estimating it.",
       "files": [
         "THEORY.md",
-        "SIMULATION.md"
+        "SIMULATION.md",
+        "experiments/006-recursive-optimizer/RESULTS.md"
       ]
     },
     {

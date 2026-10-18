@@ -16,6 +16,20 @@ $M_t$ records learned models, $H_t$ executable orchestration, and $D_t$ persiste
 
 The schedule below tests a portfolio $\mathcal H_t$ of harness candidates. A portfolio is optional: compare its diversity benefits with its extra cost and a single-incumbent baseline. Model-only, harness-only, simultaneous, and adaptive updates remain alternative schedules.
 
+An initial bounded implementation has now been executed:
+[Experiment 006](experiments/006-recursive-optimizer/RESULTS.md). The tested
+recursive optimizer did not establish an advantage over a pinned ancestor.
+Direct G-training did not establish a better improver either. M-then-H beat
+H-then-M on new instances in that benchmark, without established superiority
+over joint search. These observations do not justify treating the proposed
+alternating schedule as the default winner.
+
+For a finite research budget, compare continuation value: the expected final
+utility after a candidate change and a specified subsequent improvement policy.
+THEORY.md Section 9 derives its relation to recursive reuse. A positive
+one-step common-target G remains useful evidence, but is not an acceptance
+certificate for a whole multi-generation route.
+
 ## 1. The optimization target
 
 A single benchmark score is inadequate. For candidate system $S$, define a vector:

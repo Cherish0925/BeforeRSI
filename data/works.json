@@ -951,6 +951,26 @@
           "url": "https://arxiv.org/abs/1901.01753"
         }
       ]
+    },
+    {
+      "id": "self-training-optimizer-2020",
+      "name": "Tasks, stability, architecture, and compute: Training more effective learned optimizers, and using them to train themselves",
+      "year": 2020,
+      "role": "learned_optimizer_self_training",
+      "reported_depth": "transfer",
+      "changed_objects": [
+        "optimizer_parameters",
+        "optimizee_optimizer_parameters"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "in_progress",
+      "central_limit": "Self-training transfer depends on external clipping and the tested horizon; indefinite recursive improvement is not established.",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2009.11243"
+        }
+      ]
     }
   ]
 }

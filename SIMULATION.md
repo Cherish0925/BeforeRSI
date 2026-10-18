@@ -1,5 +1,10 @@
 # Illustrative trajectories and model identification
 
+For computed algorithm outcomes rather than assumed growth trajectories, see
+[Experiment 006](experiments/006-recursive-optimizer/RESULTS.md). It executes
+numeric objectives, nested optimizer updates and held-out assessments. Its
+results do not validate the differential equations below.
+
 These simulations integrate chosen equations. They are not measurements of AI systems, evidence for recursive self-improvement, or forecasts. See THEORY.md for counterexamples to the previous causal interpretation.
 
 The plotted slope $\eta_{\rm path}=dC/dr$ is a trajectory statistic. It is distinct from $G(A;\mu,B,b)$, which compares improvers on common targets. Rising $\eta_{\rm path}$ alone does not identify an improved improver.

@@ -87,6 +87,12 @@ $$
 
 A reproducible positive difference supports the specific claim that this successor became a better improver on $\mu$. It does not by itself establish indefinite improvement, generality across all domains, or exponential growth.
 
+Even pointwise one-step improvement on every target does not guarantee that
+repeated reuse produces a better final system. Section 9 gives an exact
+counterexample in which both routes always preserve or increase current
+utility, and derives the finite-budget condition that accounts for remaining
+improvement opportunities.
+
 Comparing only $K_{S_0}(\cdot\mid S_0)$ with $K_{S_1}(\cdot\mid S_1)$ changes both the improver and the target. A stronger target can have less remaining room for improvement or can be harder to modify. Conversely, easy remaining defects can make an unchanged improver appear stronger.
 
 For causal reuse, compare continued runs that use the successor as improver with runs that keep the ancestor improver frozen while giving both the same current target, feedback, and budget. Repeat the intervention across targets and independent runs. Record which model, code, or information change carried the effect.
@@ -134,6 +140,37 @@ allows model-dependent optima; it does not prove that the optimum moves. For exa
 An alternating schedule—harness search, trajectory collection, model training, renewed harness search—is a candidate method. Joint optimization, model-only improvement, harness-only improvement, and adaptive schedules remain alternatives. Co-evolution does not require every component to change at every generation.
 
 Internalization into weights can reduce repeated computation or improve generalization, but some functions should remain executable external operations. Exact computation, fresh retrieval, and interaction with physical instruments are not replaced merely by imitating their previous outputs.
+
+### Update order and subsequent improvement
+
+Let $P_M$ and $P_H$ be budgeted model-update and harness-update kernels on the
+complete state, including generated data, archives and resources. Operators act
+on observables: $(P_M f)(x)=\mathbb E[f(X')\mid x,\text{model update}]$.
+Composition $P_M P_H J$ means model update followed by harness update.
+
+The change in the value of a harness update caused by first updating the model is
+
+$$
+C_{M\to H}(x)=(P_M-I)(P_H-I)J(x).
+$$
+
+Consequently,
+
+$$
+(P_MP_H-I)J=(P_M-I)J+(P_H-I)J+C_{M\to H},
+\qquad
+C_{M\to H}-C_{H\to M}=(P_MP_H-P_HP_M)J.
+$$
+
+These are exact operator identities, not new optimization theorems. They work
+for discrete edits and learned updates without a differentiable capability
+coordinate. They distinguish the benefit of the *second learning operation*
+from Section 4's static model/harness crossing. The update programs, feedback
+cohorts, elapsed budgets and any actor refreshing must be specified. Compare
+both orders at equal total resources to decide which schedule helps.
+If the kernels commute, the two orders have identical expected endpoint
+utility; co-evolution does not mathematically force an order advantage.
+Their values still have to be measured or derived from a specified system.
 
 ## 5. Feedback and resource comparisons
 
@@ -352,4 +389,118 @@ With fixed $\rho>0$, expected true selected gain increases with $n$. Gain per un
 A timescale ordering does not establish stability or instability; the coupling and update rule matter. Writing a Jacobian does not show that chosen summary variables form a closed dynamical system. A portfolio can preserve useful diversity, but its value must exceed its search and maintenance cost. These remain hypotheses for intervention experiments.
 
 The retained simulations illustrate consequences of chosen equations. They do not establish model–harness causality, recursive acceleration, or a forecast for real systems.
+
+## 9. Finite-budget value of reusing successors
+
+The more basic quantity for choosing a research route is its expected final
+utility at a declared resource budget. The one-step $G$ is one observable of
+that process. It does not replace the value of the remaining research.
+
+### Proposition 5: exact continuation decomposition
+
+Let $X$ contain the complete state required in Proposition 1, including time,
+remaining resources and relevant external observations. Compare two declared
+policies on the same state space:
+
+- $P$: use a pinned ancestor as improver;
+- $R$: reuse successors according to a specified refresh rule.
+
+Allow either policy to modify model parameters, executable code, stored
+information, populations, update rules or development tasks. The original
+external world and its stochastic response are common to the comparison.
+Assume a finite horizon $N$, integrable terminal utility $J$, and admissible
+budgeted transitions. Stopping is an absorbing state. Unequal physical step
+costs must enter the resource state and stopping rule; equal generation counts
+alone do not constitute equal compute.
+
+Define $V_0^P=J$ and $V_n^P=P V_{n-1}^P$. At a state with $n$ steps remaining,
+define the continuation advantage
+
+$$
+a_n(x)=(R-P)V_{n-1}^P(x).
+$$
+
+It compares changing the next actor while continuing both resulting branches
+with the same pinned policy. Then
+
+$$
+\boxed{\quad
+V_N^R(x)-V_N^P(x)
+=\mathbb E_R\!\left[\sum_{t=0}^{N-1}a_{N-t}(X_t)\mid X_0=x\right].
+\quad}
+$$
+
+**Proof.** Subtract the Bellman recurrences:
+$V_n^R-V_n^P=(R-P)V_{n-1}^P+R(V_{n-1}^R-V_{n-1}^P)$.
+Iterate this equality to $V_0^R-V_0^P=0$. This proof requires neither
+differentiability, fixed model size nor a particular implementation partition.
+Equivalently, it is the noncommutative telescoping identity
+$R^N-P^N=\sum_{t=0}^{N-1}R^t(R-P)P^{N-t-1}$.
+
+This is a finite-horizon instance of the standard performance-difference
+argument used in policy improvement; see
+[Schulman et al., Section 2 and Appendix A](https://arxiv.org/abs/1502.05477).
+The application here replaces the earlier coordinate-dependent recursive term
+with a comparison of specified interventions. It is not an original general
+growth theorem.
+
+**Condition.** Nonnegative $a_{N-t}$ on all states reached by $R$ is sufficient
+for nonnegative final reuse benefit. Positive expected accumulated advantage is
+necessary and sufficient. Checking $a_1=(R-P)J$ alone cannot establish this
+condition: earlier decisions act on future attainable outcomes.
+
+### Exact failure of the one-step criterion
+
+The following deterministic state transitions have utilities in [0,1]:
+
+| State | Utility | Next under pinned $P$ | Next under refreshed $R$ |
+|---|---:|---|---|
+| $a$ | 0 | $b$ | $d$ |
+| $b$ | 0.4 | $c$ | $c$ |
+| $c$ | 1 | $c$ | $c$ |
+| $d$ | 0.6 | $d$ | $e$ |
+| $e$ | 0.7 | $e$ | $e$ |
+
+At every state, $RJ\ge PJ$, and neither policy ever reduces current utility.
+Starting at $a$, refreshed reuse wins the one-step comparison, $0.6>0.4$, but
+loses after two steps, $0.7<1$. Its continuation advantages are $-0.4$ at
+$a$ and $+0.1$ at $d$, totaling $-0.3$ exactly. Reversing the policy labels also
+shows how an initially worse move can lead to a better endpoint.
+
+Thus an improved one-step improver can steer toward a poorer future search
+region. This is a limitation of the inference from D3 to sustained growth, even
+with exact evaluation and monotone task gains. It is not evidence that a
+particular real RSI implementation follows these transitions.
+
+### Computable comparisons and error accounting
+
+To estimate $a_n$, fork identical current states, change only the next actor,
+and execute the same pinned continuation on each branch. The two-step version
+is implemented in Experiment 006. Full long-horizon branching can be expensive;
+the cost belongs in the resource budget of any method that uses it to select
+updates.
+
+If a continuation approximation satisfies
+$\|\widehat V_{n-1}^P-V_{n-1}^P\|_\infty\le\epsilon_{n-1}$ and estimating its
+two transition expectations adds at most $\delta_n$ error to their difference,
+then
+
+$$
+|\widehat a_n-a_n|\le2\epsilon_{n-1}+\delta_n.
+$$
+
+Each stochastic kernel has sup-norm operator bound one, which proves this
+inequality. A nonnegative lower bound
+$\widehat a_n-2\epsilon_{n-1}-\delta_n$ at all reached states is therefore
+sufficient for the preceding improvement condition. Estimated average accuracy
+on a few tasks does not supply this uniform bound. If the extra measurement
+cost changes the remaining budget, recompute the continuation comparison at
+that remaining budget.
+
+The measurable predictions concern declared actor choices, update order,
+remaining budget and terminal outcomes. The formal identity applies to all
+digital implementations admitted by Proposition 1; obtaining accurate and
+affordable continuation estimates is a separate computational question.
+Physical time and energy enter through measured transition costs, rather than
+through an assumed universal acceleration law.
 

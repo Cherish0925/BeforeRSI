@@ -1,6 +1,6 @@
 # Compatibility with the current research corpus
 
-**Scope:** all 44 entries in data/works.json: the previous 42-work audit plus learned parameter-update rules and environment–agent co-evolution. This is a per-work representation audit, not a claim that these are all RSI papers or that their results have been independently reproduced. Primary abstracts or official repository descriptions were checked for implementation objects and reported scope; the two additions were checked against their full papers. Author/project sources were used where publisher pages failed. The Good DOI could not be retrieved in the earlier pass; its row remains a conceptual mapping from the existing record. Full methodological audits remain pending.
+**Scope:** all 45 entries in data/works.json: the previous 42-work audit plus learned parameter-update rules, environment–agent co-evolution, and learned optimizers training optimizers. This is a per-work representation audit, not a claim that these are all RSI papers or that their results have been independently reproduced. Primary abstracts or official repository descriptions were checked for implementation objects and reported scope; the three additions were checked against their full papers. Author/project sources were used where publisher pages failed. The Good DOI could not be retrieved in the earlier pass; its row remains a conceptual mapping from the existing record. Full methodological audits remain pending.
 
 **Reading the table:** the middle column is our encoding under THEORY.md, not terminology imposed by the original authors. The last column records behavior or an assumption the model must preserve. All empirical outcomes remain author-reported unless a separate reproduction record says otherwise. Representation is supported by Proposition 1; prediction requires fitted transition laws and withheld interventions. A score reduction additionally needs Proposition 2's state-sufficiency condition.
 
@@ -10,6 +10,7 @@
 | [EURISKO](https://www.cs.northwestern.edu/~mek802/papers/not-mine/Lenat_EURISKO.pdf) | Heuristics and meta-heuristics in H; search records in D; M may be absent. | Represent discovery and revision of heuristics without requiring neural training or modern harnesses. |
 | [Gödel Machine](https://arxiv.org/abs/cs/0309048) | Self-editable program and proof searcher in H; axioms and proof state in D. | Proof-authorized rewrites retain their formal assumptions; empirical acceptance is not imposed as the only route. |
 | [Learned optimizer](https://arxiv.org/abs/1606.04474) | Optimizer weights in M; application and meta-training code in H; recurrent state is explicit in X. | A learned update rule can transfer or fail under changed optimizees. External meta-training does not establish autonomous recursive improvement. |
+| [Learned optimizers training themselves](https://arxiv.org/abs/2009.11243) | A learned optimizer A trains another optimizer T; learned parameters are in M and clipping/training support in H. | Preserve reported self-training transfer and horizon-dependent degradation; do not infer unbounded recursive improvement. |
 | [MAML](https://proceedings.mlr.press/v70/finn17a.html) | Initialization in M; inner adaptation and outer training in H. | Better adaptability of the target is distinct from a better actor that redesigns common targets. |
 | [AlphaGo Zero](https://www.nature.com/articles/nature24270) | Policy/value model M; search H; self-play trajectories D; game rules in E. | A fixed training/search algorithm can generate a changing policy and data distribution. |
 | [POET](https://arxiv.org/abs/1901.01753) | Policy weights in M; environment descriptions and population in D; mutation, optimization, and transfer procedures in H. | Development environments co-evolve with agents. Changing environment descriptions need not change the generator algorithm; finite diversity does not prove unbounded growth. |
@@ -68,4 +69,9 @@ Prioritize a work when a checkable claim contributes a distinct mechanism, a val
 Deprioritize unsupported assertions and redundant renamings that add no mechanism, evidence, or test. Judge individual claims rather than excluding an entire work solely for weak framing. Writing style or suspected AI assistance does not establish scientific quality. Negative results, small counterexamples, and rigorous work outside the current preferred route remain relevant.
 
 The corpus is an expandable mechanism audit, not an exhaustive ranking of the field. Representing physical interaction does not establish a physical growth law: measured resource-to-computation relations, environmental constraints, and validated predictions at that level remain outstanding.
+
+The finite-budget continuation identity in THEORY.md Section 9 uses the same
+encoded state and permits every listed update surface. That establishes the
+identity's representational scope. It does not supply the individual methods'
+unknown transition probabilities, continuation values or physical costs.
 

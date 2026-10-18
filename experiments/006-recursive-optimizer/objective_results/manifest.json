@@ -1,0 +1,20 @@
+{
+  "config": {
+    "seed": 20261020,
+    "lineages": 16,
+    "generations": 3,
+    "outer_budget": 9,
+    "meta_budget": 17,
+    "task_budget": 32,
+    "dimension": 6,
+    "feedback_each": 2,
+    "assessment_each": 4,
+    "common_problems": 4
+  },
+  "started_utc": "2026-10-18T03:46:14.501379+00:00",
+  "source_sha256": "2bd18c4205a94565bb7df0710fc542278cd6fa268de5c4abe502b0e98e0941b9",
+  "optimizer_source_sha256": "9d2714f449a103e562d9f61318cb80b1f44cb2761dde930dfe552489f1815ff2",
+  "primitive_calls_per_candidate": 7296,
+  "outer_actor": "fixed initial optimizer",
+  "purpose": "compare training objectives under matched primitive calls"
+}

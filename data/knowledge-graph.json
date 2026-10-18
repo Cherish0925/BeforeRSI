@@ -583,6 +583,14 @@
         "heuristic-search",
         "self-generated-experience"
       ]
+    },
+    {
+      "work_id": "self-training-optimizer-2020",
+      "node_ids": [
+        "meta-learning",
+        "self-reference",
+        "improvement-kernel"
+      ]
     }
   ]
 }

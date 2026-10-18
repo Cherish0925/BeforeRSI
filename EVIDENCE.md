@@ -242,3 +242,21 @@ Four works already named in the prose are now cataloged explicitly: [HGM](https:
 
 Both additions remain author-reported and have not been rerun here. They expand mechanism coverage beyond the preferred model–harness schedule; they do not complete the literature or establish a universal quantitative law.
 
+## 12. Self-training optimizers and executed BeforeRSI results
+
+[Metz et al. (2020), Section 4.6](https://arxiv.org/html/2009.11243v1)
+report a learned optimizer training new learned optimizers with curves similar
+to tuned Adam. The displayed comparison uses 10,000 outer iterations; extending
+the horizon worsens performance. Appendix F.4 reports that retaining external
+gradient clipping is necessary for progress. This is source-reported transfer
+to optimizer training, not an independently reproduced indefinite growth result.
+It also prevents treating numerical optimizer self-training as a new idea here.
+
+[Experiment 006](experiments/006-recursive-optimizer/RESULTS.md) is an empirical
+BeforeRSI result in a small numerical search class. It contains executed recursive
+versus pinned-actor comparisons, direct J-versus-G training and equal-call update
+orders, with independent assessment cohorts and complete candidate records.
+Positive feedback-task gains did not establish transferable recursive gains.
+The report separates measured effects, descriptive uncertainty and scope;
+it is not a reproduction of the neural optimizer paper.
+

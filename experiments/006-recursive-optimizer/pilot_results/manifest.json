@@ -1,0 +1,36 @@
+{
+  "config": {
+    "lineages": 8,
+    "generations": 4,
+    "common_problems": 4,
+    "seed": 20261018,
+    "task_budget": 32,
+    "meta_budget": 17,
+    "dimension": 6,
+    "feedback_each": 2,
+    "assessment_each": 4
+  },
+  "source_sha256": "7a71977e3b35f409f0b4355a4c89d93949ce823e963c4702adca2928a75cbf07",
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "started_utc": "2026-10-18T03:38:49.583036+00:00",
+  "base_config": [
+    -0.2,
+    -0.35,
+    0.15,
+    -0.6,
+    0.6,
+    -0.6
+  ],
+  "train_families": [
+    "sphere",
+    "ellipsoid",
+    "rosenbrock"
+  ],
+  "ood_families": [
+    "rotated_ellipsoid",
+    "rastrigin",
+    "ackley"
+  ],
+  "interpretation": "bounded numerical benchmark; not an LLM experiment"
+}

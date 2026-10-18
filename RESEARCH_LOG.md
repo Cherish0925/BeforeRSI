@@ -417,3 +417,41 @@ These alternatives are reasons to run discriminating experiments, not reasons to
 
 **Remaining decision.** Competing shared-mechanism models must predict different outcomes for a feasible intervention before fitting a universal growth curve. Learned summaries, causal identification, cross-method transfer, and physical resource laws remain separate empirical obligations. No real-system run was conducted in this update.
 
+## 2026-10-18 — Finite-budget reuse and executed optimizer comparisons
+
+**Derived result.** The finite-horizon performance-difference identity expresses
+the value of successor reuse as accumulated continuation advantages on reached
+states. A five-state exact witness has pointwise one-step improver dominance
+and monotone current utility under both policies, yet the dominant one-step
+policy loses after two steps. The witness and 240 stochastic-kernel/horizon
+cases were checked with rational arithmetic. This is an application of standard
+policy-improvement mathematics, not a new universal growth law.
+
+**Co-evolution.** Model and harness update kernels give two directional
+continuation effects and an exact update-order difference. These are distinct
+from crossing already-trained components during execution. The formalism admits
+discrete edits, varying architectures and resource state without a five-score
+closure assumption.
+
+**Executed experiments.** A numerical optimizer with three learned controller
+coefficients and three binary harness choices generated successor versions.
+The pilot's continuous encoding failed to propose useful harness edits; its
+source and results were retained. A typed follow-up used 32 new lineages.
+Additional equal-call studies compared J/G training on 16 lineages and update
+order on 32. Across all runs, 16,791,552 primitive objective calls were executed.
+Source hashes, seeds, snapshots, candidate records and task-level outcomes are
+preserved in experiments/006-recursive-optimizer/.
+
+**Findings.** The typed recursive route did not establish improvement over the
+pinned ancestor; final task scores declined on new instances despite positive
+development feedback gains. Direct G-training did not establish better G than
+matched-call J-training. M-then-H exceeded H-then-M on new instances, with no
+established superiority over joint search or on new families. These findings
+remove automatic promotion of a schedule, feedback winner or one-step G gain
+from the proposed research route. They do not establish a general impossibility.
+
+**Prior work.** Metz et al. (2020) is added as a primary reference for learned
+optimizers training optimizers, with the authors' horizon and clipping limits.
+The corpus now contains 45 entries. The present numerical experiment is a
+separate implementation, not a neural-optimizer replication.
+
