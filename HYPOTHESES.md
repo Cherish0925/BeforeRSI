@@ -28,7 +28,7 @@ A gain-versus-budget curve $G(A;\mu,B,b)$, or a vector across target families, m
 
 **Alternative:** histories, executable structure, and target-specific behavior prevent a stable low-dimensional reduction.
 
-**Decisive test:** after conditioning on the proposed summary, test whether omitted state still predicts intervention outcomes. THEORY.md states the exact state-sufficiency condition and a conditional approximation-error bound.
+**Decisive test:** after conditioning on the proposed summary, test whether omitted state still predicts intervention outcomes. Then test competing mechanisms with the interventions on which their predictions disagree. THEORY.md distinguishes state sufficiency, intervention identifiability, and a conditional approximation-error bound; a sufficient state alone does not identify an untested intervention's effect.
 
 ## H3 — Model and harness optima move together
 

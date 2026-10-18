@@ -1,6 +1,6 @@
 # Evaluation standard
 
-This document specifies the repository's operational evidence standard. D3 refers to improved improvement ability; it does not require accelerating scores or a separately mutable improver module.
+This document specifies the repository's operational evidence standard for empirical claims. D3 refers to improved improvement ability; it does not require accelerating scores or a separately mutable improver module. Formal results are assessed by their assumptions and proofs; exact verification establishes its stated specification. The empirical task-splitting protocol is not a mandatory architecture for every method.
 
 ## 1. Register the complete system
 
@@ -45,7 +45,7 @@ Post hoc changes belong in a new experiment.
 
 ## 3. Separate task cohorts
 
-Use four cohorts:
+For the proposed empirical transfer experiments, use four cohorts:
 
 - $P$: improvement tasks visible to candidate generation and selection;
 - $V$: validation tasks with limited exposure;

@@ -110,7 +110,7 @@ Before using a low-dimensional law, test whether its state variables predict int
 
 Measure improver changes on common targets. Independently vary proposal, selection, feedback, data production, and update resources where the implementation permits it. Use measured quantities to fit competing laws; preserve uncertainty and distinguish shared parameters from method-specific ones.
 
-Prediction requires withheld interventions, methods, generations, and task cohorts. Fitting each historical curve with its own free parameters does not establish a transferable theory. Separate causal terms require interventions that distinguish them; otherwise report only identifiable combinations.
+Prediction requires withheld interventions, methods, generations, and task cohorts. Fitting each historical curve with its own free parameters does not establish a transferable theory. Separate causal terms require interventions that distinguish them; otherwise report only identifiable combinations. THEORY.md Proposition 4 gives an exact witness: the same observed trajectory can support opposite predictions for successor reuse.
 
 ## 6. Reproduction
 

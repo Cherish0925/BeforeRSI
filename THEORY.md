@@ -58,7 +58,7 @@ G(A;\mu,B,b)=
 \left[J_{Q_p}(T';b)-J_{Q_p}(T;b)\right].
 $$
 
-$Q_p$ is reserved for final evaluation and is unavailable during candidate generation, selection, or stopping. Regression constraints and any utility weights are specified before the comparison.
+$Q_p$ specifies the assessment distribution; the distribution, task rules, and utility need not be secret. For empirical generalization claims, final test instances and their observed outcomes are withheld from candidate generation, selection, and stopping. Exact verification or formal proofs may instead establish a scoped claim under public specifications and explicit assumptions. These are different evidence routes, not different definitions of $G$. Regression constraints and any utility weights are specified before the comparison.
 
 This distinguishes:
 
@@ -167,6 +167,8 @@ $
 
 This construction includes parameter learning, prompt/data changes, arbitrary program rewrites, changing learning rules, populations, meta-agents, and simulated or real environment interaction. A neural model may be absent. The $M,H,D$ manifest is an implementation view of this larger $X$, not a claim that three scalar coordinates are sufficient.
 
+An editable curriculum or simulator is inside the recorded system boundary; the external world and its response remain part of the declared environment. Changing a task generator must therefore appear in $X$ or as an explicit intervention, rather than being hidden behind an assumed fixed task distribution. The encoding preserves the original process's resource records; it does not assert that simulation on a different interpreter or hardware has identical runtime or energy cost.
+
 Marginalizing over a budgeted improvement run gives the $K_A$ in Section 2. With a fixed intervention policy, the exact distribution evolves as
 
 $
@@ -229,6 +231,31 @@ These propositions use standard computation and probability constructions. The c
 ## 7. What a predictive theory still needs
 
 A transition kernel specifies what must be measured; it does not predict its values. A low-dimensional state such as “model quality, harness quality, data quality” is justified only if it predicts interventions across systems with different implementations and histories.
+
+### Proposition 4: the evidence must distinguish the predicted effect
+
+Fix an admissible mechanism class $\mathfrak K$, an observation protocol, and a target intervention effect $\theta(K)$. Known source code, verified properties, and declared assumptions constrain this class. Let $P_{\rm obs}^{K}$ be the observation distribution under the interventions actually performed. The effect is identifiable from that distribution within the class exactly when
+
+$$
+P_{\rm obs}^{K_1}=P_{\rm obs}^{K_2}
+\quad\Longrightarrow\quad
+\theta(K_1)=\theta(K_2).
+$$
+
+**Derivation.** This condition makes $\theta$ a well-defined function of the observation distribution. If it fails, no function of that distribution can return the correct effect in both mechanisms. More strongly, an estimator $\widehat\theta$ based on the observations has the same distribution in the two mechanisms, so the triangle inequality gives
+
+$$
+\max_{i=1,2}\mathbb E_i\!\left[|\widehat\theta-\theta(K_i)|\right]
+\ \ge\ \frac{|\theta(K_1)-\theta(K_2)|}{2}.
+$$
+
+This is an identification result, not a guarantee of accurate finite-sample estimation even when the condition holds. Identifying the requested effect need not identify the entire kernel.
+
+**Exact witness.** The observation protocol records action/state/utility traces, with no additional evidence fixing untried transitions. A target starts with utility $1/2$. Every observed run keeps the ancestor as improver, intervention $u_0$, and retains utility $1/2$. Two complete controlled Markov mechanisms agree on all these observations. Under untested intervention $u_1$, reusing the successor as improver, one produces utility $1$ and the other utility $0$. Their gains relative to $u_0$ are $+1/2$ and $-1/2$. Both have a sufficient state and a valid common-target $G$; neither property distinguishes them. Any observation-based estimator has expected absolute error at least $1/2$ in one of these mechanisms, however many $u_0$ runs it sees.
+
+**Measurable consequence.** Apply $u_0$ and $u_1$ to matched target copies under the same feedback and budgets, randomizing assignment when appropriate. The two witness mechanisms predict opposite signs and can be distinguished. For an untested method or domain, state which mechanism is assumed shared and what withheld result would refute that assumption. When compatible mechanisms still predict conflicting signs, report that ambiguity or perform the distinguishing experiment; do not resolve it by giving each paper a new fitted parameter.
+
+Representation, state sufficiency, and identification answer different questions. None alone establishes predictive accuracy, useful computation time, or transfer to a new regime. A general theory must recover valid conditional results from different methods, including failures; it need not make contradictory or unsupported interpretations simultaneously true.
 
 The present program should test:
 

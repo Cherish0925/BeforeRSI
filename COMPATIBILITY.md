@@ -1,6 +1,6 @@
 # Compatibility with the current research corpus
 
-**Scope:** the 38 existing entries plus four works already named in the prose, now all 42 entries in data/works.json. This is a per-work representation audit, not a claim that these are all RSI papers or that their results have been independently reproduced. Primary abstracts or official repository descriptions were checked for implementation objects and reported scope. Author/project sources were used where publisher pages failed. The Good DOI could not be retrieved in this pass; its row remains a conceptual mapping from the existing record. Some source pages expose only summaries, so full methodological audits remain pending.
+**Scope:** all 44 entries in data/works.json: the previous 42-work audit plus learned parameter-update rules and environment–agent co-evolution. This is a per-work representation audit, not a claim that these are all RSI papers or that their results have been independently reproduced. Primary abstracts or official repository descriptions were checked for implementation objects and reported scope; the two additions were checked against their full papers. Author/project sources were used where publisher pages failed. The Good DOI could not be retrieved in the earlier pass; its row remains a conceptual mapping from the existing record. Full methodological audits remain pending.
 
 **Reading the table:** the middle column is our encoding under THEORY.md, not terminology imposed by the original authors. The last column records behavior or an assumption the model must preserve. All empirical outcomes remain author-reported unless a separate reproduction record says otherwise. Representation is supported by Proposition 1; prediction requires fitted transition laws and withheld interventions. A score reduction additionally needs Proposition 2's state-sufficiency condition.
 
@@ -9,8 +9,10 @@
 | [Speculations Concerning the First Ultraintelligent Machine](https://doi.org/10.1016/S0065-2458(08)60418-0) | Conceptual proposal; no executable update specified. | Positive feedback between machine design and capability is a hypothesis to instantiate, not a measured growth law. |
 | [EURISKO](https://www.cs.northwestern.edu/~mek802/papers/not-mine/Lenat_EURISKO.pdf) | Heuristics and meta-heuristics in H; search records in D; M may be absent. | Represent discovery and revision of heuristics without requiring neural training or modern harnesses. |
 | [Gödel Machine](https://arxiv.org/abs/cs/0309048) | Self-editable program and proof searcher in H; axioms and proof state in D. | Proof-authorized rewrites retain their formal assumptions; empirical acceptance is not imposed as the only route. |
+| [Learned optimizer](https://arxiv.org/abs/1606.04474) | Optimizer weights in M; application and meta-training code in H; recurrent state is explicit in X. | A learned update rule can transfer or fail under changed optimizees. External meta-training does not establish autonomous recursive improvement. |
 | [MAML](https://proceedings.mlr.press/v70/finn17a.html) | Initialization in M; inner adaptation and outer training in H. | Better adaptability of the target is distinct from a better actor that redesigns common targets. |
 | [AlphaGo Zero](https://www.nature.com/articles/nature24270) | Policy/value model M; search H; self-play trajectories D; game rules in E. | A fixed training/search algorithm can generate a changing policy and data distribution. |
+| [POET](https://arxiv.org/abs/1901.01753) | Policy weights in M; environment descriptions and population in D; mutation, optimization, and transfer procedures in H. | Development environments co-evolve with agents. Changing environment descriptions need not change the generator algorithm; finite diversity does not prove unbounded growth. |
 | [AutoML-Zero](https://proceedings.mlr.press/v119/real20a.html) | A searches over target learner programs T, with population and evaluations in D. | Discovery of a learning algorithm need not modify the searcher; actor and target must remain distinguishable. |
 | [STOP](https://arxiv.org/abs/2310.02304) | Improver program is both editable H and a target T of its own calls. | Reported improvements in generated programs must be preserved; frozen LM weights do not exclude learned program-level improvement. |
 | [Promptbreeder](https://proceedings.mlr.press/v235/fernando24a.html) | Task prompts and mutation prompts are addressable state used in different roles. | Represent changes to both task behavior and future mutations without inventing a separate neural improver. |
@@ -44,7 +46,6 @@
 | [MASS](https://github.com/SakanaAI/mass) | Workflow search H alternates with trajectory-based M training; one model fills several roles. | Represent repeated cycles and domain-specific results; no compulsory independent I module. |
 | [RSI-Anything](https://github.com/Gen-Verse/RSI-Anything) | World-model/policy parameters M, workflow H, interaction records D, external environment E. | Separate predicted consequences from external feedback and retain domain-specific observation/action spaces. |
 | [Dream-RSI](https://arxiv.org/abs/2609.14858) | Discovery-tree replay in D supports exploration-policy changes in H/M. | Separate historical simulation from online feedback and allow a fixed base agent with an improving exploration policy. |
-
 | [Huxley–Gödel Machine (HGM)](https://arxiv.org/abs/2510.21614) | Agent source H, lineage D, descendant-informed parent selection. | Preserve the distinction between current task score and future branch potential; CMP assumptions are not a universal growth theorem. |
 | [Agentic Context Engineering (ACE)](https://arxiv.org/abs/2510.04618) | Contextual playbooks D and generation/reflection/curation procedures H. | Persistent context learning is represented even with unchanged weights; include information loss from destructive rewriting. |
 | [AlphaEvolve](https://arxiv.org/abs/2506.13131) | Actor A searches target programs T, including infrastructure used by later model training. | Allow feedback through training efficiency and physical resources; trace actual reuse instead of excluding it as merely external optimization. |
@@ -54,5 +55,17 @@
 
 Choose interventions that exist in several methods—freeze the proposer, replace the executor, alter candidate selection, vary feedback exposure, or train from a controlled trajectory source. Declare the observable, resource accounting, and task cohort before fitting. Fit on one set of methods and generations, then predict the sign and size of effects on held-out methods, tasks, and future generations. Compare with fixed-improver, independent-component, and budget-only explanations. A separate free parameter for every method/outcome is description, not demonstrated transfer.
 
+Specify which observations distinguish competing mechanisms that fit the existing results. THEORY.md Proposition 4 gives an exact case where arbitrarily many observed runs cannot determine even the sign of a new intervention. Transfer requires a stated shared mechanism or assumption, with a result that could refute it.
+
 The existing corpus supplies implementations and counterexamples that a model must admit. It does not yet supply a harmonized intervention dataset that proves one quantitative growth law across them. The current simulations are not such a dataset.
+
+## Scope and scientific value
+
+Compatibility means preserving a method's causal operations, assumptions, and valid results, including its failure conditions. It does not mean accepting every author's interpretation, requiring every method to reach D3, or prescribing one architecture for every regime. For each mechanism family, ask what changes, what supplies feedback, and how the retained change affects later behavior.
+
+Prioritize a work when a checkable claim contributes a distinct mechanism, a valid derivation or counterexample, a discriminating experiment, or a usable research artifact. Match scrutiny to the claim: theoretical work needs explicit assumptions and a sound argument; empirical claims need the controls and observations that support their stated scope. Code, prestigious venues, citations, or positive outcomes are not universal admission requirements.
+
+Deprioritize unsupported assertions and redundant renamings that add no mechanism, evidence, or test. Judge individual claims rather than excluding an entire work solely for weak framing. Writing style or suspected AI assistance does not establish scientific quality. Negative results, small counterexamples, and rigorous work outside the current preferred route remain relevant.
+
+The corpus is an expandable mechanism audit, not an exhaustive ranking of the field. Representing physical interaction does not establish a physical growth law: measured resource-to-computation relations, environmental constraints, and validated predictions at that level remain outstanding.
 

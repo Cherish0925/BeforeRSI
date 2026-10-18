@@ -35,9 +35,9 @@ V^\*(S_t,S_{t+1};Q,B),
 
 $
 
-where $Q$ is an untouched task distribution and $B$ is a fixed resource budget. $V^\*$ may be improved through a separate process, but a candidate cannot freely modify the test that accepts it.
+where $Q$ specifies the assessment tasks and $B$ is a fixed resource budget. For empirical generalization claims, final test instances and outcomes remain untouched during selection; known task rules or exact formal specifications need not be hidden. $V^\*$ may be improved through a separate process, but a candidate cannot freely redefine the criterion used to substantiate its improvement claim.
 
-A work contributes to RSI only after the changed object, improvement operator, feedback source, persistence, transfer, and recursion depth are explicit.
+Map each work's changed object, improvement operator, feedback source, persistence, transfer, and recursion claims where applicable. A precise theorem, counterexample, or external-optimization result can contribute without implementing every part of an RSI loop.
 
 ## 2. Historical and causal tree
 

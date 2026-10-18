@@ -405,3 +405,15 @@ These alternatives are reasons to run discriminating experiments, not reasons to
 
 **Next discriminating result.** Estimate a common-target actor effect and test whether proposed summary variables predict intervention responses. Cross-method prediction requires a shared measurement protocol and withheld methods/generations. No real-model run or universal empirical law is claimed by this audit.
 
+## 2026-10-18 — Generality requires distinguishable predictions
+
+**Derived constraint.** A general representation and sufficient state do not identify an intervention effect. THEORY.md now states the observational-equivalence criterion and its half-range absolute-error bound. An exact controlled-state witness has identical ancestor-run observations but opposite successor-reuse effects. This is standard identification reasoning, not a new RSI theorem.
+
+**Scope corrections.** Known objectives and formal specifications need not be secret; withholding empirical final-test observations is a distinct requirement. Recursive reuse is separated from D3 throughout the corrected summaries. Editable curriculum/simulator state is explicit, and representation preserves recorded original resources without asserting equal simulation overhead.
+
+**Evidence added.** Two primary full-paper checks expand the corpus from 42 to 44: a learned optimizer and POET. The latter covers evolving environment descriptions, not self-modification of the environment-generator algorithm. Primary findings and resource details are recorded in EVIDENCE.md.
+
+**Research standard.** Compatibility preserves valid conditional mechanisms and results, including counterexamples. Work is prioritized by checkable scientific contribution rather than prestige, prose style, suspected AI assistance, or agreement with the preferred route.
+
+**Remaining decision.** Competing shared-mechanism models must predict different outcomes for a feasible intervention before fitting a universal growth curve. Learned summaries, causal identification, cross-method transfer, and physical resource laws remain separate empirical obligations. No real-system run was conducted in this update.
+

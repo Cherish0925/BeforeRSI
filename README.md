@@ -7,7 +7,7 @@
 <br>
 
 [![Status](https://img.shields.io/badge/status-research%20in%20progress-111827?style=flat-square)](#status)
-[![Corpus](https://img.shields.io/badge/public%20corpus-42%20works-C58B35?style=flat-square)](EVIDENCE.md)
+[![Corpus](https://img.shields.io/badge/public%20corpus-44%20works-C58B35?style=flat-square)](EVIDENCE.md)
 [![Claim depth](https://img.shields.io/badge/claim%20depth-D0%E2%86%92D4-5C9C96?style=flat-square)](#claim-depth)
 [![CI](https://img.shields.io/github/actions/workflow/status/Cherish0925/BeforeRSI/validate.yml?branch=main&style=flat-square&label=data)](https://github.com/Cherish0925/BeforeRSI/actions)
 [![License](https://img.shields.io/badge/license-MIT-6B7280?style=flat-square)](LICENSE)
@@ -60,7 +60,7 @@ The history of self-improving AI is easiest to understand as five streams that n
 | **External cognition** | memory, tools, skills, context, agent control, harnesses | where durable capability should live and whether harness gains transfer across models |
 | **Verification** | exact checks, learned judges, hidden tasks, selection under uncertainty | how to prevent benchmark fitting, evaluator exploitation, and metric drift |
 
-The current technical frontier is their intersection: **model–harness–improver co-evolution under protected evaluation**.
+The route prioritized here is their intersection: **model–harness co-evolution with measured improvement ability**. The theory must also accommodate other routes and explain their successes and failures under stated conditions.
 
 Read the full historical and causal map in **[MAP.md](MAP.md)**.
 
@@ -150,32 +150,34 @@ Under the same improvement budget, does $S_1$ produce a better descendant than $
 </tr>
 </table>
 
-These experiments are ordered. Experiment 03 is the first direct test of the word **recursive**.
+These experiments are ordered. Experiment 03 directly tests **improved improvement ability** on common targets; recursive reuse is a separate structural claim.
 
 4. **[Repeated co-evolution](experiments/004-repeated-coevolution.md)** — run model, harness, and improver updates for several generations against model-only, harness-only, fixed-improver, and equal-compute baselines.
 5. **[Evaluator fidelity and search efficiency](experiments/005-evaluator-phase-boundary.md)** — distinguish absolute selected gain, gain per unit cost, and adaptive exploitation as search grows.
 
 ## What this repository rejects
 
-BeforeRSI does not upgrade a result because its title contains *recursive*, *self-evolving*, *autonomous* or *self-reflective*. The following are insufficient on their own:
+BeforeRSI does not upgrade a result because its title contains *recursive*, *self-evolving*, *autonomous* or *self-reflective*. The following are insufficient on their own for the stronger claim that the successor is a better improver:
 
 - extra samples, retries, agents or evaluator calls;
 - a fixed outer optimizer repeatedly improving a target;
 - benchmark-specific prompt or workflow patches;
 - self-generated data without evidence that later improvement behavior became better;
-- joint model/harness updates without component crossing;
-- one successful parent → child update described as recursion;
+- joint model/harness task gains without measuring subsequent improvement ability;
+- one successful parent → child update without comparing improvement ability;
 - gains demonstrated only on small models and extrapolated to frontier models;
 - self-evaluation used as the sole acceptance test.
 
-These methods may be useful components or strong baselines. **[EVALUATION.md](EVALUATION.md)** specifies what stronger claims require.
+These methods may be valuable results, useful components, or strong baselines. Component crossing is needed for component attribution, not for establishing every joint-system gain. **[EVALUATION.md](EVALUATION.md)** specifies what stronger claims require.
+
+Generality requires mechanism coverage and testable predictions across methods. It does not follow from mapping papers into shared notation. [COMPATIBILITY.md](COMPATIBILITY.md) records both the current coverage and the claim-based criteria for choosing substantive work; rigorous negative results and counterexamples remain part of the research.
 
 ## Repository
 
 | File | Purpose |
 |---|---|
 | **[THEORY.md](THEORY.md)** | implementation boundaries, common-target improvement tests, coupling, and mathematical counterexamples |
-| **[COMPATIBILITY.md](COMPATIBILITY.md)** | per-work mapping of all 42 catalog entries and limits of universality claims |
+| **[COMPATIBILITY.md](COMPATIBILITY.md)** | per-work mapping of all 44 catalog entries and limits of universality claims |
 | **[MAP.md](MAP.md)** | history, causal structure, knowledge tree and present frontier |
 | **[EVIDENCE.md](EVIDENCE.md)** | strongest public work, claim depth, limitations and primary sources |
 | **[PROGRAM.md](PROGRAM.md)** | target system, model–harness–improver co-evolution and research sequence |

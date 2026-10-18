@@ -66,6 +66,24 @@ def main():
     average_gain = F(9, 10) * task_gains[0] + F(1, 10) * task_gains[1]
     assert average_gain > 0 and task_gains[1] < 0
 
+    # Same observed controlled dynamics, opposite unobserved reuse effects.
+    # States encode utility; every keep-ancestor transition is a self-loop.
+    utilities = {"baseline": F(1, 2), "high": F(1), "low": F(0)}
+    keep = {state: state for state in utilities}
+    mechanisms = [
+        {"keep": keep, "reuse": {**keep, "baseline": "high"}},
+        {"keep": keep, "reuse": {**keep, "baseline": "low"}},
+    ]
+    assert mechanisms[0]["keep"] == mechanisms[1]["keep"]
+    effects = [
+        utilities[k["reuse"]["baseline"]] - utilities[k["keep"]["baseline"]]
+        for k in mechanisms
+    ]
+    assert effects == [F(1, 2), F(-1, 2)]
+    half_range = abs(effects[0] - effects[1]) / 2
+    midpoint = sum(effects) / 2
+    assert max(abs(midpoint - effect) for effect in effects) == half_range == F(1, 2)
+
     print(json.dumps({
         "status": "all mathematical witnesses passed",
         "coordinate_dependence": coordinate,
@@ -77,6 +95,8 @@ def main():
         "common_target_improver_advantage": float(common_delta),
         "same_summary_different_next_laws_tv": float(tv),
         "positive_average_with_task_regression": float(average_gain),
+        "same_observations_opposite_reuse_effects": [float(x) for x in effects],
+        "unidentified_effect_minimax_absolute_error": float(half_range),
     }, indent=2))
 
 

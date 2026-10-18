@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "updated": "2026-10-16",
+  "updated": "2026-10-18",
   "depth_definitions": {
     "conceptual": "Qualitative or theoretical statement without an executable persistent update.",
     "external_optimization": "A fixed optimizer improves an external target.",
@@ -910,7 +910,47 @@
           "url": "https://arxiv.org/abs/2309.03409"
         }
       ]
+    },
+    {
+      "id": "learned-optimizer-2016",
+      "name": "Learning to learn by gradient descent by gradient descent",
+      "year": 2016,
+      "role": "precursor_learned_optimizer",
+      "reported_depth": "adaptation",
+      "changed_objects": [
+        "optimizer_parameters",
+        "optimizee_parameters"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "in_progress",
+      "central_limit": "Externally trained optimizer with task-dependent transfer; autonomous recursive improvement is not established.",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/1606.04474"
+        }
+      ]
+    },
+    {
+      "id": "poet",
+      "name": "Paired Open-Ended Trailblazer (POET): Endlessly Generating Increasingly Complex and Diverse Learning Environments and Their Solutions",
+      "year": 2019,
+      "role": "adjacent_environment_agent_coevolution",
+      "reported_depth": "adaptation",
+      "changed_objects": [
+        "environment_configurations",
+        "policy_parameters",
+        "environment_agent_population"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "in_progress",
+      "central_limit": "Finite experiments with bounded terrain parameters and fixed search rules; no demonstrated unbounded growth or self-rewriting generator.",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/1901.01753"
+        }
+      ]
     }
   ]
 }
-

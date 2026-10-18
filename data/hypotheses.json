@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "updated": "2026-10-17",
+  "updated": "2026-10-18",
   "status_definitions": {
     "open": "Plausible and undecided.",
     "supported": "Supported by multiple controlled results but revisable.",
@@ -23,7 +23,7 @@
       "id": "improvement-efficiency",
       "status": "open",
       "statement": "A gain-versus-budget curve or vector can summarize improvement behavior after testing conditional dependence on omitted state.",
-      "decisive_test": "Test state sufficiency and withheld intervention prediction before treating a scalar as a closed macrostate.",
+      "decisive_test": "Test state sufficiency, distinguish observationally compatible mechanisms through interventions, and assess withheld prediction before treating a scalar as a closed predictive macrostate.",
       "files": [
         "THEORY.md",
         "SIMULATION.md"
@@ -131,4 +131,3 @@
     }
   ]
 }
-

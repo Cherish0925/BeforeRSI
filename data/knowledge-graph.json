@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "updated": "2026-10-17",
+  "updated": "2026-10-18",
   "nodes": [
     {
       "id": "self-reference",
@@ -161,6 +161,11 @@
       "id": "system-identification",
       "type": "concept",
       "label": "Experimental identification of RSI dynamics"
+    },
+    {
+      "id": "environment-agent-coevolution",
+      "type": "concept",
+      "label": "Evolving development environments and agent policies"
     }
   ],
   "edges": [
@@ -358,6 +363,11 @@
       "source": "improvement-kernel",
       "target": "open-ended-rsi",
       "relation": "must_improve_for"
+    },
+    {
+      "source": "environment-agent-coevolution",
+      "target": "self-generated-experience",
+      "relation": "supplies_training_tasks"
     }
   ],
   "work_bindings": [
@@ -558,7 +568,21 @@
         "automated-algorithm-search",
         "harness-evolution"
       ]
+    },
+    {
+      "work_id": "learned-optimizer-2016",
+      "node_ids": [
+        "meta-learning",
+        "improvement-kernel"
+      ]
+    },
+    {
+      "work_id": "poet",
+      "node_ids": [
+        "environment-agent-coevolution",
+        "heuristic-search",
+        "self-generated-experience"
+      ]
     }
   ]
 }
-

@@ -136,7 +136,7 @@ The primary paper reports three iterative training rounds and improvements in bo
 
 SEAL makes the content of model updates an output of the model. This is closer to model-level self-improvement than ordinary self-training.
 
-A recursive claim still requires repeated generations, cross-task transfer, retention of unrelated abilities, and evidence that later systems construct better updates.
+Recursive reuse is distinct from increased update-producing ability. The stronger D3 claim requires a controlled comparison of earlier and later systems as improvers; claims about sustained transfer additionally require repeated generations, new tasks, and regression measurements.
 
 ## 6. Model–harness co-evolution
 
@@ -196,7 +196,7 @@ More retries, longer context, extra sub-agents, or more evaluator calls are coun
 
 ### Single-generation recursion
 
-A parent produces one better child, and the work is called recursive. One persistent update is D1; transfer is D2; recursion requires comparison of parent and child as improvers.
+A parent produces one better child. That observation can establish a persistent update and, with appropriate evidence, transfer. It does not alone establish that the child is a better improver. A recursively defined procedure can exist without that stronger D3 result.
 
 ### Joint update without attribution
 
@@ -214,7 +214,7 @@ A method works on a small model or toy environment and is presented as a route t
 
 New names for loops, roles, memories, or agent layers do not change the scientific state unless they enable a new capability, prediction, or controlled result.
 
-These patterns are not always useless. They are weak evidence for RSI.
+These patterns can contain valuable findings. They do not by themselves establish improved improvement ability, broad transfer, or sustained growth. The scope of the particular claim determines the missing evidence.
 
 ## 9. Current evidence boundary
 
@@ -233,4 +233,12 @@ BeforeRSI is organized around closing the gap between these two statements.
 [COMPATIBILITY.md](COMPATIBILITY.md) maps every catalog entry to the operational model and records the behavior it must preserve. Coverage of mechanisms is distinct from reproduction of results and prediction across methods. The audit corrected the earlier understatement of Self-Rewarding LM's reported iterations and Hyperagents' reported meta-level transfer.
 
 Four works already named in the prose are now cataloged explicitly: [HGM](https://arxiv.org/abs/2510.21614) studies descendant-informed parent selection; [ACE](https://arxiv.org/abs/2510.04618) incrementally adapts contextual playbooks; [AlphaEvolve](https://arxiv.org/abs/2506.13131) searches executable algorithms, including infrastructure used in model training; [OPRO](https://arxiv.org/abs/2309.03409) uses an LLM to propose candidates from optimization history. These are source-backed method descriptions, not independently reproduced outcomes.
+
+## 11. Mechanism coverage additions (2026-10-18)
+
+**Learned parameter updates.** [Andrychowicz et al.](https://arxiv.org/html/1606.04474v2) train LSTM optimizer weights using external Adam and truncated backpropagation. Validation selects optimizers; evaluation uses freshly sampled problems. The MNIST setup uses 100 optimizee steps and 20-step unrolls. Reported transfer includes larger networks, but the sigmoid-to-ReLU change fails. This supplies a learned-update mechanism and a transfer boundary, without establishing autonomous recursion or a comparable lifecycle-cost result.
+
+**Evolving development environments.** [POET](https://arxiv.org/html/1901.01753v3) changes terrain configurations and policies while retaining fixed mutation, optimization, and transfer rules. It reports gains from cross-environment transfer. The curriculum comparison uses up to 25,200 iterations, 20 active environments and 512 ES samples per step, taking about ten days on 256 CPU cores per run. Development environments evolve; the study is not a hidden-domain generalization test. Terrain parameters have explicit caps. This supports bounded environment–agent co-evolution, not an unbounded growth theorem or self-rewriting generator.
+
+Both additions remain author-reported and have not been rerun here. They expand mechanism coverage beyond the preferred model–harness schedule; they do not complete the literature or establish a universal quantitative law.
 
