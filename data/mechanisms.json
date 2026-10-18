@@ -175,6 +175,10 @@
         {
           "type": "paper",
           "url": "https://proceedings.mlr.press/v235/yuan24d.html"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2401.10020v1"
         }
       ],
       "mechanism_interpretation": "Self-generated preferences reweight the training target; learning changes both answer and judgment behavior.",
@@ -266,6 +270,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2505.22954"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2505.22954v3"
         }
       ],
       "mechanism_interpretation": "Reusable coding operations and retained alternative parents change subsequent proposal opportunities.",
@@ -334,6 +342,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2506.10943"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2506.10943v1"
         }
       ],
       "mechanism_interpretation": "Self-edit generation is trained on utility after the learner consumes that edit.",
@@ -353,6 +365,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2603.19461"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2603.19461v1"
         }
       ],
       "mechanism_interpretation": "Editable meta code changes diagnosis, proposal and reuse, with task and meta roles sharing a program.",
@@ -368,6 +384,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2605.30621"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2605.30621v1"
         }
       ],
       "mechanism_interpretation": "Proposal competence and ability to execute the proposed computation are distinct causal factors.",
@@ -417,6 +437,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2607.12227"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2607.12227v4"
         }
       ],
       "mechanism_interpretation": "Task-time search and persistent harness changes compete for the same resource budget.",
@@ -534,6 +558,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2609.24972"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2609.24972v1"
         }
       ],
       "mechanism_interpretation": "Proposal and acceptance constraints favor transferable, affordable edits over source-score fitting.",
@@ -572,6 +600,10 @@
         {
           "type": "project_page",
           "url": "https://www.weco.ai/blog/first-evidence-of-recursive-self-improvement"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2609.26457v1"
         }
       ],
       "mechanism_interpretation": "Search and memory rewrites improve the inner research agent under a fixed main outer proposer.",
@@ -614,6 +646,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2610.12176"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2610.12176v1"
         }
       ],
       "mechanism_interpretation": "Workflow-conditioned trajectories train shared weights used in solving, proposing and judging.",
@@ -663,6 +699,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2510.21614"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2510.21614v1"
         }
       ],
       "mechanism_interpretation": "Descendant-informed allocation estimates future branch value instead of current score alone.",

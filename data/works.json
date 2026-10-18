@@ -240,11 +240,15 @@
       ],
       "evidence_status": "reported",
       "audit_status": "pending",
-      "central_limit": "Three training iterations and better reward provision are author-reported; broad common-target improvement and independent replication remain to be audited.",
+      "central_limit": "实际新题由固定 Llama 2-Chat 70B 生成；有人类种子、外部评审和早停。不证明无外部信息或无限递归增长。 规模核对：Llama 2 70B；两轮偏好集分别 3,964 / 6,942 对；256 题成对比较与 805 题 AlpacaEval 2。",
       "sources": [
         {
           "type": "paper",
           "url": "https://proceedings.mlr.press/v235/yuan24d.html"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2401.10020v1"
         }
       ]
     },
@@ -360,6 +364,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2505.22954"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2505.22954v3"
         }
       ]
     },
@@ -436,7 +444,7 @@
       ],
       "evidence_status": "reported",
       "audit_status": "in_progress",
-      "central_limit": "Repeated generations, broad transfer, retention, and improved update construction remain open.",
+      "central_limit": "小规模且筛选的 ARC 结果不能外推一般智能；旧编辑奖励对新学习者可能失效。 规模核对：知识吸收为 Qwen2.5-7B；ARC 为 Llama-3.2-1B，筛选后 11 个训练 / 8 个评测任务。",
       "sources": [
         {
           "type": "repository",
@@ -445,6 +453,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2506.10943"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2506.10943v1"
         }
       ]
     },
@@ -469,6 +481,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2603.19461"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2603.19461v1"
         }
       ]
     },
@@ -486,6 +502,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2605.30621"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2605.30621v1"
         }
       ]
     },
@@ -546,6 +566,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2607.12227"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2607.12227v4"
         }
       ]
     },
@@ -701,6 +725,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2609.24972"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2609.24972v1"
         }
       ]
     },
@@ -749,6 +777,10 @@
         {
           "type": "project_page",
           "url": "https://www.weco.ai/blog/first-evidence-of-recursive-self-improvement"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2609.26457v1"
         }
       ]
     },
@@ -764,7 +796,7 @@
       ],
       "evidence_status": "reported",
       "audit_status": "in_progress",
-      "central_limit": "Model and system contributions, scale transfer, and repeated recursive gain require independent component crossing.",
+      "central_limit": "§8 明确：主要改外部 ML 解法，演化系统本身基本固定；训练模型加工程化 harness 不等于自治协同 RSI。 规模核对：35B 主模型；MLE-Bench Lite 每题 12 小时、单 RTX 4090 沙箱限 12 GB；不含远程模型服务总算力。",
       "sources": [
         {
           "type": "repository",
@@ -801,6 +833,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2610.12176"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2610.12176v1"
         }
       ]
     },
@@ -867,6 +903,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2510.21614"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2510.21614v1"
         }
       ]
     },
@@ -1546,7 +1586,7 @@
       ],
       "evidence_status": "reported",
       "audit_status": "in_progress",
-      "central_limit": "零人工 QA 训练样本不等于零外部知识；仍依赖预训练和搜索引擎。",
+      "central_limit": "无人工训练数据不等于无外部信息；题目真实性、难度和多样性仍是限制。 规模核对：Qwen2.5-3B / 7B Instruct；出题者与求解者迭代训练，检索提供外部信息。",
       "sources": [
         {
           "type": "paper",
@@ -1596,7 +1636,7 @@
       ],
       "evidence_status": "reported",
       "audit_status": "in_progress",
-      "central_limit": "环境变化并非任意世界创造；GUI 部分依赖预建扰动及其验证器。",
+      "central_limit": "环境变化受预建任务与验证器约束；不能据此宣称任意世界可自我生成真值。 规模核对：已读策略为 7B / 8B，奖励模型为 8B / 14B，任务改写器为 4B；32B / 72B 出现在评价角色，不能作为训练规模。",
       "sources": [
         {
           "type": "paper",
@@ -1701,7 +1741,7 @@
       ],
       "evidence_status": "reported",
       "audit_status": "in_progress",
-      "central_limit": "基础训练代理权重固定且昂贵动作有人类把关；不支持完全无人递归。",
+      "central_limit": "自主流程不等于完全无人参与，也不证明训练代理权重或研发能力递归增长。 规模核对：SWE 训练对象明确为 4B / 9B；Math/Coding 的参数量本轮未核准。训练代理为冻结 Sonnet 4.6，不能当作被训练模型。",
       "sources": [
         {
           "type": "paper",
@@ -2013,7 +2053,7 @@
       ],
       "evidence_status": "reported",
       "audit_status": "in_progress",
-      "central_limit": "整轨迹模仿在已进化 harness 上退化；局部纠正平均增益有限，不是普遍最优。",
+      "central_limit": "主要结果支持一次 harness 演化后的权重适配；多轮闭环是可接续方案，已读结果未展示长期反复迭代。完整轨迹模仿有明显退化。 规模核对：主实验 Qwen3-Coder-30B-A3B（总 30B / 激活 3B），LoRA SFT；Gemma-4-26B-A4B 为 <27B 补充实验，7 个企业任务。",
       "sources": [
         {
           "type": "paper",

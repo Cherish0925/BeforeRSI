@@ -1,41 +1,33 @@
-# RSI 核心知识图与阅读路径
+# 三层研究地图与证据路径
 
-当前主图以 [中文研究地图](RESEARCH_ATLAS.md) 为入口，逐项资料见 [核心卡片](research/atlas/core-cards.md)。本次将主题相关性与研究价值判断分开；不再把完整目录中的候选一并放入主图。
+入口见 [中文研究地图](RESEARCH_ATLAS.md)；交互阅读见 [HTML](research/atlas/index.html)。
 
-![核心知识树](assets/atlas/knowledge-tree.png)
+![三层研究地图](assets/atlas/knowledge-tree.png)
 
-## 七个机制问题
+| 主线 | 按什么归类 | 当前主图 |
+|---|---|---:|
+| Harness | 权重之外的机制与持久状态实际更新 | 8 |
+| Model | 参数化组件更新，后继参与反馈/学习 | 2 |
+| Model × Harness | 两者均更新；另判一次适配与多轮回流 | 2 |
 
-| 分支 | 要解释的问题 |
-|---|---|
-| 改进器与研发流程自修改 | 谁产生改动；后继是否更会继续研发？ |
-| 学习更新与训练过程 | 哪种干预使学习者在实际训练后更好？ |
-| 课程、技能与环境共演 | 新信息从何而来，下一轮任务分布如何形成？ |
-| 评价器、奖励与对手共演 | 反馈为何可信，代际分数如何保持可比？ |
-| 模型与 harness 匹配 | 外部能力如何内化；为何可能负迁移？ |
-| 可复用软件与成本机制 | 哪些修改跨任务保留，研发代价能否摊销？ |
-| 比较、反例与形式边界 | 哪个观察支持哪一层结论？ |
+Model / 混合主图要求实际训练目标总参数 ≥27B；大教师和评审不替代该门槛。三分法是相对于系统边界的对象划分，不能证明任务增益或 RSI 成立。
 
-![反馈与继承](assets/atlas/feedback-map.png)
+## 各层之下如何展开
+
+Harness 按信息与记忆、工具与行动、组织与搜索、学习与研发、评价与选择、执行与资源六类功能展开。Model 分别记录训练角色、阶段、学习信号、算法、数据/时间与继承。混合追踪 H→M 与 M→H 是否实际发生。
+
+角色、文件载体、算法和时间尺度不能混作互斥的一级类别。参数化评价器在 Model；评价代码在 Harness。详见 [分类原理](research/atlas/classification.md)。
+
+![对象与反馈](assets/atlas/feedback-map.png)
 
 ## 图的语义
 
-- `curated_membership`：本项目将限定贡献归入机制分支，不表示历史传承。
-- `explicit_extension`：原文明确扩展先行工作；当前记录 DGM → HyperAgents。
-- `explicit_comparison`：原文明示对照；当前记录 DGM → HGM，不声称代码直接继承。
-- `analytical_comparison`：我们的比较阅读关系，不表示已核实引用。
+`data/knowledge-graph.json` v3 只含三个主线概念和 12 个主图工作。`route_membership` 是对象归类，不表示论文引用。原文明示扩展/比较只保留两端均在主图的关系。完整关系及其来源继续保留于 quality-review；完整书目与参考卡片不删除。
 
-[data/knowledge-graph.json](data/knowledge-graph.json) 只含 23 项核心工作与 7 个机制节点。
-关系的来源和定位见 [data/quality-review.json](data/quality-review.json)；整合卡片和完整目录见 [data/research-atlas.json](data/research-atlas.json)。
+24 项贡献审查与 12 项主图资格分开，质量、规模、相关性与闭环是不同门槛。18 个功能/反馈研究位置由分析框架提出，已审实例与候选关联分开显示；“本次未确认”不代表全球无人研究。
 
-## 历史与全目录放在哪里
+## 理论和路线的实际约束
 
-16 项历史与机制参考在离线地图的独立页中按年份排列；时间先后不是因果传承。完整 123 项参考、所有候选及来源链接在 [参考索引](research/atlas/references.md)。两者均不充作主图中已确认的当代 RSI 成果。
+对象分类并不解释为何进步。需要辨认信息、学习、选择、继承和失配，区分内部评分与外部锚点，并核算研发、训练、部署和评价成本。固定目标初态比较父代与后继改进者，才能判断改进能力是否提高。
 
-阅读顺序可从 SEAL / DERL 的学习价值开始，接到 DGM / HGM / HyperAgents 的改进与谱系，再读 AIDE² 的后继接管比较；最后用 MASS、on-policy co-evolution 和 Rethinking Evaluation 检验迁移、代价与负结果。
-
-## 对模型的要求
-
-M/H/D 记录工件；解释必须指明信息、学习、选择和继承发生在哪里。改进者是系统承担的角色，不必是独立模块。任务、评价、资源和人的参与均需显式声明。系统分数、改进能力与多代继续价值是不同量。
-
-通用表示尚不是普适预测。主图为理论提出具体约束，不证明所有工作已经被统一解释；详见 [THEORY.md](THEORY.md)、[MECHANISMS.md](MECHANISMS.md) 与 [研究计划](PROGRAM.md)。
+统一表示尚不是统一预测。详见 [THEORY.md](THEORY.md) 与 [MECHANISMS.md](MECHANISMS.md)。

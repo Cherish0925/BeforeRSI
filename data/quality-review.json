@@ -1,7 +1,7 @@
 {
   "updated": "2026-10-18",
-  "version": "1.0",
-  "status": "claim-level curated map; incomplete field coverage; not a whole-paper quality certification",
+  "version": "2.0.0",
+  "status": "24 项限定命题有研究卡片；是否进入三层主图另按路线、闭环边界及 ≥27B 规模筛选。未宣称完整精读、独立复现或穷尽领域。",
   "criteria": [
     "原始方法/关键对照或完整定义有可定位依据；仅摘要不进入核心图。",
     "有可明确陈述的机制差异、可靠反例、形式边界或真实研发用途，能够改变研究判断。",
@@ -146,7 +146,7 @@
       "distinct_contribution": "把训练的操作与部署时实际执行的研发动作对齐，并保留可执行反馈与搜索记忆。",
       "evidence": "报告固定框架换模型、固定模型换框架及外部任务迁移；原目录以 OpenRSI 作入口名。",
       "scale": "35B 主模型；MLE-Bench Lite 每题 12 小时、单 RTX 4090 沙箱限 12 GB；不含远程模型服务总算力。",
-      "limit": "训练与搜索组合有收益，不等于后继反复重新训练自身已被证明。",
+      "limit": "§8 明确：主要改外部 ML 解法，演化系统本身基本固定；训练模型加工程化 harness 不等于自治协同 RSI。",
       "insight": "优先研究可复用的研发操作；模型服务、目标训练和搜索成本必须分账。",
       "source_location": "§3–6，Appendix B / E；本轮核对标题与系统名",
       "source_url": "https://arxiv.org/html/2607.28568v1",
@@ -163,7 +163,7 @@
       "principle": "模型产生训练数据或更新配置，执行内层学习后，用学习者的效果训练生成策略。",
       "distinct_contribution": "评价对象从答案质量转为“这项自编辑使当前学习者怎样改变”。",
       "evidence": "比较未训练的自编辑和学习后的自编辑；奖励随学习者变化，文中采用 on-policy 更新。",
-      "scale": "知识吸收与 ARC；ARC 用 Llama-3.2-1B，筛选后仅 11 个训练 / 8 个评测任务。",
+      "scale": "知识吸收为 Qwen2.5-7B；ARC 为 Llama-3.2-1B，筛选后 11 个训练 / 8 个评测任务。",
       "limit": "小规模且筛选的 ARC 结果不能外推一般智能；旧编辑奖励对新学习者可能失效。",
       "insight": "保留这一学习价值原理；不以小模型实验支撑大规模泛化。",
       "source_location": "§3；§4 few-shot setup；Appendix A",
@@ -199,7 +199,7 @@
       "principle": "训练代理观察实验，修改训练信号、流程与技能，再推动策略训练。",
       "distinct_contribution": "把训练侧 harness 纳入演化对象，拓宽仅改推理提示的视野。",
       "evidence": "方法描述含版本、记忆、技能和训练控制；本卡纳入工程设计命题，未认定每个组件的因果增益。",
-      "scale": "训练代理基座固定为 Sonnet 4.6；有人类启动与昂贵动作把关；总 GPU 成本待统一提取。",
+      "scale": "SWE 训练对象明确为 4B / 9B；Math/Coding 的参数量本轮未核准。训练代理为冻结 Sonnet 4.6，不能当作被训练模型。",
       "limit": "自主流程不等于完全无人参与，也不证明训练代理权重或研发能力递归增长。",
       "insight": "系统边界必须涵盖训练调度、诊断和工具；人工输入也要计入。",
       "source_location": "§3.2–3.5：可修改边界、训练操作和人类权限",
@@ -235,7 +235,7 @@
       "principle": "搜索增强的出题者与求解者共同训练，求解反馈改变后续题目。",
       "distinct_contribution": "课程分布由系统状态驱动；外部搜索提供超出既有训练题库的信息。",
       "evidence": "已核对耦合目标和外部检索依赖；完整资源归一化与复现仍待完成。",
-      "scale": "检索与推理任务；Meta / UIUC；本卡未独立提取完整 GPU 总量。",
+      "scale": "Qwen2.5-3B / 7B Instruct；出题者与求解者迭代训练，检索提供外部信息。",
       "limit": "无人工训练数据不等于无外部信息；题目真实性、难度和多样性仍是限制。",
       "insight": "课程是动态变量；必须注明新信息来自哪里以及检索成本。",
       "source_location": "§3.1 设置与学习目标；方法与实验概述",
@@ -271,7 +271,7 @@
       "principle": "策略、奖励模型与环境任务动态变化，互相影响训练。",
       "distinct_contribution": "把策略学习之外的反馈与环境配置一起放入优化过程。",
       "evidence": "给出组件比较和 ID/OOD 设置；GUI 实验仍依赖预建可校验任务及扰动。",
-      "scale": "已读 GUI 设置含 47 个原始任务及扰动；不同模型/任务设置不能折成一个“规模”。",
+      "scale": "已读策略为 7B / 8B，奖励模型为 8B / 14B，任务改写器为 4B；32B / 72B 出现在评价角色，不能作为训练规模。",
       "limit": "环境变化受预建任务与验证器约束；不能据此宣称任意世界可自我生成真值。",
       "insight": "必须区分真实环境、模拟环境、环境包装与目标分布改变。",
       "source_location": "§3.1–3.2 与组件比较",
@@ -361,8 +361,8 @@
       "principle": "用当前学习者真实访问的状态做局部纠正，替代直接复制强教师整段轨迹。",
       "distinct_contribution": "明确暴露强教师与弱学习者、进化 harness 之间的分布和能力不匹配。",
       "evidence": "Qwen 在进化 harness 下均值 78.0%；整轨迹模仿 63.1%；局部纠正 79.7%。",
-      "scale": "7 个企业任务，Qwen3-Coder-30B-A3B 等；LoRA SFT 用 H100/H200，3 次评测。",
-      "limit": "小任务集合和有限基座；纠正优势未证明对所有模型、训练规模成立。",
+      "scale": "主实验 Qwen3-Coder-30B-A3B（总 30B / 激活 3B），LoRA SFT；Gemma-4-26B-A4B 为 <27B 补充实验，7 个企业任务。",
+      "limit": "主要结果支持一次 harness 演化后的权重适配；多轮闭环是可接续方案，已读结果未展示长期反复迭代。完整轨迹模仿有明显退化。",
       "insight": "高质量执行轨迹未必是高价值训练数据；联合更新不能假设收益相加。",
       "source_location": "§3.1–3.4，Tables 1–3",
       "source_url": "https://arxiv.org/html/2609.09134",
@@ -479,6 +479,24 @@
       "reading_depth": "selected_methods_and_evidence",
       "admission": "core",
       "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证"
+    },
+    {
+      "id": "self-rewarding-lm",
+      "family": "feedback",
+      "short": "Self-Rewarding LM",
+      "principle": "同一 70B 模型产生回答并评分；每轮构造偏好对，以 DPO 更新下一代，再由下一代生成回答与偏好。",
+      "distinct_contribution": "把回答者与奖励者放进同一参数继承链；主要贡献在学习信号及其迭代，而非修改 agent 软件。",
+      "evidence": "核对 §2–3：M1 为种子 SFT，M2/M3 为两次 DPO；另评指令跟随与奖励排序，并比较仅正例 SFT。",
+      "scale": "Llama 2 70B；两轮偏好集分别 3,964 / 6,942 对；256 题成对比较与 805 题 AlpacaEval 2。",
+      "limit": "实际新题由固定 Llama 2-Chat 70B 生成；有人类种子、外部评审和早停。不证明无外部信息或无限递归增长。",
+      "insight": "区分轮间新数据与轮内固定数据优化；评价能力提高仍须以独立目标检验。",
+      "source_location": "§2.1–2.4，§3.1–3.2；特别是 §3.1.3 的固定出题模型。",
+      "source_url": "https://arxiv.org/html/2401.10020v1",
+      "contribution_kind": "learning_signal",
+      "institutions": "Meta / NYU",
+      "reading_depth": "selected_methods_and_evidence",
+      "admission": "core",
+      "judgment": "方法、规模和两次参数回流已定位；限定纳入自奖励的迭代 DPO 机制。"
     }
   ],
   "decisions": [
@@ -534,8 +552,8 @@
     },
     {
       "id": "self-rewarding-lm",
-      "admission": "pending",
-      "reason": "尚未完成当前质量门槛所需的差异性、关键对照、资源与泛化联合审查；不进入核心图。"
+      "admission": "core",
+      "reason": "方法、规模和两次参数回流已定位；限定纳入自奖励的迭代 DPO 机制。"
     },
     {
       "id": "godel-agent",

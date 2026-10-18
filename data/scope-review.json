@@ -145,7 +145,7 @@
       "scope": "direct",
       "closure_assessment": "self_reuse",
       "operation": "Self-generated preferences reweight the training target; learning changes both answer and judgment behavior.",
-      "boundary": "Three training iterations and better reward provision are author-reported; broad common-target improvement and independent replication remain to be audited.",
+      "boundary": "实际新题由固定 Llama 2-Chat 70B 生成；有人类种子、外部评审和早停。不证明无外部信息或无限递归增长。 规模核对：Llama 2 70B；两轮偏好集分别 3,964 / 6,942 对；256 题成对比较与 805 题 AlpacaEval 2。",
       "reading_scope": "prior corpus source check; mechanism interpretation, not a fresh full-method audit",
       "primary_source": "https://proceedings.mlr.press/v235/yuan24d.html",
       "provenance": "previous corpus; reclassified, not all freshly re-read"
@@ -253,7 +253,7 @@
       "scope": "direct",
       "closure_assessment": "self_reuse",
       "operation": "Self-edit generation is trained on utility after the learner consumes that edit.",
-      "boundary": "Repeated generations, broad transfer, retention, and improved update construction remain open.",
+      "boundary": "小规模且筛选的 ARC 结果不能外推一般智能；旧编辑奖励对新学习者可能失效。 规模核对：知识吸收为 Qwen2.5-7B；ARC 为 Llama-3.2-1B，筛选后 11 个训练 / 8 个评测任务。",
       "reading_scope": "primary methods/results read in the mechanism passes",
       "primary_source": "https://github.com/Continual-Intelligence/SEAL",
       "provenance": "previous corpus; reclassified, not all freshly re-read"
@@ -433,7 +433,7 @@
       "scope": "direct",
       "closure_assessment": "coevolution",
       "operation": "Execution-grounded training improves shared program-editing operators used by long-horizon search.",
-      "boundary": "Model and system contributions, scale transfer, and repeated recursive gain require independent component crossing.",
+      "boundary": "§8 明确：主要改外部 ML 解法，演化系统本身基本固定；训练模型加工程化 harness 不等于自治协同 RSI。 规模核对：35B 主模型；MLE-Bench Lite 每题 12 小时、单 RTX 4090 沙箱限 12 GB；不含远程模型服务总算力。",
       "reading_scope": "primary methods/results read in the mechanism passes",
       "primary_source": "https://github.com/FrontisAI/OpenRSI",
       "provenance": "previous corpus; reclassified, not all freshly re-read"
@@ -877,7 +877,7 @@
       "scope": "direct",
       "closure_assessment": "coevolution",
       "operation": "出题者按当前求解者能力生成问题，双方交替学习。",
-      "boundary": "零人工 QA 训练样本不等于零外部知识；仍依赖预训练和搜索引擎。",
+      "boundary": "无人工训练数据不等于无外部信息；题目真实性、难度和多样性仍是限制。 规模核对：Qwen2.5-3B / 7B Instruct；出题者与求解者迭代训练，检索提供外部信息。",
       "reading_scope": "Section 3.1 setup/objectives and external search dependency; author affiliations.",
       "primary_source": "https://arxiv.org/abs/2601.07055",
       "provenance": "2026-10-18 expansion"
@@ -901,7 +901,7 @@
       "scope": "direct",
       "closure_assessment": "coevolution",
       "operation": "策略、奖励模型和任务难度通过反馈共同调整。",
-      "boundary": "环境变化并非任意世界创造；GUI 部分依赖预建扰动及其验证器。",
+      "boundary": "环境变化受预建任务与验证器约束；不能据此宣称任意世界可自我生成真值。 规模核对：已读策略为 7B / 8B，奖励模型为 8B / 14B，任务改写器为 4B；32B / 72B 出现在评价角色，不能作为训练规模。",
       "reading_scope": "Sections 3.1–3.2: models, ID/OOD splits, task adaptation and component comparisons.",
       "primary_source": "https://arxiv.org/abs/2602.02488",
       "provenance": "2026-10-18 expansion"
@@ -961,7 +961,7 @@
       "scope": "direct",
       "closure_assessment": "self_reuse",
       "operation": "训练代理修改诊断、训练信号和流程，保留技能供后续训练版本使用。",
-      "boundary": "基础训练代理权重固定且昂贵动作有人类把关；不支持完全无人递归。",
+      "boundary": "自主流程不等于完全无人参与，也不证明训练代理权重或研发能力递归增长。 规模核对：SWE 训练对象明确为 4B / 9B；Math/Coding 的参数量本轮未核准。训练代理为冻结 Sonnet 4.6，不能当作被训练模型。",
       "reading_scope": "Sections 3.2–3.5: training/harness/skill updates, fixed trainer model and human-gated actions.",
       "primary_source": "https://arxiv.org/abs/2606.03108",
       "provenance": "2026-10-18 expansion"
@@ -1141,7 +1141,7 @@
       "scope": "direct",
       "closure_assessment": "coevolution",
       "operation": "先适配 harness，再在学生自身轨迹的失败位置提供专家局部纠正。",
-      "boundary": "整轨迹模仿在已进化 harness 上退化；局部纠正平均增益有限，不是普遍最优。",
+      "boundary": "主要结果支持一次 harness 演化后的权重适配；多轮闭环是可接续方案，已读结果未展示长期反复迭代。完整轨迹模仿有明显退化。 规模核对：主实验 Qwen3-Coder-30B-A3B（总 30B / 激活 3B），LoRA SFT；Gemma-4-26B-A4B 为 <27B 补充实验，7 个企业任务。",
       "reading_scope": "Sections 3.1–3.4, Tables 1–3: task splits, imitation regression, on-policy correction and model-harness interaction.",
       "primary_source": "https://arxiv.org/abs/2609.09134",
       "provenance": "2026-10-18 expansion"

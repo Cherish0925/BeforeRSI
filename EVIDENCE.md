@@ -427,30 +427,25 @@ Read RSI_SCOPE.md and research/scope-catalog.md before interpreting the corpus c
 | [SEED: Self-Evolving On-Policy Distillation for Agentic Reinforcement Learning](https://arxiv.org/abs/2607.14777) | 当前策略同时收集轨迹和提炼事后技能，技能诱导信号训练同一策略。 | 文本与视觉 agent 任务；联合结果 RL 和 token 级自蒸馏。 | 直接自进化研究：训练期事后信息在部署不可见；内化效果与信息泄漏边界需明确。 |
 | [RL Tango: Reinforcing Generator and Verifier Together for Language Reasoning](https://arxiv.org/abs/2505.15034) | 生成者与过程验证者交替用 RL 训练，外部结果正确性监督验证者。 | 7B/8B，五数学及四域外任务，另测 ProcessBench。 | 直接自进化研究：不是完全无标签自证；固定结果验证构成外部锚点。 |
 
+## 2026-10-18 — Three-route structure and trained-target scale audit
 
-## 2026-10-18 — Claim-level curation and illustrated atlas
+This pass changes the atlas information architecture, not the claimed depth of every catalog entry. The new [classification note](research/atlas/classification.md) separates changed objects, functional roles, learning mechanisms, temporal regime, return paths and evidence. [Layer records](data/layer-review.json) hold the source locators and per-experiment models.
 
-The [research atlas](RESEARCH_ATLAS.md) separates 23 admitted contributions from
-78 pending reviews, 16 historical/mechanistic references and 6 background
-entries. The latter three groups do not enter the canonical core graph.
-Admission is an editorial research judgment at the claim level, not independent
-replication or certification of every claim in a paper. No named low-value
-verdict was completed in this pass; unknown quality remains pending.
+The main view now contains **12 works: 8 Harness, 2 Model, 2 mixed**. There are **24 reviewed claim cards**, including references outside the new main scope; 77 entries remain pending, with 16 historical and 6 background entries. Main-view counts are not field prevalence or completeness estimates. The mixed route explicitly distinguishes one-pass joint adaptation from demonstrated repeated cycles.
 
-Further primary-source reading checked:
+| Primary source and inspected location | Source fact | Atlas decision / inference |
+|---|---|---|
+| [Self-Rewarding LM §2–3](https://arxiv.org/html/2401.10020v1) | Llama 2 70B; seed SFT then two DPO updates; successive models generate responses and preferences. Actual prompt generation uses a fixed Llama 2-Chat 70B. | Added a claim card from the existing bibliography. Model-layer iterative preference learning, not online PPO and not autonomous prompt-generator evolution. |
+| [Self-Taught Evaluators §3.5, §4.1](https://arxiv.org/html/2408.02666v1) | 70B evaluator; current judge creates supervision, but each student is initialized again from the seed. | Model layer; teacher/data return rather than uninterrupted checkpoint inheritance. |
+| [MASS §3–4, Appendix C](https://arxiv.org/html/2610.12176v1) | Qwen3.6-27B; two workflow-evolution/SFT cycles, with model reuse across roles. | Mixed main view; SFT with refreshed trajectories, not an online-RL claim. |
+| [On-policy correction §3.1–3.4, Table 1 and model footnote](https://arxiv.org/html/2609.09134) | Qwen3-Coder 30B total / 3B active; supplementary Gemma 26B / 4B. Local expert corrections at student states are used for LoRA SFT. | Include the 30B branch; exclude 26B from the primary scale. Observed joint adaptation is not itself a demonstration of repeated coevolution. |
+| [Frontis-MA1 §8, Appendix B.2–B.3](https://arxiv.org/html/2607.28568v1) | 35B/30B SFT and RL; candidate ML solutions evolve while the evolutionary system remains largely fixed. | Scale passes but scope does not establish autonomous mixed RSI. Retain as AI4AI support. |
+| [SEAL §4 and Appendix B](https://arxiv.org/html/2506.10943v1) | Knowledge branch 7B; ARC branch 1B. | Small-model mechanism reference, outside main scope. |
+| [Dr. Zero §4.1, Table 3](https://arxiv.org/html/2601.07055v2) | 3B/7B trained proposer/solver configurations and multi-round results. | Small-model reference; a search role does not make these large trained models. |
+| [RLAnything Appendix C.1–C.2](https://arxiv.org/html/2602.02488v1) | Policy/reward configurations inspected are 7B/8B/14B; larger models occur as evaluation supervisors. | Small-model reference. Do not use 32B/72B evaluation models to satisfy the target-training gate. |
+| [EvoTrainer §3.5–3.6, Table 3](https://arxiv.org/html/2606.03108v2) | SWE targets 4B/9B; fixed Sonnet 4.6 trainer; human-gated launches/promotion. Other-domain target sizes were not verified in this pass. | No verified >=27B branch; scale-unverified reference, not an assertion that every experiment is small. |
+| [Co-Harness §3–4](https://arxiv.org/html/2607.22688v1) | 8B and 32B branches; alternating harness optimization and SFT. | 32B passes scale, but the prior contribution/causal-review gate remains pending. |
 
-- [DGM §4.2–4.4](https://arxiv.org/html/2505.22954v3) and [HyperAgents §3–4](https://arxiv.org/html/2603.19461v1): actual modification boundaries, fixed-meta/archive controls and the explicit DGM extension.
-- [HGM §2–4](https://arxiv.org/html/2510.21614v1): descendant-value selection, comparison to DGM and assumptions behind its oracle correspondence.
-- [SEAL §3–4](https://arxiv.org/html/2506.10943v1): learner-dependent update value, stale rewards, and the small curated ARC setting (11 training / 8 evaluation tasks).
-- [AIDE² §2.2 / §3.6](https://arxiv.org/html/2609.26457v1): fixed outer proposer and an inconclusive three-seed-per-arm common-target ignition comparison.
-- [Co-Harness §3–4](https://arxiv.org/html/2607.22688v1): two rounds, two scales, three 30-problem benchmarks; listed baselines do not isolate standalone SFT from the co-evolution contribution. It stays pending for core causal interpretation, rather than receiving a low-quality verdict.
-- [MASS Appendix C.5 Table 7](https://arxiv.org/html/2610.12176v1): research-task improvements coexist with coding-benchmark regressions.
-- [ModularRSI §6.3–6.4](https://arxiv.org/html/2609.14857v2): module integration and separate contrastive-analysis/function-management/validation ablations.
-- [Rethinking Harness Evaluation v4 §3–5](https://arxiv.org/html/2607.12227v4): terminal-task failures and positive long-horizon game adaptation. The latter is task-specific adaptation, not demonstrated held-out task transfer. Budgets use distinct units across settings.
-- [Frontis-MA1 / OpenMLE](https://arxiv.org/html/2607.28568v1): checked source title, operator training/search interface and resource convention. The existing `openrsi` ID remains stable, while the display name now records the primary title/system and old catalog alias. Sandbox GPU allocation omits remote model-serving cost.
+Harness-role contributions retain their earlier primary-source locators. RQGM updates agent/evaluator code, whereas Self-Taught Evaluators trains evaluator weights: the word “evaluator” cannot determine the layer. The six Harness functions and eighteen research-space positions are this project's analytical organization, not author-claimed categories or proofs of worldwide research gaps.
 
-Every admitted work now has a source locator, explicit contribution, evidence,
-scale/scope, limiting condition and implication for our route. Original full
-bibliography entries remain retrievable. Full-paper/appendix review and broad
-quality screening remain incomplete; the graph does not claim exhaustive field
-coverage or a universal explanatory/predictive theory.
+The >=27B cutoff is a user-selected main-view scope. Total and active parameters are distinct; a LoRA-trained 30B model does not mean 30B trainable adapter parameters or 30B dense compute. Small models are not added together, and frozen teacher/evaluator/API models do not satisfy the actual-target gate. Source facts remain author-reported and were not independently reproduced.

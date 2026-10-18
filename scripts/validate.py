@@ -229,16 +229,60 @@ def validate_curated_atlas(work_ids: set[str]) -> None:
             validate_url(relation.get("source_url"), "explicit relation")
             if not relation.get("location"):
                 fail("explicit relationship lacks a primary-source locator")
+    layer = load(ROOT / "data/layer-review.json")
+    layers = layer["works"]
+    if len(layers) != len(work_ids) or {r["id"] for r in layers} != work_ids:
+        fail("layer decisions must cover every work exactly once")
+    route_ids = {r["id"] for r in layer["routes"]}
+    if route_ids != {"harness", "model", "hybrid"}:
+        fail("the primary atlas must have exactly three routes")
+    main = {r["id"] for r in layers if r["placement"] == "main"}
+    for r in layers:
+        if r["placement"] not in layer["placement_labels"] or not r["why"].strip():
+            fail(f"{r['id']}: missing placement decision")
+        if r["route"] not in route_ids | {"unresolved", "crosscut"}:
+            fail(f"{r['id']}: invalid route")
+        if any(k not in layer["contribution_axes"] for k in r["focus"]) or len(r["focus"]) > 3:
+            fail(f"{r['id']}: invalid contribution tags")
+        if r["audit"] == "selected_sections":
+            validate_url(r["source_url"], r["id"])
+            if not r["source_location"] or not r["return_path"] or not r["changed"]:
+                fail(f"{r['id']}: missing update/return-path locator")
+        if r["placement"] == "main":
+            if r["id"] not in core or r["route"] not in route_ids or r["audit"] != "selected_sections":
+                fail(f"{r['id']}: unreviewed or invalid main-view work")
+            if r["route"] in {"model", "hybrid"}:
+                eligible = [m for m in r["models"] if m["total_b"] is not None and m["total_b"] >= layer["minimum_total_parameters_b"] and m["role"] == "实际训练对象"]
+                if not eligible or r["scale_status"] != "eligible":
+                    fail(f"{r['id']}: no verified >=27B trained target")
+        if r["scale_status"] == "below" and any(m["total_b"] is None or m["total_b"] >= layer["minimum_total_parameters_b"] for m in r["models"]):
+            fail(f"{r['id']}: invalid below-threshold label")
+    for slot in layer["spaces"]:
+        if slot["route"] not in route_ids or not set(slot["evidence_ids"]) <= work_ids:
+            fail("invalid research-space association")
     graph = load(GRAPH_PATH)
-    if {r["work_id"] for r in graph["work_bindings"]} != core:
-        fail("canonical graph must bind exactly the admitted works")
-    if {r["id"] for r in graph["nodes"] if r["type"] == "work"} != core:
-        fail("canonical graph includes unreviewed work nodes")
+    if {r["work_id"] for r in graph["work_bindings"]} != main:
+        fail("canonical graph must bind exactly the main-view works")
+    if {r["id"] for r in graph["nodes"] if r["type"] == "work"} != main:
+        fail("out-of-scope work leaked into main graph")
+    if {r["id"] for r in graph["nodes"] if r["type"] == "concept"} != {"route-"+k for k in route_ids}:
+        fail("main graph must use three route concepts")
     atlas = load(ROOT / "data/research-atlas.json")
     counts = dict(Counter(r["admission"] for r in decisions))
     counts.setdefault("low_value", 0)
     if atlas["counts"] != counts or {r["id"] for r in atlas["works"]} != work_ids:
         fail("generated atlas is stale or incomplete")
+    if {r["id"] for r in atlas["works"] if r["main_view"]} != main:
+        fail("atlas main-view membership is stale")
+    if atlas["main_count"] != len(main) or atlas["reviewed_count"] != len(core):
+        fail("atlas headline counts disagree")
+    if atlas["placement_counts"] != dict(Counter(r["placement"] for r in layers)):
+        fail("placement counts disagree")
+    if atlas["route_counts"] != {k: sum(r["route"] == k and r["placement"] == "main" for r in layers) for k in route_ids}:
+        fail("route counts disagree")
+    source_layers = {r["id"]:r for r in layers}
+    if any(r["layer"] != source_layers[r["id"]] for r in atlas["works"]):
+        fail("generated layer record differs from reviewed source")
     page = (ROOT / "research/atlas/index.html").read_text(encoding="utf-8")
     embedded = re.search(r'<script id="atlas-data" type="application/json">(.*?)</script>', page, re.S)
     if not embedded or json.loads(embedded.group(1)) != atlas:

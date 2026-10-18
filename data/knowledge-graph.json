@@ -1,41 +1,26 @@
 {
-  "schema_version": "2.0.0",
+  "schema_version": "3.0.0",
   "updated": "2026-10-18",
   "nodes": [
     {
-      "id": "mechanism-research",
+      "id": "route-harness",
       "type": "concept",
-      "label": "改进器与研发流程自修改"
+      "label": "Harness"
     },
     {
-      "id": "mechanism-training",
+      "id": "route-model",
       "type": "concept",
-      "label": "学习更新与训练过程"
+      "label": "Model"
     },
     {
-      "id": "mechanism-curriculum",
+      "id": "route-hybrid",
       "type": "concept",
-      "label": "课程、技能与环境共演"
+      "label": "Model × Harness"
     },
     {
-      "id": "mechanism-feedback",
-      "type": "concept",
-      "label": "评价器、奖励与对手共演"
-    },
-    {
-      "id": "mechanism-coupling",
-      "type": "concept",
-      "label": "模型与 harness 的匹配"
-    },
-    {
-      "id": "mechanism-harness",
-      "type": "concept",
-      "label": "可复用软件与成本机制"
-    },
-    {
-      "id": "mechanism-assessment",
-      "type": "concept",
-      "label": "比较、反例与形式边界"
+      "id": "self-rewarding-lm",
+      "type": "work",
+      "label": "Self-Rewarding LM"
     },
     {
       "id": "dgm",
@@ -43,84 +28,9 @@
       "label": "DGM"
     },
     {
-      "id": "hgm",
-      "type": "work",
-      "label": "HGM"
-    },
-    {
       "id": "hyperagents",
       "type": "work",
       "label": "HyperAgents"
-    },
-    {
-      "id": "aide2",
-      "type": "work",
-      "label": "AIDE²"
-    },
-    {
-      "id": "openrsi",
-      "type": "work",
-      "label": "Frontis-MA1 / OpenMLE"
-    },
-    {
-      "id": "seal",
-      "type": "work",
-      "label": "SEAL"
-    },
-    {
-      "id": "derl",
-      "type": "work",
-      "label": "DERL"
-    },
-    {
-      "id": "evotrainer",
-      "type": "work",
-      "label": "EvoTrainer"
-    },
-    {
-      "id": "automated-alignment-researchers",
-      "type": "work",
-      "label": "Automated Alignment Researchers"
-    },
-    {
-      "id": "dr-zero",
-      "type": "work",
-      "label": "Dr. Zero"
-    },
-    {
-      "id": "skill-self-play",
-      "type": "work",
-      "label": "Skill Self-Play"
-    },
-    {
-      "id": "rlanything",
-      "type": "work",
-      "label": "RLAnything"
-    },
-    {
-      "id": "self-taught-evaluators",
-      "type": "work",
-      "label": "Self-Taught Evaluators"
-    },
-    {
-      "id": "gpt-red",
-      "type": "work",
-      "label": "GPT-Red"
-    },
-    {
-      "id": "red-queen-godel-machine",
-      "type": "work",
-      "label": "Red Queen Gödel Machine"
-    },
-    {
-      "id": "mass",
-      "type": "work",
-      "label": "MASS"
-    },
-    {
-      "id": "on-policy-harness-coevolution",
-      "type": "work",
-      "label": "On-policy M–H Co-evolution"
     },
     {
       "id": "rrsi",
@@ -128,9 +38,24 @@
       "label": "RRSI"
     },
     {
-      "id": "modular-rsi",
+      "id": "aide2",
       "type": "work",
-      "label": "ModularRSI"
+      "label": "AIDE²"
+    },
+    {
+      "id": "mass",
+      "type": "work",
+      "label": "MASS"
+    },
+    {
+      "id": "hgm",
+      "type": "work",
+      "label": "HGM"
+    },
+    {
+      "id": "self-taught-evaluators",
+      "type": "work",
+      "label": "Self-Taught Evaluators"
     },
     {
       "id": "sol-pi",
@@ -138,136 +63,81 @@
       "label": "SoL-Pi"
     },
     {
-      "id": "harness-updating-benefit",
+      "id": "modular-rsi",
       "type": "work",
-      "label": "Harness Updating ≠ Benefit"
+      "label": "ModularRSI"
     },
     {
-      "id": "rethink-harness-eval",
+      "id": "red-queen-godel-machine",
       "type": "work",
-      "label": "Rethinking Harness Evaluation"
+      "label": "Red Queen Gödel Machine"
     },
     {
-      "id": "generalized-agent-iteration",
+      "id": "on-policy-harness-coevolution",
       "type": "work",
-      "label": "Generalized Agent Iteration"
+      "label": "On-policy M–H Co-evolution"
     }
   ],
   "edges": [
     {
-      "source": "mechanism-research",
+      "source": "route-model",
+      "target": "self-rewarding-lm",
+      "relation": "route_membership"
+    },
+    {
+      "source": "route-harness",
       "target": "dgm",
-      "relation": "curated_membership"
+      "relation": "route_membership"
     },
     {
-      "source": "mechanism-research",
-      "target": "hgm",
-      "relation": "curated_membership"
-    },
-    {
-      "source": "mechanism-research",
+      "source": "route-harness",
       "target": "hyperagents",
-      "relation": "curated_membership"
+      "relation": "route_membership"
     },
     {
-      "source": "mechanism-research",
-      "target": "aide2",
-      "relation": "curated_membership"
-    },
-    {
-      "source": "mechanism-research",
-      "target": "openrsi",
-      "relation": "curated_membership"
-    },
-    {
-      "source": "mechanism-training",
-      "target": "seal",
-      "relation": "curated_membership"
-    },
-    {
-      "source": "mechanism-training",
-      "target": "derl",
-      "relation": "curated_membership"
-    },
-    {
-      "source": "mechanism-training",
-      "target": "evotrainer",
-      "relation": "curated_membership"
-    },
-    {
-      "source": "mechanism-training",
-      "target": "automated-alignment-researchers",
-      "relation": "curated_membership"
-    },
-    {
-      "source": "mechanism-curriculum",
-      "target": "dr-zero",
-      "relation": "curated_membership"
-    },
-    {
-      "source": "mechanism-curriculum",
-      "target": "skill-self-play",
-      "relation": "curated_membership"
-    },
-    {
-      "source": "mechanism-curriculum",
-      "target": "rlanything",
-      "relation": "curated_membership"
-    },
-    {
-      "source": "mechanism-feedback",
-      "target": "self-taught-evaluators",
-      "relation": "curated_membership"
-    },
-    {
-      "source": "mechanism-feedback",
-      "target": "gpt-red",
-      "relation": "curated_membership"
-    },
-    {
-      "source": "mechanism-feedback",
-      "target": "red-queen-godel-machine",
-      "relation": "curated_membership"
-    },
-    {
-      "source": "mechanism-coupling",
-      "target": "mass",
-      "relation": "curated_membership"
-    },
-    {
-      "source": "mechanism-coupling",
-      "target": "on-policy-harness-coevolution",
-      "relation": "curated_membership"
-    },
-    {
-      "source": "mechanism-harness",
+      "source": "route-harness",
       "target": "rrsi",
-      "relation": "curated_membership"
+      "relation": "route_membership"
     },
     {
-      "source": "mechanism-harness",
-      "target": "modular-rsi",
-      "relation": "curated_membership"
+      "source": "route-harness",
+      "target": "aide2",
+      "relation": "route_membership"
     },
     {
-      "source": "mechanism-harness",
+      "source": "route-hybrid",
+      "target": "mass",
+      "relation": "route_membership"
+    },
+    {
+      "source": "route-harness",
+      "target": "hgm",
+      "relation": "route_membership"
+    },
+    {
+      "source": "route-model",
+      "target": "self-taught-evaluators",
+      "relation": "route_membership"
+    },
+    {
+      "source": "route-harness",
       "target": "sol-pi",
-      "relation": "curated_membership"
+      "relation": "route_membership"
     },
     {
-      "source": "mechanism-assessment",
-      "target": "harness-updating-benefit",
-      "relation": "curated_membership"
+      "source": "route-harness",
+      "target": "modular-rsi",
+      "relation": "route_membership"
     },
     {
-      "source": "mechanism-assessment",
-      "target": "rethink-harness-eval",
-      "relation": "curated_membership"
+      "source": "route-harness",
+      "target": "red-queen-godel-machine",
+      "relation": "route_membership"
     },
     {
-      "source": "mechanism-assessment",
-      "target": "generalized-agent-iteration",
-      "relation": "curated_membership"
+      "source": "route-hybrid",
+      "target": "on-policy-harness-coevolution",
+      "relation": "route_membership"
     },
     {
       "source": "dgm",
@@ -278,11 +148,6 @@
       "source": "dgm",
       "target": "hgm",
       "relation": "explicit_comparison"
-    },
-    {
-      "source": "seal",
-      "target": "derl",
-      "relation": "analytical_comparison"
     },
     {
       "source": "hyperagents",
@@ -300,11 +165,6 @@
       "relation": "analytical_comparison"
     },
     {
-      "source": "rrsi",
-      "target": "rethink-harness-eval",
-      "relation": "analytical_comparison"
-    },
-    {
       "source": "sol-pi",
       "target": "aide2",
       "relation": "analytical_comparison"
@@ -312,141 +172,75 @@
   ],
   "work_bindings": [
     {
-      "work_id": "dgm",
+      "work_id": "self-rewarding-lm",
       "node_ids": [
-        "mechanism-research"
+        "route-model"
       ]
     },
     {
-      "work_id": "hgm",
+      "work_id": "dgm",
       "node_ids": [
-        "mechanism-research"
+        "route-harness"
       ]
     },
     {
       "work_id": "hyperagents",
       "node_ids": [
-        "mechanism-research"
-      ]
-    },
-    {
-      "work_id": "aide2",
-      "node_ids": [
-        "mechanism-research"
-      ]
-    },
-    {
-      "work_id": "openrsi",
-      "node_ids": [
-        "mechanism-research"
-      ]
-    },
-    {
-      "work_id": "seal",
-      "node_ids": [
-        "mechanism-training"
-      ]
-    },
-    {
-      "work_id": "derl",
-      "node_ids": [
-        "mechanism-training"
-      ]
-    },
-    {
-      "work_id": "evotrainer",
-      "node_ids": [
-        "mechanism-training"
-      ]
-    },
-    {
-      "work_id": "automated-alignment-researchers",
-      "node_ids": [
-        "mechanism-training"
-      ]
-    },
-    {
-      "work_id": "dr-zero",
-      "node_ids": [
-        "mechanism-curriculum"
-      ]
-    },
-    {
-      "work_id": "skill-self-play",
-      "node_ids": [
-        "mechanism-curriculum"
-      ]
-    },
-    {
-      "work_id": "rlanything",
-      "node_ids": [
-        "mechanism-curriculum"
-      ]
-    },
-    {
-      "work_id": "self-taught-evaluators",
-      "node_ids": [
-        "mechanism-feedback"
-      ]
-    },
-    {
-      "work_id": "gpt-red",
-      "node_ids": [
-        "mechanism-feedback"
-      ]
-    },
-    {
-      "work_id": "red-queen-godel-machine",
-      "node_ids": [
-        "mechanism-feedback"
-      ]
-    },
-    {
-      "work_id": "mass",
-      "node_ids": [
-        "mechanism-coupling"
-      ]
-    },
-    {
-      "work_id": "on-policy-harness-coevolution",
-      "node_ids": [
-        "mechanism-coupling"
+        "route-harness"
       ]
     },
     {
       "work_id": "rrsi",
       "node_ids": [
-        "mechanism-harness"
+        "route-harness"
       ]
     },
     {
-      "work_id": "modular-rsi",
+      "work_id": "aide2",
       "node_ids": [
-        "mechanism-harness"
+        "route-harness"
+      ]
+    },
+    {
+      "work_id": "mass",
+      "node_ids": [
+        "route-hybrid"
+      ]
+    },
+    {
+      "work_id": "hgm",
+      "node_ids": [
+        "route-harness"
+      ]
+    },
+    {
+      "work_id": "self-taught-evaluators",
+      "node_ids": [
+        "route-model"
       ]
     },
     {
       "work_id": "sol-pi",
       "node_ids": [
-        "mechanism-harness"
+        "route-harness"
       ]
     },
     {
-      "work_id": "harness-updating-benefit",
+      "work_id": "modular-rsi",
       "node_ids": [
-        "mechanism-assessment"
+        "route-harness"
       ]
     },
     {
-      "work_id": "rethink-harness-eval",
+      "work_id": "red-queen-godel-machine",
       "node_ids": [
-        "mechanism-assessment"
+        "route-harness"
       ]
     },
     {
-      "work_id": "generalized-agent-iteration",
+      "work_id": "on-policy-harness-coevolution",
       "node_ids": [
-        "mechanism-assessment"
+        "route-hybrid"
       ]
     }
   ]

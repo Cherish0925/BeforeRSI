@@ -1,28 +1,31 @@
-# Research atlas
+# Research atlas v2
 
-Open `index.html` locally for the complete offline catalog. No network is used until a source link is opened. The default knowledge tree includes admitted claims only; the complete bibliography is a separate view.
+Open `index.html` locally. The three primary routes are Harness, Model, and Model × Harness. The standalone HTML contains all records and needs no network until a source link is opened. Repository-relative PDF/Markdown links require the companion files.
 
 ## Sources of truth
 
 - `data/works.json`: stable work IDs and source URLs.
-- `data/scope-review.json`: topical relevance and earlier reading boundaries.
-- `data/quality-review.json`: manually curated claim cards, admission decisions and relation provenance.
-- `data/research-atlas.json`: generated joined dataset.
-- `data/knowledge-graph.json`: generated core-only graph; relation provenance is in quality-review.
+- `data/scope-review.json`: earlier topical relevance and reading limits, preserved separately.
+- `data/quality-review.json`: 24 claim reviews, contribution/admission judgments and relation provenance. `core` now means reviewed claim, not main-view eligibility.
+- `data/layer-review.json`: independent layer, scale, return-path and placement review; all 123 entries receive a disposition, unresolved entries remain unresolved. This is manually reviewed data.
+- `research/atlas/classification.md`: boundary conventions and the distinction between representation, explanation and prediction.
+- `data/research-atlas.json`: generated joined dataset, including all sources and references.
+- `data/knowledge-graph.json` v3: three route nodes and exactly the 12 eligible main-view works. Relationships are filtered to these endpoints without deleting the underlying reference records.
 
-The atlas does not infer new literature claims, paper quality or affiliations automatically. `core` admits a specified contribution, not every claim in a paper. `pending` is not a low-quality verdict. Historical references are separate from contemporary RSI results. Paper relations distinguish explicit extensions/comparisons from this project's analytical comparisons.
+Model/mixed admission uses actual trained-target total parameters >=27B; active MoE parameters and adapter training are separately disclosed. Teacher sizes cannot satisfy this gate. A mixed paper may retain only its eligible scale branch. Main-view inclusion still does not certify sustained recursive improvement; one-pass joint adaptation is explicitly labeled.
 
 ## Rebuild
-
-From the repository root, with Python, ReportLab, Pillow and a CJK-capable TrueType font:
 
 ```bash
 python scripts/build_mechanism_map.py
 python scripts/build_scope_catalog.py
 ATLAS_CJK_FONT=/absolute/path/to/chinese-font.ttf python scripts/build_research_atlas.py
 python scripts/validate.py
+node scripts/check_atlas_ui.cjs
 ```
 
-The PDF is `output/pdf/beforersi-research-atlas.pdf`. PNG/SVG diagrams are under `assets/atlas/`. The HTML template is `scripts/atlas-template.html`. It embeds all data and uses no external JavaScript, styles, fonts or data fetches. Relative PDF/Markdown links work within the repository checkout; when the HTML is downloaded alone, original-source links and all catalog interactions remain self-contained.
+Requires Python, Pillow, ReportLab and a CJK TrueType font. The builder creates the PDF, PNG/SVG figures, Markdown and offline HTML from the same evidence. It does not infer paper quality, parameter counts or novelty automatically.
 
-`schema_version: 2.0.0` of the canonical graph intentionally replaces the previous unfiltered concept-to-corpus binding. Only the 23 admitted work IDs are bound; the remaining catalog remains accessible through the bibliography. Validation prevents pending/background/low-value works from entering the core graph and checks exact HTML/data agreement.
+Validation checks complete unique dispositions, actual >=27B trained targets for Model/mixed main entries, core/scale/main separation, graph membership and exact HTML/data agreement. The 18 research-space positions are analytical design coordinates, not an exhaustive mechanism taxonomy or claims of worldwide gaps.
+
+The Node check executes the page’s actual JavaScript with a minimal DOM stub. It verifies navigation, filters and 123 work dialogs; it is not a browser rendering or responsive-layout test. The exported PDF is visually inspected separately.

@@ -1,12 +1,30 @@
 {
   "updated": "2026-10-18",
+  "version": "2.0.0",
   "counts": {
     "historical": 16,
-    "pending": 78,
-    "core": 23,
+    "pending": 77,
+    "core": 24,
     "background": 6,
     "low_value": 0
   },
+  "placement_counts": {
+    "historical": 16,
+    "pending": 77,
+    "main": 12,
+    "small": 5,
+    "crosscut": 3,
+    "adjacent": 2,
+    "background": 6,
+    "scale_unverified": 2
+  },
+  "route_counts": {
+    "harness": 8,
+    "model": 2,
+    "hybrid": 2
+  },
+  "main_count": 12,
+  "reviewed_count": 24,
   "scope_counts": {
     "theory": 3,
     "foundation": 14,
@@ -16,7 +34,7 @@
     "background": 6
   },
   "discovery_count": 567,
-  "warning": "claim-level curated map; incomplete field coverage; not a whole-paper quality certification",
+  "warning": "24 项限定命题有研究卡片；是否进入三层主图另按路线、闭环边界及 ≥27B 规模筛选。未宣称完整精读、独立复现或穷尽领域。",
   "criteria": [
     "原始方法/关键对照或完整定义有可定位依据；仅摘要不进入核心图。",
     "有可明确陈述的机制差异、可靠反例、形式边界或真实研发用途，能够改变研究判断。",
@@ -104,7 +122,18 @@
       "number": 1,
       "mechanism": "Reuse of improved design operations can increase future design yield.",
       "intervention": "Instantiate a design operation, pin its ancestor and compare continuation yield.",
-      "tasks_and_resources": "本轮未统一提取；不可据机构或模型名称推测。"
+      "tasks_and_resources": "本轮未统一提取，不能据机构或模型名称推测。",
+      "layer": {
+        "id": "good-1965",
+        "route": "unresolved",
+        "placement": "historical",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "eurisko",
@@ -137,7 +166,18 @@
       "number": 2,
       "mechanism": "Retained heuristics alter which future hypotheses are generated and pursued.",
       "intervention": "Freeze meta-heuristics while giving both arms the same discovered object-level rules.",
-      "tasks_and_resources": "本轮未统一提取；不可据机构或模型名称推测。"
+      "tasks_and_resources": "本轮未统一提取，不能据机构或模型名称推测。",
+      "layer": {
+        "id": "eurisko",
+        "route": "unresolved",
+        "placement": "historical",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "godel-machine",
@@ -170,7 +210,18 @@
       "number": 3,
       "mechanism": "A proof can authorize a change by comparing future utility, including continued proof search.",
       "intervention": "Hold utility and axioms fixed; compare rewrite availability under different proof-search allocations.",
-      "tasks_and_resources": "本轮未统一提取；不可据机构或模型名称推测。"
+      "tasks_and_resources": "本轮未统一提取，不能据机构或模型名称推测。",
+      "layer": {
+        "id": "godel-machine",
+        "route": "unresolved",
+        "placement": "historical",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "maml",
@@ -202,7 +253,18 @@
       "number": 4,
       "mechanism": "Initialization shapes the effect of a later task-specific gradient update.",
       "intervention": "Compare initializations with matched initial task score under the same adaptation examples and steps.",
-      "tasks_and_resources": "本轮未统一提取；不可据机构或模型名称推测。"
+      "tasks_and_resources": "本轮未统一提取，不能据机构或模型名称推测。",
+      "layer": {
+        "id": "maml",
+        "route": "unresolved",
+        "placement": "historical",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "alphago-zero",
@@ -238,7 +300,18 @@
       "number": 5,
       "mechanism": "Search improves behavior; self-play supplies consequences; policy/value training amortizes this computation.",
       "intervention": "Match search calls and independently vary search-target quality and training fit.",
-      "tasks_and_resources": "本轮未统一提取；不可据机构或模型名称推测。"
+      "tasks_and_resources": "本轮未统一提取，不能据机构或模型名称推测。",
+      "layer": {
+        "id": "alphago-zero",
+        "route": "unresolved",
+        "placement": "historical",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "automl-zero",
@@ -270,7 +343,18 @@
       "number": 6,
       "mechanism": "Program mutation and selection discover reusable learning procedures.",
       "intervention": "Change the primitive representation while fixing evaluation and total search budget.",
-      "tasks_and_resources": "本轮未统一提取；不可据机构或模型名称推测。"
+      "tasks_and_resources": "本轮未统一提取，不能据机构或模型名称推测。",
+      "layer": {
+        "id": "automl-zero",
+        "route": "unresolved",
+        "placement": "historical",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "stop",
@@ -306,7 +390,18 @@
       "number": 7,
       "mechanism": "An improver edits an executable improver, potentially retaining better candidate-generation operations.",
       "intervention": "Run old and revised improver programs on identical external target copies.",
-      "tasks_and_resources": "本轮未统一提取；不可据机构或模型名称推测。"
+      "tasks_and_resources": "本轮未统一提取，不能据机构或模型名称推测。",
+      "layer": {
+        "id": "stop",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "promptbreeder",
@@ -339,7 +434,18 @@
       "number": 8,
       "mechanism": "Mutation prompts alter the proposal distribution used to evolve task prompts.",
       "intervention": "Cross mutation-prompt versions with a fixed panel of task prompts.",
-      "tasks_and_resources": "本轮未统一提取；不可据机构或模型名称推测。"
+      "tasks_and_resources": "本轮未统一提取，不能据机构或模型名称推测。",
+      "layer": {
+        "id": "promptbreeder",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "funsearch",
@@ -375,7 +481,18 @@
       "number": 9,
       "mechanism": "A language prior proposes programs; executable scoring and an archive retain useful discoveries.",
       "intervention": "Remove evaluator detail or archive diversity separately, matching generated candidates or compute.",
-      "tasks_and_resources": "本轮未统一提取；不可据机构或模型名称推测。"
+      "tasks_and_resources": "本轮未统一提取，不能据机构或模型名称推测。",
+      "layer": {
+        "id": "funsearch",
+        "route": "unresolved",
+        "placement": "historical",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "spin",
@@ -412,7 +529,18 @@
       "number": 10,
       "mechanism": "Training contrasts generated responses with a reference data distribution and changes later response probabilities.",
       "intervention": "Replace reference responses by draws from the current model while holding the optimizer fixed.",
-      "tasks_and_resources": "本轮未统一提取；不可据机构或模型名称推测。"
+      "tasks_and_resources": "本轮未统一提取，不能据机构或模型名称推测。",
+      "layer": {
+        "id": "spin",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "self-rewarding-lm",
@@ -426,26 +554,75 @@
       ],
       "evidence_status": "reported",
       "audit_status": "pending",
-      "central_limit": "Three training iterations and better reward provision are author-reported; broad common-target improvement and independent replication remain to be audited.",
+      "central_limit": "实际新题由固定 Llama 2-Chat 70B 生成；有人类种子、外部评审和早停。不证明无外部信息或无限递归增长。 规模核对：Llama 2 70B；两轮偏好集分别 3,964 / 6,942 对；256 题成对比较与 805 题 AlpacaEval 2。",
       "sources": [
         {
           "type": "paper",
           "url": "https://proceedings.mlr.press/v235/yuan24d.html"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2401.10020v1"
         }
       ],
       "scope": "direct",
       "closure_assessment": "self_reuse",
       "operation": "Self-generated preferences reweight the training target; learning changes both answer and judgment behavior.",
-      "boundary": "Three training iterations and better reward provision are author-reported; broad common-target improvement and independent replication remain to be audited.",
-      "reading_scope": "prior corpus source check; mechanism interpretation, not a fresh full-method audit",
+      "boundary": "实际新题由固定 Llama 2-Chat 70B 生成；有人类种子、外部评审和早停。不证明无外部信息或无限递归增长。 规模核对：Llama 2 70B；两轮偏好集分别 3,964 / 6,942 对；256 题成对比较与 805 题 AlpacaEval 2。",
+      "reading_scope": "§2.1–2.4，§3.1–3.2；特别是 §3.1.3 的固定出题模型。；选定方法/证据阅读，未声明全文与附录全部精读。",
       "primary_source": "https://proceedings.mlr.press/v235/yuan24d.html",
       "provenance": "previous corpus; reclassified, not all freshly re-read",
-      "admission": "pending",
-      "reason": "尚未完成当前质量门槛所需的差异性、关键对照、资源与泛化联合审查；不进入核心图。",
+      "admission": "core",
+      "reason": "方法、规模和两次参数回流已定位；限定纳入自奖励的迭代 DPO 机制。",
       "number": 11,
       "mechanism": "Self-generated preferences reweight the training target; learning changes both answer and judgment behavior.",
       "intervention": "Pin the judge while updating the answerer, then reverse the intervention on the same candidates.",
-      "tasks_and_resources": "本轮未统一提取；不可据机构或模型名称推测。"
+      "tasks_and_resources": "Llama 2 70B；两轮偏好集分别 3,964 / 6,942 对；256 题成对比较与 805 题 AlpacaEval 2。",
+      "family": "feedback",
+      "short": "Self-Rewarding LM",
+      "principle": "同一 70B 模型产生回答并评分；每轮构造偏好对，以 DPO 更新下一代，再由下一代生成回答与偏好。",
+      "distinct_contribution": "把回答者与奖励者放进同一参数继承链；主要贡献在学习信号及其迭代，而非修改 agent 软件。",
+      "evidence": "核对 §2–3：M1 为种子 SFT，M2/M3 为两次 DPO；另评指令跟随与奖励排序，并比较仅正例 SFT。",
+      "scale": "Llama 2 70B；两轮偏好集分别 3,964 / 6,942 对；256 题成对比较与 805 题 AlpacaEval 2。",
+      "limit": "实际新题由固定 Llama 2-Chat 70B 生成；有人类种子、外部评审和早停。不证明无外部信息或无限递归增长。",
+      "insight": "区分轮间新数据与轮内固定数据优化；评价能力提高仍须以独立目标检验。",
+      "source_location": "§2.1–2.4，§3.1–3.2；特别是 §3.1.3 的固定出题模型。",
+      "source_url": "https://arxiv.org/html/2401.10020v1",
+      "contribution_kind": "learning_signal",
+      "institutions": "Meta / NYU",
+      "reading_depth": "selected_methods_and_evidence",
+      "judgment": "方法、规模和两次参数回流已定位；限定纳入自奖励的迭代 DPO 机制。",
+      "layer": {
+        "id": "self-rewarding-lm",
+        "route": "model",
+        "placement": "main",
+        "audit": "selected_sections",
+        "why": "70B 的回答与自奖励参数共同继承；外部训练程序固定。",
+        "models": [
+          {
+            "name": "Llama 2 70B",
+            "total_b": 70,
+            "active_b": null,
+            "role": "实际训练对象"
+          }
+        ],
+        "scale_status": "eligible",
+        "focus": [
+          "d3",
+          "e4"
+        ],
+        "changed": "同一模型的回答/评价权重；每轮偏好数据",
+        "return_path": "M1 生成回答与偏好训练 M2；M2 再生成偏好训练 M3；出题模型固定。",
+        "training": {
+          "stage": "后训练",
+          "algorithm": "种子 SFT → 迭代 DPO",
+          "data_regime": "轮间在线生成偏好；每轮 DPO 优化已收集的偏好对，不等于 PPO 在线 RL。",
+          "cadence": "一次种子 SFT + 两轮 DPO"
+        },
+        "source_url": "https://arxiv.org/html/2401.10020v1",
+        "source_location": "§2.1–2.4，§3.1–3.2；特别是 §3.1.3 的固定出题模型。"
+      },
+      "main_view": true
     },
     {
       "id": "godel-agent",
@@ -482,7 +659,18 @@
       "number": 12,
       "mechanism": "Self-edited control logic changes accessible actions and the way feedback is used.",
       "intervention": "Transplant the retained code change across unchanged target models and tasks.",
-      "tasks_and_resources": "本轮未统一提取；不可据机构或模型名称推测。"
+      "tasks_and_resources": "本轮未统一提取，不能据机构或模型名称推测。",
+      "layer": {
+        "id": "godel-agent",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "adas",
@@ -514,7 +702,18 @@
       "number": 13,
       "mechanism": "A fixed designer conditions architecture proposals on an archive of previous designs and outcomes.",
       "intervention": "Reset or shuffle archive information while retaining the same designer and search budget.",
-      "tasks_and_resources": "本轮未统一提取；不可据机构或模型名称推测。"
+      "tasks_and_resources": "本轮未统一提取，不能据机构或模型名称推测。",
+      "layer": {
+        "id": "adas",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "aflow",
@@ -550,7 +749,18 @@
       "number": 14,
       "mechanism": "Tree search allocates trials among workflow designs and composes available operators.",
       "intervention": "Hold operators fixed and replace tree allocation by equal-budget flat search.",
-      "tasks_and_resources": "本轮未统一提取；不可据机构或模型名称推测。"
+      "tasks_and_resources": "本轮未统一提取，不能据机构或模型名称推测。",
+      "layer": {
+        "id": "aflow",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "sica",
@@ -588,7 +798,18 @@
       "number": 15,
       "mechanism": "Code and tool changes can reduce execution failures and improve useful work per budget.",
       "intervention": "Replay matched failure states through ancestor and successor tools before a common-target actor test.",
-      "tasks_and_resources": "本轮未统一提取；不可据机构或模型名称推测。"
+      "tasks_and_resources": "本轮未统一提取，不能据机构或模型名称推测。",
+      "layer": {
+        "id": "sica",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "dgm",
@@ -611,13 +832,17 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2505.22954"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2505.22954v3"
         }
       ],
       "scope": "direct",
       "closure_assessment": "self_reuse",
       "operation": "Reusable coding operations and retained alternative parents change subsequent proposal opportunities.",
       "boundary": "Open lineage must be separated from extra candidate and evaluation budget; broad transfer and rising improvement ability remain open.",
-      "reading_scope": "§3–4，尤其 §4.2–4.4 与谱系图；选定方法/证据阅读，未声明逐页完整精读。",
+      "reading_scope": "§3–4，尤其 §4.2–4.4 与谱系图；选定方法/证据阅读，未声明全文与附录全部精读。",
       "primary_source": "https://github.com/jennyzzt/dgm",
       "provenance": "previous corpus; reclassified, not all freshly re-read",
       "admission": "core",
@@ -639,7 +864,31 @@
       "contribution_kind": "mechanism",
       "institutions": "Sakana AI / UBC 等；本卡不做机构排名",
       "reading_depth": "selected_methods_and_evidence",
-      "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证"
+      "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证",
+      "layer": {
+        "id": "dgm",
+        "route": "harness",
+        "placement": "main",
+        "audit": "selected_sections",
+        "why": "已定位的改动在外部软件/状态；未训练基础模型权重。",
+        "models": [],
+        "scale_status": "not_applicable",
+        "focus": [
+          "d4",
+          "e6"
+        ],
+        "changed": "执行代码、工具及代理实现",
+        "return_path": "保留候选代理并用于后续代码改进；不等于已证明改进速度持续增长",
+        "training": {
+          "stage": "不涉及参数训练",
+          "algorithm": "不涉及参数训练",
+          "data_regime": "执行轨迹与评价反馈",
+          "cadence": "离散候选 / 评价 / 继承"
+        },
+        "source_url": "https://arxiv.org/html/2505.22954v3",
+        "source_location": "§3–4，尤其 §4.2–4.4 与谱系图"
+      },
+      "main_view": true
     },
     {
       "id": "gepa",
@@ -677,7 +926,18 @@
       "number": 17,
       "mechanism": "Trace-conditioned reflection localizes repairs; instance-specialist parents preserve alternative solutions.",
       "intervention": "Return the same final score but remove diagnostic content; separately replace specialist selection by greedy selection.",
-      "tasks_and_resources": "本轮未统一提取；不可据机构或模型名称推测。"
+      "tasks_and_resources": "本轮未统一提取，不能据机构或模型名称推测。",
+      "layer": {
+        "id": "gepa",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "agentbreeder",
@@ -709,7 +969,18 @@
       "number": 18,
       "mechanism": "Evolution changes coordination and communication among component agents.",
       "intervention": "Match total calls and change routing while holding component models and candidate counts fixed.",
-      "tasks_and_resources": "本轮未统一提取；不可据机构或模型名称推测。"
+      "tasks_and_resources": "本轮未统一提取，不能据机构或模型名称推测。",
+      "layer": {
+        "id": "agentbreeder",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "statistical-limits",
@@ -739,7 +1010,18 @@
       "number": 19,
       "mechanism": "The reachable hypothesis class and feedback sample determine what generalization can be learned.",
       "intervention": "Vary reachable policy capacity and sample size within the theorem's task assumptions.",
-      "tasks_and_resources": "本轮未统一提取；不可据机构或模型名称推测。"
+      "tasks_and_resources": "本轮未统一提取，不能据机构或模型名称推测。",
+      "layer": {
+        "id": "statistical-limits",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "seal",
@@ -753,7 +1035,7 @@
       ],
       "evidence_status": "reported",
       "audit_status": "in_progress",
-      "central_limit": "Repeated generations, broad transfer, retention, and improved update construction remain open.",
+      "central_limit": "小规模且筛选的 ARC 结果不能外推一般智能；旧编辑奖励对新学习者可能失效。 规模核对：知识吸收为 Qwen2.5-7B；ARC 为 Llama-3.2-1B，筛选后 11 个训练 / 8 个评测任务。",
       "sources": [
         {
           "type": "repository",
@@ -762,13 +1044,17 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2506.10943"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2506.10943v1"
         }
       ],
       "scope": "direct",
       "closure_assessment": "self_reuse",
       "operation": "Self-edit generation is trained on utility after the learner consumes that edit.",
-      "boundary": "Repeated generations, broad transfer, retention, and improved update construction remain open.",
-      "reading_scope": "§3；§4 few-shot setup；Appendix A；选定方法/证据阅读，未声明逐页完整精读。",
+      "boundary": "小规模且筛选的 ARC 结果不能外推一般智能；旧编辑奖励对新学习者可能失效。 规模核对：知识吸收为 Qwen2.5-7B；ARC 为 Llama-3.2-1B，筛选后 11 个训练 / 8 个评测任务。",
+      "reading_scope": "§3；§4 few-shot setup；Appendix A；选定方法/证据阅读，未声明全文与附录全部精读。",
       "primary_source": "https://github.com/Continual-Intelligence/SEAL",
       "provenance": "previous corpus; reclassified, not all freshly re-read",
       "admission": "core",
@@ -776,13 +1062,13 @@
       "number": 20,
       "mechanism": "Self-edit generation is trained on utility after the learner consumes that edit.",
       "intervention": "Compare current-learner rewards with stale rewards for the same edit pool and adaptation budget.",
-      "tasks_and_resources": "知识吸收与 ARC；ARC 用 Llama-3.2-1B，筛选后仅 11 个训练 / 8 个评测任务。",
+      "tasks_and_resources": "知识吸收为 Qwen2.5-7B；ARC 为 Llama-3.2-1B，筛选后 11 个训练 / 8 个评测任务。",
       "family": "training",
       "short": "SEAL",
       "principle": "模型产生训练数据或更新配置，执行内层学习后，用学习者的效果训练生成策略。",
       "distinct_contribution": "评价对象从答案质量转为“这项自编辑使当前学习者怎样改变”。",
       "evidence": "比较未训练的自编辑和学习后的自编辑；奖励随学习者变化，文中采用 on-policy 更新。",
-      "scale": "知识吸收与 ARC；ARC 用 Llama-3.2-1B，筛选后仅 11 个训练 / 8 个评测任务。",
+      "scale": "知识吸收为 Qwen2.5-7B；ARC 为 Llama-3.2-1B，筛选后 11 个训练 / 8 个评测任务。",
       "limit": "小规模且筛选的 ARC 结果不能外推一般智能；旧编辑奖励对新学习者可能失效。",
       "insight": "保留这一学习价值原理；不以小模型实验支撑大规模泛化。",
       "source_location": "§3；§4 few-shot setup；Appendix A",
@@ -790,7 +1076,44 @@
       "contribution_kind": "mechanism",
       "institutions": "MIT 相关团队；完整作者单位见原文",
       "reading_depth": "selected_methods_and_evidence",
-      "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证"
+      "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证",
+      "layer": {
+        "id": "seal",
+        "route": "model",
+        "placement": "small",
+        "audit": "selected_sections",
+        "why": "已核对的 1B / 7B 训练实验均低于 27B。",
+        "models": [
+          {
+            "name": "Qwen2.5-7B",
+            "total_b": 7,
+            "active_b": null,
+            "role": "实际训练对象"
+          },
+          {
+            "name": "Llama-3.2-1B",
+            "total_b": 1,
+            "active_b": null,
+            "role": "实际训练对象"
+          }
+        ],
+        "scale_status": "below",
+        "focus": [
+          "c4",
+          "d3"
+        ],
+        "changed": "自编辑生成策略与适应后的模型权重",
+        "return_path": "按内部微调后的效果更新编辑策略；受训练设置约束。",
+        "training": {
+          "stage": "后训练 / 测试时适应",
+          "algorithm": "ReST-EM 外层 + 内层微调",
+          "data_regime": "当前策略采编辑，执行内层学习后构造反馈。",
+          "cadence": "嵌套更新；知识分支两轮"
+        },
+        "source_url": "https://arxiv.org/html/2506.10943v1",
+        "source_location": "§3；§4 few-shot setup；Appendix A"
+      },
+      "main_view": false
     },
     {
       "id": "hyperagents",
@@ -813,13 +1136,17 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2603.19461"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2603.19461v1"
         }
       ],
       "scope": "direct",
       "closure_assessment": "self_reuse",
       "operation": "Editable meta code changes diagnosis, proposal and reuse, with task and meta roles sharing a program.",
       "boundary": "Cross-domain meta-level transfer is author-reported; common-target attribution and independent matched-budget reproduction remain to be audited.",
-      "reading_scope": "§3–5；§4.1 对照；Appendix D / E 元层变化；选定方法/证据阅读，未声明逐页完整精读。",
+      "reading_scope": "§3–5；§4.1 对照；Appendix D / E 元层变化；选定方法/证据阅读，未声明全文与附录全部精读。",
       "primary_source": "https://github.com/facebookresearch/HyperAgents",
       "provenance": "previous corpus; reclassified, not all freshly re-read",
       "admission": "core",
@@ -841,7 +1168,31 @@
       "contribution_kind": "mechanism",
       "institutions": "Meta 研究仓库 facebookresearch/HyperAgents；完整作者单位见原文",
       "reading_depth": "selected_methods_and_evidence",
-      "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证"
+      "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证",
+      "layer": {
+        "id": "hyperagents",
+        "route": "harness",
+        "placement": "main",
+        "audit": "selected_sections",
+        "why": "已定位的改动在外部软件/状态；未训练基础模型权重。",
+        "models": [],
+        "scale_status": "not_applicable",
+        "focus": [
+          "c3",
+          "e5"
+        ],
+        "changed": "任务代理与元代理的共同代码",
+        "return_path": "后继的可编辑元代理继续提出改动；主要父节点选择仍由外层设定",
+        "training": {
+          "stage": "不涉及参数训练",
+          "algorithm": "不涉及参数训练",
+          "data_regime": "执行轨迹与评价反馈",
+          "cadence": "离散候选 / 评价 / 继承"
+        },
+        "source_url": "https://arxiv.org/html/2603.19461v1",
+        "source_location": "§3–5；§4.1 对照；Appendix D / E 元层变化"
+      },
+      "main_view": true
     },
     {
       "id": "harness-updating-benefit",
@@ -857,13 +1208,17 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2605.30621"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2605.30621v1"
         }
       ],
       "scope": "evaluation",
       "closure_assessment": "not_claimed",
       "operation": "Proposal competence and ability to execute the proposed computation are distinct causal factors.",
       "boundary": "Establishes an important separation and scale pattern; further models, tasks, and independent replication are needed.",
-      "reading_scope": "§3.2–3.3、§4；Appendix B–D；选定方法/证据阅读，未声明逐页完整精读。",
+      "reading_scope": "§3.2–3.3、§4；Appendix B–D；选定方法/证据阅读，未声明全文与附录全部精读。",
       "primary_source": "https://arxiv.org/abs/2605.30621",
       "provenance": "previous corpus; reclassified, not all freshly re-read",
       "admission": "core",
@@ -885,7 +1240,31 @@
       "contribution_kind": "evaluation",
       "institutions": "未在本轮独立核对全部机构",
       "reading_depth": "selected_methods_and_evidence",
-      "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证"
+      "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证",
+      "layer": {
+        "id": "harness-updating-benefit",
+        "route": "harness",
+        "placement": "crosscut",
+        "audit": "selected_sections",
+        "why": "作为评价/形式分析工具单列，不新增一种自改进系统路线。",
+        "models": [],
+        "scale_status": "not_applicable",
+        "focus": [
+          "c4",
+          "d6"
+        ],
+        "changed": "评价协议 / 形式定义",
+        "return_path": "检验闭环、收益与成本，不以评测论文冒充新的 RSI 系统。",
+        "training": {
+          "stage": "不涉及参数训练",
+          "algorithm": "不涉及参数训练",
+          "data_regime": "执行轨迹与评价反馈",
+          "cadence": "离散候选 / 评价 / 继承"
+        },
+        "source_url": "https://arxiv.org/html/2605.30621v1",
+        "source_location": "§3.2–3.3、§4；Appendix B–D"
+      },
+      "main_view": false
     },
     {
       "id": "sia",
@@ -922,7 +1301,18 @@
       "number": 23,
       "mechanism": "Feedback directs updates to code or weights, changing execution and later learning data.",
       "intervention": "Apply matched model-only, harness-only and combined changes with crossed execution.",
-      "tasks_and_resources": "本轮未统一提取；不可据机构或模型名称推测。"
+      "tasks_and_resources": "本轮未统一提取，不能据机构或模型名称推测。",
+      "layer": {
+        "id": "sia",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "rhi",
@@ -954,7 +1344,18 @@
       "number": 24,
       "mechanism": "Workflow specifications condition information flow and are revised from outcome comparisons.",
       "intervention": "Replace proposer and evaluator separately with the executor fixed.",
-      "tasks_and_resources": "本轮未统一提取；不可据机构或模型名称推测。"
+      "tasks_and_resources": "本轮未统一提取，不能据机构或模型名称推测。",
+      "layer": {
+        "id": "rhi",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "rethink-harness-eval",
@@ -970,13 +1371,17 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2607.12227"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2607.12227v4"
         }
       ],
       "scope": "evaluation",
       "closure_assessment": "not_claimed",
       "operation": "Task-time search and persistent harness changes compete for the same resource budget.",
       "boundary": "Defines stronger comparisons for harness evolution; results still depend on chosen tasks and feedback regimes.",
-      "reading_scope": "v4 §3–5；§4.4 保留任务；§5.2–5.3 长时游戏；选定方法/证据阅读，未声明逐页完整精读。",
+      "reading_scope": "v4 §3–5；§4.4 保留任务；§5.2–5.3 长时游戏；选定方法/证据阅读，未声明全文与附录全部精读。",
       "primary_source": "https://arxiv.org/abs/2607.12227",
       "provenance": "previous corpus; reclassified, not all freshly re-read",
       "admission": "core",
@@ -998,7 +1403,31 @@
       "contribution_kind": "evaluation",
       "institutions": "Allen Institute for AI / University of Washington 等",
       "reading_depth": "selected_methods_and_evidence",
-      "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证"
+      "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证",
+      "layer": {
+        "id": "rethink-harness-eval",
+        "route": "harness",
+        "placement": "crosscut",
+        "audit": "selected_sections",
+        "why": "作为评价/形式分析工具单列，不新增一种自改进系统路线。",
+        "models": [],
+        "scale_status": "not_applicable",
+        "focus": [
+          "c4",
+          "d6"
+        ],
+        "changed": "评价协议 / 形式定义",
+        "return_path": "检验闭环、收益与成本，不以评测论文冒充新的 RSI 系统。",
+        "training": {
+          "stage": "不涉及参数训练",
+          "algorithm": "不涉及参数训练",
+          "data_regime": "执行轨迹与评价反馈",
+          "cadence": "离散候选 / 评价 / 继承"
+        },
+        "source_url": "https://arxiv.org/html/2607.12227v4",
+        "source_location": "v4 §3–5；§4.4 保留任务；§5.2–5.3 长时游戏"
+      },
+      "main_view": false
     },
     {
       "id": "co-harness",
@@ -1031,7 +1460,44 @@
       "number": 26,
       "mechanism": "Diagnosed runtime failures guide harness repairs that change subsequent model-training experience.",
       "intervention": "Preserve final rewards while hiding failure localization; compare training on repaired versus original traces.",
-      "tasks_and_resources": "本轮未统一提取；不可据机构或模型名称推测。"
+      "tasks_and_resources": "本轮未统一提取，不能据机构或模型名称推测。",
+      "layer": {
+        "id": "co-harness",
+        "route": "hybrid",
+        "placement": "pending",
+        "audit": "selected_sections",
+        "why": "32B 分支满足规模、8B 分支不满足；协同因果证据仍待进一步审查，规模达标不等于自动纳入。",
+        "models": [
+          {
+            "name": "Qwen3-32B",
+            "total_b": 32,
+            "active_b": null,
+            "role": "实际训练对象"
+          },
+          {
+            "name": "Qwen3-8B",
+            "total_b": 8,
+            "active_b": null,
+            "role": "实际训练对象"
+          }
+        ],
+        "scale_status": "eligible",
+        "focus": [
+          "d3",
+          "e4"
+        ],
+        "changed": "数学 agent harness + 模型权重",
+        "return_path": "每轮 harness 优化后用成功轨迹 SFT，两轮交替。",
+        "training": {
+          "stage": "后训练",
+          "algorithm": "harness 进化 + SFT",
+          "data_regime": "当前系统成功轨迹作监督。",
+          "cadence": "两轮，每轮 harness 内循环 K=5"
+        },
+        "source_url": "https://arxiv.org/abs/2607.22688",
+        "source_location": "§3–4、Table 1；缺充分分离 SFT 与协同的基线。"
+      },
+      "main_view": false
     },
     {
       "id": "helix",
@@ -1068,7 +1534,18 @@
       "number": 27,
       "mechanism": "Harness variants yield both task outcomes and contrasting records potentially useful for learning.",
       "intervention": "Train matched students from competing harness sources with decision inputs and task mixtures controlled.",
-      "tasks_and_resources": "本轮未统一提取；不可据机构或模型名称推测。"
+      "tasks_and_resources": "本轮未统一提取，不能据机构或模型名称推测。",
+      "layer": {
+        "id": "helix",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "hsi",
@@ -1106,7 +1583,18 @@
       "number": 28,
       "mechanism": "Meta-evolver changes can alter the distribution and allocation of future harness edits.",
       "intervention": "Move only the meta-evolver to new target harnesses under matched budgets.",
-      "tasks_and_resources": "本轮未统一提取；不可据机构或模型名称推测。"
+      "tasks_and_resources": "本轮未统一提取，不能据机构或模型名称推测。",
+      "layer": {
+        "id": "hsi",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "evoharness-rl",
@@ -1140,7 +1628,18 @@
       "number": 29,
       "mechanism": "Learned coordination changes when external state is written, retrieved and used.",
       "intervention": "Cross policy checkpoints with fixed external-state interfaces and measure redundant operations.",
-      "tasks_and_resources": "本轮未统一提取；不可据机构或模型名称推测。"
+      "tasks_and_resources": "本轮未统一提取，不能据机构或模型名称推测。",
+      "layer": {
+        "id": "evoharness-rl",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "harness-tampering",
@@ -1170,7 +1669,18 @@
       "number": 30,
       "mechanism": "Changing the measurement path can increase observed score without improving intended utility.",
       "intervention": "Recompute outcomes through an independently preserved measurement path.",
-      "tasks_and_resources": "本轮未统一提取；不可据机构或模型名称推测。"
+      "tasks_and_resources": "本轮未统一提取，不能据机构或模型名称推测。",
+      "layer": {
+        "id": "harness-tampering",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "harnessdev",
@@ -1202,7 +1712,18 @@
       "number": 31,
       "mechanism": "Creator search changes executable scaffolds consumed by a potentially different executor.",
       "intervention": "Run a creator-by-executor matrix at fixed runtime budgets.",
-      "tasks_and_resources": "本轮未统一提取；不可据机构或模型名称推测。"
+      "tasks_and_resources": "本轮未统一提取，不能据机构或模型名称推测。",
+      "layer": {
+        "id": "harnessdev",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "rrsi",
@@ -1230,13 +1751,17 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2609.24972"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2609.24972v1"
         }
       ],
       "scope": "direct",
       "closure_assessment": "self_reuse",
       "operation": "Proposal and acceptance constraints favor transferable, affordable edits over source-score fitting.",
       "boundary": "Frozen-model, finite-evolve-set results need independent reruns, time-forward tasks, and stronger scale transfer.",
-      "reading_scope": "Table 2；提案 / 接受约束及消融；选定方法/证据阅读，未声明逐页完整精读。",
+      "reading_scope": "Table 2；提案 / 接受约束及消融；选定方法/证据阅读，未声明全文与附录全部精读。",
       "primary_source": "https://github.com/google-research/rrsi",
       "provenance": "previous corpus; reclassified, not all freshly re-read",
       "admission": "core",
@@ -1258,7 +1783,31 @@
       "contribution_kind": "mechanism",
       "institutions": "未在本轮独立核对全部机构",
       "reading_depth": "selected_methods_and_evidence",
-      "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证"
+      "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证",
+      "layer": {
+        "id": "rrsi",
+        "route": "harness",
+        "placement": "main",
+        "audit": "selected_sections",
+        "why": "已定位的改动在外部软件/状态；未训练基础模型权重。",
+        "models": [],
+        "scale_status": "not_applicable",
+        "focus": [
+          "d3",
+          "f5"
+        ],
+        "changed": "提示、控制流、工具与上下文机制",
+        "return_path": "限制候选改动并筛掉过拟合/昂贵改动，保留到未见任务",
+        "training": {
+          "stage": "不涉及参数训练",
+          "algorithm": "不涉及参数训练",
+          "data_regime": "执行轨迹与评价反馈",
+          "cadence": "离散候选 / 评价 / 继承"
+        },
+        "source_url": "https://arxiv.org/html/2609.24972v1",
+        "source_location": "Table 2；提案 / 接受约束及消融"
+      },
+      "main_view": true
     },
     {
       "id": "meta-harness",
@@ -1294,7 +1843,18 @@
       "number": 33,
       "mechanism": "Search changes which information is stored, retrieved and exposed to a fixed model.",
       "intervention": "Replay histories through competing context policies while matching model calls and task distribution.",
-      "tasks_and_resources": "本轮未统一提取；不可据机构或模型名称推测。"
+      "tasks_and_resources": "本轮未统一提取，不能据机构或模型名称推测。",
+      "layer": {
+        "id": "meta-harness",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "aide2",
@@ -1318,13 +1878,17 @@
         {
           "type": "project_page",
           "url": "https://www.weco.ai/blog/first-evidence-of-recursive-self-improvement"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2609.26457v1"
         }
       ],
       "scope": "direct",
       "closure_assessment": "fixed_outer_proposer",
       "operation": "Search and memory rewrites improve the inner research agent under a fixed main outer proposer.",
       "boundary": "Main outer proposer is fixed while the inner research agent evolves; the separate common-target ignition test does not decisively establish superiority over the strong outer baseline.",
-      "reading_scope": "§2.1–2.2，§3.6 ignition test；选定方法/证据阅读，未声明逐页完整精读。",
+      "reading_scope": "§2.1–2.2，§3.6 ignition test；选定方法/证据阅读，未声明全文与附录全部精读。",
       "primary_source": "https://arxiv.org/abs/2609.26457",
       "provenance": "previous corpus; reclassified, not all freshly re-read",
       "admission": "core",
@@ -1346,11 +1910,35 @@
       "contribution_kind": "mechanism_and_counterexample",
       "institutions": "Weco",
       "reading_depth": "selected_methods_and_evidence",
-      "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证"
+      "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证",
+      "layer": {
+        "id": "aide2",
+        "route": "harness",
+        "placement": "main",
+        "audit": "selected_sections",
+        "why": "已定位的改动在外部软件/状态；未训练基础模型权重。",
+        "models": [],
+        "scale_status": "not_applicable",
+        "focus": [
+          "c4",
+          "d6"
+        ],
+        "changed": "研发代理代码与实验流程",
+        "return_path": "外层研发产生内层后继；另有后继接管共同目标的点火比较，增益并未明确成立",
+        "training": {
+          "stage": "不涉及参数训练",
+          "algorithm": "不涉及参数训练",
+          "data_regime": "执行轨迹与评价反馈",
+          "cadence": "离散候选 / 评价 / 继承"
+        },
+        "source_url": "https://arxiv.org/html/2609.26457v1",
+        "source_location": "§2.1–2.2，§3.6 ignition test"
+      },
+      "main_view": true
     },
     {
       "id": "openrsi",
-      "name": "Frontis-MA1 / OpenMLE（原目录入口 OpenRSI）",
+      "name": "Frontis-MA1 / OpenMLE (catalog alias: OpenRSI)",
       "year": 2026,
       "role": "direct_model_system_coevolution",
       "reported_depth": "transfer",
@@ -1360,7 +1948,7 @@
       ],
       "evidence_status": "reported",
       "audit_status": "in_progress",
-      "central_limit": "Model and system contributions, scale transfer, and repeated recursive gain require independent component crossing.",
+      "central_limit": "§8 明确：主要改外部 ML 解法，演化系统本身基本固定；训练模型加工程化 harness 不等于自治协同 RSI。 规模核对：35B 主模型；MLE-Bench Lite 每题 12 小时、单 RTX 4090 沙箱限 12 GB；不含远程模型服务总算力。",
       "sources": [
         {
           "type": "repository",
@@ -1378,8 +1966,8 @@
       "scope": "direct",
       "closure_assessment": "coevolution",
       "operation": "Execution-grounded training improves shared program-editing operators used by long-horizon search.",
-      "boundary": "Model and system contributions, scale transfer, and repeated recursive gain require independent component crossing.",
-      "reading_scope": "§3–6，Appendix B / E；本轮核对标题与系统名；选定方法/证据阅读，未声明逐页完整精读。",
+      "boundary": "§8 明确：主要改外部 ML 解法，演化系统本身基本固定；训练模型加工程化 harness 不等于自治协同 RSI。 规模核对：35B 主模型；MLE-Bench Lite 每题 12 小时、单 RTX 4090 沙箱限 12 GB；不含远程模型服务总算力。",
+      "reading_scope": "§3–6，Appendix B / E；本轮核对标题与系统名；选定方法/证据阅读，未声明全文与附录全部精读。",
       "primary_source": "https://github.com/FrontisAI/OpenRSI",
       "provenance": "previous corpus; reclassified, not all freshly re-read",
       "admission": "core",
@@ -1394,14 +1982,51 @@
       "distinct_contribution": "把训练的操作与部署时实际执行的研发动作对齐，并保留可执行反馈与搜索记忆。",
       "evidence": "报告固定框架换模型、固定模型换框架及外部任务迁移；原目录以 OpenRSI 作入口名。",
       "scale": "35B 主模型；MLE-Bench Lite 每题 12 小时、单 RTX 4090 沙箱限 12 GB；不含远程模型服务总算力。",
-      "limit": "训练与搜索组合有收益，不等于后继反复重新训练自身已被证明。",
+      "limit": "§8 明确：主要改外部 ML 解法，演化系统本身基本固定；训练模型加工程化 harness 不等于自治协同 RSI。",
       "insight": "优先研究可复用的研发操作；模型服务、目标训练和搜索成本必须分账。",
       "source_location": "§3–6，Appendix B / E；本轮核对标题与系统名",
       "source_url": "https://arxiv.org/html/2607.28568v1",
       "contribution_kind": "mechanism",
       "institutions": "Horizon Research / Frontis.AI / 清华大学",
       "reading_depth": "selected_methods_and_evidence",
-      "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证"
+      "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证",
+      "layer": {
+        "id": "openrsi",
+        "route": "model",
+        "placement": "adjacent",
+        "audit": "selected_sections",
+        "why": "35B/30B 达规模门槛，但 §8 明示外部演化系统基本固定；主图不算闭环 RSI。",
+        "models": [
+          {
+            "name": "Qwen3.6-35B-A3B",
+            "total_b": 35,
+            "active_b": 3,
+            "role": "实际训练对象"
+          },
+          {
+            "name": "Qwen3-30B-A3B",
+            "total_b": 30,
+            "active_b": 3,
+            "role": "实际训练对象"
+          }
+        ],
+        "scale_status": "eligible",
+        "focus": [
+          "d3",
+          "e2"
+        ],
+        "changed": "程序改进算子的模型权重；外部 ML 候选解",
+        "return_path": "执行经验用于 SFT/RL；部署时搜索解法。未核实搜索系统本身反复自修改/接管训练。",
+        "training": {
+          "stage": "后训练",
+          "algorithm": "全参数 SFT + 执行反馈 RL",
+          "data_regime": "SFT 用筛选轨迹；RL 用执行结果；部署长程搜索另阶段。",
+          "cadence": "训练与部署搜索分开，不写成边部署边持续自训"
+        },
+        "source_url": "https://arxiv.org/html/2607.28568v1",
+        "source_location": "§4–6、§8 Limitations、Appendix B.2–B.3。"
+      },
+      "main_view": false
     },
     {
       "id": "mass",
@@ -1424,13 +2049,17 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2610.12176"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2610.12176v1"
         }
       ],
       "scope": "direct",
       "closure_assessment": "coevolution",
       "operation": "Workflow-conditioned trajectories train shared weights used in solving, proposing and judging.",
       "boundary": "Reported cross-domain regressions show that joint updating can redistribute capability; repeated broad transfer remains open.",
-      "reading_scope": "§4.4、Appendix C.5 Table 7 / D.2；选定方法/证据阅读，未声明逐页完整精读。",
+      "reading_scope": "§4.4、Appendix C.5 Table 7 / D.2；选定方法/证据阅读，未声明全文与附录全部精读。",
       "primary_source": "https://github.com/SakanaAI/mass",
       "provenance": "previous corpus; reclassified, not all freshly re-read",
       "admission": "core",
@@ -1452,7 +2081,38 @@
       "contribution_kind": "mechanism_and_counterexample",
       "institutions": "Sakana AI",
       "reading_depth": "selected_methods_and_evidence",
-      "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证"
+      "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证",
+      "layer": {
+        "id": "mass",
+        "route": "hybrid",
+        "placement": "main",
+        "audit": "selected_sections",
+        "why": "27B 模型与多智能体工作流均更新，已报告两轮。",
+        "models": [
+          {
+            "name": "Qwen3.6-27B-FP8",
+            "total_b": 27,
+            "active_b": null,
+            "role": "实际训练对象"
+          }
+        ],
+        "scale_status": "eligible",
+        "focus": [
+          "d3",
+          "e6"
+        ],
+        "changed": "工作流角色与信息路由 + 同一 27B 模型权重",
+        "return_path": "当前模型演化工作流，执行轨迹用于 SFT，更新模型再次担任执行/优化/评价角色。",
+        "training": {
+          "stage": "后训练",
+          "algorithm": "工作流进化搜索 + SFT",
+          "data_regime": "每轮由当前模型与工作流采集轨迹；训练阶段做 SFT。",
+          "cadence": "2 个交替周期；非同时异步训练"
+        },
+        "source_url": "https://arxiv.org/html/2610.12176v1",
+        "source_location": "§3–4；Appendix C 轨迹与 SFT；Appendix C.5 跨基准回退。"
+      },
+      "main_view": true
     },
     {
       "id": "rsi-anything",
@@ -1486,7 +2146,18 @@
       "number": 37,
       "mechanism": "Interaction and world-model predictions guide updates in an environment.",
       "intervention": "Compare predicted and actual update rankings on interventions not used to fit the world model.",
-      "tasks_and_resources": "本轮未统一提取；不可据机构或模型名称推测。"
+      "tasks_and_resources": "本轮未统一提取，不能据机构或模型名称推测。",
+      "layer": {
+        "id": "rsi-anything",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "dream-rsi",
@@ -1523,7 +2194,18 @@
       "number": 38,
       "mechanism": "Replayed discovery trees train exploration choices before expensive online research.",
       "intervention": "Evaluate exploration policies on new live branches with replay cost counted.",
-      "tasks_and_resources": "本轮未统一提取；不可据机构或模型名称推测。"
+      "tasks_and_resources": "本轮未统一提取，不能据机构或模型名称推测。",
+      "layer": {
+        "id": "dream-rsi",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "hgm",
@@ -1543,13 +2225,17 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2510.21614"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2510.21614v1"
         }
       ],
       "scope": "direct",
       "closure_assessment": "self_reuse",
       "operation": "Descendant-informed allocation estimates future branch value instead of current score alone.",
       "boundary": "Reported descendant-informed search and transfer need controlled actor-target comparisons and independent reproduction.",
-      "reading_scope": "§2–4，Assumption 1 / Theorem 1；对照与资源口径；选定方法/证据阅读，未声明逐页完整精读。",
+      "reading_scope": "§2–4，Assumption 1 / Theorem 1；对照与资源口径；选定方法/证据阅读，未声明全文与附录全部精读。",
       "primary_source": "https://arxiv.org/abs/2510.21614",
       "provenance": "previous corpus; reclassified, not all freshly re-read",
       "admission": "core",
@@ -1571,7 +2257,31 @@
       "contribution_kind": "mechanism",
       "institutions": "KAUST",
       "reading_depth": "selected_methods_and_evidence",
-      "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证"
+      "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证",
+      "layer": {
+        "id": "hgm",
+        "route": "harness",
+        "placement": "main",
+        "audit": "selected_sections",
+        "why": "已定位的改动在外部软件/状态；未训练基础模型权重。",
+        "models": [],
+        "scale_status": "not_applicable",
+        "focus": [
+          "c5",
+          "d4"
+        ],
+        "changed": "代理代码、谱系与搜索选择",
+        "return_path": "按分支未来产出分配扩展与评价；外层搜索规则是否自改须另判",
+        "training": {
+          "stage": "不涉及参数训练",
+          "algorithm": "不涉及参数训练",
+          "data_regime": "执行轨迹与评价反馈",
+          "cadence": "离散候选 / 评价 / 继承"
+        },
+        "source_url": "https://arxiv.org/html/2510.21614v1",
+        "source_location": "§2–4，Assumption 1 / Theorem 1；对照与资源口径"
+      },
+      "main_view": true
     },
     {
       "id": "ace",
@@ -1605,7 +2315,18 @@
       "number": 40,
       "mechanism": "Persistent contextual lessons alter later decisions without changing weights.",
       "intervention": "Compare incremental retention against full rewriting with the same new experiences and context cap.",
-      "tasks_and_resources": "本轮未统一提取；不可据机构或模型名称推测。"
+      "tasks_and_resources": "本轮未统一提取，不能据机构或模型名称推测。",
+      "layer": {
+        "id": "ace",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "alphaevolve",
@@ -1638,7 +2359,18 @@
       "number": 41,
       "mechanism": "Executable search can improve algorithms or infrastructure reused by later model development.",
       "intervention": "Measure downstream work completed under the same physical resource budget before and after adoption.",
-      "tasks_and_resources": "本轮未统一提取；不可据机构或模型名称推测。"
+      "tasks_and_resources": "本轮未统一提取，不能据机构或模型名称推测。",
+      "layer": {
+        "id": "alphaevolve",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "opro",
@@ -1671,7 +2403,18 @@
       "number": 42,
       "mechanism": "The optimizer conditions proposals on a history of candidate-value pairs.",
       "intervention": "Compare true, shuffled and reset histories with the same model and evaluation allowance.",
-      "tasks_and_resources": "本轮未统一提取；不可据机构或模型名称推测。"
+      "tasks_and_resources": "本轮未统一提取，不能据机构或模型名称推测。",
+      "layer": {
+        "id": "opro",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "learned-optimizer-2016",
@@ -1704,7 +2447,18 @@
       "number": 43,
       "mechanism": "A learned update rule exploits structure shared among training optimizees.",
       "intervention": "Hold optimizee initialization fixed and change optimizer weights on unseen loss geometries.",
-      "tasks_and_resources": "本轮未统一提取；不可据机构或模型名称推测。"
+      "tasks_and_resources": "本轮未统一提取，不能据机构或模型名称推测。",
+      "layer": {
+        "id": "learned-optimizer-2016",
+        "route": "unresolved",
+        "placement": "historical",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "poet",
@@ -1738,7 +2492,18 @@
       "number": 44,
       "mechanism": "Environment generation and cross-environment transfer create alternative learning paths.",
       "intervention": "Remove cross-environment transfer while preserving total optimization work.",
-      "tasks_and_resources": "本轮未统一提取；不可据机构或模型名称推测。"
+      "tasks_and_resources": "本轮未统一提取，不能据机构或模型名称推测。",
+      "layer": {
+        "id": "poet",
+        "route": "unresolved",
+        "placement": "historical",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "self-training-optimizer-2020",
@@ -1771,7 +2536,18 @@
       "number": 45,
       "mechanism": "A learned optimizer can execute the updates that train another optimizer.",
       "intervention": "Cross optimizer versions, clipping rules and training horizons on common optimizer targets.",
-      "tasks_and_resources": "本轮未统一提取；不可据机构或模型名称推测。"
+      "tasks_and_resources": "本轮未统一提取，不能据机构或模型名称推测。",
+      "layer": {
+        "id": "self-training-optimizer-2020",
+        "route": "unresolved",
+        "placement": "historical",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "star",
@@ -1804,7 +2580,18 @@
       "number": 46,
       "mechanism": "Correctness-filtered rationales and answer-conditioned rationalization alter the learning target.",
       "intervention": "Separate rationalization, filtering and per-task sample balancing at equal generation cost.",
-      "tasks_and_resources": "本轮未统一提取；不可据机构或模型名称推测。"
+      "tasks_and_resources": "本轮未统一提取，不能据机构或模型名称推测。",
+      "layer": {
+        "id": "star",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "rest-em",
@@ -1837,7 +2624,18 @@
       "number": 47,
       "mechanism": "Reward-weighted sampling and likelihood projection alternate as an approximate EM procedure.",
       "intervention": "Compare pooled filtering with per-task-balanced filtering and measure projection error.",
-      "tasks_and_resources": "本轮未统一提取；不可据机构或模型名称推测。"
+      "tasks_and_resources": "本轮未统一提取，不能据机构或模型名称推测。",
+      "layer": {
+        "id": "rest-em",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "expert-iteration",
@@ -1870,7 +2668,18 @@
       "number": 48,
       "mechanism": "A planner supplies targets to a policy that guides later planning.",
       "intervention": "Freeze the policy used by search while training otherwise identical learners.",
-      "tasks_and_resources": "本轮未统一提取；不可据机构或模型名称推测。"
+      "tasks_and_resources": "本轮未统一提取，不能据机构或模型名称推测。",
+      "layer": {
+        "id": "expert-iteration",
+        "route": "unresolved",
+        "placement": "historical",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "dreamcoder",
@@ -1904,7 +2713,18 @@
       "number": 49,
       "mechanism": "Library abstraction changes the search language while a recognition policy guides its use.",
       "intervention": "Hold either the learned library or recognition policy fixed across cycles.",
-      "tasks_and_resources": "本轮未统一提取；不可据机构或模型名称推测。"
+      "tasks_and_resources": "本轮未统一提取，不能据机构或模型名称推测。",
+      "layer": {
+        "id": "dreamcoder",
+        "route": "unresolved",
+        "placement": "historical",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "selecting-computations",
@@ -1936,7 +2756,18 @@
       "number": 50,
       "mechanism": "Compute is spent where information can change the selected action.",
       "intervention": "Charge probe cost and compare metalevel selection with fixed allocation.",
-      "tasks_and_resources": "本轮未统一提取；不可据机构或模型名称推测。"
+      "tasks_and_resources": "本轮未统一提取，不能据机构或模型名称推测。",
+      "layer": {
+        "id": "selecting-computations",
+        "route": "unresolved",
+        "placement": "historical",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "levin-tree-search",
@@ -1969,7 +2800,18 @@
       "number": 51,
       "mechanism": "Depth divided by path probability controls search order and bounds effort.",
       "intervention": "Hold the tree fixed and change the learned probability of successful paths.",
-      "tasks_and_resources": "本轮未统一提取；不可据机构或模型名称推测。"
+      "tasks_and_resources": "本轮未统一提取，不能据机构或模型名称推测。",
+      "layer": {
+        "id": "levin-tree-search",
+        "route": "unresolved",
+        "placement": "historical",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "policy-guided-heuristic-search",
@@ -2003,7 +2845,18 @@
       "number": 52,
       "mechanism": "A heuristic and a policy jointly prioritize paths with bounded search loss.",
       "intervention": "Cross the same policy with changed heuristics under measured expansion costs.",
-      "tasks_and_resources": "本轮未统一提取；不可据机构或模型名称推测。"
+      "tasks_and_resources": "本轮未统一提取，不能据机构或模型名称推测。",
+      "layer": {
+        "id": "policy-guided-heuristic-search",
+        "route": "unresolved",
+        "placement": "historical",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "lts-context-models",
@@ -2036,7 +2889,18 @@
       "number": 53,
       "mechanism": "A convex context policy learns from successful paths using a search-effort loss.",
       "intervention": "Compare imitation and bound objectives, and frozen versus reused collection policies.",
-      "tasks_and_resources": "本轮未统一提取；不可据机构或模型名称推测。"
+      "tasks_and_resources": "本轮未统一提取，不能据机构或模型名称推测。",
+      "layer": {
+        "id": "lts-context-models",
+        "route": "unresolved",
+        "placement": "historical",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "openai-o1",
@@ -2069,7 +2933,18 @@
       "number": 54,
       "mechanism": "Policy learning changes the distribution of reasoning trajectories and the value of later inference.",
       "intervention": "Cross policy checkpoints and inference budgets; separate extra training from extra sampling.",
-      "tasks_and_resources": "本轮未统一提取；不可据机构或模型名称推测。"
+      "tasks_and_resources": "本轮未统一提取，不能据机构或模型名称推测。",
+      "layer": {
+        "id": "openai-o1",
+        "route": "unresolved",
+        "placement": "background",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "deepseek-r1",
@@ -2102,7 +2977,18 @@
       "number": 55,
       "mechanism": "Sampling, reward-weighted policy updates and subsequent data production jointly change the learning distribution.",
       "intervention": "Freeze collection policy or generated data while matching training and generation cost.",
-      "tasks_and_resources": "本轮未统一提取；不可据机构或模型名称推测。"
+      "tasks_and_resources": "本轮未统一提取，不能据机构或模型名称推测。",
+      "layer": {
+        "id": "deepseek-r1",
+        "route": "unresolved",
+        "placement": "background",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "qwen3",
@@ -2136,7 +3022,18 @@
       "number": 56,
       "mechanism": "A learner-generated state distribution and teacher targets interact with capacity and reasoning budget.",
       "intervention": "Compare on-policy and off-policy targets for the same teacher/student pair and full data-generation budget.",
-      "tasks_and_resources": "本轮未统一提取；不可据机构或模型名称推测。"
+      "tasks_and_resources": "本轮未统一提取，不能据机构或模型名称推测。",
+      "layer": {
+        "id": "qwen3",
+        "route": "unresolved",
+        "placement": "background",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "alphaproof",
@@ -2169,7 +3066,18 @@
       "number": 57,
       "mechanism": "Verification supports reusable proof learning while generated variations alter the curriculum.",
       "intervention": "Cross the prover and curriculum snapshots; independently check statement fidelity.",
-      "tasks_and_resources": "本轮未统一提取；不可据机构或模型名称推测。"
+      "tasks_and_resources": "本轮未统一提取，不能据机构或模型名称推测。",
+      "layer": {
+        "id": "alphaproof",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "muzero",
@@ -2203,7 +3111,18 @@
       "number": 58,
       "mechanism": "Task-relevant dynamics learning changes both planning and the experience used for future updates.",
       "intervention": "Cross world-model versions and planning budgets, measuring model error on visited states.",
-      "tasks_and_resources": "本轮未统一提取；不可据机构或模型名称推测。"
+      "tasks_and_resources": "本轮未统一提取，不能据机构或模型名称推测。",
+      "layer": {
+        "id": "muzero",
+        "route": "unresolved",
+        "placement": "background",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "xland",
@@ -2237,7 +3156,18 @@
       "number": 59,
       "mechanism": "Task generation changes the learnable frontier and population transfer changes reachable skills.",
       "intervention": "Ablate adaptive task generation and population transfer separately at matched resources.",
-      "tasks_and_resources": "本轮未统一提取；不可据机构或模型名称推测。"
+      "tasks_and_resources": "本轮未统一提取，不能据机构或模型名称推测。",
+      "layer": {
+        "id": "xland",
+        "route": "unresolved",
+        "placement": "background",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "sima2",
@@ -2270,7 +3200,18 @@
       "number": 60,
       "mechanism": "Tasks, estimated rewards and visited states jointly determine the training distribution.",
       "intervention": "Freeze task generator or reward model separately and test on independently assessed games.",
-      "tasks_and_resources": "本轮未统一提取；不可据机构或模型名称推测。"
+      "tasks_and_resources": "本轮未统一提取，不能据机构或模型名称推测。",
+      "layer": {
+        "id": "sima2",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "constitutional-ai",
@@ -2304,7 +3245,18 @@
       "number": 61,
       "mechanism": "Feedback production can be delegated to AI while the objective and calibration remain external.",
       "intervention": "Hold principles and learner fixed while changing the feedback source and independent assessment.",
-      "tasks_and_resources": "本轮未统一提取；不可据机构或模型名称推测。"
+      "tasks_and_resources": "本轮未统一提取，不能据机构或模型名称推测。",
+      "layer": {
+        "id": "constitutional-ai",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "self-taught-evaluators",
@@ -2329,7 +3281,7 @@
       "closure_assessment": "self_reuse",
       "operation": "Better judgment generation changes the usable training pool for later evaluator versions.",
       "boundary": "Constructed preference labels can be imperfect; the student is reset to the seed each round rather than simply continuing fine-tuning.",
-      "reading_scope": "§3–4：构造标签、种子重置、实验；选定方法/证据阅读，未声明逐页完整精读。",
+      "reading_scope": "§3–4：构造标签、种子重置、实验；选定方法/证据阅读，未声明全文与附录全部精读。",
       "primary_source": "https://arxiv.org/html/2408.02666v1",
       "provenance": "previous corpus; reclassified, not all freshly re-read",
       "admission": "core",
@@ -2351,7 +3303,38 @@
       "contribution_kind": "mechanism",
       "institutions": "Meta FAIR",
       "reading_depth": "selected_methods_and_evidence",
-      "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证"
+      "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证",
+      "layer": {
+        "id": "self-taught-evaluators",
+        "route": "model",
+        "placement": "main",
+        "audit": "selected_sections",
+        "why": "实际训练 70B 评价器；属于评价角色的模型更新。",
+        "models": [
+          {
+            "name": "Llama3-70B-Instruct",
+            "total_b": 70,
+            "active_b": null,
+            "role": "实际训练对象"
+          }
+        ],
+        "scale_status": "eligible",
+        "focus": [
+          "d3",
+          "e4"
+        ],
+        "changed": "评价模型权重；合成判断训练集",
+        "return_path": "上一轮评价器生成下一轮判断；每轮学生从同一原始种子重新微调，而非连续接着上轮权重训练。",
+        "training": {
+          "stage": "后训练",
+          "algorithm": "SFT / 判断文本负对数似然",
+          "data_regime": "轮间刷新合成判断，轮内固定数据批次；构造偏好标签提供锚点。",
+          "cadence": "5 轮；生成与训练交替"
+        },
+        "source_url": "https://arxiv.org/html/2408.02666v1",
+        "source_location": "§3.3–3.5、§4.1、§5–6；70B 与种子重置在 §4.1。"
+      },
+      "main_view": true
     },
     {
       "id": "eureka",
@@ -2384,7 +3367,18 @@
       "number": 63,
       "mechanism": "A proposed artifact is valued by the learning process it induces, not only by immediate execution.",
       "intervention": "Compare rewards using equal policy-training budgets and transfer to untouched tasks or dynamics.",
-      "tasks_and_resources": "本轮未统一提取；不可据机构或模型名称推测。"
+      "tasks_and_resources": "本轮未统一提取，不能据机构或模型名称推测。",
+      "layer": {
+        "id": "eureka",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "co-scientist",
@@ -2417,7 +3411,18 @@
       "number": 64,
       "mechanism": "Search supplies hypotheses whose true value requires delayed external experimentation.",
       "intervention": "Compare internal rankings with prospective external experimental outcomes and later research choices.",
-      "tasks_and_resources": "本轮未统一提取；不可据机构或模型名称推测。"
+      "tasks_and_resources": "本轮未统一提取，不能据机构或模型名称推测。",
+      "layer": {
+        "id": "co-scientist",
+        "route": "unresolved",
+        "placement": "background",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "gpt-red",
@@ -2443,7 +3448,7 @@
       "closure_assessment": "coevolution",
       "operation": "Changing opponents generate a moving learning frontier; population diversity can prevent narrow adaptation.",
       "boundary": "Task-specific robustness improvement and co-training do not establish unrestricted recursive research acceleration.",
-      "reading_scope": "论文 §5；官方自玩与生产应用说明；选定方法/证据阅读，未声明逐页完整精读。",
+      "reading_scope": "论文 §5；官方自玩与生产应用说明；选定方法/证据阅读，未声明全文与附录全部精读。",
       "primary_source": "https://cdn.openai.com/pdf/gpt-red-automated-red-teaming-via-self-play-at-scale.pdf",
       "provenance": "previous corpus; reclassified, not all freshly re-read",
       "admission": "core",
@@ -2465,7 +3470,38 @@
       "contribution_kind": "coupled_learning",
       "institutions": "OpenAI",
       "reading_depth": "selected_methods_and_evidence",
-      "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证"
+      "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证",
+      "layer": {
+        "id": "gpt-red",
+        "route": "model",
+        "placement": "scale_unverified",
+        "audit": "selected_sections",
+        "why": "工业级规模描述不能替代实际被训练模型的公开参数量。",
+        "models": [
+          {
+            "name": "attacker / defender（未公开参数）",
+            "total_b": null,
+            "active_b": null,
+            "role": "实际训练对象"
+          }
+        ],
+        "scale_status": "unverified",
+        "focus": [
+          "d3",
+          "e4"
+        ],
+        "changed": "攻击者与防御者模型权重",
+        "return_path": "攻击/防御训练相互提供样本和反馈；多个模型共同训练仍属于 Model。",
+        "training": {
+          "stage": "后训练",
+          "algorithm": "自博弈 RL",
+          "data_regime": "攻击与防御交互生成训练信号。",
+          "cadence": "分阶段协同训练；本卡不推测在线异步细节"
+        },
+        "source_url": "https://cdn.openai.com/pdf/gpt-red-automated-red-teaming-via-self-play-at-scale.pdf",
+        "source_location": "论文 §5；官方自玩与生产应用说明"
+      },
+      "main_view": false
     },
     {
       "id": "automated-alignment-researchers",
@@ -2491,7 +3527,7 @@
       "closure_assessment": "not_claimed",
       "operation": "A research policy chooses interventions whose value is measured after target-model training.",
       "boundary": "Improving target models does not show that the researcher improves itself; production data-efficiency claims are not full research-cost ratios.",
-      "reading_scope": "官方研究报告；链接论文 task / transfer / production 段落；选定方法/证据阅读，未声明逐页完整精读。",
+      "reading_scope": "官方研究报告；链接论文 task / transfer / production 段落；选定方法/证据阅读，未声明全文与附录全部精读。",
       "primary_source": "https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures",
       "provenance": "previous corpus; reclassified, not all freshly re-read",
       "admission": "core",
@@ -2513,7 +3549,38 @@
       "contribution_kind": "ai4ai_deployment",
       "institutions": "Anthropic",
       "reading_depth": "selected_methods_and_evidence",
-      "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证"
+      "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证",
+      "layer": {
+        "id": "automated-alignment-researchers",
+        "route": "hybrid",
+        "placement": "adjacent",
+        "audit": "selected_sections",
+        "why": "自动研究者训练其他目标模型有实际价值；未核实后继接管研究者的闭环，参数也未核准。",
+        "models": [
+          {
+            "name": "目标模型（参数未核准）",
+            "total_b": null,
+            "active_b": null,
+            "role": "实际训练对象"
+          }
+        ],
+        "scale_status": "unverified",
+        "focus": [
+          "a2",
+          "e2"
+        ],
+        "changed": "目标模型训练与研究流程/实验方案",
+        "return_path": "训练结果反馈给固定研究代理；不能直接声称研究代理参数自进化。",
+        "training": {
+          "stage": "后训练",
+          "algorithm": "自动对齐实验；不同干预不能归为单一训练算法",
+          "data_regime": "目标训练反馈与外部评测。",
+          "cadence": "研究代理迭代实验；递归接管未核准"
+        },
+        "source_url": "https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures",
+        "source_location": "官方研究报告；链接论文 task / transfer / production 段落"
+      },
+      "main_view": false
     },
     {
       "id": "seed-for-seed",
@@ -2547,7 +3614,18 @@
       "number": 67,
       "mechanism": "Useful model-development outputs can feed later model development through several operational paths.",
       "intervention": "Trace adoption and compare complete research work at fixed compute and human input.",
-      "tasks_and_resources": "本轮未统一提取；不可据机构或模型名称推测。"
+      "tasks_and_resources": "本轮未统一提取，不能据机构或模型名称推测。",
+      "layer": {
+        "id": "seed-for-seed",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "sol-pi",
@@ -2575,7 +3653,7 @@
       "closure_assessment": "future_return",
       "operation": "从多环境轨迹搜索并整合执行、压缩和观察处理机制。",
       "boundary": "论文把用新 harness 加速后继研发列为未来方向；成本下降不是已测递归复利。",
-      "reading_scope": "§2.2、§3、§5.1；选定方法/证据阅读，未声明逐页完整精读。",
+      "reading_scope": "§2.2、§3、§5.1；选定方法/证据阅读，未声明全文与附录全部精读。",
       "primary_source": "https://arxiv.org/abs/2609.20519",
       "provenance": "2026-10-18 expansion",
       "admission": "core",
@@ -2597,7 +3675,31 @@
       "contribution_kind": "ai4ai_enabler",
       "institutions": "NVIDIA / NTU / MIT",
       "reading_depth": "selected_methods_and_evidence",
-      "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证"
+      "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证",
+      "layer": {
+        "id": "sol-pi",
+        "route": "harness",
+        "placement": "main",
+        "audit": "selected_sections",
+        "why": "已定位的改动在外部软件/状态；未训练基础模型权重。",
+        "models": [],
+        "scale_status": "not_applicable",
+        "focus": [
+          "a4",
+          "d3"
+        ],
+        "changed": "harness 执行逻辑与效率实现",
+        "return_path": "自动研发保留执行优化；未来递归研发成本下降仍需单独实测",
+        "training": {
+          "stage": "不涉及参数训练",
+          "algorithm": "不涉及参数训练",
+          "data_regime": "执行轨迹与评价反馈",
+          "cadence": "离散候选 / 评价 / 继承"
+        },
+        "source_url": "https://arxiv.org/html/2609.20519v1",
+        "source_location": "§2.2、§3、§5.1"
+      },
+      "main_view": true
     },
     {
       "id": "modular-rsi",
@@ -2626,7 +3728,7 @@
       "closure_assessment": "self_reuse",
       "operation": "当前智能体分析成功/失败对照轨迹并修改自身模块，再整合模块。",
       "boundary": "模块独立优化后存在交互；跨模型迁移不等于改进能力持续提升。",
-      "reading_scope": "§3.1、§6.3–6.4，Table 5；选定方法/证据阅读，未声明逐页完整精读。",
+      "reading_scope": "§3.1、§6.3–6.4，Table 5；选定方法/证据阅读，未声明全文与附录全部精读。",
       "primary_source": "https://arxiv.org/abs/2609.14857",
       "provenance": "2026-10-18 expansion",
       "admission": "core",
@@ -2648,7 +3750,31 @@
       "contribution_kind": "mechanism",
       "institutions": "IQuestLab 公开仓库；完整作者单位见原文",
       "reading_depth": "selected_methods_and_evidence",
-      "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证"
+      "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证",
+      "layer": {
+        "id": "modular-rsi",
+        "route": "harness",
+        "placement": "main",
+        "audit": "selected_sections",
+        "why": "已定位的改动在外部软件/状态；未训练基础模型权重。",
+        "models": [],
+        "scale_status": "not_applicable",
+        "focus": [
+          "c3",
+          "e6"
+        ],
+        "changed": "模块化代理代码、反馈记忆及验证环节",
+        "return_path": "模块反馈进入下一轮提案与筛选；基座保持冻结",
+        "training": {
+          "stage": "不涉及参数训练",
+          "algorithm": "不涉及参数训练",
+          "data_regime": "执行轨迹与评价反馈",
+          "cadence": "离散候选 / 评价 / 继承"
+        },
+        "source_url": "https://arxiv.org/html/2609.14857v2",
+        "source_location": "§3.1、§6.3–6.4，Table 5"
+      },
+      "main_view": true
     },
     {
       "id": "prime-agent",
@@ -2683,7 +3809,18 @@
       "number": 70,
       "mechanism": "长期 REPL 与持久经验支撑跨轨迹策略修订和技能使用。",
       "intervention": "冻结持久经验更新，与可更新系统比较跨任务延续收益和成本。",
-      "tasks_and_resources": "长上下文编码、kernel、nanoGPT、Factorio；摘要未给统一研发预算。"
+      "tasks_and_resources": "长上下文编码、kernel、nanoGPT、Factorio；摘要未给统一研发预算。",
+      "layer": {
+        "id": "prime-agent",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "red-queen-godel-machine",
@@ -2713,7 +3850,7 @@
       "closure_assessment": "coevolution",
       "operation": "共同进化任务代理与评价器，替换评价器后重估档案。",
       "boundary": "IMO 人工评分等外部锚点仍必要；论文写作的代理评分不能等同真实科研质量。",
-      "reading_scope": "评价器切换段落；Appendix D 消融与成本边界；选定方法/证据阅读，未声明逐页完整精读。",
+      "reading_scope": "评价器切换段落；Appendix D 消融与成本边界；选定方法/证据阅读，未声明全文与附录全部精读。",
       "primary_source": "https://arxiv.org/abs/2606.26294",
       "provenance": "2026-10-18 expansion",
       "admission": "core",
@@ -2735,7 +3872,31 @@
       "contribution_kind": "coupled_learning",
       "institutions": "未在本轮独立核对全部机构",
       "reading_depth": "selected_methods_and_evidence",
-      "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证"
+      "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证",
+      "layer": {
+        "id": "red-queen-godel-machine",
+        "route": "harness",
+        "placement": "main",
+        "audit": "selected_sections",
+        "why": "已定位的改动在外部软件/状态；未训练基础模型权重。",
+        "models": [],
+        "scale_status": "not_applicable",
+        "focus": [
+          "c4",
+          "e4"
+        ],
+        "changed": "任务代理及评价代理代码、选择记录",
+        "return_path": "新评价器接替后清理旧评价相关记录；评价器演化不代表评价模型权重训练",
+        "training": {
+          "stage": "不涉及参数训练",
+          "algorithm": "不涉及参数训练",
+          "data_regime": "执行轨迹与评价反馈",
+          "cadence": "离散候选 / 评价 / 继承"
+        },
+        "source_url": "https://arxiv.org/html/2606.26294v3",
+        "source_location": "评价器切换段落；Appendix D 消融与成本边界"
+      },
+      "main_view": true
     },
     {
       "id": "dr-zero",
@@ -2749,7 +3910,7 @@
       ],
       "evidence_status": "reported",
       "audit_status": "in_progress",
-      "central_limit": "零人工 QA 训练样本不等于零外部知识；仍依赖预训练和搜索引擎。",
+      "central_limit": "无人工训练数据不等于无外部信息；题目真实性、难度和多样性仍是限制。 规模核对：Qwen2.5-3B / 7B Instruct；出题者与求解者迭代训练，检索提供外部信息。",
       "sources": [
         {
           "type": "paper",
@@ -2763,8 +3924,8 @@
       "scope": "direct",
       "closure_assessment": "coevolution",
       "operation": "出题者按当前求解者能力生成问题，双方交替学习。",
-      "boundary": "零人工 QA 训练样本不等于零外部知识；仍依赖预训练和搜索引擎。",
-      "reading_scope": "§3.1 设置与学习目标；方法与实验概述；选定方法/证据阅读，未声明逐页完整精读。",
+      "boundary": "无人工训练数据不等于无外部信息；题目真实性、难度和多样性仍是限制。 规模核对：Qwen2.5-3B / 7B Instruct；出题者与求解者迭代训练，检索提供外部信息。",
+      "reading_scope": "§3.1 设置与学习目标；方法与实验概述；选定方法/证据阅读，未声明全文与附录全部精读。",
       "primary_source": "https://arxiv.org/abs/2601.07055",
       "provenance": "2026-10-18 expansion",
       "admission": "core",
@@ -2772,13 +3933,13 @@
       "number": 72,
       "mechanism": "出题者按当前求解者能力生成问题，双方交替学习。",
       "intervention": "冻结出题者或反馈求解者，保持搜索调用和训练预算相当。",
-      "tasks_and_resources": "检索与推理任务；Meta / UIUC；本卡未独立提取完整 GPU 总量。",
+      "tasks_and_resources": "Qwen2.5-3B / 7B Instruct；出题者与求解者迭代训练，检索提供外部信息。",
       "family": "curriculum",
       "short": "Dr. Zero",
       "principle": "搜索增强的出题者与求解者共同训练，求解反馈改变后续题目。",
       "distinct_contribution": "课程分布由系统状态驱动；外部搜索提供超出既有训练题库的信息。",
       "evidence": "已核对耦合目标和外部检索依赖；完整资源归一化与复现仍待完成。",
-      "scale": "检索与推理任务；Meta / UIUC；本卡未独立提取完整 GPU 总量。",
+      "scale": "Qwen2.5-3B / 7B Instruct；出题者与求解者迭代训练，检索提供外部信息。",
       "limit": "无人工训练数据不等于无外部信息；题目真实性、难度和多样性仍是限制。",
       "insight": "课程是动态变量；必须注明新信息来自哪里以及检索成本。",
       "source_location": "§3.1 设置与学习目标；方法与实验概述",
@@ -2786,7 +3947,44 @@
       "contribution_kind": "coupled_learning",
       "institutions": "Meta Superintelligence Labs / UIUC",
       "reading_depth": "selected_methods_and_evidence",
-      "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证"
+      "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证",
+      "layer": {
+        "id": "dr-zero",
+        "route": "model",
+        "placement": "small",
+        "audit": "selected_sections",
+        "why": "3B / 7B 训练实验均低于规模门槛。",
+        "models": [
+          {
+            "name": "Qwen2.5-3B-Instruct",
+            "total_b": 3,
+            "active_b": null,
+            "role": "实际训练对象"
+          },
+          {
+            "name": "Qwen2.5-7B-Instruct",
+            "total_b": 7,
+            "active_b": null,
+            "role": "实际训练对象"
+          }
+        ],
+        "scale_status": "below",
+        "focus": [
+          "d3",
+          "e4"
+        ],
+        "changed": "出题者与检索求解者权重",
+        "return_path": "求解结果指导出题者，新任务再训练求解者；搜索提供外部信息。",
+        "training": {
+          "stage": "后训练",
+          "algorithm": "HRPO 等自博弈 RL",
+          "data_regime": "按当前求解能力产生新问题，使用检索反馈。",
+          "cadence": "交替；报告多轮及后期平台"
+        },
+        "source_url": "https://arxiv.org/html/2601.07055v2",
+        "source_location": "§3–4；§4.1 基座、Table 3 多轮结果。"
+      },
+      "main_view": false
     },
     {
       "id": "skill-self-play",
@@ -2816,7 +4014,7 @@
       "closure_assessment": "coevolution",
       "operation": "技能提供任务生成结构与验证程序，双方策略和技能库共同更新。",
       "boundary": "可执行验证与技能覆盖仍有边界，能力前沿难度代理不等于真实长期学习增益。",
-      "reading_scope": "§3.1–3.2、§4.1、§4.3–4.4；选定方法/证据阅读，未声明逐页完整精读。",
+      "reading_scope": "§3.1–3.2、§4.1、§4.3–4.4；选定方法/证据阅读，未声明全文与附录全部精读。",
       "primary_source": "https://arxiv.org/abs/2607.22529",
       "provenance": "2026-10-18 expansion",
       "admission": "core",
@@ -2838,7 +4036,62 @@
       "contribution_kind": "coupled_learning",
       "institutions": "Qwen 大模型应用团队 / 合作高校",
       "reading_depth": "selected_methods_and_evidence",
-      "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证"
+      "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证",
+      "layer": {
+        "id": "skill-self-play",
+        "route": "model",
+        "placement": "small",
+        "audit": "selected_sections",
+        "why": "实际训练基座范围 3B–14B。",
+        "models": [
+          {
+            "name": "Granite4.1-3B",
+            "total_b": 3,
+            "active_b": null,
+            "role": "实际训练对象"
+          },
+          {
+            "name": "Qwen3-4B",
+            "total_b": 4,
+            "active_b": null,
+            "role": "实际训练对象"
+          },
+          {
+            "name": "Qwen3-8B",
+            "total_b": 8,
+            "active_b": null,
+            "role": "实际训练对象"
+          },
+          {
+            "name": "Ministral3-8B",
+            "total_b": 8,
+            "active_b": null,
+            "role": "实际训练对象"
+          },
+          {
+            "name": "Ministral3-14B",
+            "total_b": 14,
+            "active_b": null,
+            "role": "实际训练对象"
+          }
+        ],
+        "scale_status": "below",
+        "focus": [
+          "d3",
+          "e4"
+        ],
+        "changed": "共享基座的技能出题/求解参数",
+        "return_path": "技能任务生成与求解训练迭代；生成技能内容不自动构成外部可执行 harness 的自改。",
+        "training": {
+          "stage": "后训练",
+          "algorithm": "技能自博弈 RL",
+          "data_regime": "随能力更新任务。",
+          "cadence": "多轮交替"
+        },
+        "source_url": "https://arxiv.org/html/2607.22529v1",
+        "source_location": "§3.1–3.2、§4.1、§4.3–4.4"
+      },
+      "main_view": false
     },
     {
       "id": "rlanything",
@@ -2853,7 +4106,7 @@
       ],
       "evidence_status": "reported",
       "audit_status": "in_progress",
-      "central_limit": "环境变化并非任意世界创造；GUI 部分依赖预建扰动及其验证器。",
+      "central_limit": "环境变化受预建任务与验证器约束；不能据此宣称任意世界可自我生成真值。 规模核对：已读策略为 7B / 8B，奖励模型为 8B / 14B，任务改写器为 4B；32B / 72B 出现在评价角色，不能作为训练规模。",
       "sources": [
         {
           "type": "paper",
@@ -2867,8 +4120,8 @@
       "scope": "direct",
       "closure_assessment": "coevolution",
       "operation": "策略、奖励模型和任务难度通过反馈共同调整。",
-      "boundary": "环境变化并非任意世界创造；GUI 部分依赖预建扰动及其验证器。",
-      "reading_scope": "§3.1–3.2 与组件比较；选定方法/证据阅读，未声明逐页完整精读。",
+      "boundary": "环境变化受预建任务与验证器约束；不能据此宣称任意世界可自我生成真值。 规模核对：已读策略为 7B / 8B，奖励模型为 8B / 14B，任务改写器为 4B；32B / 72B 出现在评价角色，不能作为训练规模。",
+      "reading_scope": "§3.1–3.2 与组件比较；选定方法/证据阅读，未声明全文与附录全部精读。",
       "primary_source": "https://arxiv.org/abs/2602.02488",
       "provenance": "2026-10-18 expansion",
       "admission": "core",
@@ -2876,13 +4129,13 @@
       "number": 74,
       "mechanism": "策略、奖励模型和任务难度通过反馈共同调整。",
       "intervention": "在固定外部测试集交叉比较策略、奖励和环境版本。",
-      "tasks_and_resources": "已读 GUI 设置含 47 个原始任务及扰动；不同模型/任务设置不能折成一个“规模”。",
+      "tasks_and_resources": "已读策略为 7B / 8B，奖励模型为 8B / 14B，任务改写器为 4B；32B / 72B 出现在评价角色，不能作为训练规模。",
       "family": "curriculum",
       "short": "RLAnything",
       "principle": "策略、奖励模型与环境任务动态变化，互相影响训练。",
       "distinct_contribution": "把策略学习之外的反馈与环境配置一起放入优化过程。",
       "evidence": "给出组件比较和 ID/OOD 设置；GUI 实验仍依赖预建可校验任务及扰动。",
-      "scale": "已读 GUI 设置含 47 个原始任务及扰动；不同模型/任务设置不能折成一个“规模”。",
+      "scale": "已读策略为 7B / 8B，奖励模型为 8B / 14B，任务改写器为 4B；32B / 72B 出现在评价角色，不能作为训练规模。",
       "limit": "环境变化受预建任务与验证器约束；不能据此宣称任意世界可自我生成真值。",
       "insight": "必须区分真实环境、模拟环境、环境包装与目标分布改变。",
       "source_location": "§3.1–3.2 与组件比较",
@@ -2890,7 +4143,50 @@
       "contribution_kind": "coupled_learning",
       "institutions": "未在本轮独立核对全部机构",
       "reading_depth": "selected_methods_and_evidence",
-      "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证"
+      "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证",
+      "layer": {
+        "id": "rlanything",
+        "route": "hybrid",
+        "placement": "small",
+        "audit": "selected_sections",
+        "why": "策略/奖励训练均未达到 27B；32B/72B 为评审，不能越过门槛。",
+        "models": [
+          {
+            "name": "policy",
+            "total_b": 7,
+            "active_b": null,
+            "role": "实际训练对象"
+          },
+          {
+            "name": "GUI policy/reward",
+            "total_b": 8,
+            "active_b": null,
+            "role": "实际训练对象"
+          },
+          {
+            "name": "text reward",
+            "total_b": 14,
+            "active_b": null,
+            "role": "实际训练对象"
+          }
+        ],
+        "scale_status": "below",
+        "focus": [
+          "c4",
+          "e4"
+        ],
+        "changed": "策略/奖励权重 + 训练任务与环境配置",
+        "return_path": "策略错误 → 环境/任务难度干预 → 新轨迹 → 策略/奖励更新；环境侧是否可持续泛化需另验。",
+        "training": {
+          "stage": "后训练",
+          "algorithm": "策略与奖励 RL；任务改写",
+          "data_regime": "边交互边采样并更新；配置适应与权重优化交替。",
+          "cadence": "GUI 240、LLM 200、coding 300 步"
+        },
+        "source_url": "https://arxiv.org/html/2602.02488v1",
+        "source_location": "§2–3，Appendix C.1–C.2；较大模型是评价监督来源。"
+      },
+      "main_view": false
     },
     {
       "id": "agent0",
@@ -2923,7 +4219,18 @@
       "number": 75,
       "mechanism": "工具增强执行者与课程代理共同生成下一轮训练任务。",
       "intervention": "冻结课程代理并匹配有效训练样本和工具成本。",
-      "tasks_and_resources": "Qwen3-8B；数学与通用推理，摘要未给总训练算力。"
+      "tasks_and_resources": "Qwen3-8B；数学与通用推理，摘要未给总训练算力。",
+      "layer": {
+        "id": "agent0",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "r-zero",
@@ -2956,7 +4263,18 @@
       "number": 76,
       "mechanism": "挑战者寻找求解者能力边缘任务，求解者训练后改变出题反馈。",
       "intervention": "用独立题目与校准标签检验每轮双方并冻结挑战者作对照。",
-      "tasks_and_resources": "多底座数学/通用推理；摘要报告 Qwen3-4B 示例，预算待全文核查。"
+      "tasks_and_resources": "多底座数学/通用推理；摘要报告 Qwen3-4B 示例，预算待全文核查。",
+      "layer": {
+        "id": "r-zero",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "absolute-zero",
@@ -2989,7 +4307,18 @@
       "number": 77,
       "mechanism": "同一模型生成训练任务并求解，代码执行提供验证反馈。",
       "intervention": "固定任务分布与动态自出题对照，并测新任务迁移。",
-      "tasks_and_resources": "代码与数学、多模型尺度；摘要未提取总训练成本。"
+      "tasks_and_resources": "代码与数学、多模型尺度；摘要未提取总训练成本。",
+      "layer": {
+        "id": "absolute-zero",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "tool-r0",
@@ -3022,7 +4351,18 @@
       "number": 78,
       "mechanism": "生成器针对工具求解者的能力边界构造任务，真实工具调用反馈训练双方。",
       "intervention": "冻结生成器并计入真实工具执行预算。",
-      "tasks_and_resources": "多个工具使用基准；零预置任务不等于无预训练先验。"
+      "tasks_and_resources": "多个工具使用基准；零预置任务不等于无预训练先验。",
+      "layer": {
+        "id": "tool-r0",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "evotrainer",
@@ -3037,7 +4377,7 @@
       ],
       "evidence_status": "reported",
       "audit_status": "in_progress",
-      "central_limit": "基础训练代理权重固定且昂贵动作有人类把关；不支持完全无人递归。",
+      "central_limit": "自主流程不等于完全无人参与，也不证明训练代理权重或研发能力递归增长。 规模核对：SWE 训练对象明确为 4B / 9B；Math/Coding 的参数量本轮未核准。训练代理为冻结 Sonnet 4.6，不能当作被训练模型。",
       "sources": [
         {
           "type": "paper",
@@ -3051,8 +4391,8 @@
       "scope": "direct",
       "closure_assessment": "self_reuse",
       "operation": "训练代理修改诊断、训练信号和流程，保留技能供后续训练版本使用。",
-      "boundary": "基础训练代理权重固定且昂贵动作有人类把关；不支持完全无人递归。",
-      "reading_scope": "§3.2–3.5：可修改边界、训练操作和人类权限；选定方法/证据阅读，未声明逐页完整精读。",
+      "boundary": "自主流程不等于完全无人参与，也不证明训练代理权重或研发能力递归增长。 规模核对：SWE 训练对象明确为 4B / 9B；Math/Coding 的参数量本轮未核准。训练代理为冻结 Sonnet 4.6，不能当作被训练模型。",
+      "reading_scope": "§3.2–3.5：可修改边界、训练操作和人类权限；选定方法/证据阅读，未声明全文与附录全部精读。",
       "primary_source": "https://arxiv.org/abs/2606.03108",
       "provenance": "2026-10-18 expansion",
       "admission": "core",
@@ -3060,13 +4400,13 @@
       "number": 79,
       "mechanism": "训练代理修改诊断、训练信号和流程，保留技能供后续训练版本使用。",
       "intervention": "固定诊断与技能复用，比较后续训练方案质量。",
-      "tasks_and_resources": "训练代理基座固定为 Sonnet 4.6；有人类启动与昂贵动作把关；总 GPU 成本待统一提取。",
+      "tasks_and_resources": "SWE 训练对象明确为 4B / 9B；Math/Coding 的参数量本轮未核准。训练代理为冻结 Sonnet 4.6，不能当作被训练模型。",
       "family": "training",
       "short": "EvoTrainer",
       "principle": "训练代理观察实验，修改训练信号、流程与技能，再推动策略训练。",
       "distinct_contribution": "把训练侧 harness 纳入演化对象，拓宽仅改推理提示的视野。",
       "evidence": "方法描述含版本、记忆、技能和训练控制；本卡纳入工程设计命题，未认定每个组件的因果增益。",
-      "scale": "训练代理基座固定为 Sonnet 4.6；有人类启动与昂贵动作把关；总 GPU 成本待统一提取。",
+      "scale": "SWE 训练对象明确为 4B / 9B；Math/Coding 的参数量本轮未核准。训练代理为冻结 Sonnet 4.6，不能当作被训练模型。",
       "limit": "自主流程不等于完全无人参与，也不证明训练代理权重或研发能力递归增长。",
       "insight": "系统边界必须涵盖训练调度、诊断和工具；人工输入也要计入。",
       "source_location": "§3.2–3.5：可修改边界、训练操作和人类权限",
@@ -3074,7 +4414,50 @@
       "contribution_kind": "system_design",
       "institutions": "未在本轮独立核对全部机构",
       "reading_depth": "selected_methods_and_evidence",
-      "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证"
+      "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证",
+      "layer": {
+        "id": "evotrainer",
+        "route": "hybrid",
+        "placement": "scale_unverified",
+        "audit": "selected_sections",
+        "why": "已核对 SWE 为 4B/9B；其余域规模未核准，未发现可入主图的 ≥27B 训练分支。",
+        "models": [
+          {
+            "name": "SWE target",
+            "total_b": 4,
+            "active_b": null,
+            "role": "实际训练对象"
+          },
+          {
+            "name": "SWE target",
+            "total_b": 9,
+            "active_b": null,
+            "role": "实际训练对象"
+          },
+          {
+            "name": "Math/Coding（本轮未核准）",
+            "total_b": null,
+            "active_b": null,
+            "role": "实际训练对象"
+          }
+        ],
+        "scale_status": "unverified",
+        "focus": [
+          "c4",
+          "e5"
+        ],
+        "changed": "训练 harness、奖励实现、可复用技能 + 目标策略权重",
+        "return_path": "固定 Sonnet 训练代理读训练诊断并改训练流程，再启动策略训练；昂贵动作有人把关。",
+        "training": {
+          "stage": "后训练",
+          "algorithm": "GRPO 类策略训练 + 训练软件修改",
+          "data_regime": "按训练轨迹与诊断调整下一段训练。",
+          "cadence": "分段训练、版本选择；非无人工自治"
+        },
+        "source_url": "https://arxiv.org/html/2606.03108v2",
+        "source_location": "§3.5–3.6，§4.1–4.2 Table 3；Appendix E。"
+      },
+      "main_view": false
     },
     {
       "id": "autoscientists",
@@ -3108,7 +4491,18 @@
       "number": 80,
       "mechanism": "去中心化团队共享成功和失败的实验知识，搜索目标模型训练改进。",
       "intervention": "分别冻结团队经验与目标训练方案，测后续研究任务迁移。",
-      "tasks_and_resources": "BioML、GPT 训练、ProteinGym；保留 GPT 训练分支及其预算对照价值。"
+      "tasks_and_resources": "BioML、GPT 训练、ProteinGym；保留 GPT 训练分支及其预算对照价值。",
+      "layer": {
+        "id": "autoscientists",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "derl",
@@ -3138,7 +4532,7 @@
       "closure_assessment": "coevolution",
       "operation": "奖励设计者根据内层策略训练后的验证表现学习更好的奖励提案。",
       "boundary": "奖励原语由人指定；最终策略重新训练，不能描述成同一策略连续自改。",
-      "reading_scope": "§3.1、§5.1、Appendix C；选定方法/证据阅读，未声明逐页完整精读。",
+      "reading_scope": "§3.1、§5.1、Appendix C；选定方法/证据阅读，未声明全文与附录全部精读。",
       "primary_source": "https://arxiv.org/abs/2512.13399",
       "provenance": "2026-10-18 expansion",
       "admission": "core",
@@ -3160,7 +4554,44 @@
       "contribution_kind": "mechanism",
       "institutions": "未在本轮独立核对全部机构",
       "reading_depth": "selected_methods_and_evidence",
-      "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证"
+      "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证",
+      "layer": {
+        "id": "derl",
+        "route": "model",
+        "placement": "small",
+        "audit": "selected_sections",
+        "why": "设计者 0.5B、学习者 1.5B，不得相加或用外部模型替代。",
+        "models": [
+          {
+            "name": "reward proposer",
+            "total_b": 0.5,
+            "active_b": null,
+            "role": "实际训练对象"
+          },
+          {
+            "name": "learner",
+            "total_b": 1.5,
+            "active_b": null,
+            "role": "实际训练对象"
+          }
+        ],
+        "scale_status": "below",
+        "focus": [
+          "c4",
+          "d4"
+        ],
+        "changed": "奖励设计者与目标学习者权重",
+        "return_path": "设计奖励 → 训练学习者 → 以学习增益训练设计者。",
+        "training": {
+          "stage": "后训练",
+          "algorithm": "双层强化学习",
+          "data_regime": "奖励设计依赖学习者训练反馈。",
+          "cadence": "交替更新"
+        },
+        "source_url": "https://arxiv.org/html/2512.13399v3",
+        "source_location": "§3.1、§5.1、Appendix C"
+      },
+      "main_view": false
     },
     {
       "id": "gear",
@@ -3193,7 +4624,18 @@
       "number": 82,
       "mechanism": "维护研究状态种群并交叉重组；其中一个变体允许搜索控制器演化。",
       "intervention": "相同种群和预算下只切换控制器可进化性。",
-      "tasks_and_resources": "同环境和算力的 AutoResearch 对照；摘要未给完整预算数值。"
+      "tasks_and_resources": "同环境和算力的 AutoResearch 对照；摘要未给完整预算数值。",
+      "layer": {
+        "id": "gear",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "execution-grounded-research",
@@ -3227,7 +4669,18 @@
       "number": 83,
       "mechanism": "执行预训练/后训练研究方案，用结果做演化搜索或训练构思模型。",
       "intervention": "分别比较平均方案质量、最佳质量和多样性，匹配 GPU 实验预算。",
-      "tasks_and_resources": "LLM 预训练与后训练；报告十轮搜索和 RL 负面结果。"
+      "tasks_and_resources": "LLM 预训练与后训练；报告十轮搜索和 RL 负面结果。",
+      "layer": {
+        "id": "execution-grounded-research",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "meta-n",
@@ -3261,7 +4714,18 @@
       "number": 84,
       "mechanism": "固定元操作反复读取已有代码与轨迹，生成后续策略层及工具。",
       "intervention": "匹配预算后比较增长的条件信息、层深和固定浅层系统。",
-      "tasks_and_resources": "两个底座、八类基准；摘要未给完整成本及独立复现。"
+      "tasks_and_resources": "两个底座、八类基准；摘要未给完整成本及独立复现。",
+      "layer": {
+        "id": "meta-n",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "self-harness",
@@ -3293,7 +4757,18 @@
       "number": 85,
       "mechanism": "代理从自身失败中挖掘弱点、提出最小修改并经回归测试保留。",
       "intervention": "冻结改进用 harness，与更新复用条件比较后续编辑产出。",
-      "tasks_and_resources": "三模型×TB2.0/SWE-bench Verified/AppWorld，含 held-in/held-out。"
+      "tasks_and_resources": "三模型×TB2.0/SWE-bench Verified/AppWorld，含 held-in/held-out。",
+      "layer": {
+        "id": "self-harness",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "harness-zero",
@@ -3326,7 +4801,18 @@
       "number": 86,
       "mechanism": "harnessing agent 把复杂 harness 指导转换为目标动作空间的训练示范。",
       "intervention": "比较相同部署 harness 下内化、保留外部指导和原模型。",
-      "tasks_and_resources": "知识工作、工具使用、科学任务；摘要未给全部数据生成与训练成本。"
+      "tasks_and_resources": "知识工作、工具使用、科学任务；摘要未给全部数据生成与训练成本。",
+      "layer": {
+        "id": "harness-zero",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "harness-r1",
@@ -3359,7 +4845,18 @@
       "number": 87,
       "mechanism": "用目标代理重跑后的任务成功训练专门的 harness 编辑模型。",
       "intervention": "固定编辑者与学习编辑者生成同预算修改，目标起点相同。",
-      "tasks_and_resources": "9B 编辑者；WebShop、ALFWorld、DBBench，另测目标微调后增益。"
+      "tasks_and_resources": "9B 编辑者；WebShop、ALFWorld、DBBench，另测目标微调后增益。",
+      "layer": {
+        "id": "harness-r1",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "skillrl",
@@ -3392,7 +4889,18 @@
       "number": 88,
       "mechanism": "从经验提炼分层技能，并让技能库与 RL 策略共同更新。",
       "intervention": "冻结技能库或策略，分别测后续学习收益与 token 成本。",
-      "tasks_and_resources": "ALFWorld、WebShop、七个搜索增强任务；摘要未给总训练成本。"
+      "tasks_and_resources": "ALFWorld、WebShop、七个搜索增强任务；摘要未给总训练成本。",
+      "layer": {
+        "id": "skillrl",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "skillopt",
@@ -3425,7 +4933,18 @@
       "number": 89,
       "mechanism": "外部优化模型把评分轨迹变成受限文本编辑，验证后保留技能。",
       "intervention": "固定同一目标比较真实反馈、打乱反馈和编辑预算。",
-      "tasks_and_resources": "六基准、七目标模型、三 harness；52 个评测组合和迁移报告。"
+      "tasks_and_resources": "六基准、七目标模型、三 harness；52 个评测组合和迁移报告。",
+      "layer": {
+        "id": "skillopt",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "mem2evolve",
@@ -3458,7 +4977,18 @@
       "number": 90,
       "mechanism": "经验指导创建工具/专家资产，新资产反过来产生后续经验。",
       "intervention": "冻结资产生成或经验提炼，在相同总调用预算比较。",
-      "tasks_and_resources": "六类任务、八基准；摘要给隔离经验与资产的对照。"
+      "tasks_and_resources": "六类任务、八基准；摘要给隔离经验与资产的对照。",
+      "layer": {
+        "id": "mem2evolve",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "memskill",
@@ -3491,7 +5021,18 @@
       "number": 91,
       "mechanism": "控制器学习选择记忆技能，设计者根据难例周期性修订技能集。",
       "intervention": "交叉冻结控制器与技能设计过程。",
-      "tasks_and_resources": "LoCoMo、LongMemEval、HotpotQA、ALFWorld；预算未从摘要提取。"
+      "tasks_and_resources": "LoCoMo、LongMemEval、HotpotQA、ALFWorld；预算未从摘要提取。",
+      "layer": {
+        "id": "memskill",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "memrl",
@@ -3524,7 +5065,18 @@
       "number": 92,
       "mechanism": "固定推理模型通过环境反馈更新经验检索效用。",
       "intervention": "在独立后续任务比较可更新检索价值与固定检索。",
-      "tasks_and_resources": "HLE、BigCodeBench、ALFWorld、Lifelong Agent Bench；无权重更新。"
+      "tasks_and_resources": "HLE、BigCodeBench、ALFWorld、Lifelong Agent Bench；无权重更新。",
+      "layer": {
+        "id": "memrl",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "evods",
@@ -3558,7 +5110,18 @@
       "number": 93,
       "mechanism": "学习生成可复用执行技能，并把上下文压缩作为训练控制策略。",
       "intervention": "独立冻结技能获取和上下文控制策略，匹配任务资源。",
-      "tasks_and_resources": "四类数据科学基准、两阶段多代理训练；完整算力待核。"
+      "tasks_and_resources": "四类数据科学基准、两阶段多代理训练；完整算力待核。",
+      "layer": {
+        "id": "evods",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "on-policy-harness-coevolution",
@@ -3572,7 +5135,7 @@
       ],
       "evidence_status": "reported",
       "audit_status": "in_progress",
-      "central_limit": "整轨迹模仿在已进化 harness 上退化；局部纠正平均增益有限，不是普遍最优。",
+      "central_limit": "主要结果支持一次 harness 演化后的权重适配；多轮闭环是可接续方案，已读结果未展示长期反复迭代。完整轨迹模仿有明显退化。 规模核对：主实验 Qwen3-Coder-30B-A3B（总 30B / 激活 3B），LoRA SFT；Gemma-4-26B-A4B 为 <27B 补充实验，7 个企业任务。",
       "sources": [
         {
           "type": "paper",
@@ -3586,8 +5149,8 @@
       "scope": "direct",
       "closure_assessment": "coevolution",
       "operation": "先适配 harness，再在学生自身轨迹的失败位置提供专家局部纠正。",
-      "boundary": "整轨迹模仿在已进化 harness 上退化；局部纠正平均增益有限，不是普遍最优。",
-      "reading_scope": "§3.1–3.4，Tables 1–3；选定方法/证据阅读，未声明逐页完整精读。",
+      "boundary": "主要结果支持一次 harness 演化后的权重适配；多轮闭环是可接续方案，已读结果未展示长期反复迭代。完整轨迹模仿有明显退化。 规模核对：主实验 Qwen3-Coder-30B-A3B（总 30B / 激活 3B），LoRA SFT；Gemma-4-26B-A4B 为 <27B 补充实验，7 个企业任务。",
+      "reading_scope": "§3.1–3.4，Tables 1–3；选定方法/证据阅读，未声明全文与附录全部精读。",
       "primary_source": "https://arxiv.org/abs/2609.09134",
       "provenance": "2026-10-18 expansion",
       "admission": "core",
@@ -3595,21 +5158,58 @@
       "number": 94,
       "mechanism": "先适配 harness，再在学生自身轨迹的失败位置提供专家局部纠正。",
       "intervention": "交叉模型更新方式与原始/进化 harness，保留固定测试集。",
-      "tasks_and_resources": "7 个企业任务，Qwen3-Coder-30B-A3B 等；LoRA SFT 用 H100/H200，3 次评测。",
+      "tasks_and_resources": "主实验 Qwen3-Coder-30B-A3B（总 30B / 激活 3B），LoRA SFT；Gemma-4-26B-A4B 为 <27B 补充实验，7 个企业任务。",
       "family": "coupling",
       "short": "On-policy M–H Co-evolution",
       "principle": "用当前学习者真实访问的状态做局部纠正，替代直接复制强教师整段轨迹。",
       "distinct_contribution": "明确暴露强教师与弱学习者、进化 harness 之间的分布和能力不匹配。",
       "evidence": "Qwen 在进化 harness 下均值 78.0%；整轨迹模仿 63.1%；局部纠正 79.7%。",
-      "scale": "7 个企业任务，Qwen3-Coder-30B-A3B 等；LoRA SFT 用 H100/H200，3 次评测。",
-      "limit": "小任务集合和有限基座；纠正优势未证明对所有模型、训练规模成立。",
+      "scale": "主实验 Qwen3-Coder-30B-A3B（总 30B / 激活 3B），LoRA SFT；Gemma-4-26B-A4B 为 <27B 补充实验，7 个企业任务。",
+      "limit": "主要结果支持一次 harness 演化后的权重适配；多轮闭环是可接续方案，已读结果未展示长期反复迭代。完整轨迹模仿有明显退化。",
       "insight": "高质量执行轨迹未必是高价值训练数据；联合更新不能假设收益相加。",
       "source_location": "§3.1–3.4，Tables 1–3",
       "source_url": "https://arxiv.org/html/2609.09134",
       "contribution_kind": "mechanism_and_counterexample",
       "institutions": "未在本轮独立核对全部机构",
       "reading_depth": "selected_methods_and_evidence",
-      "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证"
+      "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证",
+      "layer": {
+        "id": "on-policy-harness-coevolution",
+        "route": "hybrid",
+        "placement": "main",
+        "audit": "selected_sections",
+        "why": "30B 分支达标；按序列联合适配纳入，不冒充多轮递归实证。",
+        "models": [
+          {
+            "name": "Qwen3-Coder-30B-A3B",
+            "total_b": 30,
+            "active_b": 3,
+            "role": "实际训练对象"
+          },
+          {
+            "name": "Gemma-4-26B-A4B（补充实验，移出主尺度）",
+            "total_b": 26,
+            "active_b": 4,
+            "role": "实际训练对象"
+          }
+        ],
+        "scale_status": "eligible",
+        "focus": [
+          "c4",
+          "d3"
+        ],
+        "changed": "演化 harness + 学生 LoRA 权重",
+        "return_path": "已读结果：H 演化 → 学生访问状态 → 教师局部纠错 → SFT；更新 M 再演化 H 是提出的接续路径。",
+        "training": {
+          "stage": "后训练",
+          "algorithm": "LoRA SFT；整轨迹模仿 vs 局部纠错",
+          "data_regime": "on-policy 指学生访问的状态；训练目标是 SFT，不是在线 RL。",
+          "cadence": "主要表格为一次联合适配；反复多轮未核准"
+        },
+        "source_url": "https://arxiv.org/html/2609.09134",
+        "source_location": "§3.1–3.4、Table 1、开头脚注；主结果和 proposed next round 分开。"
+      },
+      "main_view": true
     },
     {
       "id": "taolive-hat",
@@ -3642,7 +5242,18 @@
       "number": 95,
       "mechanism": "用多种 harness 状态增强训练，使紧凑模型适应独立变化的运行框架。",
       "intervention": "比较固定 harness 训练与增强训练在未见修改上的适配。",
-      "tasks_and_resources": "淘宝直播部署；四评测集、单 H20 延迟和线上 A/B 报告。"
+      "tasks_and_resources": "淘宝直播部署；四评测集、单 H20 延迟和线上 A/B 报告。",
+      "layer": {
+        "id": "taolive-hat",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "rewardharness",
@@ -3675,7 +5286,18 @@
       "number": 96,
       "mechanism": "奖励代理依据偏好误差修订工具/技能库，再提供模型后训练奖励。",
       "intervention": "冻结奖励技能库，检验保留偏好及下游训练收益。",
-      "tasks_and_resources": "图像编辑偏好，100 示范，后接 FlowGRPO；非纯 LLM 输出领域。"
+      "tasks_and_resources": "图像编辑偏好，100 示范，后接 FlowGRPO；非纯 LLM 输出领域。",
+      "layer": {
+        "id": "rewardharness",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "webevolver",
@@ -3708,7 +5330,18 @@
       "number": 97,
       "mechanism": "网页世界模型生成训练交互并帮助规划，与网页代理共同进化。",
       "intervention": "冻结世界模型并匹配真实交互/模拟交互成本。",
-      "tasks_and_resources": "Mind2Web-Live、WebVoyager、GAIA-web；不使用更强闭源模型蒸馏。"
+      "tasks_and_resources": "Mind2Web-Live、WebVoyager、GAIA-web；不使用更强闭源模型蒸馏。",
+      "layer": {
+        "id": "webevolver",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "webrl",
@@ -3741,7 +5374,18 @@
       "number": 98,
       "mechanism": "用失败生成新课程，配合结果奖励与策略漂移控制进行在线训练。",
       "intervention": "固定课程与自适应课程在相同训练预算对照。",
-      "tasks_and_resources": "Llama/GLM，WebArena-Lite；摘要未提取全部训练开销。"
+      "tasks_and_resources": "Llama/GLM，WebArena-Lite；摘要未提取全部训练开销。",
+      "layer": {
+        "id": "webrl",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "rstar-math",
@@ -3774,7 +5418,18 @@
       "number": 99,
       "mechanism": "搜索轨迹训练策略和过程偏好模型，两者四轮共同更新。",
       "intervention": "分别冻结搜索策略与过程奖励模型，计入搜索生成成本。",
-      "tasks_and_resources": "747k 数学题、百万合成解、四轮；Qwen/Phi 两底座。"
+      "tasks_and_resources": "747k 数学题、百万合成解、四轮；Qwen/Phi 两底座。",
+      "layer": {
+        "id": "rstar-math",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "self-evolved-reward",
@@ -3807,7 +5462,18 @@
       "number": 100,
       "mechanism": "奖励模型生成训练反馈，迭代训练自己的评价能力。",
       "intervention": "固定初始奖励器产生数据与逐轮更新奖励器对照。",
-      "tasks_and_resources": "HH-RLHF、UltraFeedback，Mistral/Llama；总预算待全文核查。"
+      "tasks_and_resources": "HH-RLHF、UltraFeedback，Mistral/Llama；总预算待全文核查。",
+      "layer": {
+        "id": "self-evolved-reward",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "self-evolving-curriculum",
@@ -3840,7 +5506,18 @@
       "number": 101,
       "mechanism": "以估计学习收益更新非平稳 bandit 课程策略，配合模型 RL。",
       "intervention": "相同题库下比较均匀、固定与在线课程并测更难分布。",
-      "tasks_and_resources": "规划、归纳、数学；题目类别作为 bandit 臂。"
+      "tasks_and_resources": "规划、归纳、数学；题目类别作为 bandit 臂。",
+      "layer": {
+        "id": "self-evolving-curriculum",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "skillweaver",
@@ -3872,7 +5549,18 @@
       "number": 102,
       "mechanism": "网页代理探索、练习并封装 API，复用新技能继续积累能力。",
       "intervention": "禁止新技能参与后续探索，保留相同执行预算。",
-      "tasks_and_resources": "WebArena 与真实网站，另报告向弱模型迁移。"
+      "tasks_and_resources": "WebArena 与真实网站，另报告向弱模型迁移。",
+      "layer": {
+        "id": "skillweaver",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "live-swe-agent",
@@ -3904,7 +5592,18 @@
       "number": 103,
       "mechanism": "代理在解决软件任务时修改自身运行 scaffold。",
       "intervention": "分别允许任务内修改和跨任务继承并计入所有调用。",
-      "tasks_and_resources": "SWE-bench Verified、SWE-bench Pro；摘要未给持续代际对照。"
+      "tasks_and_resources": "SWE-bench Verified、SWE-bench Pro；摘要未给持续代际对照。",
+      "layer": {
+        "id": "live-swe-agent",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "group-evolving-agents",
@@ -3937,7 +5636,18 @@
       "number": 104,
       "mechanism": "智能体群共享不同进化分支的经验来指导后续结构修改。",
       "intervention": "固定总资源，切断分支间经验共享而保留种群。",
-      "tasks_and_resources": "SWE-bench Verified、Polyglot，报告跨模型迁移与错误修复。"
+      "tasks_and_resources": "SWE-bench Verified、Polyglot，报告跨模型迁移与错误修复。",
+      "layer": {
+        "id": "group-evolving-agents",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "adaptive-auto-harness",
@@ -3971,7 +5681,18 @@
       "number": 105,
       "mechanism": "任务流驱动持续构建不同 harness，并按任务路由及保留演化经验。",
       "intervention": "分别固定构建、路由和人类引导，记录时间向前评估。",
-      "tasks_and_resources": "预测市场、安全竞赛、事件预测任务流；摘要未给统一完整成本。"
+      "tasks_and_resources": "预测市场、安全竞赛、事件预测任务流；摘要未给统一完整成本。",
+      "layer": {
+        "id": "adaptive-auto-harness",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "continual-harness",
@@ -4006,7 +5727,18 @@
       "number": 106,
       "mechanism": "代理在持续交互中交替行动并修订持久技能、提示和记忆。",
       "intervention": "冻结自修订但保留同一交互历史和资源上限。",
-      "tasks_and_resources": "具身长期任务/游戏；摘要报告 reset-free 流程，完整预算待核。"
+      "tasks_and_resources": "具身长期任务/游戏；摘要报告 reset-free 流程，完整预算待核。",
+      "layer": {
+        "id": "continual-harness",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "envharness",
@@ -4039,7 +5771,18 @@
       "number": 107,
       "mechanism": "根据代理失败生成环境包装组件，保留原验证器并训练策略。",
       "intervention": "冻结环境生成器、交叉环境和策略版本并评估原任务。",
-      "tasks_and_resources": "四领域五基准；报告独立实例泛化与执行步数。"
+      "tasks_and_resources": "四领域五基准；报告独立实例泛化与执行步数。",
+      "layer": {
+        "id": "envharness",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "aira-design",
@@ -4072,7 +5815,18 @@
       "number": 108,
       "mechanism": "研究代理设计计算原语和架构，并将候选扩展到较大模型训练。",
       "intervention": "把新旧目标作为研究代理，检验后续架构发现能力。",
-      "tasks_and_resources": "24 小时搜索，候选扩展至350M/1B/3B；有1B预训练结果。"
+      "tasks_and_resources": "24 小时搜索，候选扩展至350M/1B/3B；有1B预训练结果。",
+      "layer": {
+        "id": "aira-design",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "ai4ai-bench",
@@ -4104,7 +5858,18 @@
       "number": 109,
       "mechanism": "隔离训练算法修改，用隐藏评估器重训提交代码。",
       "intervention": "比较算法更改与仅运行/超参优化，控制探索和重训预算。",
-      "tasks_and_resources": "10 冻结仓库；1 B300 搜索4小时，重训至12小时。"
+      "tasks_and_resources": "10 冻结仓库；1 B300 搜索4小时，重训至12小时。",
+      "layer": {
+        "id": "ai4ai-bench",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "generalized-agent-iteration",
@@ -4132,7 +5897,7 @@
       "closure_assessment": "conceptual",
       "operation": "统一描述策略、评价、修改机制及评价基准是否属于可修改系统。",
       "boundary": "属于可重写组件不等于实际发生有效重写；表示统一不是经验泛化定律。",
-      "reading_scope": "§3.1–3.2：定义与两条区分轴；选定方法/证据阅读，未声明逐页完整精读。",
+      "reading_scope": "§3.1–3.2：定义与两条区分轴；选定方法/证据阅读，未声明全文与附录全部精读。",
       "primary_source": "https://arxiv.org/abs/2609.13406",
       "provenance": "2026-10-18 expansion",
       "admission": "core",
@@ -4154,7 +5919,31 @@
       "contribution_kind": "formal_framework",
       "institutions": "未在本轮独立核对全部机构",
       "reading_depth": "selected_methods_and_evidence",
-      "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证"
+      "judgment": "限定命题纳入；作者报告，未独立复现；不代表整篇主张已获认证",
+      "layer": {
+        "id": "generalized-agent-iteration",
+        "route": "crosscut",
+        "placement": "crosscut",
+        "audit": "selected_sections",
+        "why": "作为评价/形式分析工具单列，不新增一种自改进系统路线。",
+        "models": [],
+        "scale_status": "not_applicable",
+        "focus": [
+          "c5",
+          "c6"
+        ],
+        "changed": "评价协议 / 形式定义",
+        "return_path": "检验闭环、收益与成本，不以评测论文冒充新的 RSI 系统。",
+        "training": {
+          "stage": "不涉及参数训练",
+          "algorithm": "不涉及参数训练",
+          "data_regime": "执行轨迹与评价反馈",
+          "cadence": "离散候选 / 评价 / 继承"
+        },
+        "source_url": "https://arxiv.org/html/2609.13406v1",
+        "source_location": "§3.1–3.2：定义与两条区分轴"
+      },
+      "main_view": false
     },
     {
       "id": "aspire",
@@ -4188,7 +5977,18 @@
       "number": 111,
       "mechanism": "让代理从模糊目标自行选数据和更新方式，再用隐藏专家任务评价。",
       "intervention": "比较自定验证与外部目标的一致性，以及继续训练造成的退化。",
-      "tasks_and_resources": "六目标、520隐藏条目，支持权重与harness修改；预算待全文核查。"
+      "tasks_and_resources": "六目标、520隐藏条目，支持权重与harness修改；预算待全文核查。",
+      "layer": {
+        "id": "aspire",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "faithful-self-evolvers",
@@ -4220,7 +6020,18 @@
       "number": 112,
       "mechanism": "干预原始和压缩经验，检查代理决策是否真正依赖积累经验。",
       "intervention": "置换/删除经验并跨模型、环境比较行为变化。",
-      "tasks_and_resources": "四框架、13底座、九环境；原始摘要与实验范围已核。"
+      "tasks_and_resources": "四框架、13底座、九环境；原始摘要与实验范围已核。",
+      "layer": {
+        "id": "faithful-self-evolvers",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "shinkaevolve",
@@ -4254,7 +6065,18 @@
       "number": 113,
       "mechanism": "通过多样性、父代选择与模型组合提高程序演化样本效率。",
       "intervention": "分离目标程序收益和搜索器继承收益并计入所有候选。",
-      "tasks_and_resources": "包含 agent harness 与 MoE 损失发现，也有一般算法任务。"
+      "tasks_and_resources": "包含 agent harness 与 MoE 损失发现，也有一般算法任务。",
+      "layer": {
+        "id": "shinkaevolve",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "coverrl",
@@ -4287,7 +6109,18 @@
       "number": 114,
       "mechanism": "同一模型交替学习生成与验证，以验证反馈过滤自一致错误。",
       "intervention": "固定验证器并比较独立标签校准及生成多样性。",
-      "tasks_and_resources": "Qwen/Llama 数学推理；标签自由训练中的共识陷阱。"
+      "tasks_and_resources": "Qwen/Llama 数学推理；标签自由训练中的共识陷阱。",
+      "layer": {
+        "id": "coverrl",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "actor-curator",
@@ -4320,7 +6153,18 @@
       "number": 115,
       "mechanism": "神经课程选择器直接学习预计策略提升，适配非平稳题库采样。",
       "intervention": "在相同题库/算力下冻结课程，并检验未见任务难度迁移。",
-      "tasks_and_resources": "推理后训练；bandit 目标与遗憾界，假设未完整审阅。"
+      "tasks_and_resources": "推理后训练；bandit 目标与遗憾界，假设未完整审阅。",
+      "layer": {
+        "id": "actor-curator",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "agent-world",
@@ -4354,7 +6198,18 @@
       "number": 116,
       "mechanism": "探索真实工具生态并生成可验证任务，按能力缺口持续训练。",
       "intervention": "冻结环境库或能力缺口反馈，比较同预算迁移。",
-      "tasks_and_resources": "23个 agent 基准、8B/14B；预印本标注进行中。"
+      "tasks_and_resources": "23个 agent 基准、8B/14B；预印本标注进行中。",
+      "layer": {
+        "id": "agent-world",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "skillos",
@@ -4387,7 +6242,18 @@
       "number": 117,
       "mechanism": "用较晚关联任务的表现训练技能整理者，执行者保持冻结。",
       "intervention": "共同目标下交叉整理者版本与执行者底座。",
-      "tasks_and_resources": "任务流中的延迟反馈，多轮 agent 与单轮推理；成本待核。"
+      "tasks_and_resources": "任务流中的延迟反馈，多轮 agent 与单轮推理；成本待核。",
+      "layer": {
+        "id": "skillos",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "socratic-swe",
@@ -4421,7 +6287,18 @@
       "number": 118,
       "mechanism": "从解题轨迹提取技能生成下一轮修复任务，执行验证后更新求解者。",
       "intervention": "冻结任务生成技能或反馈求解者，控制真实训练总成本。",
-      "tasks_and_resources": "四个 SWE/Terminal 基准；摘要报告三轮和相同算力对照。"
+      "tasks_and_resources": "四个 SWE/Terminal 基准；摘要报告三轮和相同算力对照。",
+      "layer": {
+        "id": "socratic-swe",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "voyager",
@@ -4454,7 +6331,18 @@
       "number": 119,
       "mechanism": "在 Minecraft 中创建并复用可组合代码技能继续探索。",
       "intervention": "允许执行已获技能但禁止其影响后续技能发现。",
-      "tasks_and_resources": "Minecraft 新世界迁移；黑盒模型，无参数微调。"
+      "tasks_and_resources": "Minecraft 新世界迁移；黑盒模型，无参数微调。",
+      "layer": {
+        "id": "voyager",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "agentevolver",
@@ -4488,7 +6376,18 @@
       "number": 120,
       "mechanism": "自提问、自导航与贡献归因让环境经验进入后续 agent 训练。",
       "intervention": "分别冻结任务生成、经验引导和奖励归因。",
-      "tasks_and_resources": "多环境自主学习；原摘要为初步实验描述，完整算力待核。"
+      "tasks_and_resources": "多环境自主学习；原摘要为初步实验描述，完整算力待核。",
+      "layer": {
+        "id": "agentevolver",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "metaevolve",
@@ -4521,7 +6420,18 @@
       "number": 121,
       "mechanism": "用执行反馈训练多轮反思与修订能力，部署时进行演化搜索。",
       "intervention": "让训练前后模型改进相同未见程序，在同预算比较。",
-      "tasks_and_resources": "七编码基准及域外算法优化；初筛未提取总训练成本。"
+      "tasks_and_resources": "七编码基准及域外算法优化；初筛未提取总训练成本。",
+      "layer": {
+        "id": "metaevolve",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "seed-distillation",
@@ -4554,7 +6464,18 @@
       "number": 122,
       "mechanism": "当前策略同时收集轨迹和提炼事后技能，技能诱导信号训练同一策略。",
       "intervention": "冻结分析者并去除事后技能通道，保持当前策略采样。",
-      "tasks_and_resources": "文本与视觉 agent 任务；联合结果 RL 和 token 级自蒸馏。"
+      "tasks_and_resources": "文本与视觉 agent 任务；联合结果 RL 和 token 级自蒸馏。",
+      "layer": {
+        "id": "seed-distillation",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     },
     {
       "id": "rl-tango",
@@ -4587,277 +6508,190 @@
       "number": 123,
       "mechanism": "生成者与过程验证者交替用 RL 训练，外部结果正确性监督验证者。",
       "intervention": "交叉冻结两方并测试不同难度和域外校准。",
-      "tasks_and_resources": "7B/8B，五数学及四域外任务，另测 ProcessBench。"
+      "tasks_and_resources": "7B/8B，五数学及四域外任务，另测 ProcessBench。",
+      "layer": {
+        "id": "rl-tango",
+        "route": "unresolved",
+        "placement": "pending",
+        "audit": "not_layer_audited",
+        "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+        "models": [],
+        "scale_status": "unverified",
+        "focus": []
+      },
+      "main_view": false
     }
   ],
   "nodes": [
     {
-      "id": "family:research",
-      "type": "mechanism",
-      "label": "改进器与研发流程自修改"
+      "id": "route-harness",
+      "type": "concept",
+      "label": "Harness"
     },
     {
-      "id": "family:training",
-      "type": "mechanism",
-      "label": "学习更新与训练过程"
+      "id": "route-model",
+      "type": "concept",
+      "label": "Model"
     },
     {
-      "id": "family:curriculum",
-      "type": "mechanism",
-      "label": "课程、技能与环境共演"
+      "id": "route-hybrid",
+      "type": "concept",
+      "label": "Model × Harness"
     },
     {
-      "id": "family:feedback",
-      "type": "mechanism",
-      "label": "评价器、奖励与对手共演"
-    },
-    {
-      "id": "family:coupling",
-      "type": "mechanism",
-      "label": "模型与 harness 的匹配"
-    },
-    {
-      "id": "family:harness",
-      "type": "mechanism",
-      "label": "可复用软件与成本机制"
-    },
-    {
-      "id": "family:assessment",
-      "type": "mechanism",
-      "label": "比较、反例与形式边界"
+      "id": "self-rewarding-lm",
+      "type": "work",
+      "label": "Self-Rewarding LM"
     },
     {
       "id": "dgm",
-      "type": "admitted_claim",
+      "type": "work",
       "label": "DGM"
     },
     {
-      "id": "hgm",
-      "type": "admitted_claim",
-      "label": "HGM"
-    },
-    {
       "id": "hyperagents",
-      "type": "admitted_claim",
+      "type": "work",
       "label": "HyperAgents"
     },
     {
-      "id": "aide2",
-      "type": "admitted_claim",
-      "label": "AIDE²"
-    },
-    {
-      "id": "openrsi",
-      "type": "admitted_claim",
-      "label": "Frontis-MA1 / OpenMLE"
-    },
-    {
-      "id": "seal",
-      "type": "admitted_claim",
-      "label": "SEAL"
-    },
-    {
-      "id": "derl",
-      "type": "admitted_claim",
-      "label": "DERL"
-    },
-    {
-      "id": "evotrainer",
-      "type": "admitted_claim",
-      "label": "EvoTrainer"
-    },
-    {
-      "id": "automated-alignment-researchers",
-      "type": "admitted_claim",
-      "label": "Automated Alignment Researchers"
-    },
-    {
-      "id": "dr-zero",
-      "type": "admitted_claim",
-      "label": "Dr. Zero"
-    },
-    {
-      "id": "skill-self-play",
-      "type": "admitted_claim",
-      "label": "Skill Self-Play"
-    },
-    {
-      "id": "rlanything",
-      "type": "admitted_claim",
-      "label": "RLAnything"
-    },
-    {
-      "id": "self-taught-evaluators",
-      "type": "admitted_claim",
-      "label": "Self-Taught Evaluators"
-    },
-    {
-      "id": "gpt-red",
-      "type": "admitted_claim",
-      "label": "GPT-Red"
-    },
-    {
-      "id": "red-queen-godel-machine",
-      "type": "admitted_claim",
-      "label": "Red Queen Gödel Machine"
-    },
-    {
-      "id": "mass",
-      "type": "admitted_claim",
-      "label": "MASS"
-    },
-    {
-      "id": "on-policy-harness-coevolution",
-      "type": "admitted_claim",
-      "label": "On-policy M–H Co-evolution"
-    },
-    {
       "id": "rrsi",
-      "type": "admitted_claim",
+      "type": "work",
       "label": "RRSI"
     },
     {
-      "id": "modular-rsi",
-      "type": "admitted_claim",
-      "label": "ModularRSI"
+      "id": "aide2",
+      "type": "work",
+      "label": "AIDE²"
+    },
+    {
+      "id": "mass",
+      "type": "work",
+      "label": "MASS"
+    },
+    {
+      "id": "hgm",
+      "type": "work",
+      "label": "HGM"
+    },
+    {
+      "id": "self-taught-evaluators",
+      "type": "work",
+      "label": "Self-Taught Evaluators"
     },
     {
       "id": "sol-pi",
-      "type": "admitted_claim",
+      "type": "work",
       "label": "SoL-Pi"
     },
     {
-      "id": "harness-updating-benefit",
-      "type": "admitted_claim",
-      "label": "Harness Updating ≠ Benefit"
+      "id": "modular-rsi",
+      "type": "work",
+      "label": "ModularRSI"
     },
     {
-      "id": "rethink-harness-eval",
-      "type": "admitted_claim",
-      "label": "Rethinking Harness Evaluation"
+      "id": "red-queen-godel-machine",
+      "type": "work",
+      "label": "Red Queen Gödel Machine"
     },
     {
-      "id": "generalized-agent-iteration",
-      "type": "admitted_claim",
-      "label": "Generalized Agent Iteration"
+      "id": "on-policy-harness-coevolution",
+      "type": "work",
+      "label": "On-policy M–H Co-evolution"
     }
   ],
   "edges": [
     {
-      "source": "family:research",
+      "source": "route-model",
+      "target": "self-rewarding-lm",
+      "relation": "route_membership"
+    },
+    {
+      "source": "route-harness",
       "target": "dgm",
-      "type": "curated_membership"
+      "relation": "route_membership"
     },
     {
-      "source": "family:research",
-      "target": "hgm",
-      "type": "curated_membership"
-    },
-    {
-      "source": "family:research",
+      "source": "route-harness",
       "target": "hyperagents",
-      "type": "curated_membership"
+      "relation": "route_membership"
     },
     {
-      "source": "family:research",
-      "target": "aide2",
-      "type": "curated_membership"
-    },
-    {
-      "source": "family:research",
-      "target": "openrsi",
-      "type": "curated_membership"
-    },
-    {
-      "source": "family:training",
-      "target": "seal",
-      "type": "curated_membership"
-    },
-    {
-      "source": "family:training",
-      "target": "derl",
-      "type": "curated_membership"
-    },
-    {
-      "source": "family:training",
-      "target": "evotrainer",
-      "type": "curated_membership"
-    },
-    {
-      "source": "family:training",
-      "target": "automated-alignment-researchers",
-      "type": "curated_membership"
-    },
-    {
-      "source": "family:curriculum",
-      "target": "dr-zero",
-      "type": "curated_membership"
-    },
-    {
-      "source": "family:curriculum",
-      "target": "skill-self-play",
-      "type": "curated_membership"
-    },
-    {
-      "source": "family:curriculum",
-      "target": "rlanything",
-      "type": "curated_membership"
-    },
-    {
-      "source": "family:feedback",
-      "target": "self-taught-evaluators",
-      "type": "curated_membership"
-    },
-    {
-      "source": "family:feedback",
-      "target": "gpt-red",
-      "type": "curated_membership"
-    },
-    {
-      "source": "family:feedback",
-      "target": "red-queen-godel-machine",
-      "type": "curated_membership"
-    },
-    {
-      "source": "family:coupling",
-      "target": "mass",
-      "type": "curated_membership"
-    },
-    {
-      "source": "family:coupling",
-      "target": "on-policy-harness-coevolution",
-      "type": "curated_membership"
-    },
-    {
-      "source": "family:harness",
+      "source": "route-harness",
       "target": "rrsi",
-      "type": "curated_membership"
+      "relation": "route_membership"
     },
     {
-      "source": "family:harness",
-      "target": "modular-rsi",
-      "type": "curated_membership"
+      "source": "route-harness",
+      "target": "aide2",
+      "relation": "route_membership"
     },
     {
-      "source": "family:harness",
+      "source": "route-hybrid",
+      "target": "mass",
+      "relation": "route_membership"
+    },
+    {
+      "source": "route-harness",
+      "target": "hgm",
+      "relation": "route_membership"
+    },
+    {
+      "source": "route-model",
+      "target": "self-taught-evaluators",
+      "relation": "route_membership"
+    },
+    {
+      "source": "route-harness",
       "target": "sol-pi",
-      "type": "curated_membership"
+      "relation": "route_membership"
     },
     {
-      "source": "family:assessment",
-      "target": "harness-updating-benefit",
-      "type": "curated_membership"
+      "source": "route-harness",
+      "target": "modular-rsi",
+      "relation": "route_membership"
     },
     {
-      "source": "family:assessment",
-      "target": "rethink-harness-eval",
-      "type": "curated_membership"
+      "source": "route-harness",
+      "target": "red-queen-godel-machine",
+      "relation": "route_membership"
     },
     {
-      "source": "family:assessment",
-      "target": "generalized-agent-iteration",
-      "type": "curated_membership"
+      "source": "route-hybrid",
+      "target": "on-policy-harness-coevolution",
+      "relation": "route_membership"
     },
+    {
+      "source": "dgm",
+      "target": "hyperagents",
+      "relation": "explicit_extension"
+    },
+    {
+      "source": "dgm",
+      "target": "hgm",
+      "relation": "explicit_comparison"
+    },
+    {
+      "source": "hyperagents",
+      "target": "aide2",
+      "relation": "analytical_comparison"
+    },
+    {
+      "source": "mass",
+      "target": "on-policy-harness-coevolution",
+      "relation": "analytical_comparison"
+    },
+    {
+      "source": "self-taught-evaluators",
+      "target": "red-queen-godel-machine",
+      "relation": "analytical_comparison"
+    },
+    {
+      "source": "sol-pi",
+      "target": "aide2",
+      "relation": "analytical_comparison"
+    }
+  ],
+  "relations": [
     {
       "source": "dgm",
       "target": "hyperagents",
@@ -4911,6 +6745,408 @@
       "label": "我们的比较：运行节约是否进入后继研发能力"
     }
   ],
+  "routes": [
+    {
+      "id": "harness",
+      "title": "Harness",
+      "subtitle": "外部机制与持久状态进化",
+      "criterion": "模型参数固定；改进被保留在系统边界内的代码、规则、外部记忆、工具或执行设施中。",
+      "question": "怎样让同一模型更会行动、学习、评价和继续改进？"
+    },
+    {
+      "id": "model",
+      "title": "Model",
+      "subtitle": "模型权重与学习机制",
+      "criterion": "实际更新参数化组件；下一代参与产生后续训练、反馈或改进。数据流变化本身不等于 harness 自改。",
+      "question": "怎样让学习改变下一轮学习信号或改进行为？"
+    },
+    {
+      "id": "hybrid",
+      "title": "Model × Harness",
+      "subtitle": "联合适配与闭环共演",
+      "criterion": "权重与外部机制均实际更新；另区分单向内化、序列适配、互相回流和持续多轮。",
+      "question": "两条更新路径怎样相互适应，而不是互相破坏？"
+    }
+  ],
+  "spaces": [
+    {
+      "id": "h-info",
+      "route": "harness",
+      "title": "信息与持久记忆",
+      "objects": "提示、上下文、经验、知识库、数据库与检索策略",
+      "evidence_ids": [
+        "modular-rsi",
+        "ace",
+        "memrl",
+        "memskill"
+      ],
+      "open_question": "更新事实、更新检索策略与真正增加后续改进能力，怎样分开测量？",
+      "main_ids": [
+        "modular-rsi"
+      ],
+      "reference_ids": [
+        "ace",
+        "memrl",
+        "memskill"
+      ],
+      "coverage": "主图有对应实例"
+    },
+    {
+      "id": "h-action",
+      "route": "harness",
+      "title": "工具与行动接口",
+      "objects": "工具代码、插件、skills、MCP 接口与操作权限",
+      "evidence_ids": [
+        "dgm",
+        "rrsi",
+        "skillweaver",
+        "voyager"
+      ],
+      "open_question": "学到可复用的动作原语，还是只为已见任务添加特例？",
+      "main_ids": [
+        "dgm",
+        "rrsi"
+      ],
+      "reference_ids": [
+        "skillweaver",
+        "voyager"
+      ],
+      "coverage": "主图有对应实例"
+    },
+    {
+      "id": "h-control",
+      "route": "harness",
+      "title": "组织、控制与搜索",
+      "objects": "规划、路由、反思、多智能体分工、搜索与谱系选择",
+      "evidence_ids": [
+        "hyperagents",
+        "hgm",
+        "adas",
+        "aflow"
+      ],
+      "open_question": "后继改变的是任务策略、搜索策略，还是产生搜索策略的方法？",
+      "main_ids": [
+        "hyperagents",
+        "hgm"
+      ],
+      "reference_ids": [
+        "adas",
+        "aflow"
+      ],
+      "coverage": "主图有对应实例"
+    },
+    {
+      "id": "h-learning",
+      "route": "harness",
+      "title": "学习与研发流程",
+      "objects": "训练程序、优化器代码、损失、数据筛选、实验设计",
+      "evidence_ids": [
+        "aide2",
+        "evotrainer",
+        "autoscientists"
+      ],
+      "open_question": "训练代码被优化后，能否跨目标模型复用并由后继继续研发？",
+      "main_ids": [
+        "aide2"
+      ],
+      "reference_ids": [
+        "evotrainer",
+        "autoscientists"
+      ],
+      "coverage": "主图有对应实例"
+    },
+    {
+      "id": "h-eval",
+      "route": "harness",
+      "title": "评价、选择与继承",
+      "objects": "测评程序、验证器、奖励代码、晋升/回退规则",
+      "evidence_ids": [
+        "red-queen-godel-machine",
+        "rrsi",
+        "hgm"
+      ],
+      "open_question": "评分规则变化时，怎样保留跨代可比较的外部锚点？",
+      "main_ids": [
+        "red-queen-godel-machine",
+        "rrsi",
+        "hgm"
+      ],
+      "reference_ids": [],
+      "coverage": "主图有对应实例"
+    },
+    {
+      "id": "h-exec",
+      "route": "harness",
+      "title": "执行、环境与资源",
+      "objects": "runtime、沙箱、训练环境、编译、调度、服务、infra",
+      "evidence_ids": [
+        "sol-pi",
+        "envharness"
+      ],
+      "open_question": "是固定预算下机制更有效，还是只获得更多算力或有利环境？",
+      "main_ids": [
+        "sol-pi"
+      ],
+      "reference_ids": [
+        "envharness"
+      ],
+      "coverage": "主图有对应实例"
+    },
+    {
+      "id": "m-sft",
+      "route": "model",
+      "title": "自生成监督与蒸馏",
+      "objects": "评价推理、轨迹、知识或技能内化",
+      "evidence_ids": [
+        "self-taught-evaluators",
+        "seed-distillation"
+      ],
+      "open_question": "每代生成的数据为何更有用；学生重置与继续训练有什么区别？",
+      "main_ids": [
+        "self-taught-evaluators"
+      ],
+      "reference_ids": [
+        "seed-distillation"
+      ],
+      "coverage": "主图有对应实例"
+    },
+    {
+      "id": "m-preference",
+      "route": "model",
+      "title": "自奖励与偏好学习",
+      "objects": "DPO 等偏好优化、生成者/评价者参数",
+      "evidence_ids": [
+        "self-rewarding-lm",
+        "self-evolved-reward"
+      ],
+      "open_question": "奖励质量增长能否在独立任务上验证，是否随训练共同偏移？",
+      "main_ids": [
+        "self-rewarding-lm"
+      ],
+      "reference_ids": [
+        "self-evolved-reward"
+      ],
+      "coverage": "主图有对应实例"
+    },
+    {
+      "id": "m-rl",
+      "route": "model",
+      "title": "在线交互与自博弈 RL",
+      "objects": "策略、评价模型、对手、提案模型的权重",
+      "evidence_ids": [
+        "gpt-red",
+        "dr-zero",
+        "skill-self-play",
+        "rl-tango"
+      ],
+      "open_question": "≥27B、反馈回流、实际代际收益三者能否同时公开核验？",
+      "main_ids": [],
+      "reference_ids": [
+        "gpt-red",
+        "dr-zero",
+        "skill-self-play",
+        "rl-tango"
+      ],
+      "coverage": "只有候选 / 范围外参考"
+    },
+    {
+      "id": "m-meta",
+      "route": "model",
+      "title": "学习如何更新与持续适应",
+      "objects": "自编辑、元学习、测试时权重更新、持续学习",
+      "evidence_ids": [
+        "seal",
+        "derl",
+        "metaevolve"
+      ],
+      "open_question": "学习者当前状态改变后，更新策略是否仍产生正增益？",
+      "main_ids": [],
+      "reference_ids": [
+        "seal",
+        "derl",
+        "metaevolve"
+      ],
+      "coverage": "只有候选 / 范围外参考"
+    },
+    {
+      "id": "m-pretrain",
+      "route": "model",
+      "title": "预训练与继续预训练",
+      "objects": "语料生成/筛选、训练目标、训练配方与检查点",
+      "evidence_ids": [
+        "automl-zero",
+        "self-training-optimizer-2020"
+      ],
+      "open_question": "现有参考未构成 ≥27B LLM 自主预训练闭环；如何接到可核验的后继能力？",
+      "main_ids": [],
+      "reference_ids": [
+        "automl-zero",
+        "self-training-optimizer-2020"
+      ],
+      "coverage": "只有候选 / 范围外参考"
+    },
+    {
+      "id": "m-structure",
+      "route": "model",
+      "title": "模型结构与可训练表征",
+      "objects": "网络结构、模块、专家、路由、容量与参数化方式",
+      "evidence_ids": [
+        "aira-design"
+      ],
+      "open_question": "发现其他模型的结构，不等于重构自身并继承其改进能力。",
+      "main_ids": [],
+      "reference_ids": [
+        "aira-design"
+      ],
+      "coverage": "只有候选 / 范围外参考"
+    },
+    {
+      "id": "x-distill",
+      "route": "hybrid",
+      "title": "外部能力内化再外化",
+      "objects": "工作流/技能轨迹 → 权重 → 新工作流",
+      "evidence_ids": [
+        "mass",
+        "harness-zero"
+      ],
+      "open_question": "去掉旧工作流后能力保留多少，更新模型是否又能设计更好工作流？",
+      "main_ids": [
+        "mass"
+      ],
+      "reference_ids": [
+        "harness-zero"
+      ],
+      "coverage": "主图有对应实例"
+    },
+    {
+      "id": "x-fit",
+      "route": "hybrid",
+      "title": "行为分布与接口适配",
+      "objects": "模型策略改变与 harness 假设相互适配",
+      "evidence_ids": [
+        "on-policy-harness-coevolution",
+        "co-harness"
+      ],
+      "open_question": "联合更新何时正协同，何时破坏规划、接口或执行习惯？",
+      "main_ids": [
+        "on-policy-harness-coevolution"
+      ],
+      "reference_ids": [
+        "co-harness"
+      ],
+      "coverage": "主图有对应实例"
+    },
+    {
+      "id": "x-trainer",
+      "route": "hybrid",
+      "title": "训练器与学习者共演",
+      "objects": "训练软件、奖励实现、课程与目标策略",
+      "evidence_ids": [
+        "evotrainer",
+        "rewardharness"
+      ],
+      "open_question": "训练代理和目标模型的边界是什么；后继能否承担下一轮训练决策？",
+      "main_ids": [],
+      "reference_ids": [
+        "evotrainer",
+        "rewardharness"
+      ],
+      "coverage": "只有候选 / 范围外参考"
+    },
+    {
+      "id": "x-memory",
+      "route": "hybrid",
+      "title": "外部知识与参数记忆共演",
+      "objects": "技能库/数据库更新 ↔ 参数学习",
+      "evidence_ids": [
+        "skillrl",
+        "mem2evolve"
+      ],
+      "open_question": "新知识应写入外部状态还是权重；淘汰与内化怎样避免遗忘和重复？",
+      "main_ids": [],
+      "reference_ids": [
+        "skillrl",
+        "mem2evolve"
+      ],
+      "coverage": "只有候选 / 范围外参考"
+    },
+    {
+      "id": "x-world",
+      "route": "hybrid",
+      "title": "环境、评价与策略共演",
+      "objects": "可执行环境/验证规则 ↔ 世界模型/策略权重",
+      "evidence_ids": [
+        "rlanything",
+        "webevolver"
+      ],
+      "open_question": "系统是能力增长，还是创造了更容易被自己满足的世界与评价？",
+      "main_ids": [],
+      "reference_ids": [
+        "rlanything",
+        "webevolver"
+      ],
+      "coverage": "只有候选 / 范围外参考"
+    },
+    {
+      "id": "x-resource",
+      "route": "hybrid",
+      "title": "模型结构与执行资源共设计",
+      "objects": "架构/稀疏度/精度 ↔ 编译、调度与训练系统",
+      "evidence_ids": [],
+      "open_question": "在本次已审集合中尚无确认实例；如何测量端到端收益而不把资源增加当能力增益？",
+      "main_ids": [],
+      "reference_ids": [],
+      "coverage": "本次调查未确认实例"
+    }
+  ],
+  "placement_labels": {
+    "main": "三层主视图",
+    "small": "<27B 机制参考",
+    "scale_unverified": "规模未核准",
+    "adjacent": "AI4AI 支撑 / 非已证闭环",
+    "crosscut": "评测与形式工具",
+    "pending": "候选待审",
+    "historical": "历史与机制参考",
+    "background": "外围背景"
+  },
+  "contribution_axes": {
+    "a1": "目标与问题",
+    "a2": "价值与意义",
+    "a3": "优先级与成功条件",
+    "a4": "约束与资源",
+    "b1": "认知与理解",
+    "b2": "思想与视野",
+    "b3": "洞察力与直觉",
+    "b4": "判断力与研究品味",
+    "b5": "全局意识与审美",
+    "c1": "问题本质",
+    "c2": "第一性原理与基本规律",
+    "c3": "结构与逻辑",
+    "c4": "变量、关系与因果",
+    "c5": "模型与表征",
+    "c6": "假设与理论",
+    "d1": "创造力与创新",
+    "d2": "思路与策略",
+    "d3": "方法、技术与路径",
+    "d4": "算法与推理",
+    "d5": "证明与构造",
+    "d6": "实验、计算与仿真",
+    "d7": "跨学科联系与突破",
+    "e1": "主动性与行动力",
+    "e2": "实现与实践",
+    "e3": "坚持与持续推进",
+    "e4": "反馈、学习与调整",
+    "e5": "路线重构与持续突破",
+    "e6": "知识积累与能力进化",
+    "f1": "新知识与新发现",
+    "f2": "新解释与新理论",
+    "f3": "新方法与新技术",
+    "f4": "证明、预测与实际解决方案",
+    "f5": "泛化、迁移与可复用能力",
+    "f6": "实际价值与长期影响"
+  },
+  "threshold": "实际被更新的目标模型总参数；LoRA 按基座总参数计，另报可训练方式；MoE 另报激活量。不把教师、评审、服务 API 或多个小模型相加达标。",
+  "minimum_total_parameters_b": 27,
   "priority_queue": [
     {
       "ids": [

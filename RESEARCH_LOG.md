@@ -595,3 +595,15 @@ Local browser rendering was unavailable because no browser binary was installed
 and the browser download returned invalid archives; JavaScript rendering and
 filter logic are checked in Node, not claimed as a real-browser interaction run.
 No new toy experiment or independent literature reproduction was performed.
+
+## 2026-10-18 — Replace the seven-family navigation with three object routes
+
+**Reason:** The seven mechanism families mixed update location, functional role and evaluation method at one level. The user requested clearer Harness / Model / Model × Harness navigation and a >=27B actual-training scope for Model/mixed, then clarified that the substructure must derive from functions and feedback rather than merely repeat their examples.
+
+**Change:** Added a manually sourced layer/scale/return-path registry; retained claim quality as an independent axis. The atlas now presents 12 main-view works (8/2/2), 24 claim cards and 123 bibliography records. Self-Rewarding LM was promoted after reading the actual 70B SFT/DPO procedure and fixed question-generator detail. No other unresolved work was promoted by title, institution or parameter count. The canonical graph v3 contains three route nodes and main-view works only; previous comparisons remain in the claim-review source.
+
+**Research correction:** Frontis-MA1 qualifies by trained-model size but its own limitations identify a largely fixed evolutionary system. The on-policy coevolution paper primarily tests one joint adaptation, and uses LoRA SFT rather than RL; its 26B auxiliary branch does not meet the cutoff. EvoTrainer's fixed trainer is not its trained target. Evaluation code, learned evaluation weights and independent audit criteria are now explicitly separated.
+
+**Scope:** Six Harness functions, orthogonal Model descriptors and eighteen functional/feedback research positions expose both populated and unconfirmed locations. These are analytical coordinates, not proof of universal predictive coverage or worldwide novelty. A–F tags select 1–3 contribution foci; no per-paper personality or exhaustive-dimension scoring.
+
+**Artifacts:** Rebuilt offline HTML, PNG/SVG diagrams, PDF, main Markdown, cards, complete index and review queue from the same data. New validation enforces actual-target size, separate claim/main membership, graph filtering and exact embedded JSON consistency. Browser-engine layout verification remains unavailable in this environment; functional JavaScript and PDF/diagram rendering are checked separately.

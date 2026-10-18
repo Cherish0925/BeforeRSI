@@ -18,18 +18,17 @@
 
 ---
 
-## 先看研究地图
+## 先看三层研究地图
 
-**[中文图文导读（26 页 PDF）](output/pdf/beforersi-research-atlas.pdf)** · **[可搜索离线地图（下载后打开）](research/atlas/index.html)** · **[23 项核心卡片](research/atlas/core-cards.md)** · **[123 项完整参考索引](research/atlas/references.md)**
+**[可搜索离线 HTML（下载后打开）](research/atlas/index.html)** · **[图文导读 PDF](output/pdf/beforersi-research-atlas.pdf)** · **[分类原理与边界](research/atlas/classification.md)** · **[完整参考索引](research/atlas/references.md)**
 
-![核心研究知识树](assets/atlas/knowledge-tree.png)
+![三层研究知识树](assets/atlas/knowledge-tree.png)
 
-主图按具体研究贡献筛选：**23 项核心命题、78 项候选待审、16 项历史/机制参考、6 项背景**。
-核心只表示限定命题有纳入理由，不代表整篇论文已被独立验证。仅摘要筛查、尚未通过纳入门槛的条目不进入图。
-567 个去重 arXiv 发现线索单独保存，不计为已读或优质论文。当前没有完成具名低价值判定，不能由此说其他工作都优质。
+一级入口为 **Harness、Model、Model × Harness**。当前主图 12 项（8 / 2 / 2）；24 项限定命题保留研究卡片，完整书目 123 项。三个数字不是同一个统计。
 
-[RESEARCH_ATLAS.md](RESEARCH_ATLAS.md) 解释七条机制线、关系含义、规模与阅读边界。
-[data/quality-review.json](data/quality-review.json) 保存逐项决定；机器图只保留核心工作。
+Model / 混合按实际训练目标 **总参数 ≥27B** 筛选，同时显示 MoE 激活量、全参/adapter、训练阶段、算法、采样方式和回流节奏。未知规模、小模型机制、AI4AI 支撑、评测与形式工具另列。
+
+[RESEARCH_ATLAS.md](RESEARCH_ATLAS.md) 展开三条主线、功能研究空间及逐项退出主图的理由。[data/layer-review.json](data/layer-review.json) 保存层级/规模审查；[data/quality-review.json](data/quality-review.json) 保存贡献判读。旧七类机制仅为辅助检索，不再担任一级导航。567 个发现线索不是已读或优质论文数。
 
 ## What must be true before RSI is real?
 
