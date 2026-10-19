@@ -101,6 +101,10 @@ def validate_works(data: object) -> set[str]:
 def validate_graph(data: object, work_ids: set[str]) -> None:
     if not isinstance(data, dict):
         fail("knowledge graph root must be an object")
+    if data.get("schema_version") == "4.0.0":
+        from check_literature_graphs import check
+        check()
+        return
     required = {"schema_version", "updated", "nodes", "edges", "work_bindings"}
     if set(data) != required:
         fail(f"knowledge graph keys must be exactly {sorted(required)}")
@@ -268,12 +272,13 @@ def validate_curated_atlas(work_ids: set[str]) -> None:
         if slot["route"] not in route_ids or not set(slot["evidence_ids"]) <= work_ids:
             fail("invalid research-space association")
     graph = load(GRAPH_PATH)
-    if {r["work_id"] for r in graph["work_bindings"]} != main:
-        fail("canonical graph must bind exactly the main-view works")
-    if {r["id"] for r in graph["nodes"] if r["type"] == "work"} != main:
-        fail("out-of-scope work leaked into main graph")
-    if {r["id"] for r in graph["nodes"] if r["type"] == "concept"} != {"route-"+k for k in route_ids}:
-        fail("main graph must use three route concepts")
+    if graph.get("schema_version") != "4.0.0":
+        if {r["work_id"] for r in graph["work_bindings"]} != main:
+            fail("canonical graph must bind exactly the main-view works")
+        if {r["id"] for r in graph["nodes"] if r["type"] == "work"} != main:
+            fail("out-of-scope work leaked into main graph")
+        if {r["id"] for r in graph["nodes"] if r["type"] == "concept"} != {"route-"+k for k in route_ids}:
+            fail("main graph must use three route concepts")
     atlas = load(ROOT / "data/research-atlas.json")
     counts = dict(Counter(r["admission"] for r in decisions))
     counts.setdefault("low_value", 0)
@@ -296,10 +301,11 @@ def validate_curated_atlas(work_ids: set[str]) -> None:
     source_layers = {r["id"]:r for r in layers}
     if any(r["layer"] != source_layers[r["id"]] for r in atlas["works"]):
         fail("generated layer record differs from reviewed source")
-    page = (ROOT / "research/atlas/index.html").read_text(encoding="utf-8")
-    embedded = re.search(r'<script id="atlas-data" type="application/json">(.*?)</script>', page, re.S)
-    if not embedded or json.loads(embedded.group(1)) != atlas:
-        fail("offline atlas does not contain the current complete dataset")
+    if graph.get("schema_version") != "4.0.0":
+        page = (ROOT / "research/atlas/index.html").read_text(encoding="utf-8")
+        embedded = re.search(r'<script id="atlas-data" type="application/json">(.*?)</script>', page, re.S)
+        if not embedded or json.loads(embedded.group(1)) != atlas:
+            fail("offline atlas does not contain the current complete dataset")
 
 
 def main() -> int:
@@ -309,7 +315,7 @@ def main() -> int:
         validate_hypotheses(load(HYPOTHESES_PATH))
         validate_scope_catalog(work_ids)
         validate_curated_atlas(work_ids)
-    except (OSError, json.JSONDecodeError, ValueError) as exc:
+    except (OSError, json.JSONDecodeError, ValueError, AssertionError) as exc:
         print(f"validation failed: {exc}", file=sys.stderr)
         return 1
 

@@ -537,3 +537,29 @@ The earlier 8/2/2 view was an incomplete editorial selection. It was not the res
 - Source fact / locator: [首页；§2–3、消融；2022 预印本 / EMNLP 2023](https://aclanthology.org/2023.emnlp-main.67.pdf). 用 self-consistency 筛选自生成推理样本，再微调同一模型。 自身生成样本回到参数更新；未证多代循环。
 - Reported evidence / distributions / resources: PaLM 540B 在多项推理任务报告改善及多样性消融。 PaLM 540B；2022 预印本、2023 正式发表。
 - BeforeRSI judgment: 关键前身/比较基线，保留贡献但不计入直接演化重点数。 一轮自训练前身；不把它计成已证持续递归系统。
+
+## 2026-10-19 — Public-literature graph reconstruction
+
+**Source facts added:** the bibliography now includes the primary versions used for paper affiliations, checked full paper titles, and the extra method readings below. `data/literature-affiliation-sources.json` records the new title-page checks. An affiliation check establishes authorship metadata only; it does not promote the paper to a full method or quality review. Institutions are not inferred from funding or the model provider. The Co-Harness v1 title page identifies Meituan, Ai2 and an independent affiliation.
+
+**Editorial representation:** the current reader has 97 route positions (38 Harness, 34 Model, 25 mixed), eight cross-route references and 22 historical/background entries. Forty-one cards contain selected-method readings; 64 are abstract/source screens. The old 38 claim reviews/19-case shortlist remains distinct. Thirteen source-explicit paper relations and 30 method comparisons are encoded separately, with original URLs and locations on every edge. These numbers are coverage progress, not worldwide quality judgments. Principal-route labels are relative to the selected learning object; cross-route method links retain multi-component structure.
+
+### Voyager — skill-library mechanism reading
+
+[Primary source, §2–3](https://arxiv.org/html/2305.16291v2): a frozen GPT-4 agent proposes executable skills, revises them using environment/error/self-verification feedback, and saves successful code for later retrieval and composition. The curriculum and model-call program are fixed. The paper reports Minecraft exploration and transfer to new worlds. This adds a Harness method card; no matched-compute reproduction or exhaustive cost extraction is claimed. Persisted code-skill reuse is not evidence that the curriculum generator or improvement algorithm rewrites itself.
+
+### MemRL — nonparametric memory utility
+
+[Primary source, §3–4, especially Eq. (8)](https://arxiv.org/html/2601.03192v1): similarity retrieval is followed by utility-based memory selection. The implemented episodic utility update is Q←Q+α(r−Q); it should not be silently replaced by the general TD equation discussed elsewhere in the paper. The inference LLM stays frozen. Retained memories and utility values affect later tasks. The card describes the memory mechanism; full benchmark-cost accounting and independent replication remain absent.
+
+### SkillRL — skill bank and policy learning; 7B scope correction
+
+[Primary source, §2–3, §4.1 and Tables 1–2](https://arxiv.org/html/2602.08234v1): hierarchical skills augment the policy context and are revised from trajectories while the policy is trained. Qwen2.5-7B-Instruct is the actual trained policy; o3 supplies skill/SFT data, and GRPO updates the policy. ALFWorld, WebShop and search QA are reported. This is a mixed-route mechanism card but belongs to the sub-27B supplement. Neither the larger teacher nor comparison to large models establishes a ≥27B trained target. The Table 1 MemRL baseline is a source-explicit comparison edge, not an inheritance claim. The full implementation and all appendices were not reviewed.
+
+### Harness-R1 — learned engineer; 9B scope correction
+
+[Primary source, abstract, §4 settings, Appendix B.1–B.2](https://arxiv.org/html/2608.02276v1): the engineer is a separate 9B model initialized by SFT and trained with online GRPO from patched-target rerun rewards. Main-loop target weights are frozen. The paper also tests a separately fine-tuned target and larger transfer targets. These are not evidence of sustained bidirectional coevolution. It is placed with learned improvers in Model, with a cross-route workflow link, and excluded from the default graph by the size scope. This is a bounded setting check; its overall reading status remains a source screen.
+
+### EURISKO — historical explanation rewritten
+
+[Lenat primary paper, abstract and representation/control discussion](https://www.cs.northwestern.edu/~mek802/papers/not-mine/Lenat_EURISKO.pdf): concepts and heuristics have manipulable representations; retained rules influence later discovery. The card now explains the research problem, representation, feedback and domain limitations in Chinese. It remains historical background, outside the three contemporary LLM route views.

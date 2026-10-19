@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "updated": "2026-10-18",
+  "updated": "2026-10-19",
   "depth_definitions": {
     "conceptual": "Qualitative or theoretical statement without an executable persistent update.",
     "external_optimization": "A fixed optimizer improves an external target.",
@@ -167,7 +167,7 @@
     },
     {
       "id": "promptbreeder",
-      "name": "Promptbreeder",
+      "name": "Promptbreeder: Self-Referential Self-Improvement via Prompt Evolution",
       "year": 2023,
       "role": "direct_self_referential_prompt_search",
       "reported_depth": "persistent",
@@ -233,6 +233,10 @@
         {
           "type": "paper",
           "url": "https://proceedings.mlr.press/v235/chen24j.html"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2401.01335v2"
         }
       ]
     },
@@ -281,12 +285,16 @@
         {
           "type": "paper",
           "url": "https://aclanthology.org/2025.acl-long.1354/"
+        },
+        {
+          "type": "paper",
+          "url": "https://aclanthology.org/2025.acl-long.1354.pdf"
         }
       ]
     },
     {
       "id": "adas",
-      "name": "ADAS",
+      "name": "Automated Design of Agentic Systems",
       "year": 2024,
       "role": "adjacent_agent_architecture_search",
       "reported_depth": "external_optimization",
@@ -327,12 +335,16 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2410.10762"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2410.10762"
         }
       ]
     },
     {
       "id": "sica",
-      "name": "SICA",
+      "name": "A Self-Improving Coding Agent",
       "year": 2025,
       "role": "direct_self_modifying_agent",
       "reported_depth": "persistent",
@@ -361,7 +373,7 @@
     },
     {
       "id": "dgm",
-      "name": "Darwin Gödel Machine",
+      "name": "Darwin Gödel Machine: Open-Ended Evolution of Self-Improving Agents",
       "year": 2025,
       "role": "direct_lineage_self_modification",
       "reported_depth": "multi_generation",
@@ -389,7 +401,7 @@
     },
     {
       "id": "gepa",
-      "name": "GEPA",
+      "name": "GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning",
       "year": 2025,
       "role": "adjacent_reflective_optimizer",
       "reported_depth": "external_optimization",
@@ -432,6 +444,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2502.00757"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2502.00757"
         }
       ]
     },
@@ -449,12 +465,16 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2510.04399"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2510.04399"
         }
       ]
     },
     {
       "id": "seal",
-      "name": "SEAL",
+      "name": "Self-Adapting Language Models",
       "year": 2025,
       "role": "direct_model_self_update",
       "reported_depth": "persistent",
@@ -550,6 +570,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2605.27276"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2605.27276"
         }
       ]
     },
@@ -569,6 +593,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2607.15524"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2607.15524"
         }
       ]
     },
@@ -590,6 +618,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/html/2607.12227v4"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2607.12227v1"
         }
       ]
     },
@@ -610,6 +642,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2607.22688"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2607.22688"
         }
       ]
     },
@@ -634,6 +670,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2608.13951"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2608.13951"
         }
       ]
     },
@@ -659,6 +699,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2608.08466"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2608.08466"
         }
       ]
     },
@@ -680,6 +724,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2608.05446"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2608.05446"
         }
       ]
     },
@@ -697,6 +745,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2609.00069"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2609.00069"
         }
       ]
     },
@@ -716,12 +768,16 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2609.01437"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2609.01437"
         }
       ]
     },
     {
       "id": "rrsi",
-      "name": "RRSI",
+      "name": "RRSI: Regularized Recursive Self-Improvement of Agent Harnesses",
       "year": 2026,
       "role": "direct_harness_improvement",
       "reported_depth": "transfer",
@@ -772,12 +828,16 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2603.28052"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2603.28052"
         }
       ]
     },
     {
       "id": "aide2",
-      "name": "AIDE²",
+      "name": "Recursive self-improvement of AI research agents",
       "year": 2026,
       "role": "direct_ai_research_agent_rsi",
       "reported_depth": "multi_generation",
@@ -834,7 +894,7 @@
     },
     {
       "id": "mass",
-      "name": "MASS",
+      "name": "Recursive Self-Improvement through Multi-Agent Self-Supervision",
       "year": 2026,
       "role": "direct_model_workflow_coevolution",
       "reported_depth": "transfer",
@@ -902,12 +962,16 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2609.14858"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2609.14858"
         }
       ]
     },
     {
       "id": "hgm",
-      "name": "Huxley–Gödel Machine (HGM)",
+      "name": "Huxley-Gödel Machine: Human-Level Coding Agent Development by an Approximation of the Optimal Self-Improving Machine",
       "year": 2025,
       "role": "direct_lineage_self_modification",
       "reported_depth": "multi_generation",
@@ -972,6 +1036,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2506.13131"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2506.13131v1"
         }
       ]
     },
@@ -992,6 +1060,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2309.03409"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2309.03409"
         }
       ]
     },
@@ -1073,6 +1145,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2203.14465"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2203.14465"
         }
       ]
     },
@@ -1346,7 +1422,7 @@
     },
     {
       "id": "sima2",
-      "name": "SIMA 2",
+      "name": "SIMA 2: A Generalist Embodied Agent for Virtual Worlds",
       "year": 2025,
       "role": "interactive_self_improvement",
       "reported_depth": "multi_generation",
@@ -1370,7 +1446,7 @@
     },
     {
       "id": "constitutional-ai",
-      "name": "Constitutional AI",
+      "name": "Constitutional AI: Harmlessness from AI Feedback",
       "year": 2022,
       "role": "ai_feedback_learning",
       "reported_depth": "persistent",
@@ -1430,6 +1506,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2310.12931"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2310.12931"
         }
       ]
     },
@@ -1455,7 +1535,7 @@
     },
     {
       "id": "gpt-red",
-      "name": "GPT-Red",
+      "name": "GPT-Red: Automated Red Teaming via Self-Play at Scale",
       "year": 2026,
       "role": "adversarial_coevolution",
       "reported_depth": "multi_generation",
@@ -1582,6 +1662,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2608.23552"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2608.23552"
         }
       ]
     },
@@ -1701,6 +1785,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2511.16043"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2511.16043"
         }
       ]
     },
@@ -1721,6 +1809,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2508.05004"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2508.05004"
         }
       ]
     },
@@ -1741,6 +1833,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2505.03335"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2505.03335v1"
         }
       ]
     },
@@ -1761,6 +1857,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2602.21320"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2602.21320v1"
         }
       ]
     },
@@ -1807,6 +1907,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2605.28655"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2605.28655"
         }
       ]
     },
@@ -1852,6 +1956,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2605.13874"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2605.13874"
         }
       ]
     },
@@ -1873,6 +1981,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2601.14525"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2601.14525"
         }
       ]
     },
@@ -1894,6 +2006,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2608.24735"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2608.24735"
         }
       ]
     },
@@ -1913,6 +2029,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2606.09498"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2606.09498"
         }
       ]
     },
@@ -1933,6 +2053,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2609.24974"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2609.24974"
         }
       ]
     },
@@ -1948,11 +2072,15 @@
       ],
       "evidence_status": "reported",
       "audit_status": "in_progress",
-      "central_limit": "主训练只更新编辑者、目标冻结；论文指向共同进化，未证明持续双向循环。",
+      "central_limit": "The trained engineer is a separate 9B model; the target is frozen during the main loop. Sequential target adaptation and transfer to larger targets do not establish sustained bidirectional coevolution.",
       "sources": [
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2608.02276"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2608.02276"
         }
       ]
     },
@@ -1968,11 +2096,15 @@
       ],
       "evidence_status": "reported",
       "audit_status": "in_progress",
-      "central_limit": "技能压缩可能丢失适用条件，特定基准增益不证明通用递归能力。",
+      "central_limit": "The trained policy is Qwen2.5-7B-Instruct, below the selected 27B scope; o3 is a teacher. The reported skill-policy gains do not establish unbounded recursive improvement.",
       "sources": [
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2602.08234"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2602.08234v1"
         }
       ]
     },
@@ -1993,6 +2125,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2605.23904"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2605.23904"
         }
       ]
     },
@@ -2013,6 +2149,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2604.10923"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2604.10923"
         }
       ]
     },
@@ -2033,6 +2173,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2602.02474"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2602.02474"
         }
       ]
     },
@@ -2053,6 +2197,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2601.03192"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2601.03192v1"
         }
       ]
     },
@@ -2074,6 +2222,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2606.03841"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2606.03841"
         }
       ]
     },
@@ -2118,6 +2270,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2608.15763"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2608.15763"
         }
       ]
     },
@@ -2138,6 +2294,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2605.08703"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2605.08703v1"
         }
       ]
     },
@@ -2158,6 +2318,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2504.21024"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2504.21024"
         }
       ]
     },
@@ -2178,6 +2342,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2411.02337"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2411.02337"
         }
       ]
     },
@@ -2198,6 +2366,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2501.04519"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2501.04519"
         }
       ]
     },
@@ -2218,6 +2390,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2411.00418"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2411.00418"
         }
       ]
     },
@@ -2238,6 +2414,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2505.14970"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2505.14970"
         }
       ]
     },
@@ -2257,6 +2437,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2504.07079"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2504.07079"
         }
       ]
     },
@@ -2276,6 +2460,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2511.13646"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2511.13646"
         }
       ]
     },
@@ -2296,6 +2484,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2602.04837"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2602.04837"
         }
       ]
     },
@@ -2317,6 +2509,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2606.01770"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2606.01770"
         }
       ]
     },
@@ -2339,6 +2535,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2605.09998"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2605.09998v1"
         }
       ]
     },
@@ -2359,6 +2559,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2608.19880"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2608.19880"
         }
       ]
     },
@@ -2379,6 +2583,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2605.15871"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2605.15871"
         }
       ]
     },
@@ -2398,6 +2606,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2608.20318"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2608.20318"
         }
       ]
     },
@@ -2442,6 +2654,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2608.31111"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2608.31111"
         }
       ]
     },
@@ -2461,6 +2677,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2601.22436"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2601.22436"
         }
       ]
     },
@@ -2482,6 +2702,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2509.19349"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2509.19349"
         }
       ]
     },
@@ -2502,6 +2726,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2603.17775"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2603.17775"
         }
       ]
     },
@@ -2522,6 +2750,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2602.20532"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2602.20532"
         }
       ]
     },
@@ -2543,6 +2775,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2604.18292"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2604.18292"
         }
       ]
     },
@@ -2563,6 +2799,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2605.06614"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2605.06614"
         }
       ]
     },
@@ -2584,6 +2824,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2606.07412"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2606.07412"
         }
       ]
     },
@@ -2604,6 +2848,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2305.16291"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2305.16291v2"
         }
       ]
     },
@@ -2625,6 +2873,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2511.10395"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2511.10395"
         }
       ]
     },
@@ -2645,6 +2897,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2607.21971"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2607.21971"
         }
       ]
     },
@@ -2665,6 +2921,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2607.14777"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2607.14777v1"
         }
       ]
     },
@@ -2685,12 +2945,16 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/abs/2505.15034"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2505.15034"
         }
       ]
     },
     {
       "id": "iterative-rpo",
-      "name": "Iterative RPO",
+      "name": "Iterative Reasoning Preference Optimization",
       "year": 2024,
       "role": "self_learning_evidence",
       "reported_depth": "multi_generation",
@@ -2710,7 +2974,7 @@
     },
     {
       "id": "deepseek-math-v2",
-      "name": "DeepSeekMath-V2",
+      "name": "DeepSeekMath-V2: Towards Self-Verifiable Mathematical Reasoning",
       "year": 2025,
       "role": "self_learning_evidence",
       "reported_depth": "multi_generation",
@@ -2738,7 +3002,7 @@
     },
     {
       "id": "kimi-k2",
-      "name": "Kimi K2 · 自评价 RL",
+      "name": "Kimi K2: Open Agentic Intelligence",
       "year": 2025,
       "role": "self_learning_evidence",
       "reported_depth": "multi_generation",
@@ -2758,7 +3022,7 @@
     },
     {
       "id": "llm-can-self-improve",
-      "name": "LLMs Can Self-Improve",
+      "name": "Large Language Models Can Self-Improve",
       "year": 2022,
       "role": "self_learning_precursor",
       "reported_depth": "persistent",

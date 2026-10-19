@@ -18,23 +18,27 @@
 
 ---
 
-## 先看三层研究地图
+## 先读三张 RSI 知识图谱
 
-**[可搜索离线 HTML（下载后打开）](research/atlas/index.html)** · **[图文导读 PDF](output/pdf/beforersi-research-atlas.pdf)** · **[分类原理与边界](research/atlas/classification.md)** · **[完整参考索引](research/atlas/references.md)**
+**[交互式 HTML：下载后可离线阅读](research/atlas/index.html)** · **[图谱导读与统计](RESEARCH_ATLAS.md)** · **[127 项阅读档案](research/atlas/literature-cards.md)** · **[参考文献](research/atlas/references.md)**
 
-![三层研究知识树](assets/atlas/knowledge-tree.png)
+![三条研究路线总览](assets/atlas/landscape-overview.png)
 
-**调查进行中，尚无全领域最终筛选数。** 当前已核对重点案例19项：Harness 12、Model 5、Model × Harness 2。38项机制审查卡片、127项完整目录、67项候选待审。此前8/2/2不能解释成全球只有12项有价值研究。
+| 路线 | 目录位置 | 方法段落已读 | 摘要初筛 | 默认图中显示 |
+|---|---:|---:|---:|---:|
+| Harness | 38 | 16 | 22 | 38 |
+| Model | 34 | 14 | 20 | 29 |
+| Model × Harness | 25 | 8 | 17 | 22 |
 
-新补入 Kimi K2、DeepSeekMath-V2、Iterative RPO 等原目录遗漏；补审 STOP、Promptbreeder、SICA、ACE，以及大规模自训练、AI反馈和工业具身学习谱系。
+三条路线共 97 项，包含相关学习机制、AI4AI 支撑和初筛候选；另有 8 项跨路线评测/理论及 22 项历史/背景，共 127 项。**这些是当前目录的位置和阅读进度，不是全领域总数，也不是“只有这些工作有价值”。** 已确认低于 27B 的 8 项 Model/混合研究放入补充区；未知规模单独标明。
 
-HTML/PDF首页直接显示三条路线的数量、机构来源、工业目标和研究问题。Model/混合仍按实际训练目标≥27B筛选；规模未公开的工业研究与关键前身保留在单独入口。参数门槛不是研究质量结论。
+每张图以研究问题和方法组织论文，可沿明确扩展、采用、比较、讨论或综述方法对照继续阅读；每条具体关系附两端团队与来源。当前共 43 条论文关系，其中 13 条原文明示，30 条综述对照。论文卡片围绕目标、思想、原理、算法、迭代、成果展开；摘要档案不冒充完整方法阅读。
 
-[研究地图](RESEARCH_ATLAS.md) · [逐项证据](research/atlas/core-cards.md) · [完整索引](research/atlas/references.md) · [待审记录](research/atlas/review-queue.md)。以下理论与历史分析不等于全领域覆盖证明。
+[Harness 静态图](assets/atlas/harness-graph.svg) · [Model 静态图](assets/atlas/model-graph.svg) · [Model × Harness 静态图](assets/atlas/hybrid-graph.svg)。当前 HTML 专门呈现公开文献，不含项目自己的理论或方案。原九页 PDF 保留为 2026-10-18 快照。
 
 ## What must be true before RSI is real?
 
-**Current scope and coverage:** The current catalog has 127 entries. This is a research bibliography, not a count of proven RSI systems or a coverage percentage. Of these, 38 have selected-section mechanism reviews and 67 remain candidates. The three-route brief above is the current editorial entry point; [RSI_SCOPE.md](RSI_SCOPE.md) preserves the earlier search history. A universal predictive theory has not been established.
+**Current scope and coverage:** The catalog preserves 127 entries: 97 route positions, 8 cross-route evaluation/theory references, and 22 historical/background items. The current reader contains 41 selected-method cards and 64 abstract/source screens. The earlier 38 claim reviews and 19-case shortlist remain a separate, dated review record; neither is a field census. A universal predictive theory has not been established.
 
 **BeforeRSI** studies one question:
 

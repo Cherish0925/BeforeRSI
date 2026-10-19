@@ -1,0 +1,425 @@
+{
+  "updated": "2026-10-19",
+  "records": [
+    {
+      "id": "aflow",
+      "url": "https://arxiv.org/pdf/2410.10762",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2410.10762v4"
+    },
+    {
+      "id": "agentbreeder",
+      "url": "https://arxiv.org/pdf/2502.00757",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2502.00757v4"
+    },
+    {
+      "id": "statistical-limits",
+      "url": "https://arxiv.org/pdf/2510.04399",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2510.04399v3"
+    },
+    {
+      "id": "sia",
+      "url": "https://arxiv.org/pdf/2605.27276",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2605.27276v2"
+    },
+    {
+      "id": "rhi",
+      "url": "https://arxiv.org/pdf/2607.15524",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2607.15524v1"
+    },
+    {
+      "id": "co-harness",
+      "url": "https://arxiv.org/pdf/2607.22688",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2607.22688v1"
+    },
+    {
+      "id": "helix",
+      "url": "https://arxiv.org/pdf/2608.13951",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2608.13951v1"
+    },
+    {
+      "id": "hsi",
+      "url": "https://arxiv.org/pdf/2608.08466",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2608.08466v1"
+    },
+    {
+      "id": "evoharness-rl",
+      "url": "https://arxiv.org/pdf/2608.05446",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2608.05446v2"
+    },
+    {
+      "id": "harness-tampering",
+      "url": "https://arxiv.org/pdf/2609.00069",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2609.00069v1"
+    },
+    {
+      "id": "harnessdev",
+      "url": "https://arxiv.org/pdf/2609.01437",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2609.01437v1"
+    },
+    {
+      "id": "meta-harness",
+      "url": "https://arxiv.org/pdf/2603.28052",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2603.28052v1"
+    },
+    {
+      "id": "dream-rsi",
+      "url": "https://arxiv.org/pdf/2609.14858",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2609.14858v2"
+    },
+    {
+      "id": "opro",
+      "url": "https://arxiv.org/pdf/2309.03409",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2309.03409v3"
+    },
+    {
+      "id": "star",
+      "url": "https://arxiv.org/pdf/2203.14465",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2203.14465v2"
+    },
+    {
+      "id": "eureka",
+      "url": "https://arxiv.org/pdf/2310.12931",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2310.12931v2"
+    },
+    {
+      "id": "prime-agent",
+      "url": "https://arxiv.org/pdf/2608.23552",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2608.23552v1"
+    },
+    {
+      "id": "agent0",
+      "url": "https://arxiv.org/pdf/2511.16043",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2511.16043v2"
+    },
+    {
+      "id": "r-zero",
+      "url": "https://arxiv.org/pdf/2508.05004",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2508.05004v4"
+    },
+    {
+      "id": "tool-r0",
+      "url": "https://arxiv.org/html/2602.21320v1",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2602.21320v1"
+    },
+    {
+      "id": "autoscientists",
+      "url": "https://arxiv.org/pdf/2605.28655",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2605.28655v1"
+    },
+    {
+      "id": "gear",
+      "url": "https://arxiv.org/pdf/2605.13874",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2605.13874v1"
+    },
+    {
+      "id": "execution-grounded-research",
+      "url": "https://arxiv.org/pdf/2601.14525",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2601.14525v1"
+    },
+    {
+      "id": "meta-n",
+      "url": "https://arxiv.org/pdf/2608.24735",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2608.24735v1"
+    },
+    {
+      "id": "self-harness",
+      "url": "https://arxiv.org/pdf/2606.09498",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2606.09498v3"
+    },
+    {
+      "id": "harness-zero",
+      "url": "https://arxiv.org/pdf/2609.24974",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2609.24974v1"
+    },
+    {
+      "id": "harness-r1",
+      "url": "https://arxiv.org/pdf/2608.02276",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2608.02276v1"
+    },
+    {
+      "id": "skillopt",
+      "url": "https://arxiv.org/pdf/2605.23904",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2605.23904v2"
+    },
+    {
+      "id": "mem2evolve",
+      "url": "https://arxiv.org/pdf/2604.10923",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2604.10923v1"
+    },
+    {
+      "id": "memskill",
+      "url": "https://arxiv.org/pdf/2602.02474",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2602.02474v2"
+    },
+    {
+      "id": "evods",
+      "url": "https://arxiv.org/pdf/2606.03841",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2606.03841v1"
+    },
+    {
+      "id": "taolive-hat",
+      "url": "https://arxiv.org/pdf/2608.15763",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2608.15763v5"
+    },
+    {
+      "id": "rewardharness",
+      "url": "https://arxiv.org/html/2605.08703v1",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2605.08703v1"
+    },
+    {
+      "id": "webevolver",
+      "url": "https://arxiv.org/pdf/2504.21024",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2504.21024v2"
+    },
+    {
+      "id": "webrl",
+      "url": "https://arxiv.org/pdf/2411.02337",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2411.02337v3"
+    },
+    {
+      "id": "rstar-math",
+      "url": "https://arxiv.org/pdf/2501.04519",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2501.04519v1"
+    },
+    {
+      "id": "self-evolved-reward",
+      "url": "https://arxiv.org/pdf/2411.00418",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2411.00418v3"
+    },
+    {
+      "id": "self-evolving-curriculum",
+      "url": "https://arxiv.org/pdf/2505.14970",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2505.14970v4"
+    },
+    {
+      "id": "skillweaver",
+      "url": "https://arxiv.org/pdf/2504.07079",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2504.07079v1"
+    },
+    {
+      "id": "live-swe-agent",
+      "url": "https://arxiv.org/pdf/2511.13646",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2511.13646v3"
+    },
+    {
+      "id": "group-evolving-agents",
+      "url": "https://arxiv.org/pdf/2602.04837",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2602.04837v1"
+    },
+    {
+      "id": "adaptive-auto-harness",
+      "url": "https://arxiv.org/pdf/2606.01770",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2606.01770v2"
+    },
+    {
+      "id": "continual-harness",
+      "url": "https://arxiv.org/html/2605.09998v1",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2605.09998v1"
+    },
+    {
+      "id": "envharness",
+      "url": "https://arxiv.org/pdf/2608.19880",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2608.19880v1"
+    },
+    {
+      "id": "aira-design",
+      "url": "https://arxiv.org/pdf/2605.15871",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2605.15871v2"
+    },
+    {
+      "id": "ai4ai-bench",
+      "url": "https://arxiv.org/pdf/2608.20318",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2608.20318v1"
+    },
+    {
+      "id": "aspire",
+      "url": "https://arxiv.org/pdf/2608.31111",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2608.31111v1"
+    },
+    {
+      "id": "faithful-self-evolvers",
+      "url": "https://arxiv.org/pdf/2601.22436",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2601.22436v3"
+    },
+    {
+      "id": "shinkaevolve",
+      "url": "https://arxiv.org/pdf/2509.19349",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2509.19349v1"
+    },
+    {
+      "id": "coverrl",
+      "url": "https://arxiv.org/pdf/2603.17775",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2603.17775v2"
+    },
+    {
+      "id": "actor-curator",
+      "url": "https://arxiv.org/pdf/2602.20532",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2602.20532v1"
+    },
+    {
+      "id": "agent-world",
+      "url": "https://arxiv.org/pdf/2604.18292",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2604.18292v1"
+    },
+    {
+      "id": "skillos",
+      "url": "https://arxiv.org/pdf/2605.06614",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2605.06614v1"
+    },
+    {
+      "id": "socratic-swe",
+      "url": "https://arxiv.org/pdf/2606.07412",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2606.07412v1"
+    },
+    {
+      "id": "agentevolver",
+      "url": "https://arxiv.org/pdf/2511.10395",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2511.10395v1"
+    },
+    {
+      "id": "metaevolve",
+      "url": "https://arxiv.org/pdf/2607.21971",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2607.21971v2"
+    },
+    {
+      "id": "seed-distillation",
+      "url": "https://arxiv.org/html/2607.14777v1",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2607.14777v1"
+    },
+    {
+      "id": "rl-tango",
+      "url": "https://arxiv.org/pdf/2505.15034",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": "arXiv:2505.15034v2"
+    },
+    {
+      "id": "godel-agent",
+      "url": "https://aclanthology.org/2025.acl-long.1354.pdf",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": null
+    },
+    {
+      "id": "rsi-anything",
+      "url": "https://github.com/Gen-Verse/RSI-Anything",
+      "available": true,
+      "location": "论文首页署名（2026-10-19读取）",
+      "version": null
+    }
+  ]
+}

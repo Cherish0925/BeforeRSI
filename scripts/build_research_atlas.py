@@ -117,7 +117,7 @@ for r in rows:
  if not r['main_view']:queue.append(f'| {r["number"]:03d} | [{r["name"]}]({r["primary_source"]}) | {PL[r["layer"]["placement"]]}：{r["layer"]["why"]} |')
 queue+=['','具名低价值判定仍为 0；待审、规模不符、非闭环支撑、已证低价值不互相替代。完整理解仍需全文附录、实现、消融统计、资源账本和复现。','']
 (R/'research/atlas/review-queue.md').write_text('\n'.join(queue))
-(R/'research/atlas/index.html').write_text((R/'scripts/atlas-template.html').read_text().replace('__ATLAS_DATA__',json.dumps(a,ensure_ascii=False,separators=(',',':')).replace('</','<\\/')))
+# The current reader is rendered by build_literature_graphs.py after this legacy evidence join.
 # PDF uses the same records as the HTML, with explicit source links.
 pdfmetrics.registerFont(TTFont('CJK',fontpath))
 styles={name:ParagraphStyle(name,fontName='CJK',fontSize=size,leading=leading,wordWrap='CJK',textColor=colors.HexColor(color),spaceAfter=after) for name,size,leading,color,after in [('title',28,38,INK,16),('h1',20,29,INK,16),('h2',13,20,TEAL,9),('body',10,15.5,INK,8),('small',8.3,12.3,MUTED,6)]}
@@ -156,3 +156,7 @@ def footer(c,doc):
 out=R/'output/pdf/beforersi-research-atlas.pdf'
 SimpleDocTemplate(str(out),pagesize=A4,rightMargin=46,leftMargin=46,topMargin=42,bottomMargin=52,title='BeforeRSI 三条路线：数量、团队与方向',author='BeforeRSI research').build(story,onFirstPage=footer,onLaterPages=footer)
 print(json.dumps({'main':len(main),'route_counts':route_counts,'reviewed':len(reviewed),'counts':counts,'placements':placements,'pdf_bytes':out.stat().st_size},ensure_ascii=False))
+
+# Preserve the v3 review/PDF snapshot while rebuilding the current graph reader.
+import runpy
+runpy.run_path(str(R / "scripts/build_literature_graphs.py"), run_name="__main__")
