@@ -1,6 +1,6 @@
 # 参考文献与阅读位置
 
-159 个稳定编号是引用索引，不是质量排名；包含论文、技术报告、仓库和产品机制文档。当前路线归属、阅读深度和来源如下；完整解释见 [阅读档案](literature-cards.md)。
+164 个稳定编号是引用索引，不是质量排名；包含论文、技术报告、仓库和产品机制文档。当前路线归属、阅读深度和来源如下；完整解释见 [阅读档案](literature-cards.md)。
 
 ## [001] Good：智能机器设计 · 1965
 
@@ -114,15 +114,16 @@ Mathematical discoveries from program search with large language models (FunSear
 
 ## [010] SPIN · 2024
 
-SPIN
+Self-Play Fine-Tuning Converts Weak Language Models to Strong Language Models
 
-Model · 论文主文、实验与相关附录研读 · UCLA · Quanquan Gu 团队
+Model · 论文主文、实验与相关附录研读 · University of California, Los Angeles
 
-§4–6；Algorithm 1；Tables 2–4；Appendices B.1、C
+复核全文§4–7、Algorithm1、Theorems5.2/5.4；补读新版Appendix B.1–B.4训练成本和SPIN+DPO；既有阅读含Appendix C证明
 
-- [来源 1](https://github.com/uclaml/SPIN)
-- [来源 2](https://proceedings.mlr.press/v235/chen24j.html)
-- [来源 3](https://arxiv.org/html/2401.01335v2)
+- [来源 1](https://arxiv.org/html/2401.01335v3)
+- [来源 2](https://github.com/uclaml/SPIN)
+- [来源 3](https://proceedings.mlr.press/v235/chen24j.html)
+- [来源 4](https://arxiv.org/html/2401.01335v2)
 
 ## [011] Self-Rewarding LM · 2024
 
@@ -594,11 +595,12 @@ v4正文§1–8、Appendix A–E、Figs2–3原图、Table1
 
 DreamCoder: Bootstrapping Inductive Program Synthesis with Wake-Sleep Library Learning
 
-历史 / 背景 · 选定方法与结果段落研读 · 署名机构尚未整理
+历史 / 背景 · 论文主文、实验与相关附录研读 · Cornell University / Massachusetts Institute of Technology / PSL University / Collège de France / NeuroSpin
 
-§2–3 wake/sleep、equivalence-based refactoring；§5及Figure7消融和计算预算。
+PLDI 2021 主文 §1–6、Fig.5–11；作者完整草稿 Supplement S1–S4、Algorithms 1–6、Theorems 1–6、Table S1、S4.7 超参表
 
 - [来源 1](https://www.neurosymbolic.org/papers/EllisWNSMHCST21.pdf)
+- [来源 2](https://www.cs.cornell.edu/~ellisk/documents/dreamcoder_with_supplement.pdf)
 
 ## [050] Selecting Computations · 2012
 
@@ -940,13 +942,14 @@ Model × Harness · 论文主文、实验与相关附录研读 · Alibaba Tongyi
 
 AutoScientists: Self-Organizing Agent Teams for Long-Running Scientific Experimentation
 
-Model × Harness · 论文主文、实验与相关附录研读 · Harvard
+Harness · 论文主文、实验与相关附录研读 · Harvard University
 
-§3–5；Table3消融；AppendixA队列/噪声确认、B预算和团队规模、E GPT产物、G迁移。
+全文§1–6及AppendicesA–G、所有算法/表S1–S9、研究产物；PDF页8–9视觉复核图4–5/Table3
 
-- [来源 1](https://arxiv.org/abs/2605.28655)
-- [来源 2](https://arxiv.org/pdf/2605.28655)
-- [来源 3](https://arxiv.org/html/2605.28655)
+- [来源 1](https://arxiv.org/html/2605.28655v1)
+- [来源 2](https://arxiv.org/abs/2605.28655)
+- [来源 3](https://arxiv.org/pdf/2605.28655)
+- [来源 4](https://arxiv.org/html/2605.28655)
 
 ## [081] DERL · 2025
 
@@ -1048,12 +1051,13 @@ Model × Harness · 论文主文、实验与相关附录研读 · UNC / UChicago
 
 SkillOpt: Executive Strategy for Self-Evolving Agent Skills
 
-Harness · 论文主文、实验与相关附录研读 · Microsoft / SJTU / Tongji / Fudan
+Harness · 论文主文、实验与相关附录研读 · Microsoft / Shanghai Jiao Tong University / Tongji University / Fudan University
 
-§§3.1–3.7、4.1–4.4表1–4；附录B、C与提示模板
+§3–4、表1–6、图3、附录A–C全部优化器提示
 
-- [来源 1](https://arxiv.org/abs/2605.23904)
-- [来源 2](https://arxiv.org/pdf/2605.23904)
+- [来源 1](https://arxiv.org/html/2605.23904v2)
+- [来源 2](https://arxiv.org/abs/2605.23904)
+- [来源 3](https://arxiv.org/pdf/2605.23904)
 
 ## [090] Mem²Evolve · 2026
 
@@ -1147,7 +1151,7 @@ WebEvolver: Enhancing Web Agent Self-Improvement with Coevolving World Model
 
 Model · 论文主文、实验与相关附录研读 · Tencent AI Lab
 
-§3.2–3.3、§4.1–4.4、Tables 1–4、Appendix A–B
+§§3.2–3.3,4.1–4.4；Tables 1–4；Appendices A–B（含评价提示）
 
 - [来源 1](https://arxiv.org/html/2504.21024v2)
 - [来源 2](https://arxiv.org/abs/2504.21024)
@@ -1169,13 +1173,14 @@ Model · 论文主文、实验与相关附录研读 · Tsinghua University / Zhi
 
 rStar-Math: Small LLMs Can Master Math Reasoning with Self-Evolved Deep Thinking
 
-Model · 论文主文、实验与相关附录研读 · Microsoft Research Asia / Peking University / Tsinghua
+Model · 论文主文、实验与相关附录研读 · Microsoft Research Asia
 
-§3.1–3.4、§4、Tables 2–10、Appendix A.1
+复核§3.1–3.4、§4.1–4.3、Tables 2–10、§5及Appendix A.1/A.3；结合此前全主文及相关附录阅读
 
-- [来源 1](https://arxiv.org/abs/2501.04519)
-- [来源 2](https://arxiv.org/pdf/2501.04519)
-- [来源 3](https://arxiv.org/html/2501.04519)
+- [来源 1](https://arxiv.org/html/2501.04519v1)
+- [来源 2](https://arxiv.org/abs/2501.04519)
+- [来源 3](https://arxiv.org/pdf/2501.04519)
+- [来源 4](https://arxiv.org/html/2501.04519)
 
 ## [100] Self-Evolved Reward · 2024
 
@@ -1265,13 +1270,14 @@ Model × Harness · 论文主文、实验与相关附录研读 · Princeton / Go
 
 EnvHarness: Awakening Static Worlds for Agent Learning
 
-Harness · 论文主文、实验与相关附录研读 · WashU / Google Cloud AI Research / Google Cloud / UNC
+Harness · 论文主文、实验与相关附录研读 · Google / University of North Carolina at Chapel Hill / Washington University in St. Louis
 
-§2–5，Tables2–5，AppendicesE分割、F训练与多轮技能、H限制。
+此前已完整阅读主文及相关技术附录；本轮复核§2–5、App A/E/F/H/I，并完整补读App G成本、留一任务类型及全部弱点—包装—技能示例。
 
-- [来源 1](https://arxiv.org/abs/2608.19880)
-- [来源 2](https://arxiv.org/pdf/2608.19880)
-- [来源 3](https://arxiv.org/html/2608.19880)
+- [来源 1](https://arxiv.org/html/2608.19880v1)
+- [来源 2](https://arxiv.org/abs/2608.19880)
+- [来源 3](https://arxiv.org/pdf/2608.19880)
+- [来源 4](https://arxiv.org/html/2608.19880)
 
 ## [108] AIRA-Compose / Design · 2026
 
@@ -1353,11 +1359,11 @@ CoVerRL: Breaking the Consensus Trap in Label-Free Reasoning via Generator-Verif
 
 Model · 论文主文、实验与相关附录研读 · Zhejiang University / Baidu
 
-§3–4、Tables1–6、AppendixA–D
+复核§3–4、Tables1–4；补读/核查AppendicesA–E全部（Tables5–10、理论及实例）
 
-- [来源 1](https://arxiv.org/abs/2603.17775)
-- [来源 2](https://arxiv.org/pdf/2603.17775)
-- [来源 3](https://arxiv.org/html/2603.17775v2)
+- [来源 1](https://arxiv.org/html/2603.17775v2)
+- [来源 2](https://arxiv.org/abs/2603.17775)
+- [来源 3](https://arxiv.org/pdf/2603.17775)
 
 ## [115] Actor-Curator · 2026
 
@@ -1458,13 +1464,14 @@ Model · 论文主文、实验与相关附录研读 · Tsinghua / Zhejiang Unive
 
 RL Tango: Reinforcing Generator and Verifier Together for Language Reasoning
 
-Model · 论文主文、实验与相关附录研读 · MIT / MIT–IBM Watson AI Lab
+Model · 论文主文、实验与相关附录研读 · MIT / MIT-IBM Watson AI Lab
 
-§3–4、Tables1–3、AppendixA–C
+§2–5；Tables 1–4；Figures 1–5；Appendices A–D（含全部生成/验证示例）
 
-- [来源 1](https://arxiv.org/abs/2505.15034)
-- [来源 2](https://arxiv.org/pdf/2505.15034)
-- [来源 3](https://arxiv.org/html/2505.15034)
+- [来源 1](https://arxiv.org/html/2505.15034v2)
+- [来源 2](https://arxiv.org/abs/2505.15034)
+- [来源 3](https://arxiv.org/pdf/2505.15034)
+- [来源 4](https://arxiv.org/html/2505.15034)
 
 ## [124] Iterative RPO · 2024
 
@@ -1652,12 +1659,13 @@ Harness · 论文主文、实验与相关附录研读 · Northeastern University
 
 ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory
 
-Harness · 论文主文、实验与相关附录研读 · UIUC / Google Cloud AI Research / Yale / Google Cloud AI
+Harness · 论文主文、实验与相关附录研读 · Google / University of Illinois Urbana-Champaign / Yale University
 
-v2（2026-03-16）；§3–5、Tables 1–5；Appendices A–C、E
+v2 §1–7；Tables 1–6；Figures 4–14；附录 A–F
 
-- [来源 1](https://arxiv.org/pdf/2509.25140v2)
-- [来源 2](https://github.com/google-research/reasoning-bank)
+- [来源 1](https://arxiv.org/html/2509.25140v2)
+- [来源 2](https://arxiv.org/pdf/2509.25140v2)
+- [来源 3](https://github.com/google-research/reasoning-bank)
 
 ## [141] HASE · 2026
 
@@ -1849,4 +1857,54 @@ Can Large Reasoning Models Self-Train?
 §3–6 Tables1–2 Figures2–8；Appendix A–L尤其B/C/G/I/J；复看SVG Figure2/5/6/31
 
 - [来源 1](https://arxiv.org/html/2505.21444v2)
+
+## [160] SPADE · 2026
+
+SPADE: Self-Play in Adaptive Synthetic Executable Environments
+
+Model × Harness · 论文主文、实验与相关附录研读 · University of Washington / Stanford University / Northeastern University / Carnegie Mellon University / Massachusetts Institute of Technology / National University of Singapore / Seoul National University / Stevens Institute of Technology / University of Chicago
+
+§1–10, Algorithm 1, Tables 1–8, Appendices E–J including complete generated programs
+
+- [来源 1](https://arxiv.org/html/2608.19197v3)
+
+## [161] EvoMal · 2026
+
+EVOMAL: Self-Poisoning in Self-Evolving Coding Agents
+
+跨路线评测 / 理论 · 论文主文、实验与相关附录研读 · Queen’s University
+
+完整主文§1–10、伦理/可复现性、全部Appendix A–E（攻击/防御、跨框架/语言、分支过程与隔离证明、完整统计表与实现说明）；未执行任何论文代码。
+
+- [来源 1](https://arxiv.org/html/2608.25776v1)
+
+## [162] SOAR · 2025
+
+Self-Improving Language Models for Evolutionary Program Synthesis: A Case Study on ARC-AGI
+
+Model · 论文主文、实验与相关附录研读 · Inria / MIT
+
+§§3–5；Tables 1–5,7；Appendices A–I, especially B,D,F
+
+- [来源 1](https://arxiv.org/html/2507.14172v2)
+
+## [163] AWM · 2024
+
+Agent Workflow Memory
+
+Harness · 论文主文、实验与相关附录研读 · Carnegie Mellon University / Massachusetts Institute of Technology
+
+§1–7；Tables 1–11；附录 A–C
+
+- [来源 1](https://arxiv.org/html/2409.07429v1)
+
+## [164] Arena Learning · 2024
+
+Arena Learning: Build Data Flywheel for LLMs Post-training via Simulated Chatbot Arena
+
+Model · 论文主文、实验与相关附录研读 · Microsoft Corporation / Tsinghua University / SIAT-UCAS
+
+全文§1–5、Tables 1–11、Figures 8–12；Appendix A
+
+- [来源 1](https://arxiv.org/html/2407.10627v1)
 

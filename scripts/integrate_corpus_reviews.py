@@ -44,6 +44,11 @@ def concise_sections(r):
 def main():
     corpus=read('corpus-review.json');bib=read('works.json');ed=read('literature-editorial.json');field=read('field-knowledge.json');scope=read('scope-review.json');primary=read('primary-reading.json')
     manifest=read('corpus-curation.json')['bindings'];bw={w['id']:w for w in bib['works']};ew={w['id']:w for w in ed['works']};sw={w['id']:w for w in scope['works']};pr={w['id']:w for w in primary['reviews']}
+    method_ids={g['id'] for g in ed['groups']}|{'historical','background','cross-evaluation'}
+    topic_ids={n['id'] for route in field['routes'] for n in route['nodes']}
+    for entry_id,binding in manifest.items():
+        assert set(binding.get('methods',[]))<=method_ids, ('Unknown method binding',entry_id,set(binding.get('methods',[]))-method_ids)
+        assert set(binding.get('topic_ids',[]))<=topic_ids, ('Unknown topic binding',entry_id,set(binding.get('topic_ids',[]))-topic_ids)
     new_ids=[];updated=[];next_number=max(w.get('number',0) for w in ed['works'])+1
     legacy=read('research-atlas.json')['works'];next_number=max(next_number,max(w['number'] for w in legacy)+1)
     for e in corpus['entries']:

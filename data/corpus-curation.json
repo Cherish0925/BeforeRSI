@@ -560,6 +560,180 @@
         "diagnostic_controls"
       ],
       "role": "evaluation"
+    },
+    "arxiv-2507-14172": {
+      "work_id": "soar-arc",
+      "short": "SOAR",
+      "cluster": "m-selftrain",
+      "methods": [
+        "m-selftrain",
+        "m-proof"
+      ],
+      "topic_ids": [
+        "m-bootstrapping",
+        "m-experience-learning",
+        "m-verifiable-feedback",
+        "m-continual-adaptation"
+      ],
+      "scope_kind": "direct",
+      "reported_depth": "transfer",
+      "changed_objects": [
+        "model_weights",
+        "training_data"
+      ],
+      "models": [
+        {
+          "name": "Qwen2.5-Coder-32B",
+          "total_b": 32,
+          "active_b": null,
+          "role": "实际RS-QLoRA训练"
+        },
+        {
+          "name": "Qwen2.5-72B",
+          "total_b": 72,
+          "active_b": null,
+          "role": "实际RS-QLoRA训练"
+        },
+        {
+          "name": "Mistral-large-2407",
+          "total_b": 123,
+          "active_b": null,
+          "role": "实际RS-QLoRA训练"
+        }
+      ]
+    },
+    "arxiv-2608-19197": {
+      "work_id": "spade",
+      "short": "SPADE",
+      "cluster": "x-environment",
+      "methods": [
+        "x-environment",
+        "x-training"
+      ],
+      "topic_ids": [
+        "x-environment",
+        "x-externalization",
+        "x-feedback",
+        "x-memory",
+        "m-curriculum-learning"
+      ],
+      "scope_kind": "direct",
+      "reported_depth": "transfer",
+      "changed_objects": [
+        "model_weights",
+        "environment_programs",
+        "environment_memory"
+      ],
+      "models": [
+        {
+          "name": "Qwen3-30B-A3B-Instruct-2507",
+          "total_b": 30,
+          "active_b": 3,
+          "role": "共享环境设计/求解策略，实际RL训练"
+        },
+        {
+          "name": "Nemotron-30B-A3B",
+          "total_b": 30,
+          "active_b": 3,
+          "role": "补充实际RL训练"
+        }
+      ]
+    },
+    "arxiv-2608-25776": {
+      "work_id": "evomal",
+      "short": "EvoMal",
+      "cluster": "cross-evaluation",
+      "methods": [
+        "cross-evaluation"
+      ],
+      "topic_ids": [
+        "h-capabilities",
+        "h-inheritance",
+        "h-evaluation",
+        "x-deployment"
+      ],
+      "scope_kind": "evaluation",
+      "reported_depth": "persistent",
+      "changed_objects": [
+        "evaluation_protocol",
+        "tool_lineage_controls"
+      ],
+      "role": "evaluation"
+    },
+    "arxiv-2409-07429": {
+      "work_id": "agent-workflow-memory",
+      "short": "AWM",
+      "cluster": "h-memory",
+      "methods": [
+        "h-memory",
+        "h-workflow"
+      ],
+      "topic_ids": [
+        "h-memory",
+        "h-capabilities",
+        "h-inheritance",
+        "h-control"
+      ],
+      "scope_kind": "direct",
+      "reported_depth": "transfer",
+      "changed_objects": [
+        "workflow_memory"
+      ]
+    },
+    "arxiv-2407-10627": {
+      "work_id": "arena-learning",
+      "short": "Arena Learning",
+      "cluster": "m-selftrain",
+      "methods": [
+        "m-selftrain",
+        "m-preference"
+      ],
+      "topic_ids": [
+        "m-bootstrapping",
+        "m-preferences",
+        "m-experience-learning",
+        "m-continual-adaptation"
+      ],
+      "scope_kind": "enabler",
+      "reported_depth": "persistent",
+      "changed_objects": [
+        "model_weights",
+        "training_data"
+      ],
+      "models": [
+        {
+          "name": "Mixtral-8x22B",
+          "total_b": 141,
+          "active_b": 39,
+          "role": "目标学生：实际SFT/DPO/PPO训练"
+        },
+        {
+          "name": "Mistral-7B",
+          "total_b": 7,
+          "active_b": null,
+          "role": "学生及多数消融"
+        }
+      ]
+    },
+    "arxiv-2605-28655": {
+      "cluster": "h-research",
+      "methods": [
+        "h-research",
+        "h-workflow"
+      ],
+      "topic_ids": [
+        "h-search",
+        "h-control",
+        "h-experience",
+        "h-inheritance"
+      ],
+      "scope_kind": "enabler",
+      "scope_label": "AI4AI 支撑",
+      "reported_depth": "transfer",
+      "changed_objects": [
+        "team_roster",
+        "research_state"
+      ]
     }
   }
 }

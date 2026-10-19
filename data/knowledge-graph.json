@@ -639,7 +639,7 @@
       "id": "autoscientists",
       "type": "work",
       "label": "AutoScientists",
-      "route": "hybrid",
+      "route": "harness",
       "year": 2026,
       "status": "methods"
     },
@@ -1276,6 +1276,46 @@
       "status": "methods"
     },
     {
+      "id": "spade",
+      "type": "work",
+      "label": "SPADE",
+      "route": "hybrid",
+      "year": 2026,
+      "status": "methods"
+    },
+    {
+      "id": "evomal",
+      "type": "work",
+      "label": "EvoMal",
+      "route": "crosscut",
+      "year": 2026,
+      "status": "methods"
+    },
+    {
+      "id": "soar-arc",
+      "type": "work",
+      "label": "SOAR",
+      "route": "model",
+      "year": 2025,
+      "status": "methods"
+    },
+    {
+      "id": "agent-workflow-memory",
+      "type": "work",
+      "label": "AWM",
+      "route": "harness",
+      "year": 2024,
+      "status": "methods"
+    },
+    {
+      "id": "arena-learning",
+      "type": "work",
+      "label": "Arena Learning",
+      "route": "model",
+      "year": 2024,
+      "status": "methods"
+    },
+    {
       "id": "h-prompt",
       "label": "提示与上下文优化",
       "type": "mechanism",
@@ -1742,6 +1782,26 @@
       "type": "institution"
     },
     {
+      "id": "org-cornell-university-866bd00d",
+      "label": "Cornell University",
+      "type": "institution"
+    },
+    {
+      "id": "org-psl-university-d8d4e641",
+      "label": "PSL University",
+      "type": "institution"
+    },
+    {
+      "id": "org-coll-ge-de-france-347351e4",
+      "label": "Collège de France",
+      "type": "institution"
+    },
+    {
+      "id": "org-neurospin-00494481",
+      "label": "NeuroSpin",
+      "type": "institution"
+    },
+    {
       "id": "org-ben-gurion-university-of-the-negev-a4713c43",
       "label": "Ben-Gurion University of the Negev",
       "type": "institution"
@@ -2157,8 +2217,8 @@
       "type": "institution"
     },
     {
-      "id": "org-mit-ibm-watson-ai-lab-cca4d6e7",
-      "label": "MIT–IBM Watson AI Lab",
+      "id": "org-mit-ibm-watson-ai-lab-81bd7f4a",
+      "label": "MIT-IBM Watson AI Lab",
       "type": "institution"
     },
     {
@@ -2314,6 +2374,16 @@
     {
       "id": "org-georgetown-university-9ea18f04",
       "label": "Georgetown University",
+      "type": "institution"
+    },
+    {
+      "id": "org-stevens-institute-of-technology-78d96f9e",
+      "label": "Stevens Institute of Technology",
+      "type": "institution"
+    },
+    {
+      "id": "org-queen-s-university-3c30b1ef",
+      "label": "Queen’s University",
       "type": "institution"
     },
     {
@@ -3634,6 +3704,42 @@
       "id": "actor-georgetown",
       "type": "research_actor",
       "label": "Georgetown University",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-cornell",
+      "type": "research_actor",
+      "label": "Cornell University",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-psl",
+      "type": "research_actor",
+      "label": "PSL University",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-college-de-france",
+      "type": "research_actor",
+      "label": "Collège de France",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-neurospin",
+      "type": "research_actor",
+      "label": "NeuroSpin",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-stevens",
+      "type": "research_actor",
+      "label": "Stevens Institute of Technology",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-queens",
+      "type": "research_actor",
+      "label": "Queen’s University",
       "actor_kind": "academic"
     },
     {
@@ -5091,8 +5197,8 @@
       "evidence": "source_metadata",
       "sources": [
         {
-          "url": "https://arxiv.org/html/2401.01335v2",
-          "location": "论文首页署名；官方报告团队"
+          "url": "https://arxiv.org/html/2401.01335v3",
+          "location": "原文作者机构栏"
         }
       ]
     },
@@ -5105,8 +5211,8 @@
       "evidence": "survey_classification",
       "sources": [
         {
-          "url": "https://github.com/uclaml/SPIN",
-          "location": "§4–6；Algorithm 1；Tables 2–4；Appendices B.1、C"
+          "url": "https://arxiv.org/html/2401.01335v3",
+          "location": "复核全文§4–7、Algorithm1、Theorems5.2/5.4；补读新版Appendix B.1–B.4训练成本和SPIN+DPO；既有阅读含Appendix C证明"
         }
       ]
     },
@@ -6959,6 +7065,76 @@
       ]
     },
     {
+      "id": "aff-dreamcoder-org-cornell-university-866bd00d",
+      "source": "org-cornell-university-866bd00d",
+      "target": "dreamcoder",
+      "kind": "affiliation",
+      "label": "署名机构 / 团队",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://www.neurosymbolic.org/papers/EllisWNSMHCST21.pdf",
+          "location": "PLDI 正式版首页作者机构；草稿首页机构版本不同，不混作同版"
+        }
+      ]
+    },
+    {
+      "id": "aff-dreamcoder-org-mit-e5dcffe8",
+      "source": "org-mit-e5dcffe8",
+      "target": "dreamcoder",
+      "kind": "affiliation",
+      "label": "署名机构 / 团队",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://www.neurosymbolic.org/papers/EllisWNSMHCST21.pdf",
+          "location": "PLDI 正式版首页作者机构；草稿首页机构版本不同，不混作同版"
+        }
+      ]
+    },
+    {
+      "id": "aff-dreamcoder-org-psl-university-d8d4e641",
+      "source": "org-psl-university-d8d4e641",
+      "target": "dreamcoder",
+      "kind": "affiliation",
+      "label": "署名机构 / 团队",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://www.neurosymbolic.org/papers/EllisWNSMHCST21.pdf",
+          "location": "PLDI 正式版首页作者机构；草稿首页机构版本不同，不混作同版"
+        }
+      ]
+    },
+    {
+      "id": "aff-dreamcoder-org-coll-ge-de-france-347351e4",
+      "source": "org-coll-ge-de-france-347351e4",
+      "target": "dreamcoder",
+      "kind": "affiliation",
+      "label": "署名机构 / 团队",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://www.neurosymbolic.org/papers/EllisWNSMHCST21.pdf",
+          "location": "PLDI 正式版首页作者机构；草稿首页机构版本不同，不混作同版"
+        }
+      ]
+    },
+    {
+      "id": "aff-dreamcoder-org-neurospin-00494481",
+      "source": "org-neurospin-00494481",
+      "target": "dreamcoder",
+      "kind": "affiliation",
+      "label": "署名机构 / 团队",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://www.neurosymbolic.org/papers/EllisWNSMHCST21.pdf",
+          "location": "PLDI 正式版首页作者机构；草稿首页机构版本不同，不混作同版"
+        }
+      ]
+    },
+    {
       "id": "aff-selecting-computations-org-uc-berkeley-c5ebdefd",
       "source": "org-uc-berkeley-c5ebdefd",
       "target": "selecting-computations",
@@ -8493,22 +8669,36 @@
       "evidence": "source_metadata",
       "sources": [
         {
-          "url": "https://arxiv.org/pdf/2605.28655",
-          "location": "论文首页署名（2026-10-19读取）"
+          "url": "https://arxiv.org/html/2605.28655v1",
+          "location": "首页作者affiliations"
         }
       ]
     },
     {
-      "id": "method-x-training-autoscientists",
-      "source": "x-training",
+      "id": "method-h-research-autoscientists",
+      "source": "h-research",
       "target": "autoscientists",
       "kind": "mechanism",
       "label": "研究该问题 / 使用该机制",
       "evidence": "survey_classification",
       "sources": [
         {
-          "url": "https://arxiv.org/abs/2605.28655",
-          "location": "§3–5；Table3消融；AppendixA队列/噪声确认、B预算和团队规模、E GPT产物、G迁移。"
+          "url": "https://arxiv.org/html/2605.28655v1",
+          "location": "全文§1–6及AppendicesA–G、所有算法/表S1–S9、研究产物；PDF页8–9视觉复核图4–5/Table3"
+        }
+      ]
+    },
+    {
+      "id": "method-h-workflow-autoscientists",
+      "source": "h-workflow",
+      "target": "autoscientists",
+      "kind": "mechanism",
+      "label": "研究该问题 / 使用该机制",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2605.28655v1",
+          "location": "全文§1–6及AppendicesA–G、所有算法/表S1–S9、研究产物；PDF页8–9视觉复核图4–5/Table3"
         }
       ]
     },
@@ -9011,8 +9201,8 @@
       "evidence": "source_metadata",
       "sources": [
         {
-          "url": "https://arxiv.org/pdf/2605.23904",
-          "location": "论文首页署名（2026-10-19读取）"
+          "url": "https://arxiv.org/html/2605.23904v2",
+          "location": "首页编号1–4署名"
         }
       ]
     },
@@ -9025,8 +9215,8 @@
       "evidence": "source_metadata",
       "sources": [
         {
-          "url": "https://arxiv.org/pdf/2605.23904",
-          "location": "论文首页署名（2026-10-19读取）"
+          "url": "https://arxiv.org/html/2605.23904v2",
+          "location": "首页编号1–4署名"
         }
       ]
     },
@@ -9039,8 +9229,8 @@
       "evidence": "source_metadata",
       "sources": [
         {
-          "url": "https://arxiv.org/pdf/2605.23904",
-          "location": "论文首页署名（2026-10-19读取）"
+          "url": "https://arxiv.org/html/2605.23904v2",
+          "location": "首页编号1–4署名"
         }
       ]
     },
@@ -9053,8 +9243,8 @@
       "evidence": "source_metadata",
       "sources": [
         {
-          "url": "https://arxiv.org/pdf/2605.23904",
-          "location": "论文首页署名（2026-10-19读取）"
+          "url": "https://arxiv.org/html/2605.23904v2",
+          "location": "首页编号1–4署名"
         }
       ]
     },
@@ -9067,8 +9257,8 @@
       "evidence": "survey_classification",
       "sources": [
         {
-          "url": "https://arxiv.org/abs/2605.23904",
-          "location": "§§3.1–3.7、4.1–4.4表1–4；附录B、C与提示模板"
+          "url": "https://arxiv.org/html/2605.23904v2",
+          "location": "§3–4、表1–6、图3、附录A–C全部优化器提示"
         }
       ]
     },
@@ -9557,8 +9747,8 @@
       "evidence": "source_metadata",
       "sources": [
         {
-          "url": "https://arxiv.org/pdf/2504.21024",
-          "location": "论文首页署名（2026-10-19读取）"
+          "url": "https://arxiv.org/html/2504.21024v2",
+          "location": "原文作者机构栏"
         }
       ]
     },
@@ -9572,7 +9762,7 @@
       "sources": [
         {
           "url": "https://arxiv.org/html/2504.21024v2",
-          "location": "§3.2–3.3、§4.1–4.4、Tables 1–4、Appendix A–B"
+          "location": "§§3.2–3.3,4.1–4.4；Tables 1–4；Appendices A–B（含评价提示）"
         }
       ]
     },
@@ -9627,36 +9817,8 @@
       "evidence": "source_metadata",
       "sources": [
         {
-          "url": "https://arxiv.org/pdf/2501.04519",
-          "location": "论文首页署名（2026-10-19读取）"
-        }
-      ]
-    },
-    {
-      "id": "aff-rstar-math-org-peking-university-4818c188",
-      "source": "org-peking-university-4818c188",
-      "target": "rstar-math",
-      "kind": "affiliation",
-      "label": "署名机构 / 团队",
-      "evidence": "source_metadata",
-      "sources": [
-        {
-          "url": "https://arxiv.org/pdf/2501.04519",
-          "location": "论文首页署名（2026-10-19读取）"
-        }
-      ]
-    },
-    {
-      "id": "aff-rstar-math-org-tsinghua-university-88293fa6",
-      "source": "org-tsinghua-university-88293fa6",
-      "target": "rstar-math",
-      "kind": "affiliation",
-      "label": "署名机构 / 团队",
-      "evidence": "source_metadata",
-      "sources": [
-        {
-          "url": "https://arxiv.org/pdf/2501.04519",
-          "location": "论文首页署名（2026-10-19读取）"
+          "url": "https://arxiv.org/html/2501.04519v1",
+          "location": "原文作者机构栏"
         }
       ]
     },
@@ -9669,8 +9831,8 @@
       "evidence": "survey_classification",
       "sources": [
         {
-          "url": "https://arxiv.org/abs/2501.04519",
-          "location": "§3.1–3.4、§4、Tables 2–10、Appendix A.1"
+          "url": "https://arxiv.org/html/2501.04519v1",
+          "location": "复核§3.1–3.4、§4.1–4.3、Tables 2–10、§5及Appendix A.1/A.3；结合此前全主文及相关附录阅读"
         }
       ]
     },
@@ -10123,20 +10285,6 @@
       ]
     },
     {
-      "id": "aff-envharness-org-washu-a03a3adf",
-      "source": "org-washu-a03a3adf",
-      "target": "envharness",
-      "kind": "affiliation",
-      "label": "署名机构 / 团队",
-      "evidence": "source_metadata",
-      "sources": [
-        {
-          "url": "https://arxiv.org/pdf/2608.19880",
-          "location": "论文首页署名（2026-10-19读取）"
-        }
-      ]
-    },
-    {
       "id": "aff-envharness-org-google-ce770667",
       "source": "org-google-ce770667",
       "target": "envharness",
@@ -10145,8 +10293,8 @@
       "evidence": "source_metadata",
       "sources": [
         {
-          "url": "https://arxiv.org/pdf/2608.19880",
-          "location": "论文首页署名（2026-10-19读取）"
+          "url": "https://arxiv.org/html/2608.19880v1",
+          "location": "原文作者署名/HTML ltx_authors"
         }
       ]
     },
@@ -10159,8 +10307,22 @@
       "evidence": "source_metadata",
       "sources": [
         {
-          "url": "https://arxiv.org/pdf/2608.19880",
-          "location": "论文首页署名（2026-10-19读取）"
+          "url": "https://arxiv.org/html/2608.19880v1",
+          "location": "原文作者署名/HTML ltx_authors"
+        }
+      ]
+    },
+    {
+      "id": "aff-envharness-org-washu-a03a3adf",
+      "source": "org-washu-a03a3adf",
+      "target": "envharness",
+      "kind": "affiliation",
+      "label": "署名机构 / 团队",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2608.19880v1",
+          "location": "原文作者署名/HTML ltx_authors"
         }
       ]
     },
@@ -10173,8 +10335,8 @@
       "evidence": "survey_classification",
       "sources": [
         {
-          "url": "https://arxiv.org/abs/2608.19880",
-          "location": "§2–5，Tables2–5，AppendicesE分割、F训练与多轮技能、H限制。"
+          "url": "https://arxiv.org/html/2608.19880v1",
+          "location": "此前已完整阅读主文及相关技术附录；本轮复核§2–5、App A/E/F/H/I，并完整补读App G成本、留一任务类型及全部弱点—包装—技能示例。"
         }
       ]
     },
@@ -10187,8 +10349,8 @@
       "evidence": "survey_classification",
       "sources": [
         {
-          "url": "https://arxiv.org/abs/2608.19880",
-          "location": "§2–5，Tables2–5，AppendicesE分割、F训练与多轮技能、H限制。"
+          "url": "https://arxiv.org/html/2608.19880v1",
+          "location": "此前已完整阅读主文及相关技术附录；本轮复核§2–5、App A/E/F/H/I，并完整补读App G成本、留一任务类型及全部弱点—包装—技能示例。"
         }
       ]
     },
@@ -10411,8 +10573,8 @@
       "evidence": "source_metadata",
       "sources": [
         {
-          "url": "https://arxiv.org/pdf/2603.17775",
-          "location": "论文首页署名（2026-10-19读取）"
+          "url": "https://arxiv.org/html/2603.17775v2",
+          "location": "原文作者机构栏"
         }
       ]
     },
@@ -10425,8 +10587,8 @@
       "evidence": "source_metadata",
       "sources": [
         {
-          "url": "https://arxiv.org/pdf/2603.17775",
-          "location": "论文首页署名（2026-10-19读取）"
+          "url": "https://arxiv.org/html/2603.17775v2",
+          "location": "原文作者机构栏"
         }
       ]
     },
@@ -10439,8 +10601,8 @@
       "evidence": "survey_classification",
       "sources": [
         {
-          "url": "https://arxiv.org/abs/2603.17775",
-          "location": "§3–4、Tables1–6、AppendixA–D"
+          "url": "https://arxiv.org/html/2603.17775v2",
+          "location": "复核§3–4、Tables1–4；补读/核查AppendicesA–E全部（Tables5–10、理论及实例）"
         }
       ]
     },
@@ -10915,22 +11077,22 @@
       "evidence": "source_metadata",
       "sources": [
         {
-          "url": "https://arxiv.org/pdf/2505.15034",
-          "location": "论文首页署名（2026-10-19读取）"
+          "url": "https://arxiv.org/html/2505.15034v2",
+          "location": "原文作者机构栏"
         }
       ]
     },
     {
-      "id": "aff-rl-tango-org-mit-ibm-watson-ai-lab-cca4d6e7",
-      "source": "org-mit-ibm-watson-ai-lab-cca4d6e7",
+      "id": "aff-rl-tango-org-mit-ibm-watson-ai-lab-81bd7f4a",
+      "source": "org-mit-ibm-watson-ai-lab-81bd7f4a",
       "target": "rl-tango",
       "kind": "affiliation",
       "label": "署名机构 / 团队",
       "evidence": "source_metadata",
       "sources": [
         {
-          "url": "https://arxiv.org/pdf/2505.15034",
-          "location": "论文首页署名（2026-10-19读取）"
+          "url": "https://arxiv.org/html/2505.15034v2",
+          "location": "原文作者机构栏"
         }
       ]
     },
@@ -10943,8 +11105,8 @@
       "evidence": "survey_classification",
       "sources": [
         {
-          "url": "https://arxiv.org/abs/2505.15034",
-          "location": "§3–4、Tables1–3、AppendixA–C"
+          "url": "https://arxiv.org/html/2505.15034v2",
+          "location": "§2–5；Tables 1–4；Figures 1–5；Appendices A–D（含全部生成/验证示例）"
         }
       ]
     },
@@ -11649,20 +11811,6 @@
       ]
     },
     {
-      "id": "aff-reasoningbank-org-uiuc-9c70ee3c",
-      "source": "org-uiuc-9c70ee3c",
-      "target": "reasoningbank",
-      "kind": "affiliation",
-      "label": "署名机构 / 团队",
-      "evidence": "source_metadata",
-      "sources": [
-        {
-          "url": "https://arxiv.org/pdf/2509.25140v2",
-          "location": "v2第一页作者单位"
-        }
-      ]
-    },
-    {
       "id": "aff-reasoningbank-org-google-ce770667",
       "source": "org-google-ce770667",
       "target": "reasoningbank",
@@ -11671,8 +11819,22 @@
       "evidence": "source_metadata",
       "sources": [
         {
-          "url": "https://arxiv.org/pdf/2509.25140v2",
-          "location": "v2第一页作者单位"
+          "url": "https://arxiv.org/html/2509.25140v2",
+          "location": "首页 Google Cloud AI Research/Google Cloud AI、UIUC、Yale 作者机构；资助项目不计机构。"
+        }
+      ]
+    },
+    {
+      "id": "aff-reasoningbank-org-uiuc-9c70ee3c",
+      "source": "org-uiuc-9c70ee3c",
+      "target": "reasoningbank",
+      "kind": "affiliation",
+      "label": "署名机构 / 团队",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2509.25140v2",
+          "location": "首页 Google Cloud AI Research/Google Cloud AI、UIUC、Yale 作者机构；资助项目不计机构。"
         }
       ]
     },
@@ -11685,8 +11847,8 @@
       "evidence": "source_metadata",
       "sources": [
         {
-          "url": "https://arxiv.org/pdf/2509.25140v2",
-          "location": "v2第一页作者单位"
+          "url": "https://arxiv.org/html/2509.25140v2",
+          "location": "首页 Google Cloud AI Research/Google Cloud AI、UIUC、Yale 作者机构；资助项目不计机构。"
         }
       ]
     },
@@ -11699,8 +11861,8 @@
       "evidence": "survey_classification",
       "sources": [
         {
-          "url": "https://arxiv.org/pdf/2509.25140v2",
-          "location": "v2（2026-03-16）；§3–5、Tables 1–5；Appendices A–C、E"
+          "url": "https://arxiv.org/html/2509.25140v2",
+          "location": "v2 §1–7；Tables 1–6；Figures 4–14；附录 A–F"
         }
       ]
     },
@@ -12807,6 +12969,356 @@
         {
           "url": "https://arxiv.org/html/2505.21444v2",
           "location": "原文作者机构栏"
+        }
+      ]
+    },
+    {
+      "id": "aff-spade-org-uw-1f300b55",
+      "source": "org-uw-1f300b55",
+      "target": "spade",
+      "kind": "affiliation",
+      "label": "署名机构 / 团队",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2608.19197v3",
+          "location": "PDF p1"
+        }
+      ]
+    },
+    {
+      "id": "aff-spade-org-stanford-bf90d29a",
+      "source": "org-stanford-bf90d29a",
+      "target": "spade",
+      "kind": "affiliation",
+      "label": "署名机构 / 团队",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2608.19197v3",
+          "location": "PDF p1"
+        }
+      ]
+    },
+    {
+      "id": "aff-spade-org-northeastern-64dba1b4",
+      "source": "org-northeastern-64dba1b4",
+      "target": "spade",
+      "kind": "affiliation",
+      "label": "署名机构 / 团队",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2608.19197v3",
+          "location": "PDF p1"
+        }
+      ]
+    },
+    {
+      "id": "aff-spade-org-carnegie-mellon-0d9522c6",
+      "source": "org-carnegie-mellon-0d9522c6",
+      "target": "spade",
+      "kind": "affiliation",
+      "label": "署名机构 / 团队",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2608.19197v3",
+          "location": "PDF p1"
+        }
+      ]
+    },
+    {
+      "id": "aff-spade-org-mit-e5dcffe8",
+      "source": "org-mit-e5dcffe8",
+      "target": "spade",
+      "kind": "affiliation",
+      "label": "署名机构 / 团队",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2608.19197v3",
+          "location": "PDF p1"
+        }
+      ]
+    },
+    {
+      "id": "aff-spade-org-nus-52003576",
+      "source": "org-nus-52003576",
+      "target": "spade",
+      "kind": "affiliation",
+      "label": "署名机构 / 团队",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2608.19197v3",
+          "location": "PDF p1"
+        }
+      ]
+    },
+    {
+      "id": "aff-spade-org-seoul-national-university-7bc89900",
+      "source": "org-seoul-national-university-7bc89900",
+      "target": "spade",
+      "kind": "affiliation",
+      "label": "署名机构 / 团队",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2608.19197v3",
+          "location": "PDF p1"
+        }
+      ]
+    },
+    {
+      "id": "aff-spade-org-stevens-institute-of-technology-78d96f9e",
+      "source": "org-stevens-institute-of-technology-78d96f9e",
+      "target": "spade",
+      "kind": "affiliation",
+      "label": "署名机构 / 团队",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2608.19197v3",
+          "location": "PDF p1"
+        }
+      ]
+    },
+    {
+      "id": "aff-spade-org-uchicago-da0215f4",
+      "source": "org-uchicago-da0215f4",
+      "target": "spade",
+      "kind": "affiliation",
+      "label": "署名机构 / 团队",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2608.19197v3",
+          "location": "PDF p1"
+        }
+      ]
+    },
+    {
+      "id": "method-x-environment-spade",
+      "source": "x-environment",
+      "target": "spade",
+      "kind": "mechanism",
+      "label": "研究该问题 / 使用该机制",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2608.19197v3",
+          "location": "§1–10, Algorithm 1, Tables 1–8, Appendices E–J including complete generated programs"
+        }
+      ]
+    },
+    {
+      "id": "method-x-training-spade",
+      "source": "x-training",
+      "target": "spade",
+      "kind": "mechanism",
+      "label": "研究该问题 / 使用该机制",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2608.19197v3",
+          "location": "§1–10, Algorithm 1, Tables 1–8, Appendices E–J including complete generated programs"
+        }
+      ]
+    },
+    {
+      "id": "aff-evomal-org-queen-s-university-3c30b1ef",
+      "source": "org-queen-s-university-3c30b1ef",
+      "target": "evomal",
+      "kind": "affiliation",
+      "label": "署名机构 / 团队",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2608.25776v1",
+          "location": "原文作者署名/HTML ltx_authors"
+        }
+      ]
+    },
+    {
+      "id": "aff-soar-arc-org-inria-b5b2b325",
+      "source": "org-inria-b5b2b325",
+      "target": "soar-arc",
+      "kind": "affiliation",
+      "label": "署名机构 / 团队",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2507.14172v2",
+          "location": "原文作者机构栏"
+        }
+      ]
+    },
+    {
+      "id": "aff-soar-arc-org-mit-e5dcffe8",
+      "source": "org-mit-e5dcffe8",
+      "target": "soar-arc",
+      "kind": "affiliation",
+      "label": "署名机构 / 团队",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2507.14172v2",
+          "location": "原文作者机构栏"
+        }
+      ]
+    },
+    {
+      "id": "method-m-selftrain-soar-arc",
+      "source": "m-selftrain",
+      "target": "soar-arc",
+      "kind": "mechanism",
+      "label": "研究该问题 / 使用该机制",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2507.14172v2",
+          "location": "§§3–5；Tables 1–5,7；Appendices A–I, especially B,D,F"
+        }
+      ]
+    },
+    {
+      "id": "method-m-proof-soar-arc",
+      "source": "m-proof",
+      "target": "soar-arc",
+      "kind": "mechanism",
+      "label": "研究该问题 / 使用该机制",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2507.14172v2",
+          "location": "§§3–5；Tables 1–5,7；Appendices A–I, especially B,D,F"
+        }
+      ]
+    },
+    {
+      "id": "aff-agent-workflow-memory-org-carnegie-mellon-0d9522c6",
+      "source": "org-carnegie-mellon-0d9522c6",
+      "target": "agent-workflow-memory",
+      "kind": "affiliation",
+      "label": "署名机构 / 团队",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2409.07429v1",
+          "location": "首页每位作者机构。"
+        }
+      ]
+    },
+    {
+      "id": "aff-agent-workflow-memory-org-mit-e5dcffe8",
+      "source": "org-mit-e5dcffe8",
+      "target": "agent-workflow-memory",
+      "kind": "affiliation",
+      "label": "署名机构 / 团队",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2409.07429v1",
+          "location": "首页每位作者机构。"
+        }
+      ]
+    },
+    {
+      "id": "method-h-memory-agent-workflow-memory",
+      "source": "h-memory",
+      "target": "agent-workflow-memory",
+      "kind": "mechanism",
+      "label": "研究该问题 / 使用该机制",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2409.07429v1",
+          "location": "§1–7；Tables 1–11；附录 A–C"
+        }
+      ]
+    },
+    {
+      "id": "method-h-workflow-agent-workflow-memory",
+      "source": "h-workflow",
+      "target": "agent-workflow-memory",
+      "kind": "mechanism",
+      "label": "研究该问题 / 使用该机制",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2409.07429v1",
+          "location": "§1–7；Tables 1–11；附录 A–C"
+        }
+      ]
+    },
+    {
+      "id": "aff-arena-learning-org-microsoft-c7bac469",
+      "source": "org-microsoft-c7bac469",
+      "target": "arena-learning",
+      "kind": "affiliation",
+      "label": "署名机构 / 团队",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2407.10627v1",
+          "location": "首页 PDF 唯一第三单位原文为 SIAT-UCAS，未拆分为两个独立署名。"
+        }
+      ]
+    },
+    {
+      "id": "aff-arena-learning-org-tsinghua-university-88293fa6",
+      "source": "org-tsinghua-university-88293fa6",
+      "target": "arena-learning",
+      "kind": "affiliation",
+      "label": "署名机构 / 团队",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2407.10627v1",
+          "location": "首页 PDF 唯一第三单位原文为 SIAT-UCAS，未拆分为两个独立署名。"
+        }
+      ]
+    },
+    {
+      "id": "aff-arena-learning-org-siat-cas-a56c4274",
+      "source": "org-siat-cas-a56c4274",
+      "target": "arena-learning",
+      "kind": "affiliation",
+      "label": "署名机构 / 团队",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2407.10627v1",
+          "location": "首页 PDF 唯一第三单位原文为 SIAT-UCAS，未拆分为两个独立署名。"
+        }
+      ]
+    },
+    {
+      "id": "method-m-selftrain-arena-learning",
+      "source": "m-selftrain",
+      "target": "arena-learning",
+      "kind": "mechanism",
+      "label": "研究该问题 / 使用该机制",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2407.10627v1",
+          "location": "全文§1–5、Tables 1–11、Figures 8–12；Appendix A"
+        }
+      ]
+    },
+    {
+      "id": "method-m-preference-arena-learning",
+      "source": "m-preference",
+      "target": "arena-learning",
+      "kind": "mechanism",
+      "label": "研究该问题 / 使用该机制",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2407.10627v1",
+          "location": "全文§1–5、Tables 1–11、Figures 8–12；Appendix A"
         }
       ]
     },
@@ -13998,11 +14510,11 @@
       ]
     },
     {
-      "id": "corpus-rel-0d8353e6ef11",
+      "id": "corpus-rel-a254107d8446",
       "source": "skillopt",
       "target": "skilladam",
-      "kind": "extends",
-      "label": "扩展前作",
+      "kind": "compares",
+      "label": "原文比较",
       "evidence": "source_explicit",
       "explanation": "SkillOpt已有bounded edit/验收/optimizer memory；本工作新增显式issue状态和paired-case方差预算的联动。相较GEPA/Trace2Skill，强调跨迭代优化器状态而非仅经验文本。",
       "sources": [
@@ -14046,13 +14558,13 @@
       "provenance": "full_corpus_reading"
     },
     {
-      "id": "corpus-rel-353b482b9971",
-      "source": "reflexion",
-      "target": "voyager",
-      "kind": "extends",
-      "label": "扩展前作",
-      "evidence": "source_explicit",
-      "explanation": "Voyager以课程及可执行skill跨任务继承，Reflexion主要把失败经验写进同任务后续尝试；两者改进粒度不同。",
+      "id": "corpus-rel-7988a6a504ee",
+      "source": "voyager",
+      "target": "reflexion",
+      "kind": "method_comparison",
+      "label": "机制与证据对照",
+      "evidence": "survey_comparison",
+      "explanation": "Voyager以课程及可执行skill跨任务继承，Reflexion主要把失败经验写进同任务后续尝试；两者改进粒度不同。 此边为机制比较，不据相关工作引用推定直接实现继承。",
       "sources": [
         {
           "url": "https://arxiv.org/html/2305.16291v2",
@@ -14126,12 +14638,12 @@
       "provenance": "full_corpus_reading"
     },
     {
-      "id": "corpus-rel-a965233465ae",
-      "source": "constitutional-ai",
-      "target": "self-rewarding-lm",
-      "kind": "extends",
-      "label": "扩展前作",
-      "evidence": "source_explicit",
+      "id": "corpus-rel-8f4d837bcb7b",
+      "source": "self-rewarding-lm",
+      "target": "constitutional-ai",
+      "kind": "method_comparison",
+      "label": "机制与证据对照",
+      "evidence": "survey_comparison",
       "explanation": "把AI反馈从固定分离RM改为与policy共享参数并逐轮刷新。",
       "sources": [
         {
@@ -14446,13 +14958,29 @@
       "provenance": "full_corpus_reading"
     },
     {
-      "id": "corpus-rel-7b65305d949f",
-      "source": "voyager",
-      "target": "polyskill",
-      "kind": "extends",
-      "label": "扩展前作",
-      "evidence": "source_explicit",
-      "explanation": "引用Voyager长期技能与自动课程；应用到跨网站抽象。",
+      "id": "corpus-rel-fb76eb1eb921",
+      "source": "polyskill",
+      "target": "agent-workflow-memory",
+      "kind": "method_comparison",
+      "label": "机制与证据对照",
+      "evidence": "survey_comparison",
+      "explanation": "PolySkill原文将AWM列为网页技能归纳前驱；这里比较文本工作流与可重绑定程序表示，不据引用推定直接算法继承。",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2510.15863v2",
+          "location": "§1–2"
+        }
+      ],
+      "provenance": "full_corpus_reading"
+    },
+    {
+      "id": "corpus-rel-21bff3d25a9d",
+      "source": "polyskill",
+      "target": "voyager",
+      "kind": "method_comparison",
+      "label": "机制与证据对照",
+      "evidence": "survey_comparison",
+      "explanation": "PolySkill将Voyager列为开放环境技能归纳及自主课程先例；同属持久技能路线，但未明确基于Voyager实现扩展。",
       "sources": [
         {
           "url": "https://arxiv.org/html/2510.15863v2",
@@ -14862,11 +15390,11 @@
       "provenance": "full_corpus_reading"
     },
     {
-      "id": "corpus-rel-72fa4c7008eb",
+      "id": "corpus-rel-8fc03a672fe5",
       "source": "godel-machine",
       "target": "generalized-agent-iteration",
-      "kind": "extends",
-      "label": "扩展前作",
+      "kind": "discusses",
+      "label": "原文讨论",
       "evidence": "source_explicit",
       "explanation": "把固定外部utility与proof-gated modifier视为anchored RSI特例；扩展描述范围并未扩展其最优性定理。",
       "sources": [
@@ -14878,11 +15406,11 @@
       "provenance": "full_corpus_reading"
     },
     {
-      "id": "corpus-rel-d5553a50c21a",
+      "id": "corpus-rel-f4f4c274e673",
       "source": "hyperagents",
       "target": "generalized-agent-iteration",
-      "kind": "uses",
-      "label": "采用方法",
+      "kind": "discusses",
+      "label": "原文讨论",
       "evidence": "source_explicit",
       "explanation": "任务agent与meta-agent共处可编辑程序是modifier内置的映射实例。",
       "sources": [
@@ -15470,13 +15998,13 @@
       "provenance": "full_corpus_reading"
     },
     {
-      "id": "corpus-rel-c7463673c7b0",
-      "source": "adas",
-      "target": "growing-harness",
-      "kind": "extends",
-      "label": "扩展前作",
-      "evidence": "source_explicit",
-      "explanation": "承接代码表示代理设计搜索，增加轨迹局部编辑与持续共享程序增长。",
+      "id": "corpus-rel-eb214f387c3c",
+      "source": "growing-harness",
+      "target": "adas",
+      "kind": "method_comparison",
+      "label": "机制与证据对照",
+      "evidence": "survey_comparison",
+      "explanation": "承接代码表示代理设计搜索，增加轨迹局部编辑与持续共享程序增长。 此边为机制比较，不据相关工作引用推定直接实现继承。",
       "sources": [
         {
           "url": "https://arxiv.org/html/2609.26760v2",
@@ -15502,13 +16030,13 @@
       "provenance": "full_corpus_reading"
     },
     {
-      "id": "corpus-rel-ed5005db6977",
-      "source": "voyager",
-      "target": "growing-harness",
-      "kind": "extends",
-      "label": "扩展前作",
-      "evidence": "source_explicit",
-      "explanation": "从可复用技能走向整个共享控制器程序。",
+      "id": "corpus-rel-ffb0eeafde1e",
+      "source": "growing-harness",
+      "target": "voyager",
+      "kind": "method_comparison",
+      "label": "机制与证据对照",
+      "evidence": "survey_comparison",
+      "explanation": "从可复用技能走向整个共享控制器程序。 此边为机制比较，不据相关工作引用推定直接实现继承。",
       "sources": [
         {
           "url": "https://arxiv.org/html/2609.26760v2",
@@ -15630,11 +16158,11 @@
       "provenance": "full_corpus_reading"
     },
     {
-      "id": "corpus-rel-861bc3961487",
+      "id": "corpus-rel-6f1e0472c059",
       "source": "reflexion",
       "target": "memrl",
-      "kind": "extends",
-      "label": "扩展前作",
+      "kind": "compares",
+      "label": "原文比较",
       "evidence": "source_explicit",
       "explanation": "单题反思控制概念对应Reflexion；增加跨任务记忆共享和效用检索。",
       "sources": [
@@ -15705,6 +16233,22 @@
         {
           "url": "https://arxiv.org/html/2608.15763v5",
           "location": "§2–5，AppendicesB–D"
+        }
+      ],
+      "provenance": "full_corpus_reading"
+    },
+    {
+      "id": "corpus-rel-97dd228f33d6",
+      "source": "fragility-self-improving-agents",
+      "target": "agent-workflow-memory",
+      "kind": "method_comparison",
+      "label": "机制与证据对照",
+      "evidence": "survey_comparison",
+      "explanation": "直接检验 AWM/ReasoningBank 的适用边界；与 CHASE 的反事实扰动、Phantom Guardrails 的错误规则累积互补：这里没有攻击者，正常在线奖励也能积累不适用经验。",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2608.18066v2",
+          "location": "方法与实验对照"
         }
       ],
       "provenance": "full_corpus_reading"
@@ -15785,6 +16329,38 @@
         {
           "url": "https://arxiv.org/html/2601.22436v3",
           "location": "§4–5"
+        }
+      ],
+      "provenance": "full_corpus_reading"
+    },
+    {
+      "id": "corpus-rel-0528be703447",
+      "source": "evomal",
+      "target": "practice-makes-unsafe",
+      "kind": "method_comparison",
+      "label": "机制与证据对照",
+      "evidence": "survey_comparison",
+      "explanation": "该文以全新容器仅导出技能隔离跨任务危害迁移；EvoMal另测新创作代码后代再次进入检索与创作。",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2608.12851v2",
+          "location": "§3–4，§6.2；最终P无更新"
+        }
+      ],
+      "provenance": "full_corpus_reading"
+    },
+    {
+      "id": "corpus-rel-ccf79ed04a54",
+      "source": "evomal",
+      "target": "trusting-trust-revisited",
+      "kind": "method_comparison",
+      "label": "机制与证据对照",
+      "evidence": "survey_comparison",
+      "explanation": "该文以恶意评测塑造漏洞生成器，测试中性留出题及后续干净演化；EvoMal以不可信源码为入口，测试种子移除后后代载体再传播。",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2609.17817v1",
+          "location": "§2.2，§3.1–3.2、§3.5–3.6"
         }
       ],
       "provenance": "full_corpus_reading"
@@ -15982,6 +16558,54 @@
       "provenance": "full_corpus_reading"
     },
     {
+      "id": "corpus-rel-b609eeb0e715",
+      "source": "star",
+      "target": "soar-arc",
+      "kind": "extends",
+      "label": "扩展前作",
+      "evidence": "source_explicit",
+      "explanation": "与成功推理轨迹训练相连，但用hindsight利用可执行失败并训练搜索修复操作。",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2507.14172v2",
+          "location": "§2"
+        }
+      ],
+      "provenance": "full_corpus_reading"
+    },
+    {
+      "id": "corpus-rel-edf36a3caf03",
+      "source": "soar-arc",
+      "target": "ttt-discover",
+      "kind": "method_comparison",
+      "label": "机制与证据对照",
+      "evidence": "survey_comparison",
+      "explanation": "二者固定外层程序搜索并更新模型；SOAR数据累积/基座重启SFT，TTT-D实例在线RL连续权重学习。",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2507.14172v2",
+          "location": "§3.4,Appendix D"
+        }
+      ],
+      "provenance": "full_corpus_reading"
+    },
+    {
+      "id": "corpus-rel-8a7d514532ba",
+      "source": "alphaevolve",
+      "target": "soar-arc",
+      "kind": "discusses",
+      "label": "原文讨论",
+      "evidence": "source_explicit",
+      "explanation": "作者提出可为冻结生成器的程序搜索提供自训练操作；本文未实际集成验证AlphaEvolve。",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2507.14172v2",
+          "location": "§5"
+        }
+      ],
+      "provenance": "full_corpus_reading"
+    },
+    {
       "id": "corpus-rel-b02e267a5053",
       "source": "socratic-swe",
       "target": "skill-self-play",
@@ -16046,6 +16670,134 @@
       "provenance": "full_corpus_reading"
     },
     {
+      "id": "corpus-rel-f3a7e6cae6f0",
+      "source": "envharness",
+      "target": "red-queen-godel-machine",
+      "kind": "method_comparison",
+      "label": "机制与证据对照",
+      "evidence": "survey_comparison",
+      "explanation": "相对 GenEnv 改已有可信世界的接口，相对 ReasoningBank 增加适应性经验来源；相对 RQGM 共改任务/评分器，EnvHarness 固定原始评分逻辑和外层设计器，不能称改进器自修改。",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2608.19880v1",
+          "location": "方法与实验对照"
+        }
+      ],
+      "provenance": "full_corpus_reading"
+    },
+    {
+      "id": "corpus-rel-3b659fb430af",
+      "source": "envharness",
+      "target": "reasoningbank",
+      "kind": "method_comparison",
+      "label": "机制与证据对照",
+      "evidence": "survey_comparison",
+      "explanation": "相对 GenEnv 改已有可信世界的接口，相对 ReasoningBank 增加适应性经验来源；相对 RQGM 共改任务/评分器，EnvHarness 固定原始评分逻辑和外层设计器，不能称改进器自修改。",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2608.19880v1",
+          "location": "方法与实验对照"
+        }
+      ],
+      "provenance": "full_corpus_reading"
+    },
+    {
+      "id": "corpus-rel-b980acb6c43f",
+      "source": "rest-meets-react",
+      "target": "webevolver",
+      "kind": "extends",
+      "label": "扩展前作",
+      "evidence": "source_explicit",
+      "explanation": "从搜索工具交互的成功轨迹回流扩展至学得转移模型的想象轨迹，反馈与保真风险不同。",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2504.21024v2",
+          "location": "§§2–3"
+        }
+      ],
+      "provenance": "full_corpus_reading"
+    },
+    {
+      "id": "corpus-rel-c28148ebb1af",
+      "source": "gepa",
+      "target": "skillopt",
+      "kind": "compares",
+      "label": "原文比较",
+      "evidence": "source_explicit",
+      "explanation": "直接模式对比GEPA；本项固定单一技能局部编辑并积累拒绝/元经验，未披露等预算搜索配置。",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2605.23904v2",
+          "location": "§3–4、表1"
+        }
+      ],
+      "provenance": "full_corpus_reading"
+    },
+    {
+      "id": "corpus-rel-7ce7aaa3bc14",
+      "source": "skillopt",
+      "target": "skilladam",
+      "kind": "method_comparison",
+      "label": "机制与证据对照",
+      "evidence": "survey_comparison",
+      "explanation": "SkillOpt以有界编辑、门控及元经验稳定更新；SkillAdam以语义动量和二阶置信调节技能修订，均超出单次技能生成。",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2605.23904v2",
+          "location": "§3、附录优化器契约"
+        }
+      ],
+      "provenance": "full_corpus_reading"
+    },
+    {
+      "id": "corpus-rel-1bced210c831",
+      "source": "agent-workflow-memory",
+      "target": "voyager",
+      "kind": "method_comparison",
+      "label": "机制与证据对照",
+      "evidence": "survey_comparison",
+      "explanation": "AWM相关工作引用Voyager作为技能归纳先例；二者技术对照是执行代码技能与上下文工作流，不据相关工作引用推定直接技术继承。",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2409.07429v1",
+          "location": "§6 Learning Common Procedures；§5"
+        }
+      ],
+      "provenance": "full_corpus_reading"
+    },
+    {
+      "id": "corpus-rel-b182fad17bde",
+      "source": "agent-workflow-memory",
+      "target": "reasoningbank",
+      "kind": "compares",
+      "label": "原文比较",
+      "evidence": "source_explicit",
+      "explanation": "将成功工作流抽取扩展为成功/失败推理原则，并在相同检索、追加机制下比较记忆表示；不是 AWM 原生整库使用的全系统复现。",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2509.25140v2",
+          "location": "§2、§4；Appendix B.1"
+        }
+      ],
+      "provenance": "full_corpus_reading"
+    },
+    {
+      "id": "corpus-rel-c9f00a3071ff",
+      "source": "reasoningbank",
+      "target": "memskill",
+      "kind": "method_comparison",
+      "label": "机制与证据对照",
+      "evidence": "survey_comparison",
+      "explanation": "ReasoningBank主要改记忆内容与探索经验，MemSkill进一步学习选择并修订记忆操作技能。",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2509.25140v2",
+          "location": "§3.2；Appendix D–E"
+        }
+      ],
+      "provenance": "full_corpus_reading"
+    },
+    {
       "id": "corpus-rel-18fb0a64d5b0",
       "source": "evods",
       "target": "skillos",
@@ -16078,6 +16830,54 @@
       "provenance": "full_corpus_reading"
     },
     {
+      "id": "corpus-rel-a8109d26251e",
+      "source": "spin",
+      "target": "arena-learning",
+      "kind": "method_comparison",
+      "label": "机制与证据对照",
+      "evidence": "survey_comparison",
+      "explanation": "SPIN固定正例动态自身负例；Arena动态比较多冻结教师与目标模型，以裁判选择目标薄弱点",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2401.01335v3",
+          "location": "§4–6"
+        }
+      ],
+      "provenance": "full_corpus_reading"
+    },
+    {
+      "id": "corpus-rel-5092f66dfa7d",
+      "source": "arena-learning",
+      "target": "spin",
+      "kind": "method_comparison",
+      "label": "机制与证据对照",
+      "evidence": "survey_comparison",
+      "explanation": "SPIN固定示范正例并更新自身负例；本工作多外部教师产生正例，固定judge比较目标学生，且每轮SFT重启",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2407.10627v1",
+          "location": "§2.3/Table1"
+        }
+      ],
+      "provenance": "full_corpus_reading"
+    },
+    {
+      "id": "corpus-rel-3a09f6d4832c",
+      "source": "coverrl",
+      "target": "can-reasoning-models-self-train",
+      "kind": "method_comparison",
+      "label": "机制与证据对照",
+      "evidence": "survey_comparison",
+      "explanation": "SRT显示长程多数自奖励偏差；本作加入训练中的验证过滤缓解短程共识陷阱，但尚未同等长程或大规模验证解决。",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2603.17775v2",
+          "location": "§3–4；AppendixD"
+        }
+      ],
+      "provenance": "full_corpus_reading"
+    },
+    {
       "id": "corpus-rel-e11f1337f27d",
       "source": "rlanything",
       "target": "rsi-anything",
@@ -16105,6 +16905,86 @@
         {
           "url": "https://arxiv.org/html/2602.02488v1",
           "location": "§2–3；Table1/2；附录A–C（含C.9完整算法）"
+        }
+      ],
+      "provenance": "full_corpus_reading"
+    },
+    {
+      "id": "corpus-rel-2205667b0f80",
+      "source": "rl-tango",
+      "target": "rstar-math",
+      "kind": "method_comparison",
+      "label": "机制与证据对照",
+      "evidence": "survey_comparison",
+      "explanation": "两者训练生成器与评价器；rStar以MCTS及重启SFT传递数据，Tango连续双模型RL并保持gold outcome。",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2505.15034v2",
+          "location": "§3–4"
+        }
+      ],
+      "provenance": "full_corpus_reading"
+    },
+    {
+      "id": "corpus-rel-f44ff7be7d33",
+      "source": "rl-tango",
+      "target": "coverrl",
+      "kind": "method_comparison",
+      "label": "机制与证据对照",
+      "evidence": "survey_comparison",
+      "explanation": "CoVerRL共享权重及投票锚点，Tango分立权重及真实答案锚点，证据自举风险不同。",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2505.15034v2",
+          "location": "§3"
+        }
+      ],
+      "provenance": "full_corpus_reading"
+    },
+    {
+      "id": "corpus-rel-e46f34c5e8e3",
+      "source": "rstar-math",
+      "target": "rl-tango",
+      "kind": "method_comparison",
+      "label": "机制与证据对照",
+      "evidence": "survey_comparison",
+      "explanation": "MCTS/重启SFT与连续生成器—验证器RL对比，均保留真实答案锚点。",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2501.04519v1",
+          "location": "§3.4/Appendix A.1"
+        }
+      ],
+      "provenance": "full_corpus_reading"
+    },
+    {
+      "id": "corpus-rel-aa1498fcee4c",
+      "source": "rstar-math",
+      "target": "star",
+      "kind": "method_comparison",
+      "label": "机制与证据对照",
+      "evidence": "survey_comparison",
+      "explanation": "均由上代生成数据训练下一代，rStar增加过程偏好、代码执行和树搜索。",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2501.04519v1",
+          "location": "§3"
+        }
+      ],
+      "provenance": "full_corpus_reading"
+    },
+    {
+      "id": "corpus-rel-ff1df4efc80a",
+      "source": "rstar-math",
+      "target": "alphaproof",
+      "kind": "method_comparison",
+      "label": "机制与证据对照",
+      "evidence": "survey_comparison",
+      "explanation": "搜索反馈回流训练，但rStar输出代码执行/答案匹配不等于形式证明验证。",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2501.04519v1",
+          "location": "§3.2–3.4"
         }
       ],
       "provenance": "full_corpus_reading"
@@ -16153,6 +17033,38 @@
         {
           "url": "https://arxiv.org/html/2602.10226v3",
           "location": "方法与结果"
+        }
+      ],
+      "provenance": "full_corpus_reading"
+    },
+    {
+      "id": "corpus-rel-f9fbb0364625",
+      "source": "aide2",
+      "target": "autoscientists",
+      "kind": "compares",
+      "label": "原文比较",
+      "evidence": "source_explicit",
+      "explanation": "BioML引用其发表结果，非同硬件重跑；§2讨论搜索轨迹区别。",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2605.28655v1",
+          "location": "§4.2/AppF.1/TableS6"
+        }
+      ],
+      "provenance": "full_corpus_reading"
+    },
+    {
+      "id": "corpus-rel-eb4c1243557a",
+      "source": "coral",
+      "target": "autoscientists",
+      "kind": "discusses",
+      "label": "原文讨论",
+      "evidence": "source_explicit",
+      "explanation": "相关工作提及长期多agent科研与经验积累，未明确算法复用或直接controlledcomparison。",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2605.28655v1",
+          "location": "§2"
         }
       ],
       "provenance": "full_corpus_reading"
@@ -16617,6 +17529,54 @@
         {
           "url": "https://arxiv.org/html/1705.08439",
           "location": "§7和Appendix A"
+        }
+      ],
+      "provenance": "full_corpus_reading"
+    },
+    {
+      "id": "corpus-rel-46afde02c0b8",
+      "source": "eurisko",
+      "target": "dreamcoder",
+      "kind": "discusses",
+      "label": "原文讨论",
+      "evidence": "source_explicit",
+      "explanation": "作者将神经识别器与历史自动发现系统的搜索启发式类比；学习 DSL 更适合当前领域，回应 Lisp 语法与语义不匹配，而非证明能重写全部自身算法。",
+      "sources": [
+        {
+          "url": "https://www.cs.cornell.edu/~ellisk/documents/dreamcoder_with_supplement.pdf",
+          "location": "S3.4"
+        }
+      ],
+      "provenance": "full_corpus_reading"
+    },
+    {
+      "id": "corpus-rel-7b1a6c276bf7",
+      "source": "dreamcoder",
+      "target": "policy-guided-heuristic-search",
+      "kind": "method_comparison",
+      "label": "机制与证据对照",
+      "evidence": "survey_comparison",
+      "explanation": "两者都用解题经验训练后续搜索；DreamCoder 另改程序表示库，PHS 主要在固定搜索状态空间学习策略/启发式。",
+      "sources": [
+        {
+          "url": "https://www.neurosymbolic.org/papers/EllisWNSMHCST21.pdf",
+          "location": "§2–3"
+        }
+      ],
+      "provenance": "full_corpus_reading"
+    },
+    {
+      "id": "corpus-rel-682e44da7242",
+      "source": "dreamcoder",
+      "target": "funsearch",
+      "kind": "method_comparison",
+      "label": "机制与证据对照",
+      "evidence": "survey_comparison",
+      "explanation": "FunSearch 用冻结大模型生成可执行候选并积累程序岛；DreamCoder 实际训练小识别器并抽象共享库，反馈进入不同可继承部件。",
+      "sources": [
+        {
+          "url": "https://www.neurosymbolic.org/papers/EllisWNSMHCST21.pdf",
+          "location": "§2–4"
         }
       ],
       "provenance": "full_corpus_reading"
@@ -20080,7 +21040,7 @@
       ],
       "sources": [
         {
-          "url": "https://arxiv.org/html/2401.01335v2",
+          "url": "https://arxiv.org/html/2401.01335v3",
           "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
         }
       ]
@@ -22024,6 +22984,106 @@
       ]
     },
     {
+      "id": "participation-cornell-dreamcoder",
+      "source": "actor-cornell",
+      "target": "dreamcoder",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Cornell University"
+      ],
+      "sources": [
+        {
+          "url": "https://www.neurosymbolic.org/papers/EllisWNSMHCST21.pdf",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-mit-dreamcoder",
+      "source": "actor-mit",
+      "target": "dreamcoder",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "MIT"
+      ],
+      "sources": [
+        {
+          "url": "https://www.neurosymbolic.org/papers/EllisWNSMHCST21.pdf",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-psl-dreamcoder",
+      "source": "actor-psl",
+      "target": "dreamcoder",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "PSL University"
+      ],
+      "sources": [
+        {
+          "url": "https://www.neurosymbolic.org/papers/EllisWNSMHCST21.pdf",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-college-de-france-dreamcoder",
+      "source": "actor-college-de-france",
+      "target": "dreamcoder",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Collège de France"
+      ],
+      "sources": [
+        {
+          "url": "https://www.neurosymbolic.org/papers/EllisWNSMHCST21.pdf",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-neurospin-dreamcoder",
+      "source": "actor-neurospin",
+      "target": "dreamcoder",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "NeuroSpin"
+      ],
+      "sources": [
+        {
+          "url": "https://www.neurosymbolic.org/papers/EllisWNSMHCST21.pdf",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
       "id": "participation-uc-berkeley-selecting-computations",
       "source": "actor-uc-berkeley",
       "target": "selecting-computations",
@@ -23596,7 +24656,7 @@
       ],
       "sources": [
         {
-          "url": "https://arxiv.org/pdf/2605.28655",
+          "url": "https://arxiv.org/html/2605.28655v1",
           "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
         }
       ]
@@ -24096,7 +25156,7 @@
       ],
       "sources": [
         {
-          "url": "https://arxiv.org/pdf/2605.23904",
+          "url": "https://arxiv.org/html/2605.23904v2",
           "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
         }
       ]
@@ -24116,7 +25176,7 @@
       ],
       "sources": [
         {
-          "url": "https://arxiv.org/pdf/2605.23904",
+          "url": "https://arxiv.org/html/2605.23904v2",
           "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
         }
       ]
@@ -24136,7 +25196,7 @@
       ],
       "sources": [
         {
-          "url": "https://arxiv.org/pdf/2605.23904",
+          "url": "https://arxiv.org/html/2605.23904v2",
           "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
         }
       ]
@@ -24156,7 +25216,7 @@
       ],
       "sources": [
         {
-          "url": "https://arxiv.org/pdf/2605.23904",
+          "url": "https://arxiv.org/html/2605.23904v2",
           "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
         }
       ]
@@ -24706,7 +25766,7 @@
       ],
       "sources": [
         {
-          "url": "https://arxiv.org/pdf/2504.21024",
+          "url": "https://arxiv.org/html/2504.21024v2",
           "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
         }
       ]
@@ -24771,47 +25831,7 @@
       ],
       "sources": [
         {
-          "url": "https://arxiv.org/pdf/2501.04519",
-          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
-        }
-      ]
-    },
-    {
-      "id": "participation-peking-university-rstar-math",
-      "source": "actor-peking-university",
-      "target": "rstar-math",
-      "kind": "research_participation",
-      "label": "研究参与",
-      "evidence": "source_metadata",
-      "roles": [
-        "affiliation"
-      ],
-      "raw_labels": [
-        "Peking University"
-      ],
-      "sources": [
-        {
-          "url": "https://arxiv.org/pdf/2501.04519",
-          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
-        }
-      ]
-    },
-    {
-      "id": "participation-tsinghua-university-rstar-math",
-      "source": "actor-tsinghua-university",
-      "target": "rstar-math",
-      "kind": "research_participation",
-      "label": "研究参与",
-      "evidence": "source_metadata",
-      "roles": [
-        "affiliation"
-      ],
-      "raw_labels": [
-        "Tsinghua University"
-      ],
-      "sources": [
-        {
-          "url": "https://arxiv.org/pdf/2501.04519",
+          "url": "https://arxiv.org/html/2501.04519v1",
           "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
         }
       ]
@@ -25297,26 +26317,6 @@
       ]
     },
     {
-      "id": "participation-washu-envharness",
-      "source": "actor-washu",
-      "target": "envharness",
-      "kind": "research_participation",
-      "label": "研究参与",
-      "evidence": "source_metadata",
-      "roles": [
-        "affiliation"
-      ],
-      "raw_labels": [
-        "WashU"
-      ],
-      "sources": [
-        {
-          "url": "https://arxiv.org/pdf/2608.19880",
-          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
-        }
-      ]
-    },
-    {
       "id": "participation-google-envharness",
       "source": "actor-google",
       "target": "envharness",
@@ -25331,7 +26331,7 @@
       ],
       "sources": [
         {
-          "url": "https://arxiv.org/pdf/2608.19880",
+          "url": "https://arxiv.org/html/2608.19880v1",
           "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
         }
       ]
@@ -25351,7 +26351,27 @@
       ],
       "sources": [
         {
-          "url": "https://arxiv.org/pdf/2608.19880",
+          "url": "https://arxiv.org/html/2608.19880v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-washu-envharness",
+      "source": "actor-washu",
+      "target": "envharness",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "WashU"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2608.19880v1",
           "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
         }
       ]
@@ -25658,7 +26678,7 @@
       ],
       "sources": [
         {
-          "url": "https://arxiv.org/pdf/2603.17775",
+          "url": "https://arxiv.org/html/2603.17775v2",
           "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
         }
       ]
@@ -25678,7 +26698,7 @@
       ],
       "sources": [
         {
-          "url": "https://arxiv.org/pdf/2603.17775",
+          "url": "https://arxiv.org/html/2603.17775v2",
           "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
         }
       ]
@@ -26196,11 +27216,11 @@
       ],
       "raw_labels": [
         "MIT",
-        "MIT–IBM Watson AI Lab"
+        "MIT-IBM Watson AI Lab"
       ],
       "sources": [
         {
-          "url": "https://arxiv.org/pdf/2505.15034",
+          "url": "https://arxiv.org/html/2505.15034v2",
           "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
         }
       ]
@@ -26216,11 +27236,11 @@
         "joint_lab"
       ],
       "raw_labels": [
-        "MIT–IBM Watson AI Lab"
+        "MIT-IBM Watson AI Lab"
       ],
       "sources": [
         {
-          "url": "https://arxiv.org/pdf/2505.15034",
+          "url": "https://arxiv.org/html/2505.15034v2",
           "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
         }
       ]
@@ -26878,26 +27898,6 @@
       ]
     },
     {
-      "id": "participation-uiuc-reasoningbank",
-      "source": "actor-uiuc",
-      "target": "reasoningbank",
-      "kind": "research_participation",
-      "label": "研究参与",
-      "evidence": "source_metadata",
-      "roles": [
-        "affiliation"
-      ],
-      "raw_labels": [
-        "UIUC"
-      ],
-      "sources": [
-        {
-          "url": "https://arxiv.org/pdf/2509.25140v2",
-          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
-        }
-      ]
-    },
-    {
       "id": "participation-google-reasoningbank",
       "source": "actor-google",
       "target": "reasoningbank",
@@ -26912,7 +27912,27 @@
       ],
       "sources": [
         {
-          "url": "https://arxiv.org/pdf/2509.25140v2",
+          "url": "https://arxiv.org/html/2509.25140v2",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-uiuc-reasoningbank",
+      "source": "actor-uiuc",
+      "target": "reasoningbank",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "UIUC"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2509.25140v2",
           "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
         }
       ]
@@ -26932,7 +27952,7 @@
       ],
       "sources": [
         {
-          "url": "https://arxiv.org/pdf/2509.25140v2",
+          "url": "https://arxiv.org/html/2509.25140v2",
           "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
         }
       ]
@@ -28033,6 +29053,346 @@
       "sources": [
         {
           "url": "https://arxiv.org/html/2505.21444v2",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-uw-spade",
+      "source": "actor-uw",
+      "target": "spade",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "UW"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2608.19197v3",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-stanford-spade",
+      "source": "actor-stanford",
+      "target": "spade",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Stanford"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2608.19197v3",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-northeastern-spade",
+      "source": "actor-northeastern",
+      "target": "spade",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Northeastern"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2608.19197v3",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-carnegie-mellon-spade",
+      "source": "actor-carnegie-mellon",
+      "target": "spade",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Carnegie Mellon"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2608.19197v3",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-mit-spade",
+      "source": "actor-mit",
+      "target": "spade",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "MIT"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2608.19197v3",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-nus-spade",
+      "source": "actor-nus",
+      "target": "spade",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "NUS"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2608.19197v3",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-seoul-national-university-spade",
+      "source": "actor-seoul-national-university",
+      "target": "spade",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Seoul National University"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2608.19197v3",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-stevens-spade",
+      "source": "actor-stevens",
+      "target": "spade",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Stevens Institute of Technology"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2608.19197v3",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-uchicago-spade",
+      "source": "actor-uchicago",
+      "target": "spade",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "UChicago"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2608.19197v3",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-queens-evomal",
+      "source": "actor-queens",
+      "target": "evomal",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Queen’s University"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2608.25776v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-inria-soar-arc",
+      "source": "actor-inria",
+      "target": "soar-arc",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Inria"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2507.14172v2",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-mit-soar-arc",
+      "source": "actor-mit",
+      "target": "soar-arc",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "MIT"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2507.14172v2",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-carnegie-mellon-agent-workflow-memory",
+      "source": "actor-carnegie-mellon",
+      "target": "agent-workflow-memory",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Carnegie Mellon"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2409.07429v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-mit-agent-workflow-memory",
+      "source": "actor-mit",
+      "target": "agent-workflow-memory",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "MIT"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2409.07429v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-microsoft-arena-learning",
+      "source": "actor-microsoft",
+      "target": "arena-learning",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Microsoft"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2407.10627v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-tsinghua-university-arena-learning",
+      "source": "actor-tsinghua-university",
+      "target": "arena-learning",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Tsinghua University"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2407.10627v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-siat-cas-arena-learning",
+      "source": "actor-siat-cas",
+      "target": "arena-learning",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "SIAT-CAS"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2407.10627v1",
           "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
         }
       ]
@@ -33032,6 +34392,51 @@
       ]
     },
     {
+      "id": "addresses-harness-evomal-h-capabilities",
+      "source": "evomal",
+      "target": "topic-h-capabilities",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "分离读取→创作→执行→保存→再检索路径，并用移除种子的多轮实验检验后代传播。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2608.25776v1",
+          "location": "完整主文§1–10、伦理/可复现性、全部Appendix A–E（攻击/防御、跨框架/语言、分支过程与隔离证明、完整统计表与实现说明）；未执行任何论文代码。"
+        }
+      ]
+    },
+    {
+      "id": "addresses-harness-evomal-h-inheritance",
+      "source": "evomal",
+      "target": "topic-h-inheritance",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "分离读取→创作→执行→保存→再检索路径，并用移除种子的多轮实验检验后代传播。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2608.25776v1",
+          "location": "完整主文§1–10、伦理/可复现性、全部Appendix A–E（攻击/防御、跨框架/语言、分支过程与隔离证明、完整统计表与实现说明）；未执行任何论文代码。"
+        }
+      ]
+    },
+    {
+      "id": "addresses-harness-evomal-h-evaluation",
+      "source": "evomal",
+      "target": "topic-h-evaluation",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "分离读取→创作→执行→保存→再检索路径，并用移除种子的多轮实验检验后代传播。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2608.25776v1",
+          "location": "完整主文§1–10、伦理/可复现性、全部Appendix A–E（攻击/防御、跨框架/语言、分支过程与隔离证明、完整统计表与实现说明）；未执行任何论文代码。"
+        }
+      ]
+    },
+    {
       "id": "addresses-harness-trusting-trust-revisited-h-improver",
       "source": "trusting-trust-revisited",
       "target": "topic-h-improver",
@@ -33077,6 +34482,66 @@
       ]
     },
     {
+      "id": "addresses-harness-agent-workflow-memory-h-memory",
+      "source": "agent-workflow-memory",
+      "target": "topic-h-memory",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "归纳带变量的可组合子程序，作为行动决策上下文；明确同时实现离线冻结与在线积累。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2409.07429v1",
+          "location": "§1–7；Tables 1–11；附录 A–C"
+        }
+      ]
+    },
+    {
+      "id": "addresses-harness-agent-workflow-memory-h-capabilities",
+      "source": "agent-workflow-memory",
+      "target": "topic-h-capabilities",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "归纳带变量的可组合子程序，作为行动决策上下文；明确同时实现离线冻结与在线积累。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2409.07429v1",
+          "location": "§1–7；Tables 1–11；附录 A–C"
+        }
+      ]
+    },
+    {
+      "id": "addresses-harness-agent-workflow-memory-h-inheritance",
+      "source": "agent-workflow-memory",
+      "target": "topic-h-inheritance",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "归纳带变量的可组合子程序，作为行动决策上下文；明确同时实现离线冻结与在线积累。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2409.07429v1",
+          "location": "§1–7；Tables 1–11；附录 A–C"
+        }
+      ]
+    },
+    {
+      "id": "addresses-harness-agent-workflow-memory-h-control",
+      "source": "agent-workflow-memory",
+      "target": "topic-h-control",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "归纳带变量的可组合子程序，作为行动决策上下文；明确同时实现离线冻结与在线积累。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2409.07429v1",
+          "location": "§1–7；Tables 1–11；附录 A–C"
+        }
+      ]
+    },
+    {
       "id": "addresses-harness-eureka-h-search",
       "source": "eureka",
       "target": "topic-h-search",
@@ -33118,6 +34583,66 @@
         {
           "url": "https://arxiv.org/html/2602.10226v3",
           "location": "完整正文、全部方法/结果/限制；无技术附录"
+        }
+      ]
+    },
+    {
+      "id": "addresses-harness-autoscientists-h-search",
+      "source": "autoscientists",
+      "target": "topic-h-search",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "让冻结研究员在持久共享状态上以实验结果重组团队、保留负知识，并给出queue和noise-aware champion算法。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2605.28655v1",
+          "location": "全文§1–6及AppendicesA–G、所有算法/表S1–S9、研究产物；PDF页8–9视觉复核图4–5/Table3"
+        }
+      ]
+    },
+    {
+      "id": "addresses-harness-autoscientists-h-control",
+      "source": "autoscientists",
+      "target": "topic-h-control",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "让冻结研究员在持久共享状态上以实验结果重组团队、保留负知识，并给出queue和noise-aware champion算法。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2605.28655v1",
+          "location": "全文§1–6及AppendicesA–G、所有算法/表S1–S9、研究产物；PDF页8–9视觉复核图4–5/Table3"
+        }
+      ]
+    },
+    {
+      "id": "addresses-harness-autoscientists-h-experience",
+      "source": "autoscientists",
+      "target": "topic-h-experience",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "让冻结研究员在持久共享状态上以实验结果重组团队、保留负知识，并给出queue和noise-aware champion算法。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2605.28655v1",
+          "location": "全文§1–6及AppendicesA–G、所有算法/表S1–S9、研究产物；PDF页8–9视觉复核图4–5/Table3"
+        }
+      ]
+    },
+    {
+      "id": "addresses-harness-autoscientists-h-inheritance",
+      "source": "autoscientists",
+      "target": "topic-h-inheritance",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "让冻结研究员在持久共享状态上以实验结果重组团队、保留负知识，并给出queue和noise-aware champion算法。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2605.28655v1",
+          "location": "全文§1–6及AppendicesA–G、所有算法/表S1–S9、研究产物；PDF页8–9视觉复核图4–5/Table3"
         }
       ]
     },
@@ -36071,6 +37596,21 @@
       ]
     },
     {
+      "id": "addresses-model-spade-m-curriculum-learning",
+      "source": "spade",
+      "target": "topic-m-curriculum-learning",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "同模型写完整可执行MDP并学习解题；代码见解产生hint，hint/nohint差估可教性，并结合外部语料与历史环境支撑课程。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2608.19197v3",
+          "location": "§1–10, Algorithm 1, Tables 1–8, Appendices E–J including complete generated programs"
+        }
+      ]
+    },
+    {
       "id": "addresses-model-rest-meets-react-m-bootstrapping",
       "source": "rest-meets-react",
       "target": "topic-m-bootstrapping",
@@ -36157,6 +37697,126 @@
         {
           "url": "https://arxiv.org/html/2505.21444v2",
           "location": "§3–6 Tables1–2 Figures2–8；Appendix A–L尤其B/C/G/I/J；复看SVG Figure2/5/6/31"
+        }
+      ]
+    },
+    {
+      "id": "addresses-model-soar-arc-m-bootstrapping",
+      "source": "soar-arc",
+      "target": "topic-m-bootstrapping",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "把可执行失败重标注为新任务，并同时学习生成器及修复器；跨轮搜索结果进入下一轮模型训练。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2507.14172v2",
+          "location": "§§3–5；Tables 1–5,7；Appendices A–I, especially B,D,F"
+        }
+      ]
+    },
+    {
+      "id": "addresses-model-soar-arc-m-experience-learning",
+      "source": "soar-arc",
+      "target": "topic-m-experience-learning",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "把可执行失败重标注为新任务，并同时学习生成器及修复器；跨轮搜索结果进入下一轮模型训练。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2507.14172v2",
+          "location": "§§3–5；Tables 1–5,7；Appendices A–I, especially B,D,F"
+        }
+      ]
+    },
+    {
+      "id": "addresses-model-soar-arc-m-verifiable-feedback",
+      "source": "soar-arc",
+      "target": "topic-m-verifiable-feedback",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "把可执行失败重标注为新任务，并同时学习生成器及修复器；跨轮搜索结果进入下一轮模型训练。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2507.14172v2",
+          "location": "§§3–5；Tables 1–5,7；Appendices A–I, especially B,D,F"
+        }
+      ]
+    },
+    {
+      "id": "addresses-model-soar-arc-m-continual-adaptation",
+      "source": "soar-arc",
+      "target": "topic-m-continual-adaptation",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "把可执行失败重标注为新任务，并同时学习生成器及修复器；跨轮搜索结果进入下一轮模型训练。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2507.14172v2",
+          "location": "§§3–5；Tables 1–5,7；Appendices A–I, especially B,D,F"
+        }
+      ]
+    },
+    {
+      "id": "addresses-model-arena-learning-m-bootstrapping",
+      "source": "arena-learning",
+      "target": "topic-m-bootstrapping",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "让当前学生参与多模型竞技，把比较结果转为目标相关示范与偏好，再用新学生重做下一轮采集",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2407.10627v1",
+          "location": "全文§1–5、Tables 1–11、Figures 8–12；Appendix A"
+        }
+      ]
+    },
+    {
+      "id": "addresses-model-arena-learning-m-preferences",
+      "source": "arena-learning",
+      "target": "topic-m-preferences",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "让当前学生参与多模型竞技，把比较结果转为目标相关示范与偏好，再用新学生重做下一轮采集",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2407.10627v1",
+          "location": "全文§1–5、Tables 1–11、Figures 8–12；Appendix A"
+        }
+      ]
+    },
+    {
+      "id": "addresses-model-arena-learning-m-experience-learning",
+      "source": "arena-learning",
+      "target": "topic-m-experience-learning",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "让当前学生参与多模型竞技，把比较结果转为目标相关示范与偏好，再用新学生重做下一轮采集",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2407.10627v1",
+          "location": "全文§1–5、Tables 1–11、Figures 8–12；Appendix A"
+        }
+      ]
+    },
+    {
+      "id": "addresses-model-arena-learning-m-continual-adaptation",
+      "source": "arena-learning",
+      "target": "topic-m-continual-adaptation",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "让当前学生参与多模型竞技，把比较结果转为目标相关示范与偏好，再用新学生重做下一轮采集",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2407.10627v1",
+          "location": "全文§1–5、Tables 1–11、Figures 8–12；Appendix A"
         }
       ]
     },
@@ -38243,51 +39903,6 @@
       ]
     },
     {
-      "id": "addresses-hybrid-autoscientists-x-training",
-      "source": "autoscientists",
-      "target": "topic-x-training",
-      "kind": "addresses_topic",
-      "label": "研究此主题 / 相关机制",
-      "explanation": "外部AI研究与动态团队组织支撑方法；非研究者模型自身协同训练。",
-      "evidence": "survey_classification",
-      "sources": [
-        {
-          "url": "https://arxiv.org/html/2605.28655",
-          "location": "§3–5；Table3消融；AppendixA队列/噪声确认、B预算和团队规模、E GPT产物、G迁移。"
-        }
-      ]
-    },
-    {
-      "id": "addresses-hybrid-autoscientists-x-organization",
-      "source": "autoscientists",
-      "target": "topic-x-organization",
-      "kind": "addresses_topic",
-      "label": "研究此主题 / 相关机制",
-      "explanation": "外部AI研究与动态团队组织支撑方法；非研究者模型自身协同训练。",
-      "evidence": "survey_classification",
-      "sources": [
-        {
-          "url": "https://arxiv.org/html/2605.28655",
-          "location": "§3–5；Table3消融；AppendixA队列/噪声确认、B预算和团队规模、E GPT产物、G迁移。"
-        }
-      ]
-    },
-    {
-      "id": "addresses-hybrid-autoscientists-x-memory",
-      "source": "autoscientists",
-      "target": "topic-x-memory",
-      "kind": "addresses_topic",
-      "label": "研究此主题 / 相关机制",
-      "explanation": "外部AI研究与动态团队组织支撑方法；非研究者模型自身协同训练。",
-      "evidence": "survey_classification",
-      "sources": [
-        {
-          "url": "https://arxiv.org/html/2605.28655",
-          "location": "§3–5；Table3消融；AppendixA队列/噪声确认、B预算和团队规模、E GPT产物、G迁移。"
-        }
-      ]
-    },
-    {
       "id": "addresses-hybrid-execution-grounded-research-x-training",
       "source": "execution-grounded-research",
       "target": "topic-x-training",
@@ -39167,6 +40782,66 @@
       ]
     },
     {
+      "id": "addresses-hybrid-spade-x-environment",
+      "source": "spade",
+      "target": "topic-x-environment",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "同模型写完整可执行MDP并学习解题；代码见解产生hint，hint/nohint差估可教性，并结合外部语料与历史环境支撑课程。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2608.19197v3",
+          "location": "§1–10, Algorithm 1, Tables 1–8, Appendices E–J including complete generated programs"
+        }
+      ]
+    },
+    {
+      "id": "addresses-hybrid-spade-x-externalization",
+      "source": "spade",
+      "target": "topic-x-externalization",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "同模型写完整可执行MDP并学习解题；代码见解产生hint，hint/nohint差估可教性，并结合外部语料与历史环境支撑课程。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2608.19197v3",
+          "location": "§1–10, Algorithm 1, Tables 1–8, Appendices E–J including complete generated programs"
+        }
+      ]
+    },
+    {
+      "id": "addresses-hybrid-spade-x-feedback",
+      "source": "spade",
+      "target": "topic-x-feedback",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "同模型写完整可执行MDP并学习解题；代码见解产生hint，hint/nohint差估可教性，并结合外部语料与历史环境支撑课程。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2608.19197v3",
+          "location": "§1–10, Algorithm 1, Tables 1–8, Appendices E–J including complete generated programs"
+        }
+      ]
+    },
+    {
+      "id": "addresses-hybrid-spade-x-memory",
+      "source": "spade",
+      "target": "topic-x-memory",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "同模型写完整可执行MDP并学习解题；代码见解产生hint，hint/nohint差估可教性，并结合外部语料与历史环境支撑课程。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2608.19197v3",
+          "location": "§1–10, Algorithm 1, Tables 1–8, Appendices E–J including complete generated programs"
+        }
+      ]
+    },
+    {
       "id": "addresses-hybrid-aira-design-x-training",
       "source": "aira-design",
       "target": "topic-x-training",
@@ -39208,6 +40883,21 @@
         {
           "url": "https://arxiv.org/html/2608.12851v2",
           "location": "§1–7；Tables 1–10；Appendices A–J"
+        }
+      ]
+    },
+    {
+      "id": "addresses-hybrid-evomal-x-deployment",
+      "source": "evomal",
+      "target": "topic-x-deployment",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "分离读取→创作→执行→保存→再检索路径，并用移除种子的多轮实验检验后代传播。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2608.25776v1",
+          "location": "完整主文§1–10、伦理/可复现性、全部Appendix A–E（攻击/防御、跨框架/语言、分支过程与隔离证明、完整统计表与实现说明）；未执行任何论文代码。"
         }
       ]
     },
@@ -39368,6 +41058,7 @@
       "modular-rsi",
       "prime-agent",
       "red-queen-godel-machine",
+      "autoscientists",
       "gear",
       "meta-n",
       "self-harness",
@@ -39401,7 +41092,8 @@
       "alma",
       "polyskill",
       "expel",
-      "growing-harness"
+      "growing-harness",
+      "agent-workflow-memory"
     ],
     "model": [
       "spin",
@@ -39444,7 +41136,9 @@
       "intellect-3",
       "ttrl",
       "ttt-discover",
-      "rest-meets-react"
+      "rest-meets-react",
+      "soar-arc",
+      "arena-learning"
     ],
     "hybrid": [
       "sia",
@@ -39455,7 +41149,6 @@
       "skill-self-play",
       "rlanything",
       "evotrainer",
-      "autoscientists",
       "harness-zero",
       "skillrl",
       "evods",
@@ -39465,7 +41158,8 @@
       "skillos",
       "socratic-swe",
       "hase",
-      "sage-skill-library"
+      "sage-skill-library",
+      "spade"
     ]
   },
   "work_bindings": [
@@ -39915,7 +41609,8 @@
     {
       "work_id": "autoscientists",
       "node_ids": [
-        "x-training"
+        "h-research",
+        "h-workflow"
       ]
     },
     {
@@ -40387,6 +42082,38 @@
     {
       "work_id": "can-reasoning-models-self-train",
       "node_ids": []
+    },
+    {
+      "work_id": "spade",
+      "node_ids": [
+        "x-environment",
+        "x-training"
+      ]
+    },
+    {
+      "work_id": "evomal",
+      "node_ids": []
+    },
+    {
+      "work_id": "soar-arc",
+      "node_ids": [
+        "m-selftrain",
+        "m-proof"
+      ]
+    },
+    {
+      "work_id": "agent-workflow-memory",
+      "node_ids": [
+        "h-memory",
+        "h-workflow"
+      ]
+    },
+    {
+      "work_id": "arena-learning",
+      "node_ids": [
+        "m-selftrain",
+        "m-preference"
+      ]
     }
   ]
 }

@@ -40,7 +40,7 @@
     {
       "source": "arxiv-2609-04665",
       "target": "Scaling Laws for Reward Model Overoptimization",
-      "kind": "extends",
+      "kind": "discusses",
       "basis": "source_explicit",
       "explanation": "把固定gold proxy与可见奖励差距从离线诊断转为逐代检测和候选选择；不继承其模型规模证据。",
       "source_url": "https://arxiv.org/html/2609.04665v1",
@@ -85,7 +85,7 @@
     {
       "source": "arxiv-2304-03442",
       "target": "Social Simulacra",
-      "kind": "extends",
+      "kind": "compares",
       "basis": "source_explicit",
       "explanation": "从当前情境persona提示转为持续动态经验、反思与计划",
       "source_url": "https://arxiv.org/html/2304.03442v2",
@@ -103,17 +103,17 @@
     {
       "source": "arxiv-2310-03714",
       "target": "Chain-of-Thought / ReAct",
-      "kind": "extends",
+      "kind": "uses",
       "basis": "source_explicit",
-      "explanation": "将任务特定提示技术改为可声明、可自举示例的模块。",
+      "explanation": "模块实现包含ChainOfThought与ReAct推理策略，并对模块提示进行自举编译；不是声称发明或完整扩展其原算法。",
       "location": "§2–4,AppD/E",
       "source_url": "https://arxiv.org/html/2310.03714v1"
     },
     {
       "source": "arxiv-2211-01910",
       "target": "Instruction Induction: From Few Examples to Natural Language Task Descriptions",
-      "kind": "extends",
-      "basis": "source_explicit",
+      "kind": "complementary",
+      "basis": "analytical_comparison",
       "explanation": "把单个greedy instruction induction扩展为执行反馈下的候选集合搜索。",
       "source_url": "https://arxiv.org/html/2211.01910v2",
       "location": "§4.1"
@@ -121,7 +121,7 @@
     {
       "source": "arxiv-2401-10020",
       "target": "Pairwise Cringe Optimization",
-      "kind": "extends",
+      "kind": "compares",
       "basis": "source_explicit",
       "explanation": "使用相似iterative DPO但去除冻结外部RM，改用当前模型评分。",
       "source_url": "https://arxiv.org/html/2401.10020v3",
@@ -184,8 +184,8 @@
     {
       "source": "arxiv-2601-21268",
       "target": "Language Model Self-improvement by Reinforcement Learning Contemplation",
-      "kind": "extends",
-      "basis": "source_explicit",
+      "kind": "complementary",
+      "basis": "analytical_comparison",
       "explanation": "从冻结自身Likert/PPO改为target概率/CISPO，并比较多类judge及失败模式。",
       "source_url": "https://arxiv.org/pdf/2601.21268v1",
       "location": "§2"
@@ -229,9 +229,9 @@
     {
       "source": "arxiv-2606-04536",
       "target": "MemAgent / MEM1",
-      "kind": "extends",
+      "kind": "uses",
       "basis": "source_explicit",
-      "explanation": "沿用任务和RL数据协议，以快LoRA写入取代文本摘要，最终奖励覆盖QA抽取动作。",
+      "explanation": "采用MemAgent/MEM1相关任务与RL训练数据协议；快LoRA写入对比文本摘要不是两篇算法共同的直接扩展链。",
       "location": "§2–5",
       "source_url": "https://arxiv.org/html/2606.04536v1"
     },
@@ -283,7 +283,7 @@
     {
       "source": "arxiv-2608-20920",
       "target": "arxiv-2512-18746",
-      "kind": "complements",
+      "kind": "complementary",
       "basis": "source_explicit",
       "explanation": "引用记忆体系架构演化，具体化为MemGuide/MemTools。",
       "location": "§5.2",
@@ -299,9 +299,45 @@
       "source_url": "https://arxiv.org/html/2512.17102v2"
     },
     {
+      "source": "arxiv-2608-19197",
+      "target": "SPICE",
+      "kind": "compares",
+      "basis": "source_explicit",
+      "explanation": "SPICE作为接地题目生成基线；本方法生成完整可执行MDP，比较层级不等明确扩展。",
+      "source_url": "https://arxiv.org/html/2608.19197v3",
+      "location": "§2,4.3,H.1"
+    },
+    {
+      "source": "arxiv-2608-19197",
+      "target": "PAIRED",
+      "kind": "uses",
+      "basis": "source_explicit",
+      "explanation": "采用PAIRED式regret环境设计目标，使用同模型hint-equipped rollout近似antagonist并加难度anchor；明确的是regret思想/目标复用。",
+      "source_url": "https://arxiv.org/html/2608.19197v3",
+      "location": "§4.2,H.2"
+    },
+    {
+      "source": "arxiv-2505-14738",
+      "target": "ML-Master",
+      "kind": "compares",
+      "basis": "source_explicit",
+      "explanation": "同硬件、底模、12h预算重跑直接对照，三seed；支持固定pipeline改进而非元改进。",
+      "source_url": "https://arxiv.org/html/2505.14738v2",
+      "location": "§4.1–4.2、Table2、AppendixD/F"
+    },
+    {
+      "source": "arxiv-2510-06261",
+      "target": "VerlTool",
+      "kind": "parallel",
+      "basis": "source_explicit",
+      "explanation": "共同排除tool-response token；本文再按turn平均，未直接控制实证该差异。",
+      "source_url": "https://arxiv.org/html/2510.06261v2",
+      "location": "AppendixC"
+    },
+    {
       "source": "arxiv-2506-03136",
       "target": "CodeT",
-      "kind": "extends",
+      "kind": "uses",
       "basis": "source_explicit",
       "explanation": "从生成单测做候选选择扩展到训练生成器的准确性/辨别性，并延续execution-basedBoN。",
       "source_url": "https://arxiv.org/html/2506.03136v2",
@@ -310,7 +346,7 @@
     {
       "source": "arxiv-2510-21614",
       "target": "Darwin Gödel Machine",
-      "kind": "extends",
+      "kind": "uses",
       "basis": "source_explicit",
       "explanation": "同初始代理与自修改结构，改变选父依据及评价分配；非DGM首次机制重述。",
       "source_url": "https://arxiv.org/html/2510.21614v3",
@@ -364,8 +400,8 @@
     {
       "source": "arxiv-2408-02632",
       "target": "MART",
-      "kind": "extends",
-      "basis": "source_explicit",
+      "kind": "complementary",
+      "basis": "analytical_comparison",
       "explanation": "继承红队/目标迭代更新，改变为自动构造双方偏好对DPO，与SFT同数据对照。",
       "source_url": "https://arxiv.org/html/2408.02632v2",
       "location": "§2.1、§4.2Table6"
@@ -400,9 +436,9 @@
     {
       "source": "arxiv-2510-16079",
       "target": "Search-R1",
-      "kind": "extends",
+      "kind": "uses",
       "basis": "source_explicit",
-      "explanation": "在事实检索RL中增加自身原则检索及离线维护。",
+      "explanation": "事实检索RL训练采用Search-R1框架，并增加原则检索/离线维护；复用层级与经验模块贡献分开。",
       "location": "§3–4",
       "source_url": "https://arxiv.org/html/2510.16079v3"
     },
@@ -418,8 +454,8 @@
     {
       "source": "arxiv-2508-19504",
       "target": "SWE-agent",
-      "kind": "extends",
-      "basis": "source_explicit",
+      "kind": "complementary",
+      "basis": "analytical_comparison",
       "explanation": "受专门agent环境界面启发，将工具观测/计算设计的原则推广到五域。",
       "source_url": "https://arxiv.org/html/2508.19504v1",
       "location": "§7"
@@ -542,6 +578,24 @@
       "source_url": "https://arxiv.org/html/2609.17817v1"
     },
     {
+      "source": "arxiv-2603-25111",
+      "target": "Agent-C",
+      "kind": "uses",
+      "basis": "source_explicit",
+      "explanation": "明确复用Agent-C policychecker实现局部contracts；外围程序搜索与模型训练另述，非Agent-C全系统直接扩展。",
+      "source_url": "https://arxiv.org/html/2603.25111v3",
+      "location": "§6.1,6.3;AppM"
+    },
+    {
+      "source": "arxiv-2603-25111",
+      "target": "CRANE",
+      "kind": "compares",
+      "basis": "source_explicit",
+      "explanation": "GSM对比grammar约束方案并额外训练8B，但grammar正确与数学答案正确须区分。",
+      "source_url": "https://arxiv.org/html/2603.25111v3",
+      "location": "§6.4;AppL"
+    },
+    {
       "source": "arxiv-2607-25886",
       "target": "PostTrainBench",
       "kind": "extends",
@@ -558,6 +612,15 @@
       "explanation": "同以student反馈改课程；新增固定服务、可执行经验和完整候选研究轨迹。",
       "location": "§2",
       "source_url": "https://arxiv.org/html/2607.25886v1"
+    },
+    {
+      "source": "arxiv-2608-31100",
+      "target": "SEAGym",
+      "kind": "complementary",
+      "basis": "source_explicit",
+      "explanation": "固定verifier保留隐藏真值以测自判断，而不是让agent开发任意完整harness。",
+      "source_url": "https://arxiv.org/html/2608.31100v1",
+      "location": "§2–3"
     },
     {
       "source": "arxiv-2505-23885",
@@ -580,8 +643,8 @@
     {
       "source": "arxiv-2310-00533",
       "target": "Self-Refine",
-      "kind": "extends",
-      "basis": "source_explicit",
+      "kind": "complementary",
+      "basis": "analytical_comparison",
       "explanation": "从任务内反馈修订扩展到学习技能和多轮参数自训练。",
       "source_url": "https://arxiv.org/html/2310.00533v4",
       "location": "§2"
@@ -598,7 +661,7 @@
     {
       "source": "arxiv-2505-03059",
       "target": "Mixture-of-Agents",
-      "kind": "extends",
+      "kind": "uses",
       "basis": "source_explicit",
       "explanation": "复用固定proposer/aggregator结构生成SFT及DPO训练数据，将推理集合压缩到单模型。",
       "source_url": "https://arxiv.org/html/2505.03059v1",
@@ -634,7 +697,7 @@
     {
       "source": "arxiv-2504-21561",
       "target": "MAT",
-      "kind": "extends",
+      "kind": "uses",
       "basis": "source_explicit",
       "explanation": "复用工具、任务种子/提示和20K SFT热启动，新增探索步骤偏好。",
       "source_url": "https://arxiv.org/html/2504.21561v5",
@@ -668,6 +731,24 @@
       "source_url": "https://arxiv.org/html/2505.21493v1"
     },
     {
+      "source": "arxiv-2606-01279",
+      "target": "DataFlow",
+      "kind": "extends",
+      "basis": "source_explicit",
+      "explanation": "代码基于DataFlow，增加动态树及报告工具接口，底层LLM不学习。",
+      "source_url": "https://arxiv.org/html/2606.01279v1",
+      "location": "AppA.3"
+    },
+    {
+      "source": "arxiv-2606-01279",
+      "target": "PostTrainBench",
+      "kind": "uses",
+      "basis": "source_explicit",
+      "explanation": "按四小基模七任务预算测试自动后训练工具。",
+      "source_url": "https://arxiv.org/html/2606.01279v1",
+      "location": "§4.1;AppA–C"
+    },
+    {
       "source": "arxiv-2605-13803",
       "target": "Time-R1",
       "kind": "compares",
@@ -679,7 +760,7 @@
     {
       "source": "arxiv-2212-08073",
       "target": "RLHF",
-      "kind": "extends",
+      "kind": "uses",
       "basis": "source_explicit",
       "explanation": "偏好建模与RL保持相同，改无害性标签来源；帮助性仍人工。",
       "source_url": "https://arxiv.org/html/2212.08073v1",
@@ -796,17 +877,26 @@
     {
       "source": "arxiv-2411-02337",
       "target": "DigiRL",
-      "kind": "extends",
+      "kind": "compares",
       "basis": "source_explicit",
       "explanation": "复现actor-critic网页RL并补同课程对照，课程与更新/回放各有增益。",
       "source_url": "https://arxiv.org/html/2411.02337v3",
       "location": "§3.7/AppendixB.2/C"
     },
     {
-      "source": "arxiv-2504-03160",
-      "target": "Search-R1",
+      "source": "arxiv-2507-14172",
+      "target": "CodeIt",
       "kind": "extends",
       "basis": "source_explicit",
+      "explanation": "从手工DSL的expert iteration/hindsight扩展到Python、可学习修复、大模型及test-time适配。",
+      "location": "§2",
+      "source_url": "https://arxiv.org/html/2507.14172v2"
+    },
+    {
+      "source": "arxiv-2504-03160",
+      "target": "Search-R1",
+      "kind": "complementary",
+      "basis": "analytical_comparison",
       "explanation": "从固定local检索转开放web交互，沿用结果反馈强化训练。",
       "source_url": "https://arxiv.org/html/2504.03160v4",
       "location": "§§2–3/5.2"
@@ -821,6 +911,15 @@
       "location": "§6"
     },
     {
+      "source": "arxiv-2505-21496",
+      "target": "UI-TARS",
+      "kind": "compares",
+      "basis": "source_explicit",
+      "explanation": "动态任务及静态动作基线，增加专用可迭代RM；规模和训练数据不同，不是等预算机制隔离。",
+      "location": "Tables 2–4",
+      "source_url": "https://arxiv.org/html/2505.21496v1"
+    },
+    {
       "source": "arxiv-2504-20073",
       "target": "DAPO",
       "kind": "uses",
@@ -830,18 +929,45 @@
       "location": "§4.2/AppendixD"
     },
     {
+      "source": "arxiv-2508-04700",
+      "target": "NNetNav",
+      "kind": "compares",
+      "basis": "source_explicit",
+      "explanation": "同任务教师/WSM对照，反向任务生成在熟悉功能高效，guidebook在Celestia更好，Gemini的VSCode未胜。",
+      "location": "Appendix C.2",
+      "source_url": "https://arxiv.org/html/2508.04700v2"
+    },
+    {
       "source": "arxiv-2606-07367",
       "target": "IQL",
-      "kind": "extends",
+      "kind": "uses",
       "basis": "source_explicit",
       "explanation": "critic按成功/时间重加权，policy改BPPO而非原AWR。",
       "source_url": "https://arxiv.org/html/2606.07367v1",
       "location": "§§3–4/AppendixB.2"
     },
     {
+      "source": "arxiv-2609-04094",
+      "target": "SALT",
+      "kind": "compares",
+      "basis": "source_explicit",
+      "explanation": "32B结果仍逊SALT，但不使用终局verifier，属于不同监督成本边界。",
+      "source_url": "https://arxiv.org/html/2609.04094v1",
+      "location": "Table2;§4.2"
+    },
+    {
+      "source": "arxiv-2608-19880",
+      "target": "GenEnv",
+      "kind": "complementary",
+      "basis": "analytical_comparison",
+      "explanation": "相对 GenEnv 改已有可信世界的接口，相对 ReasoningBank 增加适应性经验来源；相对 RQGM 共改任务/评分器，EnvHarness 固定原始评分逻辑和外层设计器，不能称改进器自修改。",
+      "source_url": "https://arxiv.org/html/2608.19880v1",
+      "location": "方法与实验对照"
+    },
+    {
       "source": "arxiv-2609-39306",
       "target": "SDPO",
-      "kind": "extends",
+      "kind": "uses",
       "basis": "source_explicit",
       "explanation": "保留其离线自蒸馏目标，在步骤选择、归一化和PI视图正则层面加模块。",
       "source_url": "https://arxiv.org/html/2609.39306v1",
@@ -850,7 +976,7 @@
     {
       "source": "arxiv-2609-39306",
       "target": "OEL",
-      "kind": "extends",
+      "kind": "uses",
       "basis": "source_explicit",
       "explanation": "在日志状态新采学生响应的OEL框架上评估主要组合和保留消融。",
       "source_url": "https://arxiv.org/html/2609.39306v1",
@@ -859,8 +985,8 @@
     {
       "source": "arxiv-2610-11384",
       "target": "RLTF",
-      "kind": "extends",
-      "basis": "source_explicit",
+      "kind": "complementary",
+      "basis": "analytical_comparison",
       "explanation": "§2明确其已结合反馈自蒸馏与文本批评预测；这里改为实际环境响应预测。",
       "source_url": "https://arxiv.org/html/2610.11384v1",
       "location": "§2"
@@ -868,7 +994,7 @@
     {
       "source": "arxiv-2610-11384",
       "target": "SDPO",
-      "kind": "extends",
+      "kind": "uses",
       "basis": "source_explicit",
       "explanation": "同型EMA hindsight反向KL，增加共享参数环境响应NLL。",
       "source_url": "https://arxiv.org/html/2610.11384v1",
@@ -877,9 +1003,9 @@
     {
       "source": "arxiv-2405-14205",
       "target": "KnowAgent",
-      "kind": "extends",
+      "kind": "discusses",
       "basis": "source_explicit",
-      "explanation": "从固定人写动作知识转向自身合成的实例任务知识和状态库软约束。",
+      "explanation": "相关工作比较KnowAgent的人写动作知识与自身合成任务/状态知识；未明确其算法或代码为直接基础。",
       "location": "§4.2 / §5",
       "source_url": "https://arxiv.org/html/2405.14205v4"
     },
@@ -891,6 +1017,24 @@
       "explanation": "知识总结部分提示来自AutoGuide。",
       "location": "AppendixI",
       "source_url": "https://arxiv.org/html/2405.14205v4"
+    },
+    {
+      "source": "arxiv-2504-21024",
+      "target": "WebDreamer",
+      "kind": "compares",
+      "basis": "source_explicit",
+      "explanation": "固定模型推理模拟vs学得WM兼具训练数据和推理作用；WMLA对比使用同最终policy。",
+      "location": "§§2,4.3–4.4",
+      "source_url": "https://arxiv.org/html/2504.21024v2"
+    },
+    {
+      "source": "arxiv-2507-04370",
+      "target": "OSGenesis",
+      "kind": "compares",
+      "basis": "source_explicit",
+      "explanation": "同TextUI warmup后OSGenesis与本工作pass@1均14.93%，削弱合成方法独立优势",
+      "location": "Table 3",
+      "source_url": "https://arxiv.org/html/2507.04370v1"
     },
     {
       "source": "arxiv-2511-09515",
@@ -911,10 +1055,19 @@
       "location": "§4.1; Appendix6"
     },
     {
+      "source": "arxiv-2510-15047",
+      "target": "VAGEN",
+      "kind": "compares",
+      "basis": "source_explicit",
+      "explanation": "同状态表示下重实现VAGEN在线状态预测奖励，SPA把状态训练置于SFT初始化阶段",
+      "location": "§4/Table 2",
+      "source_url": "https://arxiv.org/html/2510.15047v2"
+    },
+    {
       "source": "arxiv-2601-00930",
       "target": "Early Experience",
-      "kind": "extends",
-      "basis": "source_explicit",
+      "kind": "complementary",
+      "basis": "analytical_comparison",
       "explanation": "采用人类动作对比替代轨迹并解释后果的训练哲学，转为persona用户模拟。",
       "source_url": "https://arxiv.org/html/2601.00930v1",
       "location": "§2"
@@ -931,9 +1084,9 @@
     {
       "source": "arxiv-2506-23468",
       "target": "Dreamer",
-      "kind": "extends",
+      "kind": "uses",
       "basis": "source_explicit",
-      "explanation": "采用RSSM潜在转移/重构思想，增加CEM及视觉语言导航未来路径监督。",
+      "explanation": "明确使用Dreamer式RSSM潜在动力学/重构结构；CEM与视觉语言导航监督是本工作组件，不作全系统extends断言。",
       "location": "§2–3",
       "source_url": "https://arxiv.org/html/2506.23468v2"
     },
@@ -949,7 +1102,7 @@
     {
       "source": "arxiv-2602-11075",
       "target": "RECAP",
-      "kind": "extends",
+      "kind": "uses",
       "basis": "source_explicit",
       "explanation": "沿用优势条件策略训练，二值改10bin、人类示范固定最高优势，加入短程想象。",
       "source_url": "https://arxiv.org/html/2602.11075v2",
@@ -974,6 +1127,123 @@
       "location": "§2.2.1"
     },
     {
+      "source": "arxiv-2510-15260",
+      "target": "InstructZero",
+      "kind": "uses",
+      "basis": "source_explicit",
+      "explanation": "沿用latent soft-prompt→Vicuna instruction→黑箱执行及GP，以DRO权重改acquisition。",
+      "source_url": "https://arxiv.org/html/2510.15260v1",
+      "location": "§§2–4"
+    },
+    {
+      "source": "arxiv-2510-15260",
+      "target": "Kirschner et al. Distributionally Robust Bayesian Optimization (2020)",
+      "kind": "uses",
+      "basis": "source_explicit",
+      "explanation": "最坏分布加权UCB来自既有DRBO，本文未给其在LLM组合映射下的理论条件核验。",
+      "source_url": "https://arxiv.org/html/2510.15260v1",
+      "location": "§4; References"
+    },
+    {
+      "source": "arxiv-2606-18902",
+      "target": "MCE",
+      "kind": "complementary",
+      "basis": "source_explicit",
+      "explanation": "论文明确MCE改变context engineering程序，SAGE在固定程序内使用代码做诊断。",
+      "source_url": "https://arxiv.org/html/2606.18902v2",
+      "location": "§2.3"
+    },
+    {
+      "source": "arxiv-2302-02676",
+      "target": "conditional SFT",
+      "kind": "complementary",
+      "basis": "analytical_comparison",
+      "explanation": "将单条反馈控制扩展成多输出与语言反馈链。",
+      "source_url": "https://arxiv.org/html/2302.02676v8",
+      "location": "§2.1; §5"
+    },
+    {
+      "source": "arxiv-2405-03845",
+      "target": "ProTeGi",
+      "kind": "complementary",
+      "basis": "analytical_comparison",
+      "explanation": "相对 APE/OPRO/ProTeGi 是同类固定优化器的客服领域应用，未加入新的改进器自修改；比一般Self-Refine多了可复用全局提示，但 ExpeL 等跨任务经验工作更适合主图。",
+      "source_url": "https://arxiv.org/html/2405.03845v1",
+      "location": "方法与实验对照"
+    },
+    {
+      "source": "arxiv-2405-17346",
+      "target": "INSTINCT",
+      "kind": "compares",
+      "basis": "source_explicit",
+      "explanation": "神经评分代理用于prompt选择，从数值反馈转到BTL成对比较。",
+      "source_url": "https://arxiv.org/html/2405.17346v1",
+      "location": "§§2–3/6"
+    },
+    {
+      "source": "arxiv-2309-08532",
+      "target": "Evolution through Large Models",
+      "kind": "complementary",
+      "basis": "source_explicit",
+      "explanation": "相关工作将LLM mutation先例与本作GA/DE prompt框架比较，没有声称直接扩展其实现。",
+      "source_url": "https://arxiv.org/html/2309.08532v3",
+      "location": "§2"
+    },
+    {
+      "source": "arxiv-2304-12244",
+      "target": "Self-Instruct",
+      "kind": "extends",
+      "basis": "source_explicit",
+      "explanation": "以同Alpaca种子建立复杂度递增的多轮指令改写；最终模型仍一次SFT",
+      "location": "§3/4",
+      "source_url": "https://arxiv.org/html/2304.12244v3"
+    },
+    {
+      "source": "arxiv-2506-00178",
+      "target": "ChatEval",
+      "kind": "complementary",
+      "basis": "source_explicit",
+      "explanation": "相关工作讨论辩论评价先例，没有明确声称复用其代码。",
+      "source_url": "https://arxiv.org/html/2506.00178v2",
+      "location": "§2.2"
+    },
+    {
+      "source": "arxiv-2412-03624",
+      "target": "TextGrad",
+      "kind": "complementary",
+      "basis": "analytical_comparison",
+      "explanation": "明确针对 TextGrad 省略邻居信息提出修正；相对 Trace/OptoPrime传播更紧凑局部建议，但未让反向算法或图拓扑演化；作为固定外部优化器支撑而非递归自改代表。",
+      "source_url": "https://arxiv.org/pdf/2412.03624v1",
+      "location": "方法与实验对照"
+    },
+    {
+      "source": "arxiv-2412-03624",
+      "target": "Trace / OptoPrime",
+      "kind": "complementary",
+      "basis": "analytical_comparison",
+      "explanation": "明确针对 TextGrad 省略邻居信息提出修正；相对 Trace/OptoPrime传播更紧凑局部建议，但未让反向算法或图拓扑演化；作为固定外部优化器支撑而非递归自改代表。",
+      "source_url": "https://arxiv.org/pdf/2412.03624v1",
+      "location": "方法与实验对照"
+    },
+    {
+      "source": "arxiv-2505-18524",
+      "target": "Automated Design of Agentic Systems (ADAS)",
+      "kind": "uses",
+      "basis": "source_explicit",
+      "explanation": "实现ADAS-TG作为内层结构优化器与元优化输入。",
+      "source_url": "https://arxiv.org/html/2505.18524v2",
+      "location": "§4.1; AppendicesD/F"
+    },
+    {
+      "source": "arxiv-2606-05395",
+      "target": "LAD-VF",
+      "kind": "compares",
+      "basis": "source_explicit",
+      "explanation": "同用验证反例作为文本梯度，本项主张结构化技能比平面指令更快提升安全分。",
+      "location": "§2、§5、图5",
+      "source_url": "https://arxiv.org/html/2606.05395v1"
+    },
+    {
       "source": "arxiv-2402-04624",
       "target": "ROME",
       "kind": "compares",
@@ -981,6 +1251,24 @@
       "explanation": "知识编辑对照；本法把在线知识留在记忆状态而不是改部署权重。",
       "location": "Table 1–2",
       "source_url": "https://arxiv.org/html/2402.04624v2"
+    },
+    {
+      "source": "arxiv-2409-07429",
+      "target": "Synapse: Trajectory-as-Exemplar Prompting with Memory for Computer Control",
+      "kind": "compares",
+      "basis": "source_explicit",
+      "explanation": "AWM使用相同元素过滤并以抽象工作流替代Synapse检索的具体训练轨迹，直接比较记忆表示。",
+      "source_url": "https://arxiv.org/html/2409.07429v1",
+      "location": "§3.2，Table 3"
+    },
+    {
+      "source": "arxiv-2508-09736",
+      "target": "Socratic Models",
+      "kind": "compares",
+      "basis": "source_explicit",
+      "explanation": "实验比较Socratic Models式caption/RAG基线；实体图与RL多轮检索是机制差异，不标算法扩展。",
+      "source_url": "https://arxiv.org/html/2508.09736v4",
+      "location": "§2,4–5"
     },
     {
       "source": "arxiv-2505-09081",
@@ -992,29 +1280,218 @@
       "location": "Related Work、长期仿真比较表"
     },
     {
-      "source": "arxiv-2503-08026",
-      "target": "MemoryBank",
+      "source": "arxiv-2501-13956",
+      "target": "From Local to Global: A Graph RAG Approach to Query-Focused Summarization",
       "kind": "extends",
       "basis": "source_explicit",
-      "explanation": "从固定粒度/启发式访问改为主题合并与学习式重排。",
+      "explanation": "§2.3明确基于GraphRAG社区摘要，替换为适合增量维护的标签传播并以摘要关键词检索。",
+      "location": "§2.3",
+      "source_url": "https://arxiv.org/html/2501.13956v1"
+    },
+    {
+      "source": "arxiv-2503-08026",
+      "target": "MemoryBank",
+      "kind": "compares",
+      "basis": "source_explicit",
+      "explanation": "把MemoryBank作为固定粒度/启发式访问的实验参照，与主题合并/学习重排比较。",
       "location": "§5–6 / Table1–2",
       "source_url": "https://arxiv.org/html/2503.08026v2"
     },
     {
-      "source": "arxiv-2511-19399",
-      "target": "Rubrics as Rewards",
+      "source": "arxiv-2609-15457",
+      "target": "Mobile-Agent-v3",
+      "kind": "complementary",
+      "basis": "source_explicit",
+      "explanation": "同样比较intent与observedtransition，但Anchor把比较用于显式视觉保留和失败重试。",
+      "source_url": "https://arxiv.org/html/2609.15457v1",
+      "location": "§2;App0.E"
+    },
+    {
+      "source": "arxiv-2510-24663",
+      "target": "ToolRL",
       "kind": "extends",
       "basis": "source_explicit",
-      "explanation": "由固定参考答案准则改为当前搜索轨迹和回答差异驱动的持久标准。",
+      "explanation": "以整图GED补充逐调用奖励在依赖图上的稀疏问题",
+      "location": "§3.2/4.2",
+      "source_url": "https://arxiv.org/html/2510.24663v1"
+    },
+    {
+      "source": "arxiv-2510-24284",
+      "target": "WizardLM",
+      "kind": "uses",
+      "basis": "source_explicit",
+      "explanation": "固定depth2指令改写提升训练问句复杂度，不是训练器演化。",
+      "source_url": "https://arxiv.org/html/2510.24284v3",
+      "location": "§3.2;AppE"
+    },
+    {
+      "source": "arxiv-2510-24284",
+      "target": "MCPToolBench++",
+      "kind": "compares",
+      "basis": "source_explicit",
+      "explanation": "转成可训样本，控制模型/数据量评工具调用，优势主要覆盖规模。",
+      "source_url": "https://arxiv.org/html/2510.24284v3",
+      "location": "§4;AppB"
+    },
+    {
+      "source": "arxiv-2503-01940",
+      "target": "STaR-GATE",
+      "kind": "parallel",
+      "basis": "source_explicit",
+      "explanation": "均以提问澄清意图；本文承接其相关工作但用固定教师与模板一次训练",
+      "location": "Appendix A.2",
+      "source_url": "https://arxiv.org/html/2503.01940v2"
+    },
+    {
+      "source": "arxiv-2510-21618",
+      "target": "HiRA",
+      "kind": "compares",
+      "basis": "source_explicit",
+      "explanation": "同QwQ32B多任务直接比较固定层次多agent与连续reasoning架构。",
+      "source_url": "https://arxiv.org/html/2510.21618v3",
+      "location": "Table2/§4.2"
+    },
+    {
+      "source": "arxiv-2410-10934",
+      "target": "GPTSwarm",
+      "kind": "discusses",
+      "basis": "source_explicit",
+      "explanation": "§4.1明确将自动提示/工作流优化留待未来，附录D列举GPTSwarm，不能据此写成本系统已经使用自演化。",
+      "source_url": "https://arxiv.org/html/2410.10934v2",
+      "location": "§4.1、Appendix D"
+    },
+    {
+      "source": "arxiv-2511-13998",
+      "target": "ReAct",
+      "kind": "uses",
+      "basis": "source_explicit",
+      "explanation": "§2.3明确采用ReAct推理—工具—结果循环；该固定包装并不因长上下文压缩成为自进化。",
+      "source_url": "https://arxiv.org/html/2511.13998v1",
+      "location": "§2.3"
+    },
+    {
+      "source": "arxiv-2511-13998",
+      "target": "SWE-bench",
+      "kind": "compares",
+      "basis": "source_explicit",
+      "explanation": "Tables1–2及§6对比SWE-bench；本篇过程代理与其功能测试参照不同，不能用指标数量判定评价更可靠。",
+      "source_url": "https://arxiv.org/html/2511.13998v1",
+      "location": "Tables1–2、§3、§6"
+    },
+    {
+      "source": "arxiv-2406-12373",
+      "target": "Mind2Web",
+      "kind": "extends",
+      "basis": "source_explicit",
+      "explanation": "§3明确从Mind2Web抽取780任务，重标为542条实时任务及2439关键节点。",
+      "source_url": "https://arxiv.org/abs/2406.12373",
+      "location": "§3、Appendix A/B"
+    },
+    {
+      "source": "arxiv-2406-12373",
+      "target": "ReAct",
+      "kind": "uses",
+      "basis": "source_explicit",
+      "explanation": "§4及Table12直接采用并消融ReAct式规划；不是仅相关工作引用。",
+      "source_url": "https://arxiv.org/abs/2406.12373",
+      "location": "§4、Appendix F.1.2"
+    },
+    {
+      "source": "arxiv-2406-06613",
+      "target": "RAP",
+      "kind": "uses",
+      "basis": "source_explicit",
+      "explanation": "Appendix D明确使用Hao等的llm-reasoners代码实现RAP，并适配游戏的状态预测、动作生成及价值估计。",
+      "source_url": "https://arxiv.org/html/2406.06613v2",
+      "location": "Appendix D"
+    },
+    {
+      "source": "arxiv-2402-12348",
+      "target": "Tree of Thoughts",
+      "kind": "uses",
+      "basis": "source_explicit",
+      "explanation": "Appendix A5.5直接链接并沿用官方文本生成任务的候选生成/投票实现。",
+      "source_url": "https://arxiv.org/abs/2402.12348",
+      "location": "Appendix A5.5"
+    },
+    {
+      "source": "arxiv-2605-09423",
+      "target": "SimWorld: An Open-Ended Simulator for Agents in Physical and Social Worlds",
+      "kind": "uses",
+      "basis": "source_explicit",
+      "explanation": "明确继承SimWorld UE5资产、runtime及Python wrapper。",
+      "source_url": "https://arxiv.org/html/2605.09423v2",
+      "location": "§2"
+    },
+    {
+      "source": "arxiv-2509-21543",
+      "target": "One Demo Is All It Takes: Planning Domain Derivation with LLMs from a Single Demonstration",
+      "kind": "uses",
+      "basis": "source_explicit",
+      "explanation": "§5.1和A.1明确按该域推导框架从演示产生predicate/action skeleton。",
+      "source_url": "https://arxiv.org/html/2509.21543v4",
+      "location": "§5.1/AppA.1"
+    },
+    {
+      "source": "arxiv-2401-01335",
+      "target": "DPO",
+      "kind": "extends",
+      "basis": "source_explicit",
+      "explanation": "logistic情形采用同类对数比率形式，标签来自示范/自身角色，逐轮替换负例与参考",
+      "location": "§4.2",
+      "source_url": "https://arxiv.org/html/2401.01335v3"
+    },
+    {
+      "source": "arxiv-2604-17739",
+      "target": "EnvScaler",
+      "kind": "compares",
+      "basis": "source_explicit",
+      "explanation": "重跑纯RL合成可执行环境作为对照，4B部分胜TRUSTEE但时间更长。",
+      "source_url": "https://arxiv.org/html/2604.17739v2",
+      "location": "Table1/AppD.5/F"
+    },
+    {
+      "source": "arxiv-2602-11524",
+      "target": "Sentence-BERT",
+      "kind": "uses",
+      "basis": "source_explicit",
+      "explanation": "冻结encoder计算action-description与milestone余弦相似度。",
+      "source_url": "https://arxiv.org/html/2602.11524v1",
+      "location": "§3.2.1"
+    },
+    {
+      "source": "arxiv-2606-03239",
+      "target": "Rubrics as Rewards",
+      "kind": "compares",
+      "basis": "source_explicit",
+      "explanation": "自行适配reference-conditioned单用5–10rubric作为RaRstylebaseline，不等原论文全部设置。",
+      "source_url": "https://arxiv.org/html/2606.03239v1",
+      "location": "§4.4/AppC.3"
+    },
+    {
+      "source": "arxiv-2602-02709",
+      "target": "EvoTune",
+      "kind": "compares",
+      "basis": "source_explicit",
+      "explanation": "EvoTune作为固定reference迭代偏好基线；动态reference是差异，本文未提供明确复用其算法/代码的充分说明。",
+      "source_url": "https://arxiv.org/html/2602.02709v3",
+      "location": "§1–3/C.1"
+    },
+    {
+      "source": "arxiv-2511-19399",
+      "target": "Rubrics as Rewards",
+      "kind": "discusses",
+      "basis": "source_explicit",
+      "explanation": "讨论Rubrics as Rewards固定参考标准与动态搜索rubric的区别，未确认复用其具体算法/代码。",
       "location": "§3 / AppendixB–D",
       "source_url": "https://arxiv.org/html/2511.19399v3"
     },
     {
       "source": "arxiv-2603-00724",
       "target": "RewardAgent",
-      "kind": "extends",
+      "kind": "compares",
       "basis": "source_explicit",
-      "explanation": "由预设奖励工具组合扩展为自动搜资源/写评分程序，并在GRPO训练中使用。",
+      "explanation": "RewardAgent是奖励工具组合的比较基线；自动搜资源和写评分程序是本方法差异，非已证代码继承。",
       "location": "§3 / §5.2",
       "source_url": "https://arxiv.org/html/2603.00724v1"
     },
@@ -1028,13 +1505,49 @@
       "source_url": "https://arxiv.org/html/2504.20157v2"
     },
     {
+      "source": "arxiv-2606-29502",
+      "target": "SDAR",
+      "kind": "compares",
+      "basis": "source_explicit",
+      "explanation": "SDAR是固定有技能teacher的比较基线；双向teacher与on-policy反例为本工作区别，不据此称直接扩展。",
+      "location": "§2/4",
+      "source_url": "https://arxiv.org/html/2606.29502v2"
+    },
+    {
       "source": "arxiv-2606-18388",
       "target": "Population Based Training",
-      "kind": "extends",
+      "kind": "discusses",
       "basis": "source_explicit",
-      "explanation": "同属动态超参数与checkpoint继承，改为冻结LLM诊断提案及串行树搜索，未作PBT实测。",
+      "explanation": "AppendixA讨论PBT与动态超参/checkpoint继承的关系，未采用PBT或直接实验，故仅讨论关系。",
       "location": "AppendixA",
       "source_url": "https://arxiv.org/html/2606.18388v2"
+    },
+    {
+      "source": "arxiv-2605-28655",
+      "target": "Autoresearch",
+      "kind": "uses",
+      "basis": "source_explicit",
+      "explanation": "实际复用nanochat代码仓库228791f作为目标和baseline，改研究组织流程。",
+      "source_url": "https://arxiv.org/html/2605.28655v1",
+      "location": "§4.3/Reproducibility/TableS1"
+    },
+    {
+      "source": "arxiv-2605-28655",
+      "target": "Kermut",
+      "kind": "extends",
+      "basis": "source_explicit",
+      "explanation": "实际以7e9e2e6代码/结构kernel为种子，加三GP、额外zero-shotfeature与quantiletarget，冻结跨217评估。",
+      "source_url": "https://arxiv.org/html/2605.28655v1",
+      "location": "§4.4/AppG"
+    },
+    {
+      "source": "arxiv-2605-28655",
+      "target": "catalog-autonomous-ai-research",
+      "kind": "complementary",
+      "basis": "analytical_comparison",
+      "explanation": "同为AI4AI，AutoScientists冻结研究员、改共享组织状态和外部程序；AAR还训练研究策略，不能混为相同自继任链。",
+      "source_url": "https://arxiv.org/html/2605.28655v1",
+      "location": "§3.2/AppA"
     },
     {
       "source": "catalog-godel-machine",
@@ -1053,6 +1566,15 @@
       "explanation": "代码级自改继承可编辑边界的设想，经验benchmark筛选不继承形式全局最优性。",
       "source_url": "https://arxiv.org/pdf/cs/0309048",
       "location": "§2.2、4.1"
+    },
+    {
+      "source": "catalog-dreamcoder",
+      "target": "Exploration–Compression with a learned recognition model (EC2)",
+      "kind": "extends",
+      "basis": "source_explicit",
+      "explanation": "将片段复用扩展为 β 等价重构、局部语法识别器和 MAP 梦训练；minibatching 是成本优势的一部分。",
+      "source_url": "https://www.cs.cornell.edu/~ellisk/documents/dreamcoder_with_supplement.pdf",
+      "location": "S3.3、S4.5–S4.7"
     },
     {
       "source": "catalog-muzero",

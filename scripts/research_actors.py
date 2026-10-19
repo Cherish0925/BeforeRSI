@@ -36,7 +36,7 @@ def build_actors(spec, works, industry):
         kinds = set(actors[x]['kind'] for x in participants)
         w['actor_types'] = sorted(kinds or {'unresolved'})
         named = [x for x in participants if actors[x].get('countable', True)]
-        if 'academic' in kinds and kinds & {'tech', 'ai'}:
+        if 'academic' in kinds and kinds & {'tech', 'ai', 'industry'}:
             cooperation = 'academic_industry'
         elif len(named) > 1:
             cooperation = 'multi_org'

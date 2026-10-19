@@ -1405,75 +1405,80 @@
     {
       "id": "dreamcoder",
       "status": "archive",
-      "reading_scope": "§2–3 wake/sleep、equivalence-based refactoring；§5及Figure7消融和计算预算。",
-      "source_location": "§2–3 wake/sleep、equivalence-based refactoring；§5及Figure7消融和计算预算。",
+      "reading_scope": "完整阅读正式版主文、方法、实验、局限；正式版结果图关键页已视觉核对。补读 Cornell 作者站 68 页带补充草稿的全部 S1–S4，含重构算法及其一致性/完备性论证、MAP 对称破缺证明、各域数据构造、训练细节和软件流程。",
+      "source_location": "PLDI 2021 主文 §1–6、Fig.5–11；作者完整草稿 Supplement S1–S4、Algorithms 1–6、Theorems 1–6、Table S1、S4.7 超参表",
       "sections": [
         {
           "axis": "A",
           "title": "目标与问题",
-          "text": "让程序合成器逐步形成可复用的概念库，减少解决新任务时重复搜索低级程序。"
+          "text": "固定 DSL 的枚举搜索随程序长度爆炸，单纯积累答案不能形成简洁、可组合的领域概念。"
         },
         {
           "axis": "B",
-          "title": "关键思想",
-          "text": "神经识别模型缩小搜索广度，抽象库缩短程序深度；二者互相促进而非简单堆叠。"
+          "title": "关键思想与价值",
+          "text": "用 version spaces/equality tracking 紧凑表示 β 重构，发现原解表面没有出现的共享抽象；将库学习与神经搜索策略学习互相供给数据。Q 一次输出局部语法 bigram 张量，避免枚举内逐 token 神经调用。 解释工具/技能库为什么可能改善后续学习效率，并提供真正在多个 held-out 任务中检验协同的历史机制。它比将每个成功程序直接装进工具箱更具体。"
         },
         {
           "axis": "C",
           "title": "系统与原理",
-          "text": "Wake阶段求解任务；abstraction sleep重构程序并提炼共享子结构；dream sleep从库生成程序/任务训练识别网络。"
+          "text": "可复用 λ 演算程序库 D、先验权重 θ、从任务特征预测程序分布的神经识别器 Q，以及已解任务的候选程序 beams。；wake/sleep 外层算法、类型系统、各域初始 DSL、执行语义、目标似然、人工给定训练任务和搜索资源规则不由系统重写。。反馈：执行程序得到 I/O 一致性或图像/回归/字符串似然；已找到程序经压缩目标选择共享抽象；从当前库生成梦想并训练 Q，使其优先预测简洁 MAP 解。"
         },
         {
           "axis": "D",
-          "title": "方法与实现",
-          "text": "利用等价程序的紧凑表示寻找能共享的抽象，超过只记忆整个答案。对照禁用库学习、禁用神经识别和直接记忆等方案。"
+          "title": "方法与比较",
+          "text": "Wake 搜索解题→abstraction sleep 在 β 等价重构中发现共享函数→dream sleep 用真实解与生成任务训练搜索识别器→新库缩短深度、识别器缩小广度，再求解更难任务。改进这些状态的元算法保持固定。 EC/EC2 以子表达式/片段压缩为核心，本作寻找语义等价重构后共享项；与 DeepCoder 同样每任务一次网络调用，但输出生成分布并条件于局部上下文；与 Eurisko 的人工/自生搜索启发式可作功能比较，神经识别器是不同实现，不是直接继承其代码。"
         },
         {
           "axis": "E",
-          "title": "反馈与迭代",
-          "text": "库与识别网络跨轮保留，形成非LLM的双组件共学习；睡眠/搜索元算法由研究者固定。"
+          "title": "实验与继承",
+          "text": "六个定量域：lists 从 236 题去 21 个恒等题，剩余随机半分后再去 31 个易解测试题；text 128 合成训练/108 SyGuS 测试；LOGO 80/80；towers 53/54；regex 256 列半分，每题 5 条观察字符串、另 5 条测试字符串；symbolic regression 100 任务。另两项定性实验：60 条预选物理方程和 20 条递归程序练习，不是独立科学发现测试集。 库、库权重、已解程序和训练过的识别网络进入后续周期；不是只在单题内反思。"
         },
         {
           "axis": "F",
-          "title": "结果与迁移",
-          "text": "在LOGO和塔搭建中，单组件消融不超过约60%而完整系统接近100%所测任务；训练通常一天、20–100 CPU。价值是实证协同机制，非全域程序发明能力。"
+          "title": "结果、边界与迁移",
+          "text": "正式版 Fig.7 中 LOGO/towers 完整系统测试成功率接近 100%，单组件消融不超过约 60%；通常 5 个随机种子及标准差，部分 EC2 域只有 2–3 次且 regex 无 EC2 结果。主文报告解决时间均值 54.1 秒、中位 15.0 秒。物理集 8 周期最佳 93.3%/均值 84.3%，EC2 最佳 86.6%/均值 81.1%（3 seeds）；Lisp 全部 20 题、11 库函数，EC2 为 14 题且未获得 zip。 主要支持同一人工构造领域内 held-out 任务迁移；物理题从 AP/MCAT 公式生成每式 10 个 I/O、去掉三角/积分/多元微分且用 Planck 单位；Lisp 预置 Y combinator。未测试开放自然研究任务或跨域自创改进规则。 重构深度通常 n=3，Lisp n=4；实际库更新用 10^6 beam、再保留 300 候选，非全局最优库搜索。Theorem 6 不保证受限神经网络可达全局最优，也明确不保证跨任务一致的对称破缺。所有证明均不是 RSI 收敛、无限新概念或提升改进算法的保证。"
         }
       ],
-      "resources": "通常一天，20–100 CPU；因领域不同",
-      "limitations": "任务族、初始语言和验证器预先给定；不能把跨几个领域等同普适。",
-      "classification_note": "历史机制与技术背景；保留 archive，不计入当代三条 RSI 成果路线。",
+      "resources": "通常约一天、20–100 CPU；Lisp 5 天 64 CPU。S4.7 每次识别器最多 5000 Adam steps 或 1 小时；域搜索 timeout 2 分钟至 4 小时。相对 EC2 的 6×/15× 搜索成本改善包括 minibatching 与 CPU 数变化，不能全部归因于重构。",
+      "limitations": "重构深度通常 n=3，Lisp n=4；实际库更新用 10^6 beam、再保留 300 候选，非全局最优库搜索。Theorem 6 不保证受限神经网络可达全局最优，也明确不保证跨任务一致的对称破缺。所有证明均不是 RSI 收敛、无限新概念或提升改进算法的保证。",
+      "classification_note": "保留为历史机制支撑：同时积累可解释程序库与搜索策略，有 held-out 和组件消融；不作为现代 ≥27B Model/Hybrid 主结果，也不把教材物理/Lisp 演示写成通用递归自改进。",
       "review": {
-        "source_coverage": "paper_sections_read",
+        "source_coverage": "main_text_and_relevant_appendix",
         "sources": [
           {
             "url": "https://www.neurosymbolic.org/papers/EllisWNSMHCST21.pdf",
-            "location": "§2–3 wake/sleep、equivalence-based refactoring；§5及Figure7消融和计算预算。"
+            "location": "PLDI 2021 主文 §1–6、Fig.5–11"
+          },
+          {
+            "url": "https://www.cs.cornell.edu/~ellisk/documents/dreamcoder_with_supplement.pdf",
+            "location": "作者完整草稿 Supplement S1–S4、Algorithms 1–6、Theorems 1–6、Table S1、S4.7 超参表"
           }
         ],
         "mechanism": {
-          "changed": "DSL抽象库及神经识别模型",
-          "fixed": "元算法、初始原语和任务定义",
-          "feedback": "任务可满足性、程序压缩与识别损失",
-          "inheritance": "库与识别参数",
-          "loop": "求解→抽象重构→生成任务训练识别器"
+          "changed": "可复用 λ 演算程序库 D、先验权重 θ、从任务特征预测程序分布的神经识别器 Q，以及已解任务的候选程序 beams。",
+          "fixed": "wake/sleep 外层算法、类型系统、各域初始 DSL、执行语义、目标似然、人工给定训练任务和搜索资源规则不由系统重写。",
+          "feedback": "执行程序得到 I/O 一致性或图像/回归/字符串似然；已找到程序经压缩目标选择共享抽象；从当前库生成梦想并训练 Q，使其优先预测简洁 MAP 解。",
+          "inheritance": "库、库权重、已解程序和训练过的识别网络进入后续周期；不是只在单题内反思。",
+          "loop": "Wake 搜索解题→abstraction sleep 在 β 等价重构中发现共享函数→dream sleep 用真实解与生成任务训练搜索识别器→新库缩短深度、识别器缩小广度，再求解更难任务。改进这些状态的元算法保持固定。"
         },
         "results": {
-          "setup": "列表、文本、图形、塔等程序合成领域",
-          "comparison": "枚举、RobustFill、EC/EC2、记忆及双组件消融",
-          "result": "多数领域达到或优于最强对照；生成域协同明显",
-          "ablation": "库/识别器及重构组件",
-          "cost": "通常一天，20–100 CPU；因领域不同",
-          "generalization": "共享结构任务中迁移；依赖原语和表征"
+          "setup": "六个定量域：lists 从 236 题去 21 个恒等题，剩余随机半分后再去 31 个易解测试题；text 128 合成训练/108 SyGuS 测试；LOGO 80/80；towers 53/54；regex 256 列半分，每题 5 条观察字符串、另 5 条测试字符串；symbolic regression 100 任务。另两项定性实验：60 条预选物理方程和 20 条递归程序练习，不是独立科学发现测试集。",
+          "training_objects": "小型双向 GRU（64 hidden、64 维符号嵌入）或 CNN，加 128 hidden MLP；实际训练 Q，无 LLM。递归 Lisp 实验明确不用 Q；正则表达式域因输出规模采用 unigram，而非所有域均 bigram。",
+          "comparison": "去库学习、去识别器、直接记忆整程序（含有/无识别器）、EC、采用相同 minibatch 的 EC2、RobustFill，以及无学习枚举每题 24 小时。",
+          "result": "正式版 Fig.7 中 LOGO/towers 完整系统测试成功率接近 100%，单组件消融不超过约 60%；通常 5 个随机种子及标准差，部分 EC2 域只有 2–3 次且 regex 无 EC2 结果。主文报告解决时间均值 54.1 秒、中位 15.0 秒。物理集 8 周期最佳 93.3%/均值 84.3%，EC2 最佳 86.6%/均值 81.1%（3 seeds）；Lisp 全部 20 题、11 库函数，EC2 为 14 题且未获得 zip。",
+          "ablation": "消融支持库与神经搜索的协同；直接整程序记忆无法普遍替代抽象，但某些域差距较小。MAP 与 bigram 的四格小实验显示可学习排除加零/选择加法结合方向。库深度与泛化 r=.79 是相关分析。",
+          "cost": "通常约一天、20–100 CPU；Lisp 5 天 64 CPU。S4.7 每次识别器最多 5000 Adam steps 或 1 小时；域搜索 timeout 2 分钟至 4 小时。相对 EC2 的 6×/15× 搜索成本改善包括 minibatching 与 CPU 数变化，不能全部归因于重构。",
+          "generalization": "主要支持同一人工构造领域内 held-out 任务迁移；物理题从 AP/MCAT 公式生成每式 10 个 I/O、去掉三角/积分/多元微分且用 Planck 单位；Lisp 预置 Y combinator。未测试开放自然研究任务或跨域自创改进规则。"
         },
         "contribution": {
-          "bottleneck": "重复从底层构造程序的搜索成本",
-          "insight": "抽象与识别同时缩小不同维度搜索",
-          "value": "模型和外部知识共同改进的非LLM证据",
-          "relation_to_rsi": "历史协同机制",
-          "comparison": "不等于后来LLM规模门槛下的核心成果"
+          "bottleneck": "固定 DSL 的枚举搜索随程序长度爆炸，单纯积累答案不能形成简洁、可组合的领域概念。",
+          "insight": "用 version spaces/equality tracking 紧凑表示 β 重构，发现原解表面没有出现的共享抽象；将库学习与神经搜索策略学习互相供给数据。Q 一次输出局部语法 bigram 张量，避免枚举内逐 token 神经调用。",
+          "value": "解释工具/技能库为什么可能改善后续学习效率，并提供真正在多个 held-out 任务中检验协同的历史机制。它比将每个成功程序直接装进工具箱更具体。",
+          "relation_to_rsi": "保留为历史机制支撑：同时积累可解释程序库与搜索策略，有 held-out 和组件消融；不作为现代 ≥27B Model/Hybrid 主结果，也不把教材物理/Lisp 演示写成通用递归自改进。",
+          "comparison": "EC/EC2 以子表达式/片段压缩为核心，本作寻找语义等价重构后共享项；与 DeepCoder 同样每任务一次网络调用，但输出生成分布并条件于局部上下文；与 Eurisko 的人工/自生搜索启发式可作功能比较，神经识别器是不同实现，不是直接继承其代码。"
         },
         "scope_decision": "background",
-        "scope_reason": "任务族、初始语言和验证器预先给定；不能把跨几个领域等同普适。"
+        "scope_reason": "保留为历史机制支撑：同时积累可解释程序库与搜索策略，有 held-out 和组件消融；不作为现代 ≥27B Model/Hybrid 主结果，也不把教材物理/Lisp 演示写成通用递归自改进。"
       }
     },
     {
@@ -4627,75 +4632,76 @@
     {
       "id": "skillopt",
       "status": "methods",
-      "reading_scope": "main_text_and_relevant_appendix",
-      "source_location": "§§3.1–3.7、4.1–4.4表1–4；附录B、C与提示模板",
+      "reading_scope": "原有全文审读基础上复核全部主文/方法/结果/相关附录，并看原始图3；补足元经验机制、基线覆盖与泛化/成本矛盾。",
+      "source_location": "§3–4、表1–6、图3、附录A–C全部优化器提示",
       "sections": [
         {
           "axis": "A",
           "title": "目标与价值",
-          "text": "把可迁移技能文件视为需要训练的对象：不是一次写出提示，而是在固定目标模型的多次执行轨迹上反复修订一份紧凑skill。适合有可执行验证器或可靠标签的领域，希望把训练期大量探索压缩成低部署成本的程序性知识。"
+          "text": "SkillOpt将一份可复用技能作为冻结智能体的适应状态。目标不是写出一份看似合理的说明，而是用任务执行和独立评分逐步筛选能改变行为的程序性规则，训练后带走紧凑技能文件。"
         },
         {
           "axis": "B",
-          "title": "关键思想与判断",
-          "text": "其“文本学习率”是每步允许的增删替换数量，不是可微梯度。成功样本保护已有有效行为，失败样本定位缺失步骤；拒绝记录让优化器知道哪些看似合理的改法实际有害，减少反复走同一条失败路线。"
+          "title": "核心洞察",
+          "text": "改进不仅需要记住正确步骤，也应记住哪些改法失败。成功和失败轨迹分开分析，拒绝编辑保留为负反馈；跨epoch再形成面向未来优化器的meta-skill，指导后续反思、合并和排序。"
         },
         {
           "axis": "C",
-          "title": "机制与理论",
-          "text": "目标模型生成带分数轨迹，优化模型分mini-batch反思、合并冲突并排序修改，在预算内生成候选skill。选择集决定接受，最终测试集只用于报告。当前skill、最佳skill、哈希、拒绝缓冲与慢更新字段组成持久优化状态。"
+          "title": "结构与原理",
+          "text": "固定模型执行训练批次，优化器提出增删替换，合并后按编辑数预算裁剪。候选只在选择分数严格上升时接受。目标技能的慢更新字段与优化器的元经验分开保存；后者不随最终技能部署，基础权重与更新程序始终固定。"
         },
         {
           "axis": "D",
-          "title": "算法与实现",
-          "text": "每epoch还比较同一训练样本在新旧skill下的成功与退步，更新长期指导。另有optimizer-side meta-skill总结有效编辑模式，影响后续反思和排序；它随优化而改，但不随best_skill.md部署。LLM权重及固定优化程序均未训练。"
+          "title": "方法与实验",
+          "text": "七个冻结目标、六基准、三执行模式共52个已测单元最佳或并列，GPT5.5直接模式均分58.8到82.3。去拒绝缓冲使表格分数77.5降至72.9，去元经验和慢更新降至55.0。各执行模式的基线覆盖不同，未建立等搜索成本优势。"
         },
         {
           "axis": "E",
           "title": "反馈与演化",
-          "text": "七目标模型、三执行Harness、六主要基准共52个测量单元，论文报告均达到或并列最优。GPT-5.5直接调用平均58.8→82.3；移除meta-skill与慢更新使所测SpreadsheetBench默认配置77.5→55.0，说明学习编辑经验不能忽略。"
+          "text": "这里有任务技能更新与改进器上下文更新两层反馈，但门控不等于泛化保证：图3数学选择分数后期升高，未见测试却从约62%降至56.5%。接受状态的单调性只针对重复使用的选择集，不能推为持续能力增长。"
         },
         {
           "axis": "F",
           "title": "成果与迁移",
-          "text": "迁移结果包括Codex学得的表格skill用于Claude Code，22.1→81.8；数学等方向收益更小，不能概括为任意跨域通用。其价值是将经验压缩成可带走的资产；仍依赖评分与训练调用，一次性任务未必能摊薄优化成本。"
+          "text": "Codex训练的表格技能转到Claude Code，使22.1升至81.8；近域数学迁移只增1.3–3.7点。最终技能379–1995tokens，无额外优化器调用，但训练花费数千万至数亿tokens，适用于反复复用以摊薄成本。"
         }
       ],
-      "resources": "7目标模型、3Harness、52测量单元；包括GPT-5.5与Qwen3.6-35B-A3B；额外rollout与优化器调用；单一skill部署不带优化历史，成本靠复用摊薄",
-      "limitations": "可靠评分和选择集是前提；单skill对异质任务有限；52单元是本论文设置不代表全球最优。",
-      "classification_note": "Harness文本空间优化，且优化器提示状态会学习；不涉及参数训练",
+      "resources": "最终379–1995tokens，1–4个接受更新(不是1–4个原子编辑)。训练20.8M–213.8Mtokens/任务；部署不加优化器调用但增加上下文。表6Cost/pt与正文主表增益不一致，如Office20.8M/39pp约0.53M而非1.1M，精确比值不转述。基线搜索预算/多seed方差未充分报告。",
+      "limitations": "预算限制编辑数不保证语义小步；严格选择门控只保证所测选择分数单调，图3给泛化反例。无单独门控对照、无等成本搜索比较；Skill文档内容与prompt可功能等价，不能只凭文件名认定新优化类别。表格规则写静态值即使用户提公式，收益部分适配评测读取行为。",
+      "classification_note": "目标技能与优化器经验双层更新、可导出紧凑资产及跨模型/执行环境/近域迁移，代表控制外部技能优化的重要路线；保留明确预算与泛化限制。",
       "review": {
         "source_coverage": "main_text_and_relevant_appendix",
         "sources": [
           {
-            "url": "https://arxiv.org/pdf/2605.23904",
-            "location": "§§3.1–3.7、4.1–4.4表1–4；附录B、C与提示模板"
+            "url": "https://arxiv.org/html/2605.23904v2",
+            "location": "§3–4、表1–6、图3、附录A–C全部优化器提示"
           }
         ],
         "mechanism": {
-          "changed": "目标skill、慢更新字段、优化器meta-skill与拒绝缓冲",
-          "fixed": "目标/优化LLM权重、优化程序、评价协议",
-          "feedback": "带分数执行轨迹、选择集、跨epoch对照",
-          "inheritance": "best_skill.md；优化器侧历史仅用于继续优化",
-          "loop": "Harness文本空间优化，且优化器提示状态会学习；不涉及参数训练"
+          "changed": "单一目标skill、受保护跨epoch慢更新字段、优化器侧meta-skill及epoch内拒绝缓冲。",
+          "fixed": "目标/优化LLM权重、patch规则与排序/门控程序、评分器；文本学习率是编辑数预算而非梯度或字符距离。",
+          "feedback": "成功/失败轨迹分批分析、选择集严格改善、同训练样本相邻epoch对照；拒绝编辑与分数跌幅反哺后续优化。",
+          "inheritance": "部署仅best_skill.md；继续训练继承目标技能、元指导，拒绝缓冲每epoch清空；元技能只给优化器。",
+          "loop": "rollout→分组反思→合并排序有界编辑→选择集测试接受/拒绝→跨epoch更新目标慢字段和优化器元经验；第二层改变编辑策略上下文，但不修改优化程序。"
         },
         "results": {
-          "setup": "7目标模型、3Harness、52测量单元；包括GPT-5.5与Qwen3.6-35B-A3B",
-          "comparison": "无skill、人写/LLMskill、Trace2Skill、TextGrad、GEPA、EvoSkill",
-          "result": "GPT-5.5平均58.8→82.3；Codex平均+24.8百分点",
-          "ablation": "去拒绝缓冲SearchQA/表格/数学分别-1.6/-4.6/-2.4；去慢/元更新表格-22.5",
-          "cost": "额外rollout与优化器调用；单一skill部署不带优化历史，成本靠复用摊薄",
-          "generalization": "跨模型、Harness与邻近数学任务有测量；非任意分布"
+          "setup": "六任务，seed42默认2:1:7训练/选择/测试；ALF39训练/140选择/134测试；LiveMath35训练。表2规模消融caption却4:1:5，附录C称2:1:7，记录冲突。4epoch默认，批40、反思8、编辑4余弦至2；图3扩展到8/16epoch。",
+          "training_objects": "不适用或未披露",
+          "comparison": "No skill；Human skill；one-shot LLM；Trace2Skill；TextGrad；GEPA；EvoSkill(仅harness已测格)",
+          "result": "表1共52已测单元最佳或并列，但直接模式未列EvoSkill、两harness未列TextGrad/GEPA/Trace2Skill，不能称全52均击败所有7种。GPT5.5六项均分58.8→82.3(+23.5pp)，相对逐格最强已测基线+5.4pp；表格41.8→80.7、Office33.1→72.1。Codex五项均值+24.8pp。",
+          "ablation": "匹配默认87.1/77.5/61.3，去拒绝缓冲85.5/72.9/58.9；去meta85.1/75.7/58.1；去meta+slow86.3/55.0/59.7；无编辑预算84.6/75.7/57.3。无单独关闭验证门控对照；数学去slow反而比仅去meta高，不能称所有模块单调必要。",
+          "cost": "最终379–1995tokens，1–4个接受更新(不是1–4个原子编辑)。训练20.8M–213.8Mtokens/任务；部署不加优化器调用但增加上下文。表6Cost/pt与正文主表增益不一致，如Office20.8M/39pp约0.53M而非1.1M，精确比值不转述。基线搜索预算/多seed方差未充分报告。",
+          "generalization": "跨模型4个有效行均正；Codex→ClaudeCode表格22.1→81.8，反向27.5→71.1；数学对应40.8→42.4/35.2→48。Olympiad→OmniMATH+3.7/+1.8/+1.3pp。图3LiveMath验证最佳末期升至约82.5%，测试由约62%跌至56.5%，不支持验证始终跟踪泛化。"
         },
         "contribution": {
-          "bottleneck": "把可迁移技能文件视为需要训练的对象：不是一次写出提示，而是在固定目标模型的多次执行轨迹上反复修订一份紧凑skill。适合有可执行验证器或可靠标签的领域，希望把训练期大量探索压缩成低部署成本的程序性知识。",
-          "insight": "其“文本学习率”是每步允许的增删替换数量，不是可微梯度。成功样本保护已有有效行为，失败样本定位缺失步骤；拒绝记录让优化器知道哪些看似合理的改法实际有害，减少反复走同一条失败路线。",
-          "value": "迁移结果包括Codex学得的表格skill用于Claude Code，22.1→81.8；数学等方向收益更小，不能概括为任意跨域通用。其价值是将经验压缩成可带走的资产；仍依赖评分与训练调用，一次性任务未必能摊薄优化成本。",
-          "relation_to_rsi": "Harness文本空间优化，且优化器提示状态会学习；不涉及参数训练",
-          "comparison": "无skill、人写/LLMskill、Trace2Skill、TextGrad、GEPA、EvoSkill"
+          "bottleneck": "自由重写技能容易抹除有效行为，重复尝试已失败编辑，且产物难跨执行环境复用。",
+          "insight": "把技能编辑变为可观察有界优化，并区分目标侧慢指导和优化器侧“哪些改法有效”的元经验。",
+          "value": "展示外部技能可独立训练/导出，而改进过程本身也能积累经验；更接近改进器状态学习而非仅保存任务答案。",
+          "relation_to_rsi": "目标技能与优化器经验双层更新、可导出紧凑资产及跨模型/执行环境/近域迁移，代表控制外部技能优化的重要路线；保留明确预算与泛化限制。",
+          "comparison": "相对GEPA的候选/Pareto搜索，本项强调单技能局部有界更新、拒绝记忆与元优化上下文；SkillAdam进一步显式聚合语义动量/二阶置信，二者机制互补而非称其中首次文本优化。"
         },
         "scope_decision": "route_research",
-        "scope_reason": "Harness文本空间优化，且优化器提示状态会学习；不涉及参数训练"
+        "scope_reason": "目标技能与优化器经验双层更新、可导出紧凑资产及跨模型/执行环境/近域迁移，代表控制外部技能优化的重要路线；保留明确预算与泛化限制。"
       },
       "corrections": {
         "classification_note": {
@@ -6580,7 +6586,7 @@
     {
       "id": "eureka",
       "status": "methods",
-      "reading_scope": "此前§2–4与A–F完整阅读；本轮重核§3算法、§4控制、AppendixD/F/H限制",
+      "reading_scope": "此前§2–4与A–F完整阅读；本轮重核§3算法、§4控制、AppendixD/F/H限制；本轮已补完AppendixG.1–G.5全部原始奖励代码、逐轮reflection、人工修正对话、正负相关例及Human/Eureka对照，并重核H。",
       "source_location": "此前§2–4与A–F完整阅读；本轮重核§3算法、§4控制、AppendixD/F/H限制",
       "sections": [
         {
@@ -6611,11 +6617,11 @@
         {
           "axis": "F",
           "title": "结果、边界与迁移",
-          "text": "83%任务超过人工奖励；平均归一化改善52%；52%平均归一化改善是各任务分数截断到[0,3]后的平均 29任务与MuJoCo Humanoid新语法接口7.68vs人工5.92；主要仿真，冻结LLM每任务重新搜索 冻结奖励设计者，外部策略不能接任改进器；搜索预算高于一次人工奖励训练；最大检查点/搜索选择影响所报性能；独立fitness外设"
+          "text": "83%任务超过人工奖励；平均归一化改善52%；52%平均归一化改善是各任务分数截断到[0,3]后的平均 29任务与MuJoCo Humanoid新语法接口7.68vs人工5.92；主要仿真，冻结LLM每任务重新搜索；H另列初步Sim2Real跳跃实验，不能说完全无真机，也不是系统性真机benchmark。 冻结奖励设计者，外部策略不能接任改进器；搜索预算高于一次人工奖励训练；最大检查点/搜索选择影响所报性能；独立fitness外设；G.4明确5轮中多次人工观察纠正蹲跳/鸭步/单脚跳及恢复遗漏高度惩罚，不能把该alignment示例算纯自主。G中的自然语言解释不总等于代码：angular-velocity“惩罚”在阈值以上随速度衰减，quat min(q,1-q)不保证[0,1]；应以外部fitness实测而非生成解释判断奖励有效性。"
         }
       ],
       "resources": "每任务5次独立搜索×5轮×16奖励候选；8A100工作站，每次搜索<1天；中间候选1次PPO，最终5次PPO并平均各自10检查点中的最大任务指标",
-      "limitations": "冻结奖励设计者，外部策略不能接任改进器；搜索预算高于一次人工奖励训练；最大检查点/搜索选择影响所报性能；独立fitness外设",
+      "limitations": "冻结奖励设计者，外部策略不能接任改进器；搜索预算高于一次人工奖励训练；最大检查点/搜索选择影响所报性能；独立fitness外设；G.4明确5轮中多次人工观察纠正蹲跳/鸭步/单脚跳及恢复遗漏高度惩罚，不能把该alignment示例算纯自主。G中的自然语言解释不总等于代码：angular-velocity“惩罚”在阈值以上随速度衰减，quat min(q,1-q)不保证[0,1]；应以外部fitness实测而非生成解释判断奖励有效性。",
       "classification_note": "自动训练信号设计的关键历史先例，清楚区分AI4AI与语言模型自身递归。",
       "review": {
         "source_coverage": "main_text_and_relevant_appendix",
@@ -6639,7 +6645,7 @@
           "result": "83%任务超过人工奖励；平均归一化改善52%；52%平均归一化改善是各任务分数截断到[0,3]后的平均",
           "ablation": "去reflection平均归一化下降28.6%；同32候选预算一次采样弱于2轮进化",
           "cost": "每任务5次独立搜索×5轮×16奖励候选；8A100工作站，每次搜索<1天；中间候选1次PPO，最终5次PPO并平均各自10检查点中的最大任务指标",
-          "generalization": "29任务与MuJoCo Humanoid新语法接口7.68vs人工5.92；主要仿真，冻结LLM每任务重新搜索"
+          "generalization": "29任务与MuJoCo Humanoid新语法接口7.68vs人工5.92；主要仿真，冻结LLM每任务重新搜索；H另列初步Sim2Real跳跃实验，不能说完全无真机，也不是系统性真机benchmark。"
         },
         "contribution": {
           "bottleneck": "稀疏目标与人工reward shaping",
@@ -6780,7 +6786,7 @@
     {
       "id": "skill-self-play",
       "status": "methods",
-      "reading_scope": "此前完整正文/相关技术附录，本轮重新核对算法、实际训练对象、控制、结果、限制，并补齐此前未列的附录。§3–4；附录B–I（本轮补G–I全部基准、限制与技能包）",
+      "reading_scope": "此前完整正文/相关技术附录，本轮重新核对算法、实际训练对象、控制、结果、限制，并补齐此前未列的附录。§3–4；附录B–I（本轮补G–I全部基准、限制与技能包）；已补读官方PDF第7–9页Table1–4完整数值及图4，消除HTML nicematrix缺表。",
       "source_location": "§3–4；附录B–I（本轮补G–I全部基准、限制与技能包）",
       "sections": [
         {
@@ -6811,7 +6817,7 @@
         {
           "axis": "F",
           "title": "结果、边界与迁移",
-          "text": "4B完整66.7，冻结库64.4，冻结反馈solver63.7 API-Bank/BFCL与Zebra；未有≥27B实证 所有实际骨干3–14B；工具验证含当前solver多数一致不是真值；逻辑依赖固定确定性编译/唯一解runtime；固定混合比和路由；HTML Table1/2原生nicematrix占位，沿用此前全文核查表事实。"
+          "text": "PDFTable1工具avg@8：4B60.2→66.7（unguided64.1）、Qwen8B69.4→72.2、Ministral8B20.7→63.6、14B22.2→64.5、Granite3B57.2→62.5。Table2 Zebra grid：4B72.1→73.5、Qwen8B23.6→32.4、Ministral14B5.4→17.4；弱模型Large/X-Large仍近0。 API-Bank/BFCL与Zebra；未有≥27B实证 所有实际骨干3–14B；工具验证含当前solver多数一致不是真值；逻辑依赖固定确定性编译/唯一解runtime；固定混合比和路由；HTML Table1/2原生nicematrix占位，沿用此前全文核查表事实。"
         }
       ],
       "resources": "8A800略超一天每完整运行",
@@ -6836,8 +6842,8 @@
           "setup": "5骨干2任务族5轮",
           "training_objects": "Qwen3 4B/8B、Ministral3 8B/14B、Granite4.1 3B，proposer/solver均训练；初始模型skill控制器固定",
           "comparison": "基础模型、无引导SP、冻结部件",
-          "result": "4B完整66.7，冻结库64.4，冻结反馈solver63.7",
-          "ablation": "技能流/混合、路由、技能更新、双策略均做控制",
+          "result": "PDFTable1工具avg@8：4B60.2→66.7（unguided64.1）、Qwen8B69.4→72.2、Ministral8B20.7→63.6、14B22.2→64.5、Granite3B57.2→62.5。Table2 Zebra grid：4B72.1→73.5、Qwen8B23.6→32.4、Ministral14B5.4→17.4；弱模型Large/X-Large仍近0。",
+          "ablation": "PDFTable3/4：4Bfull66.7、uniform64.8、frozen skills64.4、frozen proposer64.6、frozen feedback solver63.7、frozen both63.5；unguided64.1为比full低2.6，非比base倒退。BFCL JS unguided65.8略高于full65.5，不能说每子项都最优。",
           "cost": "8A800略超一天每完整运行",
           "generalization": "API-Bank/BFCL与Zebra；未有≥27B实证"
         },
@@ -7005,75 +7011,76 @@
     {
       "id": "autoscientists",
       "status": "methods",
-      "reading_scope": "已阅读方法、实验结果、消融及相关附录；未独立复现实验。",
-      "source_location": "§3–5；Table3消融；AppendixA队列/噪声确认、B预算和团队规模、E GPT产物、G迁移。",
+      "reading_scope": "完整2937行HTML、39页PDF中关键图表；完整读noise gate、队列/团队规则、Kermut GP细节及预算/消融的内部差异。",
+      "source_location": "全文§1–6及AppendicesA–G、所有算法/表S1–S9、研究产物；PDF页8–9视觉复核图4–5/Table3",
       "sections": [
         {
           "axis": "A",
-          "title": "目标与价值",
-          "text": "AutoScientists研究长程实验中如何持续选择有效方向，而非只生成一份计划。多个固定模型代理围绕共享的最佳程序、实验日志、讨论区和失败登记协作；停滞后重新分组，让不同方向的发现和反例改变下一批实验。"
+          "title": "目标与问题",
+          "text": "实验成本高时固定研究分工和单线搜索会重复失败、错过跨方向组合。"
         },
         {
           "axis": "B",
-          "title": "核心思想",
-          "text": "其核心结构是研究组织可变化而执行协议保持稳定。分析代理提出和排序假设，实验代理领取任务、改代码并运行；共享记录使已失败方向不被反复尝试。超过噪声带的小提升需额外种子确认，避免把随机波动直接升为新最佳。"
+          "title": "关键思想与价值",
+          "text": "让冻结研究员在持久共享状态上以实验结果重组团队、保留负知识，并给出queue和noise-aware champion算法。 把外部AI4AI训练与研究系统自身组织状态分清，提供从失败知识到实验选择、从单个开发蛋白到广泛recipe迁移的具体案例。"
         },
         {
           "axis": "C",
-          "title": "结构与原理",
-          "text": "每次heartbeat读取共享状态再行动，团队可创建、合并、拆分或调整成员。底层Claude Sonnet4.6不训练；目标程序可能是生物预测模型或GPT训练脚本。更新外部模型与团队状态并不自动等于训练代理自身的Model×Harness权重协同。"
+          "title": "系统与原理",
+          "text": "共享champion程序、实验/失败档案、假设、队列和持久团队roster/研究方向；自动修改并训练外部nanochat/生物模型。；所有研究员ClaudeCode+Sonnet4.6参数冻结；固定heartbeat监控器、两角色、majority讨论终止/字母序analyst汇总规则、提案配额与晋升门控。。反馈：实验score/noise、成功机制与deadend使队列重排；近期无进展或方向集中触发讨论，自动合并/拆分/改方向写回roster。"
         },
         {
           "axis": "D",
-          "title": "算法与实验",
-          "text": "通常配置3个分析代理、6个实验代理。GPT任务每实验用单H100训练5分钟；从相同起点达到约0.978验证bits/byte需34次实验，对比单代理65次。从已有champion出发，系统93次实验降至0.9730，单代理100次未改善原0.9777。"
+          "title": "方法与比较",
+          "text": "讨论成队→analyst每轮2案（至少1大胆改变、不同axis、避已拒区间）→experimentagent乐观锁claim并训练→噪声门控晋升→回写全体可读经验→重新分队；研究对象的权重不接任研究员。 明确复用Autoresearch代码和Kermut结构kernel；AIDE是相关基线但未同资源重跑。相比冻结固定流程AITrainingManager，持久roster可随证据改写；相比AAR没有研究员参数更新，也没有改进后模型接任。"
         },
         {
           "axis": "E",
-          "title": "反馈与演化",
-          "text": "四项部件消融分别取消分析角色、跨代理反馈、动态分组或共享状态，在四任务上各暴露不同退化。GPT中冻结组织最影响结果，说明增益不能简单归为更多代理独立抽样。单H100匹配实验预算下实际GPU训练串行，代理并行讨论与实验并行需区分。"
+          "title": "实验与继承",
+          "text": "BioML24任务中18有blindedheldouttest，6ProteinGym按公开CV反复选模型无独立test；Drug5foldscaffold、影像patient部分随机split、omics批次/随机按任务；Kermut仅Spike开发后固定recipe217assays（含开发那1个），每assay独立5fold×3scheme。 跨调用共享实验状态、研究知识与roster、外部训练程序版本；LLM研究员每heartbeat新session，靠文件继承，不是权重继任。"
         },
         {
           "axis": "F",
-          "title": "成果与迁移",
-          "text": "工作有实验选择与知识共享的价值：ProteinGym方法从一个开发测定迁移到217个测定，平均Spearman由0.657到0.700，但MSE未同步改善。它是AI4AI自动研究的重要支撑；应单独标记外部目标训练，不能因模型训练出现在流程里就计为自身参数递归进化。"
+          "title": "结果、边界与迁移",
+          "text": "BioML平均leaderboard百分位74.40(SE6.20) vsAutoresearch66.07(SE7.38)，+8.33点；24/24完成。nanochat50次0.998→.9777 vs.9790；champion起点.9777继续93次7KEEP→.9730 vs100次0KEEP。蛋白固定recipe217平均Spearman.657→.700，MSE.605→.611略退步。 固定Kermutrecipe从1开发assay迁移其余216是最强跨对象证据；BioML多域从头搜索不等同单一技能库跨域迁移。hERG三run .867/.830/.862，mean.853 SD.020；“三run都第一”被Biomni.85464反驳。 GPT消融预算/组件混杂、多数条件n1、公开CV选择无外层test、GPU并行速度仅投影；由有利噪声触发的重复样本估σ再固定、2σ直接晋升并不控制长期多重检验/guarantee无championpollution。结果文字与数值若干不一致，应以表和具体预算为准。主文把perexperiment增益归因parallelism也不能由硬件并行自动推出。"
         }
       ],
-      "resources": "固定Sonnet4.6；通常9代理；GPT每实验1H100×5min；BioML24任务、ProteinGym217测定。",
-      "limitations": "研究者模型不更新；多代理LLM调用成本更高；GPU预算与LLM总成本不同。",
-      "classification_note": "外部AI研究与动态团队组织支撑方法；非研究者模型自身协同训练。",
+      "resources": "BioML每非影像4h、4影像16h，1H10016CPU48GB，单方法预算合计144H100h上限；TableS8 API共3984.7USD vsAutoresearch910.1（4.38×），不含GPU。nanochat每实验300s，示例75次约6.4h；3coldstartruns mean.9784 sampleSD.0010，非全部对照3seeds。",
+      "limitations": "GPT消融预算/组件混杂、多数条件n1、公开CV选择无外层test、GPU并行速度仅投影；由有利噪声触发的重复样本估σ再固定、2σ直接晋升并不控制长期多重检验/guarantee无championpollution。结果文字与数值若干不一致，应以表和具体预算为准。主文把perexperiment增益归因parallelism也不能由硬件并行自动推出。",
+      "classification_note": "Harness/AI4AI组织机制及固定recipe迁移有价值，公开算法与成本较完整；组织消融不严密和额外4.38倍LLM费用限制强因果/效率结论，作为共享科研状态的支撑节点。",
       "review": {
         "source_coverage": "main_text_and_relevant_appendix",
         "sources": [
           {
-            "url": "https://arxiv.org/html/2605.28655",
-            "location": "§3–5；AppendicesA/B/E/G"
+            "url": "https://arxiv.org/html/2605.28655v1",
+            "location": "全文§1–6及AppendicesA–G、所有算法/表S1–S9、研究产物；PDF页8–9视觉复核图4–5/Table3"
           }
         ],
         "mechanism": {
-          "changed": "团队分配、研究记忆、外部训练程序/目标模型",
-          "fixed": "Claude模型、heartbeat与基本执行协议",
-          "feedback": "真实实验结果与噪声校验",
-          "inheritance": "champion、日志、失败方向、讨论",
-          "loop": "讨论分组→领取实验→结果共享→停滞重组"
+          "changed": "共享champion程序、实验/失败档案、假设、队列和持久团队roster/研究方向；自动修改并训练外部nanochat/生物模型。",
+          "fixed": "所有研究员ClaudeCode+Sonnet4.6参数冻结；固定heartbeat监控器、两角色、majority讨论终止/字母序analyst汇总规则、提案配额与晋升门控。",
+          "feedback": "实验score/noise、成功机制与deadend使队列重排；近期无进展或方向集中触发讨论，自动合并/拆分/改方向写回roster。",
+          "inheritance": "跨调用共享实验状态、研究知识与roster、外部训练程序版本；LLM研究员每heartbeat新session，靠文件继承，不是权重继任。",
+          "loop": "讨论成队→analyst每轮2案（至少1大胆改变、不同axis、避已拒区间）→experimentagent乐观锁claim并训练→噪声门控晋升→回写全体可读经验→重新分队；研究对象的权重不接任研究员。"
         },
         "results": {
-          "setup": "BioML24任务/GPT/ProteinGym",
-          "comparison": "相同后端与实验预算的Autoresearch及部件消融",
-          "result": "GPT同目标34vs65实验；ProteinGymρ0.657→0.700",
-          "ablation": "去角色/反馈/组织/共享状态",
-          "cost": "单实验5min H100；LLMtoken额外",
-          "generalization": "单开发测定冻结方案→217测定；MSE并未改善"
+          "setup": "BioML24任务中18有blindedheldouttest，6ProteinGym按公开CV反复选模型无独立test；Drug5foldscaffold、影像patient部分随机split、omics批次/随机按任务；Kermut仅Spike开发后固定recipe217assays（含开发那1个），每assay独立5fold×3scheme。",
+          "training_objects": "研究LLM无训练；外部nanochat从50M→94M→87M，生物任务含ESM2-35M/8M LoRA、CNN/ChemBERTa微调、GP/树/MLP。650M/3B列为资产，不能据此全部算实际微调。",
+          "comparison": "BioML重跑Biomni/Autoresearch同Sonnet和计算资源；AIDE/STELLA/MLAgentBench引用原表CPU8h与本工作GPU4h不同不视公平因果。nanochat同代码5min/H100/experiment；componentremoval与2/4/9/14agents。",
+          "result": "BioML平均leaderboard百分位74.40(SE6.20) vsAutoresearch66.07(SE7.38)，+8.33点；24/24完成。nanochat50次0.998→.9777 vs.9790；champion起点.9777继续93次7KEEP→.9730 vs100次0KEEP。蛋白固定recipe217平均Spearman.657→.700，MSE.605→.611略退步。",
+          "ablation": "Table3 full四任务均最好，但AppendixD GPT full71次对消融47/50次，且no-cross同时关stagnation重组，不能称单一组件等预算隔离。noanalyst5experimentagent（主文称移除3analyst后6）/independent6也改roster。Kermut消融Spearman full.8407/noensemble.8231/noquantile.8070/noextraZS.8174；正文说ensemble最大与数值相反，quantile最大。2/4/9 GPT近同质量14变差；3.25×并行时间是投影非实测。",
+          "cost": "BioML每非影像4h、4影像16h，1H10016CPU48GB，单方法预算合计144H100h上限；TableS8 API共3984.7USD vsAutoresearch910.1（4.38×），不含GPU。nanochat每实验300s，示例75次约6.4h；3coldstartruns mean.9784 sampleSD.0010，非全部对照3seeds。",
+          "generalization": "固定Kermutrecipe从1开发assay迁移其余216是最强跨对象证据；BioML多域从头搜索不等同单一技能库跨域迁移。hERG三run .867/.830/.862，mean.853 SD.020；“三run都第一”被Biomni.85464反驳。"
         },
         "contribution": {
-          "bottleneck": "长程搜索重复死路、方向选择僵化",
-          "insight": "共享负经验与可重组团队",
-          "value": "改善昂贵实验预算的利用",
-          "relation_to_rsi": "AI4AI与harness组织参考，模型自身不更新",
-          "comparison": "区别于MASS：不把协作轨迹训练回研究代理"
+          "bottleneck": "实验成本高时固定研究分工和单线搜索会重复失败、错过跨方向组合。",
+          "insight": "让冻结研究员在持久共享状态上以实验结果重组团队、保留负知识，并给出queue和noise-aware champion算法。",
+          "value": "把外部AI4AI训练与研究系统自身组织状态分清，提供从失败知识到实验选择、从单个开发蛋白到广泛recipe迁移的具体案例。",
+          "relation_to_rsi": "Harness/AI4AI组织机制及固定recipe迁移有价值，公开算法与成本较完整；组织消融不严密和额外4.38倍LLM费用限制强因果/效率结论，作为共享科研状态的支撑节点。",
+          "comparison": "明确复用Autoresearch代码和Kermut结构kernel；AIDE是相关基线但未同资源重跑。相比冻结固定流程AITrainingManager，持久roster可随证据改写；相比AAR没有研究员参数更新，也没有改进后模型接任。"
         },
-        "scope_decision": "enabling_method",
-        "scope_reason": "外部AI研究与动态团队组织支撑方法；非研究者模型自身协同训练。"
+        "scope_decision": "route_research",
+        "scope_reason": "Harness/AI4AI组织机制及固定recipe迁移有价值，公开算法与成本较完整；组织消融不严密和额外4.38倍LLM费用限制强因果/效率结论，作为共享科研状态的支撑节点。"
       },
       "corrections": {
         "scope_kind": {
@@ -7827,75 +7834,76 @@
     {
       "id": "envharness",
       "status": "methods",
-      "reading_scope": "已阅读方法、实验结果、消融及相关附录；未独立复现实验。",
-      "source_location": "§2–5，Tables2–5，AppendicesE分割、F训练与多轮技能、H限制。",
+      "reading_scope": "此前已完整阅读主文及相关技术附录；本轮复核§2–5、App A/E/F/H/I，并完整补读App G成本、留一任务类型及全部弱点—包装—技能示例。",
+      "source_location": "此前已完整阅读主文及相关技术附录；本轮复核§2–5、App A/E/F/H/I，并完整补读App G成本、留一任务类型及全部弱点—包装—技能示例。",
       "sections": [
         {
           "axis": "A",
-          "title": "目标与价值",
-          "text": "EnvHarness把问题移到学习环境一侧：已有模拟器和基准通常不能针对当前代理弱点改造，单纯增加任务会重复代理已经会的行为。它在环境接口外包一层可编程wrapper，以保留原始验证器的方式改变训练经验。"
+          "title": "目标与问题",
+          "text": "静态环境可能只反复训练已会的套路，学习信号跟不上当前策略。"
         },
         {
           "axis": "B",
-          "title": "核心思想",
-          "text": "三种基本变换分别是Stage改变初始状态，Contract改写动作条件和观测，Chain串联任务。它们并非互斥树状类别，而是可组合、顺序相关的变换。关键是利用当前失败诊断定向产生可学习经验，而不必重写整个环境。"
+          "title": "关键思想与价值",
+          "text": "在可信模拟器之外修改初态和动作/观察接口，以轨迹诊断控制难度并保留原核验器；把环境生成与技能学习接成连续循环。 提供不必重新生成模拟器和评分器的适应接口，能比较环境来源对技能迁移的贡献。"
         },
         {
           "axis": "C",
-          "title": "结构与原理",
-          "text": "EnvRigger先观察五次轨迹，再诊断、写wrapper、用五次新轨迹验证；不合适的改动最多修五轮。主实验固定LLM权重，从改造环境轨迹提炼ReasoningBank技能，再加入外部库。多轮实验针对已装上旧技能的代理继续造环境，形成环境与技能的循环。"
+          "title": "系统与原理",
+          "text": "环境 reset/step 接口的 Stage 初态、Contract 交互包装，及由其轨迹提取的技能库；RL 补充实验更新 8B 权重；底层模拟器、原始任务核验器、EnvRigger 提示与 Observe/Diagnose/Write/Validate 流程固定；主实验策略权重冻结。反馈：基线和每候选各 5 条新轨迹的成功率、失败分布、超时，由设计器判定接受/修订/拒绝；最多 5 次修订"
         },
         {
           "axis": "D",
-          "title": "算法与实验",
-          "text": "五领域使用相同骨干分别做设计器和执行器，避免额外强教师。ALFWorld平均68.3对原环境技能62.4，WebArena41.6对38.5；SWE Verified52.58对49.88，并减少步骤。300环境多轮累计使SWE从47.67到54.79，等环境预算的原环境为52.13。"
+          "title": "方法与比较",
+          "text": "策略轨迹→诊断→生成并实测包装→抽取技能→带累计技能的策略→下一批环境；改进器本身不变 相对 GenEnv 改已有可信世界的接口，相对 ReasoningBank 增加适应性经验来源；相对 RQGM 共改任务/评分器，EnvHarness 固定原始评分逻辑和外层设计器，不能称改进器自修改。"
         },
         {
           "axis": "E",
-          "title": "反馈与演化",
-          "text": "独立附加实验才训练Qwen3-8B，8H100、150步GRPO；ALFWorld平均88.4对85.5，但OOD88.8略低于89.6。27B与Claude/Gemini只在固定模型技能实验中使用，不能据此把实际训练规模写为27B或更大。Chain未进入自动生成主循环。"
+          "title": "实验与继承",
+          "text": "SWE Lite 100 训练/Verified 排除 Lite 的 407 测试；Office 50/172；Spreadsheet 100/299；ALF 100 训练；Web 各域 20 训练，其余测试；3 次独立运行 通过验证的包装组件、抽取技能；扩展实验每批技能加载到下一批策略，重新诊断其弱点"
         },
         {
           "axis": "F",
-          "title": "成果与迁移",
-          "text": "应以Harness环境/技能路线为主，8B RL是支撑分支。接口统一带来跨领域复用，但仍要求可重置、文本动作的环境；不能直接覆盖真实不可撤回的服务操作。代码wrapper生成还有明显推理成本，等环境数量不等于完全等总计算。"
+          "title": "结果、边界与迁移",
+          "text": "SWE SR 49.88±2.59→52.58±2.72，步数55.01→49.61；ALF 均值62.4→68.3、OOD61.4→70.4；Web38.5→41.6。六批累计300环境SWE54.79 vs原环境52.13。RL ALF均值85.5→88.4但OOD89.6→88.8；WebShop SR66→67.4 测试原始未改环境；ALF留一任务类型60.6→63.7，heat −8.7点。四模型均重新构建环境/技能，非固定产物跨模型迁移；仅文本可重置模拟环境 验证门由同模型对5次轨迹判断，未给全流程等算力与组件因果消融；Chain实际仅顺序串联，主定义允许更一般组合但未实证。训练8B只是补充。"
         }
       ],
-      "resources": "主实验固定Gemini/Claude/Qwen27B；附加Qwen3-8B GRPO，8H100150steps；每候选五次验证至多五轮。",
-      "limitations": "主结果无基础模型权重更新；27B固定；Chain主循环排除；须reset/step与文本接口。",
-      "classification_note": "主归Harness：环境wrapper与外部技能共演化；另有8B模型训练支撑实验，非≥27B混合循环。",
+      "resources": "ALF EnvHarness 228M tokens vs GenEnv64.2M（真实 vs 模拟轨迹，约3.55倍）；Web137.3M vs VeriEnv137.8M；SWE全预算未列。RL8H100、150步、seed0",
+      "limitations": "验证门由同模型对5次轨迹判断，未给全流程等算力与组件因果消融；Chain实际仅顺序串联，主定义允许更一般组合但未实证。训练8B只是补充。",
+      "classification_note": "保留环境—技能闭环的可审计补充：跨任务类型及成本有新增诊断，但外层设计器固定，主图递归改进器代表由 RQGM/Hyperagents 覆盖。",
       "review": {
         "source_coverage": "main_text_and_relevant_appendix",
         "sources": [
           {
-            "url": "https://arxiv.org/html/2608.19880",
-            "location": "§2–5，AppendicesE/F/H"
+            "url": "https://arxiv.org/html/2608.19880v1",
+            "location": "此前已完整阅读主文及相关技术附录；本轮复核§2–5、App A/E/F/H/I，并完整补读App G成本、留一任务类型及全部弱点—包装—技能示例。"
           }
         ],
         "mechanism": {
-          "changed": "训练环境wrapper、外部技能库；附加8B RL权重",
-          "fixed": "原模拟器和任务verifier、主实验LLM权重",
-          "feedback": "成败轨迹与诊断、fresh rollouts",
-          "inheritance": "已接受wrapper与技能bank",
-          "loop": "观察→定向环境→技能提炼→装载技能→再造环境；RL另测"
+          "changed": "环境 reset/step 接口的 Stage 初态、Contract 交互包装，及由其轨迹提取的技能库；RL 补充实验更新 8B 权重",
+          "fixed": "底层模拟器、原始任务核验器、EnvRigger 提示与 Observe/Diagnose/Write/Validate 流程固定；主实验策略权重冻结",
+          "feedback": "基线和每候选各 5 条新轨迹的成功率、失败分布、超时，由设计器判定接受/修订/拒绝；最多 5 次修订",
+          "inheritance": "通过验证的包装组件、抽取技能；扩展实验每批技能加载到下一批策略，重新诊断其弱点",
+          "loop": "策略轨迹→诊断→生成并实测包装→抽取技能→带累计技能的策略→下一批环境；改进器本身不变"
         },
         "results": {
-          "setup": "五领域主实验；两领域独立RL",
-          "comparison": "同种子/环境数量/技能抽取的原环境与生成环境",
-          "result": "SWE52.58vs49.88；300环境54.79vs52.13",
-          "ablation": "跨模型、Chain单独、技能回合、RL",
-          "cost": "主实验API；附加8H100150steps；未等全成本",
-          "generalization": "五领域同接口、四骨干；不适用非reset世界"
+          "setup": "SWE Lite 100 训练/Verified 排除 Lite 的 407 测试；Office 50/172；Spreadsheet 100/299；ALF 100 训练；Web 各域 20 训练，其余测试；3 次独立运行",
+          "training_objects": "主实验 Gemini 3.1 Flash-Lite/3.5 Flash、Qwen3.6 27B、Claude Sonnet4.6 均冻结；独立 RL 补充训练 Qwen3-8B-base",
+          "comparison": "无技能、原环境技能、GenEnv/VeriEnv/SWE-smith；同种子、环境数、抽取与检索协议，不全为同算力",
+          "result": "SWE SR 49.88±2.59→52.58±2.72，步数55.01→49.61；ALF 均值62.4→68.3、OOD61.4→70.4；Web38.5→41.6。六批累计300环境SWE54.79 vs原环境52.13。RL ALF均值85.5→88.4但OOD89.6→88.8；WebShop SR66→67.4",
+          "ablation": "Chain 未纳入自动 EnvRigger，随机配对单独实验；与 Stage/Contract 技能合并 SWE54.30、43.12步。未独立消融诊断、新轨迹验证、Stage与Contract；逐轮技能示例支持行为来源而非因果消融",
+          "cost": "ALF EnvHarness 228M tokens vs GenEnv64.2M（真实 vs 模拟轨迹，约3.55倍）；Web137.3M vs VeriEnv137.8M；SWE全预算未列。RL8H100、150步、seed0",
+          "generalization": "测试原始未改环境；ALF留一任务类型60.6→63.7，heat −8.7点。四模型均重新构建环境/技能，非固定产物跨模型迁移；仅文本可重置模拟环境"
         },
         "contribution": {
-          "bottleneck": "静态环境重复已有行为",
-          "insight": "从诊断构造可验证接口干预",
-          "value": "连接环境塑造与外部技能积累",
-          "relation_to_rsi": "主要Harness直接改进；RL是附加兼容性证据",
-          "comparison": "与从零生环境相比继承原验证器"
+          "bottleneck": "静态环境可能只反复训练已会的套路，学习信号跟不上当前策略。",
+          "insight": "在可信模拟器之外修改初态和动作/观察接口，以轨迹诊断控制难度并保留原核验器；把环境生成与技能学习接成连续循环。",
+          "value": "提供不必重新生成模拟器和评分器的适应接口，能比较环境来源对技能迁移的贡献。",
+          "relation_to_rsi": "保留环境—技能闭环的可审计补充：跨任务类型及成本有新增诊断，但外层设计器固定，主图递归改进器代表由 RQGM/Hyperagents 覆盖。",
+          "comparison": "相对 GenEnv 改已有可信世界的接口，相对 ReasoningBank 增加适应性经验来源；相对 RQGM 共改任务/评分器，EnvHarness 固定原始评分逻辑和外层设计器，不能称改进器自修改。"
         },
         "scope_decision": "route_research",
-        "scope_reason": "主归Harness：环境wrapper与外部技能共演化；另有8B模型训练支撑实验，非≥27B混合循环。"
+        "scope_reason": "保留环境—技能闭环的可审计补充：跨任务类型及成本有新增诊断，但外层设计器固定，主图递归改进器代表由 RQGM/Hyperagents 覆盖。"
       },
       "corrections": {
         "route": {
@@ -8360,75 +8368,76 @@
     {
       "id": "spin",
       "status": "methods",
-      "reading_scope": "阅读主文方法、实验、消融与相关实现附录；据原文重建训练闭环，未独立复现实验。",
-      "source_location": "§4–6；Algorithm 1；Tables 2–4；Appendices B.1、C",
+      "reading_scope": "已读全部主文、方法、实验与限制及相关附录；定位以章节表号为准。",
+      "source_location": "复核全文§4–7、Algorithm1、Theorems5.2/5.4；补读新版Appendix B.1–B.4训练成本和SPIN+DPO；既有阅读含Appendix C证明",
       "sections": [
         {
           "axis": "A",
-          "title": "目标与价值",
-          "text": "问题是同一份 SFT 数据反复训练很快饱和，能否利用模型当前的错误继续挖掘示范数据。SPIN 不另请强模型逐条比较，而让旧模型生成动态负样本。这里“无新增人工反馈”有明确边界：实验示范来自既有 UltraChat 合成对话，并非从空白产生目标。"
+          "title": "目标与问题",
+          "text": "同一SFT示范反复训练饱和且新增偏好标注昂贵"
         },
         {
           "axis": "B",
-          "title": "核心思想与判断",
-          "text": "关键是把学习目标改成示范回答与当前模型回答之间的相对差异；模型变强后，对照样本也改变。研究价值在于动态对照比重复背诵原样本更有信息，但这个机制仍以固定示范分布为上限，不能据自博弈一词推导无限增长。"
+          "title": "关键思想与价值",
+          "text": "把当前模型回答用作动态负例，对固定示范进行隐式分布差异匹配 明确展示自身分布能构造新的训练信号，但信息目标仍由外部示范给定"
         },
         {
           "axis": "C",
-          "title": "机制与理论",
-          "text": "每轮固定旧策略 π_t，采样其回答，再最小化两个回答相对 π_t 的对数概率比之差的 logistic 损失。形式接近 DPO，正例来自示范而不是额外偏好标注。定理在目标分布可表达、全局最优等假设下刻画固定点，不是有限数据神经网络优化的无条件收敛证明。"
+          "title": "系统与原理",
+          "text": "7B模型权重及当前自身负例/参考策略；50k UltraChat提示与固定正回答、logistic损失、训练流程。反馈：示范回答默认优于自身回答；按相对旧策略log-prob比优化，无独立真值或自评裁判"
         },
         {
           "axis": "D",
-          "title": "算法与实验",
-          "text": "实际训练 Zephyr-7B-SFT，取 5 万提示；首轮 5 万对，后续把前轮与新生成负例合并为 10 万对，各训两轮。Open LLM 六任务平均从 58.14 到 63.16；MT-Bench 从 5.94 到 6.78。实验还比较扩大样本量、增加同一轮 epoch 和继续 SFT。"
+          "title": "方法与比较",
+          "text": "四轮动态负例→pair训练→新负例；固定示范分布锚定 DPO同类logistic比率目标，SPIN不需新增成对判断而默认示范为正；与LMSI/奖励过滤自训练不同，自己的输出充当负例；与Arena Learning固定强对手有别"
         },
         {
           "axis": "E",
-          "title": "反馈与演化",
-          "text": "下一轮复制更新后的参数作为生成者及参考策略；正例、损失形式与训练程序保持不变。消融中在旧负例上多训练不能达到更新负例后的结果，支持反馈来自样本分布改变。末轮收益缩小，说明这不是无条件持续加速。"
+          "title": "实验与继承",
+          "text": "UltraChat200k抽50k首轮对话（OpenAI Turbo合成而非本实验新人工示范）；OpenLLM6、MTBench、BBH3子类、OpenBookQA；无污染专项审计 上轮权重成为下一轮训练初始化/生成者/参考；负例合并上一轮+当轮"
         },
         {
           "axis": "F",
-          "title": "成果与迁移",
-          "text": "适合放在迭代偏好学习与自生成训练数据的机制脉络。它示范如何利用自己的当前分布构造更有效的训练对照；尚未展示学习算法或评估标准自身的改进。7B 是实验范围限制，不构成“工作无价值”的判断。"
+          "title": "结果、边界与迁移",
+          "text": "6task均值58.14→60.80→62.12→62.97→63.16；MTBench5.94→6.78（迭代2）；GSM26.76→38.97，但MMLU60.92→59.99、Winogrande74.19→73.72；SPIN+DPO64.05 聊天及有限推理任务，BBsports96→94.4；无更大模型/长期持续收益，末轮均值仅+.19pp，无多seedCI 理论是可表达目标分布、全局最优、合适λ的固定点刻画，不是有限神经训练无条件收敛/超人能力；正例可能不总优于新模型。旧目录成本未披露已由新版纠正"
         }
       ],
-      "resources": "Zephyr/Mistral 7B；4 次迭代、每轮 2 epochs；首轮 50k 对、以后 100k；batch 64；未披露完整 GPU 时预算。",
-      "limitations": "固定示范目标；最优性结论依赖可表达性与理想优化；跨模型规模和长期递归未验证。",
-      "classification_note": "Model 路线的迭代偏好自训练机制；不是自主修改训练算法的强 RSI。",
+      "resources": "新版B.2估计8A100每轮生成1.45h，训练4.32/8.64/8.64/8.64h；合计36.04h约288.32GPUh。2epochs batch64 RMSProp；lr5e-7前2轮/1e-7后2轮，β .1末轮升5",
+      "limitations": "理论是可表达目标分布、全局最优、合适λ的固定点刻画，不是有限神经训练无条件收敛/超人能力；正例可能不总优于新模型。旧目录成本未披露已由新版纠正",
+      "classification_note": "动态负例的独立机制值得保留；实际7B及固定示范上限，放小模型补充而非≥27B主线",
       "review": {
         "source_coverage": "main_text_and_relevant_appendix",
         "sources": [
           {
-            "url": "https://arxiv.org/html/2401.01335v2",
-            "location": "§4–6；Algorithm 1；Tables 2–4；Appendices B.1、C"
+            "url": "https://arxiv.org/html/2401.01335v3",
+            "location": "复核全文§4–7、Algorithm1、Theorems5.2/5.4；补读新版Appendix B.1–B.4训练成本和SPIN+DPO；既有阅读含Appendix C证明"
           }
         ],
         "mechanism": {
-          "changed": "7B 模型权重及每轮负例",
-          "fixed": "示范回答、提示集、logistic 损失及训练程序",
-          "feedback": "固定示范相对于旧策略样本的成对差异",
-          "inheritance": "上一轮模型变成下一轮生成者及参考策略",
-          "loop": "生成负例 → 成对优化 → 替换旧策略，共四轮"
+          "changed": "7B模型权重及当前自身负例/参考策略",
+          "fixed": "50k UltraChat提示与固定正回答、logistic损失、训练流程",
+          "feedback": "示范回答默认优于自身回答；按相对旧策略log-prob比优化，无独立真值或自评裁判",
+          "inheritance": "上轮权重成为下一轮训练初始化/生成者/参考；负例合并上一轮+当轮",
+          "loop": "四轮动态负例→pair训练→新负例；固定示范分布锚定"
         },
         "results": {
-          "setup": "Zephyr-7B-SFT；UltraChat 50k 提示",
-          "comparison": "继续 SFT、DPO、固定负例延长训练",
-          "result": "六任务均分 58.14→63.16；MT-Bench 5.94→6.78",
-          "ablation": "动态负例优于同一轮增加 epoch；样本量消融",
-          "cost": "每轮 2 epochs；batch 64；总 GPU 时未披露",
-          "generalization": "额外测 BBH 子任务和 OpenBookQA，主要仍为文本指令任务"
+          "setup": "UltraChat200k抽50k首轮对话（OpenAI Turbo合成而非本实验新人工示范）；OpenLLM6、MTBench、BBH3子类、OpenBookQA；无污染专项审计",
+          "training_objects": "Zephyr-7B-SFT（Mistral7B）",
+          "comparison": "继续SFT、额外62k GPT4偏好DPO、同轮延长epoch、14/26/50k规模、SPIN后DPO",
+          "result": "6task均值58.14→60.80→62.12→62.97→63.16；MTBench5.94→6.78（迭代2）；GSM26.76→38.97，但MMLU60.92→59.99、Winogrande74.19→73.72；SPIN+DPO64.05",
+          "ablation": "旧负例延长epoch不能达到下一轮；继续SFT均值57.23低于58.14；新负例与数据从50k到100k、参考更新等同时变化，未完全等计算拆分",
+          "cost": "新版B.2估计8A100每轮生成1.45h，训练4.32/8.64/8.64/8.64h；合计36.04h约288.32GPUh。2epochs batch64 RMSProp；lr5e-7前2轮/1e-7后2轮，β .1末轮升5",
+          "generalization": "聊天及有限推理任务，BBsports96→94.4；无更大模型/长期持续收益，末轮均值仅+.19pp，无多seedCI"
         },
         "contribution": {
-          "bottleneck": "重复 SFT 饱和",
-          "insight": "动态负例反映当前模型与示范分布的差",
-          "value": "无需新增成对偏好标注",
-          "relation_to_rsi": "反馈过程改变训练数据，目标与优化器固定",
-          "comparison": "与 DPO 相同类对数概率比目标，但标签来自示范/模型角色而非偏好 judge"
+          "bottleneck": "同一SFT示范反复训练饱和且新增偏好标注昂贵",
+          "insight": "把当前模型回答用作动态负例，对固定示范进行隐式分布差异匹配",
+          "value": "明确展示自身分布能构造新的训练信号，但信息目标仍由外部示范给定",
+          "relation_to_rsi": "动态负例的独立机制值得保留；实际7B及固定示范上限，放小模型补充而非≥27B主线",
+          "comparison": "DPO同类logistic比率目标，SPIN不需新增成对判断而默认示范为正；与LMSI/奖励过滤自训练不同，自己的输出充当负例；与Arena Learning固定强对手有别"
         },
-        "scope_decision": "enabling_method",
-        "scope_reason": "Model 路线的迭代偏好自训练机制；不是自主修改训练算法的强 RSI。"
+        "scope_decision": "route_research",
+        "scope_reason": "动态负例的独立机制值得保留；实际7B及固定示范上限，放小模型补充而非≥27B主线"
       },
       "corrections": {
         "models": {
@@ -9931,75 +9940,76 @@
     {
       "id": "webevolver",
       "status": "methods",
-      "reading_scope": "已读原文方法、训练与评价设置、主要结果、消融及相关附录；未复现实验。",
-      "source_location": "§3.2–3.3、§4.1–4.4、Tables 1–4、Appendix A–B",
+      "reading_scope": "已读全部主文、方法、实验与限制及相关附录；定位以章节表号为准。",
+      "source_location": "§§3.2–3.3,4.1–4.4；Tables 1–4；Appendices A–B（含评价提示）",
       "sections": [
         {
           "axis": "A",
           "title": "目标与价值",
-          "text": "目标是解除网页代理自训练中的经验瓶颈：真实网页交互昂贵，而只模仿自身已经完成的任务，很快会重复熟悉行为。研究同时学习网页策略与网页状态转移模型，使已积累的交互能够产生新的训练轨迹。"
+          "text": "WebEvolver面对网页自训练的一个实际瓶颈：成功轨迹越来越相似，而真实浏览成本高。它分别微调70B策略和70B世界模型，让真实网页经验除了教会动作，还教会预测下一页，再将想象出的经验用于策略训练。"
         },
         {
           "axis": "B",
-          "title": "思想与洞察",
-          "text": "关键认识是网页世界模型有两种用途：训练时补充未成功任务的合成经验，推理时模拟候选动作的后果。两种收益必须分别计算；参数自训练的提升与额外搜索、GPT-4o评价带来的提升不能合并称为模型能力增长。"
+          "title": "核心洞察",
+          "text": "世界模型不只是推理时的计划辅助。对真实交互中失败的查询，它可以生成新的多步观测和动作组合，使策略接触原有成功数据未覆盖的路径。这一数据来源区别于单纯重采样答案；但想象状态的可用性不等于网页事实正确。"
         },
         {
           "axis": "C",
           "title": "结构与原理",
-          "text": "两个Llama-3.3-70B分别预测动作与下一网页的accessibility tree；Cognitive Kernel、Playwright和动作接口固定。成功轨迹用于迭代SFT，世界模型学习同批真实转移。训练筛选使用原始Llama-3.3-70B，最终任务评价及前瞻动作打分使用GPT-4o。"
+          "text": "策略根据accessibility tree行动，世界模型预测动作后的树。两轮真实经验训练后，作者使用较好的策略第一轮和世界模型第二轮生成至多七步轨迹，经zero-shot Llama筛选后合并SFT。外层浏览器、筛选算法和look-ahead规则固定，因此归Model。"
         },
         {
           "axis": "D",
-          "title": "算法与实验",
-          "text": "实验先做三轮策略自训练，再用第2轮世界模型与表现更好的第1轮策略生成最多7步的合成轨迹，与真实成功轨迹合并训练。WebVoyager为32.98%→42.49%，加入深度2的WMLA为51.37%；单纯迭代SFT在约38%停滞，说明新增经验比重复训练关键。"
+          "title": "方法与实验",
+          "text": "473题WebVoyager子集上，70B基线32.98%，三轮普通SFT约38%，世界模型增强后42.49%；不建模环境的合成基线38.98%。额外WMLA达到51.37%，却使用GPT-4o打分和更多推理，必须单列。53题Mind2Web上深度一优于深度二。"
         },
         {
           "axis": "E",
           "title": "反馈与演化",
-          "text": "继承的对象是训练数据与两个模型的参数，而非网页执行器代码。实际模型组合并非每轮同步更新；WMLA使用3个候选动作，分支数增至5没有继续改善。世界模型深度超过2后质量下降，给出了延长内部模拟的现实约束。"
+          "text": "真实网页转移是世界模型的外部锚点，任务成功标签仍由模型评判。这里验证的是两轮真实自训练加一次想象回流，未证明合成增强后反复互相推动。附录的功能评分允许幻觉，终评还可相信截图没有支持的回答，故内部评分不能证明模拟器保真。"
         },
         {
           "axis": "F",
           "title": "成果与迁移",
-          "text": "价值在于把经验生成器与执行策略放入同一参数学习流程。Mind2Web-Live及GAIA-web、SimpleQA提供迁移测试，但GAIA另用GPT-4o分解问题和汇总结果。真实网页随时间变化，且未给出完整训练GPU小时，因此可确认有限轮次网页能力改进，不能外推为无界持续进化。"
+          "text": "相对WebDreamer/WMA，它把世界模型接进学习阶段；与ReST-ReAct的真实搜索轨迹回流互补。GAIA与SimpleQA有收益，但GAIA借助GPT-4o分解、计算和输出。完整GPU/API成本、独立训练方差、长期循环及更可靠环境验证仍未解决。"
         }
       ],
-      "resources": "双70B；1,516训练查询；过滤后WebVoyager 473题、Mind2Web-Live 53题；真实网页评测重复两次。未披露完整训练GPU小时。",
-      "limitations": "世界模型误差随深度累积；实时网页难精确复现；部分迁移成绩含GPT-4o规划/汇总；未证明训练器本身优化。",
-      "classification_note": "Model主线：两个可变对象都是模型参数；WMLA是固定推理模块。",
+      "resources": "每query1条采样、1516题、想象深度7、WMLA最多3候选深度2；完整优化器/步数/GPUh及API账单未披露，缺成本优势的端到端实测。",
+      "limitations": "内部评测不是环境真值：终评提示说截图未支持但未矛盾的回答可相信；WM功能评分明确允许幻觉且不验事实。准确性风险未被充分量化。联合loop为阶段组合而非多轮合成回流实证，WMLA收益含GPT-4o及额外推理。",
+      "classification_note": "保留70B策略—世界模型回流的独有机制节点，与大规模自训练主线关联；明确仅有限阶段及一次虚拟增强，不描述为训练算法自改或无锚点持续演化。",
       "review": {
         "source_coverage": "main_text_and_relevant_appendix",
         "sources": [
           {
             "url": "https://arxiv.org/html/2504.21024v2",
-            "location": "§3.2–3.3、§4.1–4.4、Tables 1–4、Appendix A–B"
+            "location": "§§3.2–3.3,4.1–4.4；Tables 1–4；Appendices A–B（含评价提示）"
           }
         ],
         "mechanism": {
-          "changed": "策略和world model参数、合成轨迹",
-          "fixed": "浏览器执行器、动作接口、训练规则、筛选与评价协议",
-          "feedback": "真实网页轨迹；Llama成功筛选；GPT-4o终测及搜索打分",
-          "inheritance": "成功轨迹累积与模型参数",
-          "loop": "采样→筛选→SFT；世界模型合成补充经验→再SFT"
+          "changed": "两个Llama3.3-70B分别学习动作策略和下一网页accessibility tree；世界模型合成失败查询的虚拟轨迹用于最终策略SFT。",
+          "fixed": "Cognitive Kernel/Playwright、接口、截断历史、筛选规则和WMLA结构固定；zero-shot Llama70B筛选器固定，GPT-4o作WMLA打分和终测。",
+          "feedback": "真实网页转移训练WM，当前策略真实成功轨迹训练policy；成功由Llama判而非oracle；虚拟状态再由同系Llama筛，可能自确认。",
+          "inheritance": "成功轨迹跨轮累积，两类模型持续阶段性训练；是否每轮从基座重启未明确，不能断言权重连续继承。",
+          "loop": "先两轮真实轨迹自训练并训练WM，选表现较好policy迭代1与WM迭代2固定生成≤7步虚拟轨迹，合并SFT一次最终policy；没有展示合成增强后再反复提升WM的长期互惠循环。"
         },
         "results": {
-          "setup": "70B双模型，真实网页任务",
-          "comparison": "迭代SFT、无世界模型合成、WebDreamer、不同前瞻深度/分支",
-          "result": "WebVoyager 32.98→42.49；+WMLA深度2为51.37",
-          "ablation": "纯SFT约38%停滞；分支2/3/5为48.62/51.37/50.73",
-          "cost": "1516查询；完整GPU小时未报",
-          "generalization": "M2W-Live、GAIA-web、SimpleQA；GAIA含GPT-4o辅助"
+          "setup": "1516训练query来自Mind2Web训练及同WebVoyager/Mind2Web网站自拟题；WebVoyager可访问子集473、Mind2Web-Live过滤53，非整榜/网站OOD；同时间窗口两次eval平均无训练seedCI。",
+          "training_objects": "Llama3.3-70B agent和独立70B world model均微调；GPT-4o只外部终测/WMLA打分及GAIA分解计算辅助。",
+          "comparison": "三轮真实轨迹SFT、无WM合成、WebDreamer，以及WMLA深度/分支；GAIA-web与SimpleQA附测。",
+          "result": "WebVoyager base32.98→普通SFT38.68/38.23/38.65→WebEvolver42.49%；WMLA d2另到51.37。Mind2Web18.86→SFT15.09/16.98→WebEvolver22.64，WMLA d1最佳28.30、d2仅24.53。GAIA L1 19.2→30.7（加WMLA34.6）、L2 10.9→17.2；SimpleQA36→48→58。",
+          "ablation": "无WM合成WebVoyager38.98<42.49；分支2/3/5为48.62/51.37/50.73。WM本体结构/相似/功能39.04/32.25/38.77→56.79/44.77/51.82，但深度3+退化。没有冻结WM同数据或等token/计算完整对照。",
+          "cost": "每query1条采样、1516题、想象深度7、WMLA最多3候选深度2；完整优化器/步数/GPUh及API账单未披露，缺成本优势的端到端实测。",
+          "generalization": "新Bing路径、GAIA/SimpleQA有转移，但GAIA由GPT-4o分解和最终推理，不是70B独立完成；公开网站变化、过滤及同网站训练限制OOD结论。"
         },
         "contribution": {
-          "bottleneck": "真实交互成本与自训练经验同质化",
-          "insight": "模型化环境可扩充经验并支持规划",
-          "value": "参数侧策略—世界模型共学",
-          "relation_to_rsi": "有限轮自改进；无训练代码重写",
-          "comparison": "区别于固定世界模型或单纯成功轨迹模仿"
+          "bottleneck": "真实网页交互昂贵，反复筛选成功轨迹易陷于有限熟悉路径。",
+          "insight": "用同一真实经验同时训练策略与转移模型，再把未完成任务放进世界模型生成多步想象经验，另作固定look-ahead。",
+          "value": "将环境模型的学习质量连接到策略未来训练数据，而不只在推理时提示固定LLM；实际训练规模满足主线。",
+          "relation_to_rsi": "保留70B策略—世界模型回流的独有机制节点，与大规模自训练主线关联；明确仅有限阶段及一次虚拟增强，不描述为训练算法自改或无锚点持续演化。",
+          "comparison": "相对OpenWebVoyager/ReST-ReAct扩充轨迹来源；相对WebDreamer/WMA将学得WM用于训练policy而不止推理。与E2WM固定模拟器和UI-Genie奖励模型共学不同：这里改变的是观测转移生成器。"
         },
         "scope_decision": "route_research",
-        "scope_reason": "Model主线：两个可变对象都是模型参数；WMLA是固定推理模块。"
+        "scope_reason": "保留70B策略—世界模型回流的独有机制节点，与大规模自训练主线关联；明确仅有限阶段及一次虚拟增强，不描述为训练算法自改或无锚点持续演化。"
       }
     },
     {
@@ -10123,75 +10133,76 @@
     {
       "id": "rstar-math",
       "status": "methods",
-      "reading_scope": "已读原文方法、训练与评价设置、主要结果、消融及相关附录；未复现实验。",
-      "source_location": "§3.1–3.4、§4、Tables 2–10、Appendix A.1",
+      "reading_scope": "此前已读全主文与相关附录；本轮复核方法全部、主要表格、局限、重启及成本并比较其他闭环。",
+      "source_location": "复核§3.1–3.4、§4.1–4.3、Tables 2–10、§5及Appendix A.1/A.3；结合此前全主文及相关附录阅读",
       "sections": [
         {
           "axis": "A",
-          "title": "目标与价值",
-          "text": "研究目标是在数学推理中共同提高生成策略与过程评价器，使更好的搜索轨迹反过来训练下一代模型。它针对的是过程监督昂贵以及小模型独立采样质量不足，贡献应以训练闭环和搜索成本衡量，不能仅凭最终模型参数量判断研究投入。"
+          "title": "目标与问题",
+          "text": "有限MCTS搜索的精确Q值噪声大，过程标签难，弱生成器只能提供浅显题解。"
         },
         {
           "axis": "B",
-          "title": "思想与洞察",
-          "text": "关键洞察是精确回归每一步的Q值容易受有限搜索噪声影响，而判断高质量步骤优于明显坏步骤更稳健。论文据此训练Process Preference Model（PPM），将搜索反馈转为共享前缀的步骤偏好对，再用PPM指导下一轮MCTS。"
+          "title": "关键思想与价值",
+          "text": "以可比较步骤偏好代替精确Q回归，结合代码执行、答案锚点及逐轮扩大的搜索数据。 将过程评价器和数据可解覆盖共同迭代，展示数据继承也能构成闭环；提供评价器固定策略控制与实际资源投入。"
         },
         {
           "axis": "C",
-          "title": "结构与原理",
-          "text": "策略生成自然语言解释与可执行Python，代码执行排除语法/运行失败，题目答案提供终局标签。策略与7B PPM均训练；MCTS规则、执行器和外部题库固定。代码能运行不等于论证正确，最终正确性仍依赖参考答案。"
+          "title": "系统与原理",
+          "text": "Qwen2.5-Math-7B策略、7B过程偏好模型PPM与下一轮搜索轨迹/可解题覆盖。；747k题、参考答案、Python执行器、UCT/MCTS及人工增加搜索预算的规则。。反馈：执行过滤语法/运行错误，参考答案为终局真值；MCTS回传Q用于同前缀步骤正负排序，PPM训练Bradley–Terry偏好。"
         },
         {
           "axis": "D",
-          "title": "算法与实验",
-          "text": "747k数学题上进行4轮生成与训练。首轮由236B DeepSeek-Coder-V2-Instruct启动，后续由训练后的7B策略与PPM产生数据。Qwen2.5-Math-7B结合64条搜索轨迹在MATH达到90.0%；该分数包含搜索，不是模型单次无辅助生成准确率。"
+          "title": "方法与比较",
+          "text": "236B固定教师8rollout启动→7B策略16rollout→第二轮PPM成熟→第三轮PPM引导→第四轮难题64/128rollout及多随机树，四轮。 比STaR多了可训练过程排序及MCTS，比RL Tango在线双模型RL更依赖重启SFT数据代际；和AlphaProof共享可验证搜索—学习思想，但Python终局检查弱于形式证明核。"
         },
         {
           "axis": "E",
-          "title": "反馈与演化",
-          "text": "附录说明每轮策略重新从初始底座SFT，而非一直续训前一轮权重；进步通过上一代生成的数据及评价器传递。四轮完整自进化只在7B上完成，1.5B、3.8B等用最终数据再训练。过程偏好比终局ORM和直接Q值回归更有效。"
+          "title": "实验与继承",
+          "text": "747k题来自NuminaMath/MetaMath及GPT4扩增MATH/AMC-AIME训练种子；七类数学评测，MATH使用500题。未见详尽语义去重审计；作者承认公开基准过优化风险。 每轮策略从初始base重新SFT；PPM由该轮已微调策略初始化并换标量头。上轮模型用于产生下轮数据，权重不直接逐轮累积。"
         },
         {
           "axis": "F",
-          "title": "成果与迁移",
-          "text": "这是有实质资源规模的参数共进化案例：启动数据用80张H100约两周，后续每轮60张A100，最终轮约一周。尽管实际演化模型低于27B，可作为机制参考，不应称无价值小作坊。已证范围是答案可检验的数学题及有限轮次，未训练优化算法或自主扩展科学问题。"
+          "title": "结果、边界与迁移",
+          "text": "7B greedy MATH58.8→78.4，AIME0→26.7；64轨迹PPM搜索MATH90.0/AIME53.3。训练题覆盖60.17→90.25%，Olympiad20.99→80.58%。greedy MATH仍低于官方Instruct82.6，GSM8K89.7低于base91.6。 七数学分布与不同小底座；跨到编码、常识是未来可能性，未实证；全循环只有四轮，未解题20样本19错不能证明全部余项无效。 代码可执行不保证NL建模或证明正确；自生成题答案仍可能错。第四轮同时扩大计算，不能把所有提升归因权重自演化。最终90%含64轨迹；没有学习搜索算法本身。"
         }
       ],
-      "resources": "747k题；完整循环Qwen2.5-Math-7B+7B PPM；236B固定启动教师。首轮80×H100约2周；后续60×A100每轮约3天，末轮约1周；SFT每轮2epochs。",
-      "limitations": "最终90%含64轨迹搜索；训练依赖题库答案且含GPT-4合成题；只有7B完成4轮；不同轮次搜索预算增加。",
-      "classification_note": "Model机制参考；实际完整演化目标7B，不把236B启动教师计为训练规模。",
+      "resources": "启动80×H100约两周只生成数据；后续60×A100通常每轮3天，最后约一周；政策2epochs/4096/128，PPM1epoch/512。没有完整训练加搜索总成本；等轨迹数不等token。",
+      "limitations": "代码可执行不保证NL建模或证明正确；自生成题答案仍可能错。第四轮同时扩大计算，不能把所有提升归因权重自演化。最终90%含64轨迹；没有学习搜索算法本身。",
+      "classification_note": "保留过程偏好和数据代际机制，不因小模型否定贡献；实际闭环7B，不以236B冻结教师进入≥27B主线。",
       "review": {
         "source_coverage": "main_text_and_relevant_appendix",
         "sources": [
           {
-            "url": "https://arxiv.org/html/2501.04519",
-            "location": "§3.1–3.4、§4、Tables 2–10、Appendix A.1"
+            "url": "https://arxiv.org/html/2501.04519v1",
+            "location": "复核§3.1–3.4、§4.1–4.3、Tables 2–10、§5及Appendix A.1/A.3；结合此前全主文及相关附录阅读"
           }
         ],
         "mechanism": {
-          "changed": "7B策略及7B PPM参数、搜索训练数据",
-          "fixed": "MCTS/代码执行、答案验证、初始底座",
-          "feedback": "终局参考答案、可执行代码、搜索Q排名",
-          "inheritance": "上一代生成轨迹与PPM；每轮策略从底座重训",
-          "loop": "236B启动→7B搜索→SFT策略+偏好训练PPM→增强搜索，4轮"
+          "changed": "Qwen2.5-Math-7B策略、7B过程偏好模型PPM与下一轮搜索轨迹/可解题覆盖。",
+          "fixed": "747k题、参考答案、Python执行器、UCT/MCTS及人工增加搜索预算的规则。",
+          "feedback": "执行过滤语法/运行错误，参考答案为终局真值；MCTS回传Q用于同前缀步骤正负排序，PPM训练Bradley–Terry偏好。",
+          "inheritance": "每轮策略从初始base重新SFT；PPM由该轮已微调策略初始化并换标量头。上轮模型用于产生下轮数据，权重不直接逐轮累积。",
+          "loop": "236B固定教师8rollout启动→7B策略16rollout→第二轮PPM成熟→第三轮PPM引导→第四轮难题64/128rollout及多随机树，四轮。"
         },
         "results": {
-          "setup": "747k题；7类数学评测",
-          "comparison": "原底座、官方Instruct+72B ORM、终局ORM、Q回归PRM",
-          "result": "7B MATH 58.8→90.0，最终含64轨迹",
-          "ablation": "同前缀步骤偏好优于精确Q回归；验证轨迹优于普通合成",
-          "cost": "80H100约2周启动；后续60A100",
-          "generalization": "数学域七组测试；非通用开放研究"
+          "setup": "747k题来自NuminaMath/MetaMath及GPT4扩增MATH/AMC-AIME训练种子；七类数学评测，MATH使用500题。未见详尽语义去重审计；作者承认公开基准过优化风险。",
+          "training_objects": "完整四轮只训练Qwen2.5-Math-7B策略和7B PPM；1.5B、Phi3-mini3.8B、Qwen2-Math7B用最终数据训练。DeepSeek-Coder-V2-236B和对照72B均非演化学生。",
+          "comparison": "原base、官方Instruct、72B ORM Best-of-N、GPT教师数据、随机生成/拒绝采样、ORM及Q值回归PQM。",
+          "result": "7B greedy MATH58.8→78.4，AIME0→26.7；64轨迹PPM搜索MATH90.0/AIME53.3。训练题覆盖60.17→90.25%，Olympiad20.99→80.58%。greedy MATH仍低于官方Instruct82.6，GSM8K89.7低于base91.6。",
+          "ablation": "固定第一轮策略，PPM轮1→4使MATH75.2→87.0；同SFT配方过程筛选78.4优于拒绝73.4/随机72.4；PPM MATH89.4优于PQM88.2/ORM82.6，但ORM同时改用Best-of-N，非纯RM控制。",
+          "cost": "启动80×H100约两周只生成数据；后续60×A100通常每轮3天，最后约一周；政策2epochs/4096/128，PPM1epoch/512。没有完整训练加搜索总成本；等轨迹数不等token。",
+          "generalization": "七数学分布与不同小底座；跨到编码、常识是未来可能性，未实证；全循环只有四轮，未解题20样本19错不能证明全部余项无效。"
         },
         "contribution": {
-          "bottleneck": "过程标签难且生成器有限",
-          "insight": "利用可比较的偏好而非不可靠精确值",
-          "value": "搜索数据与评价模型相互提升",
-          "relation_to_rsi": "参数侧生成器—评价器共进化",
-          "comparison": "不同于无外部答案的自证及单次蒸馏"
+          "bottleneck": "有限MCTS搜索的精确Q值噪声大，过程标签难，弱生成器只能提供浅显题解。",
+          "insight": "以可比较步骤偏好代替精确Q回归，结合代码执行、答案锚点及逐轮扩大的搜索数据。",
+          "value": "将过程评价器和数据可解覆盖共同迭代，展示数据继承也能构成闭环；提供评价器固定策略控制与实际资源投入。",
+          "relation_to_rsi": "保留过程偏好和数据代际机制，不因小模型否定贡献；实际闭环7B，不以236B冻结教师进入≥27B主线。",
+          "comparison": "比STaR多了可训练过程排序及MCTS，比RL Tango在线双模型RL更依赖重启SFT数据代际；和AlphaProof共享可验证搜索—学习思想，但Python终局检查弱于形式证明核。"
         },
         "scope_decision": "route_research",
-        "scope_reason": "Model机制参考；实际完整演化目标7B，不把236B启动教师计为训练规模。"
+        "scope_reason": "保留过程偏好和数据代际机制，不因小模型否定贡献；实际闭环7B，不以236B冻结教师进入≥27B主线。"
       },
       "corrections": {
         "models": {
@@ -10413,75 +10424,76 @@
     {
       "id": "coverrl",
       "status": "methods",
-      "reading_scope": "已读原文方法、训练与评价设置、主要结果、消融及相关附录；未复现实验。",
-      "source_location": "§3–4、Tables1–6、AppendixA–D",
+      "reading_scope": "已有主文及相关附录阅读，本轮重新读§3–4、实验和AppendixA–E，复核成本、理论梯度及迁移范围。",
+      "source_location": "复核§3–4、Tables1–4；补读/核查AppendicesA–E全部（Tables5–10、理论及实例）",
       "sections": [
         {
           "axis": "A",
-          "title": "目标与价值",
-          "text": "研究无答案标签的RL为何会陷入“共识陷阱”：奖励多数答案会压低输出多样性，错误答案一旦成为多数便被不断强化。目标是让生成能力与验证能力相互提供训练信号，改善这种闭环中的系统性错误。"
+          "title": "目标与问题",
+          "text": "多数答案训练压缩分布时，高一致错误会获得正反馈。"
         },
         {
           "axis": "B",
-          "title": "思想与洞察",
-          "text": "核心思路是把答案一致性与推理过程检查结合。多数投票提供可训练但有噪声的对照标签，验证器检查多数解是否可信；验证器逐步变强后能够拒绝一部分一致但错误的题目，从而改善生成器看到的伪奖励。"
+          "title": "关键思想与价值",
+          "text": "共识提供平衡验证训练，学到的验证再过滤高一致错误，配合答案锚定分组与纠错。 以独立验证评测和冻结验证消融检验双角色自举，比仅报告解题均值更直接。"
         },
         {
           "axis": "C",
-          "title": "结构与原理",
-          "text": "同一组模型参数承担generator、verifier及纠错角色。每题先采32个解，取多数答案，再最多验证8个多数解；多数验证通过才保留题目。等量构造正负验证样本，避免验证器只会拒绝所有解；负面验证后再生成6个修正解。"
+          "title": "系统与原理",
+          "text": "同模型生成/验证/纠错权重联合更新。；MATH问题池、答案多数规则、格式奖励、GRPO/clip-higher和固定采样协议。。反馈：32解多数伪标签→最多8条多数解验证、多数通过才保留；最低频答案构成等量负验证；判错后每条6次纠错；所有准确性奖励仍对多数答案。"
         },
         {
           "axis": "D",
-          "title": "算法与实验",
-          "text": "使用Answer-Anchored GRPO联合训练三类轨迹。数学训练不使用正确答案，测试包括MATH500、AMC、AIME24及GPQA。Qwen2.5-7B四项平均首次回答从TTRL的41.1到43.8，允许纠错后为45.8；必须区分单次能力和增加验证修正后的系统收益。"
+          "title": "方法与比较",
+          "text": "多数共识训练验证→验证过滤共识→生成及修订训练；逻辑上没有新增独立真值。 比SRT单共识增加可训练过滤与修订；不像CoNL把同伴相对排名变化直接解释为真实改进，提供更清楚的标签/奖励准确率审计，但仍非独立真值闭环。"
         },
         {
           "axis": "E",
-          "title": "反馈与演化",
-          "text": "消融冻结验证器、去掉验证过滤或纠错都会降低效果；验证器在独立RewardBench mathprm上也提高，说明不是只把自生成样本记熟。但生成和验证共享参数及预训练偏差，因此这个双角色循环并不提供逻辑上独立的真值来源。"
+          "title": "实验与继承",
+          "text": "MATH训练；MATH500/AMC/AIME24；GPQA-Diamond OOD；独立RewardBench mathprm（非整个RewardBench）。 连续权重和新权重所生成/筛选的伪标签，非外部固定teacher。"
         },
         {
           "axis": "F",
-          "title": "成果与迁移",
-          "text": "贡献是给出可训练的抗共识错误机制及明确失败模式。完整实验为1.7B、3B和7B，70B仅是外部比较模型。没有证明大模型或更长训练下持续改善；训练额外验证和修正成本也应与TTRL的不同采样配方一并阅读。"
+          "title": "结果、边界与迁移",
+          "text": "7B四项均值TTRL first/final41.1/41.1→43.8/45.8；GPQA35.8/35.6→36.2/37.2。1.7B final33.0→38.7，3B29.4→35.3。7B MATH500验证54.0→86.5，RewardBench mathprm49.7→60.9。 16次生成平均first/final，未报独立训练种子区间。3B GPQA验证56.9→55.2下降；7B总reward accuracy .8768（验证.8688、纠错.8518），不能推广3B全阶段>90%描述。 同源标签偏差仍在；理论AppendixC Eq10将期望梯度写成2√p(1-p)∇logp，按其前述互补概率公式应为√[p/(1-p)]∇logp（一般p），不能将后续DPO等价/课程作为严格证明；Eq15额外近似也需p≈.5。"
         }
       ],
-      "resources": "Qwen3-1.7B、Llama3.2-3B、Qwen2.5-7B；2epochs、batch64、学习率5e-7；32初始解、最多8正验证、6修正rollouts；完整GPU小时未披露。",
-      "limitations": "共享模型错误可能相关；无标签是训练阶段定义，测试仍需正确答案；TTRL采64取32，本法采32取16加验证修正，不能仅按生成条数断言等成本。",
-      "classification_note": "Model主线机制参考；无参数外的持久harness优化。",
+      "resources": "2epochs lr5e-7 batch64/grad256，maxresponse2048；平均每步训练样本2466.9/2388.3/2172.4，对照2048，token/调用/总GPUh未报告，不能说相等计算预算。",
+      "limitations": "同源标签偏差仍在；理论AppendixC Eq10将期望梯度写成2√p(1-p)∇logp，按其前述互补概率公式应为√[p/(1-p)]∇logp（一般p），不能将后续DPO等价/课程作为严格证明；Eq15额外近似也需p≈.5。",
+      "classification_note": "较充分的验证器对照与独立mathprm迁移有机制代表性；实际≤7B，额外成本与理论推导局限保留。",
       "review": {
         "source_coverage": "main_text_and_relevant_appendix",
         "sources": [
           {
             "url": "https://arxiv.org/html/2603.17775v2",
-            "location": "§3–4、Tables1–6、AppendixA–D"
+            "location": "复核§3–4、Tables1–4；补读/核查AppendicesA–E全部（Tables5–10、理论及实例）"
           }
         ],
         "mechanism": {
-          "changed": "共享LLM生成/验证/修正参数",
-          "fixed": "多数投票及过滤协议、GRPO规则、训练问题池",
-          "feedback": "自生成多数答案与验证结果；无训练真值标签",
-          "inheritance": "模型权重及当前伪标签生成能力",
-          "loop": "生成→投票→验证过滤→均衡正负验证+纠错→联合GRPO"
+          "changed": "同模型生成/验证/纠错权重联合更新。",
+          "fixed": "MATH问题池、答案多数规则、格式奖励、GRPO/clip-higher和固定采样协议。",
+          "feedback": "32解多数伪标签→最多8条多数解验证、多数通过才保留；最低频答案构成等量负验证；判错后每条6次纠错；所有准确性奖励仍对多数答案。",
+          "inheritance": "连续权重和新权重所生成/筛选的伪标签，非外部固定teacher。",
+          "loop": "多数共识训练验证→验证过滤共识→生成及修订训练；逻辑上没有新增独立真值。"
         },
         "results": {
-          "setup": "1.7B/3B/7B；MATH训练，4评测集",
-          "comparison": "TTRL、普通一致性过滤、冻结验证器、取消纠错",
-          "result": "7B平均首次41.1→43.8，最终41.1→45.8",
-          "ablation": "过滤/验证更新/纠错/答案锚定GRPO分别消融",
-          "cost": "2epochs；GPU小时未报；新增验证成本",
-          "generalization": "GPQA与独立RewardBench mathprm"
+          "setup": "MATH训练；MATH500/AMC/AIME24；GPQA-Diamond OOD；独立RewardBench mathprm（非整个RewardBench）。",
+          "training_objects": "Qwen3-1.7B-Base、Llama3.2-3B-Instruct、Qwen2.5-7B；70B只冻结RewardBench比较。",
+          "comparison": "TTRL64采样32训练 vs 本作32采样16训练+验证/纠错；固定验证器、去过滤、去纠错、普通GRPO、常量多数比例过滤及PAG。",
+          "result": "7B四项均值TTRL first/final41.1/41.1→43.8/45.8；GPQA35.8/35.6→36.2/37.2。1.7B final33.0→38.7，3B29.4→35.3。7B MATH500验证54.0→86.5，RewardBench mathprm49.7→60.9。",
+          "ablation": "1.7B MATH50069.0/71.9，冻结验证64.6/64.6，去过滤67.1/70.3；去纠错GPQA31.0/25.4。PAG对比同时改变平衡采样与PPO/GRPO，非只证明平衡因果。clip-high=.28重要，TTRL同设崩溃；取消AA同时改正例数量。",
+          "cost": "2epochs lr5e-7 batch64/grad256，maxresponse2048；平均每步训练样本2466.9/2388.3/2172.4，对照2048，token/调用/总GPUh未报告，不能说相等计算预算。",
+          "generalization": "16次生成平均first/final，未报独立训练种子区间。3B GPQA验证56.9→55.2下降；7B总reward accuracy .8768（验证.8688、纠错.8518），不能推广3B全阶段>90%描述。"
         },
         "contribution": {
-          "bottleneck": "一致性训练会强化同源错误",
-          "insight": "弱共识可训练检查器，再由检查器清理共识",
-          "value": "参数侧自反馈质量改善",
-          "relation_to_rsi": "单模型多角色共学，有限训练闭环",
-          "comparison": "不同于仅多数投票或固定验证器"
+          "bottleneck": "多数答案训练压缩分布时，高一致错误会获得正反馈。",
+          "insight": "共识提供平衡验证训练，学到的验证再过滤高一致错误，配合答案锚定分组与纠错。",
+          "value": "以独立验证评测和冻结验证消融检验双角色自举，比仅报告解题均值更直接。",
+          "relation_to_rsi": "较充分的验证器对照与独立mathprm迁移有机制代表性；实际≤7B，额外成本与理论推导局限保留。",
+          "comparison": "比SRT单共识增加可训练过滤与修订；不像CoNL把同伴相对排名变化直接解释为真实改进，提供更清楚的标签/奖励准确率审计，但仍非独立真值闭环。"
         },
         "scope_decision": "route_research",
-        "scope_reason": "Model主线机制参考；无参数外的持久harness优化。"
+        "scope_reason": "较充分的验证器对照与独立mathprm迁移有机制代表性；实际≤7B，额外成本与理论推导局限保留。"
       },
       "corrections": {
         "models": {
@@ -11174,75 +11186,76 @@
     {
       "id": "rl-tango",
       "status": "methods",
-      "reading_scope": "已读原文方法、训练与评价设置、主要结果、消融及相关附录；未复现实验。",
-      "source_location": "§3–4、Tables1–3、AppendixA–C",
+      "reading_scope": "已读全部主文、方法、实验与限制及相关附录；定位以章节表号为准。",
+      "source_location": "§2–5；Tables 1–4；Figures 1–5；Appendices A–D（含全部生成/验证示例）",
       "sections": [
         {
           "axis": "A",
-          "title": "目标与价值",
-          "text": "RL Tango希望在只知道最终答案、没有人工逐步标注时，同时训练推理生成器与过程验证器。它针对固定过程奖励模型过时、过程标签昂贵，以及生成器可能利用评价器缺陷的问题。"
+          "title": "目标与问题",
+          "text": "只训练生成器会让固定验证器失配，纯结果奖励又稀疏。"
         },
         {
           "axis": "B",
-          "title": "思想与洞察",
-          "text": "关键是让两者各自收到不同的学习信号：生成器利用验证器的逐步反馈，验证器则用可检验的最终答案学习判断。二者不是互相认可就获得奖励，外部答案与格式规则仍提供独立约束；因此这是有锚点的共同训练。"
+          "title": "关键思想与价值",
+          "text": "用最终正确性监督验证器的生成式逐步评议，再交替强化生成器，使过程奖励跟随策略变化。 提供有独立结果锚点的生成器—验证器反馈闭环，并有小型任务冻结实验检验共训练的作用。"
         },
         {
           "axis": "C",
-          "title": "结构与原理",
-          "text": "生成器Qwen2.5-Math-7B先用固定Llama3.1-70B生成的推理SFT，验证器Qwen2.5-7B从底座启动。验证器预热后按三次生成器更新、一次验证器更新交替RL；生成器混合终局与逐步奖励，验证器学习最终判定与真实标签一致。"
+          "title": "系统与原理",
+          "text": "独立生成器和生成式过程验证器的参数交替连续RL更新，验证器给生成步骤提供稠密反馈。；455k带参考答案数学问题、答案比对器、RL算法、格式要求及人为设定的过程/结果奖励混合日程。。反馈：生成器同时用金标准最终答案与验证器步骤判断；验证器根据其最终判断是否吻合金标准答案正确性获得奖励，过程正确性本身无直接标签。"
         },
         {
           "axis": "D",
-          "title": "算法与实验",
-          "text": "相同200个生成器步骤下，GRPO数学五集均值37.0升至46.1，OOD四集57.6升至61.1；AIME2025由10.0到20.0。这里是贪心零样本pass@1，没有rStar式测试搜索加成。300步系统结果更高，但不能与不同训练量基线视为严格等预算比较。"
+          "title": "方法与比较",
+          "text": "预训练/SFT生成器→当前轨迹→结果锚定验证器RL→过程评分生成器RL→新轨迹；200或300生成器步。 与CoVerRL无答案的共享模型多数投票不同，本作双模型保留金标准最终答案；比rStar-Math的MCTS数据→SFT循环更直接地在线RL；与ARCO相同依赖结果锚定，但通过可读生成验证而非求和分数头。"
         },
         {
           "axis": "E",
-          "title": "反馈与演化",
-          "text": "步骤奖励按轨迹长度归一化，权重随训练衰减；验证器按类别频率调权，避免总预测错误的塌缩。玩具任务冻结任一角色的消融显示反馈质量会限制另一方；不过玩具任务不能替代大规模数学中的完整因果消融。"
+          "title": "实验与继承",
+          "text": "113k Eurus SFT；455k数学RL；5数学测试和4 OOD测试；ProcessBench独立过程验证；拼接任务扩大词数/词长分布。 两个模型权重持续继承；验证器先40步warmup，此后每3次生成器更新配1次验证器更新。"
         },
         {
           "axis": "F",
-          "title": "成果与迁移",
-          "text": "贡献是以终局监督训练可解释验证器，再用它补足生成器的稀疏奖励，形成参数侧双模型闭环。Llama3.1-8B复现实验的数学均值由25.1到28.8，提供底座迁移证据；70B只是固定启动教师，真实共同演化规模为7B或8B。"
+          "title": "结果、边界与迁移",
+          "text": "Qwen GRPO数学5项均值37.0→46.1，OOD57.6→61.1；RLOO37.2→46.7，REINFORCE++37.1→46.9，均为greedy pass@1。300步达49.5/62.8。ProcessBench平均43.9高于Skywork42.1，但低于Qwen72B45.5，不能泛称超越所有大验证器。 数学及4类OOD单次生成改善，独立ProcessBench支持部分过程判断能力；没有新任务生成或长期自主课程证据。 步骤奖励并不由步骤真值直接监督；训练F1不能视为独立过程真值。附录D字母示例识别多个错误却给出最终CORRECT，数学示例也漏零点边界，说明解释性判断仍有错误，不据此否定整体实验。效率只按生成器步数，非等算力。"
         }
       ],
-      "resources": "113k启动SFT提示、455k数学QA；生成器SFT800步；验证器预热40步，3:1交替，主表200/300生成器步。训练GPU数量与总小时未见。",
-      "limitations": "依赖外部最终答案；验证器推理过程没有直接逐步真值；奖励衰减需人工设定；主要双角色冻结消融为1.5B玩具任务；不应把70B教师算作演化模型。",
-      "classification_note": "Model主线：生成器与评价器共同训练；harness和奖励定义固定。",
+      "resources": "3.3×来自60 vs 200生成器更新数，不是等总算力速度；另含验证器40步warmup及约每3步1次训练。每提示5采样、batch256，未报告总GPU小时和完整生成/验证token成本。",
+      "limitations": "步骤奖励并不由步骤真值直接监督；训练F1不能视为独立过程真值。附录D字母示例识别多个错误却给出最终CORRECT，数学示例也漏零点边界，说明解释性判断仍有错误，不据此否定整体实验。效率只按生成器步数，非等算力。",
+      "classification_note": "保留独立结果锚点下评价器与生成器共训练的机制；实际学生至多8B，不进入≥27B主线；不把普通RL器本身描述为递归改写。",
       "review": {
         "source_coverage": "main_text_and_relevant_appendix",
         "sources": [
           {
-            "url": "https://arxiv.org/html/2505.15034",
-            "location": "§3–4、Tables1–3、AppendixA–C"
+            "url": "https://arxiv.org/html/2505.15034v2",
+            "location": "§2–5；Tables 1–4；Figures 1–5；Appendices A–D（含全部生成/验证示例）"
           }
         ],
         "mechanism": {
-          "changed": "7B生成器与7B验证器权重（另8B验证）",
-          "fixed": "题库答案、算法、执行与格式规则、70B启动教师",
-          "feedback": "生成器：答案+步骤奖励；验证器：与答案标签一致的最终判断",
-          "inheritance": "双方权重交替继承",
-          "loop": "验证器预热→生成器3步→验证器1步，循环刷新互相面对的数据"
+          "changed": "独立生成器和生成式过程验证器的参数交替连续RL更新，验证器给生成步骤提供稠密反馈。",
+          "fixed": "455k带参考答案数学问题、答案比对器、RL算法、格式要求及人为设定的过程/结果奖励混合日程。",
+          "feedback": "生成器同时用金标准最终答案与验证器步骤判断；验证器根据其最终判断是否吻合金标准答案正确性获得奖励，过程正确性本身无直接标签。",
+          "inheritance": "两个模型权重持续继承；验证器先40步warmup，此后每3次生成器更新配1次验证器更新。",
+          "loop": "预训练/SFT生成器→当前轨迹→结果锚定验证器RL→过程评分生成器RL→新轨迹；200或300生成器步。"
         },
         "results": {
-          "setup": "数学五集、OOD四集、ProcessBench；7B主实验",
-          "comparison": "同200步GRPO/PPO/REINFORCE++；SFT及奖励模型",
-          "result": "GRPO数学37.0→46.1；OOD57.6→61.1；均为贪心pass1",
-          "ablation": "类别平衡避免验证器塌缩；玩具任务冻结任一角色均受限",
-          "cost": "455k问题；每题5rollouts；GPU小时未披露",
-          "generalization": "8B底座及OOD数学/逻辑集合；非开放任务自验证"
+          "setup": "113k Eurus SFT；455k数学RL；5数学测试和4 OOD测试；ProcessBench独立过程验证；拼接任务扩大词数/词长分布。",
+          "training_objects": "Qwen2.5-Math-7B生成器与Qwen2.5-7B验证器；Llama3.1-8B双模型；1.5B最后字母拼接机制实验。70B SFT数据教师固定。",
+          "comparison": "GRPO/RLOO/REINFORCE++匹配生成器更新步数；ORM和PRIME；公开PRM及过程验证基准。",
+          "result": "Qwen GRPO数学5项均值37.0→46.1，OOD57.6→61.1；RLOO37.2→46.7，REINFORCE++37.1→46.9，均为greedy pass@1。300步达49.5/62.8。ProcessBench平均43.9高于Skywork42.1，但低于Qwen72B45.5，不能泛称超越所有大验证器。",
+          "ablation": "冻结生成器/验证器的直接互作控制主要在1.5B拼接任务；固定验证器后期劣化，金标准奖励权重上升可恢复。数学中比较过程奖励形式；α从0.1或0.5手工衰减到0.001。",
+          "cost": "3.3×来自60 vs 200生成器更新数，不是等总算力速度；另含验证器40步warmup及约每3步1次训练。每提示5采样、batch256，未报告总GPU小时和完整生成/验证token成本。",
+          "generalization": "数学及4类OOD单次生成改善，独立ProcessBench支持部分过程判断能力；没有新任务生成或长期自主课程证据。"
         },
         "contribution": {
-          "bottleneck": "稀疏答案奖励与固定过程评价器",
-          "insight": "外部终局标签可锚定自生成过程反馈",
-          "value": "共同RL训练生成器与验证器",
-          "relation_to_rsi": "Model内部生成—评价参数共进化",
-          "comparison": "与rStar搜索后SFT不同，此处直接RL且终测无搜索"
+          "bottleneck": "只训练生成器会让固定验证器失配，纯结果奖励又稀疏。",
+          "insight": "用最终正确性监督验证器的生成式逐步评议，再交替强化生成器，使过程奖励跟随策略变化。",
+          "value": "提供有独立结果锚点的生成器—验证器反馈闭环，并有小型任务冻结实验检验共训练的作用。",
+          "relation_to_rsi": "保留独立结果锚点下评价器与生成器共训练的机制；实际学生至多8B，不进入≥27B主线；不把普通RL器本身描述为递归改写。",
+          "comparison": "与CoVerRL无答案的共享模型多数投票不同，本作双模型保留金标准最终答案；比rStar-Math的MCTS数据→SFT循环更直接地在线RL；与ARCO相同依赖结果锚定，但通过可读生成验证而非求和分数头。"
         },
         "scope_decision": "route_research",
-        "scope_reason": "Model主线：生成器与评价器共同训练；harness和奖励定义固定。"
+        "scope_reason": "保留独立结果锚点下评价器与生成器共训练的机制；实际学生至多8B，不进入≥27B主线；不把普通RL器本身描述为递归改写。"
       },
       "corrections": {
         "models": {
@@ -11788,75 +11801,76 @@
     {
       "id": "reasoningbank",
       "status": "methods",
-      "reading_scope": "阅读主文、实验与相关附录；重建更新机制、实验对照和结论边界，未独立运行复现。",
-      "source_location": "v2（2026-03-16）；§3–5、Tables 1–5；Appendices A–C、E",
+      "reading_scope": "重新完整阅读 v2 主文及实验附录；渲染原 SVG 核对 Figures 8–12 的裁判噪声、归纳、复查与 BoN 提示，补新增 SWE、token 成本、小模型结果与实现限制。",
+      "source_location": "v2 §1–7；Tables 1–6；Figures 4–14；附录 A–F",
       "sections": [
         {
           "axis": "A",
           "title": "目标与价值",
-          "text": "持续接收任务的代理如果每次清空经验，就会重复探索和失败。ReasoningBank 研究如何把先前任务的成功与失败压缩成可迁移的推理策略，并在后续任务中检索使用；重点是记忆内容的质量。"
+          "text": "ReasoningBank关注成功流程之外的策略经验：执行失败也可能揭示下次应检查的条件或避免的陷阱。它把长期经验改进与当题增加推理计算连接起来，使多次探索不仅提供候选答案，也能给后续任务留下更好的记忆。"
         },
         {
           "axis": "B",
-          "title": "核心思想与判断",
-          "text": "成功轨迹与失败轨迹提供不同信息：前者提炼可复用策略，后者提炼应避免的错误。MaTTS 进一步对比同一任务的多个轨迹，利用差异改善经验归纳；增加采样的价值取决于信息能否进入后续任务。"
+          "title": "核心洞察",
+          "text": "保存的单位是标题、描述和简短原则，而非原始轨迹或固定操作序列。MaTTS进一步比较同一题的不同尝试，寻找成功与失败的差异；顺序版本则把复查过程纳入经验。新意主要在记忆内容与经验生成方式，非数据库结构。"
         },
         {
           "axis": "C",
-          "title": "机制与理论",
-          "text": "LLM 自评轨迹后生成含标题、描述、内容的记忆项，每次最多 3 条。按任务 embedding 检索相近经验，默认取 1 个经验的记忆，注入系统提示；任务后直接追加到 JSON 记忆池。LLM、检索器与归纳流程不训练，也不自行改写。"
+          "title": "结构与原理",
+          "text": "冻结执行者运行任务，冻结同类裁判判断成功，归纳器每条轨迹最多抽三项原则；下一题按问题嵌入检索最近一条经验的全部条目。实现的 consolidation 只是追加，没有删改旧条目。并行 MaTTS 联合多条轨迹最多抽五项，优化器提示均固定。"
         },
         {
           "axis": "D",
-          "title": "算法与实验",
-          "text": "WebArena 684 项、Mind2Web 1341 项、SWE-bench Verified 500 项。Gemini-2.5-Pro 的 WebArena 成功率 46.7→53.9%，SWE-bench 54.0→57.4%。v2 加入 MaTTS 全域结果；并行采样 k=5 时 Pro 的 WebArena pass@1 为 56.3%。"
+          "title": "方法与实验",
+          "text": "WebArena 684 题上 Flash 成功率 40.5%→48.8%，Pro 46.7%→53.9%，Sonnet 41.7%→46.3%；SWE-Verified Pro 54.0%→57.4%。Shopping 成功轨迹专用 46.5%，加入失败 49.7%；相同检索与追加下优于原始轨迹及工作流表示。"
         },
         {
           "axis": "E",
           "title": "反馈与演化",
-          "text": "经验跨查询保留，反馈闭环落在非参数记忆。Shopping 消融中仅成功经验为 46.5%，同时用成功与失败为 49.7%；检索经验从 1 个增加到 4 个反而降至 44.4%。这说明筛选与抽象比无差别堆积更关键。"
+          "text": "扩展到五次探索后，Shopping 随机单轨迹 49.7%→53.0%，模型挑选最佳为 55.1%；后者不是 oracle pass@5。无跨轨迹归纳的同次数版本 52.4%，提供记忆提炼的额外证据。裁判实测准确率 72.7%，标签噪声实验仅一个子集且无方差。"
         },
         {
           "axis": "F",
           "title": "成果与迁移",
-          "text": "贡献是跨任务经验归纳与 test-time scaling 的结合。步骤减少不等于总成本下降：v2 Table 5 计入自评与归纳后，平均 token 从 50,847.4 增至 53,054.5。自评错误、记忆冲突与长期增长仍是边界；不能据此声称更新算法自身已进化。"
+          "text": "当前证据是持续测试流中的迁移与跨模型复现，未用最终冻结库在独立新任务池验证长期增益。单轨迹动作减少，但含归纳和裁判的 token 从约 5.08 万增到 5.31 万；五次探索的全成本另算。该工作连接 AWM 程序经验与记忆驱动探索，不能据案例称同一策略对象或改进器已自我改写。"
         }
       ],
-      "resources": "固定API模型；WebArena每题最多30步；MaTTS另投入并行或顺序采样预算；v2提供token拆分。",
-      "limitations": "自评存在噪声；记忆只追加；未完整验证长期污染、增长饱和和环境漂移。",
-      "classification_note": "Harness / 跨任务推理记忆；改进记忆内容，未改变记忆学习规则。",
+      "resources": "Table 5 每题总 token：无记忆 50,847.4，ReasoningBank 53,054.5（+4.3%），Synapse 58,514.7、AWM 59,372.8，含生成、裁判、归纳。WebArena Flash 平均动作 9.7→8.3；MaTTS 表内动作数是单轨迹，不能当五次探索总成本。未给 MaTTS 全部美元/token。",
+      "limitations": "无修订/淘汰/评价器学习，案例所谓同一条目演化与实际只追加不应混淆；在线流缺独立冻结迁移与顺序方差，AWM/Synapse 是统一框架改编，非所有原生实现的严格优劣。",
+      "classification_note": "持久策略记忆与推理扩展的代表性结合，有失败经验、同次数归纳对照、多模型及代码域验证；保留主张边界，不因“self-evolving”措辞认定改进器自改。",
       "review": {
         "source_coverage": "main_text_and_relevant_appendix",
         "sources": [
           {
-            "url": "https://arxiv.org/pdf/2509.25140v2",
-            "location": "v2（2026-03-16）；§3–5、Tables 1–5；Appendices A–C、E"
+            "url": "https://arxiv.org/html/2509.25140v2",
+            "location": "v2 §1–7；Tables 1–6；Figures 4–14；附录 A–F"
           }
         ],
         "mechanism": {
-          "changed": "跨任务推理记忆及检索到的上下文",
-          "fixed": "执行LLM、judge、embedding、抽取与追加规则",
-          "feedback": "同一模型对当前任务轨迹的成功/失败自评；MaTTS利用多轨迹对照",
-          "inheritance": "每个独立运行中的记忆池跨查询持久积累",
-          "loop": "检索 → 执行 → 自评 → 提炼成功/失败经验 → 追加记忆"
+          "changed": "持久经验库的内容：从成功和失败生成可复用推理原则；MaTTS 增加每题尝试与联合归纳。",
+          "fixed": "所有 LLM、嵌入模型、裁判/归纳提示、最近邻检索和追加规则。",
+          "feedback": "同一冻结 backbone 根据任务、轨迹、最终网页状态和响应自判成功/失败；不读取最终评测真值，噪声研究另用真值干预。",
+          "inheritance": "旧问题、原轨迹和标题/描述/内容条目及问题嵌入 JSON；旧条目不被修改或合并。",
+          "loop": "检索最近经验→完成新任务→自判→分别抽成功原则或失败教训→追加；MaTTS 并行比较多轨迹或顺序反复复查后归纳。"
         },
         "results": {
-          "setup": "Gemini-2.5-Flash/Pro、Claude-3.7；WebArena684、Mind2Web1341、SWE-bench Verified500",
-          "comparison": "无记忆、Synapse、AWM；v2统一检索与追加机制比较记忆抽取内容",
-          "result": "Pro WebArena46.7→53.9%，加MaTTS56.3%；SWE-bench54.0→57.4%",
-          "ablation": "成功经验46.5% vs 成功+失败49.7%；过多检索经验有干扰",
-          "cost": "Table5平均总token50,847.4→53,054.5，约+4.3%；更多轨迹额外耗算力",
-          "generalization": "跨任务/网站/领域及两个模型家族；长期记忆规模、错误传播尚未充分检验"
+          "setup": "WebArena 去 Maps 后 684 题；Mind2Web 1,341（252/177/912）；SWE-Verified 500，逐题在线，无未来题访问。未披露最终冻结库在独立保留任务池的测试。",
+          "training_objects": "不适用或未披露",
+          "comparison": "No Memory；Synapse（统一最近邻/追加）；AWM（统一最近邻/追加）；MaTTS 无记忆；同次数探索但不联合归纳",
+          "result": "WebArena Flash 40.5%→48.8%，Pro 46.7%→53.9%，Sonnet 41.7%→46.3%；并行 k=5 随机单轨迹分别 51.8/56.3/48.8%。SWE-Verified Flash 34.2%→38.8%、Pro 54.0%→57.4%。Gemma-12B Shopping 17.1%→24.1%。",
+          "ablation": "Shopping 成功专用 46.5%，加失败 49.7%；AWM 加失败 44.4→42.2%。检索经验数 1/2/3/4 为 49.7/46.0/45.5/44.4。k=5 Shopping 随机单轨迹 53.0%，LLM BoN 55.1%，无联合归纳 BoN 52.4%；顺序 54.5 对 51.9。裁判真值一致 72.7%；模拟准确率 100/90/80/70/60/50 时成功 52.4/49.7/48.7/49.7/47.6/47.6，无误差条。",
+          "cost": "Table 5 每题总 token：无记忆 50,847.4，ReasoningBank 53,054.5（+4.3%），Synapse 58,514.7、AWM 59,372.8，含生成、裁判、归纳。WebArena Flash 平均动作 9.7→8.3；MaTTS 表内动作数是单轨迹，不能当五次探索总成本。未给 MaTTS 全部美元/token。",
+          "generalization": "多 backbone、网页与代码任务，以及不同网站任务流均改善；Mind2Web 跨域 Flash 步骤 31.9→36.6，整任务 1.0→1.6。各配置重新在线积累，不等于冻结一份记忆跨域部署；累计曲线和个别“涌现”案例不能独立识别长期因果。"
         },
         "contribution": {
-          "bottleneck": "原始轨迹冗长且无法直接复用失败",
-          "insight": "把经验归纳为策略，利用多轨迹差异改善记忆",
-          "value": "冻结模型条件下的跨任务适配",
-          "relation_to_rsi": "持久Harness经验学习；固定的改进流程",
-          "comparison": "Reflexion主要面向同任务重试；ReasoningBank明确保留跨查询经验并研究MaTTS反馈"
+          "bottleneck": "仅存成功原轨迹/流程会遗漏失败原因，也难把同题多次推理的计算转成可持续收益。",
+          "insight": "按自评成败分别抽取策略和预防教训；将平行/顺序探索与跨轨迹比较结合，反哺后续任务记忆。",
+          "value": "以可控的表示差异与同次数探索比较建立“经验质量×推理计算”的联系，是持久策略记忆的重要节点。",
+          "relation_to_rsi": "持久策略记忆与推理扩展的代表性结合，有失败经验、同次数归纳对照、多模型及代码域验证；保留主张边界，不因“self-evolving”措辞认定改进器自改。",
+          "comparison": "明确比较 AWM 的成功子流程与 Synapse 原轨迹，扩展到失败策略；承接 Self-Refine 的当题复查，但将所得经验跨题持久化；相比 MemSkill/ALMA 尚未学习选择器或搜索记忆算法。"
         },
         "scope_decision": "route_research",
-        "scope_reason": "Harness / 跨任务推理记忆；改进记忆内容，未改变记忆学习规则。"
+        "scope_reason": "持久策略记忆与推理扩展的代表性结合，有失败经验、同次数归纳对照、多模型及代码域验证；保留主张边界，不因“self-evolving”措辞认定改进器自改。"
       }
     },
     {
@@ -13290,6 +13304,381 @@
         },
         "scope_decision": "enabling_method",
         "scope_reason": "作为跨路线失效与边界核心节点，系统对照和明确正反条件不可由一般model-collapse口号替代；不把14B规模包装成大模型递归成功。"
+      }
+    },
+    {
+      "id": "spade",
+      "status": "methods",
+      "reading_scope": "阅读全文、方法/实验/限制；E证明、F全提示与超参、G全消融、H关系、I统计、J全部三份完整环境程序；PDF首页核机构。",
+      "source_location": "§1–10, Algorithm 1, Tables 1–8, Appendices E–J including complete generated programs",
+      "sections": [
+        {
+          "axis": "A",
+          "title": "环境供给成为学习对象",
+          "text": "SPADE把训练环境不足转化为可学习的设计问题。同一语言模型既编写含状态转移与奖励的Python环境，又作为代理在环境中行动，训练后继续承担两个角色。30B总参数模型的实训使它成为环境—模型共同适配的主要证据。"
+        },
+        {
+          "axis": "B",
+          "title": "以提示差估计可教性",
+          "text": "设计者先看到源代码写提示，求解者分别带提示和不带提示运行；回报差奖励“提示能帮助但当前还不会”的环境。实际信号还含60%的成功率平台奖励，因此结果属于完整配方，不能全部归功于纯regret。"
+        },
+        {
+          "axis": "C",
+          "title": "参数和环境程序双向回流",
+          "text": "角色共享θ、分别归一优势。每24个环境训练四步后更新设计者，采用截断重要性采样；工具环境间隔八步。旧环境进入200条记忆，新环境参考高regret种子和外部语料再生成。被修改的是环境程序和策略，GRPO本身始终固定。"
+        },
+        {
+          "axis": "D",
+          "title": "同迭代对照与消融",
+          "text": "30B在八项游戏外评测平均由50.2升至58.3，RLVE对照53.0；去记忆53.2、去语料53.5、同时去设计者训练及记忆40.5。最后一项不能分离两个因素，且最佳checkpoint按同一评测套选取，未报告重复训练方差或总计算成本。"
+        },
+        {
+          "axis": "E",
+          "title": "课程稳定不等于无限创新",
+          "text": "语料使环境语义多样性维持在高位，去语料则反复生成旋转迷宫。课程的主要变化是现有领域中的难度与交互形式；理论需假设提示总能达到最优且可统一内化。代码样例仍有首条件已真、固定短序列即可成功等缺口，语法检查不能保证教学价值。"
+        },
+        {
+          "axis": "F",
+          "title": "迁移边界",
+          "text": "游戏训练迁移至科学、代码与程序推理；30B工具实验BFCL提高5.7点、ACE提高13.9点，均相对未训练模型。不同工具生成系统预算和评测协议不一致。应将它解释为有限训练中的环境共适配，而不是学习算法自改写或开放式无界增长。"
+        }
+      ],
+      "resources": "400步，24环境，16×k无hint+16hint，设计16K/20Ktoken、交互8K、25turn；无GPU型号/小时/费用或与静态池等计算量；400iteration不等token/算力。",
+      "limitations": "E2假设任意π在hint下达到R*、E3可同时内化所有环境最优，且分析固定hint/独立玩家，非共享θ+混合reward训练收敛保证。执行可运行不等语义正确：J.3.2早期汽车环境一次transfer指令即获终奖，晚期热力学只需固定四步；J.3.3首criterion在reset已真，任意工具可跳过检索，search(high priority new)本身无匹配；不能由程序长度/分级reward证明深推理。未披露seed/总成本，test-suite选点、部分消融混淆。",
+      "classification_note": "30B实际共同训练、完整可执行环境更新与可继承记忆构成清楚的环境—策略共适配代表，有固定环境及语料/记忆/奖励消融和跨任务迁移；主图保留，同时明确测试选点、语义验证缺口和非学习规则递归。",
+      "review": {
+        "source_coverage": "main_text_and_relevant_appendix",
+        "sources": [
+          {
+            "url": "https://arxiv.org/html/2608.19197v3",
+            "location": "§1–10, Algorithm 1, Tables 1–8, Appendices E–J including complete generated programs"
+          }
+        ],
+        "mechanism": {
+          "changed": "共享θ同时学习环境设计与解题；生成reset/step状态转移、奖励、工具及验证代码；200条环境记忆提供后续高regret种子。",
+          "fixed": "GRPO/Adam、角色prompt、六技能轮转、15K外部语料、固定检查器与生成接口；不修改学习算法。",
+          "feedback": "设计者获得0.4×截断hint-return gap（scale .15）+0.6×成功率[.4,.6]平台奖励；求解者从无hint轨迹环境终局奖励学习。hint由同θ见源代码另调用产生；两臂各16次独立seed。",
+          "inheritance": "θ持续继承；每4步游戏/8步工具整批24环境替换，旧代码/skill/regret进入FIFO200记忆后再条件生成。",
+          "loop": "生成可执行环境→验代码/可达性→有无hint交互→按角色分别归一并延迟设计者k步重要性校正更新→当前θ及历史环境再生成。"
+        },
+        "results": {
+          "setup": "游戏15K数学科学文档/工具15K代码文档；400rollout×24环境，G16；8项游戏迁移与3项工具基准未入训练，但Table6按这8项最高平均选checkpoint303，无单独选择验证集。",
+          "training_objects": "Qwen3-4B-Instruct-2507、Qwen3-8B、Qwen3-30B-A3B-Instruct-2507共享双角色实训；附录Nemotron-30B-A3B也实训。GPT5.5仅静态生成对照。",
+          "comparison": "同backbone同400iteration fixed generated GRPO与RLVE；工具参考系统为各论文转录，BFCL版本/τ2 user/verified/aggregation预算不同不可直接公平排名。",
+          "result": "30B游戏均值50.2→58.3，RLVE53.0；GPQA70.4→75.8，LCB43.2→47.3；4B44.1对RLVE42.5，8B55.5对53.8。工具30B BFCL49.0→54.7，ACE62.0→75.9，τ2 49.0→52.6；这几个工具增量是对BASE，不是最强固定环境基线。",
+          "ablation": "去memory53.2、去corpus53.5、同时去ED训练+memory40.5、静态GPT5.5 53.0；联合移除不能隔离ED训练。EMA55.9 vsfull58.3同时比的是独立EMA信号和regret+难度混合，未隔离纯hint价值；六技能58.3vs二技能53.7。corpus有无Vendi/n .68/.04，去ED+mem仍.70；多样性来自外部语料而非学出持续新领域。",
+          "cost": "400步，24环境，16×k无hint+16hint，设计16K/20Ktoken、交互8K、25turn；无GPU型号/小时/费用或与静态池等计算量；400iteration不等token/算力。",
+          "generalization": "游戏迁移数学科学代码；Nemotron四RG提高2.6–9.6pp仅该套非全8项。真实工具基准迁移，固定benchmark无开放长期增长证据。"
+        },
+        "contribution": {
+          "bottleneck": "固定训练环境耗尽、未约束对手容易出无解题。",
+          "insight": "同模型写完整可执行MDP并学习解题；代码见解产生hint，hint/nohint差估可教性，并结合外部语料与历史环境支撑课程。",
+          "value": "在30B给出环境程序与权重实质双向回流，而非仅调采样比例或冻结教师造题；验证和课程失效也有详实公开例子。",
+          "relation_to_rsi": "30B实际共同训练、完整可执行环境更新与可继承记忆构成清楚的环境—策略共适配代表，有固定环境及语料/记忆/奖励消融和跨任务迁移；主图保留，同时明确测试选点、语义验证缺口和非学习规则递归。",
+          "comparison": "继承PAIRED regret思路但以有hint的自身替代antagonist；SPICE由文档题扩为状态转移/奖励代码；对DreamGym固定模拟器、EnvGen冻结生成器有实际设计者参数更新；与HASE固定oracle验小环境及HyperAgents自改改进算法互补。"
+        },
+        "scope_decision": "route_research",
+        "scope_reason": "30B实际共同训练、完整可执行环境更新与可继承记忆构成清楚的环境—策略共适配代表，有固定环境及语料/记忆/奖励消融和跨任务迁移；主图保留，同时明确测试选点、语义验证缺口和非学习规则递归。"
+      }
+    },
+    {
+      "id": "evomal",
+      "status": "methods",
+      "reading_scope": "完整主文§1–10、伦理/可复现性、全部Appendix A–E（攻击/防御、跨框架/语言、分支过程与隔离证明、完整统计表与实现说明）；未执行任何论文代码。",
+      "source_location": "完整主文§1–10、伦理/可复现性、全部Appendix A–E（攻击/防御、跨框架/语言、分支过程与隔离证明、完整统计表与实现说明）；未执行任何论文代码。",
+      "sections": [
+        {
+          "axis": "A",
+          "title": "目标与价值",
+          "text": "EvoMal把技能库的风险从调用外来工具推进到自我编写环节：不可信代码成为示例后，agent可以给它改名、写入自己的库，再作为后续任务的参考。原始恶意条目被移除，并不等于继承链已经清除。"
+        },
+        {
+          "axis": "B",
+          "title": "核心洞察",
+          "text": "与Practice Makes Unsafe证明只携带技能也会把旧任务危害带进新会话不同，本研究追踪新写工具再次成为参考。与Trusting Trust把恶意评测变成持久漏洞生成器不同，直接入口是参考源码，研究的是污染载体如何生出可再检索的后代。"
+        },
+        {
+          "axis": "C",
+          "title": "结构与原理",
+          "text": "实验将mini-SWE-agent接入232条正常技能与8条植入技能，BGE-M3检索前5条，仅作为源码参考。每题要求编写新工具，原始技能不能按名调用；观察新产物的保存与沙箱内哨兵回调，再按固定比例替换库并重跑任务流。"
+        },
+        {
+          "axis": "D",
+          "title": "方法与实验",
+          "text": "153条工具相关SWE-bench题上六模型自污染率20.3–41.8%；完整500题DS-V4-Pro为25.8%。移除8个原始种子后，固定153题流与50%替换率再跑5轮，Qwen3达68%；DS-V4和MiniMax的后代零检索而衰退。由此支持有限轮再传播，不等于无限自维持。"
+        },
+        {
+          "axis": "E",
+          "title": "反馈与演化",
+          "text": "这不是正常任务分数驱动的能力改进，而是技能继承路径带来的副作用。只在入库之后过滤能使保存污染归零，却仍出现49/153次先执行回调，说明保存、检索和执行是不同控制点。针对复写的系统提示大幅降低观察到的污染。"
+        },
+        {
+          "axis": "F",
+          "title": "成果与迁移",
+          "text": "代码后代的再创作与再检索使它值得独立核心位置；单纯污染持久性应归另外两篇。有效繁殖数仍未验证：代理ρ对六模型均大于1而多者衰退。效用仅测Submitted、不是真实修复；签名隔离保证依赖新技能始终不获准检索，重开放后的能力与安全未测。"
+        }
+      ],
+      "resources": "约8500次任务试验；主文复现称2×80GB GPU约8小时/单元，附录E称1×80GB约4小时，两处不一致；API DS约30分钟，六模型主矩阵约48小时，无全token/美元成本。",
+      "limitations": "ASPR主要以banner签名判定，正常控制的复制率不是有害感染率；效用无显著Submitted下降不等于功能无损。Galton–Watson独立/平稳近似不匹配有限库：表11全部代理ρ>1而多模型衰退；签名隔离定理假定不提升任何新技能、无间接上下文通道，未测安全审查后重开放。",
+      "classification_note": "保留core的不可替代部分是后代载体重新进入检索/创作链、移除原始种子后的有限轮传播及可检索性瓶颈。Practice Makes Unsafe隔离技能迁移、Trusting Trust隔离评测污染对生成器的塑造，均不能替代该后代再创作实验；不以六模型或危害幅度及未校准ρ作为入选理由。",
+      "review": {
+        "source_coverage": "main_text_and_relevant_appendix",
+        "sources": [
+          {
+            "url": "https://arxiv.org/html/2608.25776v1",
+            "location": "完整主文§1–10、伦理/可复现性、全部Appendix A–E（攻击/防御、跨框架/语言、分支过程与隔离证明、完整统计表与实现说明）；未执行任何论文代码。"
+          }
+        ],
+        "mechanism": {
+          "changed": "恶意参考技能的结构和安全测试载荷被agent复制到自己新写、保存的技能；库跨轮替换。",
+          "fixed": "模型权重、固定任务到工具编写流程、检索器、人工替换率及植入程序；不是agent改写优化器。",
+          "feedback": "正常任务语境驱动模仿；攻击不需要任务分数奖励，复制副本经检索再次进入上下文。",
+          "inheritance": "agent命名/编写的可执行技能副本，而非仅外部条目调用；移除原始种子后后代可持续。",
+          "loop": "检索源码→编写/执行新技能→保存→库中随机替换→下轮任务检索；攻击者仅预先发布。"
+        },
+        "results": {
+          "setup": "Verified工具词筛153/500、Pro114/266Python；DS-V4额外跑排除集得到完整分布；默认232正常+8植入top5/15steps；五轮50%库替换，移除或保留种子；非自然生产库长期观察。",
+          "training_objects": "没有权重训练；六冻结模型含Devstral22B、Gemma31B、Qwen3CoderNext约80B、GPT-OSS120B、MiniMax230B、DeepSeekV4Pro；BGE-M3冻结。",
+          "comparison": "去全部banner/载荷控制测正常模仿、保留载荷去banner、各层消融；名称/代码/安全/注入检测器、counter-prompt、隔离；表13 targeted对153题generic与85题targeted比较，任务分布也变化。",
+          "result": "Verified六模型ASPR20.3–41.8%、新污染31–64项，加8种子为4.9–9倍；DS-V4无banner但有载荷11.1%、完整500题25.8%；种子移除后Qwen3第5轮68%、Gemma29.4%，DS/MiniMax衰退。",
+          "ablation": "同参考上下文OpenHands/Claude Code也复制，ClaudeCode DS需50轮；针对提示使主要条件≤1.8%且0回调，15题家族有1/15残余；正则persist检查ASPR0但49/153回调；代码扫描原85%对同代码换传输原语后7%。",
+          "cost": "约8500次任务试验；主文复现称2×80GB GPU约8小时/单元，附录E称1×80GB约4小时，两处不一致；API DS约30分钟，六模型主矩阵约48小时，无全token/美元成本。",
+          "generalization": "同任务工具编写设置跨模型/语言/框架成立；未评真实SWE修复率，Submitted只表示按步数交结果；防御未面对读到完整防御文本后优化的强自适应攻击。"
+        },
+        "contribution": {
+          "bottleneck": "外部技能审查和名称阻断默认恶意载体一直是攻击者提交物，漏掉agent重新写入的后代。",
+          "insight": "分离读取→创作→执行→保存→再检索路径，并用移除种子的多轮实验检验后代传播。",
+          "value": "说明“由agent自己写的经验/工具”不应自动升级信任，也使污染隔离的作用点可具体测量。",
+          "relation_to_rsi": "保留core的不可替代部分是后代载体重新进入检索/创作链、移除原始种子后的有限轮传播及可检索性瓶颈。Practice Makes Unsafe隔离技能迁移、Trusting Trust隔离评测污染对生成器的塑造，均不能替代该后代再创作实验；不以六模型或危害幅度及未校准ρ作为入选理由。",
+          "comparison": "三篇分别切断不同归因漏洞：Practice Makes Unsafe在训练式任务暴露后只导出SKILL.md到全新会话，证明有害经验经技能状态迁移；最终P阶段不再更新技能，因此不检验后代繁殖。Trusting Trust Revisited把受污染评测反馈转成agent代码/指令，继而在中性留出题与干净评测继续演化中测试持久性，重点是错误目标塑造未来生成器。EvoMal的独立增量是源码参考→新工具创作→执行/保存→后代重新检索的闭合载体链：不能按名调用原工具，且移除8个原始种子后仍测5轮库替换与传播，部分模型增长、部分因后代不可检索而衰退。故其核心价值是可再生污染载体及检索瓶颈的直接实验，而不是多模型危害幅度或一般“污染会留下”。这仍只是固定153题流、50%库替换下的有限时域证据，不证明无限自维持、递归能力提升，亦未验证有效繁殖数ρ>1：表11代理ρ六模型全>1，却有四者平稳或衰退。"
+        },
+        "scope_decision": "enabling_method",
+        "scope_reason": "保留core的不可替代部分是后代载体重新进入检索/创作链、移除原始种子后的有限轮传播及可检索性瓶颈。Practice Makes Unsafe隔离技能迁移、Trusting Trust隔离评测污染对生成器的塑造，均不能替代该后代再创作实验；不以六模型或危害幅度及未校准ρ作为入选理由。"
+      }
+    },
+    {
+      "id": "soar-arc",
+      "status": "methods",
+      "reading_scope": "已读全部主文、方法、实验与限制及相关附录；定位以章节表号为准。",
+      "source_location": "§§3–5；Tables 1–5,7；Appendices A–I, especially B,D,F",
+      "sections": [
+        {
+          "axis": "A",
+          "title": "目标与价值",
+          "text": "SOAR针对固定语言模型程序搜索的瓶颈：增加候选虽能解更多题，却不能使下一次搜索操作本身更好。它让模型学习生成与修复程序，在ARC上检验搜索经验是否能够转化为后续能力，实际训练覆盖32B、72B和123B。"
+        },
+        {
+          "axis": "B",
+          "title": "核心洞察",
+          "text": "失败程序也定义了一个可执行的输入输出映射。把原题输出换成该程序实际输出，就能得到正确的合成任务；此外，失败程序与成功修复构成另一类训练信号。正确性来自执行和已给样例，而非仅由模型自己赞同自己。"
+        },
+        {
+          "axis": "C",
+          "title": "结构与原理",
+          "text": "每轮固定REX搜索分配至多3千次生成与3千次修复。累积档案经正确性、难度分桶、语义去重及长度规则筛选，再从原Instruct基座重新微调；继承的是数据。REX规则和训练算法不自改，因此是Model路线，不把程序档案计作Harness进化。"
+        },
+        {
+          "axis": "D",
+          "title": "方法与实验",
+          "text": "32B在相同6千候选预算下从25.25%升至44.38%；最高单模型45.50%。52%来自五模型总3万候选集成。14B消融显示hindsight兼顾较好与较差程序优于只学正确程序，联合训练生成与修复也优于两个专门模型；首轮另有近似FLOPs匹配对照。"
+        },
+        {
+          "axis": "E",
+          "title": "反馈与演化",
+          "text": "训练阶段使用400道ARC训练题的真值；四轮后汇集五种模型所有轮次数据，再进行两轮测试时适配。后者只用目标题公开示例、输入与投票，不读隐藏输出，但属于目标集适配。联合训练的重要性有边界：只训练生成器会降低其修复效果。"
+        },
+        {
+          "axis": "F",
+          "title": "成果与迁移",
+          "text": "它把CodeIt的DSL框架扩展到通用Python与可学习修复，和TTT-Discover构成SFT重启对在线RL的互补。证据限于公开ARC；跨模型数据蒸馏、测试适配和集成均贡献收益，不能将52%归给单模型独立自举。硬编码输出、投票公式披露差异、总计算账单和跨域迁移仍限制结论。"
+        }
+      ],
+      "resources": "每任务每轮上限3k生成+3k修复，达到100个完美示例程序可早停；5模型×多轮并有集成。单H100执行各模型微调、3epochs、batch1累计64；总GPUh未给。附录将finetune估计为约5% FLOPs，近似未充分分列长度/三epoch成本，非端到端实测账单。",
+      "limitations": "52%是五模型集成与测试时学习结果；训练题真值、外部预训练与人工框架仍必需。Appendix F承认硬编码输出投票污染并提供筛除；未给无污染证明。主文投票为准确率之和，D.1实际count+1000×平均准确率不同；Algorithm 3初始化也有歧义。",
+      "classification_note": "满足≥27B实际训练，具有生成/修复的因果消融、持久跨任务经验与有限算力匹配证据；作为Model程序搜索学习主节点，与固定模型program-search形成机制关系，不归Hybrid。",
+      "review": {
+        "source_coverage": "main_text_and_relevant_appendix",
+        "sources": [
+          {
+            "url": "https://arxiv.org/html/2507.14172v2",
+            "location": "§§3–5；Tables 1–5,7；Appendices A–I, especially B,D,F"
+          }
+        ],
+        "mechanism": {
+          "changed": "同一个LLM的程序采样和执行反馈修复能力经RS-LoRA/QLoRA更新，改变下一轮固定REX搜索产生的数据。",
+          "fixed": "Python解释器、REX Thompson采样及探索规则、加权投票、数据筛选和SFT算法固定；搜索档案保存目标程序，不改写harness。",
+          "feedback": "ARC训练题给定输入输出及其测试输出识别正确程序/修复；失败可执行程序按实际输出hindsight重标注；测试时仅可见示例与无标签test输入，靠示例准确率和投票选择伪数据。",
+          "inheritance": "Appendix D.4明确每轮从原Instruct模型重启微调，程序档案/数据跨轮累积；4轮后合并五种模型各轮数据训练新base，再作2轮测试时适配。",
+          "loop": "训练集400任务搜索→候选/修复及hindsight数据→重启基座SFT→更新模型再搜索；测试阶段只训练sampling，尚未训练无标签refinement。Algorithm 3初始化位置与正文跨轮调用表述不一致，应以正文及实现细节的意图为准并保留披露差异。"
+        },
+        "results": {
+          "setup": "ARC-train400任务用于设计与训练；ARC-test400任务评估，两候选答案；测试适配使用这些test题的公开示例和输入，无隐藏输出。跨任务转移与transductive适配须分开；无私有ARC或训练污染审计。",
+          "training_objects": "Qwen2.5-Coder-7B/14B/32B、Qwen2.5-72B、Mistral-large-2407/123B均微调；不是冻结大教师。",
+          "comparison": "同模型Sample6k、Sample3k+Refine3k；首轮7B近似FLOPs匹配base12.6k；CodeIt、BARC、单次闭源模型仅非同成本参照。",
+          "result": "相同6k搜索，32B从25.25%到44.38%，72B25.62%→44.88%，Mistral26.25%→45.50%；最终52%来自五模型30k候选投票，oracle57.25%。混合多模型/轮次训练集使32B ARC-test28.0%→41.1%，再测试适配约3–5pp。",
+          "ablation": "14B ARC-train sampling: base29.29、正确样本34.67、greedy-diverse hindsight36.46。分别训练采样/修复联合搜索43.88，单模型joint44.42；generation-only修复反而34.83→32.92，不能泛称所有方向正迁移。首轮等近似FLOPs优于仅加搜索；未给训练种子CI。",
+          "cost": "每任务每轮上限3k生成+3k修复，达到100个完美示例程序可早停；5模型×多轮并有集成。单H100执行各模型微调、3epochs、batch1累计64；总GPUh未给。附录将finetune估计为约5% FLOPs，近似未充分分列长度/三epoch成本，非端到端实测账单。",
+          "generalization": "ARC-train学到的生成/修复能提升未训练ARC任务；后续直接test适配不是完全独立holdout。尚无软件工程/数学发现跨域实验，长程增益递减。"
+        },
+        "contribution": {
+          "bottleneck": "固定模型程序搜索随采样预算出现边际收益下降，失败尝试不能只丢弃。",
+          "insight": "把可执行失败重标注为新任务，并同时学习生成器及修复器；跨轮搜索结果进入下一轮模型训练。",
+          "value": "在≥27B实际训练上连接搜索与学习，展示优化搜索操作可超越固定搜索的有限预算平台，是STaR/CodeIt到大模型程序搜索的重要桥梁。",
+          "relation_to_rsi": "满足≥27B实际训练，具有生成/修复的因果消融、持久跨任务经验与有限算力匹配证据；作为Model程序搜索学习主节点，与固定模型program-search形成机制关系，不归Hybrid。",
+          "comparison": "明确扩展CodeIt的DSL+hindsight到通用Python和可学习refinement；STaR只筛/rationalize答案，SOAR复用失败程序的函数语义；TTT-Discover同为固定程序搜索配合权重学习，但SOAR是SFT重启/累积数据，TTT是目标实例在线RL连续适配。"
+        },
+        "scope_decision": "route_research",
+        "scope_reason": "满足≥27B实际训练，具有生成/修复的因果消融、持久跨任务经验与有限算力匹配证据；作为Model程序搜索学习主节点，与固定模型program-search形成机制关系，不归Hybrid。"
+      }
+    },
+    {
+      "id": "agent-workflow-memory",
+      "status": "methods",
+      "reading_scope": "阅读全文、离线/在线算法、两个网页基准及跨模板子集、表示与动作空间消融、完整提示/示例和混合记忆附录。",
+      "source_location": "§1–7；Tables 1–11；附录 A–C",
+      "sections": [
+        {
+          "axis": "A",
+          "title": "目标与价值",
+          "text": "AWM把一次性网页行动轨迹转为跨任务可复用的程序性记忆，解决具体示例与新任务细节纠缠的问题。核心对象是写入提示上下文的工作流库，而非语言模型权重；在线模式能在没有规范训练轨迹时从先前成功任务逐步建立库。"
+        },
+        {
+          "axis": "B",
+          "title": "核心洞察",
+          "text": "将整条任务拆成可重用子程序，并把商品、地点等实例值改成变量，可在不同目标中重新组合。工作流作为每步判断的参考，允许根据页面实际状态偏离；直接将其封装成连续动作则容易失去中间观测。"
+        },
+        {
+          "axis": "C",
+          "title": "结构与原理",
+          "text": "离线先从同一网站训练轨迹抽取工作流，测试时冻结；在线由固定语言模型裁判过滤自生成轨迹，固定抽取器生成描述、观测、推理及动作步骤后加入网站记忆。旧库指导新轨迹，新轨迹又产生复杂工作流，但抽取规则与评价器不自改。"
+        },
+        {
+          "axis": "D",
+          "title": "方法与实验",
+          "text": "WebArena 使用冻结 GPT-4，成功率 35.5%，对 BrowserGym 23.5%；单模板只取一个例子的 197 题子集仍达 33.2%，同表示基线 20.5%。Mind2Web 离线 GPT-4 步骤成功 45.1% 对 36.2%，整任务 4.8% 对 2.0%；不能将步骤提升直接写成整体成功。"
+        },
+        {
+          "axis": "E",
+          "title": "反馈与演化",
+          "text": "反馈只决定是否纳入轨迹，未学习信用、淘汰或改进策略。WebArena 规则归纳 35.6% 与语言模型归纳 35.5% 持平，抽象必要性在该任务不成立；在线裁判误判会写入错误流程。累计成功曲线不构成冻结记忆迁移的独立证明。"
+        },
+        {
+          "axis": "F",
+          "title": "成果与迁移",
+          "text": "跨模板与离线留出结果支持可复用流程价值；跨网站在线是在目标网站继续积累，非零样本迁移。直接扩展动作空间使步骤 45.1%→46.4%，整任务却 4.8%→3.6%。它建立了轨迹、工作流记忆、可执行技能三者的清楚区分，后续 PolySkill 再解决接口重绑定。"
+        }
+      ],
+      "resources": "WebArena 报告平均动作数 5.9 对同表示基线 7.9、AutoEval 46.7；未计完整工作流归纳及裁判 token/美元、没有等预算多采样对照或多次种子方差。",
+      "limitations": "在线学习曲线是同流累计准确率，裁判会误存；抽象归纳不总优于规则存例；直接宏不充分观察页面，整任务收益并不稳健，没有改进器自我更新。",
+      "classification_note": "将跨任务成功轨迹变成抽象流程的早期代表，有在线与冻结离线两种证据及跨模板控制；与可执行技能的负面比较直接澄清持久能力载体，不依赖强 RSI 自称。",
+      "review": {
+        "source_coverage": "main_text_and_relevant_appendix",
+        "sources": [
+          {
+            "url": "https://arxiv.org/html/2409.07429v1",
+            "location": "§1–7；Tables 1–11；附录 A–C"
+          }
+        ],
+        "mechanism": {
+          "changed": "网站级持久工作流记忆：自然语言目标、环境状态、推理、带变量动作子序列。",
+          "fixed": "GPT-4/GPT-3.5 权重、工作流归纳提示、成功裁判、整库上下文使用方式与底层动作工具。",
+          "feedback": "在线由固定 LLM evaluator 二元判断整条轨迹成功后才加入；离线使用规范训练轨迹。",
+          "inheritance": "已归纳工作流用于后续不同任务，并通过新轨迹形成更复杂工作流；未显式更新评价器或归纳算法。",
+          "loop": "运行一个任务→成功过滤→抽取至少两步的抽象子程序→加入当前网站库→用新库运行下一题。"
+        },
+        "results": {
+          "setup": "WebArena 812 在线测试题按网站分组；另从各任务模板随机取一题构成 197 题（51/45/24/45/32）无重复模板在线子集。Mind2Web 有训练归纳后冻结的 offline，以及目标网站测试流上积累的 online。",
+          "training_objects": "不适用或未披露",
+          "comparison": "BrowserGym/同 accessibility-tree 版本；AutoEval；人工工作流 SteP；MindAct；检索具体示例 Synapse；规则工作流归纳",
+          "result": "WebArena AWM 35.5%，BrowserGym 23.5%、同表示 BrowserGym 15.0%、SteP 33.0%。跨模板 AWM 33.2% 对同表示 20.5%。Mind2Web GPT-4 离线步骤 45.1%、整任务 4.8%，MindAct 36.2%/2.0%；在线跨网站 33.9%/1.6%，基线 30.1%/2.0%，故步骤增益不保证整任务增益。",
+          "ablation": "WebArena 规则归纳 35.6%≈LLM 35.5%。Mind2Web 规则步骤 43.4%/整任务 2.0%，抽象工作流 45.1%/4.8%。文本表示 45.4%/3.6%；直接新动作 46.4%/3.6%，正文误说与基线同为 3.2，按 Table 9。混合 offline+online 在三种整任务指标均差于至少一个单独版本。",
+          "cost": "WebArena 报告平均动作数 5.9 对同表示基线 7.9、AutoEval 46.7；未计完整工作流归纳及裁判 token/美元、没有等预算多采样对照或多次种子方差。",
+          "generalization": "独立离线测试及跨模板子集是较强迁移证据。Mind2Web online 在新网站自身继续学习，不能称冻结记忆零样本跨域；其跨域步骤 35.5% 对 baseline 18.6%，整任务仅 1.7% 对 1.0%。"
+        },
+        "contribution": {
+          "bottleneck": "整例轨迹携带偶然网页细节，不易跨目标复用；任务独立运行也浪费先前成功。",
+          "insight": "归纳带变量的可组合子程序，作为行动决策上下文；明确同时实现离线冻结与在线积累。",
+          "value": "是程序性语言记忆的代表节点，区分上下文指导与直接执行宏，提供跨模板控制和多种表示比较。",
+          "relation_to_rsi": "将跨任务成功轨迹变成抽象流程的早期代表，有在线与冻结离线两种证据及跨模板控制；与可执行技能的负面比较直接澄清持久能力载体，不依赖强 RSI 自称。",
+          "comparison": "相对 Synapse 的完整示例检索，抽象子程序降低实例绑定；相对 Voyager 的可执行技能，主方法是逐步参考而非自动运行；PolySkill 在此类工作流之上进一步区分抽象接口和网站实现。"
+        },
+        "scope_decision": "route_research",
+        "scope_reason": "将跨任务成功轨迹变成抽象流程的早期代表，有在线与冻结离线两种证据及跨模板控制；与可执行技能的负面比较直接澄清持久能力载体，不依赖强 RSI 自称。"
+      }
+    },
+    {
+      "id": "arena-learning",
+      "status": "methods",
+      "reading_scope": "已读全部主文、方法、实验与限制及相关附录；定位以章节表号为准。",
+      "source_location": "全文§1–5、Tables 1–11、Figures 8–12；Appendix A",
+      "sections": [
+        {
+          "axis": "A",
+          "title": "目标与价值",
+          "text": "Arena Learning解决固定教师语料不能针对当前学生弱点的问题。它把模拟竞技用于反复选择训练数据，实际训练7B和Mixtral8×22B学生，后者约141B总参数、39B活跃。规模来自被更新学生，冻结70B裁判不能充当规模证据。"
+        },
+        {
+          "axis": "B",
+          "title": "核心洞察",
+          "text": "同一道题是否值得学习，取决于学生目前与其他模型的差距。强对手仍负责提供优质回答，更新后的学生则决定哪些回答下一轮最有价值。因此这是外部教师辅助、能力感知的数据闭环，不是模型凭自身判断产生全部知识。"
+        },
+        {
+          "axis": "C",
+          "title": "结构与原理",
+          "text": "固定Llama3-70B裁判交换位置比较回答，按分差选取教师示范或偏好对。每轮依次SFT、DPO、PPO。Table1显示，每轮SFT从原base重启并累积选中数据；上一轮PPO模型用于下一轮竞技，本轮三个训练阶段才连续继承。"
+        },
+        {
+          "axis": "D",
+          "title": "方法与实验",
+          "text": "三轮后8×22B的WizardArena Elo从889升至1349，MTBench从6.78升至8.85，外部ArenaHard64.3、AlpacaEval长度控制胜率48.9%。但其四项知识平均73.70低于官方Mixtral-Instruct76.92，不能据聊天评分声称能力全面超越。"
+        },
+        {
+          "axis": "E",
+          "title": "反馈与演化",
+          "text": "7B同10k样本的pair-judge选择优于随机或INSTAG，支持当前弱点反馈有价值。后续选中示范减少并偏向更难类别，但阈值由研究者从3改为1，任务池与强对手固定；没有裁判或优化算法自身变强的证据。"
+        },
+        {
+          "axis": "F",
+          "title": "成果与迁移",
+          "text": "保留为Model主线的大规模数据选择使能节点，连接WizardLM与迭代偏好学习。边界是多数消融只在7B，WizardArena同时用于选择和报告，评测bootstrap不是训练稳定性，完整训练及教师调用成本未给；三轮增益尚不等于无限持续自改进。"
+        }
+      ],
+      "resources": "SFT3ep lr5e-6 batch128 seq4096；DPO2ep lr5e-7β.3，PPO1ep lr1e-7KL.4，RM1ep。1M对战16×80G需推理3天+judge6天为评测流程估计，非完整学生训练总成本，40×对比人类一年日历时间",
+      "limitations": "不是教师/裁判自改进；每轮SFT重启意味着数据而非完整权重连续积累。裁判排名与人类总体相关≠每条奖励正确；7B消融不能全归因到141B。大模型普通知识低于官方Instruct且缺大模型等预算静态教师消融",
+      "classification_note": "实际≥27B目标上的模型感知数据/偏好反馈闭环有独立解释价值，作为外部教师辅助的Model/core enabler，不称自治递归训练器",
+      "review": {
+        "source_coverage": "main_text_and_relevant_appendix",
+        "sources": [
+          {
+            "url": "https://arxiv.org/html/2407.10627v1",
+            "location": "全文§1–5、Tables 1–11、Figures 8–12；Appendix A"
+          }
+        ],
+        "mechanism": {
+          "changed": "WizardLM-β7B/8×22B目标策略、目标表现驱动的SFT/偏好数据；每轮PPO前训练7B奖励模型",
+          "fixed": "强对手池、Llama3-70B裁判、三阶段训练器和预收集问题池",
+          "feedback": "当前学生与多个外部模型成对比较，差距阈值选择其失败题的教师答案及chosen/rejected；新学生再参赛",
+          "inheritance": "累积SFT/偏好数据，上一轮PPO只作为下一轮采集对手；Table1每轮SFT从Mistral/Mixtral原base重启，本轮SFT→DPO→PPO连续继承",
+          "loop": "三轮采样对战→弱点选择→SFT/DPO/PPO→重新对战，外部固定能力蒸馏闭环，非纯自身教师"
+        },
+        "results": {
+          "setup": "10k ShareGPT初始SFT+276k公开指令分9份；MinHash和embedding排除每benchmark最相近top5，非完全污染保证；WizardArena2k用作模型选择和报告，其余ArenaHard/AlpacaLC/MTBench及知识集补充",
+          "training_objects": "Mistral7B、Mixtral8×22B(约141B总/39B活跃)学生；7B奖励模型；Llama3-70B judge与GPT4o等冻结",
+          "comparison": "同10k random/Kmeans/IFD/INSTAG、原30k、教师数/强弱、选择阈值；绝大多数机制消融7B",
+          "result": "8×22B三轮WizardArena Elo889→1318→1332→1349、MTBench6.78→7.98→8.49→8.85；末轮ArenaHard64.3(−2/+2.5)、AlpacaLC48.9%；知识4集均值73.70低于官方MixtralInstruct76.92。7B Elo871→1274、MT6.41→8.16、LC8.2→34.2%",
+          "ablation": "首轮10k pairjudge Elo1108/MT7.23，random1072/6.77、INSTAG1096/7.12；阈值SFT0→3使30k→14.6k、Elo1047→1117。后轮阈值人工降1，选11.3k/7.8k；强教师组首轮PPO1266高于默认1214。未等总token/计算匹配三轮对固定一次采集",
+          "cost": "SFT3ep lr5e-6 batch128 seq4096；DPO2ep lr5e-7β.3，PPO1ep lr1e-7KL.4，RM1ep。1M对战16×80G需推理3天+judge6天为评测流程估计，非完整学生训练总成本，40×对比人类一年日历时间",
+          "generalization": "聊天偏好和部分知识任务，不含执行AI研究或训练器改写；8×22B主结果外部benchmark支持，但同judge自评、checkpoint选择与固定强教师上限需保留；bootstraps是评测不等于训练seed"
+        },
+        "contribution": {
+          "bottleneck": "静态大教师数据未针对当前学生薄弱点，人工偏好反馈慢且昂贵",
+          "insight": "让当前学生参与多模型竞技，把比较结果转为目标相关示范与偏好，再用新学生重做下一轮采集",
+          "value": "提供实际141B学生的数据选择闭环规模实例，桥接Evol-Instruct固定教师生成与能力感知自训练",
+          "relation_to_rsi": "实际≥27B目标上的模型感知数据/偏好反馈闭环有独立解释价值，作为外部教师辅助的Model/core enabler，不称自治递归训练器",
+          "comparison": "Evol-Instruct改写难度与学生脱钩；本工作用当前失败驱动选择。SPIN固定正例、自身负例；这里外部多教师仍提供新增正例和比较，和Self-Rewarding的可训练自评不同"
+        },
+        "scope_decision": "route_research",
+        "scope_reason": "实际≥27B目标上的模型感知数据/偏好反馈闭环有独立解释价值，作为外部教师辅助的Model/core enabler，不称自治递归训练器"
       }
     }
   ],

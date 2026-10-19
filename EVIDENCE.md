@@ -913,3 +913,9 @@ The current checkpoint contains 318 completed source reviews and 304 pending rec
 The reader now searches all 622 records; core and expanded graph views remain separate from the full evidence index. Incoming and outgoing paper relations are readable in both endpoints, with original-source relationships separated from analytical comparisons. Canonical affiliations no longer treat chairs or program titles as independent research institutions.
 
 Validation: bibliography/graph provenance, exact embedded offline data, three field maps, complete-index search and pagination, all source cards, typed two-way relations, scale and institution filters pass. Browser binary installation is unavailable in the current runtime; the browser interaction harness is retained for the release check.
+
+## 2026-10-19 — full-corpus audit checkpoint: 448 reviews
+
+The current committed snapshot reviews 448 of 622 source records; 174 remain pending. These are reading records, not 448 independent RSI systems. Decisions so far are 54 core, 227 supporting, 127 scale/mechanism supplements, 16 insufficient-evidence, 13 outside-scope and 11 overlapping records. No fixed retention quota is imposed. Reading coverage is 358 full-primary reviews, 87 rechecks of previously completed primary reading, and 3 public-material reviews. Public disclosure and actual model-training roles remain explicit.
+
+The offline atlas contains all 622 searchable source records and 164 catalog cards. Its three route maps distinguish persistent agent updates from external program search; 54 core selections include 8 cross-cutting evidence or enabling works, which are not a fourth RSI route. Institution and source-backed relationship checks pass. Automated offline UI checks pass for maps, cards, search, filters and bidirectional relations; a browser visual pass is not claimed. This is an intermediate research checkpoint, not a complete survey release.

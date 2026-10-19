@@ -111,7 +111,8 @@
       "aliases": [
         "Microsoft",
         "Microsoft Research",
-        "Microsoft Research Asia"
+        "Microsoft Research Asia",
+        "Microsoft Corporation"
       ],
       "search_aliases": [
         "微软"
@@ -1435,9 +1436,12 @@
       "kind": "academic",
       "aliases": [
         "SIAT-CAS",
-        "Shenzhen Institutes of Advanced Technology, Chinese Academy of Sciences"
+        "Shenzhen Institutes of Advanced Technology, Chinese Academy of Sciences",
+        "SIAT-UCAS",
+        "Shenzhen Institute of Advanced Technology, University of Chinese Academy of Sciences"
       ],
-      "search_aliases": []
+      "search_aliases": [],
+      "type_note": "Arena Learning首页连写SIAT-UCAS在此作为原署名入口，不虚构两个分别列出的作者单位。原文标签随工作保留。"
     },
     {
       "id": "singapore-management-university",
@@ -1526,7 +1530,8 @@
       "name": "Tongji",
       "kind": "academic",
       "aliases": [
-        "Tongji"
+        "Tongji",
+        "Tongji University"
       ],
       "search_aliases": []
     },
@@ -1563,7 +1568,8 @@
       "name": "UCLA",
       "kind": "academic",
       "aliases": [
-        "UCLA"
+        "UCLA",
+        "University of California, Los Angeles"
       ],
       "search_aliases": []
     },
@@ -1635,6 +1641,7 @@
       "kind": "academic",
       "aliases": [
         "UNC",
+        "University of North Carolina at Chapel Hill",
         "北卡罗来纳大学教堂山分校"
       ],
       "search_aliases": []
@@ -1818,7 +1825,8 @@
       "name": "Yale",
       "kind": "academic",
       "aliases": [
-        "Yale"
+        "Yale",
+        "Yale University"
       ],
       "search_aliases": []
     },
@@ -2196,6 +2204,54 @@
       "aliases": [],
       "search_aliases": [],
       "type_note": "按原文机构署名归类，机构类别不代表研究质量。"
+    },
+    {
+      "id": "cornell",
+      "name": "Cornell University",
+      "kind": "academic",
+      "aliases": [],
+      "search_aliases": [],
+      "type_note": "按原文机构署名归类；机构类别不表示研究质量。"
+    },
+    {
+      "id": "psl",
+      "name": "PSL University",
+      "kind": "academic",
+      "aliases": [],
+      "search_aliases": [],
+      "type_note": "按原文机构署名归类；机构类别不表示研究质量。"
+    },
+    {
+      "id": "college-de-france",
+      "name": "Collège de France",
+      "kind": "academic",
+      "aliases": [],
+      "search_aliases": [],
+      "type_note": "按原文机构署名归类；机构类别不表示研究质量。"
+    },
+    {
+      "id": "neurospin",
+      "name": "NeuroSpin",
+      "kind": "academic",
+      "aliases": [],
+      "search_aliases": [],
+      "type_note": "按原文机构署名归类；机构类别不表示研究质量。"
+    },
+    {
+      "id": "stevens",
+      "name": "Stevens Institute of Technology",
+      "kind": "academic",
+      "aliases": [],
+      "search_aliases": [],
+      "type_note": "按原文机构署名归类；机构类别不表示研究质量。"
+    },
+    {
+      "id": "queens",
+      "name": "Queen’s University",
+      "kind": "academic",
+      "aliases": [],
+      "search_aliases": [],
+      "type_note": "按原文机构署名归类；机构类别不表示研究质量。"
     }
   ],
   "alias_expansions": {
@@ -2207,6 +2263,10 @@
       "ens-lyon",
       "ucbl",
       "cnrs"
+    ],
+    "MIT-IBM Watson AI Lab": [
+      "mit",
+      "ibm"
     ]
   },
   "work_overrides": {

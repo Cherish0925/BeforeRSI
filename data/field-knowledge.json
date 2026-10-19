@@ -1761,6 +1761,19 @@
           "source_location": "§1–7；Tables 1–10；Appendices A–J"
         },
         {
+          "work_id": "evomal",
+          "topic_ids": [
+            "h-capabilities",
+            "h-inheritance",
+            "h-evaluation"
+          ],
+          "summary": "分离读取→创作→执行→保存→再检索路径，并用移除种子的多轮实验检验后代传播。",
+          "source_urls": [
+            "https://arxiv.org/html/2608.25776v1"
+          ],
+          "source_location": "完整主文§1–10、伦理/可复现性、全部Appendix A–E（攻击/防御、跨框架/语言、分支过程与隔离证明、完整统计表与实现说明）；未执行任何论文代码。"
+        },
+        {
           "work_id": "trusting-trust-revisited",
           "topic_ids": [
             "h-improver",
@@ -1772,6 +1785,20 @@
             "https://arxiv.org/html/2609.17817v1"
           ],
           "source_location": "§1–6；Tables1–7；Figures1–9；AppendicesA–E"
+        },
+        {
+          "work_id": "agent-workflow-memory",
+          "topic_ids": [
+            "h-memory",
+            "h-capabilities",
+            "h-inheritance",
+            "h-control"
+          ],
+          "summary": "归纳带变量的可组合子程序，作为行动决策上下文；明确同时实现离线冻结与在线积累。",
+          "source_urls": [
+            "https://arxiv.org/html/2409.07429v1"
+          ],
+          "source_location": "§1–7；Tables 1–11；附录 A–C"
         },
         {
           "work_id": "eureka",
@@ -1795,6 +1822,20 @@
             "https://arxiv.org/html/2602.10226v3"
           ],
           "source_location": "完整正文、全部方法/结果/限制；无技术附录"
+        },
+        {
+          "work_id": "autoscientists",
+          "topic_ids": [
+            "h-search",
+            "h-control",
+            "h-experience",
+            "h-inheritance"
+          ],
+          "summary": "让冻结研究员在持久共享状态上以实验结果重组团队、保留负知识，并给出queue和noise-aware champion算法。",
+          "source_urls": [
+            "https://arxiv.org/html/2605.28655v1"
+          ],
+          "source_location": "全文§1–6及AppendicesA–G、所有算法/表S1–S9、研究产物；PDF页8–9视觉复核图4–5/Table3"
         },
         {
           "work_id": "co-scientist",
@@ -3104,6 +3145,17 @@
           "source_location": "§§1–6，Algorithm 1，Tables 1–10，Appendices A–F（训练推导、验证协议、完整生成程序与提示）"
         },
         {
+          "work_id": "spade",
+          "topic_ids": [
+            "m-curriculum-learning"
+          ],
+          "summary": "同模型写完整可执行MDP并学习解题；代码见解产生hint，hint/nohint差估可教性，并结合外部语料与历史环境支撑课程。",
+          "source_urls": [
+            "https://arxiv.org/html/2608.19197v3"
+          ],
+          "source_location": "§1–10, Algorithm 1, Tables 1–8, Appendices E–J including complete generated programs"
+        },
+        {
           "work_id": "rest-meets-react",
           "topic_ids": [
             "m-bootstrapping",
@@ -3128,6 +3180,34 @@
             "https://arxiv.org/html/2505.21444v2"
           ],
           "source_location": "§3–6 Tables1–2 Figures2–8；Appendix A–L尤其B/C/G/I/J；复看SVG Figure2/5/6/31"
+        },
+        {
+          "work_id": "soar-arc",
+          "topic_ids": [
+            "m-bootstrapping",
+            "m-experience-learning",
+            "m-verifiable-feedback",
+            "m-continual-adaptation"
+          ],
+          "summary": "把可执行失败重标注为新任务，并同时学习生成器及修复器；跨轮搜索结果进入下一轮模型训练。",
+          "source_urls": [
+            "https://arxiv.org/html/2507.14172v2"
+          ],
+          "source_location": "§§3–5；Tables 1–5,7；Appendices A–I, especially B,D,F"
+        },
+        {
+          "work_id": "arena-learning",
+          "topic_ids": [
+            "m-bootstrapping",
+            "m-preferences",
+            "m-experience-learning",
+            "m-continual-adaptation"
+          ],
+          "summary": "让当前学生参与多模型竞技，把比较结果转为目标相关示范与偏好，再用新学生重做下一轮采集",
+          "source_urls": [
+            "https://arxiv.org/html/2407.10627v1"
+          ],
+          "source_location": "全文§1–5、Tables 1–11、Figures 8–12；Appendix A"
         },
         {
           "work_id": "deepseek-r1",
@@ -3995,21 +4075,6 @@
           "primary_route": "hybrid"
         },
         {
-          "work_id": "autoscientists",
-          "topic_ids": [
-            "x-training",
-            "x-organization",
-            "x-memory"
-          ],
-          "summary": "外部AI研究与动态团队组织支撑方法；非研究者模型自身协同训练。",
-          "source_urls": [
-            "https://arxiv.org/html/2605.28655"
-          ],
-          "source_location": "§3–5；Table3消融；AppendixA队列/噪声确认、B预算和团队规模、E GPT产物、G迁移。",
-          "basis": "primary_source_read",
-          "primary_route": "hybrid"
-        },
-        {
           "work_id": "execution-grounded-research",
           "topic_ids": [
             "x-training",
@@ -4343,6 +4408,20 @@
           "source_location": "全部正文和技术附录；PDF companion页12、19–21图3/4/9–13"
         },
         {
+          "work_id": "spade",
+          "topic_ids": [
+            "x-environment",
+            "x-externalization",
+            "x-feedback",
+            "x-memory"
+          ],
+          "summary": "同模型写完整可执行MDP并学习解题；代码见解产生hint，hint/nohint差估可教性，并结合外部语料与历史环境支撑课程。",
+          "source_urls": [
+            "https://arxiv.org/html/2608.19197v3"
+          ],
+          "source_location": "§1–10, Algorithm 1, Tables 1–8, Appendices E–J including complete generated programs"
+        },
+        {
           "work_id": "aira-design",
           "topic_ids": [
             "x-training"
@@ -4374,6 +4453,17 @@
             "https://arxiv.org/html/2608.12851v2"
           ],
           "source_location": "§1–7；Tables 1–10；Appendices A–J"
+        },
+        {
+          "work_id": "evomal",
+          "topic_ids": [
+            "x-deployment"
+          ],
+          "summary": "分离读取→创作→执行→保存→再检索路径，并用移除种子的多轮实验检验后代传播。",
+          "source_urls": [
+            "https://arxiv.org/html/2608.25776v1"
+          ],
+          "source_location": "完整主文§1–10、伦理/可复现性、全部Appendix A–E（攻击/防御、跨框架/语言、分支过程与隔离证明、完整统计表与实现说明）；未执行任何论文代码。"
         },
         {
           "work_id": "trusting-trust-revisited",
