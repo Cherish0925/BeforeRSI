@@ -14,7 +14,7 @@ def check():
  assert g['schema_version']=='5.1.0'
  ns={n['id']:n for n in g['nodes']};assert len(ns)==len(g['nodes'])
  assert {n['id'] for n in g['nodes'] if n['type']=='work'}==ids
- assert all(n['type'] in {'work','mechanism','institution','field_topic','field_subtopic','company'} for n in ns.values())
+ assert all(n['type'] in {'work','mechanism','institution','field_topic','field_subtopic','company','research_actor'} for n in ns.values())
  edgeids=set()
  for x in g['edges']:
   assert x['id'] not in edgeids;edgeids.add(x['id'])
@@ -26,6 +26,7 @@ def check():
   elif x['kind']=='mechanism':assert ns[x['source']]['type']=='mechanism' and x['evidence']=='survey_classification'
   elif x['kind'] in {'topic_contains','concept_relation'}:assert x['evidence']=='survey_structure'
   elif x['kind']=='addresses_topic':assert ns[x['source']]['type']=='work' and ns[x['target']]['type']=='field_topic' and x['evidence']=='survey_classification'
+  elif x['kind']=='research_participation':assert ns[x['source']]['type']=='research_actor' and ns[x['target']]['type']=='work' and x['evidence']=='source_metadata'
   elif x['kind']=='company_work':assert ns[x['source']]['type']=='company' and ns[x['target']]['type']=='work' and x['evidence']=='source_metadata'
   elif x['kind']=='company_topic':assert ns[x['source']]['type']=='company' and ns[x['target']]['type']=='field_topic' and x['evidence']=='survey_classification'
   elif x['kind']=='company_direction':assert ns[x['source']]['type']=='company' and ns[x['target']]['type']=='field_topic' and x['evidence']=='declared_direction'
@@ -61,7 +62,18 @@ def check():
  assert m and json.loads(m.group(1))==a
  assert '__LITERATURE_DATA__' not in page and '__DOMAIN_' not in page
  assert page==(R/'research/atlas/RSI_Field_Atlas_v5_1.html').read_text()
- assert '__INDUSTRY_' not in page
+ assert '__INDUSTRY_' not in page and '__ACTOR_' not in page
+ actors={x['id']:x for x in a['actors']['actors']}
+ assert len(actors)==len(a['actors']['actors'])
+ for w in works.values():
+  assert set(w['actor_ids'])<=set(actors)
+  assert len(w['actor_ids'])==len(set(w['actor_ids']))
+  assert w['actor_types'] and all(t in {x['id'] for x in a['actors']['types']} for t in w['actor_types'])
+ assert 'profile-apex' not in works['asi-bench']['actor_ids'] # Hosting is not authorship.
+ assert works['rl-tango']['actor_ids'].count('mit')==1
+ assert 'ibm' in works['rl-tango']['actor_ids']
+ assert works['rl-tango']['cooperation']=='academic_industry'
+ assert works['ace']['cooperation']=='academic_industry'
  industry=a['industry'];profiles=industry['companies']
  assert len({c['id'] for c in profiles})==len(profiles)==industry['counts']['total']
  assert {n['id'] for n in ns.values() if n['type']=='company'}=={'company-'+c['id'] for c in profiles}

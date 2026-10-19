@@ -3,10 +3,8 @@ const GUIDE=A.reader_guide;
 let guideCase='dgm';
 function guideLink(){return `<div class="reader-jump"><p><b>怎样读懂三张图？</b>　先分清改了哪里、靠什么改、什么进入下一轮；再比较研究贡献。</p><button data-nav="guide">读懂 RSI：机制与研究对照 →</button></div>`;}
 function readerGap(w){
- if(w.status==='archive')return '';
- const missing='ABCDEF'.split('').filter(x=>!w.sections.some(s=>s.axis===x));
- if(w.status==='screened')return `<div class="reader-gap"><b>这是一条待深化的来源档案，尚不是完整研究讲解。</b>${missing.length?'当前缺少 '+missing.map(x=>x+' · '+GUIDE.axes.find(a=>a.axis===x).title).join('、')+'；':''}已有段落也需补足方法、关键实验和结果解释。${!w.resources?'本条尚未整理资源条件。':''}暂未讲清不表示研究没有价值。</div>`;
- return `<p class="reader-source">阅读范围：相关方法与结果段落。A–F 已组织成文，不代表全文、实现和全部实验均已复现。</p>`;
+ if(w.status!=='screened')return '';
+ return `<div class="reader-gap">资料初筛：目前已整理研究问题与基本机制，方法、实验和结果尚待完整阅读。</div>`;
 }
 function readerCardBrief(w){const c=GUIDE.cases.find(x=>x.id===w.id);if(!c)return '';return `<section class="reader-card-brief"><h3>机制提要 · ${esc(c.headline)}</h3><p>${esc(c.loop)}</p><p><b>实际改变</b>　${esc(c.changed)}</p><p><b>保持给定</b>　${esc(c.fixed)}</p><p class="reader-source">${esc(c.basis)}</p></section>`;}
 function readerLoop(){return `<div class="reader-loop-wrap"><svg class="reader-loop" viewBox="0 0 920 355" role="img" aria-label="执行、反馈、修改、继承与下一轮改进的关系"><defs><marker id="reader-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10Z" fill="#618492"/></marker></defs><g fill="none" stroke="#618492" stroke-width="2" marker-end="url(#reader-arrow)"><path d="M278 83H330"/><path d="M588 83H640"/><path d="M772 124V206"/><path d="M640 248H589"/><path d="M330 248H279"/><path d="M146 206V124"/></g>${[[18,42,'任务与环境','遇到什么问题 / 获得什么经验'],[330,42,'执行与实验','模型 × 工作流 × 工具'],[642,42,'反馈与比较','正确性、偏好、失败原因、代价'],[642,207,'提出并实施修改','搜索、编辑、训练或结构调整'],[330,207,'保留的新版本','参数、程序、知识或方法'],[18,207,'后续执行与改进','新版本再次参与任务和更新']].map(([x,y,t,s])=>`<g><rect x="${x}" y="${y}" width="260" height="82" rx="9" fill="#fff" stroke="#bcd0d8"/><text x="${x+130}" y="${y+32}" text-anchor="middle" font-size="17" font-weight="650">${t}</text><text class="sub" x="${x+130}" y="${y+58}" text-anchor="middle">${s}</text></g>`).join('')}<text x="460" y="165" text-anchor="middle" font-size="14" font-weight="600">核心问题：新版本是否改变了下一次改进的条件与方法？</text><text class="sub" x="460" y="335" text-anchor="middle">这是阅读反馈路径的示意图；各论文的可改部分与实证边界不同。</text></svg></div>`;}

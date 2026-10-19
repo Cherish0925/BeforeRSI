@@ -1,0 +1,1740 @@
+{
+  "version": "1.0",
+  "updated": "2026-10-19",
+  "types": [
+    {
+      "id": "academic",
+      "title": "高校与科研机构",
+      "short": "高校 / 科研",
+      "description": "大学、公共及独立科研机构",
+      "main": true
+    },
+    {
+      "id": "tech",
+      "title": "综合科技企业",
+      "short": "科技企业",
+      "description": "综合业务、平台与计算基础设施企业的研究团队",
+      "main": true
+    },
+    {
+      "id": "ai",
+      "title": "AI 专业公司",
+      "short": "AI 公司",
+      "description": "以 AI 研究、模型或智能体为主营方向，包含初创公司",
+      "main": true
+    },
+    {
+      "id": "independent",
+      "title": "独立团队与开源社区",
+      "short": "独立团队",
+      "description": "开源团队、研究社区与独立研究者",
+      "main": false
+    },
+    {
+      "id": "unresolved",
+      "title": "机构类型待确认",
+      "short": "待确认",
+      "description": "保留原始署名，不推断机构类型",
+      "main": false
+    }
+  ],
+  "scope": "机构类型用于浏览研究参与关系；研究价值、证据强度和模型规模在工作记录中分别表达。",
+  "rules": [
+    "主要依据论文署名或官方发布记录关联工作，保留原始实验室名称。",
+    "机构按研究组织形态归类；不以人员、融资或参数量推断质量。AI 专业公司包括成熟公司和初创公司。",
+    "合作是同一工作上的多方参与关系。同一工作可出现在多个主体类别中，矩阵单元格按工作去重，不能横向或纵向直接相加。",
+    "仅托管代码的关系不计为研究署名；公开方向与已收录工作分开展示。",
+    "MIT–IBM 联合实验室归到 MIT 与 IBM 的浏览入口，关系标记为联合实验室署名；不把它解释为两条独立署名。",
+    "原始署名尚未整理的工作保留待确认状态，不因缺少机构信息从研究目录删除。"
+  ],
+  "actors": [
+    {
+      "id": "alibaba",
+      "name": "Alibaba",
+      "kind": "tech",
+      "aliases": [
+        "Alibaba AI Data",
+        "Alibaba Qwen",
+        "Alibaba Tongyi Lab"
+      ],
+      "search_aliases": [
+        "阿里巴巴",
+        "阿里",
+        "通义",
+        "千问"
+      ]
+    },
+    {
+      "id": "google",
+      "name": "Google",
+      "kind": "tech",
+      "aliases": [
+        "Google",
+        "Google Cloud",
+        "Google Cloud AI Research",
+        "Google DeepMind",
+        "Google Research"
+      ],
+      "search_aliases": [
+        "谷歌"
+      ]
+    },
+    {
+      "id": "meta",
+      "name": "Meta",
+      "kind": "tech",
+      "aliases": [
+        "Meta AI",
+        "Meta Superintelligence Labs"
+      ],
+      "search_aliases": [
+        "Meta AI"
+      ]
+    },
+    {
+      "id": "microsoft",
+      "name": "Microsoft",
+      "kind": "tech",
+      "aliases": [
+        "Microsoft",
+        "Microsoft Research",
+        "Microsoft Research Asia"
+      ],
+      "search_aliases": [
+        "微软"
+      ]
+    },
+    {
+      "id": "tencent",
+      "name": "Tencent",
+      "kind": "tech",
+      "aliases": [
+        "Tencent AI Lab",
+        "Tencent AI Seattle"
+      ],
+      "search_aliases": [
+        "腾讯"
+      ]
+    },
+    {
+      "id": "nec",
+      "name": "NEC",
+      "kind": "tech",
+      "aliases": [
+        "NEC Labs",
+        "NEC Labs America"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "bytedance",
+      "name": "ByteDance",
+      "kind": "tech",
+      "aliases": [
+        "ByteDance Seed"
+      ],
+      "search_aliases": [
+        "字节跳动",
+        "字节",
+        "Seed"
+      ]
+    },
+    {
+      "id": "cisco",
+      "name": "Cisco",
+      "kind": "tech",
+      "aliases": [
+        "Cisco Research"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "kuaishou",
+      "name": "Kuaishou",
+      "kind": "tech",
+      "aliases": [
+        "Kuaishou Kolors"
+      ],
+      "search_aliases": [
+        "快手"
+      ]
+    },
+    {
+      "id": "salesforce",
+      "name": "Salesforce",
+      "kind": "tech",
+      "aliases": [
+        "Salesforce AI"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "samsung",
+      "name": "Samsung",
+      "kind": "tech",
+      "aliases": [
+        "Samsung AI Center–Toronto"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "servicenow",
+      "name": "ServiceNow",
+      "kind": "tech",
+      "aliases": [
+        "ServiceNow AI"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "naver",
+      "name": "NAVER",
+      "kind": "tech",
+      "aliases": [
+        "NAVER Labs"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "taolive",
+      "name": "TaoLive",
+      "kind": "tech",
+      "aliases": [
+        "TaoLive AIGC LLM Team"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "amazon",
+      "name": "Amazon",
+      "kind": "tech",
+      "aliases": [
+        "Amazon"
+      ],
+      "search_aliases": [
+        "亚马逊"
+      ]
+    },
+    {
+      "id": "baidu",
+      "name": "Baidu",
+      "kind": "tech",
+      "aliases": [
+        "Baidu"
+      ],
+      "search_aliases": [
+        "百度"
+      ]
+    },
+    {
+      "id": "databricks",
+      "name": "Databricks",
+      "kind": "tech",
+      "aliases": [
+        "Databricks"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "krafton",
+      "name": "KRAFTON",
+      "kind": "tech",
+      "aliases": [
+        "KRAFTON"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "meituan",
+      "name": "Meituan",
+      "kind": "tech",
+      "aliases": [
+        "Meituan"
+      ],
+      "search_aliases": [
+        "美团"
+      ]
+    },
+    {
+      "id": "nvidia",
+      "name": "NVIDIA",
+      "kind": "tech",
+      "aliases": [
+        "NVIDIA"
+      ],
+      "search_aliases": [
+        "英伟达"
+      ]
+    },
+    {
+      "id": "xiaohongshu",
+      "name": "Xiaohongshu",
+      "kind": "tech",
+      "aliases": [
+        "Xiaohongshu"
+      ],
+      "search_aliases": [
+        "小红书"
+      ]
+    },
+    {
+      "id": "mit",
+      "name": "MIT",
+      "kind": "academic",
+      "aliases": [
+        "MIT",
+        "CSAIL"
+      ],
+      "search_aliases": [
+        "麻省理工",
+        "麻省理工学院"
+      ]
+    },
+    {
+      "id": "eth-z-rich",
+      "name": "ETH Zürich",
+      "kind": "academic",
+      "aliases": [
+        "ETH",
+        "ETH Zürich"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "peking-university",
+      "name": "Peking University",
+      "kind": "academic",
+      "aliases": [
+        "Peking University",
+        "PKU"
+      ],
+      "search_aliases": [
+        "北京大学",
+        "北大"
+      ]
+    },
+    {
+      "id": "tsinghua-university",
+      "name": "Tsinghua University",
+      "kind": "academic",
+      "aliases": [
+        "Tsinghua",
+        "清华大学"
+      ],
+      "search_aliases": [
+        "清华",
+        "清华大学"
+      ]
+    },
+    {
+      "id": "uc-berkeley",
+      "name": "UC Berkeley",
+      "kind": "academic",
+      "aliases": [
+        "Berkeley"
+      ],
+      "search_aliases": [
+        "加州大学伯克利分校",
+        "伯克利"
+      ]
+    },
+    {
+      "id": "profile-discovery-loop",
+      "name": "Discovery Loop",
+      "kind": "ai",
+      "aliases": [],
+      "profile_id": "discovery-loop",
+      "search_aliases": [
+        "Jeff Dean",
+        "姐夫哥",
+        "Sanjay Ghemawat",
+        "Quoc Le",
+        "Oriol Vinyals"
+      ],
+      "type_sources": [
+        "https://www.discoveryloop.com/"
+      ]
+    },
+    {
+      "id": "profile-metacircle",
+      "name": "元环智能 · MetaCircle",
+      "kind": "ai",
+      "aliases": [
+        "MetaCircle"
+      ],
+      "profile_id": "metacircle",
+      "search_aliases": [
+        "MetaCircleAI",
+        "刘子鸣",
+        "Ziming Liu"
+      ],
+      "type_sources": [
+        "https://meta-circle.com/"
+      ]
+    },
+    {
+      "id": "profile-apex",
+      "name": "超衍智能 · Apex Intelligence",
+      "kind": "ai",
+      "aliases": [
+        "Apex Intelligence"
+      ],
+      "profile_id": "apex",
+      "search_aliases": [
+        "Apex",
+        "apexin-ai",
+        "超衍"
+      ],
+      "type_sources": [
+        "https://www.apexin.ai/"
+      ]
+    },
+    {
+      "id": "profile-nous",
+      "name": "Nous Research",
+      "kind": "ai",
+      "aliases": [
+        "Nous Research"
+      ],
+      "profile_id": "nous",
+      "search_aliases": [
+        "Hermes",
+        "Hermes Agent"
+      ],
+      "type_sources": [
+        "https://github.com/NousResearch/hermes-agent"
+      ]
+    },
+    {
+      "id": "profile-intology",
+      "name": "Intology",
+      "kind": "ai",
+      "aliases": [
+        "Intology"
+      ],
+      "profile_id": "intology",
+      "search_aliases": [
+        "Locus",
+        "Zochi"
+      ],
+      "type_sources": [
+        "https://intology.ai/"
+      ]
+    },
+    {
+      "id": "profile-autoscience",
+      "name": "Autoscience",
+      "kind": "ai",
+      "aliases": [
+        "Autoscience"
+      ],
+      "profile_id": "autoscience",
+      "search_aliases": [
+        "Carl",
+        "Mira",
+        "Autoscience Institute"
+      ],
+      "type_sources": [
+        "https://www.autoscience.ai/"
+      ]
+    },
+    {
+      "id": "profile-recursive",
+      "name": "Recursive / Recursive Superintelligence",
+      "kind": "ai",
+      "aliases": [
+        "Recursive Superintelligence"
+      ],
+      "profile_id": "recursive",
+      "search_aliases": [
+        "Recursive",
+        "RSI Inc"
+      ],
+      "type_sources": [
+        "https://www.recursive.com/"
+      ]
+    },
+    {
+      "id": "profile-sakana",
+      "name": "Sakana AI",
+      "kind": "ai",
+      "aliases": [
+        "Sakana AI"
+      ],
+      "profile_id": "sakana",
+      "search_aliases": [
+        "Sakana"
+      ],
+      "type_sources": [
+        "https://sakana.ai/"
+      ]
+    },
+    {
+      "id": "profile-weco",
+      "name": "Weco AI",
+      "kind": "ai",
+      "aliases": [
+        "Weco AI"
+      ],
+      "profile_id": "weco",
+      "search_aliases": [
+        "Weco",
+        "AIDE",
+        "Aiden"
+      ],
+      "type_sources": [
+        "https://www.weco.ai/"
+      ]
+    },
+    {
+      "id": "profile-igent",
+      "name": "iGent AI",
+      "kind": "ai",
+      "aliases": [
+        "iGent AI"
+      ],
+      "profile_id": "igent",
+      "search_aliases": [
+        "iGent",
+        "SICA",
+        "Maestro"
+      ],
+      "type_sources": [
+        "https://igent.ai/"
+      ]
+    },
+    {
+      "id": "profile-prime-intellect",
+      "name": "Prime Intellect",
+      "kind": "ai",
+      "aliases": [
+        "Prime Intellect"
+      ],
+      "profile_id": "prime-intellect",
+      "search_aliases": [
+        "PrimeIntellect",
+        "PRIME-RL",
+        "INTELLECT"
+      ],
+      "type_sources": [
+        "https://www.primeintellect.ai/blog/intellect-3"
+      ]
+    },
+    {
+      "id": "profile-frontis",
+      "name": "Frontis.AI / Horizon Research",
+      "kind": "ai",
+      "aliases": [
+        "Frontis.AI",
+        "Horizon Research"
+      ],
+      "profile_id": "frontis",
+      "search_aliases": [
+        "Frontis",
+        "OpenMLE",
+        "Frontis-MA1"
+      ],
+      "type_sources": [
+        "https://arxiv.org/html/2607.28568v1"
+      ]
+    },
+    {
+      "id": "profile-deepwisdom",
+      "name": "DeepWisdom",
+      "kind": "ai",
+      "aliases": [
+        "DeepWisdom"
+      ],
+      "profile_id": "deepwisdom",
+      "search_aliases": [
+        "AFlow",
+        "MetaGPT"
+      ],
+      "type_sources": [
+        "https://arxiv.org/pdf/2410.10762"
+      ]
+    },
+    {
+      "id": "profile-memtensor",
+      "name": "MemTensor",
+      "kind": "ai",
+      "aliases": [
+        "MemTensor"
+      ],
+      "profile_id": "memtensor",
+      "search_aliases": [
+        "MemRL"
+      ],
+      "type_sources": [
+        "https://arxiv.org/html/2601.03192v1"
+      ]
+    },
+    {
+      "id": "profile-hexo",
+      "name": "Hexo Labs",
+      "kind": "ai",
+      "aliases": [
+        "Hexo Labs"
+      ],
+      "profile_id": "hexo",
+      "search_aliases": [
+        "Hexo",
+        "SIA"
+      ],
+      "type_sources": [
+        "https://arxiv.org/pdf/2605.27276"
+      ]
+    },
+    {
+      "id": "profile-iquest",
+      "name": "IQuest Research",
+      "kind": "ai",
+      "aliases": [
+        "IQuest Research"
+      ],
+      "profile_id": "iquest",
+      "search_aliases": [
+        "IQuest",
+        "ModularRSI"
+      ],
+      "type_sources": [
+        "https://arxiv.org/html/2609.14857v2"
+      ]
+    },
+    {
+      "id": "profile-langboat",
+      "name": "Langboat",
+      "kind": "ai",
+      "aliases": [
+        "Langboat"
+      ],
+      "profile_id": "langboat",
+      "search_aliases": [
+        "澜舟",
+        "ModularRSI"
+      ],
+      "type_sources": [
+        "https://arxiv.org/html/2609.14857v2"
+      ]
+    },
+    {
+      "id": "profile-flower",
+      "name": "Flower Labs",
+      "kind": "ai",
+      "aliases": [
+        "Flower Labs"
+      ],
+      "profile_id": "flower",
+      "search_aliases": [
+        "Flower",
+        "Red Queen Gödel Machine"
+      ],
+      "type_sources": [
+        "https://arxiv.org/html/2606.26294v3"
+      ]
+    },
+    {
+      "id": "profile-bespoke",
+      "name": "Bespoke Labs",
+      "kind": "ai",
+      "aliases": [
+        "Bespoke Labs"
+      ],
+      "profile_id": "bespoke",
+      "search_aliases": [
+        "Bespoke",
+        "GEPA"
+      ],
+      "type_sources": [
+        "https://arxiv.org/pdf/2507.19457v2"
+      ]
+    },
+    {
+      "id": "profile-etude",
+      "name": "Etude AI",
+      "kind": "ai",
+      "aliases": [
+        "Etude AI"
+      ],
+      "profile_id": "etude",
+      "search_aliases": [
+        "Etude",
+        "RewardHarness"
+      ],
+      "type_sources": [
+        "https://arxiv.org/html/2605.08703v1"
+      ]
+    },
+    {
+      "id": "profile-tokenwave",
+      "name": "TokenWave.AI",
+      "kind": "ai",
+      "aliases": [
+        "TokenWave.AI"
+      ],
+      "profile_id": "tokenwave",
+      "search_aliases": [
+        "TokenWave",
+        "HarnessDev",
+        "Aspire"
+      ],
+      "type_sources": [
+        "https://arxiv.org/pdf/2609.01437"
+      ]
+    },
+    {
+      "id": "profile-einsia",
+      "name": "Einsia.AI",
+      "kind": "ai",
+      "aliases": [
+        "Einsia.AI"
+      ],
+      "profile_id": "einsia",
+      "search_aliases": [
+        "Einsia",
+        "AI4AI-Bench"
+      ],
+      "type_sources": [
+        "https://arxiv.org/pdf/2608.20318"
+      ]
+    },
+    {
+      "id": "profile-deepseek",
+      "name": "DeepSeek",
+      "kind": "ai",
+      "aliases": [
+        "DeepSeek"
+      ],
+      "profile_id": "deepseek",
+      "search_aliases": [
+        "深度求索",
+        "DeepSeek-AI"
+      ],
+      "type_sources": [
+        "https://arxiv.org/html/2501.12948v1"
+      ]
+    },
+    {
+      "id": "profile-moonshot",
+      "name": "Moonshot AI · 月之暗面",
+      "kind": "ai",
+      "aliases": [
+        "Moonshot AI"
+      ],
+      "profile_id": "moonshot",
+      "search_aliases": [
+        "Moonshot",
+        "月之暗面",
+        "Kimi"
+      ],
+      "type_sources": [
+        "https://arxiv.org/html/2507.20534v1"
+      ]
+    },
+    {
+      "id": "profile-zhipu",
+      "name": "Zhipu AI · 智谱",
+      "kind": "ai",
+      "aliases": [
+        "Zhipu AI"
+      ],
+      "profile_id": "zhipu",
+      "search_aliases": [
+        "智谱",
+        "Zhipu",
+        "Z.ai"
+      ],
+      "type_sources": [
+        "https://arxiv.org/pdf/2411.02337"
+      ]
+    },
+    {
+      "id": "profile-reflection",
+      "name": "Reflection AI",
+      "kind": "ai",
+      "aliases": [],
+      "profile_id": "reflection",
+      "search_aliases": [
+        "Reflection",
+        "Beam"
+      ],
+      "type_sources": [
+        "https://reflection.ai/"
+      ]
+    },
+    {
+      "id": "profile-miromind",
+      "name": "MiroMind",
+      "kind": "ai",
+      "aliases": [],
+      "profile_id": "miromind",
+      "search_aliases": [
+        "MiroThinker",
+        "MiroMind 1.7",
+        "H1"
+      ],
+      "type_sources": [
+        "https://www.miromind.ai/"
+      ]
+    },
+    {
+      "id": "openai",
+      "name": "OpenAI",
+      "kind": "ai",
+      "aliases": [
+        "OpenAI"
+      ],
+      "type_sources": [
+        "https://openai.com/about/"
+      ],
+      "search_aliases": [
+        "OpenAI"
+      ]
+    },
+    {
+      "id": "anthropic",
+      "name": "Anthropic",
+      "kind": "ai",
+      "aliases": [
+        "Anthropic"
+      ],
+      "type_sources": [
+        "https://www.anthropic.com/company"
+      ],
+      "search_aliases": [
+        "Anthropic"
+      ]
+    },
+    {
+      "id": "sambanova",
+      "name": "SambaNova",
+      "kind": "ai",
+      "aliases": [
+        "SambaNova"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "ag2",
+      "name": "AG2",
+      "kind": "independent",
+      "aliases": [
+        "AG2 AI"
+      ],
+      "type_note": "开源项目与研究团队；不以项目名称推断法律形态或公司规模。",
+      "type_sources": [
+        "https://www.ag2.ai/"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "m-a-p",
+      "name": "M-A-P",
+      "kind": "independent",
+      "aliases": [
+        "M-A-P"
+      ],
+      "type_note": "按论文署名保留研究团队身份；本分类不推断公司规模或法律形态。",
+      "search_aliases": []
+    },
+    {
+      "id": "arise-foundation",
+      "name": "ARISE Foundation",
+      "kind": "unresolved",
+      "aliases": [
+        "ARISE Foundation"
+      ],
+      "type_note": "已保留论文中的名称；机构类型尚未核定。",
+      "search_aliases": []
+    },
+    {
+      "id": "independent-authors",
+      "name": "独立研究者",
+      "kind": "independent",
+      "aliases": [
+        "Independent",
+        "Independent Researchers"
+      ],
+      "countable": false,
+      "type_note": "按每篇工作的作者署名分别记录；这是浏览分组，不是同一个机构。",
+      "search_aliases": []
+    },
+    {
+      "id": "ibm",
+      "name": "IBM",
+      "kind": "tech",
+      "aliases": [],
+      "type_sources": [
+        "https://mitibm.mit.edu/"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "ai2",
+      "name": "Ai2",
+      "kind": "academic",
+      "aliases": [
+        "Ai2"
+      ],
+      "search_aliases": [
+        "艾伦人工智能研究所"
+      ]
+    },
+    {
+      "id": "beihang",
+      "name": "Beihang",
+      "kind": "academic",
+      "aliases": [
+        "Beihang"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "beijing-institute-of-technology",
+      "name": "Beijing Institute of Technology",
+      "kind": "academic",
+      "aliases": [
+        "Beijing Institute of Technology"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "bigai",
+      "name": "BIGAI",
+      "kind": "academic",
+      "aliases": [
+        "BIGAI"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "boston-university",
+      "name": "Boston University",
+      "kind": "academic",
+      "aliases": [
+        "Boston University"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "bristol",
+      "name": "Bristol",
+      "kind": "academic",
+      "aliases": [
+        "Bristol"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "buffalo",
+      "name": "Buffalo",
+      "kind": "academic",
+      "aliases": [
+        "Buffalo"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "caltech",
+      "name": "Caltech",
+      "kind": "academic",
+      "aliases": [
+        "Caltech"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "cambridge",
+      "name": "Cambridge",
+      "kind": "academic",
+      "aliases": [
+        "Cambridge"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "carnegie-mellon",
+      "name": "Carnegie Mellon",
+      "kind": "academic",
+      "aliases": [
+        "Carnegie Mellon"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "columbia-university",
+      "name": "Columbia University",
+      "kind": "academic",
+      "aliases": [
+        "Columbia University"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "cuhk",
+      "name": "CUHK",
+      "kind": "academic",
+      "aliases": [
+        "CUHK"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "cuhk-shenzhen",
+      "name": "CUHK-Shenzhen",
+      "kind": "academic",
+      "aliases": [
+        "CUHK-Shenzhen"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "duke",
+      "name": "Duke",
+      "kind": "academic",
+      "aliases": [
+        "Duke"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "edinburgh",
+      "name": "Edinburgh",
+      "kind": "academic",
+      "aliases": [
+        "Edinburgh"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "emory",
+      "name": "Emory",
+      "kind": "academic",
+      "aliases": [
+        "Emory"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "flatiron-institute",
+      "name": "Flatiron Institute",
+      "kind": "academic",
+      "aliases": [
+        "Flatiron Institute"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "fudan",
+      "name": "Fudan",
+      "kind": "academic",
+      "aliases": [
+        "Fudan"
+      ],
+      "search_aliases": [
+        "复旦大学",
+        "复旦"
+      ]
+    },
+    {
+      "id": "georgia-tech",
+      "name": "Georgia Tech",
+      "kind": "academic",
+      "aliases": [
+        "Georgia Tech"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "harbin-institute-of-technology",
+      "name": "Harbin Institute of Technology",
+      "kind": "academic",
+      "aliases": [
+        "Harbin Institute of Technology"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "harvard",
+      "name": "Harvard",
+      "kind": "academic",
+      "aliases": [
+        "Harvard"
+      ],
+      "search_aliases": [
+        "哈佛大学"
+      ]
+    },
+    {
+      "id": "hec-montr-al",
+      "name": "HEC Montréal",
+      "kind": "academic",
+      "aliases": [
+        "HEC Montréal"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "hku",
+      "name": "HKU",
+      "kind": "academic",
+      "aliases": [
+        "HKU"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "hkust",
+      "name": "HKUST",
+      "kind": "academic",
+      "aliases": [
+        "HKUST"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "hkust-gz",
+      "name": "HKUST(GZ)",
+      "kind": "academic",
+      "aliases": [
+        "HKUST(GZ)"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "hohai",
+      "name": "Hohai",
+      "kind": "academic",
+      "aliases": [
+        "Hohai"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "inria",
+      "name": "Inria",
+      "kind": "academic",
+      "aliases": [
+        "Inria"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "kaist",
+      "name": "KAIST",
+      "kind": "academic",
+      "aliases": [
+        "KAIST"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "kaust",
+      "name": "KAUST",
+      "kind": "academic",
+      "aliases": [
+        "KAUST"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "manchester",
+      "name": "Manchester",
+      "kind": "academic",
+      "aliases": [
+        "Manchester"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "maryland",
+      "name": "Maryland",
+      "kind": "academic",
+      "aliases": [
+        "Maryland"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "mbzuai",
+      "name": "MBZUAI",
+      "kind": "academic",
+      "aliases": [
+        "MBZUAI"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "mcml",
+      "name": "MCML",
+      "kind": "academic",
+      "aliases": [
+        "MCML"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "mila",
+      "name": "Mila",
+      "kind": "academic",
+      "aliases": [
+        "Mila"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "minnesota",
+      "name": "Minnesota",
+      "kind": "academic",
+      "aliases": [
+        "Minnesota"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "montr-al",
+      "name": "Montréal",
+      "kind": "academic",
+      "aliases": [
+        "Montréal"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "nanjing",
+      "name": "Nanjing",
+      "kind": "academic",
+      "aliases": [
+        "Nanjing"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "northeastern",
+      "name": "Northeastern",
+      "kind": "academic",
+      "aliases": [
+        "Northeastern"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "notre-dame",
+      "name": "Notre Dame",
+      "kind": "academic",
+      "aliases": [
+        "Notre Dame"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "ntu",
+      "name": "NTU",
+      "kind": "academic",
+      "aliases": [
+        "NTU"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "nus",
+      "name": "NUS",
+      "kind": "academic",
+      "aliases": [
+        "NUS"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "nyu",
+      "name": "NYU",
+      "kind": "academic",
+      "aliases": [
+        "NYU"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "ohio-state",
+      "name": "Ohio State",
+      "kind": "academic",
+      "aliases": [
+        "Ohio State"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "oxford",
+      "name": "Oxford",
+      "kind": "academic",
+      "aliases": [
+        "Oxford"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "penn-state",
+      "name": "Penn State",
+      "kind": "academic",
+      "aliases": [
+        "Penn State"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "princeton",
+      "name": "Princeton",
+      "kind": "academic",
+      "aliases": [
+        "Princeton"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "purdue",
+      "name": "Purdue",
+      "kind": "academic",
+      "aliases": [
+        "Purdue"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "rpi",
+      "name": "RPI",
+      "kind": "academic",
+      "aliases": [
+        "RPI"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "ruc",
+      "name": "RUC",
+      "kind": "academic",
+      "aliases": [
+        "RUC"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "rutgers",
+      "name": "Rutgers",
+      "kind": "academic",
+      "aliases": [
+        "Rutgers"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "seoul-national-university",
+      "name": "Seoul National University",
+      "kind": "academic",
+      "aliases": [
+        "Seoul National University"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "shanghai-ai-laboratory",
+      "name": "Shanghai AI Laboratory",
+      "kind": "academic",
+      "aliases": [
+        "Shanghai AI Laboratory"
+      ],
+      "search_aliases": [
+        "上海人工智能实验室"
+      ]
+    },
+    {
+      "id": "shanghai-innovation-institute",
+      "name": "Shanghai Innovation Institute",
+      "kind": "academic",
+      "aliases": [
+        "Shanghai Innovation Institute"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "shanxi",
+      "name": "Shanxi",
+      "kind": "academic",
+      "aliases": [
+        "Shanxi"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "siat-cas",
+      "name": "SIAT-CAS",
+      "kind": "academic",
+      "aliases": [
+        "SIAT-CAS"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "singapore-management-university",
+      "name": "Singapore Management University",
+      "kind": "academic",
+      "aliases": [
+        "Singapore Management University"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "sjtu",
+      "name": "SJTU",
+      "kind": "academic",
+      "aliases": [
+        "SJTU"
+      ],
+      "search_aliases": [
+        "上海交通大学",
+        "上海交大"
+      ]
+    },
+    {
+      "id": "southeast-university",
+      "name": "Southeast University",
+      "kind": "academic",
+      "aliases": [
+        "Southeast University"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "stanford",
+      "name": "Stanford",
+      "kind": "academic",
+      "aliases": [
+        "Stanford"
+      ],
+      "search_aliases": [
+        "斯坦福",
+        "斯坦福大学"
+      ]
+    },
+    {
+      "id": "suat",
+      "name": "SUAT",
+      "kind": "academic",
+      "aliases": [
+        "SUAT"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "sutd",
+      "name": "SUTD",
+      "kind": "academic",
+      "aliases": [
+        "SUTD"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "sysu",
+      "name": "SYSU",
+      "kind": "academic",
+      "aliases": [
+        "SYSU"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "tianjin",
+      "name": "Tianjin",
+      "kind": "academic",
+      "aliases": [
+        "Tianjin"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "tongji",
+      "name": "Tongji",
+      "kind": "academic",
+      "aliases": [
+        "Tongji"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "toronto",
+      "name": "Toronto",
+      "kind": "academic",
+      "aliases": [
+        "Toronto"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "ubc",
+      "name": "UBC",
+      "kind": "academic",
+      "aliases": [
+        "UBC"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "uchicago",
+      "name": "UChicago",
+      "kind": "academic",
+      "aliases": [
+        "UChicago"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "ucla",
+      "name": "UCLA",
+      "kind": "academic",
+      "aliases": [
+        "UCLA"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "ucsb",
+      "name": "UCSB",
+      "kind": "academic",
+      "aliases": [
+        "UCSB"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "ucsc",
+      "name": "UCSC",
+      "kind": "academic",
+      "aliases": [
+        "UCSC"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "ucsd",
+      "name": "UCSD",
+      "kind": "academic",
+      "aliases": [
+        "UCSD"
+      ],
+      "search_aliases": [
+        "加州大学圣迭戈分校"
+      ]
+    },
+    {
+      "id": "uestc",
+      "name": "UESTC",
+      "kind": "academic",
+      "aliases": [
+        "UESTC"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "uic",
+      "name": "UIC",
+      "kind": "academic",
+      "aliases": [
+        "UIC"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "uiuc",
+      "name": "UIUC",
+      "kind": "academic",
+      "aliases": [
+        "UIUC"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "unc",
+      "name": "UNC",
+      "kind": "academic",
+      "aliases": [
+        "UNC"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "university-of-arizona",
+      "name": "University of Arizona",
+      "kind": "academic",
+      "aliases": [
+        "University of Arizona"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "university-of-michigan",
+      "name": "University of Michigan",
+      "kind": "academic",
+      "aliases": [
+        "University of Michigan"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "university-of-queensland",
+      "name": "University of Queensland",
+      "kind": "academic",
+      "aliases": [
+        "University of Queensland"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "upenn",
+      "name": "UPenn",
+      "kind": "academic",
+      "aliases": [
+        "UPenn"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "ustc",
+      "name": "USTC",
+      "kind": "academic",
+      "aliases": [
+        "USTC"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "ut-austin",
+      "name": "UT Austin",
+      "kind": "academic",
+      "aliases": [
+        "UT Austin"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "ut-dallas",
+      "name": "UT Dallas",
+      "kind": "academic",
+      "aliases": [
+        "UT Dallas"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "uw",
+      "name": "UW",
+      "kind": "academic",
+      "aliases": [
+        "UW"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "uw-madison",
+      "name": "UW–Madison",
+      "kind": "academic",
+      "aliases": [
+        "UW–Madison"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "uzh",
+      "name": "UZH",
+      "kind": "academic",
+      "aliases": [
+        "UZH"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "vector",
+      "name": "Vector",
+      "kind": "academic",
+      "aliases": [
+        "Vector"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "virginia",
+      "name": "Virginia",
+      "kind": "academic",
+      "aliases": [
+        "Virginia"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "washu",
+      "name": "WashU",
+      "kind": "academic",
+      "aliases": [
+        "WashU"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "waterloo",
+      "name": "Waterloo",
+      "kind": "academic",
+      "aliases": [
+        "Waterloo"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "xidian",
+      "name": "Xidian",
+      "kind": "academic",
+      "aliases": [
+        "Xidian"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "york",
+      "name": "York",
+      "kind": "academic",
+      "aliases": [
+        "York"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "zhejiang",
+      "name": "Zhejiang",
+      "kind": "academic",
+      "aliases": [
+        "Zhejiang"
+      ],
+      "search_aliases": [
+        "浙江大学",
+        "浙大"
+      ]
+    },
+    {
+      "id": "gen-verse",
+      "name": "Gen-Verse",
+      "kind": "unresolved",
+      "aliases": [],
+      "type_note": "项目团队名称已记录；署名机构尚未核定。",
+      "search_aliases": []
+    }
+  ],
+  "alias_expansions": {
+    "MIT–IBM Watson AI Lab": [
+      "mit",
+      "ibm"
+    ]
+  },
+  "work_overrides": {
+    "rsi-anything": [
+      "gen-verse"
+    ]
+  }
+}

@@ -3,6 +3,7 @@
 import json,re,html
 from pathlib import Path
 from collections import Counter
+from research_actors import build_actors
 R=Path(__file__).resolve().parents[1]
 def read(p):return json.loads((R/p).read_text())
 def write(p,d):(R/p).write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n')
@@ -72,6 +73,12 @@ pool={x['arxiv_id'] for x in read('data/discovery-pool.json')['entries'] if 'arx
 catalog_arxiv={m.group(1) for w in works for u in w['sources'] if (m:=re.search(r'arxiv.org/(?:abs|pdf|html)/(\d{4}\.\d{4,5})',u))}
 a['discovery_coverage']={'total':len(pool),'overlap':len(pool & catalog_arxiv),'unmatched':len(pool-catalog_arxiv),'rule':'exact arXiv identifier, ignoring version suffix'}
 a['reader_guide']=read('data/reader-guide.json')
+a['actors']=build_actors(read('data/research-actors.json'),works,I)
+for actor in a['actors']['actors']:
+ nodes.append(dict(id='actor-'+actor['id'],type='research_actor',label=actor['name'],actor_kind=actor['kind']))
+for w in works:
+ for p in w['participants']:
+  edges.append(dict(id='participation-'+p['actor_id']+'-'+w['id'],source='actor-'+p['actor_id'],target=w['id'],kind='research_participation',label='研究参与',evidence='source_metadata',roles=p['roles'],raw_labels=p['raw_labels'],sources=[dict(url=u,location='论文署名 / 官方发布；归并规则见 research-actors.json') for u in p['sources']]))
 write('data/literature-atlas.json',a)
 for rt in F['routes']:
  for n in rt['nodes']:
@@ -85,7 +92,7 @@ for rt in F['routes']:
   for tid in q['topic_ids']:
    edges.append(dict(id='addresses-'+rt['id']+'-'+q['work_id']+'-'+tid,source=q['work_id'],target='topic-'+tid,kind='addresses_topic',label='研究此主题 / 相关机制',explanation=q['summary'],evidence='survey_classification',sources=[dict(url=u,location=q['source_location']) for u in q['source_urls']]))
 write('data/knowledge-graph.json',{'schema_version':'5.1.0','updated':E['updated'],'scope':E['scope'],'nodes':nodes,'edges':edges,'field_views':{r['id']:['topic-'+n['id'] for n in r['nodes']] for r in F['routes']},'route_views':{rt['id']:[w['id'] for w in works if w['route']==rt['id']] for rt in route_specs},'work_bindings':[dict(work_id=w['id'],node_ids=[m for m in w['methods'] if m in {g['id'] for g in E['groups']}]) for w in works]})
-template=(R/'scripts/atlas-template.html').read_text();assert '__LITERATURE_DATA__' in template
+template=(R/'scripts/atlas-template.html').read_text().replace('__ACTOR_STYLE__',(R/'scripts/actor-style.css').read_text()).replace('__ACTOR_SCRIPT__',(R/'scripts/actor-views.js').read_text());assert '__LITERATURE_DATA__' in template
 page=template.replace('__READER_STYLE__',(R/'scripts/reader-guide.css').read_text()).replace('__READER_SCRIPT__',(R/'scripts/reader-guide.js').read_text()).replace('__DOMAIN_STYLE__',(R/'scripts/domain-style.css').read_text()).replace('__DOMAIN_SCRIPT__',(R/'scripts/domain-views.js').read_text()).replace('__INDUSTRY_SCRIPT__',(R/'scripts/industry-views.js').read_text()).replace('__INDUSTRY_STYLE__',(R/'scripts/industry-style.css').read_text()).replace('__LITERATURE_DATA__',json.dumps(a,ensure_ascii=False,separators=(',',':')).replace('</','<\\/'))
 for name in ['index.html','RSI_Field_Atlas_v5_1.html']:(R/'research/atlas'/name).write_text(page)
 md=['# RSI 领域知识图谱 · v5.1','','[打开三张领域图谱](research/atlas/RSI_Field_Atlas_v5_1.html) · [文字版研究结构](research/atlas/field-guide.md)','','![首页三张领域图谱](assets/atlas/landscape-overview.png)','','首页直接显示 Harness、Model、Model × Harness 三张领域图。29 个研究主题、其下的具体子问题以及 60 条机制联系先组织研究空间；论文、团队和机构再挂接到对应位置。主题间联系是综述归纳，论文间的引用、扩展和方法对照另行标注。','','点击主题可展开关键问题、原理、技术、相邻关系与对应研究；点击箭头可看联系的含义和原文例证。本综述仅讨论公开研究，不包含项目自身理论或设计。','','## 当前收录进度','','| 路线 | 收录研究 | 方法段落已读 | 摘要初筛 |','|---|---:|---:|---:|']
@@ -93,6 +100,26 @@ for r in route_specs:md.append(f'| {r["title"]} | {r["counts"]["catalog"]} | {r[
 md+=['',f'合计 {counts["routed"]} 项路线研究，另有 {counts["crosscut"]} 项跨路线评测/形式研究与 22 项历史、背景材料，共 {len(works)} 项。路线数量包括相关技术和初筛候选，不等于认证的高质量 RSI 系统数。','',f'{counts["relations"]} 条逐项解释的论文关系；机构署名与方法归类作为单独边类型。','', '## 阅读方式','','1. 首页先读三张领域图；点击主题，展开子问题与具体方法。','2. 沿主题联系看经验、反馈、参数和程序怎样相互作用；论文不决定主题是否存在。','3. 读主题下的论文与团队，打开 A–F 研究卡片；卡片可以定位回相关领域主题。','4. 切换论文关系图，看明确引用、扩展与综述方法对照。','5. 使用全局检索查论文、机构、算法或任务。','','已确认低于 27B 的 Model / 混合机制参考默认不出现在路线论文主视图，可在补充区或搜索中读取。未公开规模与低质量不是同一判断。','', '## 数据与复建','','`data/field-knowledge.json` 保存领域主题、子问题、机制联系和论文挂接；`data/literature-editorial.json` 保存逐篇叙述与论文关系；`data/literature-atlas.json` 是阅读数据，`data/knowledge-graph.json` 是带来源的多关系图。','','```bash','python scripts/build_literature_graphs.py','python scripts/check_literature_graphs.py','node scripts/check_atlas_ui.cjs','```','', '上一轮九页 PDF 是 2026-10-18 的导读快照；当前图谱以 v5.1 HTML 与上述数据为准。']
 md += ['', '## 公司与产业团队', '', f"公司索引共 {I['counts']['total']} 项：{I['counts']['research']} 项关联具体研究、{I['counts']['direction']} 项仅公开方向、{I['counts']['adjacent']} 项邻近研究待确认。关联 {I['counts']['linked_works']} 项去重研究；不是全球公司总数。", '', '[公司与研究关联表](research/atlas/industry-guide.md) · 来源：`data/industry-landscape.json`。公司索引与各领域主题双向连接。', '']
 (R/'RESEARCH_ATLAS.md').write_text('\n'.join(md)+'\n')
+actor_guide=['# 研究主体与三条 RSI 路线','','研究路线解释更新对象与机制；主体类别解释研究由谁开展。合作记录在具体工作上，不把合作团队另造为互斥的第四类机构。','','| 研究主体 | 定义 |','|---|---|']
+for t in a['actors']['types']:
+ actor_guide.append(f'| {t["title"]} | {t["description"]} |')
+actor_guide+=['','## 交叉统计','','下表包括全部 107 项主路线工作。HTML 默认隐藏其中 9 项 <27B 补充机制，因此默认矩阵显示 98 项；勾选后与下表一致。单元格对工作去重；合作研究可出现在多个主体行中，不能将各行相加。','','| 主体 | Harness | Model | Model × Harness | 三条路线合计 |','|---|---:|---:|---:|---:|']
+routed=[w for w in works if w['route'] in {'harness','model','hybrid'}]
+for t in a['actors']['types']:
+ ws=[w for w in routed if t['id'] in w['actor_types']]
+ actor_guide.append('| '+t['title']+' | '+' | '.join(str(sum(w['route']==rt for w in ws)) for rt in ['harness','model','hybrid'])+f' | {len(ws)} |')
+actor_guide+=['','## 归属规则','']+['- '+rule for rule in a['actors']['rules']]
+actor_guide+=['','## 机构与工作索引','','机构名称用于归并浏览；完整原始署名与来源保留在每项研究的阅读卡片中。独立研究者仅为浏览分组，不计为一个机构。','']
+for t in a['actors']['types']:
+ actor_guide+=['### '+t['title'],'']
+ for actor in sorted([q for q in a['actors']['actors'] if q['kind']==t['id']],key=lambda q:q['name'].lower()):
+  current=[byid[wid] for wid in actor['work_ids'] if byid[wid]['status']!='archive']
+  if not current and not actor.get('profile_id'):continue
+  actor_guide+=['- **'+actor['name']+'**：'+('；'.join('['+w['short']+']('+w['primary_url']+')' for w in current) or '公开方向 / 邻近资料；见公司公开档案。')]
+ actor_guide+=['']
+(R/'research/atlas/actor-guide.md').write_text('\n'.join(actor_guide)+'\n')
+with (R/'RESEARCH_ATLAS.md').open('a') as out:
+ out.write('\n## 按研究主体交叉浏览\n\n[机构与合作索引](research/atlas/actor-guide.md)。HTML 首页保留三张领域图，随后提供“研究主体 × 技术路线”矩阵；机构页可按主体、路线、合作与阅读状态筛选。\n\n`data/research-actors.json` 保存规范机构、别名与归并规则；论文原始署名和公司托管关系保持独立。路线页使用可分页研究列表，完整 A–F 阅读卡片、全局搜索和论文关系图继续保留。\n')
 fm=['# 三条 RSI 路线：领域主题与机制联系','','这是一份可修订的问题空间与方法索引。主题可以交叉；主路线以实际更新对象确定。没有对应论文的主题仍保留，暂未收录不等于研究不存在。','']
 for rt in F['routes']:
  fm+=['## '+rt['title'],'',rt['definition'],'',rt['central_question'],'',rt['scene'],'']

@@ -839,3 +839,13 @@ Source fact: [RHI §3–5 and Appendix A](https://arxiv.org/html/2607.15524v1) e
 Source fact: [MASS Appendix J](https://arxiv.org/html/2610.12176v1) identifies RHI as its workflow-search source and adds trajectory post-training. A source-explicit RHI → MASS edge now records this relationship.
 
 Editorial synthesis: the reader guide separates changed object, functional role, feedback, inheritance and empirical generalization. It does not propose a universal RSI theory. Exact arXiv-id matching finds 82 overlaps between the 567 discovery leads and the catalog; 485 leads have no such match. These are bibliography counts, not quality decisions.
+
+### 2026-10-19 — Research participants and institutional provenance
+
+**Editorial classification / reader engineering.** The atlas now treats technical route and institutional participant as independent dimensions. Universities and research institutes, diversified technology enterprises, and AI-specialist companies form three main browsing groups; independent communities and unresolved affiliations remain visible supplementary groups. These labels do not rank scientific quality or assert company size, funding, or maturity.
+
+`data/research-actors.json` records canonical organizations and raw aliases. Work participation continues to use the paper affiliation or existing official-release evidence, with per-work provenance. Canonical grouping does not delete laboratory names. Collaboration is derived from a work's participants, rather than inferred from citations, model providers, funding, or founders' previous employers. Code hosting alone is excluded from research participation (notably Apex / ASI-Bench).
+
+Primary identity checks used for the grouping include [OpenAI's company description](https://openai.com/about/), [Anthropic's company description](https://www.anthropic.com/company), the [MIT–IBM lab](https://mitibm.mit.edu/), and the [AG2 project](https://www.ag2.ai/). The historical MIT–IBM Watson AI Lab affiliation is retained verbatim; MIT and IBM are browsing parents with a `joint_lab` relationship, not two fabricated direct affiliations. Unresolved names, including ARISE Foundation, retain an unresolved type. Existing work-level mechanism, scale, result and reading-depth records are unchanged.
+
+The participant matrix counts distinct works in each cell. A cross-sector collaboration can occur in more than one row. The default view retains the existing scale preference (98 displayed main-route works); enabling the nine <27B supplementary mechanisms restores all 107. This is an index of the current corpus, not a census of all RSI organizations.

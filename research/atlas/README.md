@@ -60,3 +60,11 @@ The company checks cover all 27 dialogs, Chinese/English/name alias searches, co
 ## Mechanism reading guide
 
 The new “读懂 RSI” entry explains feedback, changed objects, inherited state and the six A–F reading angles. Six switchable examples and four concrete comparisons link directly to research cards. Brief source screens now show their missing explanation rather than appearing complete. RHI received a bounded method reading and a primary-source link to MASS. The 567-lead discovery pool overlaps the catalog in 82 arXiv identifiers; 485 remain unmatched. Counts are retrieval and reading progress, not the size or quality distribution of the field.
+
+## 机构与团队浏览更新 · 2026-10-19
+
+首页先展示三张领域知识图谱，随后展示研究主体与技术路线的交叉矩阵。点击数量进入对应工作；“机构与团队”页可切换机构目录和研究列表，并按主体、路线、产学合作、跨机构合作及阅读状态筛选。AI 专业公司涵盖成熟公司与初创团队；机构类型不作为质量等级。
+
+同一机构的实验室和名称别名已归并浏览，论文原始署名保留。研究列表按固定位置显示方法提要、团队与阅读状态，支持分页；完整 A–F 阅读卡片、来源、论文关系图与全局检索仍然可用。
+
+[机构与合作文字索引](actor-guide.md) · 结构化规则：`data/research-actors.json`。

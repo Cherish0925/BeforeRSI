@@ -48,3 +48,9 @@ node scripts/check_atlas_ui.cjs
 
 [公司与研究关联表](research/atlas/industry-guide.md) · 来源：`data/industry-landscape.json`。公司索引与各领域主题双向连接。
 
+
+## 按研究主体交叉浏览
+
+[机构与合作索引](research/atlas/actor-guide.md)。HTML 首页保留三张领域图，随后提供“研究主体 × 技术路线”矩阵；机构页可按主体、路线、合作与阅读状态筛选。
+
+`data/research-actors.json` 保存规范机构、别名与归并规则；论文原始署名和公司托管关系保持独立。路线页使用可分页研究列表，完整 A–F 阅读卡片、全局搜索和论文关系图继续保留。

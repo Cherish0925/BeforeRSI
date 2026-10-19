@@ -2201,6 +2201,930 @@
       "status": "adjacent"
     },
     {
+      "id": "actor-alibaba",
+      "type": "research_actor",
+      "label": "Alibaba",
+      "actor_kind": "tech"
+    },
+    {
+      "id": "actor-google",
+      "type": "research_actor",
+      "label": "Google",
+      "actor_kind": "tech"
+    },
+    {
+      "id": "actor-meta",
+      "type": "research_actor",
+      "label": "Meta",
+      "actor_kind": "tech"
+    },
+    {
+      "id": "actor-microsoft",
+      "type": "research_actor",
+      "label": "Microsoft",
+      "actor_kind": "tech"
+    },
+    {
+      "id": "actor-tencent",
+      "type": "research_actor",
+      "label": "Tencent",
+      "actor_kind": "tech"
+    },
+    {
+      "id": "actor-nec",
+      "type": "research_actor",
+      "label": "NEC",
+      "actor_kind": "tech"
+    },
+    {
+      "id": "actor-bytedance",
+      "type": "research_actor",
+      "label": "ByteDance",
+      "actor_kind": "tech"
+    },
+    {
+      "id": "actor-cisco",
+      "type": "research_actor",
+      "label": "Cisco",
+      "actor_kind": "tech"
+    },
+    {
+      "id": "actor-kuaishou",
+      "type": "research_actor",
+      "label": "Kuaishou",
+      "actor_kind": "tech"
+    },
+    {
+      "id": "actor-salesforce",
+      "type": "research_actor",
+      "label": "Salesforce",
+      "actor_kind": "tech"
+    },
+    {
+      "id": "actor-samsung",
+      "type": "research_actor",
+      "label": "Samsung",
+      "actor_kind": "tech"
+    },
+    {
+      "id": "actor-servicenow",
+      "type": "research_actor",
+      "label": "ServiceNow",
+      "actor_kind": "tech"
+    },
+    {
+      "id": "actor-naver",
+      "type": "research_actor",
+      "label": "NAVER",
+      "actor_kind": "tech"
+    },
+    {
+      "id": "actor-taolive",
+      "type": "research_actor",
+      "label": "TaoLive",
+      "actor_kind": "tech"
+    },
+    {
+      "id": "actor-amazon",
+      "type": "research_actor",
+      "label": "Amazon",
+      "actor_kind": "tech"
+    },
+    {
+      "id": "actor-baidu",
+      "type": "research_actor",
+      "label": "Baidu",
+      "actor_kind": "tech"
+    },
+    {
+      "id": "actor-databricks",
+      "type": "research_actor",
+      "label": "Databricks",
+      "actor_kind": "tech"
+    },
+    {
+      "id": "actor-krafton",
+      "type": "research_actor",
+      "label": "KRAFTON",
+      "actor_kind": "tech"
+    },
+    {
+      "id": "actor-meituan",
+      "type": "research_actor",
+      "label": "Meituan",
+      "actor_kind": "tech"
+    },
+    {
+      "id": "actor-nvidia",
+      "type": "research_actor",
+      "label": "NVIDIA",
+      "actor_kind": "tech"
+    },
+    {
+      "id": "actor-xiaohongshu",
+      "type": "research_actor",
+      "label": "Xiaohongshu",
+      "actor_kind": "tech"
+    },
+    {
+      "id": "actor-mit",
+      "type": "research_actor",
+      "label": "MIT",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-eth-z-rich",
+      "type": "research_actor",
+      "label": "ETH Zürich",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-peking-university",
+      "type": "research_actor",
+      "label": "Peking University",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-tsinghua-university",
+      "type": "research_actor",
+      "label": "Tsinghua University",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-uc-berkeley",
+      "type": "research_actor",
+      "label": "UC Berkeley",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-profile-discovery-loop",
+      "type": "research_actor",
+      "label": "Discovery Loop",
+      "actor_kind": "ai"
+    },
+    {
+      "id": "actor-profile-metacircle",
+      "type": "research_actor",
+      "label": "元环智能 · MetaCircle",
+      "actor_kind": "ai"
+    },
+    {
+      "id": "actor-profile-apex",
+      "type": "research_actor",
+      "label": "超衍智能 · Apex Intelligence",
+      "actor_kind": "ai"
+    },
+    {
+      "id": "actor-profile-nous",
+      "type": "research_actor",
+      "label": "Nous Research",
+      "actor_kind": "ai"
+    },
+    {
+      "id": "actor-profile-intology",
+      "type": "research_actor",
+      "label": "Intology",
+      "actor_kind": "ai"
+    },
+    {
+      "id": "actor-profile-autoscience",
+      "type": "research_actor",
+      "label": "Autoscience",
+      "actor_kind": "ai"
+    },
+    {
+      "id": "actor-profile-recursive",
+      "type": "research_actor",
+      "label": "Recursive / Recursive Superintelligence",
+      "actor_kind": "ai"
+    },
+    {
+      "id": "actor-profile-sakana",
+      "type": "research_actor",
+      "label": "Sakana AI",
+      "actor_kind": "ai"
+    },
+    {
+      "id": "actor-profile-weco",
+      "type": "research_actor",
+      "label": "Weco AI",
+      "actor_kind": "ai"
+    },
+    {
+      "id": "actor-profile-igent",
+      "type": "research_actor",
+      "label": "iGent AI",
+      "actor_kind": "ai"
+    },
+    {
+      "id": "actor-profile-prime-intellect",
+      "type": "research_actor",
+      "label": "Prime Intellect",
+      "actor_kind": "ai"
+    },
+    {
+      "id": "actor-profile-frontis",
+      "type": "research_actor",
+      "label": "Frontis.AI / Horizon Research",
+      "actor_kind": "ai"
+    },
+    {
+      "id": "actor-profile-deepwisdom",
+      "type": "research_actor",
+      "label": "DeepWisdom",
+      "actor_kind": "ai"
+    },
+    {
+      "id": "actor-profile-memtensor",
+      "type": "research_actor",
+      "label": "MemTensor",
+      "actor_kind": "ai"
+    },
+    {
+      "id": "actor-profile-hexo",
+      "type": "research_actor",
+      "label": "Hexo Labs",
+      "actor_kind": "ai"
+    },
+    {
+      "id": "actor-profile-iquest",
+      "type": "research_actor",
+      "label": "IQuest Research",
+      "actor_kind": "ai"
+    },
+    {
+      "id": "actor-profile-langboat",
+      "type": "research_actor",
+      "label": "Langboat",
+      "actor_kind": "ai"
+    },
+    {
+      "id": "actor-profile-flower",
+      "type": "research_actor",
+      "label": "Flower Labs",
+      "actor_kind": "ai"
+    },
+    {
+      "id": "actor-profile-bespoke",
+      "type": "research_actor",
+      "label": "Bespoke Labs",
+      "actor_kind": "ai"
+    },
+    {
+      "id": "actor-profile-etude",
+      "type": "research_actor",
+      "label": "Etude AI",
+      "actor_kind": "ai"
+    },
+    {
+      "id": "actor-profile-tokenwave",
+      "type": "research_actor",
+      "label": "TokenWave.AI",
+      "actor_kind": "ai"
+    },
+    {
+      "id": "actor-profile-einsia",
+      "type": "research_actor",
+      "label": "Einsia.AI",
+      "actor_kind": "ai"
+    },
+    {
+      "id": "actor-profile-deepseek",
+      "type": "research_actor",
+      "label": "DeepSeek",
+      "actor_kind": "ai"
+    },
+    {
+      "id": "actor-profile-moonshot",
+      "type": "research_actor",
+      "label": "Moonshot AI · 月之暗面",
+      "actor_kind": "ai"
+    },
+    {
+      "id": "actor-profile-zhipu",
+      "type": "research_actor",
+      "label": "Zhipu AI · 智谱",
+      "actor_kind": "ai"
+    },
+    {
+      "id": "actor-profile-reflection",
+      "type": "research_actor",
+      "label": "Reflection AI",
+      "actor_kind": "ai"
+    },
+    {
+      "id": "actor-profile-miromind",
+      "type": "research_actor",
+      "label": "MiroMind",
+      "actor_kind": "ai"
+    },
+    {
+      "id": "actor-openai",
+      "type": "research_actor",
+      "label": "OpenAI",
+      "actor_kind": "ai"
+    },
+    {
+      "id": "actor-anthropic",
+      "type": "research_actor",
+      "label": "Anthropic",
+      "actor_kind": "ai"
+    },
+    {
+      "id": "actor-sambanova",
+      "type": "research_actor",
+      "label": "SambaNova",
+      "actor_kind": "ai"
+    },
+    {
+      "id": "actor-ag2",
+      "type": "research_actor",
+      "label": "AG2",
+      "actor_kind": "independent"
+    },
+    {
+      "id": "actor-m-a-p",
+      "type": "research_actor",
+      "label": "M-A-P",
+      "actor_kind": "independent"
+    },
+    {
+      "id": "actor-arise-foundation",
+      "type": "research_actor",
+      "label": "ARISE Foundation",
+      "actor_kind": "unresolved"
+    },
+    {
+      "id": "actor-independent-authors",
+      "type": "research_actor",
+      "label": "独立研究者",
+      "actor_kind": "independent"
+    },
+    {
+      "id": "actor-ibm",
+      "type": "research_actor",
+      "label": "IBM",
+      "actor_kind": "tech"
+    },
+    {
+      "id": "actor-ai2",
+      "type": "research_actor",
+      "label": "Ai2",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-beihang",
+      "type": "research_actor",
+      "label": "Beihang",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-beijing-institute-of-technology",
+      "type": "research_actor",
+      "label": "Beijing Institute of Technology",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-bigai",
+      "type": "research_actor",
+      "label": "BIGAI",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-boston-university",
+      "type": "research_actor",
+      "label": "Boston University",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-bristol",
+      "type": "research_actor",
+      "label": "Bristol",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-buffalo",
+      "type": "research_actor",
+      "label": "Buffalo",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-caltech",
+      "type": "research_actor",
+      "label": "Caltech",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-cambridge",
+      "type": "research_actor",
+      "label": "Cambridge",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-carnegie-mellon",
+      "type": "research_actor",
+      "label": "Carnegie Mellon",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-columbia-university",
+      "type": "research_actor",
+      "label": "Columbia University",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-cuhk",
+      "type": "research_actor",
+      "label": "CUHK",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-cuhk-shenzhen",
+      "type": "research_actor",
+      "label": "CUHK-Shenzhen",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-duke",
+      "type": "research_actor",
+      "label": "Duke",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-edinburgh",
+      "type": "research_actor",
+      "label": "Edinburgh",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-emory",
+      "type": "research_actor",
+      "label": "Emory",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-flatiron-institute",
+      "type": "research_actor",
+      "label": "Flatiron Institute",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-fudan",
+      "type": "research_actor",
+      "label": "Fudan",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-georgia-tech",
+      "type": "research_actor",
+      "label": "Georgia Tech",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-harbin-institute-of-technology",
+      "type": "research_actor",
+      "label": "Harbin Institute of Technology",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-harvard",
+      "type": "research_actor",
+      "label": "Harvard",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-hec-montr-al",
+      "type": "research_actor",
+      "label": "HEC Montréal",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-hku",
+      "type": "research_actor",
+      "label": "HKU",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-hkust",
+      "type": "research_actor",
+      "label": "HKUST",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-hkust-gz",
+      "type": "research_actor",
+      "label": "HKUST(GZ)",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-hohai",
+      "type": "research_actor",
+      "label": "Hohai",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-inria",
+      "type": "research_actor",
+      "label": "Inria",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-kaist",
+      "type": "research_actor",
+      "label": "KAIST",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-kaust",
+      "type": "research_actor",
+      "label": "KAUST",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-manchester",
+      "type": "research_actor",
+      "label": "Manchester",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-maryland",
+      "type": "research_actor",
+      "label": "Maryland",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-mbzuai",
+      "type": "research_actor",
+      "label": "MBZUAI",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-mcml",
+      "type": "research_actor",
+      "label": "MCML",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-mila",
+      "type": "research_actor",
+      "label": "Mila",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-minnesota",
+      "type": "research_actor",
+      "label": "Minnesota",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-montr-al",
+      "type": "research_actor",
+      "label": "Montréal",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-nanjing",
+      "type": "research_actor",
+      "label": "Nanjing",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-northeastern",
+      "type": "research_actor",
+      "label": "Northeastern",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-notre-dame",
+      "type": "research_actor",
+      "label": "Notre Dame",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-ntu",
+      "type": "research_actor",
+      "label": "NTU",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-nus",
+      "type": "research_actor",
+      "label": "NUS",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-nyu",
+      "type": "research_actor",
+      "label": "NYU",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-ohio-state",
+      "type": "research_actor",
+      "label": "Ohio State",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-oxford",
+      "type": "research_actor",
+      "label": "Oxford",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-penn-state",
+      "type": "research_actor",
+      "label": "Penn State",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-princeton",
+      "type": "research_actor",
+      "label": "Princeton",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-purdue",
+      "type": "research_actor",
+      "label": "Purdue",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-rpi",
+      "type": "research_actor",
+      "label": "RPI",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-ruc",
+      "type": "research_actor",
+      "label": "RUC",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-rutgers",
+      "type": "research_actor",
+      "label": "Rutgers",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-seoul-national-university",
+      "type": "research_actor",
+      "label": "Seoul National University",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-shanghai-ai-laboratory",
+      "type": "research_actor",
+      "label": "Shanghai AI Laboratory",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-shanghai-innovation-institute",
+      "type": "research_actor",
+      "label": "Shanghai Innovation Institute",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-shanxi",
+      "type": "research_actor",
+      "label": "Shanxi",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-siat-cas",
+      "type": "research_actor",
+      "label": "SIAT-CAS",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-singapore-management-university",
+      "type": "research_actor",
+      "label": "Singapore Management University",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-sjtu",
+      "type": "research_actor",
+      "label": "SJTU",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-southeast-university",
+      "type": "research_actor",
+      "label": "Southeast University",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-stanford",
+      "type": "research_actor",
+      "label": "Stanford",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-suat",
+      "type": "research_actor",
+      "label": "SUAT",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-sutd",
+      "type": "research_actor",
+      "label": "SUTD",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-sysu",
+      "type": "research_actor",
+      "label": "SYSU",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-tianjin",
+      "type": "research_actor",
+      "label": "Tianjin",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-tongji",
+      "type": "research_actor",
+      "label": "Tongji",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-toronto",
+      "type": "research_actor",
+      "label": "Toronto",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-ubc",
+      "type": "research_actor",
+      "label": "UBC",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-uchicago",
+      "type": "research_actor",
+      "label": "UChicago",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-ucla",
+      "type": "research_actor",
+      "label": "UCLA",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-ucsb",
+      "type": "research_actor",
+      "label": "UCSB",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-ucsc",
+      "type": "research_actor",
+      "label": "UCSC",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-ucsd",
+      "type": "research_actor",
+      "label": "UCSD",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-uestc",
+      "type": "research_actor",
+      "label": "UESTC",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-uic",
+      "type": "research_actor",
+      "label": "UIC",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-uiuc",
+      "type": "research_actor",
+      "label": "UIUC",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-unc",
+      "type": "research_actor",
+      "label": "UNC",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-university-of-arizona",
+      "type": "research_actor",
+      "label": "University of Arizona",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-university-of-michigan",
+      "type": "research_actor",
+      "label": "University of Michigan",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-university-of-queensland",
+      "type": "research_actor",
+      "label": "University of Queensland",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-upenn",
+      "type": "research_actor",
+      "label": "UPenn",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-ustc",
+      "type": "research_actor",
+      "label": "USTC",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-ut-austin",
+      "type": "research_actor",
+      "label": "UT Austin",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-ut-dallas",
+      "type": "research_actor",
+      "label": "UT Dallas",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-uw",
+      "type": "research_actor",
+      "label": "UW",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-uw-madison",
+      "type": "research_actor",
+      "label": "UW–Madison",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-uzh",
+      "type": "research_actor",
+      "label": "UZH",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-vector",
+      "type": "research_actor",
+      "label": "Vector",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-virginia",
+      "type": "research_actor",
+      "label": "Virginia",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-washu",
+      "type": "research_actor",
+      "label": "WashU",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-waterloo",
+      "type": "research_actor",
+      "label": "Waterloo",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-xidian",
+      "type": "research_actor",
+      "label": "Xidian",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-york",
+      "type": "research_actor",
+      "label": "York",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-zhejiang",
+      "type": "research_actor",
+      "label": "Zhejiang",
+      "actor_kind": "academic"
+    },
+    {
+      "id": "actor-gen-verse",
+      "type": "research_actor",
+      "label": "Gen-Verse",
+      "actor_kind": "unresolved"
+    },
+    {
       "id": "topic-h-instructions",
       "type": "field_topic",
       "route": "harness",
@@ -13056,6 +13980,6263 @@
         {
           "url": "https://arxiv.org/pdf/2411.02337",
           "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "participation-stanford-eurisko",
+      "source": "actor-stanford",
+      "target": "eurisko",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Stanford"
+      ],
+      "sources": [
+        {
+          "url": "https://www.cs.northwestern.edu/~mek802/papers/not-mine/Lenat_EURISKO.pdf",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-microsoft-stop",
+      "source": "actor-microsoft",
+      "target": "stop",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Microsoft Research"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2310.02304v3",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-stanford-stop",
+      "source": "actor-stanford",
+      "target": "stop",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Stanford"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2310.02304v3",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-openai-stop",
+      "source": "actor-openai",
+      "target": "stop",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "OpenAI"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2310.02304v3",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-google-promptbreeder",
+      "source": "actor-google",
+      "target": "promptbreeder",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Google DeepMind"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2309.16797v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-ucla-spin",
+      "source": "actor-ucla",
+      "target": "spin",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "UCLA"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2401.01335v2",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-meta-self-rewarding-lm",
+      "source": "actor-meta",
+      "target": "self-rewarding-lm",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Meta AI"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2401.10020v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-nyu-self-rewarding-lm",
+      "source": "actor-nyu",
+      "target": "self-rewarding-lm",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "NYU"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2401.10020v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-peking-university-godel-agent",
+      "source": "actor-peking-university",
+      "target": "godel-agent",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Peking University"
+      ],
+      "sources": [
+        {
+          "url": "https://aclanthology.org/2025.acl-long.1354.pdf",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-ucsb-godel-agent",
+      "source": "actor-ucsb",
+      "target": "godel-agent",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "UCSB"
+      ],
+      "sources": [
+        {
+          "url": "https://aclanthology.org/2025.acl-long.1354.pdf",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-university-of-arizona-godel-agent",
+      "source": "actor-university-of-arizona",
+      "target": "godel-agent",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "University of Arizona"
+      ],
+      "sources": [
+        {
+          "url": "https://aclanthology.org/2025.acl-long.1354.pdf",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-ubc-adas",
+      "source": "actor-ubc",
+      "target": "adas",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "UBC"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2408.08435v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-vector-adas",
+      "source": "actor-vector",
+      "target": "adas",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Vector"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2408.08435v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-profile-deepwisdom-aflow",
+      "source": "actor-profile-deepwisdom",
+      "target": "aflow",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation",
+        "coauthored"
+      ],
+      "raw_labels": [
+        "DeepWisdom"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2410.10762",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-hkust-aflow",
+      "source": "actor-hkust",
+      "target": "aflow",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "HKUST"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2410.10762",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-hkust-gz-aflow",
+      "source": "actor-hkust-gz",
+      "target": "aflow",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "HKUST(GZ)"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2410.10762",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-ruc-aflow",
+      "source": "actor-ruc",
+      "target": "aflow",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "RUC"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2410.10762",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-nanjing-aflow",
+      "source": "actor-nanjing",
+      "target": "aflow",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Nanjing"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2410.10762",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-fudan-aflow",
+      "source": "actor-fudan",
+      "target": "aflow",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Fudan"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2410.10762",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-kaust-aflow",
+      "source": "actor-kaust",
+      "target": "aflow",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "KAUST"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2410.10762",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-montr-al-aflow",
+      "source": "actor-montr-al",
+      "target": "aflow",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Montréal"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2410.10762",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-mila-aflow",
+      "source": "actor-mila",
+      "target": "aflow",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Mila"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2410.10762",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-profile-igent-sica",
+      "source": "actor-profile-igent",
+      "target": "sica",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation",
+        "coauthored"
+      ],
+      "raw_labels": [
+        "iGent AI"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2504.15228v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-bristol-sica",
+      "source": "actor-bristol",
+      "target": "sica",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Bristol"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2504.15228v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-profile-sakana-dgm",
+      "source": "actor-profile-sakana",
+      "target": "dgm",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation",
+        "coauthored"
+      ],
+      "raw_labels": [
+        "Sakana AI"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2505.22954v3",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-ubc-dgm",
+      "source": "actor-ubc",
+      "target": "dgm",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "UBC"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2505.22954v3",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-vector-dgm",
+      "source": "actor-vector",
+      "target": "dgm",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Vector"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2505.22954v3",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-uc-berkeley-gepa",
+      "source": "actor-uc-berkeley",
+      "target": "gepa",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Berkeley"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2507.19457v2",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-stanford-gepa",
+      "source": "actor-stanford",
+      "target": "gepa",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Stanford"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2507.19457v2",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-notre-dame-gepa",
+      "source": "actor-notre-dame",
+      "target": "gepa",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Notre Dame"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2507.19457v2",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-mit-gepa",
+      "source": "actor-mit",
+      "target": "gepa",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "MIT"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2507.19457v2",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-databricks-gepa",
+      "source": "actor-databricks",
+      "target": "gepa",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Databricks"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2507.19457v2",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-profile-bespoke-gepa",
+      "source": "actor-profile-bespoke",
+      "target": "gepa",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation",
+        "coauthored"
+      ],
+      "raw_labels": [
+        "Bespoke Labs"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2507.19457v2",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-oxford-agentbreeder",
+      "source": "actor-oxford",
+      "target": "agentbreeder",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Oxford"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2502.00757",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-columbia-university-statistical-limits",
+      "source": "actor-columbia-university",
+      "target": "statistical-limits",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Columbia University"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2510.04399",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-mit-seal",
+      "source": "actor-mit",
+      "target": "seal",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "MIT",
+        "CSAIL"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2506.10943v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-meta-hyperagents",
+      "source": "actor-meta",
+      "target": "hyperagents",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Meta AI"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2603.19461v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-ubc-hyperagents",
+      "source": "actor-ubc",
+      "target": "hyperagents",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "UBC"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2603.19461v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-vector-hyperagents",
+      "source": "actor-vector",
+      "target": "hyperagents",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Vector"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2603.19461v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-edinburgh-hyperagents",
+      "source": "actor-edinburgh",
+      "target": "hyperagents",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Edinburgh"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2603.19461v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-nyu-hyperagents",
+      "source": "actor-nyu",
+      "target": "hyperagents",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "NYU"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2603.19461v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-amazon-harness-updating-benefit",
+      "source": "actor-amazon",
+      "target": "harness-updating-benefit",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Amazon"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2605.30621v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-penn-state-harness-updating-benefit",
+      "source": "actor-penn-state",
+      "target": "harness-updating-benefit",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Penn State"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2605.30621v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-ucsc-harness-updating-benefit",
+      "source": "actor-ucsc",
+      "target": "harness-updating-benefit",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "UCSC"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2605.30621v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-emory-harness-updating-benefit",
+      "source": "actor-emory",
+      "target": "harness-updating-benefit",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Emory"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2605.30621v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-uiuc-harness-updating-benefit",
+      "source": "actor-uiuc",
+      "target": "harness-updating-benefit",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "UIUC"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2605.30621v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-northeastern-harness-updating-benefit",
+      "source": "actor-northeastern",
+      "target": "harness-updating-benefit",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Northeastern"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2605.30621v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-profile-hexo-sia",
+      "source": "actor-profile-hexo",
+      "target": "sia",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation",
+        "coauthored"
+      ],
+      "raw_labels": [
+        "Hexo Labs"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2605.27276",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-oxford-sia",
+      "source": "actor-oxford",
+      "target": "sia",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Oxford"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2605.27276",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-profile-sakana-rhi",
+      "source": "actor-profile-sakana",
+      "target": "rhi",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation",
+        "coauthored"
+      ],
+      "raw_labels": [
+        "Sakana AI"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2607.15524",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-uc-berkeley-rhi",
+      "source": "actor-uc-berkeley",
+      "target": "rhi",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Berkeley"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2607.15524",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-ai2-rethink-harness-eval",
+      "source": "actor-ai2",
+      "target": "rethink-harness-eval",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Ai2"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2607.12227v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-uw-rethink-harness-eval",
+      "source": "actor-uw",
+      "target": "rethink-harness-eval",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "UW"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2607.12227v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-independent-authors-rethink-harness-eval",
+      "source": "actor-independent-authors",
+      "target": "rethink-harness-eval",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Independent"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2607.12227v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-meituan-co-harness",
+      "source": "actor-meituan",
+      "target": "co-harness",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Meituan"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2607.22688",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-ai2-co-harness",
+      "source": "actor-ai2",
+      "target": "co-harness",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Ai2"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2607.22688",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-independent-authors-co-harness",
+      "source": "actor-independent-authors",
+      "target": "co-harness",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Independent"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2607.22688",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-hku-helix",
+      "source": "actor-hku",
+      "target": "helix",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "HKU"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2608.13951",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-hkust-hsi",
+      "source": "actor-hkust",
+      "target": "hsi",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "HKUST"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2608.08466",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-uiuc-evoharness-rl",
+      "source": "actor-uiuc",
+      "target": "evoharness-rl",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "UIUC"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2608.05446",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-meta-evoharness-rl",
+      "source": "actor-meta",
+      "target": "evoharness-rl",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Meta AI"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2608.05446",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-rutgers-evoharness-rl",
+      "source": "actor-rutgers",
+      "target": "evoharness-rl",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Rutgers"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2608.05446",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-carnegie-mellon-evoharness-rl",
+      "source": "actor-carnegie-mellon",
+      "target": "evoharness-rl",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Carnegie Mellon"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2608.05446",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-uestc-harness-tampering",
+      "source": "actor-uestc",
+      "target": "harness-tampering",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "UESTC"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2609.00069",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-bytedance-harnessdev",
+      "source": "actor-bytedance",
+      "target": "harnessdev",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "ByteDance Seed"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2609.01437",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-sutd-harnessdev",
+      "source": "actor-sutd",
+      "target": "harnessdev",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "SUTD"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2609.01437",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-georgia-tech-harnessdev",
+      "source": "actor-georgia-tech",
+      "target": "harnessdev",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Georgia Tech"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2609.01437",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-m-a-p-harnessdev",
+      "source": "actor-m-a-p",
+      "target": "harnessdev",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "M-A-P"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2609.01437",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-profile-tokenwave-harnessdev",
+      "source": "actor-profile-tokenwave",
+      "target": "harnessdev",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation",
+        "coauthored"
+      ],
+      "raw_labels": [
+        "TokenWave.AI"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2609.01437",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-google-rrsi",
+      "source": "actor-google",
+      "target": "rrsi",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Google Cloud AI Research"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2609.24972v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-stanford-rrsi",
+      "source": "actor-stanford",
+      "target": "rrsi",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Stanford"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2609.24972v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-washu-rrsi",
+      "source": "actor-washu",
+      "target": "rrsi",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "WashU"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2609.24972v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-unc-rrsi",
+      "source": "actor-unc",
+      "target": "rrsi",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "UNC"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2609.24972v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-stanford-meta-harness",
+      "source": "actor-stanford",
+      "target": "meta-harness",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Stanford"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2603.28052",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-krafton-meta-harness",
+      "source": "actor-krafton",
+      "target": "meta-harness",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "KRAFTON"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2603.28052",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-mit-meta-harness",
+      "source": "actor-mit",
+      "target": "meta-harness",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "MIT"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2603.28052",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-profile-weco-aide2",
+      "source": "actor-profile-weco",
+      "target": "aide2",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation",
+        "published"
+      ],
+      "raw_labels": [
+        "Weco AI"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2609.26457v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-profile-frontis-openrsi",
+      "source": "actor-profile-frontis",
+      "target": "openrsi",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation",
+        "coauthored"
+      ],
+      "raw_labels": [
+        "Horizon Research",
+        "Frontis.AI"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2607.28568v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-tsinghua-university-openrsi",
+      "source": "actor-tsinghua-university",
+      "target": "openrsi",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "清华大学"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2607.28568v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-profile-sakana-mass",
+      "source": "actor-profile-sakana",
+      "target": "mass",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation",
+        "coauthored"
+      ],
+      "raw_labels": [
+        "Sakana AI"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2610.12176v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-uc-berkeley-mass",
+      "source": "actor-uc-berkeley",
+      "target": "mass",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Berkeley"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2610.12176v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-gen-verse-rsi-anything",
+      "source": "actor-gen-verse",
+      "target": "rsi-anything",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "project_team"
+      ],
+      "raw_labels": [
+        "Gen-Verse（项目团队；机构未核准）"
+      ],
+      "sources": [
+        {
+          "url": "https://github.com/Gen-Verse/RSI-Anything",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-google-dream-rsi",
+      "source": "actor-google",
+      "target": "dream-rsi",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Google",
+        "Google DeepMind"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2609.14858",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-maryland-dream-rsi",
+      "source": "actor-maryland",
+      "target": "dream-rsi",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Maryland"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2609.14858",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-virginia-dream-rsi",
+      "source": "actor-virginia",
+      "target": "dream-rsi",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Virginia"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2609.14858",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-kaust-hgm",
+      "source": "actor-kaust",
+      "target": "hgm",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "KAUST"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2510.21614v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-stanford-ace",
+      "source": "actor-stanford",
+      "target": "ace",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Stanford"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2510.04618v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-sambanova-ace",
+      "source": "actor-sambanova",
+      "target": "ace",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "SambaNova"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2510.04618v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-uc-berkeley-ace",
+      "source": "actor-uc-berkeley",
+      "target": "ace",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Berkeley"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2510.04618v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-google-alphaevolve",
+      "source": "actor-google",
+      "target": "alphaevolve",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Google DeepMind"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2506.13131v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-google-opro",
+      "source": "actor-google",
+      "target": "opro",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Google DeepMind"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2309.03409",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-stanford-star",
+      "source": "actor-stanford",
+      "target": "star",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Stanford"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2203.14465",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-google-star",
+      "source": "actor-google",
+      "target": "star",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Google Research"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2203.14465",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-google-rest-em",
+      "source": "actor-google",
+      "target": "rest-em",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Google DeepMind"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2312.06585v4",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-mila-rest-em",
+      "source": "actor-mila",
+      "target": "rest-em",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Mila"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2312.06585v4",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-profile-deepseek-deepseek-r1",
+      "source": "actor-profile-deepseek",
+      "target": "deepseek-r1",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "coauthored"
+      ],
+      "raw_labels": [],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2501.12948v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-google-alphaproof",
+      "source": "actor-google",
+      "target": "alphaproof",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Google DeepMind"
+      ],
+      "sources": [
+        {
+          "url": "https://www.nature.com/articles/s41586-025-09833-y",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-google-sima2",
+      "source": "actor-google",
+      "target": "sima2",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Google DeepMind"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2512.04797v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-anthropic-constitutional-ai",
+      "source": "actor-anthropic",
+      "target": "constitutional-ai",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Anthropic"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2212.08073v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-meta-self-taught-evaluators",
+      "source": "actor-meta",
+      "target": "self-taught-evaluators",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Meta AI"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2408.02666v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-nvidia-eureka",
+      "source": "actor-nvidia",
+      "target": "eureka",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "NVIDIA"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2310.12931",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-upenn-eureka",
+      "source": "actor-upenn",
+      "target": "eureka",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "UPenn"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2310.12931",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-caltech-eureka",
+      "source": "actor-caltech",
+      "target": "eureka",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Caltech"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2310.12931",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-ut-austin-eureka",
+      "source": "actor-ut-austin",
+      "target": "eureka",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "UT Austin"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2310.12931",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-openai-gpt-red",
+      "source": "actor-openai",
+      "target": "gpt-red",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "OpenAI"
+      ],
+      "sources": [
+        {
+          "url": "https://cdn.openai.com/pdf/gpt-red-automated-red-teaming-via-self-play-at-scale.pdf",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-anthropic-automated-alignment-researchers",
+      "source": "actor-anthropic",
+      "target": "automated-alignment-researchers",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Anthropic"
+      ],
+      "sources": [
+        {
+          "url": "https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-bytedance-seed-for-seed",
+      "source": "actor-bytedance",
+      "target": "seed-for-seed",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "ByteDance Seed"
+      ],
+      "sources": [
+        {
+          "url": "https://seed.bytedance.com/en/blog/seed2-1-officially-released-advancing-ai-productivity",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-nvidia-sol-pi",
+      "source": "actor-nvidia",
+      "target": "sol-pi",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "NVIDIA"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2609.20519v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-ntu-sol-pi",
+      "source": "actor-ntu",
+      "target": "sol-pi",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "NTU"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2609.20519v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-mit-sol-pi",
+      "source": "actor-mit",
+      "target": "sol-pi",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "MIT"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2609.20519v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-profile-iquest-modular-rsi",
+      "source": "actor-profile-iquest",
+      "target": "modular-rsi",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation",
+        "coauthored"
+      ],
+      "raw_labels": [
+        "IQuest Research"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2609.14857v2",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-profile-langboat-modular-rsi",
+      "source": "actor-profile-langboat",
+      "target": "modular-rsi",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation",
+        "coauthored"
+      ],
+      "raw_labels": [
+        "Langboat"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2609.14857v2",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-beihang-modular-rsi",
+      "source": "actor-beihang",
+      "target": "modular-rsi",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Beihang"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2609.14857v2",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-manchester-modular-rsi",
+      "source": "actor-manchester",
+      "target": "modular-rsi",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Manchester"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2609.14857v2",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-hohai-modular-rsi",
+      "source": "actor-hohai",
+      "target": "modular-rsi",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Hohai"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2609.14857v2",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-m-a-p-modular-rsi",
+      "source": "actor-m-a-p",
+      "target": "modular-rsi",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "M-A-P"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2609.14857v2",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-princeton-prime-agent",
+      "source": "actor-princeton",
+      "target": "prime-agent",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Princeton"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2608.23552",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-profile-prime-intellect-prime-agent",
+      "source": "actor-profile-prime-intellect",
+      "target": "prime-agent",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation",
+        "coauthored"
+      ],
+      "raw_labels": [
+        "Prime Intellect"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2608.23552",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-mit-prime-agent",
+      "source": "actor-mit",
+      "target": "prime-agent",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "MIT"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2608.23552",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-cambridge-red-queen-godel-machine",
+      "source": "actor-cambridge",
+      "target": "red-queen-godel-machine",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Cambridge"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2606.26294v3",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-nvidia-red-queen-godel-machine",
+      "source": "actor-nvidia",
+      "target": "red-queen-godel-machine",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "NVIDIA"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2606.26294v3",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-profile-flower-red-queen-godel-machine",
+      "source": "actor-profile-flower",
+      "target": "red-queen-godel-machine",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation",
+        "coauthored"
+      ],
+      "raw_labels": [
+        "Flower Labs"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2606.26294v3",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-mbzuai-red-queen-godel-machine",
+      "source": "actor-mbzuai",
+      "target": "red-queen-godel-machine",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "MBZUAI"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2606.26294v3",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-inria-red-queen-godel-machine",
+      "source": "actor-inria",
+      "target": "red-queen-godel-machine",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Inria"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2606.26294v3",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-meta-dr-zero",
+      "source": "actor-meta",
+      "target": "dr-zero",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Meta Superintelligence Labs"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2601.07055v2",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-uiuc-dr-zero",
+      "source": "actor-uiuc",
+      "target": "dr-zero",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "UIUC"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2601.07055v2",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-alibaba-skill-self-play",
+      "source": "actor-alibaba",
+      "target": "skill-self-play",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Alibaba Qwen"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2607.22529v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-cuhk-skill-self-play",
+      "source": "actor-cuhk",
+      "target": "skill-self-play",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "CUHK"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2607.22529v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-ruc-skill-self-play",
+      "source": "actor-ruc",
+      "target": "skill-self-play",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "RUC"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2607.22529v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-sysu-skill-self-play",
+      "source": "actor-sysu",
+      "target": "skill-self-play",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "SYSU"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2607.22529v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-peking-university-skill-self-play",
+      "source": "actor-peking-university",
+      "target": "skill-self-play",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "PKU"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2607.22529v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-eth-z-rich-skill-self-play",
+      "source": "actor-eth-z-rich",
+      "target": "skill-self-play",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "ETH"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2607.22529v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-uzh-skill-self-play",
+      "source": "actor-uzh",
+      "target": "skill-self-play",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "UZH"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2607.22529v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-buffalo-skill-self-play",
+      "source": "actor-buffalo",
+      "target": "skill-self-play",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Buffalo"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2607.22529v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-unc-agent0",
+      "source": "actor-unc",
+      "target": "agent0",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "UNC"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2511.16043",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-google-agent0",
+      "source": "actor-google",
+      "target": "agent0",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Google"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2511.16043",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-stanford-agent0",
+      "source": "actor-stanford",
+      "target": "agent0",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Stanford"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2511.16043",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-profile-recursive-agent0",
+      "source": "actor-profile-recursive",
+      "target": "agent0",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation",
+        "coauthored"
+      ],
+      "raw_labels": [
+        "Recursive Superintelligence"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2511.16043",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-tencent-r-zero",
+      "source": "actor-tencent",
+      "target": "r-zero",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Tencent AI Seattle"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2508.05004",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-washu-r-zero",
+      "source": "actor-washu",
+      "target": "r-zero",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "WashU"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2508.05004",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-maryland-r-zero",
+      "source": "actor-maryland",
+      "target": "r-zero",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Maryland"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2508.05004",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-ut-dallas-r-zero",
+      "source": "actor-ut-dallas",
+      "target": "r-zero",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "UT Dallas"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2508.05004",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-tsinghua-university-absolute-zero",
+      "source": "actor-tsinghua-university",
+      "target": "absolute-zero",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Tsinghua"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2505.03335v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-bigai-absolute-zero",
+      "source": "actor-bigai",
+      "target": "absolute-zero",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "BIGAI"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2505.03335v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-penn-state-absolute-zero",
+      "source": "actor-penn-state",
+      "target": "absolute-zero",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Penn State"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2505.03335v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-uiuc-tool-r0",
+      "source": "actor-uiuc",
+      "target": "tool-r0",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "UIUC"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2602.21320v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-eth-z-rich-tool-r0",
+      "source": "actor-eth-z-rich",
+      "target": "tool-r0",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "ETH Zürich"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2602.21320v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-alibaba-evotrainer",
+      "source": "actor-alibaba",
+      "target": "evotrainer",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Alibaba Tongyi Lab"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2606.03108v2",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-siat-cas-evotrainer",
+      "source": "actor-siat-cas",
+      "target": "evotrainer",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "SIAT-CAS"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2606.03108v2",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-suat-evotrainer",
+      "source": "actor-suat",
+      "target": "evotrainer",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "SUAT"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2606.03108v2",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-harvard-autoscientists",
+      "source": "actor-harvard",
+      "target": "autoscientists",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Harvard"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2605.28655",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-waterloo-derl",
+      "source": "actor-waterloo",
+      "target": "derl",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Waterloo"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2512.13399v3",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-hku-derl",
+      "source": "actor-hku",
+      "target": "derl",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "HKU"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2512.13399v3",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-cuhk-shenzhen-derl",
+      "source": "actor-cuhk-shenzhen",
+      "target": "derl",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "CUHK-Shenzhen"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2512.13399v3",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-duke-derl",
+      "source": "actor-duke",
+      "target": "derl",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Duke"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2512.13399v3",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-toronto-gear",
+      "source": "actor-toronto",
+      "target": "gear",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Toronto"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2605.13874",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-vector-gear",
+      "source": "actor-vector",
+      "target": "gear",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Vector"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2605.13874",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-samsung-gear",
+      "source": "actor-samsung",
+      "target": "gear",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Samsung AI Center–Toronto"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2605.13874",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-york-gear",
+      "source": "actor-york",
+      "target": "gear",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "York"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2605.13874",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-stanford-execution-grounded-research",
+      "source": "actor-stanford",
+      "target": "execution-grounded-research",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Stanford"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2601.14525",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-minnesota-meta-n",
+      "source": "actor-minnesota",
+      "target": "meta-n",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Minnesota"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2608.24735",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-seoul-national-university-meta-n",
+      "source": "actor-seoul-national-university",
+      "target": "meta-n",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Seoul National University"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2608.24735",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-shanghai-ai-laboratory-self-harness",
+      "source": "actor-shanghai-ai-laboratory",
+      "target": "self-harness",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Shanghai AI Laboratory"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2606.09498",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-peking-university-harness-zero",
+      "source": "actor-peking-university",
+      "target": "harness-zero",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Peking University"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2609.24974",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-google-harness-zero",
+      "source": "actor-google",
+      "target": "harness-zero",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Google"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2609.24974",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-hkust-harness-zero",
+      "source": "actor-hkust",
+      "target": "harness-zero",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "HKUST"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2609.24974",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-sjtu-harness-r1",
+      "source": "actor-sjtu",
+      "target": "harness-r1",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "SJTU"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2608.02276",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-xiaohongshu-harness-r1",
+      "source": "actor-xiaohongshu",
+      "target": "harness-r1",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Xiaohongshu"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2608.02276",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-southeast-university-harness-r1",
+      "source": "actor-southeast-university",
+      "target": "harness-r1",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Southeast University"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2608.02276",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-unc-skillrl",
+      "source": "actor-unc",
+      "target": "skillrl",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "UNC"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2602.08234v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-uchicago-skillrl",
+      "source": "actor-uchicago",
+      "target": "skillrl",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "UChicago"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2602.08234v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-ucsd-skillrl",
+      "source": "actor-ucsd",
+      "target": "skillrl",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "UCSD"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2602.08234v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-nec-skillrl",
+      "source": "actor-nec",
+      "target": "skillrl",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "NEC Labs"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2602.08234v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-uc-berkeley-skillrl",
+      "source": "actor-uc-berkeley",
+      "target": "skillrl",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Berkeley"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2602.08234v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-ucsc-skillrl",
+      "source": "actor-ucsc",
+      "target": "skillrl",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "UCSC"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2602.08234v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-microsoft-skillopt",
+      "source": "actor-microsoft",
+      "target": "skillopt",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Microsoft"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2605.23904",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-sjtu-skillopt",
+      "source": "actor-sjtu",
+      "target": "skillopt",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "SJTU"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2605.23904",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-tongji-skillopt",
+      "source": "actor-tongji",
+      "target": "skillopt",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Tongji"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2605.23904",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-fudan-skillopt",
+      "source": "actor-fudan",
+      "target": "skillopt",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Fudan"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2605.23904",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-beihang-mem2evolve",
+      "source": "actor-beihang",
+      "target": "mem2evolve",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Beihang"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2604.10923",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-beijing-institute-of-technology-mem2evolve",
+      "source": "actor-beijing-institute-of-technology",
+      "target": "mem2evolve",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Beijing Institute of Technology"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2604.10923",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-independent-authors-mem2evolve",
+      "source": "actor-independent-authors",
+      "target": "mem2evolve",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Independent"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2604.10923",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-mcml-mem2evolve",
+      "source": "actor-mcml",
+      "target": "mem2evolve",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "MCML"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2604.10923",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-edinburgh-mem2evolve",
+      "source": "actor-edinburgh",
+      "target": "mem2evolve",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Edinburgh"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2604.10923",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-ntu-memskill",
+      "source": "actor-ntu",
+      "target": "memskill",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "NTU"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2602.02474",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-uiuc-memskill",
+      "source": "actor-uiuc",
+      "target": "memskill",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "UIUC"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2602.02474",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-uic-memskill",
+      "source": "actor-uic",
+      "target": "memskill",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "UIC"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2602.02474",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-tsinghua-university-memskill",
+      "source": "actor-tsinghua-university",
+      "target": "memskill",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Tsinghua"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2602.02474",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-sjtu-memrl",
+      "source": "actor-sjtu",
+      "target": "memrl",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "SJTU"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2601.03192v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-xidian-memrl",
+      "source": "actor-xidian",
+      "target": "memrl",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Xidian"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2601.03192v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-nus-memrl",
+      "source": "actor-nus",
+      "target": "memrl",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "NUS"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2601.03192v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-shanghai-innovation-institute-memrl",
+      "source": "actor-shanghai-innovation-institute",
+      "target": "memrl",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Shanghai Innovation Institute"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2601.03192v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-profile-memtensor-memrl",
+      "source": "actor-profile-memtensor",
+      "target": "memrl",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation",
+        "coauthored"
+      ],
+      "raw_labels": [
+        "MemTensor"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2601.03192v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-ustc-memrl",
+      "source": "actor-ustc",
+      "target": "memrl",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "USTC"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2601.03192v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-hkust-evods",
+      "source": "actor-hkust",
+      "target": "evods",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "HKUST"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2606.03841",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-salesforce-on-policy-harness-coevolution",
+      "source": "actor-salesforce",
+      "target": "on-policy-harness-coevolution",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Salesforce AI"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2609.09134",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-taolive-taolive-hat",
+      "source": "actor-taolive",
+      "target": "taolive-hat",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "TaoLive AIGC LLM Team"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2608.15763",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-ubc-rewardharness",
+      "source": "actor-ubc",
+      "target": "rewardharness",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "UBC"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2605.08703v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-vector-rewardharness",
+      "source": "actor-vector",
+      "target": "rewardharness",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Vector"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2605.08703v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-kuaishou-rewardharness",
+      "source": "actor-kuaishou",
+      "target": "rewardharness",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Kuaishou Kolors"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2605.08703v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-profile-etude-rewardharness",
+      "source": "actor-profile-etude",
+      "target": "rewardharness",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation",
+        "coauthored"
+      ],
+      "raw_labels": [
+        "Etude AI"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2605.08703v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-waterloo-rewardharness",
+      "source": "actor-waterloo",
+      "target": "rewardharness",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Waterloo"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2605.08703v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-carnegie-mellon-rewardharness",
+      "source": "actor-carnegie-mellon",
+      "target": "rewardharness",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Carnegie Mellon"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2605.08703v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-tsinghua-university-rewardharness",
+      "source": "actor-tsinghua-university",
+      "target": "rewardharness",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Tsinghua"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2605.08703v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-georgia-tech-rewardharness",
+      "source": "actor-georgia-tech",
+      "target": "rewardharness",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Georgia Tech"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2605.08703v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-tencent-webevolver",
+      "source": "actor-tencent",
+      "target": "webevolver",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Tencent AI Lab"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2504.21024",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-tsinghua-university-webrl",
+      "source": "actor-tsinghua-university",
+      "target": "webrl",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Tsinghua"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2411.02337",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-profile-zhipu-webrl",
+      "source": "actor-profile-zhipu",
+      "target": "webrl",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation",
+        "coauthored"
+      ],
+      "raw_labels": [
+        "Zhipu AI"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2411.02337",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-microsoft-rstar-math",
+      "source": "actor-microsoft",
+      "target": "rstar-math",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Microsoft Research Asia"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2501.04519",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-peking-university-rstar-math",
+      "source": "actor-peking-university",
+      "target": "rstar-math",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Peking University"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2501.04519",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-tsinghua-university-rstar-math",
+      "source": "actor-tsinghua-university",
+      "target": "rstar-math",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Tsinghua"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2501.04519",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-fudan-self-evolved-reward",
+      "source": "actor-fudan",
+      "target": "self-evolved-reward",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Fudan"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2411.00418",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-peking-university-self-evolved-reward",
+      "source": "actor-peking-university",
+      "target": "self-evolved-reward",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Peking University"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2411.00418",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-microsoft-self-evolved-reward",
+      "source": "actor-microsoft",
+      "target": "self-evolved-reward",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Microsoft"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2411.00418",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-mila-self-evolving-curriculum",
+      "source": "actor-mila",
+      "target": "self-evolving-curriculum",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Mila"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2505.14970",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-montr-al-self-evolving-curriculum",
+      "source": "actor-montr-al",
+      "target": "self-evolving-curriculum",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Montréal"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2505.14970",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-kaist-self-evolving-curriculum",
+      "source": "actor-kaist",
+      "target": "self-evolving-curriculum",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "KAIST"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2505.14970",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-microsoft-self-evolving-curriculum",
+      "source": "actor-microsoft",
+      "target": "self-evolving-curriculum",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Microsoft Research"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2505.14970",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-hec-montr-al-self-evolving-curriculum",
+      "source": "actor-hec-montr-al",
+      "target": "self-evolving-curriculum",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "HEC Montréal"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2505.14970",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-servicenow-self-evolving-curriculum",
+      "source": "actor-servicenow",
+      "target": "self-evolving-curriculum",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "ServiceNow AI"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2505.14970",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-ohio-state-skillweaver",
+      "source": "actor-ohio-state",
+      "target": "skillweaver",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Ohio State"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2504.07079",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-virginia-skillweaver",
+      "source": "actor-virginia",
+      "target": "skillweaver",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Virginia"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2504.07079",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-purdue-skillweaver",
+      "source": "actor-purdue",
+      "target": "skillweaver",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Purdue"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2504.07079",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-carnegie-mellon-skillweaver",
+      "source": "actor-carnegie-mellon",
+      "target": "skillweaver",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Carnegie Mellon"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2504.07079",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-cisco-skillweaver",
+      "source": "actor-cisco",
+      "target": "skillweaver",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Cisco Research"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2504.07079",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-uiuc-live-swe-agent",
+      "source": "actor-uiuc",
+      "target": "live-swe-agent",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "UIUC"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2511.13646",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-google-live-swe-agent",
+      "source": "actor-google",
+      "target": "live-swe-agent",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Google"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2511.13646",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-ucsb-group-evolving-agents",
+      "source": "actor-ucsb",
+      "target": "group-evolving-agents",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "UCSB"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2602.04837",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-emory-adaptive-auto-harness",
+      "source": "actor-emory",
+      "target": "adaptive-auto-harness",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Emory"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2606.01770",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-amazon-adaptive-auto-harness",
+      "source": "actor-amazon",
+      "target": "adaptive-auto-harness",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Amazon"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2606.01770",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-penn-state-adaptive-auto-harness",
+      "source": "actor-penn-state",
+      "target": "adaptive-auto-harness",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Penn State"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2606.01770",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-uiuc-adaptive-auto-harness",
+      "source": "actor-uiuc",
+      "target": "adaptive-auto-harness",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "UIUC"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2606.01770",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-northeastern-adaptive-auto-harness",
+      "source": "actor-northeastern",
+      "target": "adaptive-auto-harness",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Northeastern"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2606.01770",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-princeton-continual-harness",
+      "source": "actor-princeton",
+      "target": "continual-harness",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Princeton"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2605.09998v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-google-continual-harness",
+      "source": "actor-google",
+      "target": "continual-harness",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Google DeepMind"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2605.09998v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-arise-foundation-continual-harness",
+      "source": "actor-arise-foundation",
+      "target": "continual-harness",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "ARISE Foundation"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2605.09998v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-washu-envharness",
+      "source": "actor-washu",
+      "target": "envharness",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "WashU"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2608.19880",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-google-envharness",
+      "source": "actor-google",
+      "target": "envharness",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Google Cloud AI Research",
+        "Google Cloud"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2608.19880",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-unc-envharness",
+      "source": "actor-unc",
+      "target": "envharness",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "UNC"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2608.19880",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-meta-aira-design",
+      "source": "actor-meta",
+      "target": "aira-design",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Meta AI"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2605.15871",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-oxford-aira-design",
+      "source": "actor-oxford",
+      "target": "aira-design",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Oxford"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2605.15871",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-naver-ai4ai-bench",
+      "source": "actor-naver",
+      "target": "ai4ai-bench",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "NAVER Labs"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2608.20318",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-profile-einsia-ai4ai-bench",
+      "source": "actor-profile-einsia",
+      "target": "ai4ai-bench",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation",
+        "coauthored"
+      ],
+      "raw_labels": [
+        "Einsia.AI"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2608.20318",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-tsinghua-university-ai4ai-bench",
+      "source": "actor-tsinghua-university",
+      "target": "ai4ai-bench",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Tsinghua"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2608.20318",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-tianjin-generalized-agent-iteration",
+      "source": "actor-tianjin",
+      "target": "generalized-agent-iteration",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Tianjin"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2609.13406v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-shanxi-generalized-agent-iteration",
+      "source": "actor-shanxi",
+      "target": "generalized-agent-iteration",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Shanxi"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2609.13406v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-bytedance-aspire",
+      "source": "actor-bytedance",
+      "target": "aspire",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "ByteDance Seed"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2608.31111",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-sutd-aspire",
+      "source": "actor-sutd",
+      "target": "aspire",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "SUTD"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2608.31111",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-m-a-p-aspire",
+      "source": "actor-m-a-p",
+      "target": "aspire",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "M-A-P"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2608.31111",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-profile-tokenwave-aspire",
+      "source": "actor-profile-tokenwave",
+      "target": "aspire",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation",
+        "coauthored"
+      ],
+      "raw_labels": [
+        "TokenWave.AI"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2608.31111",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-harbin-institute-of-technology-faithful-self-evolvers",
+      "source": "actor-harbin-institute-of-technology",
+      "target": "faithful-self-evolvers",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Harbin Institute of Technology"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2601.22436",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-singapore-management-university-faithful-self-evolvers",
+      "source": "actor-singapore-management-university",
+      "target": "faithful-self-evolvers",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Singapore Management University"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2601.22436",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-profile-sakana-shinkaevolve",
+      "source": "actor-profile-sakana",
+      "target": "shinkaevolve",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation",
+        "coauthored"
+      ],
+      "raw_labels": [
+        "Sakana AI"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2509.19349",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-zhejiang-coverrl",
+      "source": "actor-zhejiang",
+      "target": "coverrl",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Zhejiang"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2603.17775",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-baidu-coverrl",
+      "source": "actor-baidu",
+      "target": "coverrl",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Baidu"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2603.17775",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-uic-actor-curator",
+      "source": "actor-uic",
+      "target": "actor-curator",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "UIC"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2602.20532",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-caltech-actor-curator",
+      "source": "actor-caltech",
+      "target": "actor-curator",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Caltech"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2602.20532",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-rpi-actor-curator",
+      "source": "actor-rpi",
+      "target": "actor-curator",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "RPI"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2602.20532",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-mbzuai-actor-curator",
+      "source": "actor-mbzuai",
+      "target": "actor-curator",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "MBZUAI"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2602.20532",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-uchicago-actor-curator",
+      "source": "actor-uchicago",
+      "target": "actor-curator",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "UChicago"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2602.20532",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-nec-actor-curator",
+      "source": "actor-nec",
+      "target": "actor-curator",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "NEC Labs America"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2602.20532",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-ruc-agent-world",
+      "source": "actor-ruc",
+      "target": "agent-world",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "RUC"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2604.18292",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-bytedance-agent-world",
+      "source": "actor-bytedance",
+      "target": "agent-world",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "ByteDance Seed"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2604.18292",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-uiuc-skillos",
+      "source": "actor-uiuc",
+      "target": "skillos",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "UIUC"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2605.06614",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-google-skillos",
+      "source": "actor-google",
+      "target": "skillos",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Google Cloud AI Research"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2605.06614",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-mit-skillos",
+      "source": "actor-mit",
+      "target": "skillos",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "MIT"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2605.06614",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-alibaba-socratic-swe",
+      "source": "actor-alibaba",
+      "target": "socratic-swe",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Alibaba AI Data"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2606.07412",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-sjtu-socratic-swe",
+      "source": "actor-sjtu",
+      "target": "socratic-swe",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "SJTU"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2606.07412",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-nvidia-voyager",
+      "source": "actor-nvidia",
+      "target": "voyager",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "NVIDIA"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2305.16291v2",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-caltech-voyager",
+      "source": "actor-caltech",
+      "target": "voyager",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Caltech"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2305.16291v2",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-stanford-voyager",
+      "source": "actor-stanford",
+      "target": "voyager",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Stanford"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2305.16291v2",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-ut-austin-voyager",
+      "source": "actor-ut-austin",
+      "target": "voyager",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "UT Austin"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2305.16291v2",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-uw-madison-voyager",
+      "source": "actor-uw-madison",
+      "target": "voyager",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "UW–Madison"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2305.16291v2",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-alibaba-agentevolver",
+      "source": "actor-alibaba",
+      "target": "agentevolver",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Alibaba Tongyi Lab"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2511.10395",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-uiuc-metaevolve",
+      "source": "actor-uiuc",
+      "target": "metaevolve",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "UIUC"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2607.21971",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-tsinghua-university-seed-distillation",
+      "source": "actor-tsinghua-university",
+      "target": "seed-distillation",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Tsinghua"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2607.14777v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-zhejiang-seed-distillation",
+      "source": "actor-zhejiang",
+      "target": "seed-distillation",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Zhejiang"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2607.14777v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-cuhk-seed-distillation",
+      "source": "actor-cuhk",
+      "target": "seed-distillation",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "CUHK"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2607.14777v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-ntu-seed-distillation",
+      "source": "actor-ntu",
+      "target": "seed-distillation",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "NTU"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2607.14777v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-tongji-seed-distillation",
+      "source": "actor-tongji",
+      "target": "seed-distillation",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Tongji"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2607.14777v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-mit-rl-tango",
+      "source": "actor-mit",
+      "target": "rl-tango",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation",
+        "joint_lab"
+      ],
+      "raw_labels": [
+        "MIT",
+        "MIT–IBM Watson AI Lab"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2505.15034",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-ibm-rl-tango",
+      "source": "actor-ibm",
+      "target": "rl-tango",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "joint_lab"
+      ],
+      "raw_labels": [
+        "MIT–IBM Watson AI Lab"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2505.15034",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-meta-iterative-rpo",
+      "source": "actor-meta",
+      "target": "iterative-rpo",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Meta AI"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2404.19733v2",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-nyu-iterative-rpo",
+      "source": "actor-nyu",
+      "target": "iterative-rpo",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "NYU"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2404.19733v2",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-profile-deepseek-deepseek-math-v2",
+      "source": "actor-profile-deepseek",
+      "target": "deepseek-math-v2",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation",
+        "coauthored"
+      ],
+      "raw_labels": [
+        "DeepSeek"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2511.22570v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-profile-moonshot-kimi-k2",
+      "source": "actor-profile-moonshot",
+      "target": "kimi-k2",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation",
+        "coauthored"
+      ],
+      "raw_labels": [
+        "Moonshot AI"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2507.20534v1",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-google-llm-can-self-improve",
+      "source": "actor-google",
+      "target": "llm-can-self-improve",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Google"
+      ],
+      "sources": [
+        {
+          "url": "https://aclanthology.org/2023.emnlp-main.67.pdf",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-uiuc-llm-can-self-improve",
+      "source": "actor-uiuc",
+      "target": "llm-can-self-improve",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "UIUC"
+      ],
+      "sources": [
+        {
+          "url": "https://aclanthology.org/2023.emnlp-main.67.pdf",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-profile-metacircle-metacircle-ophis",
+      "source": "actor-profile-metacircle",
+      "target": "metacircle-ophis",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation",
+        "published"
+      ],
+      "raw_labels": [
+        "MetaCircle"
+      ],
+      "sources": [
+        {
+          "url": "https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-profile-metacircle-comfyresearch",
+      "source": "actor-profile-metacircle",
+      "target": "comfyresearch",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation",
+        "published"
+      ],
+      "raw_labels": [
+        "MetaCircle"
+      ],
+      "sources": [
+        {
+          "url": "https://meta-circle.com/blog/comfyresearch-see-how-learning-happens",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-profile-metacircle-nanogpt-observables",
+      "source": "actor-profile-metacircle",
+      "target": "nanogpt-observables",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation",
+        "published"
+      ],
+      "raw_labels": [
+        "MetaCircle"
+      ],
+      "sources": [
+        {
+          "url": "https://meta-circle.com/blog/observe-learning-in-full",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-profile-apex-apex-tune",
+      "source": "actor-profile-apex",
+      "target": "apex-tune",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation",
+        "published"
+      ],
+      "raw_labels": [
+        "Apex Intelligence"
+      ],
+      "sources": [
+        {
+          "url": "https://www.apexin.ai/assets/papers/what-happens-when-ai-starts-improving-ai.pdf",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-profile-apex-apex-research",
+      "source": "actor-profile-apex",
+      "target": "apex-research",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation",
+        "published"
+      ],
+      "raw_labels": [
+        "Apex Intelligence"
+      ],
+      "sources": [
+        {
+          "url": "https://github.com/apexin-ai/apex-research-report",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-tsinghua-university-asi-bench",
+      "source": "actor-tsinghua-university",
+      "target": "asi-bench",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Tsinghua"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2608.17271",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-university-of-michigan-asi-bench",
+      "source": "actor-university-of-michigan",
+      "target": "asi-bench",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "University of Michigan"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2608.17271",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-mit-asi-bench",
+      "source": "actor-mit",
+      "target": "asi-bench",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "MIT"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2608.17271",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-harvard-asi-bench",
+      "source": "actor-harvard",
+      "target": "asi-bench",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Harvard"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2608.17271",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-carnegie-mellon-asi-bench",
+      "source": "actor-carnegie-mellon",
+      "target": "asi-bench",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Carnegie Mellon"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2608.17271",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-uiuc-asi-bench",
+      "source": "actor-uiuc",
+      "target": "asi-bench",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "UIUC"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2608.17271",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-boston-university-asi-bench",
+      "source": "actor-boston-university",
+      "target": "asi-bench",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Boston University"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2608.17271",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-university-of-queensland-asi-bench",
+      "source": "actor-university-of-queensland",
+      "target": "asi-bench",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "University of Queensland"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2608.17271",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-ustc-asi-bench",
+      "source": "actor-ustc",
+      "target": "asi-bench",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "USTC"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2608.17271",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-flatiron-institute-asi-bench",
+      "source": "actor-flatiron-institute",
+      "target": "asi-bench",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Flatiron Institute"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2608.17271",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-microsoft-asi-bench",
+      "source": "actor-microsoft",
+      "target": "asi-bench",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Microsoft Research"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2608.17271",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-ag2-asi-bench",
+      "source": "actor-ag2",
+      "target": "asi-bench",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "AG2 AI"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2608.17271",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-independent-authors-asi-bench",
+      "source": "actor-independent-authors",
+      "target": "asi-bench",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation"
+      ],
+      "raw_labels": [
+        "Independent Researchers"
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2608.17271",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-profile-recursive-recursive-first-steps",
+      "source": "actor-profile-recursive",
+      "target": "recursive-first-steps",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation",
+        "published"
+      ],
+      "raw_labels": [
+        "Recursive Superintelligence"
+      ],
+      "sources": [
+        {
+          "url": "https://www.recursive.com/articles/first-steps-toward-automated-ai-research",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-profile-nous-hermes-agent",
+      "source": "actor-profile-nous",
+      "target": "hermes-agent",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation",
+        "published"
+      ],
+      "raw_labels": [
+        "Nous Research"
+      ],
+      "sources": [
+        {
+          "url": "https://github.com/NousResearch/hermes-agent",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-profile-prime-intellect-intellect-3",
+      "source": "actor-profile-prime-intellect",
+      "target": "intellect-3",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation",
+        "coauthored"
+      ],
+      "raw_labels": [
+        "Prime Intellect"
+      ],
+      "sources": [
+        {
+          "url": "https://www.primeintellect.ai/blog/intellect-3",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-profile-intology-intology-locus",
+      "source": "actor-profile-intology",
+      "target": "intology-locus",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation",
+        "published"
+      ],
+      "raw_labels": [
+        "Intology"
+      ],
+      "sources": [
+        {
+          "url": "https://intology.ai/blog/previewing-locus",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
+        }
+      ]
+    },
+    {
+      "id": "participation-profile-autoscience-autoscience-lab",
+      "source": "actor-profile-autoscience",
+      "target": "autoscience-lab",
+      "kind": "research_participation",
+      "label": "研究参与",
+      "evidence": "source_metadata",
+      "roles": [
+        "affiliation",
+        "published"
+      ],
+      "raw_labels": [
+        "Autoscience"
+      ],
+      "sources": [
+        {
+          "url": "https://www.autoscience.ai/blog/autoscience-autonomous-ai-lab",
+          "location": "论文署名 / 官方发布；归并规则见 research-actors.json"
         }
       ]
     },

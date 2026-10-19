@@ -32,9 +32,22 @@ run("setPage('companies')");assert.equal(run('selectedCompanies().length'),data.
 for(const c of data.industry.companies){run(`openCompany(${JSON.stringify(c.id)})`);assert(nodes['paper-content'].innerHTML.includes(c.name));for(const x of c.work_links)assert(nodes['paper-content'].innerHTML.includes(x.work_id));}
 for(const [query,id] of [['元环','metacircle'],['超衍','apex'],['姐夫哥','discovery-loop'],['Nous','nous']]){run(`state.query=${JSON.stringify(query)}`);assert(run(`COMPANIES.filter(c=>companyMatches(c,state.query)).some(c=>c.id===${JSON.stringify(id)})`));}
 run("state.query='超衍';state.searchRoute='all';state.searchStatus='all';state.searchOrg='all'");assert.equal(run('searchWorks().length'),3);
-run("openDomainTopic('h-search')");assert(nodes.main.innerHTML.includes('data-company="metacircle"'));assert(nodes.main.innerHTML.includes('data-company="discovery-loop"'));
+run("openDomainTopic('h-search')");assert(nodes.main.innerHTML.includes('data-domain-kind="academic"'));assert(nodes.main.innerHTML.includes('data-company="discovery-loop"'));
 run("openDomainTopic('m-pretraining-ai4ai')");assert(nodes.main.innerHTML.includes('跨路线参考 · Harness'));
 run("openPaper('apex-tune')");assert(nodes['paper-content'].innerHTML.includes('data-company="apex"'));
+// Matrix totals, canonical teams and cooperation use the same study set as the lists.
+run("setPage('actors')");assert.equal(run('selectedActorWorks().length'),98);
+for(const type of ['academic','tech','ai','independent','unresolved'])for(const route of ['harness','model','hybrid']){
+ run(`state.actorKind='${type}';state.actorRoute='${route}';state.actorId='all';state.actorQuery='';state.actorSmall=false`);
+ const expected=data.works.filter(w=>w.route===route&&w.placement!=='small'&&w.actor_types.includes(type));
+ assert.equal(run('selectedActorWorks().length'),expected.length);
+}
+run("state.actorKind='all';state.actorRoute='all';state.actorSmall=true");assert.equal(run('selectedActorWorks().length'),107);
+run("state.actorQuery='谷歌'");assert(run("selectedActors().some(a=>a.id==='google')"));
+run("state.actorQuery='Discovery Loop'");assert(run("selectedActors().some(a=>a.profile_id==='discovery-loop')"));
+run("state.actorQuery='';state.actorCoop='academic_industry'");assert(run("selectedActorWorks().every(w=>w.actor_types.includes('academic')&&(w.actor_types.includes('tech')||w.actor_types.includes('ai')))"));
+run("openActor('google')");assert(nodes['paper-content'].innerHTML.includes('Google DeepMind'));
+assert(!data.works.find(w=>w.id==='asi-bench').actor_ids.includes('profile-apex'));
 console.log(`PASS: three field maps, 29 topics, 60 conceptual relations, ${data.works.length} cards, ${data.relations.length} paper relations, filters/search/offline payload.`);
 if(process.env.CHROMIUM_PATH)(async()=>{
  const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
@@ -67,10 +80,15 @@ if(outputs&&r.id==='model')await page.screenshot({path:path.join(outputs,'model-
  await page.locator('.result-card h3 a').click();assert.equal(await page.locator('.axis').count(),6);await page.locator('[data-close]').click();
  await page.locator('[data-clear-search]').click();assert.equal(await page.locator('.result-card').count(),data.works.length);
  await page.locator('#search-route').selectOption('hybrid');assert.equal(await page.locator('.result-card').count(),data.routes.find(x=>x.id==='hybrid').counts.catalog);
- await page.locator('nav [data-nav="companies"]').click();assert.equal(await page.locator('.company-card').count(),data.industry.counts.research+data.industry.counts.direction);
- if(outputs)await page.screenshot({path:path.join(outputs,'industry-overview.png'),fullPage:true});
- await page.locator('#company-query').fill('超衍');assert.equal(await page.locator('.company-card').count(),1);
- await page.locator('.company-card h3 button').click();assert.equal(await page.locator('.company-output-list article').count(),3);
+ await page.locator('nav [data-nav="actors"]').click();assert(await page.locator('.actor-matrix').count()===1);
+ await page.locator('.actor-matrix [data-kind="ai"][data-route="harness"]').click();
+ assert.equal(await page.locator('#actor-kind').inputValue(),'ai');assert.equal(await page.locator('#actor-route').inputValue(),'harness');
+ const expectedAI=data.works.filter(w=>w.route==='harness'&&w.actor_types.includes('ai')&&w.placement!=='small').length;
+ assert((await page.locator('#actor-result-count').innerText()).includes(String(expectedAI)));
+ await page.locator('[data-actor-reset]').click();await page.locator('[data-actor-mode="institutions"]').click();
+ await page.locator('#actor-query').fill('超衍');assert.equal(await page.locator('[data-actor-row]').count(),1);
+ await page.locator('[data-actor-row] [data-actor]').click();assert((await page.locator('#paper-title').innerText()).includes('超衍'));
+ await page.locator('#paper-content [data-company="apex"]').click();assert.equal(await page.locator('.company-output-list article').count(),3);
  if(outputs)await page.screenshot({path:path.join(outputs,'apex-company-card.png')});
  await page.locator('.company-output-list h4 [data-paper="apex-tune"]').click();assert.equal(await page.locator('.axis').count(),6);await page.locator('.paper-companies [data-company="apex"]').click();assert((await page.locator('#paper-content').innerText()).includes('具体工作与公开证据'));await page.locator('[data-close]').click();
  await page.locator('#global-search').fill('姐夫哥');await page.locator('#search-form button').click();assert.equal(await page.locator('#search-company-results .company-card').count(),1);await page.locator('#search-company-results h3 button').click();assert((await page.locator('#paper-content').innerText()).includes('尚未披露'));await page.locator('[data-close]').click();
@@ -80,7 +98,7 @@ if(outputs&&r.id==='model')await page.screenshot({path:path.join(outputs,'model-
  await page.locator('svg [data-topic="m-bootstrapping"]').focus();await page.keyboard.press('Enter');assert((await page.locator('.domain-inspector').innerText()).includes('模型的哪些输出'));
  await page.locator('#domain-work-list [data-paper="rest-em"]').first().click();assert(await page.evaluate(()=>document.querySelector('#paper-dialog').scrollWidth<=document.querySelector('#paper-dialog').clientWidth+1));
  if(outputs)await page.screenshot({path:path.join(outputs,'mobile-card.png')});
- await page.keyboard.press('Escape');await page.locator('nav [data-nav="companies"]').click();await page.locator('[data-company-clear]').click();await page.locator('#company-query').fill('元环');await page.locator('.company-card h3 button').click();assert(await page.evaluate(()=>document.querySelector('#paper-dialog').scrollWidth<=document.querySelector('#paper-dialog').clientWidth+1));
+ await page.keyboard.press('Escape');await page.locator('nav [data-nav="actors"]').click();await page.locator('[data-actor-reset]').click();await page.locator('[data-actor-mode="institutions"]').click();await page.locator('#actor-query').fill('元环');await page.locator('[data-actor-row] [data-actor]').click();assert(await page.evaluate(()=>document.querySelector('#paper-dialog').scrollWidth<=document.querySelector('#paper-dialog').clientWidth+1));
  if(outputs)await page.screenshot({path:path.join(outputs,'mobile-company.png')});
  assert.deepEqual(errors,[]);await browser.close();console.log('PASS: Chromium first-screen maps, topic/edge navigation, paper/field return, desktop/mobile search, dialogs, filters, keyboard, no page overflow or JavaScript errors.');
 })().catch(e=>{console.error(e);process.exitCode=1});
