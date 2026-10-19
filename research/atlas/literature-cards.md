@@ -2511,3 +2511,265 @@ actor 使用 K1.5 系列的策略优化目标；同题采样回答，以组内�
 
 **实验与资源：** PaLM 540B；2022 预印本、2023 正式发表。
 
+## OPHIS
+
+2026 · MetaCircle · methods
+
+[原文](https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch) · 官方博客：OPHIS framework；Grokking / NanoGPT 两个案例；Looking Forward
+
+**A · 目标与问题**
+让自动研究从可观测的训练动力学出发，找到可解释、可干预的学习瓶颈。
+
+**B · 关键思想**
+把“哪次实验分数更高”推进为“内部哪些量发生变化，为什么值得干预”。这是一条观测驱动的 AI4AI 路线。
+
+**C · 系统与原理**
+Observation → Problem → Hypothesis → Intervention → Speed-up。博客称核心方法非 LLM；NanoGPT 案例又明确采用 coding agent，二者应按实验分别理解。
+
+**D · 算法与实现**
+测量张量统计量并提出干预。NanoGPT 设置固定为 2,000 步、单 H200，每个候选重复评估十次；部分内部规则未公开。
+
+**E · 反馈与迭代**
+成功干预引导相邻观测量探索，也选择不同方向。公开材料未展示研究代理参数的在线更新或后继接管改进器。
+
+**F · 结果与边界**
+作者报告 NanoGPT 平均 BPB 从 0.9340967 到 0.9318420。任务小、预算协议不同，不能直接把差值当作优于另一公司的通用能力结论。
+
+**实验与资源：** Grokking 与 NanoGPT；单 H200；2,000 训练步；每候选十次评估。
+
+## ComfyResearch
+
+2026 · MetaCircle · methods
+
+[原文](https://meta-circle.com/blog/comfyresearch-see-how-learning-happens) · 官方博客：From notebook to graph；Watching a run；Changing one thing；Where this goes
+
+**A · 目标与问题**
+降低理解、修改和复现训练实验的成本，让图中的观测能够追溯到实际配置。
+
+**B · 关键思想**
+科学结果不仅是最终 loss；训练路径中的相变、秩变化和不稳定性也需要保留下来。
+
+**C · 系统与原理**
+数据、模型、目标、优化器、trainer、observables 和 analysis 形成有类型的依赖图。观测节点读取训练状态，分析节点读取历史与 checkpoint。
+
+**D · 算法与实现**
+参数扫描、优化器替换和曲线比较均在同一实验图中进行；agent 可以生成图，使用者检查并接管。
+
+**E · 反馈与迭代**
+该发布主要由人驱动实验循环；自动进行观测—假设—干预的 OPHIS 是关联而独立的工作。
+
+**F · 结果与边界**
+它提供 AI4AI 的可检查实验基础设施。工具可执行和便于复现，尚不等于系统已自主改进自身。
+
+**实验与资源：** 笔记本级示例与 33 类观测；不作为 ≥27B 模型自训练结果。
+
+## nanoGPT Observable Library
+
+2026 · MetaCircle · methods
+
+[原文](https://meta-circle.com/blog/observe-learning-in-full) · 官方发布：Abstract；Across layers / setups；What the comparison reveals
+
+**A · 目标与问题**
+为自动研究提供比总 loss 更丰富的可观测状态，发现尚未解释的训练现象。
+
+**B · 关键思想**
+更丰富的观测词汇会产生不同的研究问题；仅看总指标会遗漏内部重组。
+
+**C · 系统与原理**
+1,820 个观测量、八类信号、三种 nanoGPT 设置，保留模块、训练配置和时间轨迹的联系。
+
+**D · 算法与实现**
+示例比较第二个 Transformer block 的注意力熵：跨层叠加，再改变层数或 warmup 设置。
+
+**E · 反馈与迭代**
+形成可重复检查的发现与注释；这一步是提出问题，尚未展示自动干预后再训练的完整循环。
+
+**F · 结果与边界**
+作者明确尚无该现象的因果解释。把观测工具挂到反馈与经验节点，避免将描述性曲线包装成机制证明。
+
+**实验与资源：** nanoGPT 12 层 / 6 层 / 无 warmup 三种设置；不是大模型 RSI 训练证据。
+
+## Apex-Tune
+
+2026 · Apex Intelligence · methods
+
+[原文](https://www.apexin.ai/assets/papers/what-happens-when-ai-starts-improving-ai.pdf) · 7 页报告：Evaluations I–IV；Beyond the Benchmarks；配套结果仓库
+
+**A · 目标与问题**
+用自动研发改进训练之前的规模预测、训练中的算法与底层执行效率。
+
+**B · 关键思想**
+寻找结构性瓶颈，例如让稀疏 n-gram 表的梯度更新也保持稀疏，而不仅调超参数。
+
+**C · 系统与原理**
+公开循环为发现问题、验证候选、从证据学习、进入下一轮；报告给出发现物与评测，但未披露研究者完整训练算法。
+
+**D · 算法与实现**
+四类任务：SLDBench、NanoChat Autoresearch、TriMul、fused attention。代码仓库发布训练脚本、拟合式和 kernel。
+
+**E · 反馈与迭代**
+更好的候选被带入后续搜索。跨任务知识迁移在报告中仍列为下一步，不能提前当成已完成的递归强化。
+
+**F · 结果与边界**
+仓库给出 NanoChat 十种子均值 0.892792 BPB。报告与仓库部分参考值不同；softmax 简化仅在指定 logit 范围与误差容限成立，不能外推为通用替代。
+
+**实验与资源：** NanoChat：单 B200、300 秒；kernel：H100。总研发搜索成本未完整披露。
+
+## Apex Research report
+
+2026 · Apex Intelligence · screened
+
+[原文](https://github.com/apexin-ai/apex-research-report) · 官方 README：Core Message、Key Results；PDF 链接已定位但本轮未完成正文提取
+
+**A · 目标与问题**
+检验自动研究产出能否获得真实同行评议，而不只通过模型自评。
+
+**B · 关键思想**
+外部评审是不同于自设 benchmark 的反馈渠道，但评分、正式录用和结果可复现是三个不同问题。
+
+**C · 系统与原理**
+公开摘要报告 34 个 AI 生成项目提交 ACL Rolling Review；完整研究者架构和回流训练机制不能从摘要确认。
+
+**F · 结果与边界**
+公司报告 8 篇平均总分超过 3.0。ARR 评分不是 ACL / EMNLP 正式录用；该资料不能证明研究代理递归更新。
+
+**实验与资源：** 作者报告合计 1,286 GPU-days、每项目约 38 GPU-days；0.38% 人类消息占比不是人类总劳动占比。
+
+## ASI-Bench
+
+2026 · Tsinghua / University of Michigan / MIT / Harvard / Carnegie Mellon / UIUC / Boston University / University of Queensland / USTC / Flatiron Institute / Microsoft Research / AG2 AI / Independent Researchers · methods
+
+[原文](https://arxiv.org/abs/2608.17271) · 论文摘要；官方仓库 Overview、B1–B4、任务发布与评分协议
+
+**A · 目标与问题**
+检验 agent 是否能独立完成科研工作流，而不把人类提供的研究方法算成 agent 的创新。
+
+**B · 关键思想**
+固定目标、数据和评分，改变给定的方法信息；用这一对照定位系统依赖人类指导的程度。
+
+**C · 系统与原理**
+60 个项目级任务、11 个领域；B1 给完整方法，B2 仅给方法名称，B3 给目标和数据，B4 再加入干扰信息。
+
+**D · 算法与实现**
+专家交叉审查、沙盒执行和 scorer 校验。仓库区分公开评分参考与保留参考；无效评分不能混作零分。
+
+**E · 反馈与迭代**
+它测量研究能力，不执行自身模型或 harness 的持续更新；可给三条路线提供外部评测。
+
+**F · 结果与边界**
+摘要报告 18 种 agent–model 配置平均分从完整指导的 50.91 降到 B3 的 26.62。所属类别为评测，不能算作已实现 ASI 或 RSI 的系统。
+
+**实验与资源：** 60 个任务、11 个领域、18 种 agent–model 配置；参数门槛不适用于评测本身。
+
+## Recursive · First Steps
+
+2026 · Recursive Superintelligence · methods
+
+[原文](https://www.recursive.com/articles/first-steps-toward-automated-ai-research) · 官方报告：研究循环；NanoChat、NanoGPT Speedrun 与 SOL-ExecBench 案例
+
+**A · 目标与问题**
+将提出想法、实现、运行和验证连成自主 AI 研发循环，改进训练算法和计算效率。
+
+**B · 关键思想**
+研究状态应能跨实验保留，多个有希望的分支应能组合；一次最优运行不足以证明改进。
+
+**C · 系统与原理**
+目标是外部训练实现与 GPU kernel。公开报告未展示研究代理权重随实验结果在线更新。
+
+**D · 算法与实现**
+发布训练脚本和 kernel 发现物；NanoChat 先在 H100 搜索，再到 B200 上进行对照和十种子评估。
+
+**E · 反馈与迭代**
+实验结果影响下一候选，检查方差和 reward hacking。人工检查与 AI 辅助分析仍参与结果解释。
+
+**F · 结果与边界**
+报告 NanoChat 均值从 0.9372 到 0.9109 BPB；目标为小模型及稀疏表。成功优化目标模型不是研究者已递归改进自身的充分证据。
+
+**实验与资源：** NanoChat：约 50M 主体加 1–2B 稀疏表；B200 五分钟评测。不是 ≥27B 研究者训练记录。
+
+## Hermes Agent
+
+2026 · Nous Research · methods
+
+[原文](https://github.com/NousResearch/hermes-agent) · README：learning loop；官方文档 Skills System：skill_manage、/learn、跨会话加载
+
+**A · 目标与问题**
+让部署后的 agent 能积累可复用的过程知识，而非每个会话重新开始。
+
+**B · 关键思想**
+把经验写入可执行时检索的外部技能和记忆；这里的学习不要求基础模型参数更新。
+
+**C · 系统与原理**
+技能文件与会话数据库持久保存；模型通过工具创建、读取、修改技能，并在后续任务中加载。
+
+**D · 算法与实现**
+文档公开 skill_manage、按需技能加载和 /learn。外部工具与模型可替换；插件扩展不自动等于系统自修改。
+
+**E · 反馈与迭代**
+技能可在使用中修订，记忆可跨会话召回。是否保留了正确经验、能否提高未知任务表现仍需独立对照。
+
+**F · 结果与边界**
+可检查的是产品中的持久学习机制；README 的 self-improving 定位不替代跨任务增益或多代改进器实验。
+
+## INTELLECT-3 / PRIME-RL
+
+2025 · Prime Intellect · methods
+
+[原文](https://www.primeintellect.ai/blog/intellect-3) · 官方技术发布：Training Infrastructure、Training Recipe、Future Work
+
+**A · 目标与问题**
+建立可扩展、可复用的大模型 agentic RL 训练栈。
+
+**B · 关键思想**
+将环境、验证器、sandbox 和 trainer 解耦，以减少长轨迹任务对同步训练效率的限制。
+
+**C · 系统与原理**
+在 GLM-4.5-Air 上做 SFT 与 RL；prime-rl 使用异步训练，verifiers 提供任务与反馈接口。
+
+**D · 算法与实现**
+106B 总参数；512 张 H200。训练、消融、合成数据与评测共享可版本化环境接口。
+
+**E · 反馈与迭代**
+rollout 经奖励反馈更新权重；工程师改进训练栈不等于模型自主改写训练栈。
+
+**F · 结果与边界**
+这是达到规模门槛的 Model 学习与 AI4AI 基础设施实例。公开发布没有证明改进器自修改；不要因同时有模型与框架就归为持续混合 RSI。
+
+**实验与资源：** 106B 总参数 MoE；512 H200、64 节点；SFT、RL 与消融覆盖约两个月。
+
+## Locus
+
+2025 · Intology · screened
+
+[原文](https://intology.ai/blog/previewing-locus) · 官方发布索引和 About 摘要；技术正文当前未完整提取
+
+**A · 目标与问题**
+让自动研究系统持续推进 AI 研发项目。
+
+**B · 关键思想**
+公司将 Locus 的量化研发评测与 Zochi 的论文产出分开介绍；两类成果不应合并成同一种能力证据。
+
+**C · 系统与原理**
+按已公开的自动研发对象暂挂 Harness 研究流程。具体记忆结构、参数更新和改进器继承尚未核准。
+
+**F · 结果与边界**
+本条是官方资料初筛，不转述未读取的详细分数，不断言已实现模型与 harness 共同自改进。
+
+## Autoscience · Carl / Mira
+
+2026 · Autoscience · screened
+
+[原文](https://www.autoscience.ai/blog/autoscience-autonomous-ai-lab) · 公司正式新闻稿（Business Wire 同步发布）；官网产品与 Carl 发布索引
+
+**A · 目标与问题**
+把 AI 研发从想法到模型交付接成自动流程。
+
+**B · 关键思想**
+研究探索与工程部署分工，目标是持续产生可用的 ML 改进。
+
+**C · 系统与原理**
+公司新闻稿描述 scientists / engineers 两类系统；基座模型、训练预算和研究者自更新机制未披露。
+
+**F · 结果与边界**
+公司报告 ICLR 2025 workshop 论文与 Kaggle 结果；当前未独立核验这些产出，不把 workshop 写成主会，也不推断持续模型自训练。
+

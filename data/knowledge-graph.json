@@ -1,5 +1,5 @@
 {
-  "schema_version": "5.0.0",
+  "schema_version": "5.1.0",
   "updated": "2026-10-19",
   "scope": "公开文献的领域主题图、论文关系图与阅读档案；领域结构为综述组织，论文归属可随证据修订。",
   "nodes": [
@@ -1020,6 +1020,94 @@
       "status": "methods"
     },
     {
+      "id": "metacircle-ophis",
+      "type": "work",
+      "label": "OPHIS",
+      "route": "harness",
+      "year": 2026,
+      "status": "methods"
+    },
+    {
+      "id": "comfyresearch",
+      "type": "work",
+      "label": "ComfyResearch",
+      "route": "harness",
+      "year": 2026,
+      "status": "methods"
+    },
+    {
+      "id": "nanogpt-observables",
+      "type": "work",
+      "label": "nanoGPT Observable Library",
+      "route": "harness",
+      "year": 2026,
+      "status": "methods"
+    },
+    {
+      "id": "apex-tune",
+      "type": "work",
+      "label": "Apex-Tune",
+      "route": "harness",
+      "year": 2026,
+      "status": "methods"
+    },
+    {
+      "id": "apex-research",
+      "type": "work",
+      "label": "Apex Research report",
+      "route": "harness",
+      "year": 2026,
+      "status": "screened"
+    },
+    {
+      "id": "asi-bench",
+      "type": "work",
+      "label": "ASI-Bench",
+      "route": "crosscut",
+      "year": 2026,
+      "status": "methods"
+    },
+    {
+      "id": "recursive-first-steps",
+      "type": "work",
+      "label": "Recursive · First Steps",
+      "route": "harness",
+      "year": 2026,
+      "status": "methods"
+    },
+    {
+      "id": "hermes-agent",
+      "type": "work",
+      "label": "Hermes Agent",
+      "route": "harness",
+      "year": 2026,
+      "status": "methods"
+    },
+    {
+      "id": "intellect-3",
+      "type": "work",
+      "label": "INTELLECT-3 / PRIME-RL",
+      "route": "model",
+      "year": 2025,
+      "status": "methods"
+    },
+    {
+      "id": "intology-locus",
+      "type": "work",
+      "label": "Locus",
+      "route": "harness",
+      "year": 2025,
+      "status": "screened"
+    },
+    {
+      "id": "autoscience-lab",
+      "type": "work",
+      "label": "Autoscience · Carl / Mira",
+      "route": "harness",
+      "year": 2026,
+      "status": "screened"
+    },
+    {
       "id": "h-prompt",
       "label": "提示与上下文优化",
       "type": "mechanism",
@@ -1894,6 +1982,223 @@
       "id": "org-moonshot-ai",
       "label": "Moonshot AI",
       "type": "institution"
+    },
+    {
+      "id": "org-metacircle",
+      "label": "MetaCircle",
+      "type": "institution"
+    },
+    {
+      "id": "org-apex-intelligence",
+      "label": "Apex Intelligence",
+      "type": "institution"
+    },
+    {
+      "id": "org-university-of-michigan",
+      "label": "University of Michigan",
+      "type": "institution"
+    },
+    {
+      "id": "org-boston-university",
+      "label": "Boston University",
+      "type": "institution"
+    },
+    {
+      "id": "org-university-of-queensland",
+      "label": "University of Queensland",
+      "type": "institution"
+    },
+    {
+      "id": "org-flatiron-institute",
+      "label": "Flatiron Institute",
+      "type": "institution"
+    },
+    {
+      "id": "org-ag2-ai",
+      "label": "AG2 AI",
+      "type": "institution"
+    },
+    {
+      "id": "org-independent-researchers",
+      "label": "Independent Researchers",
+      "type": "institution"
+    },
+    {
+      "id": "org-nous-research",
+      "label": "Nous Research",
+      "type": "institution"
+    },
+    {
+      "id": "org-intology",
+      "label": "Intology",
+      "type": "institution"
+    },
+    {
+      "id": "org-autoscience",
+      "label": "Autoscience",
+      "type": "institution"
+    },
+    {
+      "id": "company-discovery-loop",
+      "type": "company",
+      "label": "Discovery Loop",
+      "status": "direction"
+    },
+    {
+      "id": "company-metacircle",
+      "type": "company",
+      "label": "元环智能 · MetaCircle",
+      "status": "research"
+    },
+    {
+      "id": "company-apex",
+      "type": "company",
+      "label": "超衍智能 · Apex Intelligence",
+      "status": "research"
+    },
+    {
+      "id": "company-nous",
+      "type": "company",
+      "label": "Nous Research",
+      "status": "research"
+    },
+    {
+      "id": "company-intology",
+      "type": "company",
+      "label": "Intology",
+      "status": "research"
+    },
+    {
+      "id": "company-autoscience",
+      "type": "company",
+      "label": "Autoscience",
+      "status": "research"
+    },
+    {
+      "id": "company-recursive",
+      "type": "company",
+      "label": "Recursive / Recursive Superintelligence",
+      "status": "research"
+    },
+    {
+      "id": "company-sakana",
+      "type": "company",
+      "label": "Sakana AI",
+      "status": "research"
+    },
+    {
+      "id": "company-weco",
+      "type": "company",
+      "label": "Weco AI",
+      "status": "research"
+    },
+    {
+      "id": "company-igent",
+      "type": "company",
+      "label": "iGent AI",
+      "status": "research"
+    },
+    {
+      "id": "company-prime-intellect",
+      "type": "company",
+      "label": "Prime Intellect",
+      "status": "research"
+    },
+    {
+      "id": "company-frontis",
+      "type": "company",
+      "label": "Frontis.AI / Horizon Research",
+      "status": "research"
+    },
+    {
+      "id": "company-deepwisdom",
+      "type": "company",
+      "label": "DeepWisdom",
+      "status": "research"
+    },
+    {
+      "id": "company-memtensor",
+      "type": "company",
+      "label": "MemTensor",
+      "status": "research"
+    },
+    {
+      "id": "company-hexo",
+      "type": "company",
+      "label": "Hexo Labs",
+      "status": "research"
+    },
+    {
+      "id": "company-iquest",
+      "type": "company",
+      "label": "IQuest Research",
+      "status": "research"
+    },
+    {
+      "id": "company-langboat",
+      "type": "company",
+      "label": "Langboat",
+      "status": "research"
+    },
+    {
+      "id": "company-flower",
+      "type": "company",
+      "label": "Flower Labs",
+      "status": "research"
+    },
+    {
+      "id": "company-bespoke",
+      "type": "company",
+      "label": "Bespoke Labs",
+      "status": "research"
+    },
+    {
+      "id": "company-etude",
+      "type": "company",
+      "label": "Etude AI",
+      "status": "research"
+    },
+    {
+      "id": "company-tokenwave",
+      "type": "company",
+      "label": "TokenWave.AI",
+      "status": "research"
+    },
+    {
+      "id": "company-einsia",
+      "type": "company",
+      "label": "Einsia.AI",
+      "status": "research"
+    },
+    {
+      "id": "company-deepseek",
+      "type": "company",
+      "label": "DeepSeek",
+      "status": "research"
+    },
+    {
+      "id": "company-moonshot",
+      "type": "company",
+      "label": "Moonshot AI · 月之暗面",
+      "status": "research"
+    },
+    {
+      "id": "company-zhipu",
+      "type": "company",
+      "label": "Zhipu AI · 智谱",
+      "status": "research"
+    },
+    {
+      "id": "company-reflection",
+      "type": "company",
+      "label": "Reflection AI",
+      "status": "adjacent"
+    },
+    {
+      "id": "company-miromind",
+      "type": "company",
+      "label": "MiroMind",
+      "status": "adjacent"
     },
     {
       "id": "topic-h-instructions",
@@ -8774,6 +9079,468 @@
       ]
     },
     {
+      "id": "aff-metacircle-ophis-org-metacircle",
+      "source": "org-metacircle",
+      "target": "metacircle-ophis",
+      "kind": "affiliation",
+      "label": "署名机构 / 团队",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch",
+          "location": "官方研究发布 / 原文署名"
+        }
+      ]
+    },
+    {
+      "id": "method-h-research-metacircle-ophis",
+      "source": "h-research",
+      "target": "metacircle-ophis",
+      "kind": "mechanism",
+      "label": "研究该问题 / 使用该机制",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch",
+          "location": "官方博客：OPHIS framework；Grokking / NanoGPT 两个案例；Looking Forward"
+        }
+      ]
+    },
+    {
+      "id": "aff-comfyresearch-org-metacircle",
+      "source": "org-metacircle",
+      "target": "comfyresearch",
+      "kind": "affiliation",
+      "label": "署名机构 / 团队",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://meta-circle.com/blog/comfyresearch-see-how-learning-happens",
+          "location": "官方研究发布 / 原文署名"
+        }
+      ]
+    },
+    {
+      "id": "method-h-research-comfyresearch",
+      "source": "h-research",
+      "target": "comfyresearch",
+      "kind": "mechanism",
+      "label": "研究该问题 / 使用该机制",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://meta-circle.com/blog/comfyresearch-see-how-learning-happens",
+          "location": "官方博客：From notebook to graph；Watching a run；Changing one thing；Where this goes"
+        }
+      ]
+    },
+    {
+      "id": "aff-nanogpt-observables-org-metacircle",
+      "source": "org-metacircle",
+      "target": "nanogpt-observables",
+      "kind": "affiliation",
+      "label": "署名机构 / 团队",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://meta-circle.com/blog/observe-learning-in-full",
+          "location": "官方研究发布 / 原文署名"
+        }
+      ]
+    },
+    {
+      "id": "method-h-research-nanogpt-observables",
+      "source": "h-research",
+      "target": "nanogpt-observables",
+      "kind": "mechanism",
+      "label": "研究该问题 / 使用该机制",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://meta-circle.com/blog/observe-learning-in-full",
+          "location": "官方发布：Abstract；Across layers / setups；What the comparison reveals"
+        }
+      ]
+    },
+    {
+      "id": "aff-apex-tune-org-apex-intelligence",
+      "source": "org-apex-intelligence",
+      "target": "apex-tune",
+      "kind": "affiliation",
+      "label": "署名机构 / 团队",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://www.apexin.ai/assets/papers/what-happens-when-ai-starts-improving-ai.pdf",
+          "location": "官方研究发布 / 原文署名"
+        }
+      ]
+    },
+    {
+      "id": "method-h-research-apex-tune",
+      "source": "h-research",
+      "target": "apex-tune",
+      "kind": "mechanism",
+      "label": "研究该问题 / 使用该机制",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://www.apexin.ai/assets/papers/what-happens-when-ai-starts-improving-ai.pdf",
+          "location": "7 页报告：Evaluations I–IV；Beyond the Benchmarks；配套结果仓库"
+        }
+      ]
+    },
+    {
+      "id": "aff-apex-research-org-apex-intelligence",
+      "source": "org-apex-intelligence",
+      "target": "apex-research",
+      "kind": "affiliation",
+      "label": "署名机构 / 团队",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://github.com/apexin-ai/apex-research-report",
+          "location": "官方研究发布 / 原文署名"
+        }
+      ]
+    },
+    {
+      "id": "method-h-research-apex-research",
+      "source": "h-research",
+      "target": "apex-research",
+      "kind": "mechanism",
+      "label": "研究该问题 / 使用该机制",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://github.com/apexin-ai/apex-research-report",
+          "location": "官方 README：Core Message、Key Results；PDF 链接已定位但本轮未完成正文提取"
+        }
+      ]
+    },
+    {
+      "id": "aff-asi-bench-org-tsinghua",
+      "source": "org-tsinghua",
+      "target": "asi-bench",
+      "kind": "affiliation",
+      "label": "署名机构 / 团队",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2608.17271",
+          "location": "官方研究发布 / 原文署名"
+        }
+      ]
+    },
+    {
+      "id": "aff-asi-bench-org-university-of-michigan",
+      "source": "org-university-of-michigan",
+      "target": "asi-bench",
+      "kind": "affiliation",
+      "label": "署名机构 / 团队",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2608.17271",
+          "location": "官方研究发布 / 原文署名"
+        }
+      ]
+    },
+    {
+      "id": "aff-asi-bench-org-mit",
+      "source": "org-mit",
+      "target": "asi-bench",
+      "kind": "affiliation",
+      "label": "署名机构 / 团队",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2608.17271",
+          "location": "官方研究发布 / 原文署名"
+        }
+      ]
+    },
+    {
+      "id": "aff-asi-bench-org-harvard",
+      "source": "org-harvard",
+      "target": "asi-bench",
+      "kind": "affiliation",
+      "label": "署名机构 / 团队",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2608.17271",
+          "location": "官方研究发布 / 原文署名"
+        }
+      ]
+    },
+    {
+      "id": "aff-asi-bench-org-carnegie-mellon",
+      "source": "org-carnegie-mellon",
+      "target": "asi-bench",
+      "kind": "affiliation",
+      "label": "署名机构 / 团队",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2608.17271",
+          "location": "官方研究发布 / 原文署名"
+        }
+      ]
+    },
+    {
+      "id": "aff-asi-bench-org-uiuc",
+      "source": "org-uiuc",
+      "target": "asi-bench",
+      "kind": "affiliation",
+      "label": "署名机构 / 团队",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2608.17271",
+          "location": "官方研究发布 / 原文署名"
+        }
+      ]
+    },
+    {
+      "id": "aff-asi-bench-org-boston-university",
+      "source": "org-boston-university",
+      "target": "asi-bench",
+      "kind": "affiliation",
+      "label": "署名机构 / 团队",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2608.17271",
+          "location": "官方研究发布 / 原文署名"
+        }
+      ]
+    },
+    {
+      "id": "aff-asi-bench-org-university-of-queensland",
+      "source": "org-university-of-queensland",
+      "target": "asi-bench",
+      "kind": "affiliation",
+      "label": "署名机构 / 团队",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2608.17271",
+          "location": "官方研究发布 / 原文署名"
+        }
+      ]
+    },
+    {
+      "id": "aff-asi-bench-org-ustc",
+      "source": "org-ustc",
+      "target": "asi-bench",
+      "kind": "affiliation",
+      "label": "署名机构 / 团队",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2608.17271",
+          "location": "官方研究发布 / 原文署名"
+        }
+      ]
+    },
+    {
+      "id": "aff-asi-bench-org-flatiron-institute",
+      "source": "org-flatiron-institute",
+      "target": "asi-bench",
+      "kind": "affiliation",
+      "label": "署名机构 / 团队",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2608.17271",
+          "location": "官方研究发布 / 原文署名"
+        }
+      ]
+    },
+    {
+      "id": "aff-asi-bench-org-microsoft-research",
+      "source": "org-microsoft-research",
+      "target": "asi-bench",
+      "kind": "affiliation",
+      "label": "署名机构 / 团队",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2608.17271",
+          "location": "官方研究发布 / 原文署名"
+        }
+      ]
+    },
+    {
+      "id": "aff-asi-bench-org-ag2-ai",
+      "source": "org-ag2-ai",
+      "target": "asi-bench",
+      "kind": "affiliation",
+      "label": "署名机构 / 团队",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2608.17271",
+          "location": "官方研究发布 / 原文署名"
+        }
+      ]
+    },
+    {
+      "id": "aff-asi-bench-org-independent-researchers",
+      "source": "org-independent-researchers",
+      "target": "asi-bench",
+      "kind": "affiliation",
+      "label": "署名机构 / 团队",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2608.17271",
+          "location": "官方研究发布 / 原文署名"
+        }
+      ]
+    },
+    {
+      "id": "aff-recursive-first-steps-org-recursive-superintelligence",
+      "source": "org-recursive-superintelligence",
+      "target": "recursive-first-steps",
+      "kind": "affiliation",
+      "label": "署名机构 / 团队",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://www.recursive.com/articles/first-steps-toward-automated-ai-research",
+          "location": "官方研究发布 / 原文署名"
+        }
+      ]
+    },
+    {
+      "id": "method-h-research-recursive-first-steps",
+      "source": "h-research",
+      "target": "recursive-first-steps",
+      "kind": "mechanism",
+      "label": "研究该问题 / 使用该机制",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://www.recursive.com/articles/first-steps-toward-automated-ai-research",
+          "location": "官方报告：研究循环；NanoChat、NanoGPT Speedrun 与 SOL-ExecBench 案例"
+        }
+      ]
+    },
+    {
+      "id": "aff-hermes-agent-org-nous-research",
+      "source": "org-nous-research",
+      "target": "hermes-agent",
+      "kind": "affiliation",
+      "label": "署名机构 / 团队",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://github.com/NousResearch/hermes-agent",
+          "location": "官方研究发布 / 原文署名"
+        }
+      ]
+    },
+    {
+      "id": "method-h-memory-hermes-agent",
+      "source": "h-memory",
+      "target": "hermes-agent",
+      "kind": "mechanism",
+      "label": "研究该问题 / 使用该机制",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://github.com/NousResearch/hermes-agent",
+          "location": "README：learning loop；官方文档 Skills System：skill_manage、/learn、跨会话加载"
+        }
+      ]
+    },
+    {
+      "id": "aff-intellect-3-org-prime-intellect",
+      "source": "org-prime-intellect",
+      "target": "intellect-3",
+      "kind": "affiliation",
+      "label": "署名机构 / 团队",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://www.primeintellect.ai/blog/intellect-3",
+          "location": "官方研究发布 / 原文署名"
+        }
+      ]
+    },
+    {
+      "id": "method-m-verifier-intellect-3",
+      "source": "m-verifier",
+      "target": "intellect-3",
+      "kind": "mechanism",
+      "label": "研究该问题 / 使用该机制",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://www.primeintellect.ai/blog/intellect-3",
+          "location": "官方技术发布：Training Infrastructure、Training Recipe、Future Work"
+        }
+      ]
+    },
+    {
+      "id": "aff-intology-locus-org-intology",
+      "source": "org-intology",
+      "target": "intology-locus",
+      "kind": "affiliation",
+      "label": "署名机构 / 团队",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://intology.ai/blog/previewing-locus",
+          "location": "官方研究发布 / 原文署名"
+        }
+      ]
+    },
+    {
+      "id": "method-h-research-intology-locus",
+      "source": "h-research",
+      "target": "intology-locus",
+      "kind": "mechanism",
+      "label": "研究该问题 / 使用该机制",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://intology.ai/blog/previewing-locus",
+          "location": "官方发布索引和 About 摘要；技术正文当前未完整提取"
+        }
+      ]
+    },
+    {
+      "id": "aff-autoscience-lab-org-autoscience",
+      "source": "org-autoscience",
+      "target": "autoscience-lab",
+      "kind": "affiliation",
+      "label": "署名机构 / 团队",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://www.autoscience.ai/blog/autoscience-autonomous-ai-lab",
+          "location": "官方研究发布 / 原文署名"
+        }
+      ]
+    },
+    {
+      "id": "method-h-research-autoscience-lab",
+      "source": "h-research",
+      "target": "autoscience-lab",
+      "kind": "mechanism",
+      "label": "研究该问题 / 使用该机制",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://www.autoscience.ai/blog/autoscience-autonomous-ai-lab",
+          "location": "公司正式新闻稿（Business Wire 同步发布）；官网产品与 Carl 发布索引"
+        }
+      ]
+    },
+    {
       "id": "rel-001",
       "source": "dgm",
       "target": "hyperagents",
@@ -9565,6 +10332,2715 @@
         {
           "url": "https://arxiv.org/html/2606.03108v2",
           "location": "§2.2 Harness and Infrastructure Optimization for LLM Systems"
+        }
+      ]
+    },
+    {
+      "id": "industry-metacircle-ophis-recursive-first-steps",
+      "source": "metacircle-ophis",
+      "target": "recursive-first-steps",
+      "kind": "uses",
+      "label": "以公开训练解作为起点",
+      "explanation": "NanoGPT 案例称从 Recursive 的公开解出发；改变了评测预算，因此不是同协议排名。",
+      "evidence": "source_explicit",
+      "sources": [
+        {
+          "url": "https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch",
+          "location": "Case Study 2: NanoGPT"
+        }
+      ]
+    },
+    {
+      "id": "industry-apex-tune-recursive-first-steps",
+      "source": "apex-tune",
+      "target": "recursive-first-steps",
+      "kind": "compares",
+      "label": "比较公开 NanoChat 结果",
+      "explanation": "Apex 报告引用 Recursive 的公开结果；报告注明若干 kernel 对照不是同机成对测量。",
+      "evidence": "source_explicit",
+      "sources": [
+        {
+          "url": "https://www.apexin.ai/assets/papers/what-happens-when-ai-starts-improving-ai.pdf",
+          "location": "Evaluation II；III"
+        }
+      ]
+    },
+    {
+      "id": "industry-comfyresearch-metacircle-ophis",
+      "source": "comfyresearch",
+      "target": "metacircle-ophis",
+      "kind": "discusses",
+      "label": "实验工具连接自动研究",
+      "explanation": "ComfyResearch 结尾将人驱动实验与另行发展的 OPHIS 自动循环相连。",
+      "evidence": "source_explicit",
+      "sources": [
+        {
+          "url": "https://meta-circle.com/blog/comfyresearch-see-how-learning-happens",
+          "location": "Where this goes"
+        }
+      ]
+    },
+    {
+      "id": "company-discovery-loop-direction-h-search",
+      "source": "company-discovery-loop",
+      "target": "topic-h-search",
+      "kind": "company_direction",
+      "label": "公开方向 / 待确认闭环",
+      "evidence": "declared_direction",
+      "sources": [
+        {
+          "url": "https://www.discoveryloop.com/",
+          "location": "官网公开方向：自动化 ML 研究流程；尚无机制报告。"
+        }
+      ]
+    },
+    {
+      "id": "company-discovery-loop-direction-h-runtime",
+      "source": "company-discovery-loop",
+      "target": "topic-h-runtime",
+      "kind": "company_direction",
+      "label": "公开方向 / 待确认闭环",
+      "evidence": "declared_direction",
+      "sources": [
+        {
+          "url": "https://www.discoveryloop.com/",
+          "location": "官网公开方向：自动化 ML 研究流程；尚无机制报告。"
+        }
+      ]
+    },
+    {
+      "id": "company-discovery-loop-direction-x-training",
+      "source": "company-discovery-loop",
+      "target": "topic-x-training",
+      "kind": "company_direction",
+      "label": "公开方向 / 待确认闭环",
+      "evidence": "declared_direction",
+      "sources": [
+        {
+          "url": "https://www.discoveryloop.com/",
+          "location": "综述定位的目标：研发结果回用于自身技术栈；模型与 harness 的双向更新仍待披露。"
+        }
+      ]
+    },
+    {
+      "id": "company-metacircle-work-metacircle-ophis",
+      "source": "company-metacircle",
+      "target": "metacircle-ophis",
+      "kind": "company_work",
+      "label": "published",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch",
+          "location": "官方发布"
+        }
+      ]
+    },
+    {
+      "id": "company-metacircle-work-comfyresearch",
+      "source": "company-metacircle",
+      "target": "comfyresearch",
+      "kind": "company_work",
+      "label": "published",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://meta-circle.com/blog/comfyresearch-see-how-learning-happens",
+          "location": "官方发布"
+        }
+      ]
+    },
+    {
+      "id": "company-metacircle-work-nanogpt-observables",
+      "source": "company-metacircle",
+      "target": "nanogpt-observables",
+      "kind": "company_work",
+      "label": "published",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://meta-circle.com/blog/observe-learning-in-full",
+          "location": "官方发布"
+        }
+      ]
+    },
+    {
+      "id": "company-metacircle-topic-h-evaluation",
+      "source": "company-metacircle",
+      "target": "topic-h-evaluation",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://meta-circle.com/",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://meta-circle.com/blog/comfyresearch-see-how-learning-happens",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://meta-circle.com/blog/observe-learning-in-full",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://meta-circle.com/blog/predicting-marins-hero-run",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://meta-circle.com/blog/can-taste-be-learned",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-metacircle-topic-h-experience",
+      "source": "company-metacircle",
+      "target": "topic-h-experience",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://meta-circle.com/",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://meta-circle.com/blog/comfyresearch-see-how-learning-happens",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://meta-circle.com/blog/observe-learning-in-full",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://meta-circle.com/blog/predicting-marins-hero-run",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://meta-circle.com/blog/can-taste-be-learned",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-metacircle-topic-h-runtime",
+      "source": "company-metacircle",
+      "target": "topic-h-runtime",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://meta-circle.com/",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://meta-circle.com/blog/comfyresearch-see-how-learning-happens",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://meta-circle.com/blog/observe-learning-in-full",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://meta-circle.com/blog/predicting-marins-hero-run",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://meta-circle.com/blog/can-taste-be-learned",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-metacircle-topic-h-search",
+      "source": "company-metacircle",
+      "target": "topic-h-search",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://meta-circle.com/",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://meta-circle.com/blog/comfyresearch-see-how-learning-happens",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://meta-circle.com/blog/observe-learning-in-full",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://meta-circle.com/blog/predicting-marins-hero-run",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://meta-circle.com/blog/can-taste-be-learned",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-metacircle-topic-m-pretraining-ai4ai",
+      "source": "company-metacircle",
+      "target": "topic-m-pretraining-ai4ai",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://meta-circle.com/",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://meta-circle.com/blog/comfyresearch-see-how-learning-happens",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://meta-circle.com/blog/observe-learning-in-full",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://meta-circle.com/blog/predicting-marins-hero-run",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://meta-circle.com/blog/can-taste-be-learned",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-metacircle-topic-x-feedback",
+      "source": "company-metacircle",
+      "target": "topic-x-feedback",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://meta-circle.com/",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://meta-circle.com/blog/comfyresearch-see-how-learning-happens",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://meta-circle.com/blog/observe-learning-in-full",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://meta-circle.com/blog/predicting-marins-hero-run",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://meta-circle.com/blog/can-taste-be-learned",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-metacircle-topic-x-training",
+      "source": "company-metacircle",
+      "target": "topic-x-training",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://meta-circle.com/",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://meta-circle.com/blog/comfyresearch-see-how-learning-happens",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://meta-circle.com/blog/observe-learning-in-full",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://meta-circle.com/blog/predicting-marins-hero-run",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://meta-circle.com/blog/can-taste-be-learned",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-apex-work-apex-tune",
+      "source": "company-apex",
+      "target": "apex-tune",
+      "kind": "company_work",
+      "label": "published",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://www.apexin.ai/assets/papers/what-happens-when-ai-starts-improving-ai.pdf",
+          "location": "官方发布"
+        }
+      ]
+    },
+    {
+      "id": "company-apex-work-apex-research",
+      "source": "company-apex",
+      "target": "apex-research",
+      "kind": "company_work",
+      "label": "published",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://github.com/apexin-ai/apex-research-report",
+          "location": "官方发布"
+        }
+      ]
+    },
+    {
+      "id": "company-apex-work-asi-bench",
+      "source": "company-apex",
+      "target": "asi-bench",
+      "kind": "company_work",
+      "label": "hosted",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://github.com/apexin-ai/ASI-Bench",
+          "location": "官方项目托管；论文作者机构另列。"
+        }
+      ]
+    },
+    {
+      "id": "company-apex-topic-h-evaluation",
+      "source": "company-apex",
+      "target": "topic-h-evaluation",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://www.apexin.ai/",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://www.apexin.ai/assets/papers/what-happens-when-ai-starts-improving-ai.pdf",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://github.com/apexin-ai/apex-research-report",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://github.com/apexin-ai/ASI-Bench",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://github.com/apexin-ai/Evaluation-Self-Evolve-AI-System",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-apex-topic-h-runtime",
+      "source": "company-apex",
+      "target": "topic-h-runtime",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://www.apexin.ai/",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://www.apexin.ai/assets/papers/what-happens-when-ai-starts-improving-ai.pdf",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://github.com/apexin-ai/apex-research-report",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://github.com/apexin-ai/ASI-Bench",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://github.com/apexin-ai/Evaluation-Self-Evolve-AI-System",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-apex-topic-h-search",
+      "source": "company-apex",
+      "target": "topic-h-search",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://www.apexin.ai/",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://www.apexin.ai/assets/papers/what-happens-when-ai-starts-improving-ai.pdf",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://github.com/apexin-ai/apex-research-report",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://github.com/apexin-ai/ASI-Bench",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://github.com/apexin-ai/Evaluation-Self-Evolve-AI-System",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-apex-topic-m-pretraining-ai4ai",
+      "source": "company-apex",
+      "target": "topic-m-pretraining-ai4ai",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://www.apexin.ai/",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://www.apexin.ai/assets/papers/what-happens-when-ai-starts-improving-ai.pdf",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://github.com/apexin-ai/apex-research-report",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://github.com/apexin-ai/ASI-Bench",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://github.com/apexin-ai/Evaluation-Self-Evolve-AI-System",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-apex-topic-x-feedback",
+      "source": "company-apex",
+      "target": "topic-x-feedback",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://www.apexin.ai/",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://www.apexin.ai/assets/papers/what-happens-when-ai-starts-improving-ai.pdf",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://github.com/apexin-ai/apex-research-report",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://github.com/apexin-ai/ASI-Bench",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://github.com/apexin-ai/Evaluation-Self-Evolve-AI-System",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-apex-topic-x-training",
+      "source": "company-apex",
+      "target": "topic-x-training",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://www.apexin.ai/",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://www.apexin.ai/assets/papers/what-happens-when-ai-starts-improving-ai.pdf",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://github.com/apexin-ai/apex-research-report",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://github.com/apexin-ai/ASI-Bench",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://github.com/apexin-ai/Evaluation-Self-Evolve-AI-System",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-apex-direction-x-training",
+      "source": "company-apex",
+      "target": "topic-x-training",
+      "kind": "company_direction",
+      "label": "公开方向 / 待确认闭环",
+      "evidence": "declared_direction",
+      "sources": [
+        {
+          "url": "https://www.apexin.ai/",
+          "location": "公司研究目标与训练栈应用；未据官网愿景认证双向自更新。"
+        }
+      ]
+    },
+    {
+      "id": "company-apex-direction-x-feedback",
+      "source": "company-apex",
+      "target": "topic-x-feedback",
+      "kind": "company_direction",
+      "label": "公开方向 / 待确认闭环",
+      "evidence": "declared_direction",
+      "sources": [
+        {
+          "url": "https://www.apexin.ai/",
+          "location": "公司研究目标与训练栈应用；未据官网愿景认证双向自更新。"
+        }
+      ]
+    },
+    {
+      "id": "company-nous-work-hermes-agent",
+      "source": "company-nous",
+      "target": "hermes-agent",
+      "kind": "company_work",
+      "label": "published",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://github.com/NousResearch/hermes-agent",
+          "location": "官方发布"
+        }
+      ]
+    },
+    {
+      "id": "company-nous-topic-h-capabilities",
+      "source": "company-nous",
+      "target": "topic-h-capabilities",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://github.com/NousResearch/hermes-agent",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-nous-topic-h-experience",
+      "source": "company-nous",
+      "target": "topic-h-experience",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://github.com/NousResearch/hermes-agent",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-nous-topic-h-instructions",
+      "source": "company-nous",
+      "target": "topic-h-instructions",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://github.com/NousResearch/hermes-agent",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-nous-topic-h-memory",
+      "source": "company-nous",
+      "target": "topic-h-memory",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://github.com/NousResearch/hermes-agent",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-intology-work-intology-locus",
+      "source": "company-intology",
+      "target": "intology-locus",
+      "kind": "company_work",
+      "label": "published",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://intology.ai/blog/previewing-locus",
+          "location": "官方发布"
+        }
+      ]
+    },
+    {
+      "id": "company-intology-topic-h-experience",
+      "source": "company-intology",
+      "target": "topic-h-experience",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://intology.ai/",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://intology.ai/blog/previewing-locus",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://intology.ai/blog/zochi-tech-report",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-intology-topic-h-search",
+      "source": "company-intology",
+      "target": "topic-h-search",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://intology.ai/",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://intology.ai/blog/previewing-locus",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://intology.ai/blog/zochi-tech-report",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-autoscience-work-autoscience-lab",
+      "source": "company-autoscience",
+      "target": "autoscience-lab",
+      "kind": "company_work",
+      "label": "published",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://www.autoscience.ai/blog/autoscience-autonomous-ai-lab",
+          "location": "官方发布"
+        }
+      ]
+    },
+    {
+      "id": "company-autoscience-topic-h-control",
+      "source": "company-autoscience",
+      "target": "topic-h-control",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://www.autoscience.ai/",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://www.autoscience.ai/blog/autoscience-autonomous-ai-lab",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-autoscience-topic-h-evaluation",
+      "source": "company-autoscience",
+      "target": "topic-h-evaluation",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://www.autoscience.ai/",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://www.autoscience.ai/blog/autoscience-autonomous-ai-lab",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-autoscience-topic-h-search",
+      "source": "company-autoscience",
+      "target": "topic-h-search",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://www.autoscience.ai/",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://www.autoscience.ai/blog/autoscience-autonomous-ai-lab",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-recursive-work-recursive-first-steps",
+      "source": "company-recursive",
+      "target": "recursive-first-steps",
+      "kind": "company_work",
+      "label": "published",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://www.recursive.com/articles/first-steps-toward-automated-ai-research",
+          "location": "原文署名中的参与机构；不推断整个公司只有这一条路线。"
+        }
+      ]
+    },
+    {
+      "id": "company-recursive-work-agent0",
+      "source": "company-recursive",
+      "target": "agent0",
+      "kind": "company_work",
+      "label": "coauthored",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2511.16043",
+          "location": "原文署名中的参与机构；不推断整个公司只有这一条路线。"
+        }
+      ]
+    },
+    {
+      "id": "company-recursive-topic-h-evaluation",
+      "source": "company-recursive",
+      "target": "topic-h-evaluation",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://www.recursive.com/",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://www.recursive.com/articles/first-steps-toward-automated-ai-research",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2511.16043",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-recursive-topic-h-experience",
+      "source": "company-recursive",
+      "target": "topic-h-experience",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://www.recursive.com/",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://www.recursive.com/articles/first-steps-toward-automated-ai-research",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2511.16043",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-recursive-topic-h-runtime",
+      "source": "company-recursive",
+      "target": "topic-h-runtime",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://www.recursive.com/",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://www.recursive.com/articles/first-steps-toward-automated-ai-research",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2511.16043",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-recursive-topic-h-search",
+      "source": "company-recursive",
+      "target": "topic-h-search",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://www.recursive.com/",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://www.recursive.com/articles/first-steps-toward-automated-ai-research",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2511.16043",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-recursive-topic-m-curriculum-learning",
+      "source": "company-recursive",
+      "target": "topic-m-curriculum-learning",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://www.recursive.com/",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://www.recursive.com/articles/first-steps-toward-automated-ai-research",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2511.16043",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-recursive-topic-m-experience-learning",
+      "source": "company-recursive",
+      "target": "topic-m-experience-learning",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://www.recursive.com/",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://www.recursive.com/articles/first-steps-toward-automated-ai-research",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2511.16043",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-recursive-topic-m-self-play",
+      "source": "company-recursive",
+      "target": "topic-m-self-play",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://www.recursive.com/",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://www.recursive.com/articles/first-steps-toward-automated-ai-research",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2511.16043",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-recursive-topic-x-training",
+      "source": "company-recursive",
+      "target": "topic-x-training",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://www.recursive.com/",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://www.recursive.com/articles/first-steps-toward-automated-ai-research",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2511.16043",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-sakana-work-dgm",
+      "source": "company-sakana",
+      "target": "dgm",
+      "kind": "company_work",
+      "label": "coauthored",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2505.22954v3",
+          "location": "原文署名中的参与机构；不推断整个公司只有这一条路线。"
+        }
+      ]
+    },
+    {
+      "id": "company-sakana-work-rhi",
+      "source": "company-sakana",
+      "target": "rhi",
+      "kind": "company_work",
+      "label": "coauthored",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2607.15524",
+          "location": "原文署名中的参与机构；不推断整个公司只有这一条路线。"
+        }
+      ]
+    },
+    {
+      "id": "company-sakana-work-mass",
+      "source": "company-sakana",
+      "target": "mass",
+      "kind": "company_work",
+      "label": "coauthored",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2610.12176v1",
+          "location": "原文署名中的参与机构；不推断整个公司只有这一条路线。"
+        }
+      ]
+    },
+    {
+      "id": "company-sakana-work-shinkaevolve",
+      "source": "company-sakana",
+      "target": "shinkaevolve",
+      "kind": "company_work",
+      "label": "coauthored",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2509.19349",
+          "location": "原文署名中的参与机构；不推断整个公司只有这一条路线。"
+        }
+      ]
+    },
+    {
+      "id": "company-sakana-topic-h-capabilities",
+      "source": "company-sakana",
+      "target": "topic-h-capabilities",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://sakana.ai/",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/html/2505.22954v3",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2607.15524",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/html/2610.12176v1",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2509.19349",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-sakana-topic-h-control",
+      "source": "company-sakana",
+      "target": "topic-h-control",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://sakana.ai/",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/html/2505.22954v3",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2607.15524",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/html/2610.12176v1",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2509.19349",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-sakana-topic-h-evaluation",
+      "source": "company-sakana",
+      "target": "topic-h-evaluation",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://sakana.ai/",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/html/2505.22954v3",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2607.15524",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/html/2610.12176v1",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2509.19349",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-sakana-topic-h-improver",
+      "source": "company-sakana",
+      "target": "topic-h-improver",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://sakana.ai/",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/html/2505.22954v3",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2607.15524",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/html/2610.12176v1",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2509.19349",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-sakana-topic-h-inheritance",
+      "source": "company-sakana",
+      "target": "topic-h-inheritance",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://sakana.ai/",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/html/2505.22954v3",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2607.15524",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/html/2610.12176v1",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2509.19349",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-sakana-topic-h-instructions",
+      "source": "company-sakana",
+      "target": "topic-h-instructions",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://sakana.ai/",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/html/2505.22954v3",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2607.15524",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/html/2610.12176v1",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2509.19349",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-sakana-topic-h-runtime",
+      "source": "company-sakana",
+      "target": "topic-h-runtime",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://sakana.ai/",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/html/2505.22954v3",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2607.15524",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/html/2610.12176v1",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2509.19349",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-sakana-topic-h-search",
+      "source": "company-sakana",
+      "target": "topic-h-search",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://sakana.ai/",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/html/2505.22954v3",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2607.15524",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/html/2610.12176v1",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2509.19349",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-sakana-topic-x-externalization",
+      "source": "company-sakana",
+      "target": "topic-x-externalization",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://sakana.ai/",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/html/2505.22954v3",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2607.15524",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/html/2610.12176v1",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2509.19349",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-sakana-topic-x-feedback",
+      "source": "company-sakana",
+      "target": "topic-x-feedback",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://sakana.ai/",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/html/2505.22954v3",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2607.15524",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/html/2610.12176v1",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2509.19349",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-sakana-topic-x-internalization",
+      "source": "company-sakana",
+      "target": "topic-x-internalization",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://sakana.ai/",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/html/2505.22954v3",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2607.15524",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/html/2610.12176v1",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2509.19349",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-sakana-topic-x-organization",
+      "source": "company-sakana",
+      "target": "topic-x-organization",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://sakana.ai/",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/html/2505.22954v3",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2607.15524",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/html/2610.12176v1",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2509.19349",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-sakana-topic-x-workflow",
+      "source": "company-sakana",
+      "target": "topic-x-workflow",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://sakana.ai/",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/html/2505.22954v3",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2607.15524",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/html/2610.12176v1",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2509.19349",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-weco-work-aide2",
+      "source": "company-weco",
+      "target": "aide2",
+      "kind": "company_work",
+      "label": "published",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2609.26457v1",
+          "location": "官方发布"
+        }
+      ]
+    },
+    {
+      "id": "company-weco-topic-h-evaluation",
+      "source": "company-weco",
+      "target": "topic-h-evaluation",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://www.weco.ai/",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/html/2609.26457v1",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-weco-topic-h-improver",
+      "source": "company-weco",
+      "target": "topic-h-improver",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://www.weco.ai/",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/html/2609.26457v1",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-weco-topic-h-inheritance",
+      "source": "company-weco",
+      "target": "topic-h-inheritance",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://www.weco.ai/",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/html/2609.26457v1",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-weco-topic-h-search",
+      "source": "company-weco",
+      "target": "topic-h-search",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://www.weco.ai/",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/html/2609.26457v1",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-igent-work-sica",
+      "source": "company-igent",
+      "target": "sica",
+      "kind": "company_work",
+      "label": "coauthored",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2504.15228v1",
+          "location": "原文署名中的参与机构；不推断整个公司只有这一条路线。"
+        }
+      ]
+    },
+    {
+      "id": "company-igent-topic-h-evaluation",
+      "source": "company-igent",
+      "target": "topic-h-evaluation",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://igent.ai/",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/html/2504.15228v1",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-igent-topic-h-improver",
+      "source": "company-igent",
+      "target": "topic-h-improver",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://igent.ai/",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/html/2504.15228v1",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-igent-topic-h-runtime",
+      "source": "company-igent",
+      "target": "topic-h-runtime",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://igent.ai/",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/html/2504.15228v1",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-igent-topic-h-search",
+      "source": "company-igent",
+      "target": "topic-h-search",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://igent.ai/",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/html/2504.15228v1",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-prime-intellect-work-prime-agent",
+      "source": "company-prime-intellect",
+      "target": "prime-agent",
+      "kind": "company_work",
+      "label": "coauthored",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2608.23552",
+          "location": "原文署名中的参与机构；不推断整个公司只有这一条路线。"
+        }
+      ]
+    },
+    {
+      "id": "company-prime-intellect-work-intellect-3",
+      "source": "company-prime-intellect",
+      "target": "intellect-3",
+      "kind": "company_work",
+      "label": "coauthored",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://www.primeintellect.ai/blog/intellect-3",
+          "location": "原文署名中的参与机构；不推断整个公司只有这一条路线。"
+        }
+      ]
+    },
+    {
+      "id": "company-prime-intellect-topic-h-capabilities",
+      "source": "company-prime-intellect",
+      "target": "topic-h-capabilities",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://www.primeintellect.ai/blog/intellect-3",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2608.23552",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-prime-intellect-topic-h-memory",
+      "source": "company-prime-intellect",
+      "target": "topic-h-memory",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://www.primeintellect.ai/blog/intellect-3",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2608.23552",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-prime-intellect-topic-h-runtime",
+      "source": "company-prime-intellect",
+      "target": "topic-h-runtime",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://www.primeintellect.ai/blog/intellect-3",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2608.23552",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-prime-intellect-topic-m-experience-learning",
+      "source": "company-prime-intellect",
+      "target": "topic-m-experience-learning",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://www.primeintellect.ai/blog/intellect-3",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2608.23552",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-prime-intellect-topic-m-verifiable-feedback",
+      "source": "company-prime-intellect",
+      "target": "topic-m-verifiable-feedback",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://www.primeintellect.ai/blog/intellect-3",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2608.23552",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-prime-intellect-topic-x-environment",
+      "source": "company-prime-intellect",
+      "target": "topic-x-environment",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://www.primeintellect.ai/blog/intellect-3",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2608.23552",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-prime-intellect-topic-x-training",
+      "source": "company-prime-intellect",
+      "target": "topic-x-training",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://www.primeintellect.ai/blog/intellect-3",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2608.23552",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-frontis-work-openrsi",
+      "source": "company-frontis",
+      "target": "openrsi",
+      "kind": "company_work",
+      "label": "coauthored",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2607.28568v1",
+          "location": "原文署名中的参与机构；不推断整个公司只有这一条路线。"
+        }
+      ]
+    },
+    {
+      "id": "company-frontis-topic-x-internalization",
+      "source": "company-frontis",
+      "target": "topic-x-internalization",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2607.28568v1",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-frontis-topic-x-organization",
+      "source": "company-frontis",
+      "target": "topic-x-organization",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2607.28568v1",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-frontis-topic-x-training",
+      "source": "company-frontis",
+      "target": "topic-x-training",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2607.28568v1",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-deepwisdom-work-aflow",
+      "source": "company-deepwisdom",
+      "target": "aflow",
+      "kind": "company_work",
+      "label": "coauthored",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2410.10762",
+          "location": "原文署名中的参与机构；不推断整个公司只有这一条路线。"
+        }
+      ]
+    },
+    {
+      "id": "company-deepwisdom-topic-h-control",
+      "source": "company-deepwisdom",
+      "target": "topic-h-control",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2410.10762",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-deepwisdom-topic-h-evaluation",
+      "source": "company-deepwisdom",
+      "target": "topic-h-evaluation",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2410.10762",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-deepwisdom-topic-h-search",
+      "source": "company-deepwisdom",
+      "target": "topic-h-search",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2410.10762",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-memtensor-work-memrl",
+      "source": "company-memtensor",
+      "target": "memrl",
+      "kind": "company_work",
+      "label": "coauthored",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2601.03192v1",
+          "location": "原文署名中的参与机构；不推断整个公司只有这一条路线。"
+        }
+      ]
+    },
+    {
+      "id": "company-memtensor-topic-h-evaluation",
+      "source": "company-memtensor",
+      "target": "topic-h-evaluation",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2601.03192v1",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-memtensor-topic-h-inheritance",
+      "source": "company-memtensor",
+      "target": "topic-h-inheritance",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2601.03192v1",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-memtensor-topic-h-memory",
+      "source": "company-memtensor",
+      "target": "topic-h-memory",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2601.03192v1",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-hexo-work-sia",
+      "source": "company-hexo",
+      "target": "sia",
+      "kind": "company_work",
+      "label": "coauthored",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2605.27276",
+          "location": "原文署名中的参与机构；不推断整个公司只有这一条路线。"
+        }
+      ]
+    },
+    {
+      "id": "company-hexo-topic-x-deployment",
+      "source": "company-hexo",
+      "target": "topic-x-deployment",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2605.27276",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-hexo-topic-x-externalization",
+      "source": "company-hexo",
+      "target": "topic-x-externalization",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2605.27276",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-hexo-topic-x-training",
+      "source": "company-hexo",
+      "target": "topic-x-training",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2605.27276",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-hexo-topic-x-workflow",
+      "source": "company-hexo",
+      "target": "topic-x-workflow",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2605.27276",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-iquest-work-modular-rsi",
+      "source": "company-iquest",
+      "target": "modular-rsi",
+      "kind": "company_work",
+      "label": "coauthored",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2609.14857v2",
+          "location": "原文署名中的参与机构；不推断整个公司只有这一条路线。"
+        }
+      ]
+    },
+    {
+      "id": "company-iquest-topic-h-control",
+      "source": "company-iquest",
+      "target": "topic-h-control",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2609.14857v2",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-iquest-topic-h-improver",
+      "source": "company-iquest",
+      "target": "topic-h-improver",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2609.14857v2",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-iquest-topic-h-inheritance",
+      "source": "company-iquest",
+      "target": "topic-h-inheritance",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2609.14857v2",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-iquest-topic-h-runtime",
+      "source": "company-iquest",
+      "target": "topic-h-runtime",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2609.14857v2",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-langboat-work-modular-rsi",
+      "source": "company-langboat",
+      "target": "modular-rsi",
+      "kind": "company_work",
+      "label": "coauthored",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2609.14857v2",
+          "location": "原文署名中的参与机构；不推断整个公司只有这一条路线。"
+        }
+      ]
+    },
+    {
+      "id": "company-langboat-topic-h-control",
+      "source": "company-langboat",
+      "target": "topic-h-control",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2609.14857v2",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-langboat-topic-h-improver",
+      "source": "company-langboat",
+      "target": "topic-h-improver",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2609.14857v2",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-langboat-topic-h-inheritance",
+      "source": "company-langboat",
+      "target": "topic-h-inheritance",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2609.14857v2",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-langboat-topic-h-runtime",
+      "source": "company-langboat",
+      "target": "topic-h-runtime",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2609.14857v2",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-flower-work-red-queen-godel-machine",
+      "source": "company-flower",
+      "target": "red-queen-godel-machine",
+      "kind": "company_work",
+      "label": "coauthored",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2606.26294v3",
+          "location": "原文署名中的参与机构；不推断整个公司只有这一条路线。"
+        }
+      ]
+    },
+    {
+      "id": "company-flower-topic-h-evaluation",
+      "source": "company-flower",
+      "target": "topic-h-evaluation",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2606.26294v3",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-flower-topic-h-improver",
+      "source": "company-flower",
+      "target": "topic-h-improver",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2606.26294v3",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-flower-topic-h-search",
+      "source": "company-flower",
+      "target": "topic-h-search",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2606.26294v3",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-bespoke-work-gepa",
+      "source": "company-bespoke",
+      "target": "gepa",
+      "kind": "company_work",
+      "label": "coauthored",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2507.19457v2",
+          "location": "原文署名中的参与机构；不推断整个公司只有这一条路线。"
+        }
+      ]
+    },
+    {
+      "id": "company-bespoke-topic-h-evaluation",
+      "source": "company-bespoke",
+      "target": "topic-h-evaluation",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2507.19457v2",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-bespoke-topic-h-instructions",
+      "source": "company-bespoke",
+      "target": "topic-h-instructions",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2507.19457v2",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-bespoke-topic-h-search",
+      "source": "company-bespoke",
+      "target": "topic-h-search",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2507.19457v2",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-etude-work-rewardharness",
+      "source": "company-etude",
+      "target": "rewardharness",
+      "kind": "company_work",
+      "label": "coauthored",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2605.08703v1",
+          "location": "原文署名中的参与机构；不推断整个公司只有这一条路线。"
+        }
+      ]
+    },
+    {
+      "id": "company-etude-topic-h-capabilities",
+      "source": "company-etude",
+      "target": "topic-h-capabilities",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2605.08703v1",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-etude-topic-h-evaluation",
+      "source": "company-etude",
+      "target": "topic-h-evaluation",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2605.08703v1",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-etude-topic-h-search",
+      "source": "company-etude",
+      "target": "topic-h-search",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2605.08703v1",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-etude-topic-x-externalization",
+      "source": "company-etude",
+      "target": "topic-x-externalization",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2605.08703v1",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-etude-topic-x-feedback",
+      "source": "company-etude",
+      "target": "topic-x-feedback",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2605.08703v1",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-etude-topic-x-memory",
+      "source": "company-etude",
+      "target": "topic-x-memory",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2605.08703v1",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-etude-topic-x-training",
+      "source": "company-etude",
+      "target": "topic-x-training",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2605.08703v1",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-tokenwave-work-harnessdev",
+      "source": "company-tokenwave",
+      "target": "harnessdev",
+      "kind": "company_work",
+      "label": "coauthored",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2609.01437",
+          "location": "原文署名中的参与机构；不推断整个公司只有这一条路线。"
+        }
+      ]
+    },
+    {
+      "id": "company-tokenwave-work-aspire",
+      "source": "company-tokenwave",
+      "target": "aspire",
+      "kind": "company_work",
+      "label": "coauthored",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2608.31111",
+          "location": "原文署名中的参与机构；不推断整个公司只有这一条路线。"
+        }
+      ]
+    },
+    {
+      "id": "company-tokenwave-topic-h-control",
+      "source": "company-tokenwave",
+      "target": "topic-h-control",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2609.01437",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2608.31111",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-tokenwave-topic-h-inheritance",
+      "source": "company-tokenwave",
+      "target": "topic-h-inheritance",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2609.01437",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2608.31111",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-tokenwave-topic-h-runtime",
+      "source": "company-tokenwave",
+      "target": "topic-h-runtime",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2609.01437",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2608.31111",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-tokenwave-topic-h-search",
+      "source": "company-tokenwave",
+      "target": "topic-h-search",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2609.01437",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2608.31111",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-einsia-work-ai4ai-bench",
+      "source": "company-einsia",
+      "target": "ai4ai-bench",
+      "kind": "company_work",
+      "label": "coauthored",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2608.20318",
+          "location": "原文署名中的参与机构；不推断整个公司只有这一条路线。"
+        }
+      ]
+    },
+    {
+      "id": "company-einsia-topic-h-evaluation",
+      "source": "company-einsia",
+      "target": "topic-h-evaluation",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2608.20318",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-einsia-topic-x-feedback",
+      "source": "company-einsia",
+      "target": "topic-x-feedback",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2608.20318",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-deepseek-work-deepseek-r1",
+      "source": "company-deepseek",
+      "target": "deepseek-r1",
+      "kind": "company_work",
+      "label": "coauthored",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2501.12948v1",
+          "location": "原文署名中的参与机构；不推断整个公司只有这一条路线。"
+        }
+      ]
+    },
+    {
+      "id": "company-deepseek-work-deepseek-math-v2",
+      "source": "company-deepseek",
+      "target": "deepseek-math-v2",
+      "kind": "company_work",
+      "label": "coauthored",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2511.22570v1",
+          "location": "原文署名中的参与机构；不推断整个公司只有这一条路线。"
+        }
+      ]
+    },
+    {
+      "id": "company-deepseek-topic-m-bootstrapping",
+      "source": "company-deepseek",
+      "target": "topic-m-bootstrapping",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2501.12948v1",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/html/2511.22570v1",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-deepseek-topic-m-evaluator-learning",
+      "source": "company-deepseek",
+      "target": "topic-m-evaluator-learning",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2501.12948v1",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        },
+        {
+          "url": "https://arxiv.org/html/2511.22570v1",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-moonshot-work-kimi-k2",
+      "source": "company-moonshot",
+      "target": "kimi-k2",
+      "kind": "company_work",
+      "label": "coauthored",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2507.20534v1",
+          "location": "原文署名中的参与机构；不推断整个公司只有这一条路线。"
+        }
+      ]
+    },
+    {
+      "id": "company-moonshot-topic-m-evaluator-learning",
+      "source": "company-moonshot",
+      "target": "topic-m-evaluator-learning",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2507.20534v1",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-moonshot-topic-m-preferences",
+      "source": "company-moonshot",
+      "target": "topic-m-preferences",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2507.20534v1",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-moonshot-topic-m-pretraining-ai4ai",
+      "source": "company-moonshot",
+      "target": "topic-m-pretraining-ai4ai",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2507.20534v1",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-moonshot-topic-m-verifiable-feedback",
+      "source": "company-moonshot",
+      "target": "topic-m-verifiable-feedback",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2507.20534v1",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-zhipu-work-webrl",
+      "source": "company-zhipu",
+      "target": "webrl",
+      "kind": "company_work",
+      "label": "coauthored",
+      "evidence": "source_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2411.02337",
+          "location": "原文署名中的参与机构；不推断整个公司只有这一条路线。"
+        }
+      ]
+    },
+    {
+      "id": "company-zhipu-topic-m-curriculum-learning",
+      "source": "company-zhipu",
+      "target": "topic-m-curriculum-learning",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2411.02337",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
+        }
+      ]
+    },
+    {
+      "id": "company-zhipu-topic-m-experience-learning",
+      "source": "company-zhipu",
+      "target": "topic-m-experience-learning",
+      "kind": "company_topic",
+      "label": "公开工作涉及",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/pdf/2411.02337",
+          "location": "公司关联工作的方法主题；具体署名和托管关系另列"
         }
       ]
     },
@@ -13575,6 +17051,519 @@
       ]
     },
     {
+      "id": "addresses-harness-metacircle-ophis-h-experience",
+      "source": "metacircle-ophis",
+      "target": "topic-h-experience",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "以训练内部观测提出假设和干预，再用重复训练结果决定下一步研究。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch",
+          "location": "官方博客：OPHIS framework；Grokking / NanoGPT 两个案例；Looking Forward"
+        }
+      ]
+    },
+    {
+      "id": "addresses-harness-metacircle-ophis-h-search",
+      "source": "metacircle-ophis",
+      "target": "topic-h-search",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "以训练内部观测提出假设和干预，再用重复训练结果决定下一步研究。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch",
+          "location": "官方博客：OPHIS framework；Grokking / NanoGPT 两个案例；Looking Forward"
+        }
+      ]
+    },
+    {
+      "id": "addresses-harness-metacircle-ophis-h-evaluation",
+      "source": "metacircle-ophis",
+      "target": "topic-h-evaluation",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "以训练内部观测提出假设和干预，再用重复训练结果决定下一步研究。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch",
+          "location": "官方博客：OPHIS framework；Grokking / NanoGPT 两个案例；Looking Forward"
+        }
+      ]
+    },
+    {
+      "id": "addresses-harness-comfyresearch-h-runtime",
+      "source": "comfyresearch",
+      "target": "topic-h-runtime",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "把训练协议、观测与分析组织成可执行依赖图，供人或 agent 构造、运行和比较实验。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://meta-circle.com/blog/comfyresearch-see-how-learning-happens",
+          "location": "官方博客：From notebook to graph；Watching a run；Changing one thing；Where this goes"
+        },
+        {
+          "url": "https://github.com/MetaCircleAI/ComfyResearch",
+          "location": "官方博客：From notebook to graph；Watching a run；Changing one thing；Where this goes"
+        }
+      ]
+    },
+    {
+      "id": "addresses-harness-comfyresearch-h-experience",
+      "source": "comfyresearch",
+      "target": "topic-h-experience",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "把训练协议、观测与分析组织成可执行依赖图，供人或 agent 构造、运行和比较实验。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://meta-circle.com/blog/comfyresearch-see-how-learning-happens",
+          "location": "官方博客：From notebook to graph；Watching a run；Changing one thing；Where this goes"
+        },
+        {
+          "url": "https://github.com/MetaCircleAI/ComfyResearch",
+          "location": "官方博客：From notebook to graph；Watching a run；Changing one thing；Where this goes"
+        }
+      ]
+    },
+    {
+      "id": "addresses-harness-comfyresearch-h-evaluation",
+      "source": "comfyresearch",
+      "target": "topic-h-evaluation",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "把训练协议、观测与分析组织成可执行依赖图，供人或 agent 构造、运行和比较实验。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://meta-circle.com/blog/comfyresearch-see-how-learning-happens",
+          "location": "官方博客：From notebook to graph；Watching a run；Changing one thing；Where this goes"
+        },
+        {
+          "url": "https://github.com/MetaCircleAI/ComfyResearch",
+          "location": "官方博客：From notebook to graph；Watching a run；Changing one thing；Where this goes"
+        }
+      ]
+    },
+    {
+      "id": "addresses-harness-nanogpt-observables-h-experience",
+      "source": "nanogpt-observables",
+      "target": "topic-h-experience",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "把权重、梯度、激活和注意力统计与模型模块对应，比较不同深度与训练条件。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://meta-circle.com/blog/observe-learning-in-full",
+          "location": "官方发布：Abstract；Across layers / setups；What the comparison reveals"
+        }
+      ]
+    },
+    {
+      "id": "addresses-harness-nanogpt-observables-h-evaluation",
+      "source": "nanogpt-observables",
+      "target": "topic-h-evaluation",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "把权重、梯度、激活和注意力统计与模型模块对应，比较不同深度与训练条件。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://meta-circle.com/blog/observe-learning-in-full",
+          "location": "官方发布：Abstract；Across layers / setups；What the comparison reveals"
+        }
+      ]
+    },
+    {
+      "id": "addresses-harness-apex-tune-h-search",
+      "source": "apex-tune",
+      "target": "topic-h-search",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "自动提出并验证 scaling law、训练实现和 GPU kernel 的改进，以实验结果继续搜索。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://www.apexin.ai/assets/papers/what-happens-when-ai-starts-improving-ai.pdf",
+          "location": "7 页报告：Evaluations I–IV；Beyond the Benchmarks；配套结果仓库"
+        },
+        {
+          "url": "https://github.com/apexin-ai/Apex-Tune-results",
+          "location": "7 页报告：Evaluations I–IV；Beyond the Benchmarks；配套结果仓库"
+        }
+      ]
+    },
+    {
+      "id": "addresses-harness-apex-tune-h-runtime",
+      "source": "apex-tune",
+      "target": "topic-h-runtime",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "自动提出并验证 scaling law、训练实现和 GPU kernel 的改进，以实验结果继续搜索。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://www.apexin.ai/assets/papers/what-happens-when-ai-starts-improving-ai.pdf",
+          "location": "7 页报告：Evaluations I–IV；Beyond the Benchmarks；配套结果仓库"
+        },
+        {
+          "url": "https://github.com/apexin-ai/Apex-Tune-results",
+          "location": "7 页报告：Evaluations I–IV；Beyond the Benchmarks；配套结果仓库"
+        }
+      ]
+    },
+    {
+      "id": "addresses-harness-apex-tune-h-evaluation",
+      "source": "apex-tune",
+      "target": "topic-h-evaluation",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "自动提出并验证 scaling law、训练实现和 GPU kernel 的改进，以实验结果继续搜索。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://www.apexin.ai/assets/papers/what-happens-when-ai-starts-improving-ai.pdf",
+          "location": "7 页报告：Evaluations I–IV；Beyond the Benchmarks；配套结果仓库"
+        },
+        {
+          "url": "https://github.com/apexin-ai/Apex-Tune-results",
+          "location": "7 页报告：Evaluations I–IV；Beyond the Benchmarks；配套结果仓库"
+        }
+      ]
+    },
+    {
+      "id": "addresses-harness-apex-research-h-evaluation",
+      "source": "apex-research",
+      "target": "topic-h-evaluation",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "公司报告自主研究系统产生科研项目与论文，并用真实外部同行评审检验产出。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://github.com/apexin-ai/apex-research-report",
+          "location": "官方 README：Core Message、Key Results；PDF 链接已定位但本轮未完成正文提取"
+        },
+        {
+          "url": "https://www.apexin.ai/assets/papers/apex-research-2026.pdf",
+          "location": "官方 README：Core Message、Key Results；PDF 链接已定位但本轮未完成正文提取"
+        }
+      ]
+    },
+    {
+      "id": "addresses-harness-apex-research-h-search",
+      "source": "apex-research",
+      "target": "topic-h-search",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "公司报告自主研究系统产生科研项目与论文，并用真实外部同行评审检验产出。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://github.com/apexin-ai/apex-research-report",
+          "location": "官方 README：Core Message、Key Results；PDF 链接已定位但本轮未完成正文提取"
+        },
+        {
+          "url": "https://www.apexin.ai/assets/papers/apex-research-2026.pdf",
+          "location": "官方 README：Core Message、Key Results；PDF 链接已定位但本轮未完成正文提取"
+        }
+      ]
+    },
+    {
+      "id": "addresses-harness-asi-bench-h-evaluation",
+      "source": "asi-bench",
+      "target": "topic-h-evaluation",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "在相同科研任务上逐步撤去方法指导，区分按步骤执行和自主选择科研方法的能力。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2608.17271",
+          "location": "论文摘要；官方仓库 Overview、B1–B4、任务发布与评分协议"
+        },
+        {
+          "url": "https://github.com/apexin-ai/ASI-Bench",
+          "location": "论文摘要；官方仓库 Overview、B1–B4、任务发布与评分协议"
+        }
+      ]
+    },
+    {
+      "id": "addresses-harness-recursive-first-steps-h-search",
+      "source": "recursive-first-steps",
+      "target": "topic-h-search",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "长时程并行研究线程积累实验上下文、组合候选分支，并对改进进行方差与 reward-hack 检查。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://www.recursive.com/articles/first-steps-toward-automated-ai-research",
+          "location": "官方报告：研究循环；NanoChat、NanoGPT Speedrun 与 SOL-ExecBench 案例"
+        },
+        {
+          "url": "https://github.com/recursive-org/first-steps-toward-automated-ai-research",
+          "location": "官方报告：研究循环；NanoChat、NanoGPT Speedrun 与 SOL-ExecBench 案例"
+        }
+      ]
+    },
+    {
+      "id": "addresses-harness-recursive-first-steps-h-experience",
+      "source": "recursive-first-steps",
+      "target": "topic-h-experience",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "长时程并行研究线程积累实验上下文、组合候选分支，并对改进进行方差与 reward-hack 检查。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://www.recursive.com/articles/first-steps-toward-automated-ai-research",
+          "location": "官方报告：研究循环；NanoChat、NanoGPT Speedrun 与 SOL-ExecBench 案例"
+        },
+        {
+          "url": "https://github.com/recursive-org/first-steps-toward-automated-ai-research",
+          "location": "官方报告：研究循环；NanoChat、NanoGPT Speedrun 与 SOL-ExecBench 案例"
+        }
+      ]
+    },
+    {
+      "id": "addresses-harness-recursive-first-steps-h-evaluation",
+      "source": "recursive-first-steps",
+      "target": "topic-h-evaluation",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "长时程并行研究线程积累实验上下文、组合候选分支，并对改进进行方差与 reward-hack 检查。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://www.recursive.com/articles/first-steps-toward-automated-ai-research",
+          "location": "官方报告：研究循环；NanoChat、NanoGPT Speedrun 与 SOL-ExecBench 案例"
+        },
+        {
+          "url": "https://github.com/recursive-org/first-steps-toward-automated-ai-research",
+          "location": "官方报告：研究循环；NanoChat、NanoGPT Speedrun 与 SOL-ExecBench 案例"
+        }
+      ]
+    },
+    {
+      "id": "addresses-harness-recursive-first-steps-h-runtime",
+      "source": "recursive-first-steps",
+      "target": "topic-h-runtime",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "长时程并行研究线程积累实验上下文、组合候选分支，并对改进进行方差与 reward-hack 检查。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://www.recursive.com/articles/first-steps-toward-automated-ai-research",
+          "location": "官方报告：研究循环；NanoChat、NanoGPT Speedrun 与 SOL-ExecBench 案例"
+        },
+        {
+          "url": "https://github.com/recursive-org/first-steps-toward-automated-ai-research",
+          "location": "官方报告：研究循环；NanoChat、NanoGPT Speedrun 与 SOL-ExecBench 案例"
+        }
+      ]
+    },
+    {
+      "id": "addresses-harness-hermes-agent-h-memory",
+      "source": "hermes-agent",
+      "target": "topic-h-memory",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "从任务经验创建和修改技能文档，保留记忆与会话检索，使后续执行使用已有经验。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://github.com/NousResearch/hermes-agent",
+          "location": "README：learning loop；官方文档 Skills System：skill_manage、/learn、跨会话加载"
+        },
+        {
+          "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/skills",
+          "location": "README：learning loop；官方文档 Skills System：skill_manage、/learn、跨会话加载"
+        }
+      ]
+    },
+    {
+      "id": "addresses-harness-hermes-agent-h-capabilities",
+      "source": "hermes-agent",
+      "target": "topic-h-capabilities",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "从任务经验创建和修改技能文档，保留记忆与会话检索，使后续执行使用已有经验。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://github.com/NousResearch/hermes-agent",
+          "location": "README：learning loop；官方文档 Skills System：skill_manage、/learn、跨会话加载"
+        },
+        {
+          "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/skills",
+          "location": "README：learning loop；官方文档 Skills System：skill_manage、/learn、跨会话加载"
+        }
+      ]
+    },
+    {
+      "id": "addresses-harness-hermes-agent-h-instructions",
+      "source": "hermes-agent",
+      "target": "topic-h-instructions",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "从任务经验创建和修改技能文档，保留记忆与会话检索，使后续执行使用已有经验。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://github.com/NousResearch/hermes-agent",
+          "location": "README：learning loop；官方文档 Skills System：skill_manage、/learn、跨会话加载"
+        },
+        {
+          "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/skills",
+          "location": "README：learning loop；官方文档 Skills System：skill_manage、/learn、跨会话加载"
+        }
+      ]
+    },
+    {
+      "id": "addresses-harness-hermes-agent-h-experience",
+      "source": "hermes-agent",
+      "target": "topic-h-experience",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "从任务经验创建和修改技能文档，保留记忆与会话检索，使后续执行使用已有经验。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://github.com/NousResearch/hermes-agent",
+          "location": "README：learning loop；官方文档 Skills System：skill_manage、/learn、跨会话加载"
+        },
+        {
+          "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/skills",
+          "location": "README：learning loop；官方文档 Skills System：skill_manage、/learn、跨会话加载"
+        }
+      ]
+    },
+    {
+      "id": "addresses-harness-intology-locus-h-search",
+      "source": "intology-locus",
+      "target": "topic-h-search",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "公开定位为长时程 AI 研发系统；公司报告多日研究与 RE-Bench 结果。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://intology.ai/blog/previewing-locus",
+          "location": "官方发布索引和 About 摘要；技术正文当前未完整提取"
+        },
+        {
+          "url": "https://intology.ai/about",
+          "location": "官方发布索引和 About 摘要；技术正文当前未完整提取"
+        },
+        {
+          "url": "https://intology.ai/blog/zochi-tech-report",
+          "location": "官方发布索引和 About 摘要；技术正文当前未完整提取"
+        }
+      ]
+    },
+    {
+      "id": "addresses-harness-intology-locus-h-experience",
+      "source": "intology-locus",
+      "target": "topic-h-experience",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "公开定位为长时程 AI 研发系统；公司报告多日研究与 RE-Bench 结果。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://intology.ai/blog/previewing-locus",
+          "location": "官方发布索引和 About 摘要；技术正文当前未完整提取"
+        },
+        {
+          "url": "https://intology.ai/about",
+          "location": "官方发布索引和 About 摘要；技术正文当前未完整提取"
+        },
+        {
+          "url": "https://intology.ai/blog/zochi-tech-report",
+          "location": "官方发布索引和 About 摘要；技术正文当前未完整提取"
+        }
+      ]
+    },
+    {
+      "id": "addresses-harness-autoscience-lab-h-search",
+      "source": "autoscience-lab",
+      "target": "topic-h-search",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "自动科学家提出和检验算法假设，自动工程师将被验证的模型改进转成可部署实现。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://www.autoscience.ai/blog/autoscience-autonomous-ai-lab",
+          "location": "公司正式新闻稿（Business Wire 同步发布）；官网产品与 Carl 发布索引"
+        },
+        {
+          "url": "https://www.businesswire.com/news/home/20260318760407/en/Autoscience-Raises-$14M-to-Build-the-Worlds-First-Automated-AI-Research-Lab",
+          "location": "公司正式新闻稿（Business Wire 同步发布）；官网产品与 Carl 发布索引"
+        },
+        {
+          "url": "https://www.autoscience.ai/blog/meet-carl",
+          "location": "公司正式新闻稿（Business Wire 同步发布）；官网产品与 Carl 发布索引"
+        }
+      ]
+    },
+    {
+      "id": "addresses-harness-autoscience-lab-h-control",
+      "source": "autoscience-lab",
+      "target": "topic-h-control",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "自动科学家提出和检验算法假设，自动工程师将被验证的模型改进转成可部署实现。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://www.autoscience.ai/blog/autoscience-autonomous-ai-lab",
+          "location": "公司正式新闻稿（Business Wire 同步发布）；官网产品与 Carl 发布索引"
+        },
+        {
+          "url": "https://www.businesswire.com/news/home/20260318760407/en/Autoscience-Raises-$14M-to-Build-the-Worlds-First-Automated-AI-Research-Lab",
+          "location": "公司正式新闻稿（Business Wire 同步发布）；官网产品与 Carl 发布索引"
+        },
+        {
+          "url": "https://www.autoscience.ai/blog/meet-carl",
+          "location": "公司正式新闻稿（Business Wire 同步发布）；官网产品与 Carl 发布索引"
+        }
+      ]
+    },
+    {
+      "id": "addresses-harness-autoscience-lab-h-evaluation",
+      "source": "autoscience-lab",
+      "target": "topic-h-evaluation",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "自动科学家提出和检验算法假设，自动工程师将被验证的模型改进转成可部署实现。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://www.autoscience.ai/blog/autoscience-autonomous-ai-lab",
+          "location": "公司正式新闻稿（Business Wire 同步发布）；官网产品与 Carl 发布索引"
+        },
+        {
+          "url": "https://www.businesswire.com/news/home/20260318760407/en/Autoscience-Raises-$14M-to-Build-the-Worlds-First-Automated-AI-Research-Lab",
+          "location": "公司正式新闻稿（Business Wire 同步发布）；官网产品与 Carl 发布索引"
+        },
+        {
+          "url": "https://www.autoscience.ai/blog/meet-carl",
+          "location": "公司正式新闻稿（Business Wire 同步发布）；官网产品与 Carl 发布索引"
+        }
+      ]
+    },
+    {
       "id": "contains-topic-m-bootstrapping-part-1",
       "source": "topic-m-bootstrapping",
       "target": "topic-m-bootstrapping-part-1",
@@ -16409,6 +20398,86 @@
       ]
     },
     {
+      "id": "addresses-model-metacircle-ophis-m-pretraining-ai4ai",
+      "source": "metacircle-ophis",
+      "target": "topic-m-pretraining-ai4ai",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "以训练内部观测提出假设和干预，再用重复训练结果决定下一步研究。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch",
+          "location": "官方博客：OPHIS framework；Grokking / NanoGPT 两个案例；Looking Forward"
+        }
+      ]
+    },
+    {
+      "id": "addresses-model-apex-tune-m-pretraining-ai4ai",
+      "source": "apex-tune",
+      "target": "topic-m-pretraining-ai4ai",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "自动提出并验证 scaling law、训练实现和 GPU kernel 的改进，以实验结果继续搜索。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://www.apexin.ai/assets/papers/what-happens-when-ai-starts-improving-ai.pdf",
+          "location": "7 页报告：Evaluations I–IV；Beyond the Benchmarks；配套结果仓库"
+        },
+        {
+          "url": "https://github.com/apexin-ai/Apex-Tune-results",
+          "location": "7 页报告：Evaluations I–IV；Beyond the Benchmarks；配套结果仓库"
+        }
+      ]
+    },
+    {
+      "id": "addresses-model-intellect-3-m-verifiable-feedback",
+      "source": "intellect-3",
+      "target": "topic-m-verifiable-feedback",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "以合成数据、可验证环境和异步 RL 训练 106B MoE，公开训练框架、环境与模型。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://www.primeintellect.ai/blog/intellect-3",
+          "location": "官方技术发布：Training Infrastructure、Training Recipe、Future Work"
+        },
+        {
+          "url": "https://github.com/PrimeIntellect-ai/prime-rl",
+          "location": "官方技术发布：Training Infrastructure、Training Recipe、Future Work"
+        },
+        {
+          "url": "https://github.com/PrimeIntellect-ai/verifiers",
+          "location": "官方技术发布：Training Infrastructure、Training Recipe、Future Work"
+        }
+      ]
+    },
+    {
+      "id": "addresses-model-intellect-3-m-experience-learning",
+      "source": "intellect-3",
+      "target": "topic-m-experience-learning",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "以合成数据、可验证环境和异步 RL 训练 106B MoE，公开训练框架、环境与模型。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://www.primeintellect.ai/blog/intellect-3",
+          "location": "官方技术发布：Training Infrastructure、Training Recipe、Future Work"
+        },
+        {
+          "url": "https://github.com/PrimeIntellect-ai/prime-rl",
+          "location": "官方技术发布：Training Infrastructure、Training Recipe、Future Work"
+        },
+        {
+          "url": "https://github.com/PrimeIntellect-ai/verifiers",
+          "location": "官方技术发布：Training Infrastructure、Training Recipe、Future Work"
+        }
+      ]
+    },
+    {
       "id": "contains-topic-x-workflow-part-1",
       "source": "topic-x-workflow",
       "target": "topic-x-workflow-part-1",
@@ -19197,6 +23266,158 @@
           "location": "§3、§3.3；Fig.2"
         }
       ]
+    },
+    {
+      "id": "addresses-hybrid-metacircle-ophis-x-training",
+      "source": "metacircle-ophis",
+      "target": "topic-x-training",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "以训练内部观测提出假设和干预，再用重复训练结果决定下一步研究。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch",
+          "location": "官方博客：OPHIS framework；Grokking / NanoGPT 两个案例；Looking Forward"
+        }
+      ]
+    },
+    {
+      "id": "addresses-hybrid-metacircle-ophis-x-feedback",
+      "source": "metacircle-ophis",
+      "target": "topic-x-feedback",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "以训练内部观测提出假设和干预，再用重复训练结果决定下一步研究。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch",
+          "location": "官方博客：OPHIS framework；Grokking / NanoGPT 两个案例；Looking Forward"
+        }
+      ]
+    },
+    {
+      "id": "addresses-hybrid-comfyresearch-x-training",
+      "source": "comfyresearch",
+      "target": "topic-x-training",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "把训练协议、观测与分析组织成可执行依赖图，供人或 agent 构造、运行和比较实验。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://meta-circle.com/blog/comfyresearch-see-how-learning-happens",
+          "location": "官方博客：From notebook to graph；Watching a run；Changing one thing；Where this goes"
+        },
+        {
+          "url": "https://github.com/MetaCircleAI/ComfyResearch",
+          "location": "官方博客：From notebook to graph；Watching a run；Changing one thing；Where this goes"
+        }
+      ]
+    },
+    {
+      "id": "addresses-hybrid-apex-tune-x-training",
+      "source": "apex-tune",
+      "target": "topic-x-training",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "自动提出并验证 scaling law、训练实现和 GPU kernel 的改进，以实验结果继续搜索。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://www.apexin.ai/assets/papers/what-happens-when-ai-starts-improving-ai.pdf",
+          "location": "7 页报告：Evaluations I–IV；Beyond the Benchmarks；配套结果仓库"
+        },
+        {
+          "url": "https://github.com/apexin-ai/Apex-Tune-results",
+          "location": "7 页报告：Evaluations I–IV；Beyond the Benchmarks；配套结果仓库"
+        }
+      ]
+    },
+    {
+      "id": "addresses-hybrid-asi-bench-x-feedback",
+      "source": "asi-bench",
+      "target": "topic-x-feedback",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "在相同科研任务上逐步撤去方法指导，区分按步骤执行和自主选择科研方法的能力。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2608.17271",
+          "location": "论文摘要；官方仓库 Overview、B1–B4、任务发布与评分协议"
+        },
+        {
+          "url": "https://github.com/apexin-ai/ASI-Bench",
+          "location": "论文摘要；官方仓库 Overview、B1–B4、任务发布与评分协议"
+        }
+      ]
+    },
+    {
+      "id": "addresses-hybrid-recursive-first-steps-x-training",
+      "source": "recursive-first-steps",
+      "target": "topic-x-training",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "长时程并行研究线程积累实验上下文、组合候选分支，并对改进进行方差与 reward-hack 检查。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://www.recursive.com/articles/first-steps-toward-automated-ai-research",
+          "location": "官方报告：研究循环；NanoChat、NanoGPT Speedrun 与 SOL-ExecBench 案例"
+        },
+        {
+          "url": "https://github.com/recursive-org/first-steps-toward-automated-ai-research",
+          "location": "官方报告：研究循环；NanoChat、NanoGPT Speedrun 与 SOL-ExecBench 案例"
+        }
+      ]
+    },
+    {
+      "id": "addresses-hybrid-intellect-3-x-training",
+      "source": "intellect-3",
+      "target": "topic-x-training",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "以合成数据、可验证环境和异步 RL 训练 106B MoE，公开训练框架、环境与模型。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://www.primeintellect.ai/blog/intellect-3",
+          "location": "官方技术发布：Training Infrastructure、Training Recipe、Future Work"
+        },
+        {
+          "url": "https://github.com/PrimeIntellect-ai/prime-rl",
+          "location": "官方技术发布：Training Infrastructure、Training Recipe、Future Work"
+        },
+        {
+          "url": "https://github.com/PrimeIntellect-ai/verifiers",
+          "location": "官方技术发布：Training Infrastructure、Training Recipe、Future Work"
+        }
+      ]
+    },
+    {
+      "id": "addresses-hybrid-intellect-3-x-environment",
+      "source": "intellect-3",
+      "target": "topic-x-environment",
+      "kind": "addresses_topic",
+      "label": "研究此主题 / 相关机制",
+      "explanation": "以合成数据、可验证环境和异步 RL 训练 106B MoE，公开训练框架、环境与模型。",
+      "evidence": "survey_classification",
+      "sources": [
+        {
+          "url": "https://www.primeintellect.ai/blog/intellect-3",
+          "location": "官方技术发布：Training Infrastructure、Training Recipe、Future Work"
+        },
+        {
+          "url": "https://github.com/PrimeIntellect-ai/prime-rl",
+          "location": "官方技术发布：Training Infrastructure、Training Recipe、Future Work"
+        },
+        {
+          "url": "https://github.com/PrimeIntellect-ai/verifiers",
+          "location": "官方技术发布：Training Infrastructure、Training Recipe、Future Work"
+        }
+      ]
     }
   ],
   "field_views": {
@@ -19277,7 +23498,16 @@
       "adaptive-auto-harness",
       "continual-harness",
       "shinkaevolve",
-      "voyager"
+      "voyager",
+      "metacircle-ophis",
+      "comfyresearch",
+      "nanogpt-observables",
+      "apex-tune",
+      "apex-research",
+      "recursive-first-steps",
+      "hermes-agent",
+      "intology-locus",
+      "autoscience-lab"
     ],
     "model": [
       "spin",
@@ -19314,7 +23544,8 @@
       "iterative-rpo",
       "deepseek-math-v2",
       "kimi-k2",
-      "llm-can-self-improve"
+      "llm-can-self-improve",
+      "intellect-3"
     ],
     "hybrid": [
       "sia",
@@ -20067,6 +24298,70 @@
       "work_id": "llm-can-self-improve",
       "node_ids": [
         "m-selftrain"
+      ]
+    },
+    {
+      "work_id": "metacircle-ophis",
+      "node_ids": [
+        "h-research"
+      ]
+    },
+    {
+      "work_id": "comfyresearch",
+      "node_ids": [
+        "h-research"
+      ]
+    },
+    {
+      "work_id": "nanogpt-observables",
+      "node_ids": [
+        "h-research"
+      ]
+    },
+    {
+      "work_id": "apex-tune",
+      "node_ids": [
+        "h-research"
+      ]
+    },
+    {
+      "work_id": "apex-research",
+      "node_ids": [
+        "h-research"
+      ]
+    },
+    {
+      "work_id": "asi-bench",
+      "node_ids": []
+    },
+    {
+      "work_id": "recursive-first-steps",
+      "node_ids": [
+        "h-research"
+      ]
+    },
+    {
+      "work_id": "hermes-agent",
+      "node_ids": [
+        "h-memory"
+      ]
+    },
+    {
+      "work_id": "intellect-3",
+      "node_ids": [
+        "m-verifier"
+      ]
+    },
+    {
+      "work_id": "intology-locus",
+      "node_ids": [
+        "h-research"
+      ]
+    },
+    {
+      "work_id": "autoscience-lab",
+      "node_ids": [
+        "h-research"
       ]
     }
   ]

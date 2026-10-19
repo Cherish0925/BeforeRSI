@@ -1,0 +1,31 @@
+{
+  "updated": "2026-10-19",
+  "added_work_ids": [
+    "metacircle-ophis",
+    "comfyresearch",
+    "nanogpt-observables",
+    "apex-tune",
+    "apex-research",
+    "asi-bench",
+    "recursive-first-steps",
+    "hermes-agent",
+    "intellect-3",
+    "intology-locus",
+    "autoscience-lab"
+  ],
+  "reading_policy": "技术报告、博客、仓库、产品文档与论文均可入库；方法阅读、发布摘要初筛、公司方向分别统计。来源中的作者结果均未独立复现。",
+  "source_access_limits": [
+    {
+      "url": "https://intology.ai/blog/previewing-locus",
+      "limit": "网页正文未提取；仅官网索引和 About 的摘要可读。"
+    },
+    {
+      "url": "https://www.apexin.ai/assets/papers/apex-research-2026.pdf",
+      "limit": "PDF 正文抓取超时；本条仅依据官方 GitHub 结果摘要。"
+    },
+    {
+      "url": "https://www.autoscience.ai/blog/autoscience-autonomous-ai-lab",
+      "limit": "官网正文未提取；使用公司同步发布的 Business Wire 新闻稿。"
+    }
+  ]
+}

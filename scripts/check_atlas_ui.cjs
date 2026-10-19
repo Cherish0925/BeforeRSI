@@ -27,6 +27,14 @@ run("openPaper('eurisko')");assert(nodes['paper-content'].innerHTML.includes('�
 for(const e of data.relations){run(`selectEdge('${e.id}')`);assert(nodes.inspector.innerHTML.includes(e.sources[0].url));}
 run("locate('skillrl')");assert.equal(run('state.small'),true);assert.equal(run('state.selected'),'skillrl');
 assert(!/<script[^>]+src=|<link[^>]+href=/.test(html));assert(!/\bfetch\(/.test(scripts[1]));
+// Company records are searchable through both company aliases and associated works.
+run("setPage('companies')");assert.equal(run('selectedCompanies().length'),data.industry.counts.research+data.industry.counts.direction);
+for(const c of data.industry.companies){run(`openCompany(${JSON.stringify(c.id)})`);assert(nodes['paper-content'].innerHTML.includes(c.name));for(const x of c.work_links)assert(nodes['paper-content'].innerHTML.includes(x.work_id));}
+for(const [query,id] of [['元环','metacircle'],['超衍','apex'],['姐夫哥','discovery-loop'],['Nous','nous']]){run(`state.query=${JSON.stringify(query)}`);assert(run(`COMPANIES.filter(c=>companyMatches(c,state.query)).some(c=>c.id===${JSON.stringify(id)})`));}
+run("state.query='超衍';state.searchRoute='all';state.searchStatus='all';state.searchOrg='all'");assert.equal(run('searchWorks().length'),3);
+run("openDomainTopic('h-search')");assert(nodes.main.innerHTML.includes('data-company="metacircle"'));assert(nodes.main.innerHTML.includes('data-company="discovery-loop"'));
+run("openDomainTopic('m-pretraining-ai4ai')");assert(nodes.main.innerHTML.includes('跨路线参考 · Harness'));
+run("openPaper('apex-tune')");assert(nodes['paper-content'].innerHTML.includes('data-company="apex"'));
 console.log(`PASS: three field maps, 29 topics, 60 conceptual relations, ${data.works.length} cards, ${data.relations.length} paper relations, filters/search/offline payload.`);
 if(process.env.CHROMIUM_PATH)(async()=>{
  const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
@@ -59,11 +67,20 @@ if(outputs&&r.id==='model')await page.screenshot({path:path.join(outputs,'model-
  await page.locator('.result-card h3 a').click();assert.equal(await page.locator('.axis').count(),6);await page.locator('[data-close]').click();
  await page.locator('[data-clear-search]').click();assert.equal(await page.locator('.result-card').count(),data.works.length);
  await page.locator('#search-route').selectOption('hybrid');assert.equal(await page.locator('.result-card').count(),data.routes.find(x=>x.id==='hybrid').counts.catalog);
+ await page.locator('nav [data-nav="companies"]').click();assert.equal(await page.locator('.company-card').count(),data.industry.counts.research+data.industry.counts.direction);
+ if(outputs)await page.screenshot({path:path.join(outputs,'industry-overview.png'),fullPage:true});
+ await page.locator('#company-query').fill('超衍');assert.equal(await page.locator('.company-card').count(),1);
+ await page.locator('.company-card h3 button').click();assert.equal(await page.locator('.company-output-list article').count(),3);
+ if(outputs)await page.screenshot({path:path.join(outputs,'apex-company-card.png')});
+ await page.locator('.company-output-list h4 [data-paper="apex-tune"]').click();assert.equal(await page.locator('.axis').count(),6);await page.locator('.paper-companies [data-company="apex"]').click();assert((await page.locator('#paper-content').innerText()).includes('具体工作与公开证据'));await page.locator('[data-close]').click();
+ await page.locator('#global-search').fill('姐夫哥');await page.locator('#search-form button').click();assert.equal(await page.locator('#search-company-results .company-card').count(),1);await page.locator('#search-company-results h3 button').click();assert((await page.locator('#paper-content').innerText()).includes('尚未披露'));await page.locator('[data-close]').click();
  await page.setViewportSize({width:390,height:844});await page.locator('nav [data-nav="overview"]').click();assert.equal(await page.locator('.field-card svg').count(),3);assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
  if(outputs)await page.screenshot({path:path.join(outputs,'mobile-overview.png')});
  await page.locator('nav [data-nav="model"]').click();assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
  await page.locator('svg [data-topic="m-bootstrapping"]').focus();await page.keyboard.press('Enter');assert((await page.locator('.domain-inspector').innerText()).includes('模型的哪些输出'));
  await page.locator('#domain-work-list [data-paper="rest-em"]').first().click();assert(await page.evaluate(()=>document.querySelector('#paper-dialog').scrollWidth<=document.querySelector('#paper-dialog').clientWidth+1));
  if(outputs)await page.screenshot({path:path.join(outputs,'mobile-card.png')});
+ await page.keyboard.press('Escape');await page.locator('nav [data-nav="companies"]').click();await page.locator('[data-company-clear]').click();await page.locator('#company-query').fill('元环');await page.locator('.company-card h3 button').click();assert(await page.evaluate(()=>document.querySelector('#paper-dialog').scrollWidth<=document.querySelector('#paper-dialog').clientWidth+1));
+ if(outputs)await page.screenshot({path:path.join(outputs,'mobile-company.png')});
  assert.deepEqual(errors,[]);await browser.close();console.log('PASS: Chromium first-screen maps, topic/edge navigation, paper/field return, desktop/mobile search, dialogs, filters, keyboard, no page overflow or JavaScript errors.');
 })().catch(e=>{console.error(e);process.exitCode=1});

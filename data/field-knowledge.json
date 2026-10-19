@@ -1396,6 +1396,173 @@
           "source_location": "Abstract; §1; §2; §3.2; §4",
           "basis": "survey_classification",
           "primary_route": "harness"
+        },
+        {
+          "work_id": "metacircle-ophis",
+          "topic_ids": [
+            "h-experience",
+            "h-search",
+            "h-evaluation"
+          ],
+          "summary": "以训练内部观测提出假设和干预，再用重复训练结果决定下一步研究。",
+          "source_urls": [
+            "https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch"
+          ],
+          "source_location": "官方博客：OPHIS framework；Grokking / NanoGPT 两个案例；Looking Forward",
+          "basis": "survey_classification",
+          "primary_route": "harness",
+          "cross_route_reference": false
+        },
+        {
+          "work_id": "comfyresearch",
+          "topic_ids": [
+            "h-runtime",
+            "h-experience",
+            "h-evaluation"
+          ],
+          "summary": "把训练协议、观测与分析组织成可执行依赖图，供人或 agent 构造、运行和比较实验。",
+          "source_urls": [
+            "https://meta-circle.com/blog/comfyresearch-see-how-learning-happens",
+            "https://github.com/MetaCircleAI/ComfyResearch"
+          ],
+          "source_location": "官方博客：From notebook to graph；Watching a run；Changing one thing；Where this goes",
+          "basis": "survey_classification",
+          "primary_route": "harness",
+          "cross_route_reference": false
+        },
+        {
+          "work_id": "nanogpt-observables",
+          "topic_ids": [
+            "h-experience",
+            "h-evaluation"
+          ],
+          "summary": "把权重、梯度、激活和注意力统计与模型模块对应，比较不同深度与训练条件。",
+          "source_urls": [
+            "https://meta-circle.com/blog/observe-learning-in-full"
+          ],
+          "source_location": "官方发布：Abstract；Across layers / setups；What the comparison reveals",
+          "basis": "survey_classification",
+          "primary_route": "harness",
+          "cross_route_reference": false
+        },
+        {
+          "work_id": "apex-tune",
+          "topic_ids": [
+            "h-search",
+            "h-runtime",
+            "h-evaluation"
+          ],
+          "summary": "自动提出并验证 scaling law、训练实现和 GPU kernel 的改进，以实验结果继续搜索。",
+          "source_urls": [
+            "https://www.apexin.ai/assets/papers/what-happens-when-ai-starts-improving-ai.pdf",
+            "https://github.com/apexin-ai/Apex-Tune-results"
+          ],
+          "source_location": "7 页报告：Evaluations I–IV；Beyond the Benchmarks；配套结果仓库",
+          "basis": "survey_classification",
+          "primary_route": "harness",
+          "cross_route_reference": false
+        },
+        {
+          "work_id": "apex-research",
+          "topic_ids": [
+            "h-evaluation",
+            "h-search"
+          ],
+          "summary": "公司报告自主研究系统产生科研项目与论文，并用真实外部同行评审检验产出。",
+          "source_urls": [
+            "https://github.com/apexin-ai/apex-research-report",
+            "https://www.apexin.ai/assets/papers/apex-research-2026.pdf"
+          ],
+          "source_location": "官方 README：Core Message、Key Results；PDF 链接已定位但本轮未完成正文提取",
+          "basis": "survey_classification",
+          "primary_route": "harness",
+          "cross_route_reference": false
+        },
+        {
+          "work_id": "asi-bench",
+          "topic_ids": [
+            "h-evaluation"
+          ],
+          "summary": "在相同科研任务上逐步撤去方法指导，区分按步骤执行和自主选择科研方法的能力。",
+          "source_urls": [
+            "https://arxiv.org/abs/2608.17271",
+            "https://github.com/apexin-ai/ASI-Bench"
+          ],
+          "source_location": "论文摘要；官方仓库 Overview、B1–B4、任务发布与评分协议",
+          "basis": "survey_classification",
+          "primary_route": "crosscut",
+          "cross_route_reference": true
+        },
+        {
+          "work_id": "recursive-first-steps",
+          "topic_ids": [
+            "h-search",
+            "h-experience",
+            "h-evaluation",
+            "h-runtime"
+          ],
+          "summary": "长时程并行研究线程积累实验上下文、组合候选分支，并对改进进行方差与 reward-hack 检查。",
+          "source_urls": [
+            "https://www.recursive.com/articles/first-steps-toward-automated-ai-research",
+            "https://github.com/recursive-org/first-steps-toward-automated-ai-research"
+          ],
+          "source_location": "官方报告：研究循环；NanoChat、NanoGPT Speedrun 与 SOL-ExecBench 案例",
+          "basis": "survey_classification",
+          "primary_route": "harness",
+          "cross_route_reference": false
+        },
+        {
+          "work_id": "hermes-agent",
+          "topic_ids": [
+            "h-memory",
+            "h-capabilities",
+            "h-instructions",
+            "h-experience"
+          ],
+          "summary": "从任务经验创建和修改技能文档，保留记忆与会话检索，使后续执行使用已有经验。",
+          "source_urls": [
+            "https://github.com/NousResearch/hermes-agent",
+            "https://hermes-agent.nousresearch.com/docs/user-guide/features/skills"
+          ],
+          "source_location": "README：learning loop；官方文档 Skills System：skill_manage、/learn、跨会话加载",
+          "basis": "survey_classification",
+          "primary_route": "harness",
+          "cross_route_reference": false
+        },
+        {
+          "work_id": "intology-locus",
+          "topic_ids": [
+            "h-search",
+            "h-experience"
+          ],
+          "summary": "公开定位为长时程 AI 研发系统；公司报告多日研究与 RE-Bench 结果。",
+          "source_urls": [
+            "https://intology.ai/blog/previewing-locus",
+            "https://intology.ai/about",
+            "https://intology.ai/blog/zochi-tech-report"
+          ],
+          "source_location": "官方发布索引和 About 摘要；技术正文当前未完整提取",
+          "basis": "survey_classification",
+          "primary_route": "harness",
+          "cross_route_reference": false
+        },
+        {
+          "work_id": "autoscience-lab",
+          "topic_ids": [
+            "h-search",
+            "h-control",
+            "h-evaluation"
+          ],
+          "summary": "自动科学家提出和检验算法假设，自动工程师将被验证的模型改进转成可部署实现。",
+          "source_urls": [
+            "https://www.autoscience.ai/blog/autoscience-autonomous-ai-lab",
+            "https://www.businesswire.com/news/home/20260318760407/en/Autoscience-Raises-$14M-to-Build-the-Worlds-First-Automated-AI-Research-Lab",
+            "https://www.autoscience.ai/blog/meet-carl"
+          ],
+          "source_location": "公司正式新闻稿（Business Wire 同步发布）；官网产品与 Carl 发布索引",
+          "basis": "survey_classification",
+          "primary_route": "harness",
+          "cross_route_reference": false
         }
       ]
     },
@@ -2612,6 +2779,52 @@
           "source_location": "v2：§3.1–3.3、§4.1–4.4，Tables 1–3",
           "basis": "method_passages_read",
           "primary_route": "model"
+        },
+        {
+          "work_id": "metacircle-ophis",
+          "topic_ids": [
+            "m-pretraining-ai4ai"
+          ],
+          "summary": "以训练内部观测提出假设和干预，再用重复训练结果决定下一步研究。",
+          "source_urls": [
+            "https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch"
+          ],
+          "source_location": "官方博客：OPHIS framework；Grokking / NanoGPT 两个案例；Looking Forward",
+          "basis": "survey_classification",
+          "primary_route": "harness",
+          "cross_route_reference": true
+        },
+        {
+          "work_id": "apex-tune",
+          "topic_ids": [
+            "m-pretraining-ai4ai"
+          ],
+          "summary": "自动提出并验证 scaling law、训练实现和 GPU kernel 的改进，以实验结果继续搜索。",
+          "source_urls": [
+            "https://www.apexin.ai/assets/papers/what-happens-when-ai-starts-improving-ai.pdf",
+            "https://github.com/apexin-ai/Apex-Tune-results"
+          ],
+          "source_location": "7 页报告：Evaluations I–IV；Beyond the Benchmarks；配套结果仓库",
+          "basis": "survey_classification",
+          "primary_route": "harness",
+          "cross_route_reference": true
+        },
+        {
+          "work_id": "intellect-3",
+          "topic_ids": [
+            "m-verifiable-feedback",
+            "m-experience-learning"
+          ],
+          "summary": "以合成数据、可验证环境和异步 RL 训练 106B MoE，公开训练框架、环境与模型。",
+          "source_urls": [
+            "https://www.primeintellect.ai/blog/intellect-3",
+            "https://github.com/PrimeIntellect-ai/prime-rl",
+            "https://github.com/PrimeIntellect-ai/verifiers"
+          ],
+          "source_location": "官方技术发布：Training Infrastructure、Training Recipe、Future Work",
+          "basis": "survey_classification",
+          "primary_route": "model",
+          "cross_route_reference": false
         }
       ]
     },
@@ -3709,6 +3922,98 @@
           ],
           "source_location": "§3、§3.3；Fig.2",
           "basis": "method_passages_read",
+          "primary_route": "model",
+          "cross_route_reference": true
+        },
+        {
+          "work_id": "metacircle-ophis",
+          "topic_ids": [
+            "x-training",
+            "x-feedback"
+          ],
+          "summary": "以训练内部观测提出假设和干预，再用重复训练结果决定下一步研究。",
+          "source_urls": [
+            "https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch"
+          ],
+          "source_location": "官方博客：OPHIS framework；Grokking / NanoGPT 两个案例；Looking Forward",
+          "basis": "survey_classification",
+          "primary_route": "harness",
+          "cross_route_reference": true
+        },
+        {
+          "work_id": "comfyresearch",
+          "topic_ids": [
+            "x-training"
+          ],
+          "summary": "把训练协议、观测与分析组织成可执行依赖图，供人或 agent 构造、运行和比较实验。",
+          "source_urls": [
+            "https://meta-circle.com/blog/comfyresearch-see-how-learning-happens",
+            "https://github.com/MetaCircleAI/ComfyResearch"
+          ],
+          "source_location": "官方博客：From notebook to graph；Watching a run；Changing one thing；Where this goes",
+          "basis": "survey_classification",
+          "primary_route": "harness",
+          "cross_route_reference": true
+        },
+        {
+          "work_id": "apex-tune",
+          "topic_ids": [
+            "x-training"
+          ],
+          "summary": "自动提出并验证 scaling law、训练实现和 GPU kernel 的改进，以实验结果继续搜索。",
+          "source_urls": [
+            "https://www.apexin.ai/assets/papers/what-happens-when-ai-starts-improving-ai.pdf",
+            "https://github.com/apexin-ai/Apex-Tune-results"
+          ],
+          "source_location": "7 页报告：Evaluations I–IV；Beyond the Benchmarks；配套结果仓库",
+          "basis": "survey_classification",
+          "primary_route": "harness",
+          "cross_route_reference": true
+        },
+        {
+          "work_id": "asi-bench",
+          "topic_ids": [
+            "x-feedback"
+          ],
+          "summary": "在相同科研任务上逐步撤去方法指导，区分按步骤执行和自主选择科研方法的能力。",
+          "source_urls": [
+            "https://arxiv.org/abs/2608.17271",
+            "https://github.com/apexin-ai/ASI-Bench"
+          ],
+          "source_location": "论文摘要；官方仓库 Overview、B1–B4、任务发布与评分协议",
+          "basis": "survey_classification",
+          "primary_route": "crosscut",
+          "cross_route_reference": true
+        },
+        {
+          "work_id": "recursive-first-steps",
+          "topic_ids": [
+            "x-training"
+          ],
+          "summary": "长时程并行研究线程积累实验上下文、组合候选分支，并对改进进行方差与 reward-hack 检查。",
+          "source_urls": [
+            "https://www.recursive.com/articles/first-steps-toward-automated-ai-research",
+            "https://github.com/recursive-org/first-steps-toward-automated-ai-research"
+          ],
+          "source_location": "官方报告：研究循环；NanoChat、NanoGPT Speedrun 与 SOL-ExecBench 案例",
+          "basis": "survey_classification",
+          "primary_route": "harness",
+          "cross_route_reference": true
+        },
+        {
+          "work_id": "intellect-3",
+          "topic_ids": [
+            "x-training",
+            "x-environment"
+          ],
+          "summary": "以合成数据、可验证环境和异步 RL 训练 106B MoE，公开训练框架、环境与模型。",
+          "source_urls": [
+            "https://www.primeintellect.ai/blog/intellect-3",
+            "https://github.com/PrimeIntellect-ai/prime-rl",
+            "https://github.com/PrimeIntellect-ai/verifiers"
+          ],
+          "source_location": "官方技术发布：Training Infrastructure、Training Recipe、Future Work",
+          "basis": "survey_classification",
           "primary_route": "model",
           "cross_route_reference": true
         }

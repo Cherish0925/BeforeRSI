@@ -1,6 +1,6 @@
 # 三条 RSI 路线的领域知识图谱
 
-[打开 v5 HTML](research/atlas/RSI_Field_Atlas_v5.html) · [领域结构文字版](research/atlas/field-guide.md) · [逐篇阅读](research/atlas/literature-cards.md)
+[打开 v5.1 HTML](research/atlas/RSI_Field_Atlas_v5_1.html) · [领域结构文字版](research/atlas/field-guide.md) · [逐篇阅读](research/atlas/literature-cards.md)
 
 ![首页三张领域图谱](assets/atlas/landscape-overview.png)
 
@@ -22,7 +22,7 @@ Model 的训练阶段、SFT/DPO/RL 目标、在线采样方式、更新节奏、
 
 ## 多关系图的数据
 
-`data/field-knowledge.json` 保存领域结构；`data/knowledge-graph.json` v5 整合主题、子问题、论文、原有方法分组、机构五种节点。
+`data/field-knowledge.json` 保存领域结构；`data/knowledge-graph.json` v5.1 整合主题、子问题、研究、原有方法分组、机构与公司六种节点。
 
 - 领域机制联系与主题包含关系：综述对问题空间的组织，有相关原文例证，不声称是论文间引用。
 - 论文—主题关系：一项工作可以连接多个主题；跨路线实例注明主路线。
@@ -30,10 +30,16 @@ Model 的训练阶段、SFT/DPO/RL 目标、在线采样方式、更新节奏、
 - 综述方法对照：比较两项研究的对象、反馈或继承方式，不推断学术影响。
 - 署名机构关系：来自论文首页或官方团队信息，不把模型提供方当作研究机构。
 
-当前 45 条论文关系中有 15 条原文明示和 30 条方法对照。尚无连线表示关系尚未整理，不代表工作彼此无关。
+当前 48 条研究关系中有 18 条原文明示和 30 条方法对照。尚无连线表示关系尚未整理，不代表工作彼此无关。
 
 ## 收录范围
 
-主路线记录为 Harness 40、Model 35、Model × Harness 22；另有 8 项跨路线资料和 22 项历史/背景。45 项有选定方法段落阅读，60 项为摘要初筛。9 项已确认小于 27B 的 Model/混合机制参考默认隐藏；训练规模未知不视为已通过门槛，也不视为低质量。
+主路线记录为 Harness 49、Model 36、Model × Harness 22；另有 9 项跨路线资料和 22 项历史/背景。53 项有选定方法或机制资料阅读，63 项为摘要/发布资料初筛。9 项已确认小于 27B 的 Model/混合机制参考默认隐藏；训练规模未知不视为已通过门槛，也不视为低质量。
 
 [Harness 静态领域图](assets/atlas/harness-field-graph.svg) · [Model 静态领域图](assets/atlas/model-field-graph.svg) · [Model × Harness 静态领域图](assets/atlas/hybrid-field-graph.svg)
+
+## 产业研究与公司节点
+
+27 个公司与团队档案通过发布、共同署名、项目托管与研究方向连接到具体工作和主题。其中 24 个关联具体研究、1 个仅公开方向、2 个邻近团队保留为待确认。关联来源可逐条展开；不依据公司品牌或创始人声望升级研究结论。
+
+公司卡片 → 研究卡片 → 领域主题可以双向导航。Discovery Loop 的方向与元环智能、Apex 已发布的不同技术成果分别说明；目标路线不冒充已完成的自更新闭环。

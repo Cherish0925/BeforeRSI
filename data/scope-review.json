@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-18",
+  "updated": "2026-10-19",
   "definitions": {
     "direct": "直接自进化研究",
     "enabler": "直接支撑的 AI4AI/学习机制",
@@ -12,9 +12,9 @@
   "counts": {
     "theory": 3,
     "foundation": 14,
-    "direct": 66,
-    "enabler": 31,
-    "evaluation": 7,
+    "direct": 67,
+    "enabler": 40,
+    "evaluation": 8,
     "background": 6
   },
   "works": [
@@ -1541,6 +1541,138 @@
       "reading_scope": "首页；§2–3、消融；2022 预印本 / EMNLP 2023；限定段落核对，未独立复现。",
       "primary_source": "https://aclanthology.org/2023.emnlp-main.67.pdf",
       "provenance": "2026-10-18 primary-source selected-section review"
+    },
+    {
+      "id": "metacircle-ophis",
+      "name": "OPHIS",
+      "year": 2026,
+      "scope": "enabler",
+      "closure_assessment": "bounded_public_release",
+      "operation": "以训练内部观测提出假设和干预，再用重复训练结果决定下一步研究。",
+      "boundary": "自动研究改变外部训练实验；尚无研究代理自身权重更新与持续双层递归的公开证据。",
+      "reading_scope": "官方博客：OPHIS framework；Grokking / NanoGPT 两个案例；Looking Forward；按所列公开材料整理，未独立复现实验。",
+      "primary_source": "https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch",
+      "provenance": "2026-10-19 industry primary-source review"
+    },
+    {
+      "id": "comfyresearch",
+      "name": "ComfyResearch",
+      "year": 2026,
+      "scope": "enabler",
+      "closure_assessment": "bounded_public_release",
+      "operation": "把训练协议、观测与分析组织成可执行依赖图，供人或 agent 构造、运行和比较实验。",
+      "boundary": "实验工具与自动研究基础设施；不是已证递归自改进系统。",
+      "reading_scope": "官方博客：From notebook to graph；Watching a run；Changing one thing；Where this goes；按所列公开材料整理，未独立复现实验。",
+      "primary_source": "https://meta-circle.com/blog/comfyresearch-see-how-learning-happens",
+      "provenance": "2026-10-19 industry primary-source review"
+    },
+    {
+      "id": "nanogpt-observables",
+      "name": "nanoGPT Observable Library",
+      "year": 2026,
+      "scope": "enabler",
+      "closure_assessment": "bounded_public_release",
+      "operation": "把权重、梯度、激活和注意力统计与模型模块对应，比较不同深度与训练条件。",
+      "boundary": "训练观测资料；尚未形成自主自改进或因果机制的证明。",
+      "reading_scope": "官方发布：Abstract；Across layers / setups；What the comparison reveals；按所列公开材料整理，未独立复现实验。",
+      "primary_source": "https://meta-circle.com/blog/observe-learning-in-full",
+      "provenance": "2026-10-19 industry primary-source review"
+    },
+    {
+      "id": "apex-tune",
+      "name": "Apex-Tune",
+      "year": 2026,
+      "scope": "enabler",
+      "closure_assessment": "bounded_public_release",
+      "operation": "自动提出并验证 scaling law、训练实现和 GPU kernel 的改进，以实验结果继续搜索。",
+      "boundary": "已公开 AI4AI 结果与实现；未证明研究代理自身参数更新或 Model × Harness 持续共演。",
+      "reading_scope": "7 页报告：Evaluations I–IV；Beyond the Benchmarks；配套结果仓库；按所列公开材料整理，未独立复现实验。",
+      "primary_source": "https://www.apexin.ai/assets/papers/what-happens-when-ai-starts-improving-ai.pdf",
+      "provenance": "2026-10-19 industry primary-source review"
+    },
+    {
+      "id": "apex-research",
+      "name": "Apex Research report",
+      "year": 2026,
+      "scope": "enabler",
+      "closure_assessment": "bounded_public_release",
+      "operation": "公司报告自主研究系统产生科研项目与论文，并用真实外部同行评审检验产出。",
+      "boundary": "本轮仅读官方结果摘要；ARR 评分不能写成正式录用，也不能据此断言自改进闭环成立。",
+      "reading_scope": "官方 README：Core Message、Key Results；PDF 链接已定位但本轮未完成正文提取；按所列公开材料整理，未独立复现实验。",
+      "primary_source": "https://github.com/apexin-ai/apex-research-report",
+      "provenance": "2026-10-19 industry primary-source review"
+    },
+    {
+      "id": "asi-bench",
+      "name": "ASI-Bench",
+      "year": 2026,
+      "scope": "evaluation",
+      "closure_assessment": "bounded_public_release",
+      "operation": "在相同科研任务上逐步撤去方法指导，区分按步骤执行和自主选择科研方法的能力。",
+      "boundary": "Apex 托管和发布此项目；论文署名以原文为准，托管关系不改写作者机构。评测本身不是自进化系统。",
+      "reading_scope": "论文摘要；官方仓库 Overview、B1–B4、任务发布与评分协议；按所列公开材料整理，未独立复现实验。",
+      "primary_source": "https://arxiv.org/abs/2608.17271",
+      "provenance": "2026-10-19 industry primary-source review"
+    },
+    {
+      "id": "recursive-first-steps",
+      "name": "Recursive · First Steps",
+      "year": 2026,
+      "scope": "enabler",
+      "closure_assessment": "bounded_public_release",
+      "operation": "长时程并行研究线程积累实验上下文、组合候选分支，并对改进进行方差与 reward-hack 检查。",
+      "boundary": "有 AI4AI 自动研发循环与产出证据；目标模型训练不等于研究代理自身参数进化。",
+      "reading_scope": "官方报告：研究循环；NanoChat、NanoGPT Speedrun 与 SOL-ExecBench 案例；按所列公开材料整理，未独立复现实验。",
+      "primary_source": "https://www.recursive.com/articles/first-steps-toward-automated-ai-research",
+      "provenance": "2026-10-19 industry primary-source review"
+    },
+    {
+      "id": "hermes-agent",
+      "name": "Hermes Agent",
+      "year": 2026,
+      "scope": "direct",
+      "closure_assessment": "bounded_public_release",
+      "operation": "从任务经验创建和修改技能文档，保留记忆与会话检索，使后续执行使用已有经验。",
+      "boundary": "公开实现支持 Harness 层经验学习；不声称已证基础模型自训练或持续递归能力增长。",
+      "reading_scope": "README：learning loop；官方文档 Skills System：skill_manage、/learn、跨会话加载；按所列公开材料整理，未独立复现实验。",
+      "primary_source": "https://github.com/NousResearch/hermes-agent",
+      "provenance": "2026-10-19 industry primary-source review"
+    },
+    {
+      "id": "intellect-3",
+      "name": "INTELLECT-3 / PRIME-RL",
+      "year": 2025,
+      "scope": "enabler",
+      "closure_assessment": "bounded_public_release",
+      "operation": "以合成数据、可验证环境和异步 RL 训练 106B MoE，公开训练框架、环境与模型。",
+      "boundary": "大规模 RL / 训练支撑，尚非已证递归自改进；同公司 Prime Agent 另按 Harness 机制记录。",
+      "reading_scope": "官方技术发布：Training Infrastructure、Training Recipe、Future Work；按所列公开材料整理，未独立复现实验。",
+      "primary_source": "https://www.primeintellect.ai/blog/intellect-3",
+      "provenance": "2026-10-19 industry primary-source review"
+    },
+    {
+      "id": "intology-locus",
+      "name": "Locus",
+      "year": 2025,
+      "scope": "enabler",
+      "closure_assessment": "bounded_public_release",
+      "operation": "公开定位为长时程 AI 研发系统；公司报告多日研究与 RE-Bench 结果。",
+      "boundary": "官方资料初筛；长时程自动研发的技术细节与自改进回路仍待完整方法材料。",
+      "reading_scope": "官方发布索引和 About 摘要；技术正文当前未完整提取；按所列公开材料整理，未独立复现实验。",
+      "primary_source": "https://intology.ai/blog/previewing-locus",
+      "provenance": "2026-10-19 industry primary-source review"
+    },
+    {
+      "id": "autoscience-lab",
+      "name": "Autoscience · Carl / Mira",
+      "year": 2026,
+      "scope": "enabler",
+      "closure_assessment": "bounded_public_release",
+      "operation": "自动科学家提出和检验算法假设，自动工程师将被验证的模型改进转成可部署实现。",
+      "boundary": "公司公开研发流程与成果声明；方法细节尚未完成核准，列初筛而非已证递归系统。",
+      "reading_scope": "公司正式新闻稿（Business Wire 同步发布）；官网产品与 Carl 发布索引；按所列公开材料整理，未独立复现实验。",
+      "primary_source": "https://www.autoscience.ai/blog/autoscience-autonomous-ai-lab",
+      "provenance": "2026-10-19 industry primary-source review"
     }
   ],
   "deferred_or_excluded": [

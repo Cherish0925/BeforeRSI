@@ -1,6 +1,6 @@
-# RSI 领域知识图谱 · v5
+# RSI 领域知识图谱 · v5.1
 
-[打开三张领域图谱](research/atlas/RSI_Field_Atlas_v5.html) · [文字版研究结构](research/atlas/field-guide.md)
+[打开三张领域图谱](research/atlas/RSI_Field_Atlas_v5_1.html) · [文字版研究结构](research/atlas/field-guide.md)
 
 ![首页三张领域图谱](assets/atlas/landscape-overview.png)
 
@@ -12,13 +12,13 @@
 
 | 路线 | 收录研究 | 方法段落已读 | 摘要初筛 |
 |---|---:|---:|---:|
-| Harness | 40 | 19 | 21 |
-| Model | 35 | 15 | 20 |
+| Harness | 49 | 25 | 24 |
+| Model | 36 | 16 | 20 |
 | Model × Harness | 22 | 8 | 14 |
 
-合计 97 项路线研究，另有 8 项跨路线评测/形式研究与 22 项历史、背景材料，共 127 项。路线数量包括相关技术和初筛候选，不等于认证的高质量 RSI 系统数。
+合计 107 项路线研究，另有 9 项跨路线评测/形式研究与 22 项历史、背景材料，共 138 项。路线数量包括相关技术和初筛候选，不等于认证的高质量 RSI 系统数。
 
-45 条逐项解释的论文关系；机构署名与方法归类作为单独边类型。
+48 条逐项解释的论文关系；机构署名与方法归类作为单独边类型。
 
 ## 阅读方式
 
@@ -40,4 +40,11 @@ python scripts/check_literature_graphs.py
 node scripts/check_atlas_ui.cjs
 ```
 
-上一轮九页 PDF 是 2026-10-18 的导读快照；当前图谱以 v5 HTML 与上述数据为准。
+上一轮九页 PDF 是 2026-10-18 的导读快照；当前图谱以 v5.1 HTML 与上述数据为准。
+
+## 公司与产业团队
+
+公司索引共 27 项：24 项关联具体研究、1 项仅公开方向、2 项邻近研究待确认。关联 34 项去重研究；不是全球公司总数。
+
+[公司与研究关联表](research/atlas/industry-guide.md) · 来源：`data/industry-landscape.json`。公司索引与各领域主题双向连接。
+

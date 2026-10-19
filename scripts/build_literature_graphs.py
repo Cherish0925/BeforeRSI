@@ -7,8 +7,8 @@ R=Path(__file__).resolve().parents[1]
 def read(p):return json.loads((R/p).read_text())
 def write(p,d):(R/p).write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n')
 BIB={w['id']:w for w in read('data/works.json')['works']}
-E=read('data/literature-editorial.json');F=read('data/field-knowledge.json');old={r['id']:r for r in read('data/research-atlas.json')['works']}
-assert set(old)=={w['id'] for w in E['works']}
+E=read('data/literature-editorial.json');F=read('data/field-knowledge.json');I=read('data/industry-landscape.json');old={r['id']:r for r in read('data/research-atlas.json')['works']}
+assert set(old)<={w['id'] for w in E['works']}==set(BIB)
 route_specs=[
  dict(id='harness',title='Harness',zh='外部系统的学习与自修改',color='#187c80',short='经验、程序与改进过程',definition='基础模型可以冻结。系统通过提示、代码、记忆、技能、工具、控制流、评价程序或运行机制的更新，改变后续行为。',distinction='重点追踪：改的是任务执行系统，还是产生下一次改进的程序？经验积累、自动优化与改进器自修改是不同过程。'),
  dict(id='model',title='Model',zh='参数中的学习与反馈闭环',color='#7253a0',short='训练信号、权重与学习角色',definition='训练实际更新模型权重或 adapter。模型生成的数据、偏好、奖励、任务或验证结果进入后续学习；执行者、评价器和出题者都可能是被训练模型。',distinction='重点追踪：谁生成训练信号、谁更新参数、什么进入下一轮？多个模型共同训练不必然是 Model × Harness；数据变化也不等于运行程序自修改。'),
@@ -17,7 +17,7 @@ route_specs=[
 alias={'UC Berkeley':'Berkeley','University of California Berkeley':'Berkeley','UC Santa Barbara':'UCSB','UC Santa Cruz':'UCSC','University of Waterloo':'Waterloo','Stanford University':'Stanford','University of Bristol':'Bristol','University of British Columbia':'UBC','Google Deepmind':'Google DeepMind','DeepSeek-AI':'DeepSeek','Moonshot AI（月之暗面）':'Moonshot AI','Meta':'Meta AI','Meta FAIR':'Meta AI','FAIR at Meta':'Meta AI','University of Illinois Urbana-Champaign':'UIUC','Washington University':'WashU','University of Washington':'UW','University of Oxford':'Oxford','The Ohio State University':'Ohio State','University of Minnesota':'Minnesota','Tianjin University':'Tianjin','Shanxi University':'Shanxi','Shanghai Jiao Tong University':'SJTU','University of California San Diego':'UCSD','UNC-Chapel Hill':'UNC','Pennsylvania State University':'Penn State','Nanyang Technological University':'NTU','The Chinese University of Hong Kong':'CUHK','University of Chicago':'UChicago','University of Science and Technology of China':'USTC','Zhejiang University':'Zhejiang','Carnegie Mellon University':'Carnegie Mellon','Microsoft Research Asia':'Microsoft Research Asia','The University of Hong Kong':'HKU','University of Toronto':'Toronto','Vector Institute':'Vector','iGent AI':'iGent AI','Microsoft Research':'Microsoft Research','Google Research':'Google Research'}
 works=[];orgs={};nodes=[];edges=[]
 for r in E['works']:
- w=old[r['id']];b=w['layer'];urls=list(dict.fromkeys([r['primary_url']]+[s['url'] for s in BIB[r['id']]['sources']]))
+ w=old.get(r['id'],r);b=w.get('layer',r);urls=list(dict.fromkeys([r['primary_url']]+[s['url'] for s in BIB[r['id']]['sources']]))
  # Keep readable bibliography names while maintaining stable work identifiers.
  title=BIB[r['id']]['name']; resources=r.get('resources') or w.get('scale') or w.get('tasks_and_resources','')
  if resources.startswith('本轮未统一'):resources=''
@@ -54,7 +54,20 @@ for rt in route_specs:
  for g in E['groups']:
   if g['route']==rt['id']:assert any(w['cluster']==g['id'] for w in ws)
 counts=dict(Counter(w['status'] for w in works));counts.update(total=len(works),routed=sum(w['route'] in ['harness','model','hybrid'] for w in works),crosscut=sum(w['route']=='crosscut' for w in works),relations=len(E['relations']),institutions=len(orgs))
-a={'version':'5.0.0','updated':E['updated'],'title':'RSI 领域知识图谱','scope':E['scope'],'field':F,'routes':route_specs,'groups':E['groups'],'works':works,'relations':E['relations'],'paths':E['reading_paths'],'counts':counts,'search_leads':len(read('data/discovery-pool.json')['entries']),'relation_types':{'extends':'明确扩展','uses':'采用方法','compares':'论文比较','discusses':'原文讨论','method_comparison':'方法对照'},'institutions':sorted(orgs.values(),key=lambda x:x['label'].lower())}
+# Company profiles bind released works, publication roles and declared directions separately.
+I['counts']={'total':len(I['companies']),'research':sum(c['status']=='research' for c in I['companies']),'direction':sum(c['status']=='direction' for c in I['companies']),'adjacent':sum(c['status']=='adjacent' for c in I['companies']),'linked_works':len({x['work_id'] for c in I['companies'] for x in c['work_links']})}
+I['route_counts']={r['id']:sum(r['id'] in c['primary_routes'] for c in I['companies']) for r in route_specs}
+for c in I['companies']:
+ cid='company-'+c['id'];nodes.append(dict(id=cid,type='company',label=c['name'],status=c['status']))
+ for x in c['work_links']:
+  assert x['work_id'] in byid
+  edges.append(dict(id=cid+'-work-'+x['work_id'],source=cid,target=x['work_id'],kind='company_work',label=x['relationship'],evidence='source_metadata',sources=[dict(url=x['source_url'],location=x['note'])]))
+ for tid in c['topic_ids']:
+  edges.append(dict(id=cid+'-topic-'+tid,source=cid,target='topic-'+tid,kind='company_topic',label='公开工作涉及',evidence='survey_classification',sources=[dict(url=u,location='公司关联工作的方法主题；具体署名和托管关系另列') for u in c['sources']]))
+ for d in c['directions']:
+  for tid in d['topic_ids']:
+   edges.append(dict(id=cid+'-direction-'+tid,source=cid,target='topic-'+tid,kind='company_direction',label='公开方向 / 待确认闭环',evidence='declared_direction',sources=[dict(url=c['sources'][0],location=d['basis'])]))
+a={'version':'5.1.0','updated':E['updated'],'title':'RSI 领域知识图谱','scope':E['scope'],'field':F,'industry':I,'routes':route_specs,'groups':E['groups'],'works':works,'relations':E['relations'],'paths':E['reading_paths'],'counts':counts,'search_leads':len(read('data/discovery-pool.json')['entries']),'relation_types':{'extends':'明确扩展','uses':'采用方法','compares':'论文比较','discusses':'原文讨论','method_comparison':'方法对照'},'institutions':sorted(orgs.values(),key=lambda x:x['label'].lower())}
 write('data/literature-atlas.json',a)
 for rt in F['routes']:
  for n in rt['nodes']:
@@ -67,13 +80,14 @@ for rt in F['routes']:
  for q in rt['mappings']:
   for tid in q['topic_ids']:
    edges.append(dict(id='addresses-'+rt['id']+'-'+q['work_id']+'-'+tid,source=q['work_id'],target='topic-'+tid,kind='addresses_topic',label='研究此主题 / 相关机制',explanation=q['summary'],evidence='survey_classification',sources=[dict(url=u,location=q['source_location']) for u in q['source_urls']]))
-write('data/knowledge-graph.json',{'schema_version':'5.0.0','updated':E['updated'],'scope':E['scope'],'nodes':nodes,'edges':edges,'field_views':{r['id']:['topic-'+n['id'] for n in r['nodes']] for r in F['routes']},'route_views':{rt['id']:[w['id'] for w in works if w['route']==rt['id']] for rt in route_specs},'work_bindings':[dict(work_id=w['id'],node_ids=[m for m in w['methods'] if m in {g['id'] for g in E['groups']}]) for w in works]})
+write('data/knowledge-graph.json',{'schema_version':'5.1.0','updated':E['updated'],'scope':E['scope'],'nodes':nodes,'edges':edges,'field_views':{r['id']:['topic-'+n['id'] for n in r['nodes']] for r in F['routes']},'route_views':{rt['id']:[w['id'] for w in works if w['route']==rt['id']] for rt in route_specs},'work_bindings':[dict(work_id=w['id'],node_ids=[m for m in w['methods'] if m in {g['id'] for g in E['groups']}]) for w in works]})
 template=(R/'scripts/atlas-template.html').read_text();assert '__LITERATURE_DATA__' in template
-page=template.replace('__DOMAIN_STYLE__',(R/'scripts/domain-style.css').read_text()).replace('__DOMAIN_SCRIPT__',(R/'scripts/domain-views.js').read_text()).replace('__LITERATURE_DATA__',json.dumps(a,ensure_ascii=False,separators=(',',':')).replace('</','<\\/'))
-for name in ['index.html','RSI_Field_Atlas_v5.html']:(R/'research/atlas'/name).write_text(page)
-md=['# RSI 领域知识图谱 · v5','','[打开三张领域图谱](research/atlas/RSI_Field_Atlas_v5.html) · [文字版研究结构](research/atlas/field-guide.md)','','![首页三张领域图谱](assets/atlas/landscape-overview.png)','','首页直接显示 Harness、Model、Model × Harness 三张领域图。29 个研究主题、其下的具体子问题以及 60 条机制联系先组织研究空间；论文、团队和机构再挂接到对应位置。主题间联系是综述归纳，论文间的引用、扩展和方法对照另行标注。','','点击主题可展开关键问题、原理、技术、相邻关系与对应研究；点击箭头可看联系的含义和原文例证。本综述仅讨论公开研究，不包含项目自身理论或设计。','','## 当前收录进度','','| 路线 | 收录研究 | 方法段落已读 | 摘要初筛 |','|---|---:|---:|---:|']
+page=template.replace('__DOMAIN_STYLE__',(R/'scripts/domain-style.css').read_text()).replace('__DOMAIN_SCRIPT__',(R/'scripts/domain-views.js').read_text()).replace('__INDUSTRY_SCRIPT__',(R/'scripts/industry-views.js').read_text()).replace('__INDUSTRY_STYLE__',(R/'scripts/industry-style.css').read_text()).replace('__LITERATURE_DATA__',json.dumps(a,ensure_ascii=False,separators=(',',':')).replace('</','<\\/'))
+for name in ['index.html','RSI_Field_Atlas_v5_1.html']:(R/'research/atlas'/name).write_text(page)
+md=['# RSI 领域知识图谱 · v5.1','','[打开三张领域图谱](research/atlas/RSI_Field_Atlas_v5_1.html) · [文字版研究结构](research/atlas/field-guide.md)','','![首页三张领域图谱](assets/atlas/landscape-overview.png)','','首页直接显示 Harness、Model、Model × Harness 三张领域图。29 个研究主题、其下的具体子问题以及 60 条机制联系先组织研究空间；论文、团队和机构再挂接到对应位置。主题间联系是综述归纳，论文间的引用、扩展和方法对照另行标注。','','点击主题可展开关键问题、原理、技术、相邻关系与对应研究；点击箭头可看联系的含义和原文例证。本综述仅讨论公开研究，不包含项目自身理论或设计。','','## 当前收录进度','','| 路线 | 收录研究 | 方法段落已读 | 摘要初筛 |','|---|---:|---:|---:|']
 for r in route_specs:md.append(f'| {r["title"]} | {r["counts"]["catalog"]} | {r["counts"]["methods"]} | {r["counts"]["screened"]} |')
-md+=['',f'合计 {counts["routed"]} 项路线研究，另有 {counts["crosscut"]} 项跨路线评测/形式研究与 22 项历史、背景材料，共 {len(works)} 项。路线数量包括相关技术和初筛候选，不等于认证的高质量 RSI 系统数。','',f'{counts["relations"]} 条逐项解释的论文关系；机构署名与方法归类作为单独边类型。','', '## 阅读方式','','1. 首页先读三张领域图；点击主题，展开子问题与具体方法。','2. 沿主题联系看经验、反馈、参数和程序怎样相互作用；论文不决定主题是否存在。','3. 读主题下的论文与团队，打开 A–F 研究卡片；卡片可以定位回相关领域主题。','4. 切换论文关系图，看明确引用、扩展与综述方法对照。','5. 使用全局检索查论文、机构、算法或任务。','','已确认低于 27B 的 Model / 混合机制参考默认不出现在路线论文主视图，可在补充区或搜索中读取。未公开规模与低质量不是同一判断。','', '## 数据与复建','','`data/field-knowledge.json` 保存领域主题、子问题、机制联系和论文挂接；`data/literature-editorial.json` 保存逐篇叙述与论文关系；`data/literature-atlas.json` 是阅读数据，`data/knowledge-graph.json` 是带来源的多关系图。','','```bash','python scripts/build_literature_graphs.py','python scripts/check_literature_graphs.py','node scripts/check_atlas_ui.cjs','```','', '上一轮九页 PDF 是 2026-10-18 的导读快照；当前图谱以 v5 HTML 与上述数据为准。']
+md+=['',f'合计 {counts["routed"]} 项路线研究，另有 {counts["crosscut"]} 项跨路线评测/形式研究与 22 项历史、背景材料，共 {len(works)} 项。路线数量包括相关技术和初筛候选，不等于认证的高质量 RSI 系统数。','',f'{counts["relations"]} 条逐项解释的论文关系；机构署名与方法归类作为单独边类型。','', '## 阅读方式','','1. 首页先读三张领域图；点击主题，展开子问题与具体方法。','2. 沿主题联系看经验、反馈、参数和程序怎样相互作用；论文不决定主题是否存在。','3. 读主题下的论文与团队，打开 A–F 研究卡片；卡片可以定位回相关领域主题。','4. 切换论文关系图，看明确引用、扩展与综述方法对照。','5. 使用全局检索查论文、机构、算法或任务。','','已确认低于 27B 的 Model / 混合机制参考默认不出现在路线论文主视图，可在补充区或搜索中读取。未公开规模与低质量不是同一判断。','', '## 数据与复建','','`data/field-knowledge.json` 保存领域主题、子问题、机制联系和论文挂接；`data/literature-editorial.json` 保存逐篇叙述与论文关系；`data/literature-atlas.json` 是阅读数据，`data/knowledge-graph.json` 是带来源的多关系图。','','```bash','python scripts/build_literature_graphs.py','python scripts/check_literature_graphs.py','node scripts/check_atlas_ui.cjs','```','', '上一轮九页 PDF 是 2026-10-18 的导读快照；当前图谱以 v5.1 HTML 与上述数据为准。']
+md += ['', '## 公司与产业团队', '', f"公司索引共 {I['counts']['total']} 项：{I['counts']['research']} 项关联具体研究、{I['counts']['direction']} 项仅公开方向、{I['counts']['adjacent']} 项邻近研究待确认。关联 {I['counts']['linked_works']} 项去重研究；不是全球公司总数。", '', '[公司与研究关联表](research/atlas/industry-guide.md) · 来源：`data/industry-landscape.json`。公司索引与各领域主题双向连接。', '']
 (R/'RESEARCH_ATLAS.md').write_text('\n'.join(md)+'\n')
 fm=['# 三条 RSI 路线：领域主题与机制联系','','这是一份可修订的问题空间与方法索引。主题可以交叉；主路线以实际更新对象确定。没有对应论文的主题仍保留，暂未收录不等于研究不存在。','']
 for rt in F['routes']:
@@ -101,9 +115,19 @@ print(json.dumps({'counts':counts,'routes':{r['id']:r['counts'] for r in route_s
 # The reference index follows the current reader; the earlier review queue stays dated.
 route_names={r['id']:r['title'] for r in route_specs}|{'crosscut':'跨路线评测 / 理论','archive':'历史 / 背景'}
 status_names={'methods':'方法段落已读','screened':'摘要初筛','archive':'历史 / 背景'}
-refs=['# 参考文献与阅读位置','','127 个稳定编号是引用索引，不是质量排名。当前路线归属、阅读深度和来源如下；完整解释见 [阅读档案](literature-cards.md)。','']
+refs=['# 参考文献与阅读位置','',f'{len(works)} 个稳定编号是引用索引，不是质量排名；包含论文、技术报告、仓库和产品机制文档。当前路线归属、阅读深度和来源如下；完整解释见 [阅读档案](literature-cards.md)。','']
 for w in works:
  refs += [f'## [{w["number"]:03d}] {w["short"]} · {w["year"]}','',w['title'],'',f'{route_names[w["route"]]} · {status_names[w["status"]]} · {w["team"]}','',w['source_location'],'']
  refs += [f'- [来源 {i+1}]({url})' for i,url in enumerate(w['sources'])]
  refs += ['']
 (R/'research/atlas/references.md').write_text('\n'.join(refs)+'\n')
+
+# A human-readable counterpart of the company profiles and exact relationship types.
+im=['# RSI 公司与产业研究团队','','本索引不是全球普查。技术论文、官网技术报告、仓库与产品机制文档共同构成证据；公司愿景不计作已发布的自进化系统。','']
+for c in I['companies']:
+ im+=['## '+c['name'],'',c['focus'],'',c['boundary'],'','**关联研究**','']
+ for x in c['work_links']:
+  w=byid[x['work_id']];im+=['- ['+w['short']+']('+x['source_url']+') · '+x['relationship']+' · '+route_names[w['route']]+'。'+x['note']]
+ for d in c['directions']:im+=['- 方向：'+route_names[d['route']]+'。'+d['basis']]
+ im+=['','**其他公开资料**','']+['- ['+d['title']+']('+d['url']+')：'+d['summary'] for d in c['disclosures']]+['']
+(R/'research/atlas/industry-guide.md').write_text('\n'.join(im)+'\n')

@@ -11,10 +11,10 @@ def check():
  assert len(ids)==len(a['works'])
  assert ids=={w['id'] for w in read('data/works.json')['works']}=={w['id'] for w in e['works']}
  assert set(g)=={'schema_version','updated','scope','nodes','edges','route_views','work_bindings','field_views'}
- assert g['schema_version']=='5.0.0'
+ assert g['schema_version']=='5.1.0'
  ns={n['id']:n for n in g['nodes']};assert len(ns)==len(g['nodes'])
  assert {n['id'] for n in g['nodes'] if n['type']=='work'}==ids
- assert all(n['type'] in {'work','mechanism','institution','field_topic','field_subtopic'} for n in ns.values())
+ assert all(n['type'] in {'work','mechanism','institution','field_topic','field_subtopic','company'} for n in ns.values())
  edgeids=set()
  for x in g['edges']:
   assert x['id'] not in edgeids;edgeids.add(x['id'])
@@ -26,6 +26,9 @@ def check():
   elif x['kind']=='mechanism':assert ns[x['source']]['type']=='mechanism' and x['evidence']=='survey_classification'
   elif x['kind'] in {'topic_contains','concept_relation'}:assert x['evidence']=='survey_structure'
   elif x['kind']=='addresses_topic':assert ns[x['source']]['type']=='work' and ns[x['target']]['type']=='field_topic' and x['evidence']=='survey_classification'
+  elif x['kind']=='company_work':assert ns[x['source']]['type']=='company' and ns[x['target']]['type']=='work' and x['evidence']=='source_metadata'
+  elif x['kind']=='company_topic':assert ns[x['source']]['type']=='company' and ns[x['target']]['type']=='field_topic' and x['evidence']=='survey_classification'
+  elif x['kind']=='company_direction':assert ns[x['source']]['type']=='company' and ns[x['target']]['type']=='field_topic' and x['evidence']=='declared_direction'
   else:raise AssertionError('Unknown relationship type: '+x['kind'])
  assert {b['work_id'] for b in g['work_bindings']}==ids
  for b in g['work_bindings']:assert set(b['node_ids'])<={n['id'] for n in ns.values() if n['type']=='mechanism'}
@@ -57,7 +60,24 @@ def check():
  m=re.search(r'<script id="literature-data" type="application/json">(.*?)</script>',page,re.S)
  assert m and json.loads(m.group(1))==a
  assert '__LITERATURE_DATA__' not in page and '__DOMAIN_' not in page
- assert page==(R/'research/atlas/RSI_Field_Atlas_v5.html').read_text()
+ assert page==(R/'research/atlas/RSI_Field_Atlas_v5_1.html').read_text()
+ assert '__INDUSTRY_' not in page
+ industry=a['industry'];profiles=industry['companies']
+ assert len({c['id'] for c in profiles})==len(profiles)==industry['counts']['total']
+ assert {n['id'] for n in ns.values() if n['type']=='company'}=={'company-'+c['id'] for c in profiles}
+ assert industry['counts']['linked_works']==len({x['work_id'] for c in profiles for x in c['work_links']})
+ for c in profiles:
+  assert c['sources'] and c['focus'] and c['boundary']
+  assert all(x['work_id'] in ids and x['relationship'] in {'published','coauthored','hosted'} for x in c['work_links'])
+  assert all('topic-'+tid in ns for tid in c['topic_ids'])
+  assert set(c['primary_routes'])=={works[x['work_id']]['route'] for x in c['work_links'] if works[x['work_id']]['route'] in routeids}
+  if c['status']=='direction':assert not c['work_links'] and c['directions']
+  if c['status']=='adjacent':assert not c['work_links'] and not c['topic_ids'] and not c['directions']
+ for rt in routeids:assert industry['route_counts'][rt]==sum(rt in c['primary_routes'] for c in profiles)
+ for st in ['research','direction','adjacent']:assert industry['counts'][st]==sum(c['status']==st for c in profiles)
+ source_industry=read('data/industry-landscape.json')
+ assert all(industry[k]==v for k,v in source_industry.items())
+ assert len({w['number'] for w in works.values()})==len(works)
  f=read('data/field-knowledge.json');assert f==a['field']
  assert len({n['id'] for rt in f['routes'] for n in rt['nodes']})==29
  assert sum(len(rt['edges']) for rt in f['routes'])==60

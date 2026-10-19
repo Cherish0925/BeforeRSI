@@ -7,7 +7,7 @@
 <br>
 
 [![Status](https://img.shields.io/badge/status-research%20in%20progress-111827?style=flat-square)](#status)
-[![Corpus](https://img.shields.io/badge/research%20catalog-127%20entries-C58B35?style=flat-square)](research/scope-catalog.md)
+[![Corpus](https://img.shields.io/badge/research%20catalog-138%20entries-C58B35?style=flat-square)](research/scope-catalog.md)
 [![Claim depth](https://img.shields.io/badge/claim%20depth-D0%E2%86%92D4-5C9C96?style=flat-square)](#claim-depth)
 [![CI](https://img.shields.io/github/actions/workflow/status/Cherish0925/BeforeRSI/validate.yml?branch=main&style=flat-square&label=data)](https://github.com/Cherish0925/BeforeRSI/actions)
 [![License](https://img.shields.io/badge/license-MIT-6B7280?style=flat-square)](LICENSE)
@@ -20,7 +20,7 @@
 
 ## 三张领域知识图谱：先看研究结构，再读论文
 
-**[打开 RSI_Field_Atlas_v5.html](research/atlas/RSI_Field_Atlas_v5.html)** · **[领域结构文字版](research/atlas/field-guide.md)** · **[127 项阅读档案](research/atlas/literature-cards.md)** · **[参考文献](research/atlas/references.md)**
+**[打开 RSI_Field_Atlas_v5_1.html](research/atlas/RSI_Field_Atlas_v5_1.html)** · **[领域结构文字版](research/atlas/field-guide.md)** · **[138 项阅读档案](research/atlas/literature-cards.md)** · **[参考文献](research/atlas/references.md)**
 
 ![首页直接呈现三张领域知识图谱](assets/atlas/landscape-overview.png)
 
@@ -34,13 +34,17 @@
 
 [Harness 领域图](assets/atlas/harness-field-graph.svg) · [Model 领域图](assets/atlas/model-field-graph.svg) · [Model × Harness 领域图](assets/atlas/hybrid-field-graph.svg)。图中关系的解释与原文例证可点击读取；论文关系图另外区分明确引用、扩展与方法对照。
 
-当前论文目录位置为 **40 / 35 / 22**，共 97 项路线研究；加上 8 项跨路线评测/理论与 22 项历史/背景，共 127 项。45 项已有选定方法段落阅读，60 项仍是摘要/来源初筛，22 项为历史背景。45 条论文关系包括 15 条原文明示关系、30 条综述对照。**这些是收录和阅读进度，不是全领域总数或最终质量排名。**
+当前研究目录位置为 **49 / 36 / 22**，共 107 项路线研究；加上 9 项跨路线评测/理论与 22 项历史/背景，共 138 项。53 项已有选定方法或机制资料阅读，63 项仍是摘要/发布资料初筛，22 项为历史背景。48 条研究关系包括 18 条原文明示关系、30 条综述对照。**这些是收录和阅读进度，不是全领域总数或最终质量排名。**
 
 已确认低于 27B 的 9 项 Model/混合机制参考默认不进入论文主视图，规模未知另行标记。A–F 卡片解释目标、思想、原理、方法、反馈和成果；本次重写 27 项，并纠正 Dream-RSI、SEED Distillation、WebEvolver、RewardHarness 的主路线位置。HTML 专门呈现公开文献，不含项目自己的理论或方案。旧 PDF 保留为 2026-10-18 快照。
 
+**公司与团队入口已接入三张领域图。** 共 27 个来源档案：24 个关联具体研究、Discovery Loop 仅公开方向、Reflection / MiroMind 另列邻近研究。元环智能、Apex、Nous Research、Recursive、Intology、Autoscience 等均可按公司名或项目名检索；关联 34 项去重研究。发布、共同署名和项目托管分别记录。公司数量不是已验证 RSI 系统数量，也不是全球普查结果。
+
+[公司与研究关联表](research/atlas/industry-guide.md) · [公司数据与来源](data/industry-landscape.json)
+
 ## What must be true before RSI is real?
 
-**Current scope and coverage:** The catalog preserves 127 entries: 97 route positions, 8 cross-route evaluation/theory references, and 22 historical/background items. The current reader contains 45 selected-method cards and 60 abstract/source screens. The earlier 38 claim reviews and 19-case shortlist remain a separate, dated review record; neither is a field census. A universal predictive theory has not been established.
+**Current scope and coverage:** The catalog preserves the original 127 IDs and adds 11 company research releases: 138 entries, 107 route positions, 9 cross-route evaluation/theory references, and 22 historical/background items. The current reader contains 53 selected-method/mechanism cards and 63 abstract/source screens. The earlier 38 claim reviews and 19-case shortlist remain a separate, dated review record; neither is a field census. A universal predictive theory has not been established.
 
 **BeforeRSI** studies one question:
 
@@ -235,10 +239,10 @@ Generality requires mechanism coverage and testable predictions across methods. 
 | **[SEARCH.md](SEARCH.md)** | search-effort objectives, complete-computation preservation, and the executable learning loop |
 | **[THEORY.md](THEORY.md)** | implementation boundaries, common-target improvement tests, coupling, and mathematical counterexamples |
 | **[RSI_SCOPE.md](RSI_SCOPE.md)** | Chinese scope correction, filtering results, key evidence and research consequences |
-| **[research/scope-catalog.md](research/scope-catalog.md)** | all 127 entries separated by relevance, plus deferred/excluded candidates |
-| **[COMPATIBILITY.md](COMPATIBILITY.md)** | per-work representation of all 127 catalog entries and limits of universality claims |
+| **[research/scope-catalog.md](research/scope-catalog.md)** | all 138 entries separated by relevance, plus deferred/excluded candidates |
+| **[COMPATIBILITY.md](COMPATIBILITY.md)** | dated representation of the earlier 127 catalog entries and limits of universality claims |
 | **[MECHANISMS.md](MECHANISMS.md)** | conditional explanations, derivations, interventions and learner-aware research route |
-| **[research/mechanism-map.md](research/mechanism-map.md)** | causal operation, failure condition and separating intervention for every corpus entry |
+| **[research/mechanism-map.md](research/mechanism-map.md)** | causal operation, failure condition and separating intervention for the earlier 127-entry mechanism review |
 | **[MAP.md](MAP.md)** | history, causal structure, knowledge tree and present frontier |
 | **[EVIDENCE.md](EVIDENCE.md)** | strongest public work, claim depth, limitations and primary sources |
 | **[PROGRAM.md](PROGRAM.md)** | research-production mechanisms and candidate implementation branches |

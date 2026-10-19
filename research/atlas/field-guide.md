@@ -45,6 +45,7 @@
 - [ACE](https://arxiv.org/html/2510.04618v1) · Stanford / SambaNova / UC Berkeley。持久 playbook。内容与条目演化；生成—反思—整理流程固定。
 - [OPRO](https://arxiv.org/abs/2309.03409) · Google DeepMind。候选提示或数值解。优化提示是相关机制；未因迭代次数多成为改进器自修改。
 - [Continual Harness](https://arxiv.org/abs/2605.09998) · Princeton / Google DeepMind / ARISE Foundation。技能；提示；记忆。跨交互持久改进；早期人类参与和后续自动循环分开。
+- [Hermes Agent](https://github.com/NousResearch/hermes-agent) · Nous Research。从任务经验创建和修改技能文档，保留记忆与会话检索，使后续执行使用已有经验。
 
 ### 长期记忆与知识组织 · Persistent Memory & Knowledge
 
@@ -88,6 +89,7 @@
 - [Group-Evolving Agents](https://arxiv.org/abs/2602.04837) · UC Santa Barbara。代理分支；跨分支经验。初筛支持经验共享引导结构修改；具体递归边界待方法核实。
 - [Continual Harness](https://arxiv.org/abs/2605.09998) · Princeton / Google DeepMind / ARISE Foundation。技能；提示；记忆。跨交互持久改进；早期人类参与和后续自动循环分开。
 - [Voyager](https://arxiv.org/html/2305.16291v2) · NVIDIA / Caltech / Stanford / UT Austin / UW–Madison。可组合代码技能库。固定 GPT-4 和课程程序；持久技能积累成立，元算法自改未示范。
+- [Hermes Agent](https://github.com/NousResearch/hermes-agent) · Nous Research。从任务经验创建和修改技能文档，保留记忆与会话检索，使后续执行使用已有经验。
 
 ### 工具、技能与行动接口 · Tools, Skills & Action Interfaces
 
@@ -129,6 +131,7 @@
 - [Continual Harness](https://arxiv.org/abs/2605.09998) · Princeton / Google DeepMind / ARISE Foundation。技能；提示；记忆。跨交互持久改进；早期人类参与和后续自动循环分开。
 - [Voyager](https://arxiv.org/html/2305.16291v2) · NVIDIA / Caltech / Stanford / UT Austin / UW–Madison。可组合代码技能库。固定 GPT-4 和课程程序；持久技能积累成立，元算法自改未示范。
 - [RewardHarness](https://arxiv.org/html/2605.08703v1) · UBC / Vector / Kuaishou Kolors / Etude AI / Waterloo / Carnegie Mellon / Tsinghua / Georgia Tech。冻结视觉语言模型，通过偏好误差改进 reward agent 的技能和工具；该评价系统随后用于外部图像编辑模型的 GRPO 训练。
+- [Hermes Agent](https://github.com/NousResearch/hermes-agent) · Nous Research。从任务经验创建和修改技能文档，保留记忆与会话检索，使后续执行使用已有经验。
 
 ### 推理与协作控制结构 · Control Flow & Agent Architecture
 
@@ -173,6 +176,7 @@
 - [Metaⁿ](https://arxiv.org/abs/2608.24735) · University of Minnesota / Seoul National University。策略层与工具。已有初筛表明元操作固定；层数增加不等于元操作本身进化。
 - [Adaptive Auto-Harness](https://arxiv.org/abs/2606.01770) · Emory / Amazon / Penn State / UIUC / Northeastern。harness 集合；任务路由及经验。持续适应含人类引导信号；路由与改进器更新分别判断。
 - [Dream-RSI](https://arxiv.org/html/2609.14858v2) · Google / Google DeepMind / Maryland / Virginia。LLM 改写可执行的研究探索策略代码，用已有研究树进行回放、比较和选择；基础 agent 与评价器保持不变。
+- [Autoscience · Carl / Mira](https://www.autoscience.ai/blog/autoscience-autonomous-ai-lab) · Autoscience。自动科学家提出和检验算法假设，自动工程师将被验证的模型改进转成可部署实现。
 
 ### 执行系统与资源配置 · Runtime, Environment & Infrastructure
 
@@ -216,6 +220,9 @@
 - [Live-SWE-agent](https://arxiv.org/html/2511.13646v1) · UIUC / Google。任务运行时创建的自定义工具脚本。主实验不改变 agentic loop；论文重点是同任务在线工具创造，不能说已证明跨任务递归演化。
 - [Adaptive Auto-Harness](https://arxiv.org/abs/2606.01770) · Emory / Amazon / Penn State / UIUC / Northeastern。harness 集合；任务路由及经验。持续适应含人类引导信号；路由与改进器更新分别判断。
 - [ShinkaEvolve](https://arxiv.org/abs/2509.19349) · Sakana AI。候选程序；包括部分 agent harness。算法演化框架；普通程序任务属于相关搜索机制，不直接证明自身 RSI。
+- [ComfyResearch](https://meta-circle.com/blog/comfyresearch-see-how-learning-happens) · MetaCircle。把训练协议、观测与分析组织成可执行依赖图，供人或 agent 构造、运行和比较实验。
+- [Apex-Tune](https://www.apexin.ai/assets/papers/what-happens-when-ai-starts-improving-ai.pdf) · Apex Intelligence。自动提出并验证 scaling law、训练实现和 GPU kernel 的改进，以实验结果继续搜索。
+- [Recursive · First Steps](https://www.recursive.com/articles/first-steps-toward-automated-ai-research) · Recursive Superintelligence。长时程并行研究线程积累实验上下文、组合候选分支，并对改进进行方差与 reward-hack 检查。
 
 ### 任务、探索与经验分布 · Task Streams, Exploration & Curriculum
 
@@ -255,6 +262,12 @@
 - [Continual Harness](https://arxiv.org/abs/2605.09998) · Princeton / Google DeepMind / ARISE Foundation。技能；提示；记忆。跨交互持久改进；早期人类参与和后续自动循环分开。
 - [Voyager](https://arxiv.org/html/2305.16291v2) · NVIDIA / Caltech / Stanford / UT Austin / UW–Madison。可组合代码技能库。固定 GPT-4 和课程程序；持久技能积累成立，元算法自改未示范。
 - [Dream-RSI](https://arxiv.org/html/2609.14858v2) · Google / Google DeepMind / Maryland / Virginia。LLM 改写可执行的研究探索策略代码，用已有研究树进行回放、比较和选择；基础 agent 与评价器保持不变。
+- [OPHIS](https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch) · MetaCircle。以训练内部观测提出假设和干预，再用重复训练结果决定下一步研究。
+- [ComfyResearch](https://meta-circle.com/blog/comfyresearch-see-how-learning-happens) · MetaCircle。把训练协议、观测与分析组织成可执行依赖图，供人或 agent 构造、运行和比较实验。
+- [nanoGPT Observable Library](https://meta-circle.com/blog/observe-learning-in-full) · MetaCircle。把权重、梯度、激活和注意力统计与模型模块对应，比较不同深度与训练条件。
+- [Recursive · First Steps](https://www.recursive.com/articles/first-steps-toward-automated-ai-research) · Recursive Superintelligence。长时程并行研究线程积累实验上下文、组合候选分支，并对改进进行方差与 reward-hack 检查。
+- [Hermes Agent](https://github.com/NousResearch/hermes-agent) · Nous Research。从任务经验创建和修改技能文档，保留记忆与会话检索，使后续执行使用已有经验。
+- [Locus](https://intology.ai/blog/previewing-locus) · Intology。公开定位为长时程 AI 研发系统；公司报告多日研究与 RE-Bench 结果。
 
 ### 评测、验证器与反馈信号 · Evaluation, Verifiers & Feedback
 
@@ -298,6 +311,14 @@
 - [SkillOpt](https://arxiv.org/abs/2605.23904) · Microsoft / SJTU / Tongji / Fudan。技能文本。外部优化模型修改技能；不是优化模型权重自改。
 - [MemRL](https://arxiv.org/html/2601.03192v1) · SJTU / Xidian / NUS / Shanghai Innovation Institute / MemTensor / USTC。情景记忆；记忆效用值。LLM 参数冻结；记忆排序价值学习，更新规则本身固定。
 - [RewardHarness](https://arxiv.org/html/2605.08703v1) · UBC / Vector / Kuaishou Kolors / Etude AI / Waterloo / Carnegie Mellon / Tsinghua / Georgia Tech。冻结视觉语言模型，通过偏好误差改进 reward agent 的技能和工具；该评价系统随后用于外部图像编辑模型的 GRPO 训练。
+- [OPHIS](https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch) · MetaCircle。以训练内部观测提出假设和干预，再用重复训练结果决定下一步研究。
+- [ComfyResearch](https://meta-circle.com/blog/comfyresearch-see-how-learning-happens) · MetaCircle。把训练协议、观测与分析组织成可执行依赖图，供人或 agent 构造、运行和比较实验。
+- [nanoGPT Observable Library](https://meta-circle.com/blog/observe-learning-in-full) · MetaCircle。把权重、梯度、激活和注意力统计与模型模块对应，比较不同深度与训练条件。
+- [Apex-Tune](https://www.apexin.ai/assets/papers/what-happens-when-ai-starts-improving-ai.pdf) · Apex Intelligence。自动提出并验证 scaling law、训练实现和 GPU kernel 的改进，以实验结果继续搜索。
+- [Apex Research report](https://github.com/apexin-ai/apex-research-report) · Apex Intelligence。公司报告自主研究系统产生科研项目与论文，并用真实外部同行评审检验产出。
+- [ASI-Bench](https://arxiv.org/abs/2608.17271) · Tsinghua / University of Michigan / MIT / Harvard / Carnegie Mellon / UIUC / Boston University / University of Queensland / USTC / Flatiron Institute / Microsoft Research / AG2 AI / Independent Researchers。在相同科研任务上逐步撤去方法指导，区分按步骤执行和自主选择科研方法的能力。
+- [Recursive · First Steps](https://www.recursive.com/articles/first-steps-toward-automated-ai-research) · Recursive Superintelligence。长时程并行研究线程积累实验上下文、组合候选分支，并对改进进行方差与 reward-hack 检查。
+- [Autoscience · Carl / Mira](https://www.autoscience.ai/blog/autoscience-autonomous-ai-lab) · Autoscience。自动科学家提出和检验算法假设，自动工程师将被验证的模型改进转成可部署实现。
 
 ### 候选生成、搜索与选择 · Search, Selection & Evolution
 
@@ -357,6 +378,12 @@
 - [ShinkaEvolve](https://arxiv.org/abs/2509.19349) · Sakana AI。候选程序；包括部分 agent harness。算法演化框架；普通程序任务属于相关搜索机制，不直接证明自身 RSI。
 - [Dream-RSI](https://arxiv.org/html/2609.14858v2) · Google / Google DeepMind / Maryland / Virginia。LLM 改写可执行的研究探索策略代码，用已有研究树进行回放、比较和选择；基础 agent 与评价器保持不变。
 - [RewardHarness](https://arxiv.org/html/2605.08703v1) · UBC / Vector / Kuaishou Kolors / Etude AI / Waterloo / Carnegie Mellon / Tsinghua / Georgia Tech。冻结视觉语言模型，通过偏好误差改进 reward agent 的技能和工具；该评价系统随后用于外部图像编辑模型的 GRPO 训练。
+- [OPHIS](https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch) · MetaCircle。以训练内部观测提出假设和干预，再用重复训练结果决定下一步研究。
+- [Apex-Tune](https://www.apexin.ai/assets/papers/what-happens-when-ai-starts-improving-ai.pdf) · Apex Intelligence。自动提出并验证 scaling law、训练实现和 GPU kernel 的改进，以实验结果继续搜索。
+- [Apex Research report](https://github.com/apexin-ai/apex-research-report) · Apex Intelligence。公司报告自主研究系统产生科研项目与论文，并用真实外部同行评审检验产出。
+- [Recursive · First Steps](https://www.recursive.com/articles/first-steps-toward-automated-ai-research) · Recursive Superintelligence。长时程并行研究线程积累实验上下文、组合候选分支，并对改进进行方差与 reward-hack 检查。
+- [Locus](https://intology.ai/blog/previewing-locus) · Intology。公开定位为长时程 AI 研发系统；公司报告多日研究与 RE-Bench 结果。
+- [Autoscience · Carl / Mira](https://www.autoscience.ai/blog/autoscience-autonomous-ai-lab) · Autoscience。自动科学家提出和检验算法假设，自动工程师将被验证的模型改进转成可部署实现。
 
 ### 改进程序的自修改 · Self-Modification of the Improver
 
@@ -581,6 +608,7 @@
 - [RL Tango](https://arxiv.org/abs/2505.15034) · MIT / MIT–IBM Watson AI Lab。生成者与过程验证者交替训练，结果正确性提供外部评价锚点。
 - [Iterative RPO](https://arxiv.org/html/2404.19733v2) · Meta FAIR / NYU。答案正确性形成正负推理对，以 DPO+NLL 迭代训练；AI 生成数据不等于 AI 决定偏好真值。
 - [Kimi K2](https://arxiv.org/html/2507.20534v1) · Moonshot AI（月之暗面）。RLVR 信号校准 K2 critic，rubric 评价开放任务；另有预训练 rephrasing，二者不是一个已证递归环。
+- [INTELLECT-3 / PRIME-RL](https://www.primeintellect.ai/blog/intellect-3) · Prime Intellect。以合成数据、可验证环境和异步 RL 训练 106B MoE，公开训练框架、环境与模型。
 
 ### 评价器学习与生成—验证共演 · Evaluator learning & generator–verifier co-training
 
@@ -734,6 +762,7 @@ proposer、challenger 或 opponent 根据当前 solver 的表现改变任务或�
 - [Teaching LLMs to Self-Evolve](https://arxiv.org/abs/2607.21971) · UIUC。用执行反馈训练多轮程序修订；meta-skills 不等于学习优化器。
 - [SEED Distillation](https://arxiv.org/html/2607.14777v1) · Tsinghua / Zhejiang University / CUHK / NTU / Tongji。同一策略承担 actor 与训练期 analyzer；从自身轨迹提炼 hindsight skills，形成 on-policy distillation 与 RL 信号。部署时移除 analyzer，保留更新后的策略模型。
 - [WebEvolver](https://arxiv.org/html/2504.21024v2) · Tencent AI Lab。策略 LLM 与 world-model LLM 从交互轨迹中共同训练；世界模型提供合成经验与前瞻规划。可变对象是两类模型的参数。
+- [INTELLECT-3 / PRIME-RL](https://www.primeintellect.ai/blog/intellect-3) · Prime Intellect。以合成数据、可验证环境和异步 RL 训练 106B MoE，公开训练框架、环境与模型。
 
 ### 学习如何改进学习者 · Learning to adapt & learned improvement policies
 
@@ -822,6 +851,8 @@ AI 改写语料、选择数据混合、设计损失 / 优化器或改进训练�
 **论文与团队（包括初筛与跨路线联系）**
 
 - [Kimi K2](https://arxiv.org/html/2507.20534v1) · Moonshot AI（月之暗面）。RLVR 信号校准 K2 critic，rubric 评价开放任务；另有预训练 rephrasing，二者不是一个已证递归环。
+- [OPHIS](https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch) · MetaCircle。以训练内部观测提出假设和干预，再用重复训练结果决定下一步研究。
+- [Apex-Tune](https://www.apexin.ai/assets/papers/what-happens-when-ai-starts-improving-ai.pdf) · Apex Intelligence。自动提出并验证 scaling law、训练实现和 GPU kernel 的改进，以实验结果继续搜索。
 
 ### 持续研究的问题
 
@@ -1048,6 +1079,7 @@ Model指系统内所有被学习的参数，包括策略、reward model、world 
 - [WebEvolver](https://arxiv.org/html/2504.21024v2) · Tencent AI Lab。跨路线机制联系。同时改多个模型仍是参数侧共学；已读方法没有非参数工作流/工具/环境包装被优化。 策略 LLM 与 world-model LLM 从交互轨迹中共同训练；世界模型提供合成经验与前瞻规划。可变对象是两类模型的参数。
 - [EnvHarness](https://arxiv.org/abs/2608.19880) · WashU / Google Cloud AI Research / Google Cloud / UNC。EnvRigger根据失败生成环境wrapper，原环境底层和verifier冻结；再用重塑环境训练policy。是否跨多代反复重建wrapper应依据训练流程逐项说明。
 - [Socratic-SWE](https://arxiv.org/abs/2606.07412) · Alibaba AI Data / SJTU。从软件求解轨迹提炼技能并生成新任务训练求解者；是否有跨轮持久可调用技能库及其明确更新边界，需方法全文确认。
+- [INTELLECT-3 / PRIME-RL](https://www.primeintellect.ai/blog/intellect-3) · Prime Intellect。以合成数据、可验证环境和异步 RL 训练 106B MoE，公开训练框架、环境与模型。
 
 ### 奖励、评价与策略互相影响 · Reward–Evaluator–Policy Coupling
 
@@ -1088,6 +1120,8 @@ Model指系统内所有被学习的参数，包括策略、reward model、world 
 - [Execution-Grounded Research](https://arxiv.org/abs/2601.14525) · Stanford。执行候选AI研究方案并反馈构思者；训练构思模型与改进目标模型须分开计，不把外部训练目标当成其自身后继。
 - [RewardHarness](https://arxiv.org/html/2605.08703v1) · UBC / Vector / Kuaishou Kolors / Etude AI / Waterloo / Carnegie Mellon / Tsinghua / Georgia Tech。跨路线机制联系。主贡献是评价Harness演化；下游训练提供跨路线联系，未建立更新目标反向改进奖励系统的闭环。 冻结视觉语言模型，通过偏好误差改进 reward agent 的技能和工具；该评价系统随后用于外部图像编辑模型的 GRPO 训练。
 - [SEED Distillation](https://arxiv.org/html/2607.14777v1) · Tsinghua / Zhejiang University / CUHK / NTU / Tongji。跨路线机制联系。明确更新模型参数；未显示持久非参数harness共同演化。 同一策略承担 actor 与训练期 analyzer；从自身轨迹提炼 hindsight skills，形成 on-policy distillation 与 RL 信号。部署时移除 analyzer，保留更新后的策略模型。
+- [OPHIS](https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch) · MetaCircle。以训练内部观测提出假设和干预，再用重复训练结果决定下一步研究。
+- [ASI-Bench](https://arxiv.org/abs/2608.17271) · Tsinghua / University of Michigan / MIT / Harvard / Carnegie Mellon / UIUC / Boston University / University of Queensland / USTC / Flatiron Institute / Microsoft Research / AG2 AI / Independent Researchers。在相同科研任务上逐步撤去方法指导，区分按步骤执行和自主选择科研方法的能力。
 
 ### 训练器与学习系统共同优化 · Training-Harness Co-evolution
 
@@ -1130,6 +1164,11 @@ Model指系统内所有被学习的参数，包括策略、reward model、world 
 - [Execution-Grounded Research](https://arxiv.org/abs/2601.14525) · Stanford。执行候选AI研究方案并反馈构思者；训练构思模型与改进目标模型须分开计，不把外部训练目标当成其自身后继。
 - [RewardHarness](https://arxiv.org/html/2605.08703v1) · UBC / Vector / Kuaishou Kolors / Etude AI / Waterloo / Carnegie Mellon / Tsinghua / Georgia Tech。跨路线机制联系。主贡献是评价Harness演化；下游训练提供跨路线联系，未建立更新目标反向改进奖励系统的闭环。 冻结视觉语言模型，通过偏好误差改进 reward agent 的技能和工具；该评价系统随后用于外部图像编辑模型的 GRPO 训练。
 - [AIRA-Compose / Design](https://arxiv.org/abs/2605.15871) · Meta FAIR / Oxford。研究代理搜索架构/计算原语，候选扩展到外部目标预训练；没有据此证明目标模型回到下一代研究者角色。
+- [OPHIS](https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch) · MetaCircle。以训练内部观测提出假设和干预，再用重复训练结果决定下一步研究。
+- [ComfyResearch](https://meta-circle.com/blog/comfyresearch-see-how-learning-happens) · MetaCircle。把训练协议、观测与分析组织成可执行依赖图，供人或 agent 构造、运行和比较实验。
+- [Apex-Tune](https://www.apexin.ai/assets/papers/what-happens-when-ai-starts-improving-ai.pdf) · Apex Intelligence。自动提出并验证 scaling law、训练实现和 GPU kernel 的改进，以实验结果继续搜索。
+- [Recursive · First Steps](https://www.recursive.com/articles/first-steps-toward-automated-ai-research) · Recursive Superintelligence。长时程并行研究线程积累实验上下文、组合候选分支，并对改进进行方差与 reward-hack 检查。
+- [INTELLECT-3 / PRIME-RL](https://www.primeintellect.ai/blog/intellect-3) · Prime Intellect。以合成数据、可验证环境和异步 RL 训练 106B MoE，公开训练框架、环境与模型。
 
 ### 组织结构与角色能力共同学习 · Organization–Policy Co-learning
 

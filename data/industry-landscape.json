@@ -1,0 +1,1103 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-10-19",
+  "scope": "当前公开来源支持的公司与产业研究团队索引，非全球公司普查。一个机构可跨路线；公司数与研究数分别去重。",
+  "rules": [
+    "具体工作按实际更新对象分类；公司方向用单独标记。",
+    "官网、技术博客、模型卡、报告、代码与论文均可作为来源，披露深度单独显示。",
+    "发布、共同署名和托管是不同关系；创始人原单位成果不移到新公司名下。",
+    "Model / 混合工作沿用实际训练对象 ≥27B 的主视图范围；公司入口不改变规模判断。"
+  ],
+  "companies": [
+    {
+      "id": "discovery-loop",
+      "name": "Discovery Loop",
+      "aliases": [
+        "Jeff Dean",
+        "姐夫哥",
+        "Sanjay Ghemawat",
+        "Quoc Le",
+        "Oriol Vinyals"
+      ],
+      "kind": "公司 / 产业研究团队",
+      "status": "direction",
+      "focus": "自动化提出、实现、运行、解释和迭代实验的完整科研循环；先做 ML 研发，并把自己的技术栈作为第一个改进对象。",
+      "boundary": "官网给出研究方向与团队，还没有足以确认参数更新日程、改进器继承和多代收益的技术细节。创始人在 Google 的既有工作不计作这家公司的成果。",
+      "work_links": [],
+      "topic_ids": [],
+      "primary_routes": [],
+      "directions": [
+        {
+          "route": "harness",
+          "topic_ids": [
+            "h-search",
+            "h-runtime"
+          ],
+          "basis": "官网公开方向：自动化 ML 研究流程；尚无机制报告。"
+        },
+        {
+          "route": "hybrid",
+          "topic_ids": [
+            "x-training"
+          ],
+          "basis": "综述定位的目标：研发结果回用于自身技术栈；模型与 harness 的双向更新仍待披露。"
+        }
+      ],
+      "sources": [
+        "https://www.discoveryloop.com/"
+      ],
+      "disclosures": [
+        {
+          "title": "Discovery Loop 官方介绍",
+          "url": "https://www.discoveryloop.com/",
+          "kind": "公司方向",
+          "summary": "创始团队：Jeff Dean、Sanjay Ghemawat、Quoc Le、Oriol Vinyals。提出以 AI 自动化科学实验循环。"
+        }
+      ],
+      "verified_at": "2026-10-19"
+    },
+    {
+      "id": "metacircle",
+      "name": "元环智能 · MetaCircle",
+      "aliases": [
+        "MetaCircleAI",
+        "刘子鸣",
+        "Ziming Liu"
+      ],
+      "kind": "公司 / 产业研究团队",
+      "status": "research",
+      "focus": "Science of AI → AI for AI：用训练动力学观测、机制假设和可执行实验帮助 AI 改进学习系统。",
+      "boundary": "三项公开工作分属自动研究、实验工作台和观测资料。其技术价值与当前实验规模分开记录；没有把小型案例写成 ≥27B 模型自训练证明。",
+      "work_links": [
+        {
+          "work_id": "metacircle-ophis",
+          "relationship": "published",
+          "source_url": "https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch",
+          "note": "官方发布"
+        },
+        {
+          "work_id": "comfyresearch",
+          "relationship": "published",
+          "source_url": "https://meta-circle.com/blog/comfyresearch-see-how-learning-happens",
+          "note": "官方发布"
+        },
+        {
+          "work_id": "nanogpt-observables",
+          "relationship": "published",
+          "source_url": "https://meta-circle.com/blog/observe-learning-in-full",
+          "note": "官方发布"
+        }
+      ],
+      "topic_ids": [
+        "h-evaluation",
+        "h-experience",
+        "h-runtime",
+        "h-search",
+        "m-pretraining-ai4ai",
+        "x-feedback",
+        "x-training"
+      ],
+      "primary_routes": [
+        "harness"
+      ],
+      "directions": [],
+      "sources": [
+        "https://meta-circle.com/",
+        "https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch",
+        "https://meta-circle.com/blog/comfyresearch-see-how-learning-happens",
+        "https://meta-circle.com/blog/observe-learning-in-full",
+        "https://meta-circle.com/blog/predicting-marins-hero-run",
+        "https://meta-circle.com/blog/can-taste-be-learned"
+      ],
+      "disclosures": [
+        {
+          "title": "Predicting Marin’s Hero Run",
+          "url": "https://meta-circle.com/blog/predicting-marins-hero-run",
+          "kind": "预测实例",
+          "summary": "公开 meta model 对训练曲线的事前预测；短文未给模型架构和完整验证，不能当作已验证自优化模型。"
+        },
+        {
+          "title": "Can Taste Be Learned?",
+          "url": "https://meta-circle.com/blog/can-taste-be-learned",
+          "kind": "早期探索",
+          "summary": "个人论文偏好预测案例：一个 agent、一个评判者、15 篇论文；作者明确还不是完整 benchmark。"
+        }
+      ],
+      "verified_at": "2026-10-19"
+    },
+    {
+      "id": "apex",
+      "name": "超衍智能 · Apex Intelligence",
+      "aliases": [
+        "Apex",
+        "apexin-ai",
+        "超衍"
+      ],
+      "kind": "公司 / 产业研究团队",
+      "status": "research",
+      "focus": "面向自主科学发现的 AI 研发系统：公开训练栈优化结果、真实评审产出报告，以及科研自主性评测。",
+      "boundary": "公开定位是 self-evolving foundation models；目前读到的发布最直接支持自动研究与评测。基础模型持续自训练和双层共演尚不能由这些资料确认。",
+      "work_links": [
+        {
+          "work_id": "apex-tune",
+          "relationship": "published",
+          "source_url": "https://www.apexin.ai/assets/papers/what-happens-when-ai-starts-improving-ai.pdf",
+          "note": "官方发布"
+        },
+        {
+          "work_id": "apex-research",
+          "relationship": "published",
+          "source_url": "https://github.com/apexin-ai/apex-research-report",
+          "note": "官方发布"
+        },
+        {
+          "work_id": "asi-bench",
+          "relationship": "hosted",
+          "source_url": "https://github.com/apexin-ai/ASI-Bench",
+          "note": "官方项目托管；论文作者机构另列。"
+        }
+      ],
+      "topic_ids": [
+        "h-evaluation",
+        "h-runtime",
+        "h-search",
+        "m-pretraining-ai4ai",
+        "x-feedback",
+        "x-training"
+      ],
+      "primary_routes": [
+        "harness"
+      ],
+      "directions": [
+        {
+          "route": "hybrid",
+          "topic_ids": [
+            "x-training",
+            "x-feedback"
+          ],
+          "basis": "公司研究目标与训练栈应用；未据官网愿景认证双向自更新。"
+        }
+      ],
+      "sources": [
+        "https://www.apexin.ai/",
+        "https://www.apexin.ai/assets/papers/what-happens-when-ai-starts-improving-ai.pdf",
+        "https://github.com/apexin-ai/apex-research-report",
+        "https://github.com/apexin-ai/ASI-Bench",
+        "https://github.com/apexin-ai/Evaluation-Self-Evolve-AI-System"
+      ],
+      "disclosures": [
+        {
+          "title": "Evaluation in Self-Evolving AI Systems",
+          "url": "https://github.com/apexin-ai/Evaluation-Self-Evolve-AI-System",
+          "kind": "综述设计",
+          "summary": "自进化评测的文献与结构设计，作为背景材料保留；不重复计作一个实验系统。"
+        }
+      ],
+      "verified_at": "2026-10-19"
+    },
+    {
+      "id": "nous",
+      "name": "Nous Research",
+      "aliases": [
+        "Hermes",
+        "Hermes Agent"
+      ],
+      "kind": "公司 / 产业研究团队",
+      "status": "research",
+      "focus": "在可部署 agent 中保留记忆、创建技能、复用历史任务经验。",
+      "boundary": "本视图明确指向 Hermes Agent 的外部学习机制；没有把 Nous 的模型训练项目自动归为模型 RSI。",
+      "work_links": [
+        {
+          "work_id": "hermes-agent",
+          "relationship": "published",
+          "source_url": "https://github.com/NousResearch/hermes-agent",
+          "note": "官方发布"
+        }
+      ],
+      "topic_ids": [
+        "h-capabilities",
+        "h-experience",
+        "h-instructions",
+        "h-memory"
+      ],
+      "primary_routes": [
+        "harness"
+      ],
+      "directions": [],
+      "sources": [
+        "https://github.com/NousResearch/hermes-agent"
+      ],
+      "disclosures": [],
+      "verified_at": "2026-10-19"
+    },
+    {
+      "id": "intology",
+      "name": "Intology",
+      "aliases": [
+        "Locus",
+        "Zochi"
+      ],
+      "kind": "公司 / 产业研究团队",
+      "status": "research",
+      "focus": "用 Locus 推进自动 AI R&D，用 Zochi 探索自动科研产出和外部同行评审。",
+      "boundary": "Locus 官方索引与摘要可读，方法正文未完整提取；这家公司已进入检索和研究主题，技术结论保留为初筛。",
+      "work_links": [
+        {
+          "work_id": "intology-locus",
+          "relationship": "published",
+          "source_url": "https://intology.ai/blog/previewing-locus",
+          "note": "官方发布"
+        }
+      ],
+      "topic_ids": [
+        "h-experience",
+        "h-search"
+      ],
+      "primary_routes": [
+        "harness"
+      ],
+      "directions": [],
+      "sources": [
+        "https://intology.ai/",
+        "https://intology.ai/blog/previewing-locus",
+        "https://intology.ai/blog/zochi-tech-report"
+      ],
+      "disclosures": [
+        {
+          "title": "Zochi Technical Report",
+          "url": "https://intology.ai/blog/zochi-tech-report",
+          "kind": "待完整阅读",
+          "summary": "已定位官方技术发布。本文不根据新闻标题推断 Zochi 的自更新算法。"
+        }
+      ],
+      "verified_at": "2026-10-19"
+    },
+    {
+      "id": "autoscience",
+      "name": "Autoscience",
+      "aliases": [
+        "Carl",
+        "Mira",
+        "Autoscience Institute"
+      ],
+      "kind": "公司 / 产业研究团队",
+      "status": "research",
+      "focus": "将算法假设探索、实验验证和模型部署组织成自动科学家与工程师协作的研发流程。",
+      "boundary": "成果与产品定位来自公司正式公开稿，底层模型训练和研究者继承机制未披露；暂按 Harness 自动研发初筛。",
+      "work_links": [
+        {
+          "work_id": "autoscience-lab",
+          "relationship": "published",
+          "source_url": "https://www.autoscience.ai/blog/autoscience-autonomous-ai-lab",
+          "note": "官方发布"
+        }
+      ],
+      "topic_ids": [
+        "h-control",
+        "h-evaluation",
+        "h-search"
+      ],
+      "primary_routes": [
+        "harness"
+      ],
+      "directions": [],
+      "sources": [
+        "https://www.autoscience.ai/",
+        "https://www.autoscience.ai/blog/autoscience-autonomous-ai-lab"
+      ],
+      "disclosures": [],
+      "verified_at": "2026-10-19"
+    },
+    {
+      "id": "recursive",
+      "name": "Recursive / Recursive Superintelligence",
+      "aliases": [
+        "Recursive",
+        "RSI Inc"
+      ],
+      "kind": "公司 / 产业研究团队",
+      "status": "research",
+      "focus": "公开自动 AI 研发实验，并参与 self-evolving agent 研究；在公司报告和联合署名论文之间分别追踪证据。",
+      "boundary": "First Steps 公开的是训练和 kernel 发现物；Agent0 是联合署名的另一项工作，不能据此认定二者使用同一套内部系统。",
+      "work_links": [
+        {
+          "work_id": "recursive-first-steps",
+          "relationship": "published",
+          "source_url": "https://www.recursive.com/articles/first-steps-toward-automated-ai-research",
+          "note": "原文署名中的参与机构；不推断整个公司只有这一条路线。"
+        },
+        {
+          "work_id": "agent0",
+          "relationship": "coauthored",
+          "source_url": "https://arxiv.org/pdf/2511.16043",
+          "note": "原文署名中的参与机构；不推断整个公司只有这一条路线。"
+        }
+      ],
+      "topic_ids": [
+        "h-evaluation",
+        "h-experience",
+        "h-runtime",
+        "h-search",
+        "m-curriculum-learning",
+        "m-experience-learning",
+        "m-self-play",
+        "x-training"
+      ],
+      "primary_routes": [
+        "harness",
+        "model"
+      ],
+      "directions": [],
+      "sources": [
+        "https://www.recursive.com/",
+        "https://www.recursive.com/articles/first-steps-toward-automated-ai-research",
+        "https://arxiv.org/pdf/2511.16043"
+      ],
+      "disclosures": [],
+      "verified_at": "2026-10-19"
+    },
+    {
+      "id": "sakana",
+      "name": "Sakana AI",
+      "aliases": [
+        "Sakana"
+      ],
+      "kind": "公司 / 产业研究团队",
+      "status": "research",
+      "focus": "从程序演化、自修改 agent 到模型与 agent 系统的适配，覆盖多种更新对象。",
+      "boundary": "按具体论文区分固定基座的 Harness 演化与混合机制；不能用公司使命代替各实验的闭环深度。",
+      "work_links": [
+        {
+          "work_id": "dgm",
+          "relationship": "coauthored",
+          "source_url": "https://arxiv.org/html/2505.22954v3",
+          "note": "原文署名中的参与机构；不推断整个公司只有这一条路线。"
+        },
+        {
+          "work_id": "rhi",
+          "relationship": "coauthored",
+          "source_url": "https://arxiv.org/pdf/2607.15524",
+          "note": "原文署名中的参与机构；不推断整个公司只有这一条路线。"
+        },
+        {
+          "work_id": "mass",
+          "relationship": "coauthored",
+          "source_url": "https://arxiv.org/html/2610.12176v1",
+          "note": "原文署名中的参与机构；不推断整个公司只有这一条路线。"
+        },
+        {
+          "work_id": "shinkaevolve",
+          "relationship": "coauthored",
+          "source_url": "https://arxiv.org/pdf/2509.19349",
+          "note": "原文署名中的参与机构；不推断整个公司只有这一条路线。"
+        }
+      ],
+      "topic_ids": [
+        "h-capabilities",
+        "h-control",
+        "h-evaluation",
+        "h-improver",
+        "h-inheritance",
+        "h-instructions",
+        "h-runtime",
+        "h-search",
+        "x-externalization",
+        "x-feedback",
+        "x-internalization",
+        "x-organization",
+        "x-workflow"
+      ],
+      "primary_routes": [
+        "harness",
+        "hybrid"
+      ],
+      "directions": [],
+      "sources": [
+        "https://sakana.ai/",
+        "https://arxiv.org/html/2505.22954v3",
+        "https://arxiv.org/pdf/2607.15524",
+        "https://arxiv.org/html/2610.12176v1",
+        "https://arxiv.org/pdf/2509.19349"
+      ],
+      "disclosures": [],
+      "verified_at": "2026-10-19"
+    },
+    {
+      "id": "weco",
+      "name": "Weco AI",
+      "aliases": [
+        "Weco",
+        "AIDE",
+        "Aiden"
+      ],
+      "kind": "公司 / 产业研究团队",
+      "status": "research",
+      "focus": "让研究代理研发后继研究代理，并单独检验后继能否接手改进工作。",
+      "boundary": "AIDE² 主实验的外层研究者固定；后继接管的 ignition 结果在卡片中保持不确定结论。",
+      "work_links": [
+        {
+          "work_id": "aide2",
+          "relationship": "published",
+          "source_url": "https://arxiv.org/html/2609.26457v1",
+          "note": "官方发布"
+        }
+      ],
+      "topic_ids": [
+        "h-evaluation",
+        "h-improver",
+        "h-inheritance",
+        "h-search"
+      ],
+      "primary_routes": [
+        "harness"
+      ],
+      "directions": [],
+      "sources": [
+        "https://www.weco.ai/",
+        "https://arxiv.org/html/2609.26457v1"
+      ],
+      "disclosures": [],
+      "verified_at": "2026-10-19"
+    },
+    {
+      "id": "igent",
+      "name": "iGent AI",
+      "aliases": [
+        "iGent",
+        "SICA",
+        "Maestro"
+      ],
+      "kind": "公司 / 产业研究团队",
+      "status": "research",
+      "focus": "SICA 研究编码 agent 修改自身代码，并由任务评测筛选后继。",
+      "boundary": "SICA 是公开研究依据；不能把 Maestro 的一般编码功能全算作自修改实验。",
+      "work_links": [
+        {
+          "work_id": "sica",
+          "relationship": "coauthored",
+          "source_url": "https://arxiv.org/html/2504.15228v1",
+          "note": "原文署名中的参与机构；不推断整个公司只有这一条路线。"
+        }
+      ],
+      "topic_ids": [
+        "h-evaluation",
+        "h-improver",
+        "h-runtime",
+        "h-search"
+      ],
+      "primary_routes": [
+        "harness"
+      ],
+      "directions": [],
+      "sources": [
+        "https://igent.ai/",
+        "https://arxiv.org/html/2504.15228v1"
+      ],
+      "disclosures": [],
+      "verified_at": "2026-10-19"
+    },
+    {
+      "id": "prime-intellect",
+      "name": "Prime Intellect",
+      "aliases": [
+        "PrimeIntellect",
+        "PRIME-RL",
+        "INTELLECT"
+      ],
+      "kind": "公司 / 产业研究团队",
+      "status": "research",
+      "focus": "一端建设 agent harness，另一端开放大规模 RL、验证器和训练基础设施。",
+      "boundary": "分别记录 Prime Agent 与 INTELLECT-3；同公司拥有两端产品不是二者已自主共同进化的证据。",
+      "work_links": [
+        {
+          "work_id": "prime-agent",
+          "relationship": "coauthored",
+          "source_url": "https://arxiv.org/pdf/2608.23552",
+          "note": "原文署名中的参与机构；不推断整个公司只有这一条路线。"
+        },
+        {
+          "work_id": "intellect-3",
+          "relationship": "coauthored",
+          "source_url": "https://www.primeintellect.ai/blog/intellect-3",
+          "note": "原文署名中的参与机构；不推断整个公司只有这一条路线。"
+        }
+      ],
+      "topic_ids": [
+        "h-capabilities",
+        "h-memory",
+        "h-runtime",
+        "m-experience-learning",
+        "m-verifiable-feedback",
+        "x-environment",
+        "x-training"
+      ],
+      "primary_routes": [
+        "harness",
+        "model"
+      ],
+      "directions": [],
+      "sources": [
+        "https://www.primeintellect.ai/blog/intellect-3",
+        "https://arxiv.org/pdf/2608.23552"
+      ],
+      "disclosures": [],
+      "verified_at": "2026-10-19"
+    },
+    {
+      "id": "frontis",
+      "name": "Frontis.AI / Horizon Research",
+      "aliases": [
+        "Frontis",
+        "OpenMLE",
+        "Frontis-MA1"
+      ],
+      "kind": "公司 / 产业研究团队",
+      "status": "research",
+      "focus": "将模型训练与机器学习研发代理放入统一的公开研究议程。",
+      "boundary": "当前依据是 Frontis-MA1 / OpenMLE 原文；模型、框架与结果按卡片中的实际实验分别说明。",
+      "work_links": [
+        {
+          "work_id": "openrsi",
+          "relationship": "coauthored",
+          "source_url": "https://arxiv.org/html/2607.28568v1",
+          "note": "原文署名中的参与机构；不推断整个公司只有这一条路线。"
+        }
+      ],
+      "topic_ids": [
+        "x-internalization",
+        "x-organization",
+        "x-training"
+      ],
+      "primary_routes": [
+        "hybrid"
+      ],
+      "directions": [],
+      "sources": [
+        "https://arxiv.org/html/2607.28568v1"
+      ],
+      "disclosures": [],
+      "verified_at": "2026-10-19"
+    },
+    {
+      "id": "deepwisdom",
+      "name": "DeepWisdom",
+      "aliases": [
+        "AFlow",
+        "MetaGPT"
+      ],
+      "kind": "公司 / 产业研究团队",
+      "status": "research",
+      "focus": "通过工作流搜索自动改进多步 agent 的执行结构。",
+      "boundary": "AFlow 为联合研究；不将全部商业产品或 MetaGPT 功能等同为已验证 RSI。",
+      "work_links": [
+        {
+          "work_id": "aflow",
+          "relationship": "coauthored",
+          "source_url": "https://arxiv.org/pdf/2410.10762",
+          "note": "原文署名中的参与机构；不推断整个公司只有这一条路线。"
+        }
+      ],
+      "topic_ids": [
+        "h-control",
+        "h-evaluation",
+        "h-search"
+      ],
+      "primary_routes": [
+        "harness"
+      ],
+      "directions": [],
+      "sources": [
+        "https://arxiv.org/pdf/2410.10762"
+      ],
+      "disclosures": [],
+      "verified_at": "2026-10-19"
+    },
+    {
+      "id": "memtensor",
+      "name": "MemTensor",
+      "aliases": [
+        "MemRL"
+      ],
+      "kind": "公司 / 产业研究团队",
+      "status": "research",
+      "focus": "以外部记忆及其使用策略累积任务经验。",
+      "boundary": "记忆学习与基础模型参数训练是不同更新对象；这里沿用 MemRL 的公开机制。",
+      "work_links": [
+        {
+          "work_id": "memrl",
+          "relationship": "coauthored",
+          "source_url": "https://arxiv.org/html/2601.03192v1",
+          "note": "原文署名中的参与机构；不推断整个公司只有这一条路线。"
+        }
+      ],
+      "topic_ids": [
+        "h-evaluation",
+        "h-inheritance",
+        "h-memory"
+      ],
+      "primary_routes": [
+        "harness"
+      ],
+      "directions": [],
+      "sources": [
+        "https://arxiv.org/html/2601.03192v1"
+      ],
+      "disclosures": [],
+      "verified_at": "2026-10-19"
+    },
+    {
+      "id": "hexo",
+      "name": "Hexo Labs",
+      "aliases": [
+        "Hexo",
+        "SIA"
+      ],
+      "kind": "公司 / 产业研究团队",
+      "status": "research",
+      "focus": "在公开 SIA 项目中研究 self-improving agent 的模型与系统适配。",
+      "boundary": "保留项目卡片原有阅读和规模边界；公司背景不提高实验结论的强度。",
+      "work_links": [
+        {
+          "work_id": "sia",
+          "relationship": "coauthored",
+          "source_url": "https://arxiv.org/pdf/2605.27276",
+          "note": "原文署名中的参与机构；不推断整个公司只有这一条路线。"
+        }
+      ],
+      "topic_ids": [
+        "x-deployment",
+        "x-externalization",
+        "x-training",
+        "x-workflow"
+      ],
+      "primary_routes": [
+        "hybrid"
+      ],
+      "directions": [],
+      "sources": [
+        "https://arxiv.org/pdf/2605.27276"
+      ],
+      "disclosures": [],
+      "verified_at": "2026-10-19"
+    },
+    {
+      "id": "iquest",
+      "name": "IQuest Research",
+      "aliases": [
+        "IQuest",
+        "ModularRSI"
+      ],
+      "kind": "公司 / 产业研究团队",
+      "status": "research",
+      "focus": "参与 ModularRSI，把系统能力与可演化模块组织起来。",
+      "boundary": "据原文署名建立研究关联；不推断所有参与者都是同一公司或同一产品。",
+      "work_links": [
+        {
+          "work_id": "modular-rsi",
+          "relationship": "coauthored",
+          "source_url": "https://arxiv.org/html/2609.14857v2",
+          "note": "原文署名中的参与机构；不推断整个公司只有这一条路线。"
+        }
+      ],
+      "topic_ids": [
+        "h-control",
+        "h-improver",
+        "h-inheritance",
+        "h-runtime"
+      ],
+      "primary_routes": [
+        "harness"
+      ],
+      "directions": [],
+      "sources": [
+        "https://arxiv.org/html/2609.14857v2"
+      ],
+      "disclosures": [],
+      "verified_at": "2026-10-19"
+    },
+    {
+      "id": "langboat",
+      "name": "Langboat",
+      "aliases": [
+        "澜舟",
+        "ModularRSI"
+      ],
+      "kind": "公司 / 产业研究团队",
+      "status": "research",
+      "focus": "参与模块化自改进研究。",
+      "boundary": "与 IQuest 共署名同一项 ModularRSI；统计研究数量时只计一次。",
+      "work_links": [
+        {
+          "work_id": "modular-rsi",
+          "relationship": "coauthored",
+          "source_url": "https://arxiv.org/html/2609.14857v2",
+          "note": "原文署名中的参与机构；不推断整个公司只有这一条路线。"
+        }
+      ],
+      "topic_ids": [
+        "h-control",
+        "h-improver",
+        "h-inheritance",
+        "h-runtime"
+      ],
+      "primary_routes": [
+        "harness"
+      ],
+      "directions": [],
+      "sources": [
+        "https://arxiv.org/html/2609.14857v2"
+      ],
+      "disclosures": [],
+      "verified_at": "2026-10-19"
+    },
+    {
+      "id": "flower",
+      "name": "Flower Labs",
+      "aliases": [
+        "Flower",
+        "Red Queen Gödel Machine"
+      ],
+      "kind": "公司 / 产业研究团队",
+      "status": "research",
+      "focus": "参与把适应与竞争压力引入自修改 agent 的研究。",
+      "boundary": "公司关系以论文署名为据；不将通用联邦学习产品自动纳入 RSI。",
+      "work_links": [
+        {
+          "work_id": "red-queen-godel-machine",
+          "relationship": "coauthored",
+          "source_url": "https://arxiv.org/html/2606.26294v3",
+          "note": "原文署名中的参与机构；不推断整个公司只有这一条路线。"
+        }
+      ],
+      "topic_ids": [
+        "h-evaluation",
+        "h-improver",
+        "h-search"
+      ],
+      "primary_routes": [
+        "harness"
+      ],
+      "directions": [],
+      "sources": [
+        "https://arxiv.org/html/2606.26294v3"
+      ],
+      "disclosures": [],
+      "verified_at": "2026-10-19"
+    },
+    {
+      "id": "bespoke",
+      "name": "Bespoke Labs",
+      "aliases": [
+        "Bespoke",
+        "GEPA"
+      ],
+      "kind": "公司 / 产业研究团队",
+      "status": "research",
+      "focus": "参与基于执行反馈和自然语言反思的程序/提示优化。",
+      "boundary": "GEPA 是多机构联合研究，按参与关系关联，不写成单家公司独占成果。",
+      "work_links": [
+        {
+          "work_id": "gepa",
+          "relationship": "coauthored",
+          "source_url": "https://arxiv.org/pdf/2507.19457v2",
+          "note": "原文署名中的参与机构；不推断整个公司只有这一条路线。"
+        }
+      ],
+      "topic_ids": [
+        "h-evaluation",
+        "h-instructions",
+        "h-search"
+      ],
+      "primary_routes": [
+        "harness"
+      ],
+      "directions": [],
+      "sources": [
+        "https://arxiv.org/pdf/2507.19457v2"
+      ],
+      "disclosures": [],
+      "verified_at": "2026-10-19"
+    },
+    {
+      "id": "etude",
+      "name": "Etude AI",
+      "aliases": [
+        "Etude",
+        "RewardHarness"
+      ],
+      "kind": "公司 / 产业研究团队",
+      "status": "research",
+      "focus": "参与以可变技能和工具构造 reward agent 的研究。",
+      "boundary": "RewardHarness 的冻结基座与外部奖励系统更新分开；下游训练不等于 reward agent 自身训练。",
+      "work_links": [
+        {
+          "work_id": "rewardharness",
+          "relationship": "coauthored",
+          "source_url": "https://arxiv.org/html/2605.08703v1",
+          "note": "原文署名中的参与机构；不推断整个公司只有这一条路线。"
+        }
+      ],
+      "topic_ids": [
+        "h-capabilities",
+        "h-evaluation",
+        "h-search",
+        "x-externalization",
+        "x-feedback",
+        "x-memory",
+        "x-training"
+      ],
+      "primary_routes": [
+        "harness"
+      ],
+      "directions": [],
+      "sources": [
+        "https://arxiv.org/html/2605.08703v1"
+      ],
+      "disclosures": [],
+      "verified_at": "2026-10-19"
+    },
+    {
+      "id": "tokenwave",
+      "name": "TokenWave.AI",
+      "aliases": [
+        "TokenWave",
+        "HarnessDev",
+        "Aspire"
+      ],
+      "kind": "公司 / 产业研究团队",
+      "status": "research",
+      "focus": "参与 harness 自动开发和相关评测研究。",
+      "boundary": "原文署名关系与作者主张分开；HarnessDev 与 Aspire 是两项不同类型的材料。",
+      "work_links": [
+        {
+          "work_id": "harnessdev",
+          "relationship": "coauthored",
+          "source_url": "https://arxiv.org/pdf/2609.01437",
+          "note": "原文署名中的参与机构；不推断整个公司只有这一条路线。"
+        },
+        {
+          "work_id": "aspire",
+          "relationship": "coauthored",
+          "source_url": "https://arxiv.org/pdf/2608.31111",
+          "note": "原文署名中的参与机构；不推断整个公司只有这一条路线。"
+        }
+      ],
+      "topic_ids": [
+        "h-control",
+        "h-inheritance",
+        "h-runtime",
+        "h-search"
+      ],
+      "primary_routes": [
+        "harness"
+      ],
+      "directions": [],
+      "sources": [
+        "https://arxiv.org/pdf/2609.01437",
+        "https://arxiv.org/pdf/2608.31111"
+      ],
+      "disclosures": [],
+      "verified_at": "2026-10-19"
+    },
+    {
+      "id": "einsia",
+      "name": "Einsia.AI",
+      "aliases": [
+        "Einsia",
+        "AI4AI-Bench"
+      ],
+      "kind": "公司 / 产业研究团队",
+      "status": "research",
+      "focus": "参与 AI4AI 研究能力评测。",
+      "boundary": "评测提供三条路线的检验条件；公司参与评测不证明它已有 RSI 系统。",
+      "work_links": [
+        {
+          "work_id": "ai4ai-bench",
+          "relationship": "coauthored",
+          "source_url": "https://arxiv.org/pdf/2608.20318",
+          "note": "原文署名中的参与机构；不推断整个公司只有这一条路线。"
+        }
+      ],
+      "topic_ids": [
+        "h-evaluation",
+        "x-feedback"
+      ],
+      "primary_routes": [],
+      "directions": [],
+      "sources": [
+        "https://arxiv.org/pdf/2608.20318"
+      ],
+      "disclosures": [],
+      "verified_at": "2026-10-19"
+    },
+    {
+      "id": "deepseek",
+      "name": "DeepSeek",
+      "aliases": [
+        "深度求索",
+        "DeepSeek-AI"
+      ],
+      "kind": "公司 / 产业研究团队",
+      "status": "research",
+      "focus": "在参数学习、可验证奖励及数学验证反馈中推进模型能力。",
+      "boundary": "RL、验证器迭代与递归改进器不能混同；这里按具体技术报告界定。",
+      "work_links": [
+        {
+          "work_id": "deepseek-r1",
+          "relationship": "coauthored",
+          "source_url": "https://arxiv.org/html/2501.12948v1",
+          "note": "原文署名中的参与机构；不推断整个公司只有这一条路线。"
+        },
+        {
+          "work_id": "deepseek-math-v2",
+          "relationship": "coauthored",
+          "source_url": "https://arxiv.org/html/2511.22570v1",
+          "note": "原文署名中的参与机构；不推断整个公司只有这一条路线。"
+        }
+      ],
+      "topic_ids": [
+        "m-bootstrapping",
+        "m-evaluator-learning"
+      ],
+      "primary_routes": [
+        "model"
+      ],
+      "directions": [],
+      "sources": [
+        "https://arxiv.org/html/2501.12948v1",
+        "https://arxiv.org/html/2511.22570v1"
+      ],
+      "disclosures": [],
+      "verified_at": "2026-10-19"
+    },
+    {
+      "id": "moonshot",
+      "name": "Moonshot AI · 月之暗面",
+      "aliases": [
+        "Moonshot",
+        "月之暗面",
+        "Kimi"
+      ],
+      "kind": "公司 / 产业研究团队",
+      "status": "research",
+      "focus": "通过 agentic 训练与合成经验提高模型的工具使用能力。",
+      "boundary": "Kimi K2 的训练闭环与公司产品中的执行框架分开叙述。",
+      "work_links": [
+        {
+          "work_id": "kimi-k2",
+          "relationship": "coauthored",
+          "source_url": "https://arxiv.org/html/2507.20534v1",
+          "note": "原文署名中的参与机构；不推断整个公司只有这一条路线。"
+        }
+      ],
+      "topic_ids": [
+        "m-evaluator-learning",
+        "m-preferences",
+        "m-pretraining-ai4ai",
+        "m-verifiable-feedback"
+      ],
+      "primary_routes": [
+        "model"
+      ],
+      "directions": [],
+      "sources": [
+        "https://arxiv.org/html/2507.20534v1"
+      ],
+      "disclosures": [],
+      "verified_at": "2026-10-19"
+    },
+    {
+      "id": "zhipu",
+      "name": "Zhipu AI · 智谱",
+      "aliases": [
+        "智谱",
+        "Zhipu",
+        "Z.ai"
+      ],
+      "kind": "公司 / 产业研究团队",
+      "status": "research",
+      "focus": "参与用网络交互轨迹进行模型学习的 WebRL 研究。",
+      "boundary": "已有条目实际训练 8B / 9B，仍遵守小模型补充区规则；公司规模不能替代实验模型规模。",
+      "work_links": [
+        {
+          "work_id": "webrl",
+          "relationship": "coauthored",
+          "source_url": "https://arxiv.org/pdf/2411.02337",
+          "note": "原文署名中的参与机构；不推断整个公司只有这一条路线。"
+        }
+      ],
+      "topic_ids": [
+        "m-curriculum-learning",
+        "m-experience-learning"
+      ],
+      "primary_routes": [
+        "model"
+      ],
+      "directions": [],
+      "sources": [
+        "https://arxiv.org/pdf/2411.02337"
+      ],
+      "disclosures": [],
+      "verified_at": "2026-10-19"
+    },
+    {
+      "id": "reflection",
+      "name": "Reflection AI",
+      "aliases": [
+        "Reflection",
+        "Beam"
+      ],
+      "kind": "公司 / 产业研究团队",
+      "status": "adjacent",
+      "focus": "公开基础模型与 agentic 软件栈。",
+      "boundary": "Beam 的 501B 模型卡确认了模型与 RL 数据来源；尚不能由此确定自主递归更新机制。",
+      "work_links": [],
+      "topic_ids": [],
+      "primary_routes": [],
+      "directions": [],
+      "sources": [
+        "https://reflection.ai/",
+        "https://reflection.ai/beam-model-card"
+      ],
+      "disclosures": [
+        {
+          "title": "Beam Model Card",
+          "url": "https://reflection.ai/beam-model-card",
+          "kind": "邻近基础模型研究",
+          "summary": "501B 总参数 / 23B 激活；模型训练和 agentic 使用能力不自动等于 RSI。"
+        }
+      ],
+      "verified_at": "2026-10-19"
+    },
+    {
+      "id": "miromind",
+      "name": "MiroMind",
+      "aliases": [
+        "MiroThinker",
+        "MiroMind 1.7",
+        "H1"
+      ],
+      "kind": "公司 / 产业研究团队",
+      "status": "adjacent",
+      "focus": "公开 agent-native 训练与以验证为中心的研究 agent。",
+      "boundary": "1.7 / H1 博客支持模型训练与推理控制配合；未据此确认 harness 自更新或双向递归循环。",
+      "work_links": [],
+      "topic_ids": [],
+      "primary_routes": [],
+      "directions": [],
+      "sources": [
+        "https://www.miromind.ai/",
+        "https://www.miromind.ai/blog/miromind-1.7-h1-towards-heavy-duty-research-agents-via-verification"
+      ],
+      "disclosures": [
+        {
+          "title": "MiroMind 1.7 & H1",
+          "url": "https://www.miromind.ai/blog/miromind-1.7-h1-towards-heavy-duty-research-agents-via-verification",
+          "kind": "邻近模型与系统协同",
+          "summary": "合成 mid-training、SFT、偏好优化、RL，以及局部/全局验证；尚需辨明共同设计与自主共同进化。"
+        }
+      ],
+      "verified_at": "2026-10-19"
+    }
+  ]
+}

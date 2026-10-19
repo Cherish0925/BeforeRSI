@@ -1,14 +1,14 @@
 # RSI 与 AI4AI 范围目录
 
-当前目录 127 项；主题相关性不等于已证实 RSI，也不是质量排名。
+当前目录 138 项；主题相关性不等于已证实 RSI，也不是质量排名。
 三条路线的重点案例、审查进度与规模条件见 [研究导读](../RESEARCH_ATLAS.md)。
 本文件从人工维护的 data/scope-review.json 生成；不改变阅读深度，不重写 EVIDENCE.md。
 
 | 范围 | 数量 |
 |---|---:|
-| 直接自进化研究 | 66 |
-| 直接支撑的 AI4AI/学习机制 | 31 |
-| 评测与反例 | 7 |
+| 直接自进化研究 | 67 |
+| 直接支撑的 AI4AI/学习机制 | 40 |
+| 评测与反例 | 8 |
 | RSI 理论 | 3 |
 | 历史/机制基础 | 14 |
 | 移出核心的背景 | 6 |
@@ -83,6 +83,7 @@
 | [Iterative RPO](https://arxiv.org/html/2404.19733v2)（2024） | 用当前模型生成推理候选，按答案正确性组成偏好对，再用 DPO+NLL 更新。 | 依赖外部正确答案；没有学习训练算法或证明通用自主科研能力。 |
 | [DeepSeekMath-V2](https://arxiv.org/html/2511.22570v1)（2025） | 迭代训练证明验证器与生成器，并用元验证筛选自动标注。 | 非形式化验证仍可能犯错；高计算搜索成绩不是单次生成分数，亦未证明全域递归加速。 |
 | [Kimi K2 · 自评价 RL](https://arxiv.org/html/2507.20534v1)（2025） | K2 actor 生成回答，K2 critic 按 rubric 提供偏好，critic 又从可验证的 on-policy 轨迹更新。 | 报告未充分隔离该闭环对最终总成绩的因果贡献；人工 rubric 仍是锚点。 |
+| [Hermes Agent](https://github.com/NousResearch/hermes-agent)（2026） | 从任务经验创建和修改技能文档，保留记忆与会话检索，使后续执行使用已有经验。 | 公开实现支持 Harness 层经验学习；不声称已证基础模型自训练或持续递归能力增长。 |
 
 ## 直接支撑的 AI4AI/学习机制
 
@@ -119,6 +120,15 @@
 | [SkillOS: Learning Skill Curation for Self-Evolving Agents](https://arxiv.org/abs/2605.06614)（2026） | 用较晚关联任务的表现训练技能整理者，执行者保持冻结。 | 改善技能整理者是有价值的 AI4AI，但其更新流程未被自身改写。 |
 | [Teaching LLMs to Self-Evolve: Cultivating Core Meta-Skills with Reinforcement Learning](https://arxiv.org/abs/2607.21971)（2026） | 用执行反馈训练多轮反思与修订能力，部署时进行演化搜索。 | 改进目标代码不等于目标本身是改进器；需实际闭环继承证据。 |
 | [LLMs Can Self-Improve](https://aclanthology.org/2023.emnlp-main.67.pdf)（2022） | 用 self-consistency 筛选自生成推理样本，再微调同一模型。 | 一轮自训练前身；不把它计成已证持续递归系统。 |
+| [OPHIS](https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch)（2026） | 以训练内部观测提出假设和干预，再用重复训练结果决定下一步研究。 | 自动研究改变外部训练实验；尚无研究代理自身权重更新与持续双层递归的公开证据。 |
+| [ComfyResearch](https://meta-circle.com/blog/comfyresearch-see-how-learning-happens)（2026） | 把训练协议、观测与分析组织成可执行依赖图，供人或 agent 构造、运行和比较实验。 | 实验工具与自动研究基础设施；不是已证递归自改进系统。 |
+| [nanoGPT Observable Library](https://meta-circle.com/blog/observe-learning-in-full)（2026） | 把权重、梯度、激活和注意力统计与模型模块对应，比较不同深度与训练条件。 | 训练观测资料；尚未形成自主自改进或因果机制的证明。 |
+| [Apex-Tune](https://www.apexin.ai/assets/papers/what-happens-when-ai-starts-improving-ai.pdf)（2026） | 自动提出并验证 scaling law、训练实现和 GPU kernel 的改进，以实验结果继续搜索。 | 已公开 AI4AI 结果与实现；未证明研究代理自身参数更新或 Model × Harness 持续共演。 |
+| [Apex Research report](https://github.com/apexin-ai/apex-research-report)（2026） | 公司报告自主研究系统产生科研项目与论文，并用真实外部同行评审检验产出。 | 本轮仅读官方结果摘要；ARR 评分不能写成正式录用，也不能据此断言自改进闭环成立。 |
+| [Recursive · First Steps](https://www.recursive.com/articles/first-steps-toward-automated-ai-research)（2026） | 长时程并行研究线程积累实验上下文、组合候选分支，并对改进进行方差与 reward-hack 检查。 | 有 AI4AI 自动研发循环与产出证据；目标模型训练不等于研究代理自身参数进化。 |
+| [INTELLECT-3 / PRIME-RL](https://www.primeintellect.ai/blog/intellect-3)（2025） | 以合成数据、可验证环境和异步 RL 训练 106B MoE，公开训练框架、环境与模型。 | 大规模 RL / 训练支撑，尚非已证递归自改进；同公司 Prime Agent 另按 Harness 机制记录。 |
+| [Locus](https://intology.ai/blog/previewing-locus)（2025） | 公开定位为长时程 AI 研发系统；公司报告多日研究与 RE-Bench 结果。 | 官方资料初筛；长时程自动研发的技术细节与自改进回路仍待完整方法材料。 |
+| [Autoscience · Carl / Mira](https://www.autoscience.ai/blog/autoscience-autonomous-ai-lab)（2026） | 自动科学家提出和检验算法假设，自动工程师将被验证的模型改进转成可部署实现。 | 公司公开研发流程与成果声明；方法细节尚未完成核准，列初筛而非已证递归系统。 |
 
 ## 评测与反例
 
@@ -131,6 +141,7 @@
 | [AI4AI-Bench: Benchmarking LLM Agents in Algorithmic Design for Recursive Self-Improvement](https://arxiv.org/abs/2608.20318)（2026） | 隔离训练算法修改，用隐藏评估器重训提交代码。 | 它测研发能力而非运行多代 RSI，归一化分数仍依赖所选任务和参照。 |
 | [Aspire: Can Models Self-Evolve from Vague Goals?](https://arxiv.org/abs/2608.31111)（2026） | 让代理从模糊目标自行选数据和更新方式，再用隐藏专家任务评价。 | 完成训练或编辑流程不等于提高能力；报告中增益稀疏且不稳定。 |
 | [Large Language Model Agents Are Not Always Faithful Self-Evolvers](https://arxiv.org/abs/2601.22436)（2026） | 干预原始和压缩经验，检查代理决策是否真正依赖积累经验。 | 对经验不敏感可来自已有知识或压缩丢失，不能一概判为无学习。 |
+| [ASI-Bench](https://arxiv.org/abs/2608.17271)（2026） | 在相同科研任务上逐步撤去方法指导，区分按步骤执行和自主选择科研方法的能力。 | Apex 托管和发布此项目；论文署名以原文为准，托管关系不改写作者机构。评测本身不是自进化系统。 |
 
 ## RSI 理论
 

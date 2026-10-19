@@ -1,6 +1,6 @@
 # 参考文献与阅读位置
 
-127 个稳定编号是引用索引，不是质量排名。当前路线归属、阅读深度和来源如下；完整解释见 [阅读档案](literature-cards.md)。
+138 个稳定编号是引用索引，不是质量排名；包含论文、技术报告、仓库和产品机制文档。当前路线归属、阅读深度和来源如下；完整解释见 [阅读档案](literature-cards.md)。
 
 ## [001] Good：智能机器设计 · 1965
 
@@ -1400,4 +1400,126 @@ Model · 方法段落已读 · Google / UIUC
 EMNLP 2023 正式版：§3–5、Figure 1、Tables 3–6
 
 - [来源 1](https://aclanthology.org/2023.emnlp-main.67.pdf)
+
+## [128] OPHIS · 2026
+
+OPHIS: Towards Mechanistic Auto-Research
+
+Harness · 方法段落已读 · MetaCircle
+
+官方博客：OPHIS framework；Grokking / NanoGPT 两个案例；Looking Forward
+
+- [来源 1](https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch)
+
+## [129] ComfyResearch · 2026
+
+ComfyResearch: See How Learning Happens
+
+Harness · 方法段落已读 · MetaCircle
+
+官方博客：From notebook to graph；Watching a run；Changing one thing；Where this goes
+
+- [来源 1](https://meta-circle.com/blog/comfyresearch-see-how-learning-happens)
+- [来源 2](https://github.com/MetaCircleAI/ComfyResearch)
+
+## [130] nanoGPT Observable Library · 2026
+
+nanoGPT Observable Library: Observe Learning in Full
+
+Harness · 方法段落已读 · MetaCircle
+
+官方发布：Abstract；Across layers / setups；What the comparison reveals
+
+- [来源 1](https://meta-circle.com/blog/observe-learning-in-full)
+
+## [131] Apex-Tune · 2026
+
+Apex-Tune: Discovered Improvements Across the AI Training Stack
+
+Harness · 方法段落已读 · Apex Intelligence
+
+7 页报告：Evaluations I–IV；Beyond the Benchmarks；配套结果仓库
+
+- [来源 1](https://www.apexin.ai/assets/papers/what-happens-when-ai-starts-improving-ai.pdf)
+- [来源 2](https://github.com/apexin-ai/Apex-Tune-results)
+
+## [132] Apex Research report · 2026
+
+Apex Research: AI Can Publish at Top AI Conferences Now!
+
+Harness · 摘要初筛 · Apex Intelligence
+
+官方 README：Core Message、Key Results；PDF 链接已定位但本轮未完成正文提取
+
+- [来源 1](https://github.com/apexin-ai/apex-research-report)
+- [来源 2](https://www.apexin.ai/assets/papers/apex-research-2026.pdf)
+
+## [133] ASI-Bench · 2026
+
+ASI-Bench: At the Dawn of Artificial Superintelligence
+
+跨路线评测 / 理论 · 方法段落已读 · Tsinghua / University of Michigan / MIT / Harvard / Carnegie Mellon / UIUC / Boston University / University of Queensland / USTC / Flatiron Institute / Microsoft Research / AG2 AI / Independent Researchers
+
+论文摘要；官方仓库 Overview、B1–B4、任务发布与评分协议
+
+- [来源 1](https://arxiv.org/abs/2608.17271)
+- [来源 2](https://github.com/apexin-ai/ASI-Bench)
+
+## [134] Recursive · First Steps · 2026
+
+First Steps Toward Automated AI Research
+
+Harness · 方法段落已读 · Recursive Superintelligence
+
+官方报告：研究循环；NanoChat、NanoGPT Speedrun 与 SOL-ExecBench 案例
+
+- [来源 1](https://www.recursive.com/articles/first-steps-toward-automated-ai-research)
+- [来源 2](https://github.com/recursive-org/first-steps-toward-automated-ai-research)
+
+## [135] Hermes Agent · 2026
+
+Hermes Agent: Experience, Persistent Memory and Self-Improving Skills
+
+Harness · 方法段落已读 · Nous Research
+
+README：learning loop；官方文档 Skills System：skill_manage、/learn、跨会话加载
+
+- [来源 1](https://github.com/NousResearch/hermes-agent)
+- [来源 2](https://hermes-agent.nousresearch.com/docs/user-guide/features/skills)
+
+## [136] INTELLECT-3 / PRIME-RL · 2025
+
+INTELLECT-3: A 100B+ MoE Trained with Large-Scale RL
+
+Model · 方法段落已读 · Prime Intellect
+
+官方技术发布：Training Infrastructure、Training Recipe、Future Work
+
+- [来源 1](https://www.primeintellect.ai/blog/intellect-3)
+- [来源 2](https://github.com/PrimeIntellect-ai/prime-rl)
+- [来源 3](https://github.com/PrimeIntellect-ai/verifiers)
+
+## [137] Locus · 2025
+
+Intology Locus: Previewing Automated AI R&D
+
+Harness · 摘要初筛 · Intology
+
+官方发布索引和 About 摘要；技术正文当前未完整提取
+
+- [来源 1](https://intology.ai/blog/previewing-locus)
+- [来源 2](https://intology.ai/about)
+- [来源 3](https://intology.ai/blog/zochi-tech-report)
+
+## [138] Autoscience · Carl / Mira · 2026
+
+Autoscience: Automated AI Scientists and Engineers
+
+Harness · 摘要初筛 · Autoscience
+
+公司正式新闻稿（Business Wire 同步发布）；官网产品与 Carl 发布索引
+
+- [来源 1](https://www.autoscience.ai/blog/autoscience-autonomous-ai-lab)
+- [来源 2](https://www.businesswire.com/news/home/20260318760407/en/Autoscience-Raises-$14M-to-Build-the-Worlds-First-Automated-AI-Research-Lab)
+- [来源 3](https://www.autoscience.ai/blog/meet-carl)
 

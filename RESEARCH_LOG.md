@@ -641,3 +641,14 @@ Twenty-seven A–F cards were rewritten from primary method/results passages. AF
 The corpus remains 127 records: 45 selected-method readings, 60 source screens and 22 historical/background entries. Forty-five paper relations separate 15 source-explicit links from 30 editorial comparisons; field relations use another type. These are coverage and reading counts, not final quality rankings. Current HTML is public literature only; project theories, forecasts and proposals are absent.
 
 The new file is named RSI_Field_Atlas_v5.html to distinguish it from the screenshot of the older 2026-10-18 reader. Offline data checks and real Chromium desktop/mobile interaction checks pass, including three visible first-screen maps, expanded subquestions, topic/edge inspection, paper-to-field return and search. Current PNG/SVG previews are exported from the reader; the PDF remains a dated snapshot. No independent research replication is claimed.
+
+
+## 2026-10-19 — v5.1: companies, public releases and provenance within the three routes
+
+The user identified a real coverage gap: Discovery Loop, MetaCircle and Apex were absent even though company research need not appear first as an academic paper. This update adds 11 primary-source work records and 27 company/industry-team profiles. It exposes existing startup affiliations and distinguishes company-issued work, joint authorship, repository hosting and strategic direction. Two adjacent companies remain outside the RSI study maps until a relevant update loop is established.
+
+Current corpus: 138 records (49 Harness / 36 Model / 22 mixed / 9 cross-route / 22 historical-background); 53 selected-method/mechanism readings and 63 source screens. Eleven new releases include three source screens with explicit access limits. There are 48 paper/release relations, including three newly sourced relationships. The field structure remains 29 topics, 146 subquestions and 60 conceptual relations. Company, topic and study navigation is bidirectional and the original three maps remain visible on entry.
+
+The former 127-item quality/layer review remains unchanged and is now explicitly enumerated and hash-checked as a dated snapshot. Full current-catalog consistency is enforced in the current reader and graph checks. This avoids silently extending old claim audits to new releases. The current scope catalog covers all 138 records.
+
+The update does not infer that every autonomous research company has demonstrated RSI, that corporate scale proves research quality, or that a company with both models and a harness has demonstrated their recursive coevolution. Discovery Loop is a declared direction; MetaCircle and Apex have concrete technical artifacts with bounded claims. No global company census, independent reproduction or new project theory is claimed.

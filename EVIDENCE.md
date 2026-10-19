@@ -802,3 +802,32 @@ Live-SWE-agent 在 mini-SWE-agent 的固定循环中加入工具创建与反思�
 ### Two additional explicit paper relations
 
 [ReST-EM §4](https://arxiv.org/html/2312.06585v4) relates Huang et al.'s self-training to a single iteration using majority voting rather than correctness rewards. [EvoTrainer §2.2](https://arxiv.org/html/2606.03108v2) explicitly discusses Meta-Harness and distinguishes inference-time harness search from training-side diagnostic evolution. These are discussion/comparison links, not a claim of implementation inheritance.
+
+
+## 2026-10-19 — company research integrated into the field atlas (v5.1)
+
+**Source facts and survey classification.** This update uses official technical releases, company reports, public repositories, product mechanism documentation and original papers. Reported results have not been independently reproduced. A company announcement establishes a declared program, not an empirical RSI loop. Company identity, publishing, joint authorship and project hosting are kept separate.
+
+[Discovery Loop](https://www.discoveryloop.com/) publicly proposes automated ML experiment cycles and improving its own technology stack. This supports a declared AI4AI research direction. The reviewed page does not disclose an executable parameter-update/agent-update schedule; prior work by its founders is not attributed to the new company.
+
+The following eleven records are added to `data/works.json` and the current reader. Each has a changed-object record, primary locator, visible task/resource description where available, and claim boundary.
+
+| Work | Source-reported operation and scope | Reading / inference boundary |
+|---|---|---|
+| [OPHIS](https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch) | 以训练内部观测提出假设和干预，再用重复训练结果决定下一步研究。 Grokking 与 NanoGPT；单 H200；2,000 训练步；每候选十次评估。 | 自动研究改变外部训练实验；尚无研究代理自身权重更新与持续双层递归的公开证据。 阅读：官方博客：OPHIS framework；Grokking / NanoGPT 两个案例；Looking Forward。 |
+| [ComfyResearch](https://meta-circle.com/blog/comfyresearch-see-how-learning-happens) | 把训练协议、观测与分析组织成可执行依赖图，供人或 agent 构造、运行和比较实验。 笔记本级示例与 33 类观测；不作为 ≥27B 模型自训练结果。 | 实验工具与自动研究基础设施；不是已证递归自改进系统。 阅读：官方博客：From notebook to graph；Watching a run；Changing one thing；Where this goes。 |
+| [nanoGPT Observable Library](https://meta-circle.com/blog/observe-learning-in-full) | 把权重、梯度、激活和注意力统计与模型模块对应，比较不同深度与训练条件。 nanoGPT 12 层 / 6 层 / 无 warmup 三种设置；不是大模型 RSI 训练证据。 | 训练观测资料；尚未形成自主自改进或因果机制的证明。 阅读：官方发布：Abstract；Across layers / setups；What the comparison reveals。 |
+| [Apex-Tune](https://www.apexin.ai/assets/papers/what-happens-when-ai-starts-improving-ai.pdf) | 自动提出并验证 scaling law、训练实现和 GPU kernel 的改进，以实验结果继续搜索。 NanoChat：单 B200、300 秒；kernel：H100。总研发搜索成本未完整披露。 | 已公开 AI4AI 结果与实现；未证明研究代理自身参数更新或 Model × Harness 持续共演。 阅读：7 页报告：Evaluations I–IV；Beyond the Benchmarks；配套结果仓库。 |
+| [Apex Research report](https://github.com/apexin-ai/apex-research-report) | 公司报告自主研究系统产生科研项目与论文，并用真实外部同行评审检验产出。 作者报告合计 1,286 GPU-days、每项目约 38 GPU-days；0.38% 人类消息占比不是人类总劳动占比。 | 本轮仅读官方结果摘要；ARR 评分不能写成正式录用，也不能据此断言自改进闭环成立。 阅读：官方 README：Core Message、Key Results；PDF 链接已定位但本轮未完成正文提取。 |
+| [ASI-Bench](https://arxiv.org/abs/2608.17271) | 在相同科研任务上逐步撤去方法指导，区分按步骤执行和自主选择科研方法的能力。 60 个任务、11 个领域、18 种 agent–model 配置；参数门槛不适用于评测本身。 | Apex 托管和发布此项目；论文署名以原文为准，托管关系不改写作者机构。评测本身不是自进化系统。 阅读：论文摘要；官方仓库 Overview、B1–B4、任务发布与评分协议。 |
+| [Recursive · First Steps](https://www.recursive.com/articles/first-steps-toward-automated-ai-research) | 长时程并行研究线程积累实验上下文、组合候选分支，并对改进进行方差与 reward-hack 检查。 NanoChat：约 50M 主体加 1–2B 稀疏表；B200 五分钟评测。不是 ≥27B 研究者训练记录。 | 有 AI4AI 自动研发循环与产出证据；目标模型训练不等于研究代理自身参数进化。 阅读：官方报告：研究循环；NanoChat、NanoGPT Speedrun 与 SOL-ExecBench 案例。 |
+| [Hermes Agent](https://github.com/NousResearch/hermes-agent) | 从任务经验创建和修改技能文档，保留记忆与会话检索，使后续执行使用已有经验。  | 公开实现支持 Harness 层经验学习；不声称已证基础模型自训练或持续递归能力增长。 阅读：README：learning loop；官方文档 Skills System：skill_manage、/learn、跨会话加载。 |
+| [INTELLECT-3 / PRIME-RL](https://www.primeintellect.ai/blog/intellect-3) | 以合成数据、可验证环境和异步 RL 训练 106B MoE，公开训练框架、环境与模型。 106B 总参数 MoE；512 H200、64 节点；SFT、RL 与消融覆盖约两个月。 | 大规模 RL / 训练支撑，尚非已证递归自改进；同公司 Prime Agent 另按 Harness 机制记录。 阅读：官方技术发布：Training Infrastructure、Training Recipe、Future Work。 |
+| [Locus](https://intology.ai/blog/previewing-locus) | 公开定位为长时程 AI 研发系统；公司报告多日研究与 RE-Bench 结果。  | 官方资料初筛；长时程自动研发的技术细节与自改进回路仍待完整方法材料。 阅读：官方发布索引和 About 摘要；技术正文当前未完整提取。 |
+| [Autoscience · Carl / Mira](https://www.autoscience.ai/blog/autoscience-autonomous-ai-lab) | 自动科学家提出和检验算法假设，自动工程师将被验证的模型改进转成可部署实现。  | 公司公开研发流程与成果声明；方法细节尚未完成核准，列初筛而非已证递归系统。 阅读：公司正式新闻稿（Business Wire 同步发布）；官网产品与 Carl 发布索引。 |
+
+**Company crosswalk.** `data/industry-landscape.json` records 27 profiles, including 24 with study links, one declared direction and two adjacent programs. Its company relations link 34 distinct studies, including previously catalogued work. The 11 additions are 9 Harness-positioned research/tool records, 1 Model training record and 1 cross-route benchmark. These are positions in the survey, not eleven new demonstrations of recursive self-improvement.
+
+**Distinct boundaries that affect classification:** OPHIS describes a non-LLM core while its NanoGPT case also uses a coding agent; these are recorded by experiment. ComfyResearch is a human-driven experiment workbench, not a demonstrated autonomous self-improver. Apex-Tune reports concrete improvements to external training code and kernels, with transfer of discovered knowledge still a next step. ASI-Bench is hosted by Apex but its listed author affiliations are retained. ARR review scores are not conference acceptances. INTELLECT-3 trains 106B weights, but simultaneous availability of PRIME-RL and Prime Agent does not establish their autonomous coevolution.
+
+**Access limits.** The Apex paper-production report is screened from the official README because PDF extraction failed; Locus is screened from its official index/summary; Autoscience is screened from a company-issued news release. Those cards remain source screens. Reflection Beam and MiroMind 1.7/H1 are searchable adjacent programs: their opened model/training descriptions do not establish a recursive self-update loop.

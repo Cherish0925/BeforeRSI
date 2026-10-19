@@ -101,7 +101,7 @@ def validate_works(data: object) -> set[str]:
 def validate_graph(data: object, work_ids: set[str]) -> None:
     if not isinstance(data, dict):
         fail("knowledge graph root must be an object")
-    if data.get("schema_version") in {"4.0.0", "5.0.0"}:
+    if data.get("schema_version") in {"4.0.0", "5.0.0", "5.1.0"}:
         from check_literature_graphs import check
         check()
         return
@@ -272,7 +272,7 @@ def validate_curated_atlas(work_ids: set[str]) -> None:
         if slot["route"] not in route_ids or not set(slot["evidence_ids"]) <= work_ids:
             fail("invalid research-space association")
     graph = load(GRAPH_PATH)
-    if graph.get("schema_version") not in {"4.0.0", "5.0.0"}:
+    if graph.get("schema_version") not in {"4.0.0", "5.0.0", "5.1.0"}:
         if {r["work_id"] for r in graph["work_bindings"]} != main:
             fail("canonical graph must bind exactly the main-view works")
         if {r["id"] for r in graph["nodes"] if r["type"] == "work"} != main:
@@ -301,7 +301,7 @@ def validate_curated_atlas(work_ids: set[str]) -> None:
     source_layers = {r["id"]:r for r in layers}
     if any(r["layer"] != source_layers[r["id"]] for r in atlas["works"]):
         fail("generated layer record differs from reviewed source")
-    if graph.get("schema_version") not in {"4.0.0", "5.0.0"}:
+    if graph.get("schema_version") not in {"4.0.0", "5.0.0", "5.1.0"}:
         page = (ROOT / "research/atlas/index.html").read_text(encoding="utf-8")
         embedded = re.search(r'<script id="atlas-data" type="application/json">(.*?)</script>', page, re.S)
         if not embedded or json.loads(embedded.group(1)) != atlas:
@@ -314,7 +314,17 @@ def main() -> int:
         validate_graph(load(GRAPH_PATH), work_ids)
         validate_hypotheses(load(HYPOTHESES_PATH))
         validate_scope_catalog(work_ids)
-        validate_curated_atlas(work_ids)
+        # This review is an immutable, explicitly enumerated 127-item snapshot.
+        # Current full-catalog coverage is enforced by check_literature_graphs above.
+        import hashlib
+        snapshot = load(ROOT / "data/review-snapshots.json")
+        legacy_ids = set(snapshot["legacy_review_work_ids"])
+        if not legacy_ids <= work_ids:
+            fail("a legacy reviewed work disappeared from the current catalog")
+        for filename, digest in snapshot["legacy_files_sha256"].items():
+            if hashlib.sha256((ROOT / filename).read_bytes()).hexdigest() != digest:
+                fail("legacy review snapshot changed without an explicit revision: " + filename)
+        validate_curated_atlas(legacy_ids)
     except (OSError, json.JSONDecodeError, ValueError, AssertionError) as exc:
         print(f"validation failed: {exc}", file=sys.stderr)
         return 1
