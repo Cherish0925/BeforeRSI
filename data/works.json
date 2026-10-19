@@ -598,13 +598,13 @@
       "name": "Recursive Harness Self-Improvement",
       "year": 2026,
       "role": "direct_harness_improvement",
-      "reported_depth": "transfer",
+      "reported_depth": "multi_generation",
       "changed_objects": [
         "harness_specification"
       ],
       "evidence_status": "reported",
-      "audit_status": "pending",
-      "central_limit": "Task-specific synthetic settings and few update iterations do not establish broad or open-ended recursion.",
+      "audit_status": "in_progress",
+      "central_limit": "Task-specific textual harness revision with fixed base model, evaluator and optimizer; few synthetic-task iterations do not establish held-out-task transfer or open-ended growth.",
       "sources": [
         {
           "type": "paper",
@@ -613,6 +613,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/pdf/2607.15524"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2607.15524v1"
         }
       ]
     },

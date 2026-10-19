@@ -925,13 +925,12 @@
             "h-instructions",
             "h-evaluation"
           ],
-          "summary": "工作流规格。主位置来自初筛，元层是否自改待方法确认。",
+          "summary": "任务专用文本工作流跨轮修订；基础模型、评价者及优化器固定。",
           "source_urls": [
-            "https://arxiv.org/abs/2607.15524",
-            "https://arxiv.org/pdf/2607.15524"
+            "https://arxiv.org/html/2607.15524v1"
           ],
-          "source_location": "摘要与既有来源记录",
-          "basis": "摘要初筛定位，非完整方法结论",
+          "source_location": "§3–5; Appendix A",
+          "basis": "相关方法与结果段落阅读",
           "primary_route": "harness"
         },
         {

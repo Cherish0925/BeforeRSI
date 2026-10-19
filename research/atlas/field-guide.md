@@ -40,7 +40,7 @@
 
 - [Promptbreeder](https://arxiv.org/pdf/2309.16797) · Google DeepMind。任务提示；变异提示。变异提示也参与演化；不是权重训练。
 - [GEPA](https://arxiv.org/pdf/2507.19457v2) · UC Berkeley / Stanford / Notre Dame / MIT / Databricks / Bespoke Labs。LLM 模块提示。更新提示；优化算法不自修改。
-- [Recursive Harness SI](https://arxiv.org/abs/2607.15524) · Sakana AI / UC Berkeley。工作流规格。主位置来自初筛，元层是否自改待方法确认。
+- [Recursive Harness SI](https://arxiv.org/html/2607.15524v1) · Sakana AI / UC Berkeley。任务专用文本工作流跨轮修订；基础模型、评价者及优化器固定。
 - [Meta-Harness](https://arxiv.org/html/2603.28052v1) · Stanford / KRAFTON / MIT。应用源码；记忆组织与上下文。源码可编辑范围广不等于每种资产均已有有效自改实证。
 - [ACE](https://arxiv.org/html/2510.04618v1) · Stanford / SambaNova / UC Berkeley。持久 playbook。内容与条目演化；生成—反思—整理流程固定。
 - [OPRO](https://arxiv.org/abs/2309.03409) · Google DeepMind。候选提示或数值解。优化提示是相关机制；未因迭代次数多成为改进器自修改。
@@ -168,7 +168,7 @@
 - [DGM](https://arxiv.org/html/2505.22954v3) · Sakana AI / UBC / Vector Institute。编码代理代码；工具及上下文实现。被选后继负责修改；archive maintenance 与 parent selection 固定。
 - [AgentBreeder](https://arxiv.org/abs/2502.00757) · University of Oxford。多代理角色与结构。目标多代理系统演化；外层算法自修改未确认。
 - [HyperAgents](https://arxiv.org/html/2603.19461v1) · Meta / UBC / Vector / Edinburgh / NYU。task agent 代码；meta-agent 代码。meta-agent 修改逻辑可改；主实验 parent selection 固定。
-- [Recursive Harness SI](https://arxiv.org/abs/2607.15524) · Sakana AI / UC Berkeley。工作流规格。主位置来自初筛，元层是否自改待方法确认。
+- [Recursive Harness SI](https://arxiv.org/html/2607.15524v1) · Sakana AI / UC Berkeley。任务专用文本工作流跨轮修订；基础模型、评价者及优化器固定。
 - [HarnessDev](https://arxiv.org/abs/2609.01437) · ByteDance Seed / SUTD / Georgia Tech / M-A-P / TokenWave.AI。可执行 scaffold。创造者与执行者可以不同；不把目标优化等同创造者自改。
 - [Meta-Harness](https://arxiv.org/html/2603.28052v1) · Stanford / KRAFTON / MIT。应用源码；记忆组织与上下文。源码可编辑范围广不等于每种资产均已有有效自改实证。
 - [SoL-Pi](https://arxiv.org/html/2609.20519v1) · NVIDIA / NTU / MIT。运行机制与代理 harness。以执行机制迁移及效率为重点，具体元循环边界见论文。
@@ -302,7 +302,7 @@
 - [AFlow](https://arxiv.org/html/2410.10762v4) · DeepWisdom / HKUST / HKUST(GZ) / RUC / Nanjing / Fudan / KAUST / Montréal / Mila。工作流代码；模块提示。搜索器固定；搜索的是工作流。
 - [SICA](https://arxiv.org/html/2504.15228v1) · iGent AI / University of Bristol。编码代理代码。历史最佳后继承担下一轮修改；非全部外层程序可改。
 - [GEPA](https://arxiv.org/pdf/2507.19457v2) · UC Berkeley / Stanford / Notre Dame / MIT / Databricks / Bespoke Labs。LLM 模块提示。更新提示；优化算法不自修改。
-- [Recursive Harness SI](https://arxiv.org/abs/2607.15524) · Sakana AI / UC Berkeley。工作流规格。主位置来自初筛，元层是否自改待方法确认。
+- [Recursive Harness SI](https://arxiv.org/html/2607.15524v1) · Sakana AI / UC Berkeley。任务专用文本工作流跨轮修订；基础模型、评价者及优化器固定。
 - [RRSI](https://arxiv.org/html/2609.24972v1) · Google Cloud AI Research / Stanford / Washington University / UNC。harness 修改提案及接受规则。约束的是自修改过程；泛化和成本约束需要分别观察。
 - [AIDE²](https://arxiv.org/html/2609.26457v1) · Weco AI。内层研究代理。主实验外层研究者固定；另有后继接管外层的实验。
 - [Huxley–Gödel Machine](https://arxiv.org/html/2510.21614v1) · KAUST。代理分支；分支研发价值估计。选择机制由研究者设计；它指导自修改分支探索。

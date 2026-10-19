@@ -268,12 +268,13 @@ Model × Harness · 摘要初筛 · Hexo Labs / University of Oxford
 
 Recursive Harness Self-Improvement
 
-Harness · 摘要初筛 · Sakana AI / UC Berkeley
+Harness · 方法段落已读 · Sakana AI / UC Berkeley
 
-摘要与既有来源记录
+§3–5；§6.2–6.3；Appendix A；有界方法阅读。
 
-- [来源 1](https://arxiv.org/abs/2607.15524)
-- [来源 2](https://arxiv.org/pdf/2607.15524)
+- [来源 1](https://arxiv.org/html/2607.15524v1)
+- [来源 2](https://arxiv.org/abs/2607.15524)
+- [来源 3](https://arxiv.org/pdf/2607.15524)
 
 ## [025] Rethinking Harness Eval · 2026
 

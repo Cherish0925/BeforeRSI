@@ -68,6 +68,10 @@ for c in I['companies']:
   for tid in d['topic_ids']:
    edges.append(dict(id=cid+'-direction-'+tid,source=cid,target='topic-'+tid,kind='company_direction',label='公开方向 / 待确认闭环',evidence='declared_direction',sources=[dict(url=c['sources'][0],location=d['basis'])]))
 a={'version':'5.1.0','updated':E['updated'],'title':'RSI 领域知识图谱','scope':E['scope'],'field':F,'industry':I,'routes':route_specs,'groups':E['groups'],'works':works,'relations':E['relations'],'paths':E['reading_paths'],'counts':counts,'search_leads':len(read('data/discovery-pool.json')['entries']),'relation_types':{'extends':'明确扩展','uses':'采用方法','compares':'论文比较','discusses':'原文讨论','method_comparison':'方法对照'},'institutions':sorted(orgs.values(),key=lambda x:x['label'].lower())}
+pool={x['arxiv_id'] for x in read('data/discovery-pool.json')['entries'] if 'arxiv_id' in x}
+catalog_arxiv={m.group(1) for w in works for u in w['sources'] if (m:=re.search(r'arxiv.org/(?:abs|pdf|html)/(\d{4}\.\d{4,5})',u))}
+a['discovery_coverage']={'total':len(pool),'overlap':len(pool & catalog_arxiv),'unmatched':len(pool-catalog_arxiv),'rule':'exact arXiv identifier, ignoring version suffix'}
+a['reader_guide']=read('data/reader-guide.json')
 write('data/literature-atlas.json',a)
 for rt in F['routes']:
  for n in rt['nodes']:
@@ -82,7 +86,7 @@ for rt in F['routes']:
    edges.append(dict(id='addresses-'+rt['id']+'-'+q['work_id']+'-'+tid,source=q['work_id'],target='topic-'+tid,kind='addresses_topic',label='研究此主题 / 相关机制',explanation=q['summary'],evidence='survey_classification',sources=[dict(url=u,location=q['source_location']) for u in q['source_urls']]))
 write('data/knowledge-graph.json',{'schema_version':'5.1.0','updated':E['updated'],'scope':E['scope'],'nodes':nodes,'edges':edges,'field_views':{r['id']:['topic-'+n['id'] for n in r['nodes']] for r in F['routes']},'route_views':{rt['id']:[w['id'] for w in works if w['route']==rt['id']] for rt in route_specs},'work_bindings':[dict(work_id=w['id'],node_ids=[m for m in w['methods'] if m in {g['id'] for g in E['groups']}]) for w in works]})
 template=(R/'scripts/atlas-template.html').read_text();assert '__LITERATURE_DATA__' in template
-page=template.replace('__DOMAIN_STYLE__',(R/'scripts/domain-style.css').read_text()).replace('__DOMAIN_SCRIPT__',(R/'scripts/domain-views.js').read_text()).replace('__INDUSTRY_SCRIPT__',(R/'scripts/industry-views.js').read_text()).replace('__INDUSTRY_STYLE__',(R/'scripts/industry-style.css').read_text()).replace('__LITERATURE_DATA__',json.dumps(a,ensure_ascii=False,separators=(',',':')).replace('</','<\\/'))
+page=template.replace('__READER_STYLE__',(R/'scripts/reader-guide.css').read_text()).replace('__READER_SCRIPT__',(R/'scripts/reader-guide.js').read_text()).replace('__DOMAIN_STYLE__',(R/'scripts/domain-style.css').read_text()).replace('__DOMAIN_SCRIPT__',(R/'scripts/domain-views.js').read_text()).replace('__INDUSTRY_SCRIPT__',(R/'scripts/industry-views.js').read_text()).replace('__INDUSTRY_STYLE__',(R/'scripts/industry-style.css').read_text()).replace('__LITERATURE_DATA__',json.dumps(a,ensure_ascii=False,separators=(',',':')).replace('</','<\\/'))
 for name in ['index.html','RSI_Field_Atlas_v5_1.html']:(R/'research/atlas'/name).write_text(page)
 md=['# RSI 领域知识图谱 · v5.1','','[打开三张领域图谱](research/atlas/RSI_Field_Atlas_v5_1.html) · [文字版研究结构](research/atlas/field-guide.md)','','![首页三张领域图谱](assets/atlas/landscape-overview.png)','','首页直接显示 Harness、Model、Model × Harness 三张领域图。29 个研究主题、其下的具体子问题以及 60 条机制联系先组织研究空间；论文、团队和机构再挂接到对应位置。主题间联系是综述归纳，论文间的引用、扩展和方法对照另行标注。','','点击主题可展开关键问题、原理、技术、相邻关系与对应研究；点击箭头可看联系的含义和原文例证。本综述仅讨论公开研究，不包含项目自身理论或设计。','','## 当前收录进度','','| 路线 | 收录研究 | 方法段落已读 | 摘要初筛 |','|---|---:|---:|---:|']
 for r in route_specs:md.append(f'| {r["title"]} | {r["counts"]["catalog"]} | {r["counts"]["methods"]} | {r["counts"]["screened"]} |')

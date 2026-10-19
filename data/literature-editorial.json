@@ -1231,31 +1231,48 @@
       "sections": [
         {
           "axis": "A",
-          "title": "目标与问题",
-          "text": "怎样用任务结果反复改进代理的工作流规格？"
+          "title": "目标与价值",
+          "text": "在有限执行预算内改善开放式编码任务的工作流。"
+        },
+        {
+          "axis": "B",
+          "title": "思想与洞察",
+          "text": "优先调整通信 contract 与 workflow hops，让信息交接适配任务。"
         },
         {
           "axis": "C",
-          "title": "系统与原理",
-          "text": "依据任务结果比较修订工作流规格，改变信息流与执行组织。"
+          "title": "结构与原理",
+          "text": "harness 表示为文本；根据当前与前代任务产物的比较历史更新。信息流假说尚非因果证明。"
+        },
+        {
+          "axis": "D",
+          "title": "算法与实验",
+          "text": "执行、成对评价、改写、再执行；用 30 个合成 ML 任务比较较高推理预算的基线。"
+        },
+        {
+          "axis": "E",
+          "title": "反馈与继承",
+          "text": "继承任务专用工作流和比较记录；基础模型、评价者与优化器固定。"
         },
         {
           "axis": "F",
-          "title": "结果与迁移",
-          "text": "受限合成任务和少量轮次不能推出开放任务的持续增长。"
+          "title": "成果与迁移",
+          "text": "作者报告少轮更新后的任务偏好收益；尚未证明开放分布上的持续增长。"
         }
       ],
       "team": "Sakana AI / UC Berkeley",
       "team_source": "https://arxiv.org/pdf/2607.15524",
-      "status": "screened",
-      "placement": "pending",
-      "primary_url": "https://arxiv.org/abs/2607.15524",
-      "source_location": "摘要与既有来源记录",
-      "limitations": "受限合成任务和少量轮次不能推出开放任务的持续增长。",
+      "status": "methods",
+      "placement": "adjacent",
+      "primary_url": "https://arxiv.org/html/2607.15524v1",
+      "source_location": "§3–5；§6.2–6.3；Appendix A；有界方法阅读。",
+      "limitations": "任务专用优化不等于未见任务迁移；信息流解释仍是机制假设。",
       "team_location": "论文首页署名（2026-10-19读取）",
       "scope_kind": "direct",
       "scope_label": "自改进研究",
-      "classification_note": "以论文主要学习对象确定主位置；初筛条目的归属仍需方法全文确认。"
+      "classification_note": "Harness：文本工作流跨轮改写；基础模型、评价者及 harness 优化器固定。",
+      "reading_scope": "已读工作流表示、更新机制、合成任务设置、结果和作者的递归边界；未复现实验或完整审阅附录实现。",
+      "resources": "30 个合成 ML 任务，分属金融、机器人与制药；Claude 系列执行，模型评审；少量迭代。"
     },
     {
       "id": "rethink-harness-eval",
@@ -7470,6 +7487,21 @@
         {
           "url": "https://meta-circle.com/blog/comfyresearch-see-how-learning-happens",
           "location": "Where this goes"
+        }
+      ]
+    },
+    {
+      "id": "source-rhi-mass-workflow",
+      "source": "rhi",
+      "target": "mass",
+      "kind": "extends",
+      "label": "工作流搜索接入轨迹训练",
+      "explanation": "MASS Appendix J 明确指出 RHI 提供工作流搜索方法；MASS 增加轨迹后训练。",
+      "evidence": "source_explicit",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2610.12176v1",
+          "location": "Appendix J, RHI row; §3"
         }
       ]
     }

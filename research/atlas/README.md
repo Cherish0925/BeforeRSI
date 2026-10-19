@@ -12,13 +12,13 @@ The three maps organize mutable external assets and improvement processes (Harne
 
 | Primary route | Records | Methods read | Source screens | Default paper view |
 |---|---:|---:|---:|---:|
-| Harness | 49 | 25 | 24 | 49 |
+| Harness | 49 | 26 | 23 | 49 |
 | Model | 36 | 16 | 20 | 30 |
 | Model × Harness | 22 | 8 | 14 | 19 |
 
-Nine cross-route references and 22 historical/background records bring the catalog to 138. Fifty-three records have selected-method/mechanism readings (including four cross-route references); 63 remain source screens. The route totals include adjacent AI4AI mechanisms and provisional cases, not just established recursive systems. Nine confirmed sub-27B Model/mixed references are hidden by default; unknown trained-target size remains explicit.
+Nine cross-route references and 22 historical/background records bring the catalog to 138. Fifty-four records have selected-method/mechanism readings (including four cross-route references); 62 remain source screens. The route totals include adjacent AI4AI mechanisms and provisional cases, not just established recursive systems. Nine confirmed sub-27B Model/mixed references are hidden by default; unknown trained-target size remains explicit.
 
-There are 48 research relations: 18 source-explicit and 30 editorial method comparisons. Missing connections remain unfinished coverage. The preceding v5 rewrote 27 A–F explanations; v5.1 adds 11 company research records. The older 38-claim/19-case review is retained separately and is not a field census.
+There are 49 research relations: 19 source-explicit and 30 editorial method comparisons. Missing connections remain unfinished coverage. The preceding v5 rewrote 27 A–F explanations; v5.1 adds 11 company research records. The older 38-claim/19-case review is retained separately and is not a field census.
 
 ## Companies within the three maps
 
@@ -56,3 +56,7 @@ No network, API key, external JavaScript or server is needed by the HTML. The bu
 Chromium checks cover first-screen graphs, all three routes, expanded subquestions, topic and relation inspection, paper/field navigation, all cards, search, scale filters, keyboard interaction, desktop and mobile overflow. Data checks verify exact embedded content, provenance, classification corrections and preservation of all 127 earlier IDs and coverage of all 138 current records. No paper was independently replicated.
 
 The company checks cover all 27 dialogs, Chinese/English/name alias searches, company-to-work and work-to-company navigation, directions without studies, related-company topic links, and mobile dialog overflow.
+
+## Mechanism reading guide
+
+The new “读懂 RSI” entry explains feedback, changed objects, inherited state and the six A–F reading angles. Six switchable examples and four concrete comparisons link directly to research cards. Brief source screens now show their missing explanation rather than appearing complete. RHI received a bounded method reading and a primary-source link to MASS. The 567-lead discovery pool overlaps the catalog in 82 arXiv identifiers; 485 remain unmatched. Counts are retrieval and reading progress, not the size or quality distribution of the field.

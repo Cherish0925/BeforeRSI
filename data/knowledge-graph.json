@@ -193,7 +193,7 @@
       "label": "Recursive Harness SI",
       "route": "harness",
       "year": 2026,
-      "status": "screened"
+      "status": "methods"
     },
     {
       "id": "rethink-harness-eval",
@@ -4327,8 +4327,8 @@
       "evidence": "survey_classification",
       "sources": [
         {
-          "url": "https://arxiv.org/abs/2607.15524",
-          "location": "摘要与既有来源记录"
+          "url": "https://arxiv.org/html/2607.15524v1",
+          "location": "§3–5；§6.2–6.3；Appendix A；有界方法阅读。"
         }
       ]
     },
@@ -10381,6 +10381,21 @@
       ]
     },
     {
+      "id": "source-rhi-mass-workflow",
+      "source": "rhi",
+      "target": "mass",
+      "kind": "extends",
+      "label": "工作流搜索接入轨迹训练",
+      "explanation": "MASS Appendix J 明确指出 RHI 提供工作流搜索方法；MASS 增加轨迹后训练。",
+      "evidence": "source_explicit",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2610.12176v1",
+          "location": "Appendix J, RHI row; §3"
+        }
+      ]
+    },
+    {
       "id": "company-discovery-loop-direction-h-search",
       "source": "company-discovery-loop",
       "target": "topic-h-search",
@@ -15308,16 +15323,12 @@
       "target": "topic-h-control",
       "kind": "addresses_topic",
       "label": "研究此主题 / 相关机制",
-      "explanation": "工作流规格。主位置来自初筛，元层是否自改待方法确认。",
+      "explanation": "任务专用文本工作流跨轮修订；基础模型、评价者及优化器固定。",
       "evidence": "survey_classification",
       "sources": [
         {
-          "url": "https://arxiv.org/abs/2607.15524",
-          "location": "摘要与既有来源记录"
-        },
-        {
-          "url": "https://arxiv.org/pdf/2607.15524",
-          "location": "摘要与既有来源记录"
+          "url": "https://arxiv.org/html/2607.15524v1",
+          "location": "§3–5; Appendix A"
         }
       ]
     },
@@ -15327,16 +15338,12 @@
       "target": "topic-h-instructions",
       "kind": "addresses_topic",
       "label": "研究此主题 / 相关机制",
-      "explanation": "工作流规格。主位置来自初筛，元层是否自改待方法确认。",
+      "explanation": "任务专用文本工作流跨轮修订；基础模型、评价者及优化器固定。",
       "evidence": "survey_classification",
       "sources": [
         {
-          "url": "https://arxiv.org/abs/2607.15524",
-          "location": "摘要与既有来源记录"
-        },
-        {
-          "url": "https://arxiv.org/pdf/2607.15524",
-          "location": "摘要与既有来源记录"
+          "url": "https://arxiv.org/html/2607.15524v1",
+          "location": "§3–5; Appendix A"
         }
       ]
     },
@@ -15346,16 +15353,12 @@
       "target": "topic-h-evaluation",
       "kind": "addresses_topic",
       "label": "研究此主题 / 相关机制",
-      "explanation": "工作流规格。主位置来自初筛，元层是否自改待方法确认。",
+      "explanation": "任务专用文本工作流跨轮修订；基础模型、评价者及优化器固定。",
       "evidence": "survey_classification",
       "sources": [
         {
-          "url": "https://arxiv.org/abs/2607.15524",
-          "location": "摘要与既有来源记录"
-        },
-        {
-          "url": "https://arxiv.org/pdf/2607.15524",
-          "location": "摘要与既有来源记录"
+          "url": "https://arxiv.org/html/2607.15524v1",
+          "location": "§3–5; Appendix A"
         }
       ]
     },

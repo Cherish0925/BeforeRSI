@@ -831,3 +831,11 @@ The following eleven records are added to `data/works.json` and the current read
 **Distinct boundaries that affect classification:** OPHIS describes a non-LLM core while its NanoGPT case also uses a coding agent; these are recorded by experiment. ComfyResearch is a human-driven experiment workbench, not a demonstrated autonomous self-improver. Apex-Tune reports concrete improvements to external training code and kernels, with transfer of discovered knowledge still a next step. ASI-Bench is hosted by Apex but its listed author affiliations are retained. ARR review scores are not conference acceptances. INTELLECT-3 trains 106B weights, but simultaneous availability of PRIME-RL and Prime Agent does not establish their autonomous coevolution.
 
 **Access limits.** The Apex paper-production report is screened from the official README because PDF extraction failed; Locus is screened from its official index/summary; Autoscience is screened from a company-issued news release. Those cards remain source screens. Reflection Beam and MiroMind 1.7/H1 are searchable adjacent programs: their opened model/training descriptions do not establish a recursive self-update loop.
+
+## 2026-10-19 — reader synthesis and RHI clarification
+
+Source fact: [RHI §3–5 and Appendix A](https://arxiv.org/html/2607.15524v1) edits task-specific textual harnesses using artifact-comparison history; the base model, evaluator and optimizer remain fixed. The bounded setting comprises 30 synthetic ML tasks and few iterations. The prior `transfer` label was too strong for this reading; it is corrected to multi-generation task-specific reuse. The paper's information-flow hypothesis is not a demonstrated causal law.
+
+Source fact: [MASS Appendix J](https://arxiv.org/html/2610.12176v1) identifies RHI as its workflow-search source and adds trajectory post-training. A source-explicit RHI → MASS edge now records this relationship.
+
+Editorial synthesis: the reader guide separates changed object, functional role, feedback, inheritance and empirical generalization. It does not propose a universal RSI theory. Exact arXiv-id matching finds 82 overlaps between the 567 discovery leads and the catalog; 485 leads have no such match. These are bibliography counts, not quality decisions.

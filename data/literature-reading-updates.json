@@ -444,6 +444,17 @@
         "scope": "已读方法、训练设置、域内与域外结果；年份沿用 2022 预印本，数字取 2023 正式版。",
         "location": "EMNLP 2023 正式版：§3–5、Figure 1、Tables 3–6"
       }
+    },
+    {
+      "work_id": "rhi",
+      "reading_update_20261019": {
+        "scope": "已读工作流表示、更新机制、合成任务设置、结果和作者的递归边界；未复现实验或完整审阅附录实现。",
+        "location": "§3–5；§6.2–6.3；Appendix A；有界方法阅读。",
+        "changed": "task-specific textual harness",
+        "fixed": "base model, evaluator, harness optimizer",
+        "evaluation": "30 synthetic ML tasks; pairwise model judgments; few iterations",
+        "source_url": "https://arxiv.org/html/2607.15524v1"
+      }
     }
   ]
 }
