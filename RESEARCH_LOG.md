@@ -666,3 +666,7 @@ The update does not infer that every autonomous research company has demonstrate
 **Reader changes.** The three maps remain the entry point. Source-aware reading badges and expandable evidence panels replace ambiguous methods/abstract labels in the reading cards. A searchable 567-item discovery ledger exposes every abstract and decision. The institution matrix uses the corrected route/scale counts. Sixty-nine typed study relations have source locations; 34 are source-explicit and 35 are editorial comparisons. Current data, complete cards and reference lists are rebuilt together; legacy snapshots remain dated.
 
 **Next evidence gap.** Read the 240 route candidates and 64 evaluation/theory candidates before making inclusion or quality claims; continue tracking undisclosed company mechanisms. The current source review resolves the retained catalog, not every item in the discovery pool.
+
+## 2026-10-19 — Full-corpus primary reading, interim evidence checkpoint
+
+Recorded 154 completed entry reviews from six parallel research groups and the lead review. This checkpoint preserves the audit evidence only; it does not claim that all 622 entries have been read or publish a completed curated atlas. The detailed corpus records replace any assumption that abstract-screened non-catalog items were rejected for low quality. Current implementation work and final curation remain in progress.
