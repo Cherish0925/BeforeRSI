@@ -240,7 +240,7 @@
       "kind": "公司 / 产业研究团队",
       "status": "research",
       "focus": "用 Locus 推进自动 AI R&D，用 Zochi 探索自动科研产出和外部同行评审。",
-      "boundary": "Locus 官方索引与摘要可读，方法正文未完整提取；这家公司已进入检索和研究主题，技术结论保留为初筛。",
+      "boundary": "已读 Locus 预览与 2026 年自动后训练技术发布（含附录）；公开结果支持自动 AI R&D，部分系统仍私有，未证明研究器自身递归升级。",
       "work_links": [
         {
           "work_id": "intology-locus",
@@ -260,7 +260,8 @@
       "sources": [
         "https://intology.ai/",
         "https://intology.ai/blog/previewing-locus",
-        "https://intology.ai/blog/zochi-tech-report"
+        "https://intology.ai/blog/zochi-tech-report",
+        "https://intology.ai/blog/scaling-automated-post-training"
       ],
       "disclosures": [
         {
@@ -283,7 +284,7 @@
       "kind": "公司 / 产业研究团队",
       "status": "research",
       "focus": "将算法假设探索、实验验证和模型部署组织成自动科学家与工程师协作的研发流程。",
-      "boundary": "成果与产品定位来自公司正式公开稿，底层模型训练和研究者继承机制未披露；暂按 Harness 自动研发初筛。",
+      "boundary": "已读公司完整正式发布稿；Carl/Mira 技术页访问受限，底层训练和跨项目继承机制未充分披露，不能判定为已验证的递归系统。",
       "work_links": [
         {
           "work_id": "autoscience-lab",

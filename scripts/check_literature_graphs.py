@@ -54,7 +54,10 @@ def check():
   assert all(s['text'].strip() and s['title'].strip() for s in w['sections'])
   if w['placement']=='small':
    assert w['scale_status']=='below' and w['models']
-   assert all(m.get('total_b') and m['total_b']<27 for m in w['models'])
+   trained=[m for m in w['models'] if not any(t in m.get('role','') for t in ['固定','冻结','非训练','不是训练'])]
+   assert trained and all(m.get('total_b') and m['total_b']<27 for m in trained),w['id']
+  assert w.get('review') and w['review']['sources'],w['id']
+  assert w['review']['source_coverage'] in {'main_text_and_relevant_appendix','paper_sections_read','public_materials','abstract_only','unavailable'}
  assert a['relations']==e['relations'] and len(a['relations'])==a['counts']['relations']
  for rel in a['relations']:assert rel in g['edges']
  page=(R/'research/atlas/index.html').read_text()
@@ -104,8 +107,13 @@ def check():
  # Stable scope regressions: historical items stay outside route landscapes;
  # teacher or transferred-to model scale cannot admit a small trained policy.
  assert works['eurisko']['route']=='archive'
- for k in ['skillrl','harness-r1','webrl']:assert works[k]['placement']=='small'
+ for k in ['skillrl','harness-r1','harness-zero','rstar-math','skillos','socratic-swe']:assert works[k]['placement']=='small'
+ assert works['webrl']['scale_status']=='eligible'
+ assert any(m['total_b']==70 and '实际训练' in m.get('role','') for m in works['webrl']['models'])
+ assert works['automated-alignment-researchers']['scale_status']=='eligible'
  for wid,route in [('dream-rsi','harness'),('rewardharness','harness'),('seed-distillation','model'),('webevolver','model')]:assert works[wid]['route']==route
- assert works['memskill']['models'][0]['total_b'] is None
+ assert works['memskill']['route']=='harness' and works['memskill']['scale_status']=='not_applicable'
+ assert works['execution-grounded-research']['route']=='model'
+ assert works['continual-harness']['route']=='hybrid' and works['continual-harness']['scale_status']=='unverified'
  print(f'PASS: {len(ids)} preserved works, {len(routed)} route positions, {len(a["relations"])} sourced/typed relations, exact offline data.')
 if __name__=='__main__':check()

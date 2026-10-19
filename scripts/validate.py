@@ -16,7 +16,7 @@ HYPOTHESES_PATH = ROOT / "data" / "hypotheses.json"
 ID_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 SNAKE_RE = re.compile(r"^[a-z0-9]+(?:_[a-z0-9]+)*$")
 EVIDENCE = {"reported", "reproduced", "replicated", "contradicted", "open"}
-AUDIT = {"pending", "in_progress", "complete"}
+AUDIT = {"pending", "in_progress", "complete", "primary_source_read", "selected_sections_read", "public_materials_read"}
 SOURCE_TYPES = {"paper", "repository", "project_page", "proceedings"}
 
 
@@ -54,6 +54,8 @@ def validate_works(data: object) -> set[str]:
             "id", "name", "year", "role", "reported_depth", "changed_objects",
             "evidence_status", "audit_status", "central_limit", "sources",
         }
+        if data['schema_version'] == '1.1.0':
+            required_work |= {'reading_scope', 'mechanism_review', 'evidence_review', 'contribution_review', 'scope_decision', 'source_locations'}
         if not isinstance(work, dict) or set(work) != required_work:
             fail(f"{context}: invalid keys")
         work_id = work["id"]
@@ -80,6 +82,23 @@ def validate_works(data: object) -> set[str]:
             fail(f"{work_id}: invalid evidence status")
         if work["audit_status"] not in AUDIT:
             fail(f"{work_id}: invalid audit status")
+        if data['schema_version'] == '1.1.0':
+            for field, keys in {
+                'mechanism_review': {'changed', 'fixed', 'feedback', 'inheritance', 'loop'},
+                'evidence_review': {'setup', 'comparison', 'result', 'ablation', 'cost', 'generalization'},
+                'contribution_review': {'bottleneck', 'insight', 'value', 'relation_to_rsi', 'comparison'},
+            }.items():
+                values = work[field]
+                if not isinstance(values, dict) or set(values) != keys or any(not isinstance(v,str) or not v.strip() for v in values.values()):
+                    fail(f'{work_id}: incomplete {field}')
+            if work['scope_decision'] not in {'route_research', 'enabling_method', 'background', 'insufficient_disclosure'}:
+                fail(f'{work_id}: invalid reading scope decision')
+            if not work['reading_scope'] or not work['source_locations']:
+                fail(f'{work_id}: source reading requires scope and locators')
+            for source in work['source_locations']:
+                validate_url(source.get('url'), work_id)
+                if not source.get('location'):
+                    fail(f'{work_id}: empty primary-source locator')
         if not isinstance(work["central_limit"], str) or len(work["central_limit"].strip()) < 20:
             fail(f"{work_id}: central_limit is too short")
         sources = work["sources"]

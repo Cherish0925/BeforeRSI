@@ -23,7 +23,11 @@ run("setPage('search')");assert.equal(run('searchWorks().length'),data.works.len
 run("state.query='伯克利'");assert(run('searchWorks().length')>2);
 run("state.query='EURISKO'");assert.equal(run('searchWorks()[0].id'),'eurisko');
 for(const w of data.works){run(`openPaper(${JSON.stringify(w.id)})`);assert(nodes['paper-content'].innerHTML.includes('id="paper-title"'));assert(nodes['paper-content'].innerHTML.includes(w.primary_url));}
-run("openPaper('eurisko')");assert(nodes['paper-content'].innerHTML.includes('带槽位'));assert(!nodes['paper-content'].innerHTML.includes('既有操作记录'));
+run("setPage('coverage')");assert(nodes.main.innerHTML.includes('原文研读'));run("openPaper('webrl')");assert(nodes['paper-content'].innerHTML.includes('70B'));assert(nodes['paper-content'].innerHTML.includes('review-evidence'));
+assert.equal(run('selectedLeads().length'),567);
+for(const [decision,count] of Object.entries(data.discovery_review.counts)){run(`leadFilter=${JSON.stringify(decision)}`);assert.equal(run('selectedLeads().length'),count);}
+run("leadFilter='all';leadQuery='2411.02337'");assert.equal(run('selectedLeads().length'),1);run("leadQuery=''");
+run("openPaper('eurisko')");assert(nodes['paper-content'].innerHTML.includes('EURISKO'));assert(!nodes['paper-content'].innerHTML.includes('既有操作记录'));
 for(const e of data.relations){run(`selectEdge('${e.id}')`);assert(nodes.inspector.innerHTML.includes(e.sources[0].url));}
 run("locate('skillrl')");assert.equal(run('state.small'),true);assert.equal(run('state.selected'),'skillrl');
 assert(!/<script[^>]+src=|<link[^>]+href=/.test(html));assert(!/\bfetch\(/.test(scripts[1]));
@@ -36,13 +40,13 @@ run("openDomainTopic('h-search')");assert(nodes.main.innerHTML.includes('data-do
 run("openDomainTopic('m-pretraining-ai4ai')");assert(nodes.main.innerHTML.includes('跨路线参考 · Harness'));
 run("openPaper('apex-tune')");assert(nodes['paper-content'].innerHTML.includes('data-company="apex"'));
 // Matrix totals, canonical teams and cooperation use the same study set as the lists.
-run("setPage('actors')");assert.equal(run('selectedActorWorks().length'),98);
+run("setPage('actors')");assert.equal(run('selectedActorWorks().length'),data.works.filter(w=>['harness','model','hybrid'].includes(w.route)&&w.placement!=='small').length);
 for(const type of ['academic','tech','ai','independent','unresolved'])for(const route of ['harness','model','hybrid']){
  run(`state.actorKind='${type}';state.actorRoute='${route}';state.actorId='all';state.actorQuery='';state.actorSmall=false`);
  const expected=data.works.filter(w=>w.route===route&&w.placement!=='small'&&w.actor_types.includes(type));
  assert.equal(run('selectedActorWorks().length'),expected.length);
 }
-run("state.actorKind='all';state.actorRoute='all';state.actorSmall=true");assert.equal(run('selectedActorWorks().length'),107);
+run("state.actorKind='all';state.actorRoute='all';state.actorSmall=true");assert.equal(run('selectedActorWorks().length'),data.counts.routed);
 run("state.actorQuery='谷歌'");assert(run("selectedActors().some(a=>a.id==='google')"));
 run("state.actorQuery='Discovery Loop'");assert(run("selectedActors().some(a=>a.profile_id==='discovery-loop')"));
 run("state.actorQuery='';state.actorCoop='academic_industry'");assert(run("selectedActorWorks().every(w=>w.actor_types.includes('academic')&&(w.actor_types.includes('tech')||w.actor_types.includes('ai')))"));
@@ -92,7 +96,23 @@ if(outputs&&r.id==='model')await page.screenshot({path:path.join(outputs,'model-
  if(outputs)await page.screenshot({path:path.join(outputs,'apex-company-card.png')});
  await page.locator('.company-output-list h4 [data-paper="apex-tune"]').click();assert.equal(await page.locator('.axis').count(),6);await page.locator('.paper-companies [data-company="apex"]').click();assert((await page.locator('#paper-content').innerText()).includes('具体工作与公开证据'));await page.locator('[data-close]').click();
  await page.locator('#global-search').fill('姐夫哥');await page.locator('#search-form button').click();assert.equal(await page.locator('#search-company-results .company-card').count(),1);await page.locator('#search-company-results h3 button').click();assert((await page.locator('#paper-content').innerText()).includes('尚未披露'));await page.locator('[data-close]').click();
- await page.setViewportSize({width:390,height:844});await page.locator('nav [data-nav="overview"]').click();assert.equal(await page.locator('.field-card svg').count(),3);assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+ await page.locator('nav [data-nav="coverage"]').click();
+ if(outputs)await page.screenshot({path:path.join(outputs,'reading-coverage.png')});
+ await page.locator('.lead-browser > summary').click();await page.locator('#lead-filter').selectOption('outside_scope');
+ assert((await page.locator('#lead-results > p').innerText()).includes('27 条'));
+ await page.locator('.lead-pagination button').last().click();assert((await page.locator('#lead-results > p').innerText()).includes('第 2 / 3'));
+ await page.locator('#lead-filter').selectOption('all');await page.locator('#lead-query').fill('2411.02337');
+ assert.equal(await page.locator('.lead-list details').count(),1);await page.locator('.lead-list summary').click();
+ assert((await page.locator('.lead-list').innerText()).includes('WebRL'));
+ if(outputs)await page.screenshot({path:path.join(outputs,'discovery-ledger.png'),fullPage:true});
+ await page.locator('.lead-list [data-paper="webrl"]').click();await page.locator('.review-evidence > summary').click();
+ assert((await page.locator('.review-evidence').innerText()).includes('70B49.1'));
+ await page.locator('.review-evidence').scrollIntoViewIfNeeded();
+ if(outputs)await page.screenshot({path:path.join(outputs,'source-evidence.png')});
+ await page.setViewportSize({width:390,height:844});assert(await page.evaluate(()=>document.querySelector('#paper-dialog').scrollWidth<=document.querySelector('#paper-dialog').clientWidth+1));
+ await page.keyboard.press('Escape');assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+ if(outputs)await page.screenshot({path:path.join(outputs,'mobile-ledger.png'),fullPage:true});
+ await page.locator('nav [data-nav="overview"]').click();assert.equal(await page.locator('.field-card svg').count(),3);assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
  if(outputs)await page.screenshot({path:path.join(outputs,'mobile-overview.png')});
  await page.locator('nav [data-nav="model"]').click();assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
  await page.locator('svg [data-topic="m-bootstrapping"]').focus();await page.keyboard.press('Enter');assert((await page.locator('.domain-inspector').innerText()).includes('模型的哪些输出'));

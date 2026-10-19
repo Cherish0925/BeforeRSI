@@ -13,19 +13,19 @@
     "intology-locus",
     "autoscience-lab"
   ],
-  "reading_policy": "技术报告、博客、仓库、产品文档与论文均可入库；方法阅读、发布摘要初筛、公司方向分别统计。来源中的作者结果均未独立复现。",
+  "reading_policy": "论文、技术报告、博客、仓库与公司正式发布均按实际可读内容记录；论文原文研读与公开材料研读分开。阅读完成不补全未披露机制，也不代表独立复现。",
   "source_access_limits": [
     {
-      "url": "https://intology.ai/blog/previewing-locus",
-      "limit": "网页正文未提取；仅官网索引和 About 的摘要可读。"
+      "url": "https://intology.ai/blog/scaling-automated-post-training",
+      "limit": "已读完整正文、附录A–G及公开artifacts限制；部分研究系统私有，各任务checkpoint、单trial与分配预算分别记录。"
     },
     {
       "url": "https://www.apexin.ai/assets/papers/apex-research-2026.pdf",
-      "limit": "PDF 正文抓取超时；本条仅依据官方 GitHub 结果摘要。"
+      "limit": "已读四页完整报告；34项目的论文、代码与review全集未完整公开。"
     },
     {
       "url": "https://www.autoscience.ai/blog/autoscience-autonomous-ai-lab",
-      "limit": "官网正文未提取；使用公司同步发布的 Business Wire 新闻稿。"
+      "limit": "技术正文访问未成功；已读公司署名Business Wire完整新闻稿。不能据发布稿重建未披露算法。"
     }
   ]
 }

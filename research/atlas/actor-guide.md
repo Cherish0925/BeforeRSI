@@ -12,15 +12,15 @@
 
 ## 交叉统计
 
-下表包括全部 107 项主路线工作。HTML 默认隐藏其中 9 项 <27B 补充机制，因此默认矩阵显示 98 项；勾选后与下表一致。单元格对工作去重；合作研究可出现在多个主体行中，不能将各行相加。
+下表包括全部 110 项主路线工作。HTML 默认隐藏其中 30 项 <27B 补充机制，因此默认矩阵显示 80 项；勾选后与下表一致。单元格对工作去重；合作研究可出现在多个主体行中，不能将各行相加。
 
 | 主体 | Harness | Model | Model × Harness | 三条路线合计 |
 |---|---:|---:|---:|---:|
-| 高校与科研机构 | 35 | 26 | 16 | 77 |
-| 综合科技企业 | 20 | 23 | 12 | 55 |
+| 高校与科研机构 | 38 | 26 | 16 | 80 |
+| 综合科技企业 | 21 | 22 | 14 | 57 |
 | AI 专业公司 | 24 | 7 | 4 | 35 |
 | 独立团队与开源社区 | 3 | 0 | 1 | 4 |
-| 机构类型待确认 | 1 | 0 | 2 | 3 |
+| 机构类型待确认 | 0 | 0 | 4 | 4 |
 
 ## 归属规则
 
@@ -56,11 +56,11 @@
 - **ETH Zürich**：[Skill Self-Play](https://arxiv.org/html/2607.22529v1)；[Tool-R0](https://arxiv.org/abs/2602.21320)
 - **Flatiron Institute**：[ASI-Bench](https://arxiv.org/abs/2608.17271)
 - **Fudan**：[AFlow](https://arxiv.org/html/2410.10762v4)；[SkillOpt](https://arxiv.org/abs/2605.23904)；[Self-Evolved Reward](https://arxiv.org/abs/2411.00418)
-- **Georgia Tech**：[HarnessDev](https://arxiv.org/abs/2609.01437)；[RewardHarness](https://arxiv.org/html/2605.08703v1)
+- **Georgia Tech**：[HarnessDev](https://arxiv.org/abs/2609.01437)；[Frontis-MA1 / OpenMLE](https://arxiv.org/html/2607.28568v1)；[RewardHarness](https://arxiv.org/html/2605.08703v1)
 - **Harbin Institute of Technology**：[Faithful Self-Evolvers](https://arxiv.org/abs/2601.22436)
 - **Harvard**：[AutoScientists](https://arxiv.org/abs/2605.28655)；[ASI-Bench](https://arxiv.org/abs/2608.17271)
 - **HEC Montréal**：[Self-Evolving Curriculum](https://arxiv.org/abs/2505.14970)
-- **HKU**：[HELIX](https://github.com/HKUDS/HELIX)；[DERL](https://arxiv.org/html/2512.13399v3)
+- **HKU**：[HELIX](https://github.com/HKUDS/HELIX)；[DERL](https://arxiv.org/html/2512.13399v3)；[HASE](https://arxiv.org/html/2607.03935v1)
 - **HKUST**：[AFlow](https://arxiv.org/html/2410.10762v4)；[HSI](https://github.com/TailinZhou/hsi)；[Harness-Zero](https://arxiv.org/abs/2609.24974)；[EvoDS](https://arxiv.org/abs/2606.03841)
 - **HKUST(GZ)**：[AFlow](https://arxiv.org/html/2410.10762v4)
 - **Hohai**：[ModularRSI](https://arxiv.org/html/2609.14857v2)
@@ -73,10 +73,10 @@
 - **MCML**：[Mem²Evolve](https://arxiv.org/abs/2604.10923)
 - **Mila**：[AFlow](https://arxiv.org/html/2410.10762v4)；[ReST-EM](https://arxiv.org/html/2312.06585v4)；[Self-Evolving Curriculum](https://arxiv.org/abs/2505.14970)
 - **Minnesota**：[Metaⁿ](https://arxiv.org/abs/2608.24735)
-- **MIT**：[GEPA](https://arxiv.org/pdf/2507.19457v2)；[SEAL](https://arxiv.org/html/2506.10943v1)；[Meta-Harness](https://arxiv.org/html/2603.28052v1)；[SoL-Pi](https://arxiv.org/html/2609.20519v1)；[Prime Agent](https://arxiv.org/abs/2608.23552)；[SkillOS](https://arxiv.org/abs/2605.06614)；[RL Tango](https://arxiv.org/abs/2505.15034)；[ASI-Bench](https://arxiv.org/abs/2608.17271)
+- **MIT**：[GEPA](https://arxiv.org/pdf/2507.19457v2)；[SEAL](https://arxiv.org/html/2506.10943v1)；[Meta-Harness](https://arxiv.org/html/2603.28052v1)；[SoL-Pi](https://arxiv.org/html/2609.20519v1)；[Prime Agent](https://arxiv.org/abs/2608.23552)；[SkillOS](https://arxiv.org/abs/2605.06614)；[RL Tango](https://arxiv.org/abs/2505.15034)；[ASI-Bench](https://arxiv.org/abs/2608.17271)；[Reflexion](https://arxiv.org/html/2303.11366v4)
 - **Montréal**：[AFlow](https://arxiv.org/html/2410.10762v4)；[Self-Evolving Curriculum](https://arxiv.org/abs/2505.14970)
 - **Nanjing**：[AFlow](https://arxiv.org/html/2410.10762v4)
-- **Northeastern**：[Updating ≠ Benefit](https://arxiv.org/html/2605.30621v1)；[Adaptive Auto-Harness](https://arxiv.org/abs/2606.01770)
+- **Northeastern**：[Updating ≠ Benefit](https://arxiv.org/html/2605.30621v1)；[Adaptive Auto-Harness](https://arxiv.org/abs/2606.01770)；[Reflexion](https://arxiv.org/html/2303.11366v4)
 - **Notre Dame**：[GEPA](https://arxiv.org/pdf/2507.19457v2)
 - **NTU**：[SoL-Pi](https://arxiv.org/html/2609.20519v1)；[MemSkill](https://arxiv.org/html/2602.02474v1)；[SEED Distillation](https://arxiv.org/html/2607.14777v1)
 - **NUS**：[MemRL](https://arxiv.org/html/2601.03192v1)
@@ -85,7 +85,7 @@
 - **Oxford**：[AgentBreeder](https://arxiv.org/abs/2502.00757)；[SIA](https://github.com/hexo-ai/sia)；[AIRA-Compose / Design](https://arxiv.org/abs/2605.15871)
 - **Peking University**：[Gödel Agent](https://github.com/Arvid-pku/Godel_Agent)；[Skill Self-Play](https://arxiv.org/html/2607.22529v1)；[Harness-Zero](https://arxiv.org/abs/2609.24974)；[rStar-Math](https://arxiv.org/abs/2501.04519)；[Self-Evolved Reward](https://arxiv.org/abs/2411.00418)
 - **Penn State**：[Updating ≠ Benefit](https://arxiv.org/html/2605.30621v1)；[Absolute Zero](https://arxiv.org/abs/2505.03335)；[Adaptive Auto-Harness](https://arxiv.org/abs/2606.01770)
-- **Princeton**：[Prime Agent](https://arxiv.org/abs/2608.23552)；[Continual Harness](https://arxiv.org/abs/2605.09998)
+- **Princeton**：[Prime Agent](https://arxiv.org/abs/2608.23552)；[Continual Harness](https://arxiv.org/abs/2605.09998)；[Reflexion](https://arxiv.org/html/2303.11366v4)
 - **Purdue**：[SkillWeaver](https://arxiv.org/abs/2504.07079)
 - **RPI**：[Actor-Curator](https://arxiv.org/abs/2602.20532)
 - **RUC**：[AFlow](https://arxiv.org/html/2410.10762v4)；[Skill Self-Play](https://arxiv.org/html/2607.22529v1)；[Agent-World](https://arxiv.org/abs/2604.18292)
@@ -96,7 +96,7 @@
 - **Shanxi**：[Generalized Agent Iteration](https://arxiv.org/html/2609.13406v1)
 - **SIAT-CAS**：[EvoTrainer](https://arxiv.org/html/2606.03108v2)
 - **Singapore Management University**：[Faithful Self-Evolvers](https://arxiv.org/abs/2601.22436)
-- **SJTU**：[Harness-R1](https://arxiv.org/abs/2608.02276)；[SkillOpt](https://arxiv.org/abs/2605.23904)；[MemRL](https://arxiv.org/html/2601.03192v1)；[Socratic-SWE](https://arxiv.org/abs/2606.07412)
+- **SJTU**：[Frontis-MA1 / OpenMLE](https://arxiv.org/html/2607.28568v1)；[Harness-R1](https://arxiv.org/abs/2608.02276)；[SkillOpt](https://arxiv.org/abs/2605.23904)；[MemRL](https://arxiv.org/html/2601.03192v1)；[Socratic-SWE](https://arxiv.org/abs/2606.07412)
 - **Southeast University**：[Harness-R1](https://arxiv.org/abs/2608.02276)
 - **Stanford**：[STOP](https://arxiv.org/pdf/2310.02304)；[GEPA](https://arxiv.org/pdf/2507.19457v2)；[RRSI](https://arxiv.org/html/2609.24972v1)；[Meta-Harness](https://arxiv.org/html/2603.28052v1)；[ACE](https://arxiv.org/html/2510.04618v1)；[STaR](https://arxiv.org/abs/2203.14465)；[Agent0](https://arxiv.org/abs/2511.16043)；[Execution-Grounded Research](https://arxiv.org/abs/2601.14525)；[Voyager](https://arxiv.org/html/2305.16291v2)
 - **SUAT**：[EvoTrainer](https://arxiv.org/html/2606.03108v2)
@@ -115,7 +115,7 @@
 - **UCSD**：[SkillRL](https://arxiv.org/html/2602.08234v1)
 - **UESTC**：[Harness Tampering](https://arxiv.org/abs/2609.00069)
 - **UIC**：[MemSkill](https://arxiv.org/html/2602.02474v1)；[Actor-Curator](https://arxiv.org/abs/2602.20532)
-- **UIUC**：[Updating ≠ Benefit](https://arxiv.org/html/2605.30621v1)；[EvoHarness-RL](https://arxiv.org/abs/2608.05446)；[Dr. Zero](https://arxiv.org/html/2601.07055v2)；[Tool-R0](https://arxiv.org/abs/2602.21320)；[MemSkill](https://arxiv.org/html/2602.02474v1)；[Live-SWE-agent](https://arxiv.org/html/2511.13646v1)；[Adaptive Auto-Harness](https://arxiv.org/abs/2606.01770)；[SkillOS](https://arxiv.org/abs/2605.06614)；[Teaching LLMs to Self-Evolve](https://arxiv.org/abs/2607.21971)；[LLMs Can Self-Improve](https://aclanthology.org/2023.emnlp-main.67.pdf)；[ASI-Bench](https://arxiv.org/abs/2608.17271)
+- **UIUC**：[Updating ≠ Benefit](https://arxiv.org/html/2605.30621v1)；[EvoHarness-RL](https://arxiv.org/abs/2608.05446)；[Dr. Zero](https://arxiv.org/html/2601.07055v2)；[Tool-R0](https://arxiv.org/abs/2602.21320)；[MemSkill](https://arxiv.org/html/2602.02474v1)；[Live-SWE-agent](https://arxiv.org/html/2511.13646v1)；[Adaptive Auto-Harness](https://arxiv.org/abs/2606.01770)；[SkillOS](https://arxiv.org/abs/2605.06614)；[Teaching LLMs to Self-Evolve](https://arxiv.org/abs/2607.21971)；[LLMs Can Self-Improve](https://aclanthology.org/2023.emnlp-main.67.pdf)；[ASI-Bench](https://arxiv.org/abs/2608.17271)；[ReasoningBank](https://arxiv.org/pdf/2509.25140v2)
 - **UNC**：[RRSI](https://arxiv.org/html/2609.24972v1)；[Agent0](https://arxiv.org/abs/2511.16043)；[SkillRL](https://arxiv.org/html/2602.08234v1)；[EnvHarness](https://arxiv.org/abs/2608.19880)
 - **University of Arizona**：[Gödel Agent](https://github.com/Arvid-pku/Godel_Agent)
 - **University of Michigan**：[ASI-Bench](https://arxiv.org/abs/2608.17271)
@@ -132,8 +132,9 @@
 - **WashU**：[RRSI](https://arxiv.org/html/2609.24972v1)；[R-Zero](https://arxiv.org/abs/2508.05004)；[EnvHarness](https://arxiv.org/abs/2608.19880)
 - **Waterloo**：[DERL](https://arxiv.org/html/2512.13399v3)；[RewardHarness](https://arxiv.org/html/2605.08703v1)
 - **Xidian**：[MemRL](https://arxiv.org/html/2601.03192v1)
+- **Yale**：[ReasoningBank](https://arxiv.org/pdf/2509.25140v2)
 - **York**：[GEAR](https://arxiv.org/abs/2605.13874)
-- **Zhejiang**：[CoVerRL](https://arxiv.org/abs/2603.17775)；[SEED Distillation](https://arxiv.org/html/2607.14777v1)
+- **Zhejiang**：[Frontis-MA1 / OpenMLE](https://arxiv.org/html/2607.28568v1)；[CoVerRL](https://arxiv.org/abs/2603.17775)；[SEED Distillation](https://arxiv.org/html/2607.14777v1)
 
 ### 综合科技企业
 
@@ -141,9 +142,10 @@
 - **Amazon**：[Updating ≠ Benefit](https://arxiv.org/html/2605.30621v1)；[Adaptive Auto-Harness](https://arxiv.org/abs/2606.01770)
 - **Baidu**：[CoVerRL](https://arxiv.org/abs/2603.17775)
 - **ByteDance**：[HarnessDev](https://arxiv.org/abs/2609.01437)；[Seed for Seed](https://seed.bytedance.com/en/blog/seed2-1-officially-released-advancing-ai-productivity)；[Aspire](https://arxiv.org/abs/2608.31111)；[Agent-World](https://arxiv.org/abs/2604.18292)
+- **China Mobile**：[HASE](https://arxiv.org/html/2607.03935v1)
 - **Cisco**：[SkillWeaver](https://arxiv.org/abs/2504.07079)
 - **Databricks**：[GEPA](https://arxiv.org/pdf/2507.19457v2)
-- **Google**：[Promptbreeder](https://arxiv.org/pdf/2309.16797)；[RRSI](https://arxiv.org/html/2609.24972v1)；[Dream-RSI](https://arxiv.org/html/2609.14858v2)；[AlphaEvolve](https://arxiv.org/abs/2506.13131)；[OPRO](https://arxiv.org/abs/2309.03409)；[STaR](https://arxiv.org/abs/2203.14465)；[ReST-EM](https://arxiv.org/html/2312.06585v4)；[AlphaProof](https://www.nature.com/articles/s41586-025-09833-y)；[SIMA 2](https://arxiv.org/html/2512.04797v1)；[Agent0](https://arxiv.org/abs/2511.16043)；[Harness-Zero](https://arxiv.org/abs/2609.24974)；[Live-SWE-agent](https://arxiv.org/html/2511.13646v1)；[Continual Harness](https://arxiv.org/abs/2605.09998)；[EnvHarness](https://arxiv.org/abs/2608.19880)；[SkillOS](https://arxiv.org/abs/2605.06614)；[LLMs Can Self-Improve](https://aclanthology.org/2023.emnlp-main.67.pdf)
+- **Google**：[Promptbreeder](https://arxiv.org/pdf/2309.16797)；[RRSI](https://arxiv.org/html/2609.24972v1)；[Dream-RSI](https://arxiv.org/html/2609.14858v2)；[AlphaEvolve](https://arxiv.org/abs/2506.13131)；[OPRO](https://arxiv.org/abs/2309.03409)；[STaR](https://arxiv.org/abs/2203.14465)；[ReST-EM](https://arxiv.org/html/2312.06585v4)；[AlphaProof](https://www.nature.com/articles/s41586-025-09833-y)；[SIMA 2](https://arxiv.org/html/2512.04797v1)；[Agent0](https://arxiv.org/abs/2511.16043)；[Harness-Zero](https://arxiv.org/abs/2609.24974)；[Live-SWE-agent](https://arxiv.org/html/2511.13646v1)；[Continual Harness](https://arxiv.org/abs/2605.09998)；[EnvHarness](https://arxiv.org/abs/2608.19880)；[SkillOS](https://arxiv.org/abs/2605.06614)；[LLMs Can Self-Improve](https://aclanthology.org/2023.emnlp-main.67.pdf)；[ReasoningBank](https://arxiv.org/pdf/2509.25140v2)
 - **IBM**：[RL Tango](https://arxiv.org/abs/2505.15034)
 - **KRAFTON**：[Meta-Harness](https://arxiv.org/html/2603.28052v1)
 - **Kuaishou**：[RewardHarness](https://arxiv.org/html/2605.08703v1)
@@ -202,5 +204,6 @@
 ### 机构类型待确认
 
 - **ARISE Foundation**：[Continual Harness](https://arxiv.org/abs/2605.09998)
-- **Gen-Verse**：[RSI-Anything](https://github.com/Gen-Verse/RSI-Anything)
+- **Gen-Verse**：[RSI-Anything](https://arxiv.org/html/2610.13912)
+- **Grace Investment Machine**：[HASE](https://arxiv.org/html/2607.03935v1)
 

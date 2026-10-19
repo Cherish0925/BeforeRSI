@@ -73,7 +73,8 @@
         "Google Cloud",
         "Google Cloud AI Research",
         "Google DeepMind",
-        "Google Research"
+        "Google Research",
+        "Google Cloud AI"
       ],
       "search_aliases": [
         "谷歌"
@@ -1387,7 +1388,8 @@
       "name": "SJTU",
       "kind": "academic",
       "aliases": [
-        "SJTU"
+        "SJTU",
+        "上海交通大学"
       ],
       "search_aliases": [
         "上海交通大学",
@@ -1710,7 +1712,8 @@
       "name": "Zhejiang",
       "kind": "academic",
       "aliases": [
-        "Zhejiang"
+        "Zhejiang",
+        "浙江大学"
       ],
       "search_aliases": [
         "浙江大学",
@@ -1723,6 +1726,33 @@
       "kind": "unresolved",
       "aliases": [],
       "type_note": "项目团队名称已记录；署名机构尚未核定。",
+      "search_aliases": []
+    },
+    {
+      "id": "yale",
+      "name": "Yale",
+      "kind": "academic",
+      "aliases": [
+        "Yale"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "china-mobile",
+      "name": "China Mobile",
+      "kind": "tech",
+      "aliases": [
+        "China Mobile Jiutian Research"
+      ],
+      "search_aliases": []
+    },
+    {
+      "id": "grace-investment-machine",
+      "name": "Grace Investment Machine",
+      "kind": "unresolved",
+      "aliases": [
+        "Grace Investment Machine"
+      ],
       "search_aliases": []
     }
   ],

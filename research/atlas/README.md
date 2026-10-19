@@ -1,70 +1,70 @@
 # RSI Field Atlas v5.1
 
-Open **`RSI_Field_Atlas_v5_1.html`** locally; `index.html` contains the same reader. The homepage immediately renders three field-level graphs. The named file avoids confusing this version with the earlier downloads.
+Open **`RSI_Field_Atlas_v5_1.html`** locally. `index.html` is identical. The reader works offline, without a server, API key, external script or network connection. Source links open the original publications when a connection is available.
 
-## Reading structure
+## Three maps, one corpus
 
-The field maps contain 29 research themes, 146 subquestions and 60 conceptual relations. A theme explains its scientific/engineering question, mechanism, methods, connected themes and associated papers/teams. The full-route view can expand every subquestion. Conceptual connections are editorial structure supported by primary examples; they are not paper-citation claims. Paper-relation views remain available separately.
+The first screen shows the **Harness**, **Model** and **Model × Harness** field graphs. They contain 29 themes, 146 subquestions and 60 conceptual relations. Click a theme to see its research question, mechanisms, associated work and institutions. Paper-to-paper relations are a separate view: 34 source-explicit links and 35 editorial method comparisons, each with provenance.
 
-The three maps organize mutable external assets and improvement processes (Harness), learning-feedback mechanisms (Model), and parameter/system coupling (Model × Harness). Training stage, objective, online data collection, role and schedule are orthogonal descriptors. Sequential internalization does not establish bidirectional coevolution. The reader contains public research only.
+The route is determined by what actually changes. A frozen large-model teacher is not a trained target. A learned small controller can be part of a harness. Sequential distillation is distinguished from repeated bidirectional coevolution. Training stage, data collection, objective, roles and schedule are additional descriptors rather than competing taxonomies.
 
-## Corpus and scope
+| Principal route | Records | Paper main text, experiments and relevant appendices | Official public materials |
+|---|---:|---:|---:|
+| Harness | 52 | 43 | 9 |
+| Model | 36 | 36 | 0 |
+| Model × Harness | 22 | 21 | 1 |
+| **Three routes** | **110** | **100** | **10** |
 
-| Primary route | Records | Methods read | Source screens | Default paper view |
-|---|---:|---:|---:|---:|
-| Harness | 49 | 26 | 23 | 49 |
-| Model | 36 | 16 | 20 | 30 |
-| Model × Harness | 22 | 8 | 14 | 19 |
+The catalog also contains nine cross-route evaluation/theory references and 22 historical/background records: **141 records overall**, including the previous 138 and three additions (Reflexion, ReasoningBank, HASE). Across the full catalog, 113 have paper main-text/experiment/relevant-appendix readings, 17 have explicitly bounded method/result-section readings, and 11 have official-public-material readings. These are reading scopes, not quality certifications or independent replications. Materials not disclosed by a company remain unknown.
 
-Nine cross-route references and 22 historical/background records bring the catalog to 138. Fifty-four records have selected-method/mechanism readings (including four cross-route references); 62 remain source screens. The route totals include adjacent AI4AI mechanisms and provisional cases, not just established recursive systems. Nine confirmed sub-27B Model/mixed references are hidden by default; unknown trained-target size remains explicit.
+The three routes include 70 route-research records, 37 enabling methods and three cases with insufficient mechanism disclosure. They are not 110 demonstrations of strong recursive improvement. Thirty known sub-27B Model/mixed records appear in the supplementary view; enabling it restores all 110 route records from the default 80. Small scale is a viewing preference, not a quality rejection. Undisclosed or internally inconsistent model sizes remain marked as unverified.
 
-There are 49 research relations: 19 source-explicit and 30 editorial method comparisons. Missing connections remain unfinished coverage. The preceding v5 rewrote 27 A–F explanations; v5.1 adds 11 company research records. The older 38-claim/19-case review is retained separately and is not a field census.
+## Discovery pool: every disposition is inspectable
 
-## Companies within the three maps
+The 567 unique arXiv leads have original metadata and abstracts. Eighty-six identifiers match catalog sources; the other 481 are individually screened. A study may have multiple arXiv identifiers, and company releases may have none, so this is not a one-to-one comparison with the 141 study records.
 
-The company index has 27 profiles: 24 linked to specific research, one declared direction (Discovery Loop), and two adjacent programs whose RSI loop is not established. The profiles link 34 distinct study records. Route counts by a linked work's principal route are {'harness': 18, 'model': 5, 'hybrid': 3}; company counts overlap and are not a census of RSI companies.
+| Current disposition | Leads |
+|---|---:|
+| Linked to catalog records | 86 |
+| Route/method candidates; full reading pending | 240 |
+| Evaluation/theory candidates | 64 |
+| Enabling/background references | 133 |
+| Surveys/roadmaps | 17 |
+| Outside the current scope | 27 |
+| **Total** | **567** |
 
-MetaCircle, Apex, Nous, Recursive, Intology and Autoscience receive direct company entries. Existing industrial affiliations are also exposed, including Sakana, Weco, iGent, Frontis, Prime Intellect, DeepWisdom, MemTensor, Hexo, IQuest, Langboat, Flower, Bespoke, Etude, TokenWave, Einsia, DeepSeek, Moonshot and Zhipu. Each public work retains its own route, scale and reading status. Startup status, financing and founders' prior employers are not substitutes for method evidence.
+**No lead has been excluded on a demonstrated low-quality judgment.** Absence from the map is not evidence of worthlessness. The Coverage page provides title/author/ID/abstract search, disposition filters, individual reasons and source links. [The textual ledger](discovery-ledger.md) preserves the same decisions. This is an auditable research inventory, not a claim of worldwide completeness.
 
-Publication, joint authorship and repository hosting use distinct edges. Declared company directions use a different edge from observed study mechanisms. The search accepts Chinese company aliases and project names, and company/study/topic navigation works in both directions.
+## Reading and navigation
+
+Each work has an A–F explanation: goal/value; research judgment; problem/theory; method; implementation/feedback; results/transfer. The expanded evidence panel records changed and fixed objects, feedback and inheritance, experimental comparisons, ablations, cost, generalization and exact source locations. It distinguishes author-reported results from survey interpretation.
+
+The “读懂 RSI” guide explains how to read the feedback loop. Search supports Chinese and English names, institutions, mechanisms and company aliases. Institution and team views provide a route-by-participant matrix, collaboration filters and work lists. Academic, large-technology-company, specialist-AI-company and independent-research categories describe participants; they do not rank quality. Joint work can appear in more than one participant row.
+
+The company index contains 27 profiles, including research-linked firms, declared directions and adjacent programs. Publication, coauthorship and hosting are separate relations. Discovery Loop is a declared direction with limited disclosed mechanism; founders' previous work is not assigned to the new company. MetaCircle, Apex, Nous, Recursive, Intology and Autoscience have explicit entries and source boundaries.
 
 ## Sources of truth
 
-- `data/industry-landscape.json`: companies, names, publication roles, sources and declared directions.
-- `data/industry-reading-log.json`: the 11 added releases and source access limits.
-- `data/review-snapshots.json`: immutable legacy review membership and hashes.
-- `data/works.json`: stable bibliography, changed objects, source URLs and central limits.
-- `data/field-knowledge.json`: field themes, subquestions, conceptual links and paper placements.
-- `data/literature-editorial.json`: paper explanations, principal routes, reading scope and paper relations.
-- `data/literature-reading-updates.json`: bounded source readings and classification/scale corrections from this update.
-- `data/literature-affiliation-sources.json`: title-page affiliation checks.
-- `data/literature-atlas.json`: generated joined reader dataset.
-- `data/knowledge-graph.json`: typed field, study, mechanism, institution and company graph.
+- `data/works.json`: bibliography, changed objects, sources and strongest supported claims.
+- `data/literature-editorial.json`: A–F explanations, routes, reading scopes and paper relations.
+- `data/primary-reading.json`: all 141 structured readings, corrections and unresolved source questions.
+- `data/discovery-review.json`: all 567 original abstracts, dispositions and reasons.
+- `data/field-knowledge.json`: themes, subquestions, conceptual relations and work placements.
+- `data/research-actors.json`: canonical institutions, aliases and participant categories.
+- `data/industry-landscape.json`: company profiles, publication roles and declared directions.
+- `data/industry-reading-log.json`: company-material access and disclosure limits.
+- `data/literature-atlas.json` and `data/knowledge-graph.json`: generated reader and typed graph.
 
-`industry-guide.md` lists company–work associations. `field-guide.md` is the textual field map; `literature-cards.md` and `references.md` contain the current cards and sources. Earlier `core-cards.md`, legacy review JSON and the nine-page PDF are dated review snapshots.
+[Field guide](field-guide.md) · [Research cards](literature-cards.md) · [References](references.md) · [Actors](actor-guide.md) · [Companies](industry-guide.md) · [Discovery ledger](discovery-ledger.md).
 
-## Rebuild and verify
+The older claim audit, 127-item scope review and nine-page PDF remain dated snapshots. They do not describe the current reading status or establish a field census. Current evidence is in the files above.
+
+## Rebuild and verification
 
 ```bash
 python scripts/build_literature_graphs.py
-python scripts/validate.py
+python scripts/check_literature_graphs.py
 node scripts/check_atlas_ui.cjs
 ```
 
-No network, API key, external JavaScript or server is needed by the HTML. The build uses Python's standard library. Set `CHROMIUM_PATH`, optionally `PLAYWRIGHT_MODULE`, and `ATLAS_SCREENSHOTS` for real-browser checks and exports. A CJK font must be available for Chinese screenshots.
-
-Chromium checks cover first-screen graphs, all three routes, expanded subquestions, topic and relation inspection, paper/field navigation, all cards, search, scale filters, keyboard interaction, desktop and mobile overflow. Data checks verify exact embedded content, provenance, classification corrections and preservation of all 127 earlier IDs and coverage of all 138 current records. No paper was independently replicated.
-
-The company checks cover all 27 dialogs, Chinese/English/name alias searches, company-to-work and work-to-company navigation, directions without studies, related-company topic links, and mobile dialog overflow.
-
-## Mechanism reading guide
-
-The new “读懂 RSI” entry explains feedback, changed objects, inherited state and the six A–F reading angles. Six switchable examples and four concrete comparisons link directly to research cards. Brief source screens now show their missing explanation rather than appearing complete. RHI received a bounded method reading and a primary-source link to MASS. The 567-lead discovery pool overlaps the catalog in 82 arXiv identifiers; 485 remain unmatched. Counts are retrieval and reading progress, not the size or quality distribution of the field.
-
-## 机构与团队浏览更新 · 2026-10-19
-
-首页先展示三张领域知识图谱，随后展示研究主体与技术路线的交叉矩阵。点击数量进入对应工作；“机构与团队”页可切换机构目录和研究列表，并按主体、路线、产学合作、跨机构合作及阅读状态筛选。AI 专业公司涵盖成熟公司与初创团队；机构类型不作为质量等级。
-
-同一机构的实验室和名称别名已归并浏览，论文原始署名保留。研究列表按固定位置显示方法提要、团队与阅读状态，支持分页；完整 A–F 阅读卡片、来源、论文关系图与全局检索仍然可用。
-
-[机构与合作文字索引](actor-guide.md) · 结构化规则：`data/research-actors.json`。
+The Python build uses the standard library. Set `CHROMIUM_PATH`, optionally `PLAYWRIGHT_MODULE`, and `ATLAS_SCREENSHOTS` for browser checks. A CJK font is required for Chinese screenshot rendering. Checks cover exact embedded data, stable identifiers, reading coverage, routes/scale, field and paper relations, search, cards, company/institution navigation and desktop/mobile layout. Reported research experiments have not been independently reproduced.

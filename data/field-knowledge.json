@@ -769,12 +769,12 @@
             "h-search",
             "h-evaluation"
           ],
-          "summary": "改进程序源码。后继改进程序继续改写自身；模型冻结。",
+          "summary": "Harness 改进器递归替换，直接自修改研究",
           "source_urls": [
             "https://arxiv.org/pdf/2310.02304v3"
           ],
-          "source_location": "arXiv:2310.02304v3（COLM 2024），§3–5，Algorithm 1，Figure 4，Table 1。",
-          "basis": "方法段落支持",
+          "source_location": "§3–7，Algorithm 1，Figure 4，Table 1；Appendix A 的泛化条件、H 的迁移改进器及 K 的任务配置。",
+          "basis": "primary_source_read",
           "primary_route": "harness"
         },
         {
@@ -784,13 +784,12 @@
             "h-search",
             "h-improver"
           ],
-          "summary": "任务提示；变异提示。变异提示也参与演化；不是权重训练。",
+          "summary": "Harness 的任务提示与变异策略协同演化",
           "source_urls": [
-            "https://arxiv.org/html/2309.16797v1",
-            "https://arxiv.org/pdf/2309.16797v1"
+            "https://arxiv.org/html/2309.16797v1"
           ],
-          "source_location": "arXiv:2309.16797v1，§3–6、Figure 1–2、Table 1；ICML 2024 论文页面核对出版信息。",
-          "basis": "方法段落支持",
+          "source_location": "§3–5，Table 1，Appendix F、I、J.4 与 L。",
+          "basis": "primary_source_read",
           "primary_route": "harness"
         },
         {
@@ -799,13 +798,12 @@
             "h-control",
             "h-improver"
           ],
-          "summary": "代理控制代码。自修改的具体范围与跨任务继承仍需方法全文确认。",
+          "summary": "Harness 自修改，包含改进逻辑但尚缺其贡献的隔离迁移实验",
           "source_urls": [
-            "https://github.com/Arvid-pku/Godel_Agent",
             "https://aclanthology.org/2025.acl-long.1354.pdf"
           ],
-          "source_location": "摘要与既有来源记录",
-          "basis": "摘要初筛定位，非完整方法结论",
+          "source_location": "§3–6，Algorithm 1，Tables 1–2，§7–Limitations；Appendix B/C/D 的配置、代码案例和成本。",
+          "basis": "primary_source_read",
           "primary_route": "harness"
         },
         {
@@ -815,12 +813,12 @@
             "h-search",
             "h-inheritance"
           ],
-          "summary": "目标 agent 的 forward 代码。meta-agent 实现固定；目标设计与档案更新。",
+          "summary": "固定meta-agent优化目标harness，属于AI4AI支撑方法",
           "source_urls": [
             "https://arxiv.org/html/2408.08435v1"
           ],
-          "source_location": "arXiv:2408.08435v1，§2–3、§4.1–4.3、Figure 3、Table 1；Appendix A–B 的接口与提示。",
-          "basis": "方法段落支持",
+          "source_location": "§2–4，Tables 1–4；Appendix A/B/C/D/G。",
+          "basis": "primary_source_read",
           "primary_route": "harness"
         },
         {
@@ -830,13 +828,12 @@
             "h-search",
             "h-evaluation"
           ],
-          "summary": "工作流代码；模块提示。搜索器固定；搜索的是工作流。",
+          "summary": "固定搜索器优化目标harness，AI4AI支撑方法",
           "source_urls": [
-            "https://arxiv.org/html/2410.10762v4",
-            "https://arxiv.org/pdf/2410.10762"
+            "https://arxiv.org/html/2410.10762v4"
           ],
-          "source_location": "arXiv:2410.10762v4（ICLR 2025），§3.1–3.2、§4、Algorithm 1、§5.1–5.2、Table 1。",
-          "basis": "方法段落支持",
+          "source_location": "§3–5，Algorithm 1，Tables 1–2，Figures 4–6；Appendix A/B/D/G。",
+          "basis": "primary_source_read",
           "primary_route": "harness"
         },
         {
@@ -847,12 +844,12 @@
             "h-search",
             "h-evaluation"
           ],
-          "summary": "编码代理代码。历史最佳后继承担下一轮修改；非全部外层程序可改。",
+          "summary": "Harness 后继代理实际继续充当改进者",
           "source_urls": [
             "https://arxiv.org/html/2504.15228v1"
           ],
-          "source_location": "arXiv:2504.15228v1，§3、Algorithm 1、§4、Table 1、§4.1。",
-          "basis": "方法段落支持",
+          "source_location": "§3–4，Algorithm1，Table1，Figures3–4；Appendix A/C/D。",
+          "basis": "primary_source_read",
           "primary_route": "harness"
         },
         {
@@ -864,12 +861,12 @@
             "h-improver",
             "h-inheritance"
           ],
-          "summary": "编码代理代码；工具及上下文实现。被选后继负责修改；archive maintenance 与 parent selection 固定。",
+          "summary": "Harness 代理谱系递归自修改，外层演化规则固定",
           "source_urls": [
             "https://arxiv.org/html/2505.22954v3"
           ],
-          "source_location": "arXiv v3（2026-03-12）；§3，§4.1–4.4。",
-          "basis": "方法段落支持",
+          "source_location": "§3–4、§6；Figures2–4；Appendix C/D/E，特别E.1成本与E.2/E.3分层评测。",
+          "basis": "primary_source_read",
           "primary_route": "harness"
         },
         {
@@ -879,12 +876,12 @@
             "h-search",
             "h-evaluation"
           ],
-          "summary": "LLM 模块提示。更新提示；优化算法不自修改。",
+          "summary": "固定优化器的Harness提示优化，属于AI4AI支撑方法",
           "source_urls": [
-            "https://arxiv.org/pdf/2507.19457v2"
+            "https://arxiv.org/html/2507.19457v2"
           ],
-          "source_location": "arXiv 2507.19457v2 PDF；§3、§3.1、Figure 3、Algorithms 1–2、§4。",
-          "basis": "方法段落支持",
+          "source_location": "§2–4，Algorithm1，Tables1–3；Appendix C/D/E/H/I/N。",
+          "basis": "primary_source_read",
           "primary_route": "harness"
         },
         {
@@ -893,13 +890,12 @@
             "h-control",
             "h-search"
           ],
-          "summary": "多代理角色与结构。目标多代理系统演化；外层算法自修改未确认。",
+          "summary": "固定meta-agent的Harness群体搜索，AI4AI支撑方法",
           "source_urls": [
-            "https://arxiv.org/abs/2502.00757",
-            "https://arxiv.org/pdf/2502.00757"
+            "https://arxiv.org/html/2502.00757v1"
           ],
-          "source_location": "摘要与既有来源记录",
-          "basis": "摘要初筛定位，非完整方法结论",
+          "source_location": "§4–6，Algorithm1，Tables1–3；Appendix A/B/C。",
+          "basis": "primary_source_read",
           "primary_route": "harness"
         },
         {
@@ -910,12 +906,12 @@
             "h-memory",
             "h-inheritance"
           ],
-          "summary": "task agent 代码；meta-agent 代码。meta-agent 修改逻辑可改；主实验 parent selection 固定。",
+          "summary": "Harness 任务代理与改进代理共同自修改；主实验外层固定",
           "source_urls": [
             "https://arxiv.org/html/2603.19461v1"
           ],
-          "source_location": "arXiv v1（2026-03-19）；§3–5.2；Appendix D.3；主文说明 Appendix E.5 为父代选择的另行探索。",
-          "basis": "方法段落支持",
+          "source_location": "§3–5，Figures1–4；§7；Appendix A/B/C/D.1–D.4、E.3–E.5。",
+          "basis": "primary_source_read",
           "primary_route": "harness"
         },
         {
@@ -925,12 +921,12 @@
             "h-instructions",
             "h-evaluation"
           ],
-          "summary": "任务专用文本工作流跨轮修订；基础模型、评价者及优化器固定。",
+          "summary": "Harness 连续自反馈修订；改进器固定的任务适应",
           "source_urls": [
             "https://arxiv.org/html/2607.15524v1"
           ],
-          "source_location": "§3–5; Appendix A",
-          "basis": "相关方法与结果段落阅读",
+          "source_location": "§3–6，Algorithm1，Figures5–11；Appendix B/C/E/F。",
+          "basis": "primary_source_read",
           "primary_route": "harness"
         },
         {
@@ -940,13 +936,12 @@
             "h-search",
             "h-memory"
           ],
-          "summary": "harness 变体；成功及失败轨迹。产出训练记录不等于已实现 model 与 harness 共同演化。",
+          "summary": "已测Harness组合/数据生成；Model×Harness闭环仅提出，未训练后继模型",
           "source_urls": [
-            "https://github.com/HKUDS/HELIX",
-            "https://arxiv.org/pdf/2608.13951"
+            "https://arxiv.org/html/2608.13951v1"
           ],
-          "source_location": "摘要与既有来源记录",
-          "basis": "摘要初筛定位，非完整方法结论",
+          "source_location": "§2–6、§9，Figures2–3，Table1；Appendix A/B。",
+          "basis": "primary_source_read",
           "primary_route": "harness"
         },
         {
@@ -956,13 +951,12 @@
             "h-search",
             "h-runtime"
           ],
-          "summary": "harness 代码；元演化过程。仓库初筛显示元演化可改；完整作用边界待确认。",
+          "summary": "Harness与其evolver联合修改，最外meta机制固定",
           "source_urls": [
-            "https://github.com/TailinZhou/hsi",
-            "https://arxiv.org/pdf/2608.08466"
+            "https://arxiv.org/html/2608.08466v1"
           ],
-          "source_location": "摘要与既有来源记录",
-          "basis": "摘要初筛定位，非完整方法结论",
+          "source_location": "§3–5，Equations1–6，Tables1–2，Figures2–3；Appendix A。",
+          "basis": "primary_source_read",
           "primary_route": "harness"
         },
         {
@@ -973,13 +967,12 @@
             "h-search",
             "h-inheritance"
           ],
-          "summary": "可执行 scaffold。创造者与执行者可以不同；不把目标优化等同创造者自改。",
+          "summary": "Harness开发与演化的测量支撑，未递归替换开发环境",
           "source_urls": [
-            "https://arxiv.org/abs/2609.01437",
-            "https://arxiv.org/pdf/2609.01437"
+            "https://arxiv.org/html/2609.01437v1"
           ],
-          "source_location": "摘要与既有来源记录",
-          "basis": "摘要初筛定位，非完整方法结论",
+          "source_location": "§3–4、§6，Tables1–2/7，Figure8；Appendix B/C/D/F–I的配置与代表轨迹。",
+          "basis": "primary_source_read",
           "primary_route": "harness"
         },
         {
@@ -989,12 +982,12 @@
             "h-evaluation",
             "h-runtime"
           ],
-          "summary": "harness 修改提案及接受规则。约束的是自修改过程；泛化和成本约束需要分别观察。",
+          "summary": "多轮Harness优化；外层改进器/正则化规则固定",
           "source_urls": [
             "https://arxiv.org/html/2609.24972v1"
           ],
-          "source_location": "Table 2；提案 / 接受约束及消融",
-          "basis": "方法段落支持",
+          "source_location": "§2–4，Equations1–7，Tables1–4；Appendix C/D。",
+          "basis": "primary_source_read",
           "primary_route": "harness"
         },
         {
@@ -1006,13 +999,12 @@
             "h-runtime",
             "h-search"
           ],
-          "summary": "应用源码；记忆组织与上下文。源码可编辑范围广不等于每种资产均已有有效自改实证。",
+          "summary": "固定proposer优化目标harness，AI4AI支撑方法",
           "source_urls": [
-            "https://github.com/stanford-iris-lab/meta-harness",
-            "https://arxiv.org/pdf/2603.28052"
+            "https://arxiv.org/html/2603.28052v1"
           ],
-          "source_location": "arXiv:2603.28052v1，§3、Algorithm 1、§4.1–4.3、Tables 2–7；尤其 §4.3 的同基准搜索设置。",
-          "basis": "摘要初筛定位，非完整方法结论",
+          "source_location": "§3–4，Algorithm1，Tables5–7；Appendix A/B/C/D。",
+          "basis": "primary_source_read",
           "primary_route": "harness"
         },
         {
@@ -1023,12 +1015,12 @@
             "h-evaluation",
             "h-inheritance"
           ],
-          "summary": "内层研究代理。主实验外层研究者固定；另有后继接管外层的实验。",
+          "summary": "主运行固定外层优化研究harness；外层替换的ignition试验未确认优越性",
           "source_urls": [
             "https://arxiv.org/html/2609.26457v1"
           ],
-          "source_location": "§2.1–2.2，§3.6 ignition test",
-          "basis": "方法段落支持",
+          "source_location": "§2–3.6、§5，Algorithms1，Figures2–7；Appendix A–E。",
+          "basis": "primary_source_read",
           "primary_route": "harness"
         },
         {
@@ -1038,12 +1030,12 @@
             "h-evaluation",
             "h-improver"
           ],
-          "summary": "代理分支；分支研发价值估计。选择机制由研究者设计；它指导自修改分支探索。",
+          "summary": "Harness代理自修改，外层谱系搜索由人类固定",
           "source_urls": [
             "https://arxiv.org/html/2510.21614v1"
           ],
-          "source_location": "§2–4，Assumption 1 / Theorem 1；对照与资源口径",
-          "basis": "方法段落支持",
+          "source_location": "§2–4，Theorem1/Assumption1，Tables1–4；Appendix A/B/C/D。",
+          "basis": "primary_source_read",
           "primary_route": "harness"
         },
         {
@@ -1053,12 +1045,12 @@
             "h-memory",
             "h-inheritance"
           ],
-          "summary": "持久 playbook。内容与条目演化；生成—反思—整理流程固定。",
+          "summary": "Harness持久context适应，改进流程本身固定",
           "source_urls": [
             "https://arxiv.org/html/2510.04618v1"
           ],
-          "source_location": "arXiv:2510.04618v1，§2.2、§3.1–3.2、§4.1–4.3、Table 1；§4.5–4.6 的组件和成本分析。",
-          "basis": "方法段落支持",
+          "source_location": "§2–4，Figures2–4，Tables1–4；Appendix B/D。",
+          "basis": "primary_source_read",
           "primary_route": "harness"
         },
         {
@@ -1067,13 +1059,12 @@
             "h-search",
             "h-runtime"
           ],
-          "summary": "目标程序；部分计算基础设施算法。通用程序发现；只有涉及 AI 基础设施的应用属于 AI4AI，不能全部称自身 RSI。",
+          "summary": "AI4AI基础设施改进与可变meta-prompts的重要机制参考；主实验未闭合模型权重和改进器多代协同训练",
           "source_urls": [
-            "https://arxiv.org/abs/2506.13131",
             "https://arxiv.org/html/2506.13131v1"
           ],
-          "source_location": "摘要与既有来源记录",
-          "basis": "摘要初筛定位，非完整方法结论",
+          "source_location": "§2.1–2.6；§3.1–3.3；§4 Fig.8；§6；App.A规模限制、App.B数学构造",
+          "basis": "primary_source_read",
           "primary_route": "harness"
         },
         {
@@ -1082,13 +1073,12 @@
             "h-instructions",
             "h-search"
           ],
-          "summary": "候选提示或数值解。优化提示是相关机制；未因迭代次数多成为改进器自修改。",
+          "summary": "固定改进器优化持久任务提示的支撑方法，未展示改进器自身递归更新",
           "source_urls": [
-            "https://arxiv.org/abs/2309.03409",
-            "https://arxiv.org/pdf/2309.03409"
+            "https://arxiv.org/html/2309.03409v3"
           ],
-          "source_location": "摘要与既有来源记录",
-          "basis": "摘要初筛定位，非完整方法结论",
+          "source_location": "§2；§4；§5.1–5.5 Tables4/6、Figs7–12；App.A失败案例、App.C meta-prompts",
+          "basis": "primary_source_read",
           "primary_route": "harness"
         },
         {
@@ -1099,12 +1089,12 @@
             "h-search",
             "h-inheritance"
           ],
-          "summary": "运行机制与代理 harness。以执行机制迁移及效率为重点，具体元循环边界见论文。",
+          "summary": "harness自动研究的路线成果；后继以更低成本改进自身的闭环未实测，论文自称RSI-inspired",
           "source_urls": [
             "https://arxiv.org/html/2609.20519v1"
           ],
-          "source_location": "§2.2、§3、§5.1",
-          "basis": "方法段落支持",
+          "source_location": "§2.1–2.5；§3.1–3.5 Tables1–4；§5.1（无独立技术附录）",
+          "basis": "primary_source_read",
           "primary_route": "harness"
         },
         {
@@ -1115,12 +1105,12 @@
             "h-improver",
             "h-inheritance"
           ],
-          "summary": "harness 模块。模块局部改进必须经组合后的整体验证。",
+          "summary": "受进化agent参与分析和改写自身模块，属于harness自改进；外层算法固定，尚无独立元改进能力复利实验",
           "source_urls": [
             "https://arxiv.org/html/2609.14857v2"
           ],
-          "source_location": "§3.1、§6.3–6.4，Table 5",
-          "basis": "方法段落支持",
+          "source_location": "§3–6 Tables1–6；App.C/F/G/H/M；App.J分析/修改提示",
+          "basis": "primary_source_read",
           "primary_route": "harness"
         },
         {
@@ -1130,13 +1120,12 @@
             "h-capabilities",
             "h-runtime"
           ],
-          "summary": "长期 REPL 状态；持久经验与技能。持久执行和经验修订可确认；改进器自修改范围待方法确认。",
+          "summary": "存在持久harness经验更新，主论文以运行系统和测试时计算为主；未隔离其RSI收益，也无模型更新",
           "source_urls": [
-            "https://arxiv.org/abs/2608.23552",
-            "https://arxiv.org/pdf/2608.23552"
+            "https://arxiv.org/html/2608.23552v1"
           ],
-          "source_location": "摘要与既有来源记录",
-          "basis": "摘要初筛定位，非完整方法结论",
+          "source_location": "§2.1–2.6；§3.1–3.5 Table1/Figs5–10；§5；App.A/B",
+          "basis": "primary_source_read",
           "primary_route": "harness"
         },
         {
@@ -1146,12 +1135,12 @@
             "h-improver",
             "h-search"
           ],
-          "summary": "任务代理；评价器。评价器可改；独立 ground-truth anchors 不随评审器替换而抹去。",
+          "summary": "Harness 内任务代理—评价器—元代理共演；没有模型权重训练",
           "source_urls": [
             "https://arxiv.org/html/2606.26294v3"
           ],
-          "source_location": "评价器切换段落；Appendix D 消融与成本边界",
-          "basis": "方法段落支持",
+          "source_location": "v3 §§3–5；附录 B、C.6–C.7、D.2–D.4、E、G",
+          "basis": "primary_source_read",
           "primary_route": "harness"
         },
         {
@@ -1161,13 +1150,12 @@
             "h-memory",
             "h-improver"
           ],
-          "summary": "研究状态种群；部分变体中的搜索控制器。仅部分变体让控制器演化，不能概括为所有 GEAR 设置均递归。",
+          "summary": "Evolve 是 Harness 改进器自改；Prompt/Fixed 是外部AI4AI搜索",
           "source_urls": [
-            "https://arxiv.org/abs/2605.13874",
             "https://arxiv.org/pdf/2605.13874"
           ],
-          "source_location": "摘要与既有来源记录",
-          "basis": "摘要初筛定位，非完整方法结论",
+          "source_location": "§§3.1–3.3、4.1–4.3，表1–2；当前PDF的若干附录引用仍为??",
+          "basis": "primary_source_read",
           "primary_route": "harness"
         },
         {
@@ -1177,13 +1165,12 @@
             "h-capabilities",
             "h-improver"
           ],
-          "summary": "策略层与工具。已有初筛表明元操作固定；层数增加不等于元操作本身进化。",
+          "summary": "固定改进器生成层级Harness；Ω本身没有学习或重写",
           "source_urls": [
-            "https://arxiv.org/abs/2608.24735",
             "https://arxiv.org/pdf/2608.24735"
           ],
-          "source_location": "摘要与既有来源记录",
-          "basis": "摘要初筛定位，非完整方法结论",
+          "source_location": "§§2.2–2.4、3.1–3.4、Limitations；附录D–G、表1–3、5",
+          "basis": "primary_source_read",
           "primary_route": "harness"
         },
         {
@@ -1194,13 +1181,12 @@
             "h-evaluation",
             "h-improver"
           ],
-          "summary": "自身 harness 代码。需要区分补丁产生与后继继续承担改进的完整循环。",
+          "summary": "固定模型在当前Harness下提案并继承新Harness；外层接受规则不变",
           "source_urls": [
-            "https://arxiv.org/abs/2606.09498",
             "https://arxiv.org/pdf/2606.09498"
           ],
-          "source_location": "摘要与既有来源记录",
-          "basis": "摘要初筛定位，非完整方法结论",
+          "source_location": "§§3.1–3.4算法1，§§4.1–4.3表1与演化案例，结论与附录提示/轨迹",
+          "basis": "primary_source_read",
           "primary_route": "harness"
         },
         {
@@ -1210,13 +1196,12 @@
             "h-evaluation",
             "h-inheritance"
           ],
-          "summary": "技能文本。外部优化模型修改技能；不是优化模型权重自改。",
+          "summary": "固定外层程序与权重，但optimizer-side meta-skill由跨epoch反馈更新",
           "source_urls": [
-            "https://arxiv.org/abs/2605.23904",
             "https://arxiv.org/pdf/2605.23904"
           ],
-          "source_location": "摘要与既有来源记录",
-          "basis": "摘要初筛定位，非完整方法结论",
+          "source_location": "§§3.1–3.7、4.1–4.4表1–4；附录B、C与提示模板",
+          "basis": "primary_source_read",
           "primary_route": "harness"
         },
         {
@@ -1227,13 +1212,12 @@
             "h-experience",
             "h-inheritance"
           ],
-          "summary": "经验记忆；工具与专家资产。经验与能力资产双向影响；不据此认定更新算法也进化。",
+          "summary": "Harness内资产与经验共演；创建过程因检索经验改变，但外层算法不自改",
           "source_urls": [
-            "https://arxiv.org/abs/2604.10923",
             "https://arxiv.org/pdf/2604.10923"
           ],
-          "source_location": "摘要与既有来源记录",
-          "basis": "摘要初筛定位，非完整方法结论",
+          "source_location": "§§3.1–3.3、4–5表2–4；附录B.3、C的规划/创建/反思提示与限制",
+          "basis": "primary_source_read",
           "primary_route": "harness"
         },
         {
@@ -1243,12 +1227,12 @@
             "h-evaluation",
             "h-inheritance"
           ],
-          "summary": "情景记忆；记忆效用值。LLM 参数冻结；记忆排序价值学习，更新规则本身固定。",
+          "summary": "Harness记忆的非参数强化学习；更新器固定",
           "source_urls": [
             "https://arxiv.org/html/2601.03192v1"
           ],
-          "source_location": "§3–4，特别是实际使用的式(8)，区别于一般 TD 形式。",
-          "basis": "方法段落支持",
+          "source_location": "§§3–5，表1–3、检索消融；附录A.1–A.2理论假设",
+          "basis": "primary_source_read",
           "primary_route": "harness"
         },
         {
@@ -1258,13 +1242,12 @@
             "h-experience",
             "h-inheritance"
           ],
-          "summary": "网页 API 技能。技能库增长并用于后续任务；生成过程是否自改另论。",
+          "summary": "Harness技能持续积累；生成和评价外层固定",
           "source_urls": [
-            "https://arxiv.org/html/2504.07079v1",
             "https://arxiv.org/pdf/2504.07079"
           ],
-          "source_location": "摘要与既有来源记录",
-          "basis": "摘要初筛定位，非完整方法结论",
+          "source_location": "§§2.1–2.3、3.3–3.4、4.1–4.3表1–2；附录A与D.2.1",
+          "basis": "primary_source_read",
           "primary_route": "harness"
         },
         {
@@ -1274,13 +1257,12 @@
             "h-runtime",
             "h-experience"
           ],
-          "summary": "任务运行时创建的自定义工具脚本。主实验不改变 agentic loop；论文重点是同任务在线工具创造，不能说已证明跨任务递归演化。",
+          "summary": "Harness任务内在线工具适应；没有跨代改进器自改证据",
           "source_urls": [
-            "https://arxiv.org/html/2511.13646v1",
-            "https://arxiv.org/pdf/2511.13646"
+            "https://arxiv.org/html/2511.13646v1"
           ],
-          "source_location": "arXiv:2511.13646v1，§2.1–2.2、§3、§4.1–4.2、Tables 1–3；§2.1 明确“不改变 agentic loop”。",
-          "basis": "方法段落支持",
+          "source_location": "v1 §§2.1–2.2、3、4.1–4.3表1–6；附录C消融任务",
+          "basis": "primary_source_read",
           "primary_route": "harness"
         },
         {
@@ -1291,13 +1273,12 @@
             "h-improver",
             "h-inheritance"
           ],
-          "summary": "代理分支；跨分支经验。初筛支持经验共享引导结构修改；具体递归边界待方法核实。",
+          "summary": "Harness代码种群进化；跨分支经验继承，而非模型权重训练",
           "source_urls": [
-            "https://arxiv.org/abs/2602.04837",
             "https://arxiv.org/pdf/2602.04837"
           ],
-          "source_location": "摘要与既有来源记录",
-          "basis": "摘要初筛定位，非完整方法结论",
+          "source_location": "§§3.1–3.2算法1–2，§§4.1–4.3、5.1–5.4；附录表3",
+          "basis": "primary_source_read",
           "primary_route": "harness"
         },
         {
@@ -1308,13 +1289,12 @@
             "h-experience",
             "h-search"
           ],
-          "summary": "harness 集合；任务路由及经验。持续适应含人类引导信号；路由与改进器更新分别判断。",
+          "summary": "Harness持续演化与任务级路由；模型固定，主实验无HITL",
           "source_urls": [
-            "https://arxiv.org/abs/2606.01770",
             "https://arxiv.org/pdf/2606.01770"
           ],
-          "source_location": "摘要与既有来源记录",
-          "basis": "摘要初筛定位，非完整方法结论",
+          "source_location": "§§3.1–3.5、4表2；附录B表3、D路由对照与表13人工事件日志",
+          "basis": "primary_source_read",
           "primary_route": "harness"
         },
         {
@@ -1325,14 +1305,13 @@
             "h-capabilities",
             "h-experience"
           ],
-          "summary": "技能；提示；记忆。跨交互持久改进；早期人类参与和后续自动循环分开。",
+          "summary": "主实验为持久 Harness 适应；§3.3/附录 D 还含 Model–Harness 协同更新。Refiner 程序及学习规则未显示自主改写。",
           "source_urls": [
-            "https://arxiv.org/abs/2605.09998",
             "https://arxiv.org/html/2605.09998v1"
           ],
-          "source_location": "摘要与既有来源记录",
-          "basis": "摘要初筛定位，非完整方法结论",
-          "primary_route": "harness"
+          "source_location": "正文 §§3.1–3.3、4；附录 C、D.1–D.4，尤其表 3–5 与在线联合训练段落",
+          "basis": "primary_source_read",
+          "primary_route": "hybrid"
         },
         {
           "work_id": "shinkaevolve",
@@ -1340,13 +1319,12 @@
             "h-search",
             "h-runtime"
           ],
-          "summary": "候选程序；包括部分 agent harness。算法演化框架；普通程序任务属于相关搜索机制，不直接证明自身 RSI。",
+          "summary": "通用外部程序进化；含 AI4AI 应用但没有证据证明进化器本身递归改写或基础模型在线自训练。",
           "source_urls": [
-            "https://arxiv.org/abs/2509.19349",
             "https://arxiv.org/pdf/2509.19349"
           ],
-          "source_location": "摘要与既有来源记录",
-          "basis": "摘要初筛定位，非完整方法结论",
+          "source_location": "正文方法、AIME/MoE 应用及消融（程序采样、模型 bandit、novelty rejection）；补充实现细节",
+          "basis": "primary_source_read",
           "primary_route": "harness"
         },
         {
@@ -1357,12 +1335,12 @@
             "h-experience",
             "h-inheritance"
           ],
-          "summary": "可组合代码技能库。固定 GPT-4 和课程程序；持久技能积累成立，元算法自改未示范。",
+          "summary": "具有跨任务持久继承的 Harness 学习；技能生成/验证器框架本身固定，未展示参数更新或改进器递归改写。",
           "source_urls": [
             "https://arxiv.org/html/2305.16291v2"
           ],
-          "source_location": "§2、§3；本轮重读结构、技能库与反馈过程。",
-          "basis": "方法段落支持",
+          "source_location": "正文 §2 系统三模块、§3 实验/消融、局限与补充新世界迁移设置",
+          "basis": "primary_source_read",
           "primary_route": "harness"
         },
         {
@@ -1373,12 +1351,12 @@
             "h-experience",
             "h-inheritance"
           ],
-          "summary": "LLM 改写可执行的研究探索策略代码，用已有研究树进行回放、比较和选择；基础 agent 与评价器保持不变。",
+          "summary": "Harness探索策略跨轮适应，固定外部代码改进者",
           "source_urls": [
             "https://arxiv.org/html/2609.14858v2"
           ],
-          "source_location": "§3 Policy improvement and selection; Appendix D.2",
-          "basis": "survey_classification",
+          "source_location": "§2–5，Equation1，Figures3–7，Tables1–2；Appendix B/C/E。",
+          "basis": "primary_source_read",
           "primary_route": "harness"
         },
         {
@@ -1388,12 +1366,12 @@
             "h-capabilities",
             "h-search"
           ],
-          "summary": "冻结视觉语言模型，通过偏好误差改进 reward agent 的技能和工具；该评价系统随后用于外部图像编辑模型的 GRPO 训练。",
+          "summary": "Harness奖励器自适应后用于外部模型GRPO；未展示模型—奖励器持续互教",
           "source_urls": [
             "https://arxiv.org/html/2605.08703v1"
           ],
-          "source_location": "Abstract; §1; §2; §3.2; §4",
-          "basis": "survey_classification",
+          "source_location": "§§2.1–2.5、3.1–3.3表1–2；附录B.3–B.4和最终库表3",
+          "basis": "primary_source_read",
           "primary_route": "harness"
         },
         {
@@ -1403,12 +1381,12 @@
             "h-search",
             "h-evaluation"
           ],
-          "summary": "以训练内部观测提出假设和干预，再用重复训练结果决定下一步研究。",
+          "summary": "AI4AI 机制引导实验系统；公开材料未证实改进器自身迭代升级。与 Harness 研究相关，不能推定 Model–Harness 协同训练。",
           "source_urls": [
             "https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch"
           ],
-          "source_location": "官方博客：OPHIS framework；Grokking / NanoGPT 两个案例；Looking Forward",
-          "basis": "survey_classification",
+          "source_location": "官方技术发布 2026-07-23：框架、Grokking 对照、NanoGPT observables / 干预与统计结果、披露边界",
+          "basis": "primary_source_read",
           "primary_route": "harness",
           "cross_route_reference": false
         },
@@ -1419,13 +1397,13 @@
             "h-experience",
             "h-evaluation"
           ],
-          "summary": "把训练协议、观测与分析组织成可执行依赖图，供人或 agent 构造、运行和比较实验。",
+          "summary": "观测与实验基础设施；公开演示研究循环由人运行，不能作为直接 RSI 成果计数。",
           "source_urls": [
             "https://meta-circle.com/blog/comfyresearch-see-how-learning-happens",
             "https://github.com/MetaCircleAI/ComfyResearch"
           ],
-          "source_location": "官方博客：From notebook to graph；Watching a run；Changing one thing；Where this goes",
-          "basis": "survey_classification",
+          "source_location": "官方发布 2026-08-11 全文：typed graph、33 observable nodes、parameter sweeps、实验案例及 human-in-the-loop 说明；官方仓库 README",
+          "basis": "primary_source_read",
           "primary_route": "harness",
           "cross_route_reference": false
         },
@@ -1435,12 +1413,12 @@
             "h-experience",
             "h-evaluation"
           ],
-          "summary": "把权重、梯度、激活和注意力统计与模型模块对应，比较不同深度与训练条件。",
+          "summary": "学习动力学观测资源，属于 RSI 的使能工具而非直接 RSI 系统。",
           "source_urls": [
             "https://meta-circle.com/blog/observe-learning-in-full"
           ],
-          "source_location": "官方发布：Abstract；Across layers / setups；What the comparison reveals",
-          "basis": "survey_classification",
+          "source_location": "官方发布 2026-08-06 全文：数据集/训练设置、1820 curves、Block 1 attention entropy 对照、观察与解释边界",
+          "basis": "primary_source_read",
           "primary_route": "harness",
           "cross_route_reference": false
         },
@@ -1451,13 +1429,13 @@
             "h-runtime",
             "h-evaluation"
           ],
-          "summary": "自动提出并验证 scaling law、训练实现和 GPU kernel 的改进，以实验结果继续搜索。",
+          "summary": "AI4AI 自动优化成果；不能据公开产物推定研究器本体递归改写或 Model–Harness 联合训练。",
           "source_urls": [
             "https://www.apexin.ai/assets/papers/what-happens-when-ai-starts-improving-ai.pdf",
             "https://github.com/apexin-ai/Apex-Tune-results"
           ],
-          "source_location": "7 页报告：Evaluations I–IV；Beyond the Benchmarks；配套结果仓库",
-          "basis": "survey_classification",
+          "source_location": "八页官方报告全文（四项技术案例）；成果仓库 README 当前 NanoChat / TriMul / attention / SLDBench 表及来源说明",
+          "basis": "primary_source_read",
           "primary_route": "harness",
           "cross_route_reference": false
         },
@@ -1467,13 +1445,13 @@
             "h-evaluation",
             "h-search"
           ],
-          "summary": "公司报告自主研究系统产生科研项目与论文，并用真实外部同行评审检验产出。",
+          "summary": "自动科研流程及外部评审案例；研究器自身 RSI 机制与完整项目证据披露不足。",
           "source_urls": [
-            "https://github.com/apexin-ai/apex-research-report",
-            "https://www.apexin.ai/assets/papers/apex-research-2026.pdf"
+            "https://www.apexin.ai/assets/papers/apex-research-2026.pdf",
+            "https://github.com/apexin-ai/apex-research-report"
           ],
-          "source_location": "官方 README：Core Message、Key Results；PDF 链接已定位但本轮未完成正文提取",
-          "basis": "survey_classification",
+          "source_location": "官方四页报告全文：34 项项目、资源/人工占比、ARR 评分、撤稿与未来公开计划；官方仓库 README",
+          "basis": "primary_source_read",
           "primary_route": "harness",
           "cross_route_reference": false
         },
@@ -1482,13 +1460,13 @@
           "topic_ids": [
             "h-evaluation"
           ],
-          "summary": "在相同科研任务上逐步撤去方法指导，区分按步骤执行和自主选择科研方法的能力。",
+          "summary": "跨路线的理论、方法或评测；不单独计作已实现递归自改进的系统。",
           "source_urls": [
-            "https://arxiv.org/abs/2608.17271",
+            "https://arxiv.org/html/2608.17271v1",
             "https://github.com/apexin-ai/ASI-Bench"
           ],
-          "source_location": "论文摘要；官方仓库 Overview、B1–B4、任务发布与评分协议",
-          "basis": "survey_classification",
+          "source_location": "§2基准结构、§3结果与成本；附录B署名、C任务格式、D同任务B1–B4实例。",
+          "basis": "primary_source_read",
           "primary_route": "crosscut",
           "cross_route_reference": true
         },
@@ -1500,13 +1478,13 @@
             "h-evaluation",
             "h-runtime"
           ],
-          "summary": "长时程并行研究线程积累实验上下文、组合候选分支，并对改进进行方差与 reward-hack 检查。",
+          "summary": "具有公开优化产物的 AI4AI 研究系统；没有足够证据推定研究器本身发生递归权重/harness 协同更新。",
           "source_urls": [
             "https://www.recursive.com/articles/first-steps-toward-automated-ai-research",
             "https://github.com/recursive-org/first-steps-toward-automated-ai-research"
           ],
-          "source_location": "官方报告：研究循环；NanoChat、NanoGPT Speedrun 与 SOL-ExecBench 案例",
-          "basis": "survey_classification",
+          "source_location": "官方 2026-06-11 发布全文（NanoChat、NanoGPT、SOL、有效评估与局限）；成果仓库 README",
+          "basis": "primary_source_read",
           "primary_route": "harness",
           "cross_route_reference": false
         },
@@ -1518,13 +1496,14 @@
             "h-instructions",
             "h-experience"
           ],
-          "summary": "从任务经验创建和修改技能文档，保留记忆与会话检索，使后续执行使用已有经验。",
+          "summary": "产品化的持久 Harness 学习；改进器/底层模型本身固定，未证明每次写入提高泛化能力。",
           "source_urls": [
             "https://github.com/NousResearch/hermes-agent",
-            "https://hermes-agent.nousresearch.com/docs/user-guide/features/skills"
+            "https://hermes-agent.nousresearch.com/docs/user-guide/features/skills",
+            "https://hermes-agent.nousresearch.com/docs/user-guide/features/memory"
           ],
-          "source_location": "README：learning loop；官方文档 Skills System：skill_manage、/learn、跨会话加载",
-          "basis": "survey_classification",
+          "source_location": "官方仓库 README；Skills System 的 Agent-Managed Skills / Gating writes；Persistent Memory 的 frozen snapshot、capacity、session search、background review / model routing / budget",
+          "basis": "primary_source_read",
           "primary_route": "harness",
           "cross_route_reference": false
         },
@@ -1534,14 +1513,14 @@
             "h-search",
             "h-experience"
           ],
-          "summary": "公开定位为长时程 AI 研发系统；公司报告多日研究与 RE-Bench 结果。",
+          "summary": "AI4AI 自动研究与目标模型训练；不等于研究 agent 自身参数与 Harness 协同进化。PTB 目标 1.7B–4B，不满足 ≥27B 模型主线门槛。",
           "source_urls": [
             "https://intology.ai/blog/previewing-locus",
-            "https://intology.ai/about",
-            "https://intology.ai/blog/zochi-tech-report"
+            "https://intology.ai/blog/scaling-automated-post-training",
+            "https://github.com/IntologyAI/scaling-automated-post-training/blob/master/artifacts/README.md"
           ],
-          "source_location": "官方发布索引和 About 摘要；技术正文当前未完整提取",
-          "basis": "survey_classification",
+          "source_location": "Previewing Locus（2025-11-19）全文与脚注；Scaling Automated Post-Training（2026-08-03）正文和附录 A–G；公开 artifacts README 的复现限制",
+          "basis": "primary_source_read",
           "primary_route": "harness",
           "cross_route_reference": false
         },
@@ -1552,16 +1531,77 @@
             "h-control",
             "h-evaluation"
           ],
-          "summary": "自动科学家提出和检验算法假设，自动工程师将被验证的模型改进转成可部署实现。",
+          "summary": "自动 AI 研究实验室方向；目前公开可读证据不足以判定直接 RSI 算法类别。",
           "source_urls": [
-            "https://www.autoscience.ai/blog/autoscience-autonomous-ai-lab",
             "https://www.businesswire.com/news/home/20260318760407/en/Autoscience-Raises-$14M-to-Build-the-Worlds-First-Automated-AI-Research-Lab",
-            "https://www.autoscience.ai/blog/meet-carl"
+            "https://www.autoscience.ai/blog/autoscience-autonomous-ai-lab",
+            "https://www.autoscience.ai/blog/meet-carl",
+            "https://www.autoscience.ai/blog/introducing-mira"
           ],
-          "source_location": "公司正式新闻稿（Business Wire 同步发布）；官网产品与 Carl 发布索引",
-          "basis": "survey_classification",
+          "source_location": "公司署名 Business Wire 2026-03-18 完整发布稿；官方 Carl/Mira/实验室页面访问受限，仅检索索引可见",
+          "basis": "primary_source_read",
           "primary_route": "harness",
           "cross_route_reference": false
+        },
+        {
+          "work_id": "reflexion",
+          "topic_ids": [
+            "h-memory",
+            "h-experience",
+            "h-evaluation"
+          ],
+          "summary": "Harness / 反思记忆；以任务内跨试验学习为主要证据，不计为改进器递归自修改。",
+          "source_urls": [
+            "https://arxiv.org/html/2303.11366v4"
+          ],
+          "source_location": "§3–5，Algorithm 1，Tables 1–3；Appendix B.1、C、D",
+          "basis": "primary_source_read",
+          "primary_route": "harness"
+        },
+        {
+          "work_id": "reasoningbank",
+          "topic_ids": [
+            "h-memory",
+            "h-experience",
+            "h-search"
+          ],
+          "summary": "Harness / 跨任务推理记忆；改进记忆内容，未改变记忆学习规则。",
+          "source_urls": [
+            "https://arxiv.org/pdf/2509.25140v2"
+          ],
+          "source_location": "v2（2026-03-16）；§3–5、Tables 1–5；Appendices A–C、E",
+          "basis": "primary_source_read",
+          "primary_route": "harness"
+        },
+        {
+          "work_id": "memskill",
+          "topic_ids": [
+            "h-memory",
+            "h-control",
+            "h-experience"
+          ],
+          "summary": "Harness路线：学到的选择控制器及演化技能库；Model定义为基础模型/adapter时不属于双路线协同。",
+          "source_urls": [
+            "https://arxiv.org/html/2602.02474v1"
+          ],
+          "source_location": "§3–4，记忆技能算法/消融，AppendixA.1实现与评估配置。",
+          "basis": "primary_source_read",
+          "primary_route": "harness"
+        },
+        {
+          "work_id": "envharness",
+          "topic_ids": [
+            "h-runtime",
+            "h-experience",
+            "h-memory"
+          ],
+          "summary": "主归Harness：环境wrapper与外部技能共演化；另有8B模型训练支撑实验，非≥27B混合循环。",
+          "source_urls": [
+            "https://arxiv.org/html/2608.19880"
+          ],
+          "source_location": "§2–5，Tables2–5，AppendicesE分割、F训练与多轮技能、H限制。",
+          "basis": "primary_source_read",
+          "primary_route": "harness"
         }
       ]
     },
@@ -2274,13 +2314,12 @@
             "m-preferences",
             "m-bootstrapping"
           ],
-          "summary": "以当前输出与原始示范分布比较，迭代改进模型；self-play 一词不等于动态出题。",
+          "summary": "Model 路线的迭代偏好自训练机制；不是自主修改训练算法的强 RSI。",
           "source_urls": [
-            "https://arxiv.org/html/2401.01335v2",
-            "https://github.com/uclaml/SPIN"
+            "https://arxiv.org/html/2401.01335v2"
           ],
-          "source_location": "摘要与既有来源记录",
-          "basis": "abstract_position",
+          "source_location": "§4–6；Algorithm 1；Tables 2–4；Appendices B.1、C",
+          "basis": "primary_source_read",
           "primary_route": "model"
         },
         {
@@ -2289,12 +2328,12 @@
             "m-preferences",
             "m-evaluator-learning"
           ],
-          "summary": "回答与 judge 共享模型；自生偏好用于逐轮 DPO。",
+          "summary": "Model 路线中回答者与自奖励 judge 共享参数，训练信号生成能力随模型更新；并无 harness 自改。",
           "source_urls": [
             "https://arxiv.org/html/2401.10020v1"
           ],
-          "source_location": "§2.1–2.4，§3.1–3.2；特别是 §3.1.3 的固定出题模型。",
-          "basis": "method_supported",
+          "source_location": "§2.1–2.4；§3.1–3.2；Tables 1–2；§6",
+          "basis": "primary_source_read",
           "primary_route": "model"
         },
         {
@@ -2304,12 +2343,12 @@
             "m-bootstrapping",
             "m-continual-adaptation"
           ],
-          "summary": "学习自编辑数据 / 更新指令，并用内层适应效果训练编辑策略。",
+          "summary": "Model 路线的元学习：参数更新生成策略由更新后的任务效果训练，训练程序本身固定。",
           "source_urls": [
             "https://arxiv.org/html/2506.10943v1"
           ],
-          "source_location": "§3；§4 few-shot setup；Appendix A",
-          "basis": "method_supported",
+          "source_location": "§3–5；Tables 1–2；Appendices A、B.1–B.5、C",
+          "basis": "primary_source_read",
           "primary_route": "model"
         },
         {
@@ -2317,13 +2356,12 @@
           "topic_ids": [
             "m-experience-learning"
           ],
-          "summary": "SFT 与 cost-aware GRPO 训练外部 BPE 状态访问策略；不因名称含 harness 就当成学习更新器。",
+          "summary": "主更新对象为模型的 harness 协调策略；经验库共同更新形成混合连接，但不涉及 runtime 自编程。",
           "source_urls": [
-            "https://arxiv.org/pdf/2608.05446",
-            "https://arxiv.org/abs/2608.05446"
+            "https://arxiv.org/pdf/2608.05446"
           ],
-          "source_location": "摘要与既有来源记录",
-          "basis": "abstract_position",
+          "source_location": "§2–3；Tables 1–4；Appendices B–G、K",
+          "basis": "primary_source_read",
           "primary_route": "model"
         },
         {
@@ -2332,13 +2370,12 @@
             "m-bootstrapping",
             "m-verifiable-feedback"
           ],
-          "summary": "正确答案筛选自生推理链，答案辅助 rationalization 后再微调。",
+          "summary": "Model 路线的结果筛选推理自训练基础方法，含答案条件化补救，不是训练算法自主改写。",
           "source_urls": [
-            "https://arxiv.org/pdf/2203.14465",
-            "https://arxiv.org/abs/2203.14465"
+            "https://arxiv.org/pdf/2203.14465"
           ],
-          "source_location": "摘要与既有来源记录",
-          "basis": "abstract_position",
+          "source_location": "§3–5；Algorithm 1；Tables 1–2；Appendices G、H",
+          "basis": "primary_source_read",
           "primary_route": "model"
         },
         {
@@ -2347,12 +2384,12 @@
             "m-bootstrapping",
             "m-verifiable-feedback"
           ],
-          "summary": "自生样本按外部二元反馈筛选，E/M 轮交替。",
+          "summary": "Model 路线的验证式自训练；通过更好的生成数据迭代改进，验证器与训练程序固定。",
           "source_urls": [
-            "https://arxiv.org/pdf/2312.06585v4"
+            "https://arxiv.org/html/2312.06585v4"
           ],
-          "source_location": "首页；§3 Algorithm 1、§5–6、Figure 4/7",
-          "basis": "method_supported",
+          "source_location": "§2–3；Algorithm 1；§5.1–5.4；Figures 2–10；§6",
+          "basis": "primary_source_read",
           "primary_route": "model"
         },
         {
@@ -2362,12 +2399,12 @@
             "m-bootstrapping",
             "m-continual-adaptation"
           ],
-          "summary": "Lean 验证搜索经验，训练证明网络并做 test-time RL。",
+          "summary": "Model 路线的验证式经验学习与测试时训练；证明者和形式化者存在反馈，harness 实现由研究者固定。",
           "source_urls": [
             "https://www.nature.com/articles/s41586-025-09833-y"
           ],
-          "source_location": "Agent / Training / Methods: Proof network；test-time RL",
-          "basis": "method_supported",
+          "source_location": "主文 AlphaProof、Main RL progress、Inference-time scaling；Methods: Lean environment、Prover agent、Training、TTRL",
+          "basis": "primary_source_read",
           "primary_route": "model"
         },
         {
@@ -2376,12 +2413,12 @@
             "m-experience-learning",
             "m-self-play"
           ],
-          "summary": "AI 提供游戏任务与轨迹反馈，执行代理从交互经验学习；此映射不声称出题者同步训练。",
+          "summary": "Model 路线的交互经验自改进；未证明出题者、judge 或世界模型随之共同训练。",
           "source_urls": [
             "https://arxiv.org/html/2512.04797v1"
           ],
-          "source_location": "首页；§3.3、§4.5，Figures 15–17",
-          "basis": "method_supported",
+          "source_location": "§3.3–3.4；§4.2、4.5；Figures 15–17；Appendix C；§5",
+          "basis": "primary_source_read",
           "primary_route": "model"
         },
         {
@@ -2390,12 +2427,12 @@
             "m-preferences",
             "m-bootstrapping"
           ],
-          "summary": "原则引导 self-critique / revision，再以 AI 偏好训练奖励与策略；非多代奖励者共演证据。",
+          "summary": "Model 路线的 RLAIF/原则监督基础方法；不是多代改进器自改的直接证据。",
           "source_urls": [
             "https://arxiv.org/html/2212.08073v1"
           ],
-          "source_location": "§1.2、§3、§4；Figure 2 的 52B RL runs",
-          "basis": "method_supported",
+          "source_location": "§1.4；§3–4；Figures 2–10；Appendices C、E",
+          "basis": "primary_source_read",
           "primary_route": "model"
         },
         {
@@ -2404,12 +2441,12 @@
             "m-evaluator-learning",
             "m-bootstrapping"
           ],
-          "summary": "合成判断与偏好训练 evaluator，再以新评价生成下一轮训练数据。",
+          "summary": "Model 路线的评价器自训练；提升改进信号生成组件，未同时训练回答政策。",
           "source_urls": [
             "https://arxiv.org/html/2408.02666v1"
           ],
-          "source_location": "§3–4：构造标签、种子重置、实验",
-          "basis": "method_supported",
+          "source_location": "§3–6；Tables 1–6；Appendix A.1–A.2；§8",
+          "basis": "primary_source_read",
           "primary_route": "model"
         },
         {
@@ -2417,12 +2454,12 @@
           "topic_ids": [
             "m-self-play"
           ],
-          "summary": "攻防模型相互提供训练压力；角色关系是 adversarial self-play。",
+          "summary": "Model 路线的对抗共同训练：攻击者和防御者参数都更新；harness支持搜索但未自改。",
           "source_urls": [
             "https://cdn.openai.com/pdf/gpt-red-automated-red-teaming-via-self-play-at-scale.pdf"
           ],
-          "source_location": "论文 §5；官方自玩与生产应用说明",
-          "basis": "method_supported",
+          "source_location": "§4–8；Figures 4–7、10–13；Appendices A、C",
+          "basis": "primary_source_read",
           "primary_route": "model"
         },
         {
@@ -2432,12 +2469,12 @@
             "m-curriculum-learning",
             "m-experience-learning"
           ],
-          "summary": "搜索增强的 proposer / solver 共训，求解表现决定训练任务。",
+          "summary": "Model 路线的双模型课程共演化，检索 harness 不随训练自主改写。",
           "source_urls": [
             "https://arxiv.org/html/2601.07055v2"
           ],
-          "source_location": "§3.1 设置与学习目标；方法与实验概述",
-          "basis": "method_supported",
+          "source_location": "§3–4；Tables 1–3；Appendix .1–.2，Tables 5–10",
+          "basis": "primary_source_read",
           "primary_route": "model"
         },
         {
@@ -2447,13 +2484,12 @@
             "m-curriculum-learning",
             "m-experience-learning"
           ],
-          "summary": "课程代理与工具执行代理形成任务生成和求解反馈。",
+          "summary": "Model 路线的双模型课程共演化和工具推理策略训练；工具存在不等于 harness 自进化。",
           "source_urls": [
-            "https://arxiv.org/pdf/2511.16043",
-            "https://arxiv.org/abs/2511.16043"
+            "https://arxiv.org/pdf/2511.16043"
           ],
-          "source_location": "摘要与既有来源记录",
-          "basis": "abstract_position",
+          "source_location": "§3–4；Tables 1–5；Appendices A、D、F",
+          "basis": "primary_source_read",
           "primary_route": "model"
         },
         {
@@ -2462,13 +2498,12 @@
             "m-self-play",
             "m-curriculum-learning"
           ],
-          "summary": "challenger 围绕 solver 能力边缘生成下一批任务。",
+          "summary": "Model 路线的双模型自生成课程；反馈依据多数票，缺少独立可执行真值。",
           "source_urls": [
-            "https://arxiv.org/pdf/2508.05004",
-            "https://arxiv.org/abs/2508.05004"
+            "https://arxiv.org/pdf/2508.05004"
           ],
-          "source_location": "摘要与既有来源记录",
-          "basis": "abstract_position",
+          "source_location": "§2–4；Tables 1–3；Appendices B、D–G",
+          "basis": "primary_source_read",
           "primary_route": "model"
         },
         {
@@ -2478,13 +2513,12 @@
             "m-verifiable-feedback",
             "m-curriculum-learning"
           ],
-          "summary": "同一模型兼任 proposer / solver，执行器给 correctness，求解成功率给 learnability。",
+          "summary": "Model 路线的自提任务—环境验证—联合参数学习；固定Python环境不属于被进化的harness。",
           "source_urls": [
-            "https://arxiv.org/html/2505.03335v1",
-            "https://arxiv.org/abs/2505.03335"
+            "https://arxiv.org/html/2505.03335v1"
           ],
-          "source_location": "摘要与既有来源记录",
-          "basis": "abstract_position",
+          "source_location": "§3–4；Algorithm1；Tables1–3；Appendices B–D",
+          "basis": "primary_source_read",
           "primary_route": "model"
         },
         {
@@ -2494,13 +2528,12 @@
             "m-verifiable-feedback",
             "m-experience-learning"
           ],
-          "summary": "工具任务生成与工具求解互相反馈；运行结果支持训练信号。",
+          "summary": "Model 路线的工具调用课程共演化。工具schema是合成任务内容，未见运行时工具或harness代码自主升级。",
           "source_urls": [
-            "https://arxiv.org/html/2602.21320v1",
-            "https://arxiv.org/abs/2602.21320"
+            "https://arxiv.org/html/2602.21320v1"
           ],
-          "source_location": "摘要与既有来源记录",
-          "basis": "abstract_position",
+          "source_location": "§3–4；Tables1–4；Appendices B–H",
+          "basis": "primary_source_read",
           "primary_route": "model"
         },
         {
@@ -2508,12 +2541,12 @@
           "topic_ids": [
             "m-learned-updates"
           ],
-          "summary": "奖励程序设计者通过内层策略训练后的验证效果更新。",
+          "summary": "Model主位置为奖励proposer学习，连接训练harness奖励程序；DERL-full在搜索中跨轮继承优胜policy，最后以选出的奖励序列从头训练报告模型。",
           "source_urls": [
             "https://arxiv.org/html/2512.13399v3"
           ],
-          "source_location": "§3.1、§5.1、Appendix C",
-          "basis": "method_supported",
+          "source_location": "§3–5；Tables1–2；Appendices A–C、F–I",
+          "basis": "primary_source_read",
           "primary_route": "model"
         },
         {
@@ -2521,13 +2554,12 @@
           "topic_ids": [
             "m-learned-updates"
           ],
-          "summary": "训练 harness 编辑模型，用目标 agent 重跑后的成功评价编辑效果；与 Hybrid 关联。",
+          "summary": "Model 路线训练 harness 编辑者，连到 Harness 产物；未展示持续 model×harness 双向共同进化。",
           "source_urls": [
-            "https://arxiv.org/pdf/2608.02276",
-            "https://arxiv.org/abs/2608.02276"
+            "https://arxiv.org/pdf/2608.02276"
           ],
-          "source_location": "摘要、§4 训练设置、Appendix B.1–B.2 的 9B 编辑模型；仅此范围。",
-          "basis": "abstract_position",
+          "source_location": "§3–4；Algorithm 1；Tables 1–2；Appendices B–F",
+          "basis": "primary_source_read",
           "primary_route": "model"
         },
         {
@@ -2536,13 +2568,12 @@
             "m-experience-learning",
             "m-curriculum-learning"
           ],
-          "summary": "失败轨迹产生新课程，outcome reward 与在线 RL 更新网页行动策略。",
+          "summary": "Model主线；新课程是训练输入，优化器和网页harness保持固定。",
           "source_urls": [
-            "https://arxiv.org/pdf/2411.02337",
-            "https://arxiv.org/abs/2411.02337"
+            "https://arxiv.org/html/2411.02337v3"
           ],
-          "source_location": "摘要与既有来源记录",
-          "basis": "abstract_position",
+          "source_location": "ICLR 2025 v3；§2、§3.1–3.8、Table 1–3、Appendix A–B（Algorithm 1）",
+          "basis": "primary_source_read",
           "primary_route": "model"
         },
         {
@@ -2552,13 +2583,12 @@
             "m-bootstrapping",
             "m-verifiable-feedback"
           ],
-          "summary": "搜索轨迹训练 policy 与 process preference model，结果验证约束反馈。",
+          "summary": "Model机制参考；实际完整演化目标7B，不把236B启动教师计为训练规模。",
           "source_urls": [
-            "https://arxiv.org/pdf/2501.04519",
-            "https://arxiv.org/abs/2501.04519"
+            "https://arxiv.org/html/2501.04519"
           ],
-          "source_location": "摘要与既有来源记录",
-          "basis": "abstract_position",
+          "source_location": "§3.1–3.4、§4、Tables 2–10、Appendix A.1",
+          "basis": "primary_source_read",
           "primary_route": "model"
         },
         {
@@ -2567,13 +2597,12 @@
             "m-evaluator-learning",
             "m-bootstrapping"
           ],
-          "summary": "奖励模型用自生训练反馈迭代学习评价能力。",
+          "summary": "Model主线，评价器自训练；70B实验配置有披露，但量化结果不足以单独建立70B结论。",
           "source_urls": [
-            "https://arxiv.org/pdf/2411.00418",
-            "https://arxiv.org/abs/2411.00418"
+            "https://arxiv.org/html/2411.00418v3"
           ],
-          "source_location": "摘要与既有来源记录",
-          "basis": "abstract_position",
+          "source_location": "§3–5、Table1、AppendixA–F（特别C.3及F.1）",
+          "basis": "primary_source_read",
           "primary_route": "model"
         },
         {
@@ -2581,13 +2610,12 @@
           "topic_ids": [
             "m-curriculum-learning"
           ],
-          "summary": "以 advantage-derived learning gain 更新非平稳 bandit 课程。",
+          "summary": "Model训练机制参考；bandit自适应课程不等于改进器递归自修改。",
           "source_urls": [
-            "https://arxiv.org/pdf/2505.14970",
-            "https://arxiv.org/abs/2505.14970"
+            "https://arxiv.org/html/2505.14970"
           ],
-          "source_location": "摘要与既有来源记录",
-          "basis": "abstract_position",
+          "source_location": "§2–3、Tables1–4、AppendixA–C",
+          "basis": "primary_source_read",
           "primary_route": "model"
         },
         {
@@ -2595,13 +2623,12 @@
           "topic_ids": [
             "m-evaluator-learning"
           ],
-          "summary": "同一模型交替生成与验证，通过验证缓解 self-consistency 错误。",
+          "summary": "Model主线机制参考；无参数外的持久harness优化。",
           "source_urls": [
-            "https://arxiv.org/pdf/2603.17775",
-            "https://arxiv.org/abs/2603.17775"
+            "https://arxiv.org/html/2603.17775v2"
           ],
-          "source_location": "摘要与既有来源记录",
-          "basis": "abstract_position",
+          "source_location": "§3–4、Tables1–6、AppendixA–D",
+          "basis": "primary_source_read",
           "primary_route": "model"
         },
         {
@@ -2609,13 +2636,12 @@
           "topic_ids": [
             "m-curriculum-learning"
           ],
-          "summary": "学习 neural curator，以预计策略提升而非单纯难度选题。",
+          "summary": "Model主线训练机制参考；学习参数化课程控制器，固定优化公式。",
           "source_urls": [
-            "https://arxiv.org/pdf/2602.20532",
-            "https://arxiv.org/abs/2602.20532"
+            "https://arxiv.org/html/2602.20532v1"
           ],
-          "source_location": "摘要与既有来源记录",
-          "basis": "abstract_position",
+          "source_location": "§2–4、Eq4–12、Table1、AppendixB–J",
+          "basis": "primary_source_read",
           "primary_route": "model"
         },
         {
@@ -2625,13 +2651,12 @@
             "m-self-play",
             "m-curriculum-learning"
           ],
-          "summary": "真实工具生态中构造可验证任务，按能力缺口产生后续训练经验。",
+          "summary": "Model主线的环境课程闭环；可跨连Model×Harness训练环境节点，但不能说部署harness被策略重写。",
           "source_urls": [
-            "https://arxiv.org/pdf/2604.18292",
-            "https://arxiv.org/abs/2604.18292"
+            "https://arxiv.org/html/2604.18292v1"
           ],
-          "source_location": "摘要与既有来源记录",
-          "basis": "abstract_position",
+          "source_location": "§3.1–3.2、Algorithm1、§4.1–4.4、Table2、§7–9诊断提示及环境/任务附录",
+          "basis": "primary_source_read",
           "primary_route": "model"
         },
         {
@@ -2640,14 +2665,13 @@
             "m-learned-updates",
             "m-experience-learning"
           ],
-          "summary": "冻结执行者，训练 skill curator；较晚关联任务评价早先 SkillRepo 更新。",
+          "summary": "Model×Harness：学习技能改进器。训练期curator权重与组内SkillRepo耦合；部署时权重固定而技能库更新。不是executor权重与永久技能库同步共进化。",
           "source_urls": [
-            "https://arxiv.org/pdf/2605.06614",
-            "https://arxiv.org/abs/2605.06614"
+            "https://arxiv.org/html/2605.06614v1"
           ],
-          "source_location": "摘要与既有来源记录",
-          "basis": "abstract_position",
-          "primary_route": "model"
+          "source_location": "§3、Algorithm1、§4–5、Tables1–4、AppendixB–D",
+          "basis": "primary_source_read",
+          "primary_route": "hybrid"
         },
         {
           "work_id": "agentevolver",
@@ -2655,13 +2679,12 @@
             "m-experience-learning",
             "m-self-play"
           ],
-          "summary": "自提问生成任务，自导航重用经验，自归因分配训练反馈。",
+          "summary": "Model主线经验内化/课程训练；固定harness、外部生成器和judge，不自动算完整双侧RSI。",
           "source_urls": [
-            "https://arxiv.org/pdf/2511.10395",
-            "https://arxiv.org/abs/2511.10395"
+            "https://arxiv.org/html/2511.10395v1"
           ],
-          "source_location": "摘要与既有来源记录",
-          "basis": "abstract_position",
+          "source_location": "§2–7；Eq15–21；Tables1–7；实现/消融§7.1、§7.3–7.6",
+          "basis": "primary_source_read",
           "primary_route": "model"
         },
         {
@@ -2670,13 +2693,12 @@
             "m-verifiable-feedback",
             "m-experience-learning"
           ],
-          "summary": "用执行反馈训练多轮程序修订；meta-skills 不等于学习优化器。",
+          "summary": "Model使能方法：学习程序改进策略；外部程序搜索不自动构成模型自身RSI。",
           "source_urls": [
-            "https://arxiv.org/pdf/2607.21971",
-            "https://arxiv.org/abs/2607.21971"
+            "https://arxiv.org/html/2607.21971"
           ],
-          "source_location": "摘要与既有来源记录",
-          "basis": "abstract_position",
+          "source_location": "§2–4、Tables2/4/7、AppendixA–B",
+          "basis": "primary_source_read",
           "primary_route": "model"
         },
         {
@@ -2685,13 +2707,12 @@
             "m-evaluator-learning",
             "m-verifiable-feedback"
           ],
-          "summary": "生成者与过程验证者交替训练，结果正确性提供外部评价锚点。",
+          "summary": "Model主线：生成器与评价器共同训练；harness和奖励定义固定。",
           "source_urls": [
-            "https://arxiv.org/pdf/2505.15034",
-            "https://arxiv.org/abs/2505.15034"
+            "https://arxiv.org/html/2505.15034"
           ],
-          "source_location": "摘要与既有来源记录",
-          "basis": "abstract_position",
+          "source_location": "§3–4、Tables1–3、AppendixA–C",
+          "basis": "primary_source_read",
           "primary_route": "model"
         },
         {
@@ -2700,12 +2721,12 @@
             "m-preferences",
             "m-verifiable-feedback"
           ],
-          "summary": "答案正确性形成正负推理对，以 DPO+NLL 迭代训练；AI 生成数据不等于 AI 决定偏好真值。",
+          "summary": "Model主线：70B参数真实更新；不是奖励模型或harness共同进化。",
           "source_urls": [
             "https://arxiv.org/html/2404.19733v2"
           ],
-          "source_location": "首页；§2、§3.1–3.3、Appendix A",
-          "basis": "method_supported",
+          "source_location": "§2、§3.1–3.4、Tables1–5、AppendixA",
+          "basis": "primary_source_read",
           "primary_route": "model"
         },
         {
@@ -2714,12 +2735,12 @@
             "m-evaluator-learning",
             "m-bootstrapping"
           ],
-          "summary": "验证器、元验证与生成器迭代；轮间 rejection fine-tuning 融合能力。",
+          "summary": "Model主线：生成器与验证器参数迭代，固定测试搜索不单独构成Harness进化。",
           "source_urls": [
             "https://arxiv.org/html/2511.22570v1"
           ],
-          "source_location": "§2.1–2.3、§3.1–3.3；官方 Math-V2 config.json 与 V3.2-Exp 部署配置",
-          "basis": "method_supported",
+          "source_location": "§2.1–2.3、§3.1–3.3、Table1、AppendixA.1–A.4",
+          "basis": "primary_source_read",
           "primary_route": "model"
         },
         {
@@ -2730,12 +2751,12 @@
             "m-verifiable-feedback",
             "m-pretraining-ai4ai"
           ],
-          "summary": "RLVR 信号校准 K2 critic，rubric 评价开放任务；另有预训练 rephrasing，二者不是一个已证递归环。",
+          "summary": "Model主线；训练管线虽使用大量工具与环境，其自动共同演化没有公开实验证据。",
           "source_urls": [
             "https://arxiv.org/html/2507.20534v1"
           ],
-          "source_location": "§1、§3.2.2–3.2.3、§4 与 Appendix F",
-          "basis": "method_supported",
+          "source_location": "§3.1–3.3、§4.1、Table3、AppendixC/F；§2.3–2.5提供规模背景",
+          "basis": "primary_source_read",
           "primary_route": "model"
         },
         {
@@ -2743,12 +2764,12 @@
           "topic_ids": [
             "m-bootstrapping"
           ],
-          "summary": "self-consistency 筛选自生推理，回流 SFT；保留一轮自训练范围。",
+          "summary": "单轮模型自训练基础；保留重要机制，但不计为已实验多轮递归RSI。",
           "source_urls": [
             "https://aclanthology.org/2023.emnlp-main.67.pdf"
           ],
-          "source_location": "首页；§2–3、消融；2022 预印本 / EMNLP 2023",
-          "basis": "method_supported",
+          "source_location": "§3–5、Tables3–8、AppendixA.1–A.2",
+          "basis": "primary_source_read",
           "primary_route": "model"
         },
         {
@@ -2757,12 +2778,12 @@
             "m-bootstrapping",
             "m-experience-learning"
           ],
-          "summary": "同一策略承担 actor 与训练期 analyzer；从自身轨迹提炼 hindsight skills，形成 on-policy distillation 与 RL 信号。部署时移除 analyzer，保留更新后的策略模型。",
+          "summary": "Model主线：技能仅是训练条件，部署不保留持续更新的harness技能库。",
           "source_urls": [
             "https://arxiv.org/html/2607.14777v1"
           ],
-          "source_location": "§3 opening; §3.3; Fig.2",
-          "basis": "survey_classification",
+          "source_location": "§3–4、Tables1–3、AppendixB.4及C、OOD附表",
+          "basis": "primary_source_read",
           "primary_route": "model"
         },
         {
@@ -2771,12 +2792,12 @@
             "m-experience-learning",
             "m-bootstrapping"
           ],
-          "summary": "策略 LLM 与 world-model LLM 从交互轨迹中共同训练；世界模型提供合成经验与前瞻规划。可变对象是两类模型的参数。",
+          "summary": "Model主线：两个可变对象都是模型参数；WMLA是固定推理模块。",
           "source_urls": [
             "https://arxiv.org/html/2504.21024v2"
           ],
-          "source_location": "v2：§3.1–3.3、§4.1–4.4，Tables 1–3",
-          "basis": "method_passages_read",
+          "source_location": "§3.2–3.3、§4.1–4.4、Tables 1–4、Appendix A–B",
+          "basis": "primary_source_read",
           "primary_route": "model"
         },
         {
@@ -2784,12 +2805,12 @@
           "topic_ids": [
             "m-pretraining-ai4ai"
           ],
-          "summary": "以训练内部观测提出假设和干预，再用重复训练结果决定下一步研究。",
+          "summary": "AI4AI 机制引导实验系统；公开材料未证实改进器自身迭代升级。与 Harness 研究相关，不能推定 Model–Harness 协同训练。",
           "source_urls": [
             "https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch"
           ],
-          "source_location": "官方博客：OPHIS framework；Grokking / NanoGPT 两个案例；Looking Forward",
-          "basis": "survey_classification",
+          "source_location": "官方技术发布 2026-07-23：框架、Grokking 对照、NanoGPT observables / 干预与统计结果、披露边界",
+          "basis": "primary_source_read",
           "primary_route": "harness",
           "cross_route_reference": true
         },
@@ -2798,13 +2819,13 @@
           "topic_ids": [
             "m-pretraining-ai4ai"
           ],
-          "summary": "自动提出并验证 scaling law、训练实现和 GPU kernel 的改进，以实验结果继续搜索。",
+          "summary": "AI4AI 自动优化成果；不能据公开产物推定研究器本体递归改写或 Model–Harness 联合训练。",
           "source_urls": [
             "https://www.apexin.ai/assets/papers/what-happens-when-ai-starts-improving-ai.pdf",
             "https://github.com/apexin-ai/Apex-Tune-results"
           ],
-          "source_location": "7 页报告：Evaluations I–IV；Beyond the Benchmarks；配套结果仓库",
-          "basis": "survey_classification",
+          "source_location": "八页官方报告全文（四项技术案例）；成果仓库 README 当前 NanoChat / TriMul / attention / SLDBench 表及来源说明",
+          "basis": "primary_source_read",
           "primary_route": "harness",
           "cross_route_reference": true
         },
@@ -2814,16 +2835,29 @@
             "m-verifiable-feedback",
             "m-experience-learning"
           ],
-          "summary": "以合成数据、可验证环境和异步 RL 训练 106B MoE，公开训练框架、环境与模型。",
+          "summary": "Model使能研究，可连到Harness基础设施节点；没有公开自动协同进化实证。",
           "source_urls": [
-            "https://www.primeintellect.ai/blog/intellect-3",
-            "https://github.com/PrimeIntellect-ai/prime-rl",
-            "https://github.com/PrimeIntellect-ai/verifiers"
+            "https://storage.googleapis.com/intellect-3-paper/INTELLECT_3_Technical_Report.pdf",
+            "https://www.primeintellect.ai/blog/intellect-3"
           ],
-          "source_location": "官方技术发布：Training Infrastructure、Training Recipe、Future Work",
-          "basis": "survey_classification",
+          "source_location": "§2.1.2–2.1.6、§3.1–3.3、§4、Tables1–2、AppendixA",
+          "basis": "primary_source_read",
           "primary_route": "model",
           "cross_route_reference": false
+        },
+        {
+          "work_id": "execution-grounded-research",
+          "topic_ids": [
+            "m-learned-updates",
+            "m-experience-learning"
+          ],
+          "summary": "Model路线：研究想法生成器参数学习；固定执行harness，不是双对象共同演化。",
+          "source_urls": [
+            "https://arxiv.org/html/2601.14525"
+          ],
+          "source_location": "§2–5；Table1；AppendixA.1替代RL设计及执行样例。",
+          "basis": "primary_source_read",
+          "primary_route": "model"
         }
       ]
     },
@@ -3547,12 +3581,12 @@
             "x-training",
             "x-deployment"
           ],
-          "summary": "反馈代理同时修改目标agent scaffold并训练其LoRA；主实验更新目标agent，未说明反馈代理自身权重随代更新。",
+          "summary": "联合改目标模型与harness；固定外部改进器，属于有限任务上的协同优化。",
           "source_urls": [
-            "https://arxiv.org/html/2605.27276v1"
+            "https://arxiv.org/pdf/2605.27276"
           ],
-          "source_location": "§3、§5；实际模型名和训练对象须分开核对",
-          "basis": "method_passages_read",
+          "source_location": "§3、§5–8；Table 2–3；特别核对§6.3.1测试反馈。",
+          "basis": "primary_source_read",
           "primary_route": "hybrid"
         },
         {
@@ -3562,12 +3596,12 @@
             "x-internalization",
             "x-externalization"
           ],
-          "summary": "HarnessCritic修订外部系统后，用成功轨迹SFT；原文报告两轮。两轮结果不代表无限持续改善。",
+          "summary": "Model×Harness交替优化；32B分支符合选定规模，8B应单独标记。",
           "source_urls": [
-            "https://arxiv.org/html/2607.22688v1"
+            "https://arxiv.org/pdf/2607.22688"
           ],
-          "source_location": "§3、§4、Conclusion",
-          "basis": "method_passages_read",
+          "source_location": "§3–5；Table6；AppendicesA–H，尤其E补丁验证和H案例。",
+          "basis": "primary_source_read",
           "primary_route": "hybrid"
         },
         {
@@ -3577,12 +3611,12 @@
             "x-organization",
             "x-internalization"
           ],
-          "summary": "研发操作经过SFT/RL，部署执行长程ML搜索；主要改外部ML解法，系统本身固定。不能按“训练模型+有harness”认定协同RSI。",
+          "summary": "AI4AI模型训练与搜索协同支撑方法；并无已验证的harness自重构多代RSI。",
           "source_urls": [
             "https://arxiv.org/html/2607.28568v1"
           ],
-          "source_location": "§3–6、§8（既有方法阅读）",
-          "basis": "existing_screening",
+          "source_location": "§2–6、§8；AppendixB训练配置、C搜索、D重复实验。",
+          "basis": "primary_source_read",
           "primary_route": "hybrid"
         },
         {
@@ -3594,12 +3628,12 @@
             "x-organization",
             "x-feedback"
           ],
-          "summary": "优化的是文本形式的多agent工作流；底层coding harness、工具和记忆固定。共享模型经SFT后再次承担执行、优化和评价角色；报告两轮。",
+          "summary": "工作流文本与共享模型两轮协同；底层coding harness固定。",
           "source_urls": [
             "https://arxiv.org/html/2610.12176v1"
           ],
-          "source_location": "§2、§3 Algorithms 1–3、§4.1",
-          "basis": "method_passages_read",
+          "source_location": "§2–5；Algorithms1–3；AppendicesB训练、C公开评测、D token对照、E搜索消融、G行为。",
+          "basis": "primary_source_read",
           "primary_route": "hybrid"
         },
         {
@@ -3609,12 +3643,13 @@
             "x-feedback",
             "x-training"
           ],
-          "summary": "官方仓库给出预测—交互—反馈—保留循环。不同领域更新对象可能不同，需逐域核实是否同时改参数与非参数系统。",
+          "summary": "世界模型介导的多组件改进研究；各应用需分别标记Model或工作流更新，不能整项当作成熟协同闭环。",
           "source_urls": [
-            "https://arxiv.org/abs/2610.13912"
+            "https://arxiv.org/html/2610.13912",
+            "https://github.com/Gen-Verse/RSI-Anything"
           ],
-          "source_location": "官方README Framework；arXiv摘要",
-          "basis": "abstract_and_repository_read",
+          "source_location": "arXiv2610.13912 §2–3、§5–6、Table1–4；官方仓库README与实现入口。",
+          "basis": "primary_source_read",
           "primary_route": "hybrid"
         },
         {
@@ -3625,12 +3660,12 @@
             "x-externalization",
             "x-training"
           ],
-          "summary": "奖励程序与机器人策略更新；奖励设计LLM冻结。它是AI设计学习信号的参考，不能当LLM研究者自身参数递归升级。",
+          "summary": "自动奖励设计与外部策略学习支撑方法，不是LLM自身Model×Harness协同RSI。",
           "source_urls": [
-            "https://arxiv.org/abs/2310.12931"
+            "https://arxiv.org/html/2310.12931"
           ],
-          "source_location": "既有摘要记录；目标不是LLM策略",
-          "basis": "existing_screening",
+          "source_location": "§2–4；Algorithm1；AppendicesA提示、B环境、C/D基线与训练、F消融。",
+          "basis": "primary_source_read",
           "primary_route": "hybrid"
         },
         {
@@ -3640,12 +3675,13 @@
             "x-feedback",
             "x-externalization"
           ],
-          "summary": "研究代理提出干预并训练外部目标模型；目标改善没有直接证明研究代理自身学习或自改。",
+          "summary": "AI4AI自动后训练研究支撑，具备大模型实验但未证明目标模型成为自身改进器。",
           "source_urls": [
-            "https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures"
+            "https://alignment.anthropic.com/2026/automated-alignment-researchers/",
+            "https://www-cdn.anthropic.com/7b1c44894e980876479947dcdd40716278aeeffd/automated-alignment-researchers-august-2026.pdf"
           ],
-          "source_location": "官方研究报告（既有方法阅读）",
-          "basis": "existing_screening",
+          "source_location": "完整官方技术报告§2–8；AppendicesA/B评测与harness、D消融、E32B/72B、G监控。",
+          "basis": "primary_source_read",
           "primary_route": "hybrid"
         },
         {
@@ -3655,12 +3691,12 @@
             "x-externalization",
             "x-organization"
           ],
-          "summary": "官方描述AI参与数据、算法和工程开发；尚无统一公开的自我递归协议可从介绍推定。",
+          "summary": "公开AI4AI工业方向，双路线具体闭环尚缺技术披露。",
           "source_urls": [
             "https://seed.bytedance.com/en/blog/seed2-1-officially-released-advancing-ai-productivity"
           ],
-          "source_location": "官方团队博客",
-          "basis": "existing_screening",
+          "source_location": "官方Seed2.1发布博客中Seed for Seed与内部研发工作流段落；完整公开博客已读。",
+          "basis": "primary_source_read",
           "primary_route": "hybrid"
         },
         {
@@ -3670,12 +3706,12 @@
             "x-environment",
             "x-externalization"
           ],
-          "summary": "技能保存任务生成与验证结构，出题/求解策略与技能内容共同变化；实际训练规模单列，不以教师规模替代。",
+          "summary": "proposer/solver权重与技能库共同更新的课程协同机制，规模低于主范围。",
           "source_urls": [
             "https://arxiv.org/html/2607.22529v1"
           ],
-          "source_location": "§3.1–3.2、§4（既有方法阅读）",
-          "basis": "existing_screening",
+          "source_location": "§3–4；Tables3–5；AppendicesB路由、C配置、D初始技能、E算法、F开销。",
+          "basis": "primary_source_read",
           "primary_route": "hybrid"
         },
         {
@@ -3685,12 +3721,12 @@
             "x-feedback",
             "x-internalization"
           ],
-          "summary": "同时训练策略和奖励模型，依据错误模式改写外部任务；Hybrid归属来自任务侧变化，并非来自“有两个模型”。",
+          "summary": "策略+奖励模型+任务课程协同训练；按训练侧harness广义归入混合路线。",
           "source_urls": [
             "https://arxiv.org/html/2602.02488v1"
           ],
-          "source_location": "§2、Algorithm 1、§3.1",
-          "basis": "method_passages_read",
+          "source_location": "§2–3；Table1/2；AppendixA定理假设与证明、C训练/改题/评审。",
+          "basis": "primary_source_read",
           "primary_route": "hybrid"
         },
         {
@@ -3701,12 +3737,12 @@
             "x-externalization",
             "x-feedback"
           ],
-          "summary": "训练侧诊断工具/流程与目标策略版本共同改进；训练者LLM为固定Sonnet，昂贵执行有人类把关。不能描述成训练者权重自进化。",
+          "summary": "训练侧harness与目标策略共同演化，保留有限自治与小模型范围。",
           "source_urls": [
             "https://arxiv.org/html/2606.03108v2"
           ],
-          "source_location": "§3.3–3.6；Limitations",
-          "basis": "method_passages_read",
+          "source_location": "§3–4，Table2自治范围、Table3–4；AppendicesA–F，尤其E完整成本。",
+          "basis": "primary_source_read",
           "primary_route": "hybrid"
         },
         {
@@ -3716,12 +3752,12 @@
             "x-organization",
             "x-memory"
           ],
-          "summary": "研究团队共享实验知识并搜索外部目标训练方案；需要单独验证团队系统本身是否更新。",
+          "summary": "外部AI研究与动态团队组织支撑方法；非研究者模型自身协同训练。",
           "source_urls": [
-            "https://arxiv.org/abs/2605.28655"
+            "https://arxiv.org/html/2605.28655"
           ],
-          "source_location": "摘要及既有来源记录",
-          "basis": "existing_screening",
+          "source_location": "§3–5；Table3消融；AppendixA队列/噪声确认、B预算和团队规模、E GPT产物、G迁移。",
+          "basis": "primary_source_read",
           "primary_route": "hybrid"
         },
         {
@@ -3731,13 +3767,13 @@
             "x-feedback",
             "x-externalization"
           ],
-          "summary": "执行候选AI研究方案并反馈构思者；训练构思模型与改进目标模型须分开计，不把外部训练目标当成其自身后继。",
+          "summary": "Model路线：研究想法生成器参数学习；固定执行harness，不是双对象共同演化。",
           "source_urls": [
-            "https://arxiv.org/abs/2601.14525"
+            "https://arxiv.org/html/2601.14525"
           ],
-          "source_location": "摘要及既有来源记录",
-          "basis": "existing_screening",
-          "primary_route": "hybrid"
+          "source_location": "§2–5；Table1；AppendixA.1替代RL设计及执行样例。",
+          "basis": "primary_source_read",
+          "primary_route": "model"
         },
         {
           "work_id": "harness-zero",
@@ -3746,12 +3782,12 @@
             "x-workflow",
             "x-deployment"
           ],
-          "summary": "先演化harness，再由harnessing agent在学生动作空间生成干预轨迹并SFT；支持H→M内化，未直接展示更新学生继续演化H的反复闭环。",
+          "summary": "Harness→Model内化的支撑方法；不是多代共同优化。",
           "source_urls": [
-            "https://arxiv.org/html/2609.24974v1"
+            "https://arxiv.org/html/2609.24974"
           ],
-          "source_location": "§3.1–3.3、§4",
-          "basis": "method_passages_read",
+          "source_location": "§3–5，AppendixE训练/采集细节、F额外模型分析。",
+          "basis": "primary_source_read",
           "primary_route": "hybrid"
         },
         {
@@ -3761,12 +3797,12 @@
             "x-internalization",
             "x-externalization"
           ],
-          "summary": "外部SkillBank与策略GRPO共同更新，teacher负责技能提炼且非被训练主体。训练主体7B，属于机制补充。",
+          "summary": "学生权重与技能库协同的小规模直接机制研究。",
           "source_urls": [
             "https://arxiv.org/html/2602.08234v1"
           ],
-          "source_location": "§3、Algorithm 1、§4.1",
-          "basis": "method_passages_read",
+          "source_location": "§3–4，Tables1–4，AppendixA生成/进化提示和B训练配置。",
+          "basis": "primary_source_read",
           "primary_route": "hybrid"
         },
         {
@@ -3776,13 +3812,13 @@
             "x-internalization",
             "x-externalization"
           ],
-          "summary": "训练对象是轻量MLP技能选择controller（PPO，精确参数量未报告）；Qwen3-Embedding-0.6B作shared encoder，LLaMA70B与Qwen80B通过API使用，executor/designer固定。不得将70B/80B当作被训练模型。",
+          "summary": "Harness路线：学到的选择控制器及演化技能库；Model定义为基础模型/adapter时不属于双路线协同。",
           "source_urls": [
             "https://arxiv.org/html/2602.02474v1"
           ],
-          "source_location": "§3.3–3.5；§4.1 Implementation Details；Table1注释",
-          "basis": "method_passages_read",
-          "primary_route": "hybrid"
+          "source_location": "§3–4，记忆技能算法/消融，AppendixA.1实现与评估配置。",
+          "basis": "primary_source_read",
+          "primary_route": "harness"
         },
         {
           "work_id": "evods",
@@ -3792,12 +3828,12 @@
             "x-externalization",
             "x-internalization"
           ],
-          "summary": "共享骨干的多角色策略经过SFT和online RL，产生并复用可执行技能；组织架构本身固定，不应把多角色训练说成拓扑演化。",
+          "summary": "共享基础模型训练与运行期技能积累的混合机制；不是已经证明长期自我强化。",
           "source_urls": [
-            "https://arxiv.org/html/2606.03841v1"
+            "https://arxiv.org/html/2606.03841"
           ],
-          "source_location": "§4.1–4.4",
-          "basis": "method_passages_read",
+          "source_location": "§3–6，Tables1–3，AppendixA理论假设、B–D数据与训练细节。",
+          "basis": "primary_source_read",
           "primary_route": "hybrid"
         },
         {
@@ -3807,12 +3843,12 @@
             "x-internalization",
             "x-deployment"
           ],
-          "summary": "对进化后harness做学生访问状态上的局部纠错与LoRA-SFT；主要实证是一次顺序适配，循环接续是提出的方向。on-policy描述采样状态，不代表训练算法为RL。",
+          "summary": "Model×Harness适配机制的直接研究；有双对象更新，尚无已证多代继任。",
           "source_urls": [
-            "https://arxiv.org/html/2609.09134"
+            "https://arxiv.org/html/2609.09134v1"
           ],
-          "source_location": "§3.1–3.4、Conclusion",
-          "basis": "method_passages_read",
+          "source_location": "§3.1–3.4，Tables1–4，AppendicesA–D。",
+          "basis": "primary_source_read",
           "primary_route": "hybrid"
         },
         {
@@ -3822,12 +3858,12 @@
             "x-workflow",
             "x-internalization"
           ],
-          "summary": "harness-state augmentation使模型适应skills/tool schemas/prompts/hooks变体；这是训练鲁棒性与部署适配，不证明AI自动演化harness。",
+          "summary": "工业Model×Harness适配研究；更新真实但有人类决策，不是无人科研闭环。",
           "source_urls": [
-            "https://arxiv.org/abs/2608.15763"
+            "https://arxiv.org/html/2608.15763"
           ],
-          "source_location": "v5摘要，具体方法需继续阅读",
-          "basis": "abstract_read",
+          "source_location": "§2–5，Tables2–10，AppendicesB演化流程、C评价独立性、D部署配置。",
+          "basis": "primary_source_read",
           "primary_route": "hybrid"
         },
         {
@@ -3838,12 +3874,12 @@
             "x-externalization",
             "x-training"
           ],
-          "summary": "跨路线机制联系。主贡献是评价Harness演化；下游训练提供跨路线联系，未建立更新目标反向改进奖励系统的闭环。 冻结视觉语言模型，通过偏好误差改进 reward agent 的技能和工具；该评价系统随后用于外部图像编辑模型的 GRPO 训练。",
+          "summary": "Harness奖励器自适应后用于外部模型GRPO；未展示模型—奖励器持续互教",
           "source_urls": [
             "https://arxiv.org/html/2605.08703v1"
           ],
-          "source_location": "§1、§2、§3.2、§4",
-          "basis": "method_passages_read",
+          "source_location": "§§2.1–2.5、3.1–3.3表1–2；附录B.3–B.4和最终库表3",
+          "basis": "primary_source_read",
           "primary_route": "harness",
           "cross_route_reference": true
         },
@@ -3854,12 +3890,12 @@
             "x-internalization",
             "x-deployment"
           ],
-          "summary": "跨路线机制联系。同时改多个模型仍是参数侧共学；已读方法没有非参数工作流/工具/环境包装被优化。 策略 LLM 与 world-model LLM 从交互轨迹中共同训练；世界模型提供合成经验与前瞻规划。可变对象是两类模型的参数。",
+          "summary": "Model主线：两个可变对象都是模型参数；WMLA是固定推理模块。",
           "source_urls": [
             "https://arxiv.org/html/2504.21024v2"
           ],
-          "source_location": "v2：§3.1–3.3、§4.1–4.4，Tables 1–3",
-          "basis": "method_passages_read",
+          "source_location": "§3.2–3.3、§4.1–4.4、Tables 1–4、Appendix A–B",
+          "basis": "primary_source_read",
           "primary_route": "model",
           "cross_route_reference": true
         },
@@ -3870,13 +3906,13 @@
             "x-externalization",
             "x-internalization"
           ],
-          "summary": "EnvRigger根据失败生成环境wrapper，原环境底层和verifier冻结；再用重塑环境训练policy。是否跨多代反复重建wrapper应依据训练流程逐项说明。",
+          "summary": "主归Harness：环境wrapper与外部技能共演化；另有8B模型训练支撑实验，非≥27B混合循环。",
           "source_urls": [
-            "https://arxiv.org/html/2608.19880v1"
+            "https://arxiv.org/html/2608.19880"
           ],
-          "source_location": "§2.1–2.2；§3",
-          "basis": "method_passages_read",
-          "primary_route": "hybrid"
+          "source_location": "§2–5，Tables2–5，AppendicesE分割、F训练与多轮技能、H限制。",
+          "basis": "primary_source_read",
+          "primary_route": "harness"
         },
         {
           "work_id": "aira-design",
@@ -3885,12 +3921,12 @@
             "x-externalization",
             "x-organization"
           ],
-          "summary": "研究代理搜索架构/计算原语，候选扩展到外部目标预训练；没有据此证明目标模型回到下一代研究者角色。",
+          "summary": "AI设计外部模型与训练程序的支撑/评测工作，不是自身递归联合进化。",
           "source_urls": [
-            "https://arxiv.org/abs/2605.15871"
+            "https://arxiv.org/html/2605.15871"
           ],
-          "source_location": "摘要及既有来源记录",
-          "basis": "existing_screening",
+          "source_location": "§2–6，Tables1–5，AppendicesB小模型排序、C/D尺度与F训练脚本环境。",
+          "basis": "primary_source_read",
           "primary_route": "hybrid"
         },
         {
@@ -3900,12 +3936,12 @@
             "x-memory",
             "x-internalization"
           ],
-          "summary": "从软件求解轨迹提炼技能并生成新任务训练求解者；是否有跨轮持久可调用技能库及其明确更新边界，需方法全文确认。",
+          "summary": "共享模型与外部技能课程多轮协同；基础执行harness固定，规模低于27B。",
           "source_urls": [
-            "https://arxiv.org/abs/2606.07412"
+            "https://arxiv.org/html/2606.07412"
           ],
-          "source_location": "摘要及既有来源记录",
-          "basis": "existing_screening",
+          "source_location": "§3–5，Algorithm1，Appendices8–13：基线适配、梯度论证、奖励消融、成本和超参。",
+          "basis": "primary_source_read",
           "primary_route": "hybrid"
         },
         {
@@ -3915,12 +3951,12 @@
             "x-memory",
             "x-feedback"
           ],
-          "summary": "跨路线机制联系。明确更新模型参数；未显示持久非参数harness共同演化。 同一策略承担 actor 与训练期 analyzer；从自身轨迹提炼 hindsight skills，形成 on-policy distillation 与 RL 信号。部署时移除 analyzer，保留更新后的策略模型。",
+          "summary": "Model主线：技能仅是训练条件，部署不保留持续更新的harness技能库。",
           "source_urls": [
             "https://arxiv.org/html/2607.14777v1"
           ],
-          "source_location": "§3、§3.3；Fig.2",
-          "basis": "method_passages_read",
+          "source_location": "§3–4、Tables1–3、AppendixB.4及C、OOD附表",
+          "basis": "primary_source_read",
           "primary_route": "model",
           "cross_route_reference": true
         },
@@ -3930,12 +3966,12 @@
             "x-training",
             "x-feedback"
           ],
-          "summary": "以训练内部观测提出假设和干预，再用重复训练结果决定下一步研究。",
+          "summary": "AI4AI 机制引导实验系统；公开材料未证实改进器自身迭代升级。与 Harness 研究相关，不能推定 Model–Harness 协同训练。",
           "source_urls": [
             "https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch"
           ],
-          "source_location": "官方博客：OPHIS framework；Grokking / NanoGPT 两个案例；Looking Forward",
-          "basis": "survey_classification",
+          "source_location": "官方技术发布 2026-07-23：框架、Grokking 对照、NanoGPT observables / 干预与统计结果、披露边界",
+          "basis": "primary_source_read",
           "primary_route": "harness",
           "cross_route_reference": true
         },
@@ -3944,13 +3980,13 @@
           "topic_ids": [
             "x-training"
           ],
-          "summary": "把训练协议、观测与分析组织成可执行依赖图，供人或 agent 构造、运行和比较实验。",
+          "summary": "观测与实验基础设施；公开演示研究循环由人运行，不能作为直接 RSI 成果计数。",
           "source_urls": [
             "https://meta-circle.com/blog/comfyresearch-see-how-learning-happens",
             "https://github.com/MetaCircleAI/ComfyResearch"
           ],
-          "source_location": "官方博客：From notebook to graph；Watching a run；Changing one thing；Where this goes",
-          "basis": "survey_classification",
+          "source_location": "官方发布 2026-08-11 全文：typed graph、33 observable nodes、parameter sweeps、实验案例及 human-in-the-loop 说明；官方仓库 README",
+          "basis": "primary_source_read",
           "primary_route": "harness",
           "cross_route_reference": true
         },
@@ -3959,13 +3995,13 @@
           "topic_ids": [
             "x-training"
           ],
-          "summary": "自动提出并验证 scaling law、训练实现和 GPU kernel 的改进，以实验结果继续搜索。",
+          "summary": "AI4AI 自动优化成果；不能据公开产物推定研究器本体递归改写或 Model–Harness 联合训练。",
           "source_urls": [
             "https://www.apexin.ai/assets/papers/what-happens-when-ai-starts-improving-ai.pdf",
             "https://github.com/apexin-ai/Apex-Tune-results"
           ],
-          "source_location": "7 页报告：Evaluations I–IV；Beyond the Benchmarks；配套结果仓库",
-          "basis": "survey_classification",
+          "source_location": "八页官方报告全文（四项技术案例）；成果仓库 README 当前 NanoChat / TriMul / attention / SLDBench 表及来源说明",
+          "basis": "primary_source_read",
           "primary_route": "harness",
           "cross_route_reference": true
         },
@@ -3974,13 +4010,13 @@
           "topic_ids": [
             "x-feedback"
           ],
-          "summary": "在相同科研任务上逐步撤去方法指导，区分按步骤执行和自主选择科研方法的能力。",
+          "summary": "跨路线的理论、方法或评测；不单独计作已实现递归自改进的系统。",
           "source_urls": [
-            "https://arxiv.org/abs/2608.17271",
+            "https://arxiv.org/html/2608.17271v1",
             "https://github.com/apexin-ai/ASI-Bench"
           ],
-          "source_location": "论文摘要；官方仓库 Overview、B1–B4、任务发布与评分协议",
-          "basis": "survey_classification",
+          "source_location": "§2基准结构、§3结果与成本；附录B署名、C任务格式、D同任务B1–B4实例。",
+          "basis": "primary_source_read",
           "primary_route": "crosscut",
           "cross_route_reference": true
         },
@@ -3989,13 +4025,13 @@
           "topic_ids": [
             "x-training"
           ],
-          "summary": "长时程并行研究线程积累实验上下文、组合候选分支，并对改进进行方差与 reward-hack 检查。",
+          "summary": "具有公开优化产物的 AI4AI 研究系统；没有足够证据推定研究器本身发生递归权重/harness 协同更新。",
           "source_urls": [
             "https://www.recursive.com/articles/first-steps-toward-automated-ai-research",
             "https://github.com/recursive-org/first-steps-toward-automated-ai-research"
           ],
-          "source_location": "官方报告：研究循环；NanoChat、NanoGPT Speedrun 与 SOL-ExecBench 案例",
-          "basis": "survey_classification",
+          "source_location": "官方 2026-06-11 发布全文（NanoChat、NanoGPT、SOL、有效评估与局限）；成果仓库 README",
+          "basis": "primary_source_read",
           "primary_route": "harness",
           "cross_route_reference": true
         },
@@ -4005,16 +4041,59 @@
             "x-training",
             "x-environment"
           ],
-          "summary": "以合成数据、可验证环境和异步 RL 训练 106B MoE，公开训练框架、环境与模型。",
+          "summary": "Model使能研究，可连到Harness基础设施节点；没有公开自动协同进化实证。",
           "source_urls": [
-            "https://www.primeintellect.ai/blog/intellect-3",
-            "https://github.com/PrimeIntellect-ai/prime-rl",
-            "https://github.com/PrimeIntellect-ai/verifiers"
+            "https://storage.googleapis.com/intellect-3-paper/INTELLECT_3_Technical_Report.pdf",
+            "https://www.primeintellect.ai/blog/intellect-3"
           ],
-          "source_location": "官方技术发布：Training Infrastructure、Training Recipe、Future Work",
-          "basis": "survey_classification",
+          "source_location": "§2.1.2–2.1.6、§3.1–3.3、§4、Tables1–2、AppendixA",
+          "basis": "primary_source_read",
           "primary_route": "model",
           "cross_route_reference": true
+        },
+        {
+          "work_id": "hase",
+          "topic_ids": [
+            "x-training",
+            "x-workflow",
+            "x-feedback"
+          ],
+          "summary": "Model × Harness / 统一训练解题与系统编辑；实际训练8B，按既定规模偏好放补充机制。",
+          "source_urls": [
+            "https://arxiv.org/html/2607.03935v1"
+          ],
+          "source_location": "§3–4，Algorithm 1，Tables 1–4；Appendices A–D",
+          "basis": "primary_source_read",
+          "primary_route": "hybrid"
+        },
+        {
+          "work_id": "continual-harness",
+          "topic_ids": [
+            "x-workflow",
+            "x-deployment",
+            "x-training"
+          ],
+          "summary": "主实验为持久 Harness 适应；§3.3/附录 D 还含 Model–Harness 协同更新。Refiner 程序及学习规则未显示自主改写。",
+          "source_urls": [
+            "https://arxiv.org/html/2605.09998v1"
+          ],
+          "source_location": "正文 §§3.1–3.3、4；附录 C、D.1–D.4，尤其表 3–5 与在线联合训练段落",
+          "basis": "primary_source_read",
+          "primary_route": "hybrid"
+        },
+        {
+          "work_id": "skillos",
+          "topic_ids": [
+            "x-memory",
+            "x-externalization"
+          ],
+          "summary": "Model×Harness：学习技能改进器。训练期curator权重与组内SkillRepo耦合；部署时权重固定而技能库更新。不是executor权重与永久技能库同步共进化。",
+          "source_urls": [
+            "https://arxiv.org/html/2605.06614v1"
+          ],
+          "source_location": "§3、Algorithm1、§4–5、Tables1–4、AppendixB–D",
+          "basis": "primary_source_read",
+          "primary_route": "hybrid"
         }
       ]
     }

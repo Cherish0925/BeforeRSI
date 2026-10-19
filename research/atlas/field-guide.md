@@ -36,16 +36,16 @@
 - 长期记忆与知识组织 → 指令与上下文程序：检索后进入上下文。被检索的经验改变模型下一步看到的信息；长时记忆与单次上下文是两种不同状态。
 - 候选生成、搜索与选择 → 指令与上下文程序：产生并选择提示修改。反思、变异和 Pareto 选择可以作用于提示空间。
 
-**论文与团队（包括初筛与跨路线联系）**
+**论文与团队（包括跨路线联系）**
 
-- [Promptbreeder](https://arxiv.org/pdf/2309.16797) · Google DeepMind。任务提示；变异提示。变异提示也参与演化；不是权重训练。
-- [GEPA](https://arxiv.org/pdf/2507.19457v2) · UC Berkeley / Stanford / Notre Dame / MIT / Databricks / Bespoke Labs。LLM 模块提示。更新提示；优化算法不自修改。
-- [Recursive Harness SI](https://arxiv.org/html/2607.15524v1) · Sakana AI / UC Berkeley。任务专用文本工作流跨轮修订；基础模型、评价者及优化器固定。
-- [Meta-Harness](https://arxiv.org/html/2603.28052v1) · Stanford / KRAFTON / MIT。应用源码；记忆组织与上下文。源码可编辑范围广不等于每种资产均已有有效自改实证。
-- [ACE](https://arxiv.org/html/2510.04618v1) · Stanford / SambaNova / UC Berkeley。持久 playbook。内容与条目演化；生成—反思—整理流程固定。
-- [OPRO](https://arxiv.org/abs/2309.03409) · Google DeepMind。候选提示或数值解。优化提示是相关机制；未因迭代次数多成为改进器自修改。
-- [Continual Harness](https://arxiv.org/abs/2605.09998) · Princeton / Google DeepMind / ARISE Foundation。技能；提示；记忆。跨交互持久改进；早期人类参与和后续自动循环分开。
-- [Hermes Agent](https://github.com/NousResearch/hermes-agent) · Nous Research。从任务经验创建和修改技能文档，保留记忆与会话检索，使后续执行使用已有经验。
+- [Promptbreeder](https://arxiv.org/pdf/2309.16797) · Google DeepMind。Harness 的任务提示与变异策略协同演化
+- [GEPA](https://arxiv.org/pdf/2507.19457v2) · UC Berkeley / Stanford / Notre Dame / MIT / Databricks / Bespoke Labs。固定优化器的Harness提示优化，属于AI4AI支撑方法
+- [Recursive Harness SI](https://arxiv.org/html/2607.15524v1) · Sakana AI / UC Berkeley。Harness 连续自反馈修订；改进器固定的任务适应
+- [Meta-Harness](https://arxiv.org/html/2603.28052v1) · Stanford / KRAFTON / MIT。固定proposer优化目标harness，AI4AI支撑方法
+- [ACE](https://arxiv.org/html/2510.04618v1) · Stanford / SambaNova / UC Berkeley。Harness持久context适应，改进流程本身固定
+- [OPRO](https://arxiv.org/abs/2309.03409) · Google DeepMind。固定改进器优化持久任务提示的支撑方法，未展示改进器自身递归更新
+- [Continual Harness](https://arxiv.org/abs/2605.09998) · Princeton / Google DeepMind / ARISE Foundation。主实验为持久 Harness 适应；§3.3/附录 D 还含 Model–Harness 协同更新。Refiner 程序及学习规则未显示自主改写。
+- [Hermes Agent](https://github.com/NousResearch/hermes-agent) · Nous Research。产品化的持久 Harness 学习；改进器/底层模型本身固定，未证明每次写入提高泛化能力。
 
 ### 长期记忆与知识组织 · Persistent Memory & Knowledge
 
@@ -76,20 +76,24 @@
 - 长期记忆与知识组织 → 候选生成、搜索与选择：提供既往搜索经验。历史失败、候选和执行结果可以改善后续提案，不一定改变搜索算法本身。
 - 长期记忆与知识组织 → 继承、组合与跨域迁移：知识跨任务保留。持久知识要经后续使用才能转化为能力，而非只增加存储量。
 
-**论文与团队（包括初筛与跨路线联系）**
+**论文与团队（包括跨路线联系）**
 
-- [HyperAgents](https://arxiv.org/html/2603.19461v1) · Meta / UBC / Vector / Edinburgh / NYU。task agent 代码；meta-agent 代码。meta-agent 修改逻辑可改；主实验 parent selection 固定。
-- [HELIX](https://github.com/HKUDS/HELIX) · HKU · In3 Lab。harness 变体；成功及失败轨迹。产出训练记录不等于已实现 model 与 harness 共同演化。
-- [Meta-Harness](https://arxiv.org/html/2603.28052v1) · Stanford / KRAFTON / MIT。应用源码；记忆组织与上下文。源码可编辑范围广不等于每种资产均已有有效自改实证。
-- [ACE](https://arxiv.org/html/2510.04618v1) · Stanford / SambaNova / UC Berkeley。持久 playbook。内容与条目演化；生成—反思—整理流程固定。
-- [Prime Agent](https://arxiv.org/abs/2608.23552) · Princeton / Prime Intellect / MIT。长期 REPL 状态；持久经验与技能。持久执行和经验修订可确认；改进器自修改范围待方法确认。
-- [GEAR](https://arxiv.org/abs/2605.13874) · Toronto / Vector / Samsung AI Center–Toronto / York。研究状态种群；部分变体中的搜索控制器。仅部分变体让控制器演化，不能概括为所有 GEAR 设置均递归。
-- [Mem²Evolve](https://arxiv.org/abs/2604.10923) · Beihang / Beijing Institute of Technology / Independent / MCML / Edinburgh。经验记忆；工具与专家资产。经验与能力资产双向影响；不据此认定更新算法也进化。
-- [MemRL](https://arxiv.org/html/2601.03192v1) · SJTU / Xidian / NUS / Shanghai Innovation Institute / MemTensor / USTC。情景记忆；记忆效用值。LLM 参数冻结；记忆排序价值学习，更新规则本身固定。
-- [Group-Evolving Agents](https://arxiv.org/abs/2602.04837) · UC Santa Barbara。代理分支；跨分支经验。初筛支持经验共享引导结构修改；具体递归边界待方法核实。
-- [Continual Harness](https://arxiv.org/abs/2605.09998) · Princeton / Google DeepMind / ARISE Foundation。技能；提示；记忆。跨交互持久改进；早期人类参与和后续自动循环分开。
-- [Voyager](https://arxiv.org/html/2305.16291v2) · NVIDIA / Caltech / Stanford / UT Austin / UW–Madison。可组合代码技能库。固定 GPT-4 和课程程序；持久技能积累成立，元算法自改未示范。
-- [Hermes Agent](https://github.com/NousResearch/hermes-agent) · Nous Research。从任务经验创建和修改技能文档，保留记忆与会话检索，使后续执行使用已有经验。
+- [HyperAgents](https://arxiv.org/html/2603.19461v1) · Meta / UBC / Vector / Edinburgh / NYU。Harness 任务代理与改进代理共同自修改；主实验外层固定
+- [HELIX](https://github.com/HKUDS/HELIX) · HKU · In3 Lab。已测Harness组合/数据生成；Model×Harness闭环仅提出，未训练后继模型
+- [Meta-Harness](https://arxiv.org/html/2603.28052v1) · Stanford / KRAFTON / MIT。固定proposer优化目标harness，AI4AI支撑方法
+- [ACE](https://arxiv.org/html/2510.04618v1) · Stanford / SambaNova / UC Berkeley。Harness持久context适应，改进流程本身固定
+- [Prime Agent](https://arxiv.org/abs/2608.23552) · Princeton / Prime Intellect / MIT。存在持久harness经验更新，主论文以运行系统和测试时计算为主；未隔离其RSI收益，也无模型更新
+- [GEAR](https://arxiv.org/abs/2605.13874) · Toronto / Vector / Samsung AI Center–Toronto / York。Evolve 是 Harness 改进器自改；Prompt/Fixed 是外部AI4AI搜索
+- [Mem²Evolve](https://arxiv.org/abs/2604.10923) · Beihang / Beijing Institute of Technology / Independent / MCML / Edinburgh。Harness内资产与经验共演；创建过程因检索经验改变，但外层算法不自改
+- [MemRL](https://arxiv.org/html/2601.03192v1) · SJTU / Xidian / NUS / Shanghai Innovation Institute / MemTensor / USTC。Harness记忆的非参数强化学习；更新器固定
+- [Group-Evolving Agents](https://arxiv.org/abs/2602.04837) · UC Santa Barbara。Harness代码种群进化；跨分支经验继承，而非模型权重训练
+- [Continual Harness](https://arxiv.org/abs/2605.09998) · Princeton / Google DeepMind / ARISE Foundation。主实验为持久 Harness 适应；§3.3/附录 D 还含 Model–Harness 协同更新。Refiner 程序及学习规则未显示自主改写。
+- [Voyager](https://arxiv.org/html/2305.16291v2) · NVIDIA / Caltech / Stanford / UT Austin / UW–Madison。具有跨任务持久继承的 Harness 学习；技能生成/验证器框架本身固定，未展示参数更新或改进器递归改写。
+- [Hermes Agent](https://github.com/NousResearch/hermes-agent) · Nous Research。产品化的持久 Harness 学习；改进器/底层模型本身固定，未证明每次写入提高泛化能力。
+- [Reflexion](https://arxiv.org/html/2303.11366v4) · Northeastern / MIT / Princeton。Harness / 反思记忆；以任务内跨试验学习为主要证据，不计为改进器递归自修改。
+- [ReasoningBank](https://arxiv.org/pdf/2509.25140v2) · UIUC / Google Cloud AI Research / Yale / Google Cloud AI。Harness / 跨任务推理记忆；改进记忆内容，未改变记忆学习规则。
+- [MemSkill](https://arxiv.org/html/2602.02474v1) · NTU / UIUC / UIC / Tsinghua。Harness路线：学到的选择控制器及演化技能库；Model定义为基础模型/adapter时不属于双路线协同。
+- [EnvHarness](https://arxiv.org/abs/2608.19880) · WashU / Google Cloud AI Research / Google Cloud / UNC。主归Harness：环境wrapper与外部技能共演化；另有8B模型训练支撑实验，非≥27B混合循环。
 
 ### 工具、技能与行动接口 · Tools, Skills & Action Interfaces
 
@@ -119,19 +123,19 @@
 - 候选生成、搜索与选择 → 工具、技能与行动接口：选择工具与技能版本。技能候选通过执行或任务反馈被保留和修复。
 - 工具、技能与行动接口 → 继承、组合与跨域迁移：技能可以复用与组合。可执行技能是跨任务继承的一种具体载体。
 
-**论文与团队（包括初筛与跨路线联系）**
+**论文与团队（包括跨路线联系）**
 
-- [DGM](https://arxiv.org/html/2505.22954v3) · Sakana AI / UBC / Vector Institute。编码代理代码；工具及上下文实现。被选后继负责修改；archive maintenance 与 parent selection 固定。
-- [Prime Agent](https://arxiv.org/abs/2608.23552) · Princeton / Prime Intellect / MIT。长期 REPL 状态；持久经验与技能。持久执行和经验修订可确认；改进器自修改范围待方法确认。
-- [Metaⁿ](https://arxiv.org/abs/2608.24735) · University of Minnesota / Seoul National University。策略层与工具。已有初筛表明元操作固定；层数增加不等于元操作本身进化。
-- [SkillOpt](https://arxiv.org/abs/2605.23904) · Microsoft / SJTU / Tongji / Fudan。技能文本。外部优化模型修改技能；不是优化模型权重自改。
-- [Mem²Evolve](https://arxiv.org/abs/2604.10923) · Beihang / Beijing Institute of Technology / Independent / MCML / Edinburgh。经验记忆；工具与专家资产。经验与能力资产双向影响；不据此认定更新算法也进化。
-- [SkillWeaver](https://arxiv.org/abs/2504.07079) · Ohio State / Virginia / Purdue / Carnegie Mellon / Cisco Research。网页 API 技能。技能库增长并用于后续任务；生成过程是否自改另论。
-- [Live-SWE-agent](https://arxiv.org/html/2511.13646v1) · UIUC / Google。任务运行时创建的自定义工具脚本。主实验不改变 agentic loop；论文重点是同任务在线工具创造，不能说已证明跨任务递归演化。
-- [Continual Harness](https://arxiv.org/abs/2605.09998) · Princeton / Google DeepMind / ARISE Foundation。技能；提示；记忆。跨交互持久改进；早期人类参与和后续自动循环分开。
-- [Voyager](https://arxiv.org/html/2305.16291v2) · NVIDIA / Caltech / Stanford / UT Austin / UW–Madison。可组合代码技能库。固定 GPT-4 和课程程序；持久技能积累成立，元算法自改未示范。
-- [RewardHarness](https://arxiv.org/html/2605.08703v1) · UBC / Vector / Kuaishou Kolors / Etude AI / Waterloo / Carnegie Mellon / Tsinghua / Georgia Tech。冻结视觉语言模型，通过偏好误差改进 reward agent 的技能和工具；该评价系统随后用于外部图像编辑模型的 GRPO 训练。
-- [Hermes Agent](https://github.com/NousResearch/hermes-agent) · Nous Research。从任务经验创建和修改技能文档，保留记忆与会话检索，使后续执行使用已有经验。
+- [DGM](https://arxiv.org/html/2505.22954v3) · Sakana AI / UBC / Vector Institute。Harness 代理谱系递归自修改，外层演化规则固定
+- [Prime Agent](https://arxiv.org/abs/2608.23552) · Princeton / Prime Intellect / MIT。存在持久harness经验更新，主论文以运行系统和测试时计算为主；未隔离其RSI收益，也无模型更新
+- [Metaⁿ](https://arxiv.org/abs/2608.24735) · University of Minnesota / Seoul National University。固定改进器生成层级Harness；Ω本身没有学习或重写
+- [SkillOpt](https://arxiv.org/abs/2605.23904) · Microsoft / SJTU / Tongji / Fudan。固定外层程序与权重，但optimizer-side meta-skill由跨epoch反馈更新
+- [Mem²Evolve](https://arxiv.org/abs/2604.10923) · Beihang / Beijing Institute of Technology / Independent / MCML / Edinburgh。Harness内资产与经验共演；创建过程因检索经验改变，但外层算法不自改
+- [SkillWeaver](https://arxiv.org/abs/2504.07079) · Ohio State / Virginia / Purdue / Carnegie Mellon / Cisco Research。Harness技能持续积累；生成和评价外层固定
+- [Live-SWE-agent](https://arxiv.org/html/2511.13646v1) · UIUC / Google。Harness任务内在线工具适应；没有跨代改进器自改证据
+- [Continual Harness](https://arxiv.org/abs/2605.09998) · Princeton / Google DeepMind / ARISE Foundation。主实验为持久 Harness 适应；§3.3/附录 D 还含 Model–Harness 协同更新。Refiner 程序及学习规则未显示自主改写。
+- [Voyager](https://arxiv.org/html/2305.16291v2) · NVIDIA / Caltech / Stanford / UT Austin / UW–Madison。具有跨任务持久继承的 Harness 学习；技能生成/验证器框架本身固定，未展示参数更新或改进器递归改写。
+- [RewardHarness](https://arxiv.org/html/2605.08703v1) · UBC / Vector / Kuaishou Kolors / Etude AI / Waterloo / Carnegie Mellon / Tsinghua / Georgia Tech。Harness奖励器自适应后用于外部模型GRPO；未展示模型—奖励器持续互教
+- [Hermes Agent](https://github.com/NousResearch/hermes-agent) · Nous Research。产品化的持久 Harness 学习；改进器/底层模型本身固定，未证明每次写入提高泛化能力。
 
 ### 推理与协作控制结构 · Control Flow & Agent Architecture
 
@@ -160,23 +164,24 @@
 - 推理与协作控制结构 → 执行系统与资源配置：在执行系统中实现。同一工作流需要具体的调用、状态与错误处理实现，运行成本也随之改变。
 - 候选生成、搜索与选择 → 推理与协作控制结构：搜索控制程序。搜索算法也可以修改循环、角色与 LLM 调用次序。
 
-**论文与团队（包括初筛与跨路线联系）**
+**论文与团队（包括跨路线联系）**
 
-- [Gödel Agent](https://github.com/Arvid-pku/Godel_Agent) · Peking University / UC Santa Barbara / University of Arizona。代理控制代码。自修改的具体范围与跨任务继承仍需方法全文确认。
-- [ADAS](https://arxiv.org/html/2408.08435v1) · UBC / Vector Institute。目标 agent 的 forward 代码。meta-agent 实现固定；目标设计与档案更新。
-- [AFlow](https://arxiv.org/html/2410.10762v4) · DeepWisdom / HKUST / HKUST(GZ) / RUC / Nanjing / Fudan / KAUST / Montréal / Mila。工作流代码；模块提示。搜索器固定；搜索的是工作流。
-- [DGM](https://arxiv.org/html/2505.22954v3) · Sakana AI / UBC / Vector Institute。编码代理代码；工具及上下文实现。被选后继负责修改；archive maintenance 与 parent selection 固定。
-- [AgentBreeder](https://arxiv.org/abs/2502.00757) · University of Oxford。多代理角色与结构。目标多代理系统演化；外层算法自修改未确认。
-- [HyperAgents](https://arxiv.org/html/2603.19461v1) · Meta / UBC / Vector / Edinburgh / NYU。task agent 代码；meta-agent 代码。meta-agent 修改逻辑可改；主实验 parent selection 固定。
-- [Recursive Harness SI](https://arxiv.org/html/2607.15524v1) · Sakana AI / UC Berkeley。任务专用文本工作流跨轮修订；基础模型、评价者及优化器固定。
-- [HarnessDev](https://arxiv.org/abs/2609.01437) · ByteDance Seed / SUTD / Georgia Tech / M-A-P / TokenWave.AI。可执行 scaffold。创造者与执行者可以不同；不把目标优化等同创造者自改。
-- [Meta-Harness](https://arxiv.org/html/2603.28052v1) · Stanford / KRAFTON / MIT。应用源码；记忆组织与上下文。源码可编辑范围广不等于每种资产均已有有效自改实证。
-- [SoL-Pi](https://arxiv.org/html/2609.20519v1) · NVIDIA / NTU / MIT。运行机制与代理 harness。以执行机制迁移及效率为重点，具体元循环边界见论文。
-- [ModularRSI](https://arxiv.org/html/2609.14857v2) · IQuest Research / Langboat / Beihang / Manchester / Hohai / M-A-P。harness 模块。模块局部改进必须经组合后的整体验证。
-- [Metaⁿ](https://arxiv.org/abs/2608.24735) · University of Minnesota / Seoul National University。策略层与工具。已有初筛表明元操作固定；层数增加不等于元操作本身进化。
-- [Adaptive Auto-Harness](https://arxiv.org/abs/2606.01770) · Emory / Amazon / Penn State / UIUC / Northeastern。harness 集合；任务路由及经验。持续适应含人类引导信号；路由与改进器更新分别判断。
-- [Dream-RSI](https://arxiv.org/html/2609.14858v2) · Google / Google DeepMind / Maryland / Virginia。LLM 改写可执行的研究探索策略代码，用已有研究树进行回放、比较和选择；基础 agent 与评价器保持不变。
-- [Autoscience · Carl / Mira](https://www.autoscience.ai/blog/autoscience-autonomous-ai-lab) · Autoscience。自动科学家提出和检验算法假设，自动工程师将被验证的模型改进转成可部署实现。
+- [Gödel Agent](https://github.com/Arvid-pku/Godel_Agent) · Peking University / UC Santa Barbara / University of Arizona。Harness 自修改，包含改进逻辑但尚缺其贡献的隔离迁移实验
+- [ADAS](https://arxiv.org/html/2408.08435v1) · UBC / Vector Institute。固定meta-agent优化目标harness，属于AI4AI支撑方法
+- [AFlow](https://arxiv.org/html/2410.10762v4) · DeepWisdom / HKUST / HKUST(GZ) / RUC / Nanjing / Fudan / KAUST / Montréal / Mila。固定搜索器优化目标harness，AI4AI支撑方法
+- [DGM](https://arxiv.org/html/2505.22954v3) · Sakana AI / UBC / Vector Institute。Harness 代理谱系递归自修改，外层演化规则固定
+- [AgentBreeder](https://arxiv.org/abs/2502.00757) · University of Oxford。固定meta-agent的Harness群体搜索，AI4AI支撑方法
+- [HyperAgents](https://arxiv.org/html/2603.19461v1) · Meta / UBC / Vector / Edinburgh / NYU。Harness 任务代理与改进代理共同自修改；主实验外层固定
+- [Recursive Harness SI](https://arxiv.org/html/2607.15524v1) · Sakana AI / UC Berkeley。Harness 连续自反馈修订；改进器固定的任务适应
+- [HarnessDev](https://arxiv.org/abs/2609.01437) · ByteDance Seed / SUTD / Georgia Tech / M-A-P / TokenWave.AI。Harness开发与演化的测量支撑，未递归替换开发环境
+- [Meta-Harness](https://arxiv.org/html/2603.28052v1) · Stanford / KRAFTON / MIT。固定proposer优化目标harness，AI4AI支撑方法
+- [SoL-Pi](https://arxiv.org/html/2609.20519v1) · NVIDIA / NTU / MIT。harness自动研究的路线成果；后继以更低成本改进自身的闭环未实测，论文自称RSI-inspired
+- [ModularRSI](https://arxiv.org/html/2609.14857v2) · IQuest Research / Langboat / Beihang / Manchester / Hohai / M-A-P。受进化agent参与分析和改写自身模块，属于harness自改进；外层算法固定，尚无独立元改进能力复利实验
+- [Metaⁿ](https://arxiv.org/abs/2608.24735) · University of Minnesota / Seoul National University。固定改进器生成层级Harness；Ω本身没有学习或重写
+- [Adaptive Auto-Harness](https://arxiv.org/abs/2606.01770) · Emory / Amazon / Penn State / UIUC / Northeastern。Harness持续演化与任务级路由；模型固定，主实验无HITL
+- [Dream-RSI](https://arxiv.org/html/2609.14858v2) · Google / Google DeepMind / Maryland / Virginia。Harness探索策略跨轮适应，固定外部代码改进者
+- [Autoscience · Carl / Mira](https://www.autoscience.ai/blog/autoscience-autonomous-ai-lab) · Autoscience。自动 AI 研究实验室方向；目前公开可读证据不足以判定直接 RSI 算法类别。
+- [MemSkill](https://arxiv.org/html/2602.02474v1) · NTU / UIUC / UIC / Tsinghua。Harness路线：学到的选择控制器及演化技能库；Model定义为基础模型/adapter时不属于双路线协同。
 
 ### 执行系统与资源配置 · Runtime, Environment & Infrastructure
 
@@ -204,25 +209,26 @@
 - 推理与协作控制结构 → 执行系统与资源配置：在执行系统中实现。同一工作流需要具体的调用、状态与错误处理实现，运行成本也随之改变。
 - 执行系统与资源配置 → 任务、探索与经验分布：产生轨迹与故障。执行日志、异常和运行代价决定系统可以学习哪些失败。
 
-**论文与团队（包括初筛与跨路线联系）**
+**论文与团队（包括跨路线联系）**
 
-- [SICA](https://arxiv.org/html/2504.15228v1) · iGent AI / University of Bristol。编码代理代码。历史最佳后继承担下一轮修改；非全部外层程序可改。
-- [HELIX](https://github.com/HKUDS/HELIX) · HKU · In3 Lab。harness 变体；成功及失败轨迹。产出训练记录不等于已实现 model 与 harness 共同演化。
-- [HSI](https://github.com/TailinZhou/hsi) · HKUST。harness 代码；元演化过程。仓库初筛显示元演化可改；完整作用边界待确认。
-- [HarnessDev](https://arxiv.org/abs/2609.01437) · ByteDance Seed / SUTD / Georgia Tech / M-A-P / TokenWave.AI。可执行 scaffold。创造者与执行者可以不同；不把目标优化等同创造者自改。
-- [RRSI](https://arxiv.org/html/2609.24972v1) · Google Cloud AI Research / Stanford / Washington University / UNC。harness 修改提案及接受规则。约束的是自修改过程；泛化和成本约束需要分别观察。
-- [Meta-Harness](https://arxiv.org/html/2603.28052v1) · Stanford / KRAFTON / MIT。应用源码；记忆组织与上下文。源码可编辑范围广不等于每种资产均已有有效自改实证。
-- [AlphaEvolve](https://arxiv.org/abs/2506.13131) · Google DeepMind。目标程序；部分计算基础设施算法。通用程序发现；只有涉及 AI 基础设施的应用属于 AI4AI，不能全部称自身 RSI。
-- [SoL-Pi](https://arxiv.org/html/2609.20519v1) · NVIDIA / NTU / MIT。运行机制与代理 harness。以执行机制迁移及效率为重点，具体元循环边界见论文。
-- [ModularRSI](https://arxiv.org/html/2609.14857v2) · IQuest Research / Langboat / Beihang / Manchester / Hohai / M-A-P。harness 模块。模块局部改进必须经组合后的整体验证。
-- [Prime Agent](https://arxiv.org/abs/2608.23552) · Princeton / Prime Intellect / MIT。长期 REPL 状态；持久经验与技能。持久执行和经验修订可确认；改进器自修改范围待方法确认。
-- [Self-Harness](https://arxiv.org/abs/2606.09498) · Shanghai AI Laboratory。自身 harness 代码。需要区分补丁产生与后继继续承担改进的完整循环。
-- [Live-SWE-agent](https://arxiv.org/html/2511.13646v1) · UIUC / Google。任务运行时创建的自定义工具脚本。主实验不改变 agentic loop；论文重点是同任务在线工具创造，不能说已证明跨任务递归演化。
-- [Adaptive Auto-Harness](https://arxiv.org/abs/2606.01770) · Emory / Amazon / Penn State / UIUC / Northeastern。harness 集合；任务路由及经验。持续适应含人类引导信号；路由与改进器更新分别判断。
-- [ShinkaEvolve](https://arxiv.org/abs/2509.19349) · Sakana AI。候选程序；包括部分 agent harness。算法演化框架；普通程序任务属于相关搜索机制，不直接证明自身 RSI。
-- [ComfyResearch](https://meta-circle.com/blog/comfyresearch-see-how-learning-happens) · MetaCircle。把训练协议、观测与分析组织成可执行依赖图，供人或 agent 构造、运行和比较实验。
-- [Apex-Tune](https://www.apexin.ai/assets/papers/what-happens-when-ai-starts-improving-ai.pdf) · Apex Intelligence。自动提出并验证 scaling law、训练实现和 GPU kernel 的改进，以实验结果继续搜索。
-- [Recursive · First Steps](https://www.recursive.com/articles/first-steps-toward-automated-ai-research) · Recursive Superintelligence。长时程并行研究线程积累实验上下文、组合候选分支，并对改进进行方差与 reward-hack 检查。
+- [SICA](https://arxiv.org/html/2504.15228v1) · iGent AI / University of Bristol。Harness 后继代理实际继续充当改进者
+- [HELIX](https://github.com/HKUDS/HELIX) · HKU · In3 Lab。已测Harness组合/数据生成；Model×Harness闭环仅提出，未训练后继模型
+- [HSI](https://github.com/TailinZhou/hsi) · HKUST。Harness与其evolver联合修改，最外meta机制固定
+- [HarnessDev](https://arxiv.org/abs/2609.01437) · ByteDance Seed / SUTD / Georgia Tech / M-A-P / TokenWave.AI。Harness开发与演化的测量支撑，未递归替换开发环境
+- [RRSI](https://arxiv.org/html/2609.24972v1) · Google Cloud AI Research / Stanford / Washington University / UNC。多轮Harness优化；外层改进器/正则化规则固定
+- [Meta-Harness](https://arxiv.org/html/2603.28052v1) · Stanford / KRAFTON / MIT。固定proposer优化目标harness，AI4AI支撑方法
+- [AlphaEvolve](https://arxiv.org/abs/2506.13131) · Google DeepMind。AI4AI基础设施改进与可变meta-prompts的重要机制参考；主实验未闭合模型权重和改进器多代协同训练
+- [SoL-Pi](https://arxiv.org/html/2609.20519v1) · NVIDIA / NTU / MIT。harness自动研究的路线成果；后继以更低成本改进自身的闭环未实测，论文自称RSI-inspired
+- [ModularRSI](https://arxiv.org/html/2609.14857v2) · IQuest Research / Langboat / Beihang / Manchester / Hohai / M-A-P。受进化agent参与分析和改写自身模块，属于harness自改进；外层算法固定，尚无独立元改进能力复利实验
+- [Prime Agent](https://arxiv.org/abs/2608.23552) · Princeton / Prime Intellect / MIT。存在持久harness经验更新，主论文以运行系统和测试时计算为主；未隔离其RSI收益，也无模型更新
+- [Self-Harness](https://arxiv.org/abs/2606.09498) · Shanghai AI Laboratory。固定模型在当前Harness下提案并继承新Harness；外层接受规则不变
+- [Live-SWE-agent](https://arxiv.org/html/2511.13646v1) · UIUC / Google。Harness任务内在线工具适应；没有跨代改进器自改证据
+- [Adaptive Auto-Harness](https://arxiv.org/abs/2606.01770) · Emory / Amazon / Penn State / UIUC / Northeastern。Harness持续演化与任务级路由；模型固定，主实验无HITL
+- [ShinkaEvolve](https://arxiv.org/abs/2509.19349) · Sakana AI。通用外部程序进化；含 AI4AI 应用但没有证据证明进化器本身递归改写或基础模型在线自训练。
+- [ComfyResearch](https://meta-circle.com/blog/comfyresearch-see-how-learning-happens) · MetaCircle。观测与实验基础设施；公开演示研究循环由人运行，不能作为直接 RSI 成果计数。
+- [Apex-Tune](https://www.apexin.ai/assets/papers/what-happens-when-ai-starts-improving-ai.pdf) · Apex Intelligence。AI4AI 自动优化成果；不能据公开产物推定研究器本体递归改写或 Model–Harness 联合训练。
+- [Recursive · First Steps](https://www.recursive.com/articles/first-steps-toward-automated-ai-research) · Recursive Superintelligence。具有公开优化产物的 AI4AI 研究系统；没有足够证据推定研究器本身发生递归权重/harness 协同更新。
+- [EnvHarness](https://arxiv.org/abs/2608.19880) · WashU / Google Cloud AI Research / Google Cloud / UNC。主归Harness：环境wrapper与外部技能共演化；另有8B模型训练支撑实验，非≥27B混合循环。
 
 ### 任务、探索与经验分布 · Task Streams, Exploration & Curriculum
 
@@ -252,22 +258,26 @@
 - 执行系统与资源配置 → 任务、探索与经验分布：产生轨迹与故障。执行日志、异常和运行代价决定系统可以学习哪些失败。
 - 继承、组合与跨域迁移 → 任务、探索与经验分布：已有能力改变后续探索。继承的技能使更复杂任务可达，进而改变将来收集到的经验。
 
-**论文与团队（包括初筛与跨路线联系）**
+**论文与团队（包括跨路线联系）**
 
-- [Self-Harness](https://arxiv.org/abs/2606.09498) · Shanghai AI Laboratory。自身 harness 代码。需要区分补丁产生与后继继续承担改进的完整循环。
-- [Mem²Evolve](https://arxiv.org/abs/2604.10923) · Beihang / Beijing Institute of Technology / Independent / MCML / Edinburgh。经验记忆；工具与专家资产。经验与能力资产双向影响；不据此认定更新算法也进化。
-- [SkillWeaver](https://arxiv.org/abs/2504.07079) · Ohio State / Virginia / Purdue / Carnegie Mellon / Cisco Research。网页 API 技能。技能库增长并用于后续任务；生成过程是否自改另论。
-- [Live-SWE-agent](https://arxiv.org/html/2511.13646v1) · UIUC / Google。任务运行时创建的自定义工具脚本。主实验不改变 agentic loop；论文重点是同任务在线工具创造，不能说已证明跨任务递归演化。
-- [Adaptive Auto-Harness](https://arxiv.org/abs/2606.01770) · Emory / Amazon / Penn State / UIUC / Northeastern。harness 集合；任务路由及经验。持续适应含人类引导信号；路由与改进器更新分别判断。
-- [Continual Harness](https://arxiv.org/abs/2605.09998) · Princeton / Google DeepMind / ARISE Foundation。技能；提示；记忆。跨交互持久改进；早期人类参与和后续自动循环分开。
-- [Voyager](https://arxiv.org/html/2305.16291v2) · NVIDIA / Caltech / Stanford / UT Austin / UW–Madison。可组合代码技能库。固定 GPT-4 和课程程序；持久技能积累成立，元算法自改未示范。
-- [Dream-RSI](https://arxiv.org/html/2609.14858v2) · Google / Google DeepMind / Maryland / Virginia。LLM 改写可执行的研究探索策略代码，用已有研究树进行回放、比较和选择；基础 agent 与评价器保持不变。
-- [OPHIS](https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch) · MetaCircle。以训练内部观测提出假设和干预，再用重复训练结果决定下一步研究。
-- [ComfyResearch](https://meta-circle.com/blog/comfyresearch-see-how-learning-happens) · MetaCircle。把训练协议、观测与分析组织成可执行依赖图，供人或 agent 构造、运行和比较实验。
-- [nanoGPT Observable Library](https://meta-circle.com/blog/observe-learning-in-full) · MetaCircle。把权重、梯度、激活和注意力统计与模型模块对应，比较不同深度与训练条件。
-- [Recursive · First Steps](https://www.recursive.com/articles/first-steps-toward-automated-ai-research) · Recursive Superintelligence。长时程并行研究线程积累实验上下文、组合候选分支，并对改进进行方差与 reward-hack 检查。
-- [Hermes Agent](https://github.com/NousResearch/hermes-agent) · Nous Research。从任务经验创建和修改技能文档，保留记忆与会话检索，使后续执行使用已有经验。
-- [Locus](https://intology.ai/blog/previewing-locus) · Intology。公开定位为长时程 AI 研发系统；公司报告多日研究与 RE-Bench 结果。
+- [Self-Harness](https://arxiv.org/abs/2606.09498) · Shanghai AI Laboratory。固定模型在当前Harness下提案并继承新Harness；外层接受规则不变
+- [Mem²Evolve](https://arxiv.org/abs/2604.10923) · Beihang / Beijing Institute of Technology / Independent / MCML / Edinburgh。Harness内资产与经验共演；创建过程因检索经验改变，但外层算法不自改
+- [SkillWeaver](https://arxiv.org/abs/2504.07079) · Ohio State / Virginia / Purdue / Carnegie Mellon / Cisco Research。Harness技能持续积累；生成和评价外层固定
+- [Live-SWE-agent](https://arxiv.org/html/2511.13646v1) · UIUC / Google。Harness任务内在线工具适应；没有跨代改进器自改证据
+- [Adaptive Auto-Harness](https://arxiv.org/abs/2606.01770) · Emory / Amazon / Penn State / UIUC / Northeastern。Harness持续演化与任务级路由；模型固定，主实验无HITL
+- [Continual Harness](https://arxiv.org/abs/2605.09998) · Princeton / Google DeepMind / ARISE Foundation。主实验为持久 Harness 适应；§3.3/附录 D 还含 Model–Harness 协同更新。Refiner 程序及学习规则未显示自主改写。
+- [Voyager](https://arxiv.org/html/2305.16291v2) · NVIDIA / Caltech / Stanford / UT Austin / UW–Madison。具有跨任务持久继承的 Harness 学习；技能生成/验证器框架本身固定，未展示参数更新或改进器递归改写。
+- [Dream-RSI](https://arxiv.org/html/2609.14858v2) · Google / Google DeepMind / Maryland / Virginia。Harness探索策略跨轮适应，固定外部代码改进者
+- [OPHIS](https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch) · MetaCircle。AI4AI 机制引导实验系统；公开材料未证实改进器自身迭代升级。与 Harness 研究相关，不能推定 Model–Harness 协同训练。
+- [ComfyResearch](https://meta-circle.com/blog/comfyresearch-see-how-learning-happens) · MetaCircle。观测与实验基础设施；公开演示研究循环由人运行，不能作为直接 RSI 成果计数。
+- [nanoGPT Observable Library](https://meta-circle.com/blog/observe-learning-in-full) · MetaCircle。学习动力学观测资源，属于 RSI 的使能工具而非直接 RSI 系统。
+- [Recursive · First Steps](https://www.recursive.com/articles/first-steps-toward-automated-ai-research) · Recursive Superintelligence。具有公开优化产物的 AI4AI 研究系统；没有足够证据推定研究器本身发生递归权重/harness 协同更新。
+- [Hermes Agent](https://github.com/NousResearch/hermes-agent) · Nous Research。产品化的持久 Harness 学习；改进器/底层模型本身固定，未证明每次写入提高泛化能力。
+- [Locus](https://intology.ai/blog/previewing-locus) · Intology。AI4AI 自动研究与目标模型训练；不等于研究 agent 自身参数与 Harness 协同进化。PTB 目标 1.7B–4B，不满足 ≥27B 模型主线门槛。
+- [Reflexion](https://arxiv.org/html/2303.11366v4) · Northeastern / MIT / Princeton。Harness / 反思记忆；以任务内跨试验学习为主要证据，不计为改进器递归自修改。
+- [ReasoningBank](https://arxiv.org/pdf/2509.25140v2) · UIUC / Google Cloud AI Research / Yale / Google Cloud AI。Harness / 跨任务推理记忆；改进记忆内容，未改变记忆学习规则。
+- [MemSkill](https://arxiv.org/html/2602.02474v1) · NTU / UIUC / UIC / Tsinghua。Harness路线：学到的选择控制器及演化技能库；Model定义为基础模型/adapter时不属于双路线协同。
+- [EnvHarness](https://arxiv.org/abs/2608.19880) · WashU / Google Cloud AI Research / Google Cloud / UNC。主归Harness：环境wrapper与外部技能共演化；另有8B模型训练支撑实验，非≥27B混合循环。
 
 ### 评测、验证器与反馈信号 · Evaluation, Verifiers & Feedback
 
@@ -296,29 +306,30 @@
 - 评测、验证器与反馈信号 → 改进程序的自修改：评价后代改进能力。任务分数之外，需观察改进器在给定预算内产生更强后代的能力。
 - 改进程序的自修改 → 评测、验证器与反馈信号：可更新评审组件。改进程序可以产生新评价器；采用新评价器改变了后续搜索的信号。
 
-**论文与团队（包括初筛与跨路线联系）**
+**论文与团队（包括跨路线联系）**
 
-- [STOP](https://arxiv.org/pdf/2310.02304) · Microsoft Research / Stanford / OpenAI（研究在微软期间完成）。改进程序源码。后继改进程序继续改写自身；模型冻结。
-- [AFlow](https://arxiv.org/html/2410.10762v4) · DeepWisdom / HKUST / HKUST(GZ) / RUC / Nanjing / Fudan / KAUST / Montréal / Mila。工作流代码；模块提示。搜索器固定；搜索的是工作流。
-- [SICA](https://arxiv.org/html/2504.15228v1) · iGent AI / University of Bristol。编码代理代码。历史最佳后继承担下一轮修改；非全部外层程序可改。
-- [GEPA](https://arxiv.org/pdf/2507.19457v2) · UC Berkeley / Stanford / Notre Dame / MIT / Databricks / Bespoke Labs。LLM 模块提示。更新提示；优化算法不自修改。
-- [Recursive Harness SI](https://arxiv.org/html/2607.15524v1) · Sakana AI / UC Berkeley。任务专用文本工作流跨轮修订；基础模型、评价者及优化器固定。
-- [RRSI](https://arxiv.org/html/2609.24972v1) · Google Cloud AI Research / Stanford / Washington University / UNC。harness 修改提案及接受规则。约束的是自修改过程；泛化和成本约束需要分别观察。
-- [AIDE²](https://arxiv.org/html/2609.26457v1) · Weco AI。内层研究代理。主实验外层研究者固定；另有后继接管外层的实验。
-- [Huxley–Gödel Machine](https://arxiv.org/html/2510.21614v1) · KAUST。代理分支；分支研发价值估计。选择机制由研究者设计；它指导自修改分支探索。
-- [Red Queen Gödel Machine](https://arxiv.org/html/2606.26294v3) · Cambridge / NVIDIA / Flower Labs / MBZUAI / Inria。任务代理；评价器。评价器可改；独立 ground-truth anchors 不随评审器替换而抹去。
-- [Self-Harness](https://arxiv.org/abs/2606.09498) · Shanghai AI Laboratory。自身 harness 代码。需要区分补丁产生与后继继续承担改进的完整循环。
-- [SkillOpt](https://arxiv.org/abs/2605.23904) · Microsoft / SJTU / Tongji / Fudan。技能文本。外部优化模型修改技能；不是优化模型权重自改。
-- [MemRL](https://arxiv.org/html/2601.03192v1) · SJTU / Xidian / NUS / Shanghai Innovation Institute / MemTensor / USTC。情景记忆；记忆效用值。LLM 参数冻结；记忆排序价值学习，更新规则本身固定。
-- [RewardHarness](https://arxiv.org/html/2605.08703v1) · UBC / Vector / Kuaishou Kolors / Etude AI / Waterloo / Carnegie Mellon / Tsinghua / Georgia Tech。冻结视觉语言模型，通过偏好误差改进 reward agent 的技能和工具；该评价系统随后用于外部图像编辑模型的 GRPO 训练。
-- [OPHIS](https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch) · MetaCircle。以训练内部观测提出假设和干预，再用重复训练结果决定下一步研究。
-- [ComfyResearch](https://meta-circle.com/blog/comfyresearch-see-how-learning-happens) · MetaCircle。把训练协议、观测与分析组织成可执行依赖图，供人或 agent 构造、运行和比较实验。
-- [nanoGPT Observable Library](https://meta-circle.com/blog/observe-learning-in-full) · MetaCircle。把权重、梯度、激活和注意力统计与模型模块对应，比较不同深度与训练条件。
-- [Apex-Tune](https://www.apexin.ai/assets/papers/what-happens-when-ai-starts-improving-ai.pdf) · Apex Intelligence。自动提出并验证 scaling law、训练实现和 GPU kernel 的改进，以实验结果继续搜索。
-- [Apex Research report](https://github.com/apexin-ai/apex-research-report) · Apex Intelligence。公司报告自主研究系统产生科研项目与论文，并用真实外部同行评审检验产出。
-- [ASI-Bench](https://arxiv.org/abs/2608.17271) · Tsinghua / University of Michigan / MIT / Harvard / Carnegie Mellon / UIUC / Boston University / University of Queensland / USTC / Flatiron Institute / Microsoft Research / AG2 AI / Independent Researchers。在相同科研任务上逐步撤去方法指导，区分按步骤执行和自主选择科研方法的能力。
-- [Recursive · First Steps](https://www.recursive.com/articles/first-steps-toward-automated-ai-research) · Recursive Superintelligence。长时程并行研究线程积累实验上下文、组合候选分支，并对改进进行方差与 reward-hack 检查。
-- [Autoscience · Carl / Mira](https://www.autoscience.ai/blog/autoscience-autonomous-ai-lab) · Autoscience。自动科学家提出和检验算法假设，自动工程师将被验证的模型改进转成可部署实现。
+- [STOP](https://arxiv.org/pdf/2310.02304) · Microsoft Research / Stanford / OpenAI（研究在微软期间完成）。Harness 改进器递归替换，直接自修改研究
+- [AFlow](https://arxiv.org/html/2410.10762v4) · DeepWisdom / HKUST / HKUST(GZ) / RUC / Nanjing / Fudan / KAUST / Montréal / Mila。固定搜索器优化目标harness，AI4AI支撑方法
+- [SICA](https://arxiv.org/html/2504.15228v1) · iGent AI / University of Bristol。Harness 后继代理实际继续充当改进者
+- [GEPA](https://arxiv.org/pdf/2507.19457v2) · UC Berkeley / Stanford / Notre Dame / MIT / Databricks / Bespoke Labs。固定优化器的Harness提示优化，属于AI4AI支撑方法
+- [Recursive Harness SI](https://arxiv.org/html/2607.15524v1) · Sakana AI / UC Berkeley。Harness 连续自反馈修订；改进器固定的任务适应
+- [RRSI](https://arxiv.org/html/2609.24972v1) · Google Cloud AI Research / Stanford / Washington University / UNC。多轮Harness优化；外层改进器/正则化规则固定
+- [AIDE²](https://arxiv.org/html/2609.26457v1) · Weco AI。主运行固定外层优化研究harness；外层替换的ignition试验未确认优越性
+- [Huxley–Gödel Machine](https://arxiv.org/html/2510.21614v1) · KAUST。Harness代理自修改，外层谱系搜索由人类固定
+- [Red Queen Gödel Machine](https://arxiv.org/html/2606.26294v3) · Cambridge / NVIDIA / Flower Labs / MBZUAI / Inria。Harness 内任务代理—评价器—元代理共演；没有模型权重训练
+- [Self-Harness](https://arxiv.org/abs/2606.09498) · Shanghai AI Laboratory。固定模型在当前Harness下提案并继承新Harness；外层接受规则不变
+- [SkillOpt](https://arxiv.org/abs/2605.23904) · Microsoft / SJTU / Tongji / Fudan。固定外层程序与权重，但optimizer-side meta-skill由跨epoch反馈更新
+- [MemRL](https://arxiv.org/html/2601.03192v1) · SJTU / Xidian / NUS / Shanghai Innovation Institute / MemTensor / USTC。Harness记忆的非参数强化学习；更新器固定
+- [RewardHarness](https://arxiv.org/html/2605.08703v1) · UBC / Vector / Kuaishou Kolors / Etude AI / Waterloo / Carnegie Mellon / Tsinghua / Georgia Tech。Harness奖励器自适应后用于外部模型GRPO；未展示模型—奖励器持续互教
+- [OPHIS](https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch) · MetaCircle。AI4AI 机制引导实验系统；公开材料未证实改进器自身迭代升级。与 Harness 研究相关，不能推定 Model–Harness 协同训练。
+- [ComfyResearch](https://meta-circle.com/blog/comfyresearch-see-how-learning-happens) · MetaCircle。观测与实验基础设施；公开演示研究循环由人运行，不能作为直接 RSI 成果计数。
+- [nanoGPT Observable Library](https://meta-circle.com/blog/observe-learning-in-full) · MetaCircle。学习动力学观测资源，属于 RSI 的使能工具而非直接 RSI 系统。
+- [Apex-Tune](https://www.apexin.ai/assets/papers/what-happens-when-ai-starts-improving-ai.pdf) · Apex Intelligence。AI4AI 自动优化成果；不能据公开产物推定研究器本体递归改写或 Model–Harness 联合训练。
+- [Apex Research report](https://github.com/apexin-ai/apex-research-report) · Apex Intelligence。自动科研流程及外部评审案例；研究器自身 RSI 机制与完整项目证据披露不足。
+- [ASI-Bench](https://arxiv.org/abs/2608.17271) · Tsinghua / University of Michigan / MIT / Harvard / Carnegie Mellon / UIUC / Boston University / University of Queensland / USTC / Flatiron Institute / Microsoft Research / AG2 AI / Independent Researchers。跨路线的理论、方法或评测；不单独计作已实现递归自改进的系统。
+- [Recursive · First Steps](https://www.recursive.com/articles/first-steps-toward-automated-ai-research) · Recursive Superintelligence。具有公开优化产物的 AI4AI 研究系统；没有足够证据推定研究器本身发生递归权重/harness 协同更新。
+- [Autoscience · Carl / Mira](https://www.autoscience.ai/blog/autoscience-autonomous-ai-lab) · Autoscience。自动 AI 研究实验室方向；目前公开可读证据不足以判定直接 RSI 算法类别。
+- [Reflexion](https://arxiv.org/html/2303.11366v4) · Northeastern / MIT / Princeton。Harness / 反思记忆；以任务内跨试验学习为主要证据，不计为改进器递归自修改。
 
 ### 候选生成、搜索与选择 · Search, Selection & Evolution
 
@@ -352,38 +363,39 @@
 - 候选生成、搜索与选择 → 改进程序的自修改：把改进器作为候选对象。被搜索的程序可以恰好就是产生下一轮修改的程序，形成自指更新。
 - 候选生成、搜索与选择 → 继承、组合与跨域迁移：保留分支与中间方案。谱系档案允许当前非最优候选成为未来改进的起点。
 
-**论文与团队（包括初筛与跨路线联系）**
+**论文与团队（包括跨路线联系）**
 
-- [STOP](https://arxiv.org/pdf/2310.02304) · Microsoft Research / Stanford / OpenAI（研究在微软期间完成）。改进程序源码。后继改进程序继续改写自身；模型冻结。
-- [Promptbreeder](https://arxiv.org/pdf/2309.16797) · Google DeepMind。任务提示；变异提示。变异提示也参与演化；不是权重训练。
-- [ADAS](https://arxiv.org/html/2408.08435v1) · UBC / Vector Institute。目标 agent 的 forward 代码。meta-agent 实现固定；目标设计与档案更新。
-- [AFlow](https://arxiv.org/html/2410.10762v4) · DeepWisdom / HKUST / HKUST(GZ) / RUC / Nanjing / Fudan / KAUST / Montréal / Mila。工作流代码；模块提示。搜索器固定；搜索的是工作流。
-- [SICA](https://arxiv.org/html/2504.15228v1) · iGent AI / University of Bristol。编码代理代码。历史最佳后继承担下一轮修改；非全部外层程序可改。
-- [DGM](https://arxiv.org/html/2505.22954v3) · Sakana AI / UBC / Vector Institute。编码代理代码；工具及上下文实现。被选后继负责修改；archive maintenance 与 parent selection 固定。
-- [GEPA](https://arxiv.org/pdf/2507.19457v2) · UC Berkeley / Stanford / Notre Dame / MIT / Databricks / Bespoke Labs。LLM 模块提示。更新提示；优化算法不自修改。
-- [AgentBreeder](https://arxiv.org/abs/2502.00757) · University of Oxford。多代理角色与结构。目标多代理系统演化；外层算法自修改未确认。
-- [HELIX](https://github.com/HKUDS/HELIX) · HKU · In3 Lab。harness 变体；成功及失败轨迹。产出训练记录不等于已实现 model 与 harness 共同演化。
-- [HSI](https://github.com/TailinZhou/hsi) · HKUST。harness 代码；元演化过程。仓库初筛显示元演化可改；完整作用边界待确认。
-- [HarnessDev](https://arxiv.org/abs/2609.01437) · ByteDance Seed / SUTD / Georgia Tech / M-A-P / TokenWave.AI。可执行 scaffold。创造者与执行者可以不同；不把目标优化等同创造者自改。
-- [Meta-Harness](https://arxiv.org/html/2603.28052v1) · Stanford / KRAFTON / MIT。应用源码；记忆组织与上下文。源码可编辑范围广不等于每种资产均已有有效自改实证。
-- [AIDE²](https://arxiv.org/html/2609.26457v1) · Weco AI。内层研究代理。主实验外层研究者固定；另有后继接管外层的实验。
-- [Huxley–Gödel Machine](https://arxiv.org/html/2510.21614v1) · KAUST。代理分支；分支研发价值估计。选择机制由研究者设计；它指导自修改分支探索。
-- [AlphaEvolve](https://arxiv.org/abs/2506.13131) · Google DeepMind。目标程序；部分计算基础设施算法。通用程序发现；只有涉及 AI 基础设施的应用属于 AI4AI，不能全部称自身 RSI。
-- [OPRO](https://arxiv.org/abs/2309.03409) · Google DeepMind。候选提示或数值解。优化提示是相关机制；未因迭代次数多成为改进器自修改。
-- [SoL-Pi](https://arxiv.org/html/2609.20519v1) · NVIDIA / NTU / MIT。运行机制与代理 harness。以执行机制迁移及效率为重点，具体元循环边界见论文。
-- [Red Queen Gödel Machine](https://arxiv.org/html/2606.26294v3) · Cambridge / NVIDIA / Flower Labs / MBZUAI / Inria。任务代理；评价器。评价器可改；独立 ground-truth anchors 不随评审器替换而抹去。
-- [GEAR](https://arxiv.org/abs/2605.13874) · Toronto / Vector / Samsung AI Center–Toronto / York。研究状态种群；部分变体中的搜索控制器。仅部分变体让控制器演化，不能概括为所有 GEAR 设置均递归。
-- [Group-Evolving Agents](https://arxiv.org/abs/2602.04837) · UC Santa Barbara。代理分支；跨分支经验。初筛支持经验共享引导结构修改；具体递归边界待方法核实。
-- [Adaptive Auto-Harness](https://arxiv.org/abs/2606.01770) · Emory / Amazon / Penn State / UIUC / Northeastern。harness 集合；任务路由及经验。持续适应含人类引导信号；路由与改进器更新分别判断。
-- [ShinkaEvolve](https://arxiv.org/abs/2509.19349) · Sakana AI。候选程序；包括部分 agent harness。算法演化框架；普通程序任务属于相关搜索机制，不直接证明自身 RSI。
-- [Dream-RSI](https://arxiv.org/html/2609.14858v2) · Google / Google DeepMind / Maryland / Virginia。LLM 改写可执行的研究探索策略代码，用已有研究树进行回放、比较和选择；基础 agent 与评价器保持不变。
-- [RewardHarness](https://arxiv.org/html/2605.08703v1) · UBC / Vector / Kuaishou Kolors / Etude AI / Waterloo / Carnegie Mellon / Tsinghua / Georgia Tech。冻结视觉语言模型，通过偏好误差改进 reward agent 的技能和工具；该评价系统随后用于外部图像编辑模型的 GRPO 训练。
-- [OPHIS](https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch) · MetaCircle。以训练内部观测提出假设和干预，再用重复训练结果决定下一步研究。
-- [Apex-Tune](https://www.apexin.ai/assets/papers/what-happens-when-ai-starts-improving-ai.pdf) · Apex Intelligence。自动提出并验证 scaling law、训练实现和 GPU kernel 的改进，以实验结果继续搜索。
-- [Apex Research report](https://github.com/apexin-ai/apex-research-report) · Apex Intelligence。公司报告自主研究系统产生科研项目与论文，并用真实外部同行评审检验产出。
-- [Recursive · First Steps](https://www.recursive.com/articles/first-steps-toward-automated-ai-research) · Recursive Superintelligence。长时程并行研究线程积累实验上下文、组合候选分支，并对改进进行方差与 reward-hack 检查。
-- [Locus](https://intology.ai/blog/previewing-locus) · Intology。公开定位为长时程 AI 研发系统；公司报告多日研究与 RE-Bench 结果。
-- [Autoscience · Carl / Mira](https://www.autoscience.ai/blog/autoscience-autonomous-ai-lab) · Autoscience。自动科学家提出和检验算法假设，自动工程师将被验证的模型改进转成可部署实现。
+- [STOP](https://arxiv.org/pdf/2310.02304) · Microsoft Research / Stanford / OpenAI（研究在微软期间完成）。Harness 改进器递归替换，直接自修改研究
+- [Promptbreeder](https://arxiv.org/pdf/2309.16797) · Google DeepMind。Harness 的任务提示与变异策略协同演化
+- [ADAS](https://arxiv.org/html/2408.08435v1) · UBC / Vector Institute。固定meta-agent优化目标harness，属于AI4AI支撑方法
+- [AFlow](https://arxiv.org/html/2410.10762v4) · DeepWisdom / HKUST / HKUST(GZ) / RUC / Nanjing / Fudan / KAUST / Montréal / Mila。固定搜索器优化目标harness，AI4AI支撑方法
+- [SICA](https://arxiv.org/html/2504.15228v1) · iGent AI / University of Bristol。Harness 后继代理实际继续充当改进者
+- [DGM](https://arxiv.org/html/2505.22954v3) · Sakana AI / UBC / Vector Institute。Harness 代理谱系递归自修改，外层演化规则固定
+- [GEPA](https://arxiv.org/pdf/2507.19457v2) · UC Berkeley / Stanford / Notre Dame / MIT / Databricks / Bespoke Labs。固定优化器的Harness提示优化，属于AI4AI支撑方法
+- [AgentBreeder](https://arxiv.org/abs/2502.00757) · University of Oxford。固定meta-agent的Harness群体搜索，AI4AI支撑方法
+- [HELIX](https://github.com/HKUDS/HELIX) · HKU · In3 Lab。已测Harness组合/数据生成；Model×Harness闭环仅提出，未训练后继模型
+- [HSI](https://github.com/TailinZhou/hsi) · HKUST。Harness与其evolver联合修改，最外meta机制固定
+- [HarnessDev](https://arxiv.org/abs/2609.01437) · ByteDance Seed / SUTD / Georgia Tech / M-A-P / TokenWave.AI。Harness开发与演化的测量支撑，未递归替换开发环境
+- [Meta-Harness](https://arxiv.org/html/2603.28052v1) · Stanford / KRAFTON / MIT。固定proposer优化目标harness，AI4AI支撑方法
+- [AIDE²](https://arxiv.org/html/2609.26457v1) · Weco AI。主运行固定外层优化研究harness；外层替换的ignition试验未确认优越性
+- [Huxley–Gödel Machine](https://arxiv.org/html/2510.21614v1) · KAUST。Harness代理自修改，外层谱系搜索由人类固定
+- [AlphaEvolve](https://arxiv.org/abs/2506.13131) · Google DeepMind。AI4AI基础设施改进与可变meta-prompts的重要机制参考；主实验未闭合模型权重和改进器多代协同训练
+- [OPRO](https://arxiv.org/abs/2309.03409) · Google DeepMind。固定改进器优化持久任务提示的支撑方法，未展示改进器自身递归更新
+- [SoL-Pi](https://arxiv.org/html/2609.20519v1) · NVIDIA / NTU / MIT。harness自动研究的路线成果；后继以更低成本改进自身的闭环未实测，论文自称RSI-inspired
+- [Red Queen Gödel Machine](https://arxiv.org/html/2606.26294v3) · Cambridge / NVIDIA / Flower Labs / MBZUAI / Inria。Harness 内任务代理—评价器—元代理共演；没有模型权重训练
+- [GEAR](https://arxiv.org/abs/2605.13874) · Toronto / Vector / Samsung AI Center–Toronto / York。Evolve 是 Harness 改进器自改；Prompt/Fixed 是外部AI4AI搜索
+- [Group-Evolving Agents](https://arxiv.org/abs/2602.04837) · UC Santa Barbara。Harness代码种群进化；跨分支经验继承，而非模型权重训练
+- [Adaptive Auto-Harness](https://arxiv.org/abs/2606.01770) · Emory / Amazon / Penn State / UIUC / Northeastern。Harness持续演化与任务级路由；模型固定，主实验无HITL
+- [ShinkaEvolve](https://arxiv.org/abs/2509.19349) · Sakana AI。通用外部程序进化；含 AI4AI 应用但没有证据证明进化器本身递归改写或基础模型在线自训练。
+- [Dream-RSI](https://arxiv.org/html/2609.14858v2) · Google / Google DeepMind / Maryland / Virginia。Harness探索策略跨轮适应，固定外部代码改进者
+- [RewardHarness](https://arxiv.org/html/2605.08703v1) · UBC / Vector / Kuaishou Kolors / Etude AI / Waterloo / Carnegie Mellon / Tsinghua / Georgia Tech。Harness奖励器自适应后用于外部模型GRPO；未展示模型—奖励器持续互教
+- [OPHIS](https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch) · MetaCircle。AI4AI 机制引导实验系统；公开材料未证实改进器自身迭代升级。与 Harness 研究相关，不能推定 Model–Harness 协同训练。
+- [Apex-Tune](https://www.apexin.ai/assets/papers/what-happens-when-ai-starts-improving-ai.pdf) · Apex Intelligence。AI4AI 自动优化成果；不能据公开产物推定研究器本体递归改写或 Model–Harness 联合训练。
+- [Apex Research report](https://github.com/apexin-ai/apex-research-report) · Apex Intelligence。自动科研流程及外部评审案例；研究器自身 RSI 机制与完整项目证据披露不足。
+- [Recursive · First Steps](https://www.recursive.com/articles/first-steps-toward-automated-ai-research) · Recursive Superintelligence。具有公开优化产物的 AI4AI 研究系统；没有足够证据推定研究器本身发生递归权重/harness 协同更新。
+- [Locus](https://intology.ai/blog/previewing-locus) · Intology。AI4AI 自动研究与目标模型训练；不等于研究 agent 自身参数与 Harness 协同进化。PTB 目标 1.7B–4B，不满足 ≥27B 模型主线门槛。
+- [Autoscience · Carl / Mira](https://www.autoscience.ai/blog/autoscience-autonomous-ai-lab) · Autoscience。自动 AI 研究实验室方向；目前公开可读证据不足以判定直接 RSI 算法类别。
+- [ReasoningBank](https://arxiv.org/pdf/2509.25140v2) · UIUC / Google Cloud AI Research / Yale / Google Cloud AI。Harness / 跨任务推理记忆；改进记忆内容，未改变记忆学习规则。
 
 ### 改进程序的自修改 · Self-Modification of the Improver
 
@@ -414,24 +426,24 @@
 - 改进程序的自修改 → 评测、验证器与反馈信号：可更新评审组件。改进程序可以产生新评价器；采用新评价器改变了后续搜索的信号。
 - 继承、组合与跨域迁移 → 改进程序的自修改：改进经验可跨域使用。迁移的不仅可以是解题程序，也可以是产生改进的策略；须由对应的迁移实验确认。
 
-**论文与团队（包括初筛与跨路线联系）**
+**论文与团队（包括跨路线联系）**
 
-- [STOP](https://arxiv.org/pdf/2310.02304) · Microsoft Research / Stanford / OpenAI（研究在微软期间完成）。改进程序源码。后继改进程序继续改写自身；模型冻结。
-- [Promptbreeder](https://arxiv.org/pdf/2309.16797) · Google DeepMind。任务提示；变异提示。变异提示也参与演化；不是权重训练。
-- [Gödel Agent](https://github.com/Arvid-pku/Godel_Agent) · Peking University / UC Santa Barbara / University of Arizona。代理控制代码。自修改的具体范围与跨任务继承仍需方法全文确认。
-- [SICA](https://arxiv.org/html/2504.15228v1) · iGent AI / University of Bristol。编码代理代码。历史最佳后继承担下一轮修改；非全部外层程序可改。
-- [DGM](https://arxiv.org/html/2505.22954v3) · Sakana AI / UBC / Vector Institute。编码代理代码；工具及上下文实现。被选后继负责修改；archive maintenance 与 parent selection 固定。
-- [HyperAgents](https://arxiv.org/html/2603.19461v1) · Meta / UBC / Vector / Edinburgh / NYU。task agent 代码；meta-agent 代码。meta-agent 修改逻辑可改；主实验 parent selection 固定。
-- [HSI](https://github.com/TailinZhou/hsi) · HKUST。harness 代码；元演化过程。仓库初筛显示元演化可改；完整作用边界待确认。
-- [RRSI](https://arxiv.org/html/2609.24972v1) · Google Cloud AI Research / Stanford / Washington University / UNC。harness 修改提案及接受规则。约束的是自修改过程；泛化和成本约束需要分别观察。
-- [AIDE²](https://arxiv.org/html/2609.26457v1) · Weco AI。内层研究代理。主实验外层研究者固定；另有后继接管外层的实验。
-- [Huxley–Gödel Machine](https://arxiv.org/html/2510.21614v1) · KAUST。代理分支；分支研发价值估计。选择机制由研究者设计；它指导自修改分支探索。
-- [ModularRSI](https://arxiv.org/html/2609.14857v2) · IQuest Research / Langboat / Beihang / Manchester / Hohai / M-A-P。harness 模块。模块局部改进必须经组合后的整体验证。
-- [Red Queen Gödel Machine](https://arxiv.org/html/2606.26294v3) · Cambridge / NVIDIA / Flower Labs / MBZUAI / Inria。任务代理；评价器。评价器可改；独立 ground-truth anchors 不随评审器替换而抹去。
-- [GEAR](https://arxiv.org/abs/2605.13874) · Toronto / Vector / Samsung AI Center–Toronto / York。研究状态种群；部分变体中的搜索控制器。仅部分变体让控制器演化，不能概括为所有 GEAR 设置均递归。
-- [Metaⁿ](https://arxiv.org/abs/2608.24735) · University of Minnesota / Seoul National University。策略层与工具。已有初筛表明元操作固定；层数增加不等于元操作本身进化。
-- [Self-Harness](https://arxiv.org/abs/2606.09498) · Shanghai AI Laboratory。自身 harness 代码。需要区分补丁产生与后继继续承担改进的完整循环。
-- [Group-Evolving Agents](https://arxiv.org/abs/2602.04837) · UC Santa Barbara。代理分支；跨分支经验。初筛支持经验共享引导结构修改；具体递归边界待方法核实。
+- [STOP](https://arxiv.org/pdf/2310.02304) · Microsoft Research / Stanford / OpenAI（研究在微软期间完成）。Harness 改进器递归替换，直接自修改研究
+- [Promptbreeder](https://arxiv.org/pdf/2309.16797) · Google DeepMind。Harness 的任务提示与变异策略协同演化
+- [Gödel Agent](https://github.com/Arvid-pku/Godel_Agent) · Peking University / UC Santa Barbara / University of Arizona。Harness 自修改，包含改进逻辑但尚缺其贡献的隔离迁移实验
+- [SICA](https://arxiv.org/html/2504.15228v1) · iGent AI / University of Bristol。Harness 后继代理实际继续充当改进者
+- [DGM](https://arxiv.org/html/2505.22954v3) · Sakana AI / UBC / Vector Institute。Harness 代理谱系递归自修改，外层演化规则固定
+- [HyperAgents](https://arxiv.org/html/2603.19461v1) · Meta / UBC / Vector / Edinburgh / NYU。Harness 任务代理与改进代理共同自修改；主实验外层固定
+- [HSI](https://github.com/TailinZhou/hsi) · HKUST。Harness与其evolver联合修改，最外meta机制固定
+- [RRSI](https://arxiv.org/html/2609.24972v1) · Google Cloud AI Research / Stanford / Washington University / UNC。多轮Harness优化；外层改进器/正则化规则固定
+- [AIDE²](https://arxiv.org/html/2609.26457v1) · Weco AI。主运行固定外层优化研究harness；外层替换的ignition试验未确认优越性
+- [Huxley–Gödel Machine](https://arxiv.org/html/2510.21614v1) · KAUST。Harness代理自修改，外层谱系搜索由人类固定
+- [ModularRSI](https://arxiv.org/html/2609.14857v2) · IQuest Research / Langboat / Beihang / Manchester / Hohai / M-A-P。受进化agent参与分析和改写自身模块，属于harness自改进；外层算法固定，尚无独立元改进能力复利实验
+- [Red Queen Gödel Machine](https://arxiv.org/html/2606.26294v3) · Cambridge / NVIDIA / Flower Labs / MBZUAI / Inria。Harness 内任务代理—评价器—元代理共演；没有模型权重训练
+- [GEAR](https://arxiv.org/abs/2605.13874) · Toronto / Vector / Samsung AI Center–Toronto / York。Evolve 是 Harness 改进器自改；Prompt/Fixed 是外部AI4AI搜索
+- [Metaⁿ](https://arxiv.org/abs/2608.24735) · University of Minnesota / Seoul National University。固定改进器生成层级Harness；Ω本身没有学习或重写
+- [Self-Harness](https://arxiv.org/abs/2606.09498) · Shanghai AI Laboratory。固定模型在当前Harness下提案并继承新Harness；外层接受规则不变
+- [Group-Evolving Agents](https://arxiv.org/abs/2602.04837) · UC Santa Barbara。Harness代码种群进化；跨分支经验继承，而非模型权重训练
 
 ### 继承、组合与跨域迁移 · Inheritance, Composition & Transfer
 
@@ -462,23 +474,23 @@
 - 继承、组合与跨域迁移 → 任务、探索与经验分布：已有能力改变后续探索。继承的技能使更复杂任务可达，进而改变将来收集到的经验。
 - 继承、组合与跨域迁移 → 改进程序的自修改：改进经验可跨域使用。迁移的不仅可以是解题程序，也可以是产生改进的策略；须由对应的迁移实验确认。
 
-**论文与团队（包括初筛与跨路线联系）**
+**论文与团队（包括跨路线联系）**
 
-- [ADAS](https://arxiv.org/html/2408.08435v1) · UBC / Vector Institute。目标 agent 的 forward 代码。meta-agent 实现固定；目标设计与档案更新。
-- [DGM](https://arxiv.org/html/2505.22954v3) · Sakana AI / UBC / Vector Institute。编码代理代码；工具及上下文实现。被选后继负责修改；archive maintenance 与 parent selection 固定。
-- [HyperAgents](https://arxiv.org/html/2603.19461v1) · Meta / UBC / Vector / Edinburgh / NYU。task agent 代码；meta-agent 代码。meta-agent 修改逻辑可改；主实验 parent selection 固定。
-- [HarnessDev](https://arxiv.org/abs/2609.01437) · ByteDance Seed / SUTD / Georgia Tech / M-A-P / TokenWave.AI。可执行 scaffold。创造者与执行者可以不同；不把目标优化等同创造者自改。
-- [AIDE²](https://arxiv.org/html/2609.26457v1) · Weco AI。内层研究代理。主实验外层研究者固定；另有后继接管外层的实验。
-- [ACE](https://arxiv.org/html/2510.04618v1) · Stanford / SambaNova / UC Berkeley。持久 playbook。内容与条目演化；生成—反思—整理流程固定。
-- [SoL-Pi](https://arxiv.org/html/2609.20519v1) · NVIDIA / NTU / MIT。运行机制与代理 harness。以执行机制迁移及效率为重点，具体元循环边界见论文。
-- [ModularRSI](https://arxiv.org/html/2609.14857v2) · IQuest Research / Langboat / Beihang / Manchester / Hohai / M-A-P。harness 模块。模块局部改进必须经组合后的整体验证。
-- [SkillOpt](https://arxiv.org/abs/2605.23904) · Microsoft / SJTU / Tongji / Fudan。技能文本。外部优化模型修改技能；不是优化模型权重自改。
-- [Mem²Evolve](https://arxiv.org/abs/2604.10923) · Beihang / Beijing Institute of Technology / Independent / MCML / Edinburgh。经验记忆；工具与专家资产。经验与能力资产双向影响；不据此认定更新算法也进化。
-- [MemRL](https://arxiv.org/html/2601.03192v1) · SJTU / Xidian / NUS / Shanghai Innovation Institute / MemTensor / USTC。情景记忆；记忆效用值。LLM 参数冻结；记忆排序价值学习，更新规则本身固定。
-- [SkillWeaver](https://arxiv.org/abs/2504.07079) · Ohio State / Virginia / Purdue / Carnegie Mellon / Cisco Research。网页 API 技能。技能库增长并用于后续任务；生成过程是否自改另论。
-- [Group-Evolving Agents](https://arxiv.org/abs/2602.04837) · UC Santa Barbara。代理分支；跨分支经验。初筛支持经验共享引导结构修改；具体递归边界待方法核实。
-- [Voyager](https://arxiv.org/html/2305.16291v2) · NVIDIA / Caltech / Stanford / UT Austin / UW–Madison。可组合代码技能库。固定 GPT-4 和课程程序；持久技能积累成立，元算法自改未示范。
-- [Dream-RSI](https://arxiv.org/html/2609.14858v2) · Google / Google DeepMind / Maryland / Virginia。LLM 改写可执行的研究探索策略代码，用已有研究树进行回放、比较和选择；基础 agent 与评价器保持不变。
+- [ADAS](https://arxiv.org/html/2408.08435v1) · UBC / Vector Institute。固定meta-agent优化目标harness，属于AI4AI支撑方法
+- [DGM](https://arxiv.org/html/2505.22954v3) · Sakana AI / UBC / Vector Institute。Harness 代理谱系递归自修改，外层演化规则固定
+- [HyperAgents](https://arxiv.org/html/2603.19461v1) · Meta / UBC / Vector / Edinburgh / NYU。Harness 任务代理与改进代理共同自修改；主实验外层固定
+- [HarnessDev](https://arxiv.org/abs/2609.01437) · ByteDance Seed / SUTD / Georgia Tech / M-A-P / TokenWave.AI。Harness开发与演化的测量支撑，未递归替换开发环境
+- [AIDE²](https://arxiv.org/html/2609.26457v1) · Weco AI。主运行固定外层优化研究harness；外层替换的ignition试验未确认优越性
+- [ACE](https://arxiv.org/html/2510.04618v1) · Stanford / SambaNova / UC Berkeley。Harness持久context适应，改进流程本身固定
+- [SoL-Pi](https://arxiv.org/html/2609.20519v1) · NVIDIA / NTU / MIT。harness自动研究的路线成果；后继以更低成本改进自身的闭环未实测，论文自称RSI-inspired
+- [ModularRSI](https://arxiv.org/html/2609.14857v2) · IQuest Research / Langboat / Beihang / Manchester / Hohai / M-A-P。受进化agent参与分析和改写自身模块，属于harness自改进；外层算法固定，尚无独立元改进能力复利实验
+- [SkillOpt](https://arxiv.org/abs/2605.23904) · Microsoft / SJTU / Tongji / Fudan。固定外层程序与权重，但optimizer-side meta-skill由跨epoch反馈更新
+- [Mem²Evolve](https://arxiv.org/abs/2604.10923) · Beihang / Beijing Institute of Technology / Independent / MCML / Edinburgh。Harness内资产与经验共演；创建过程因检索经验改变，但外层算法不自改
+- [MemRL](https://arxiv.org/html/2601.03192v1) · SJTU / Xidian / NUS / Shanghai Innovation Institute / MemTensor / USTC。Harness记忆的非参数强化学习；更新器固定
+- [SkillWeaver](https://arxiv.org/abs/2504.07079) · Ohio State / Virginia / Purdue / Carnegie Mellon / Cisco Research。Harness技能持续积累；生成和评价外层固定
+- [Group-Evolving Agents](https://arxiv.org/abs/2602.04837) · UC Santa Barbara。Harness代码种群进化；跨分支经验继承，而非模型权重训练
+- [Voyager](https://arxiv.org/html/2305.16291v2) · NVIDIA / Caltech / Stanford / UT Austin / UW–Madison。具有跨任务持久继承的 Harness 学习；技能生成/验证器框架本身固定，未展示参数更新或改进器递归改写。
+- [Dream-RSI](https://arxiv.org/html/2609.14858v2) · Google / Google DeepMind / Maryland / Virginia。Harness探索策略跨轮适应，固定外部代码改进者
 
 ### 持续研究的问题
 
@@ -522,21 +534,21 @@
 - 学习如何改进学习者 → 自生成数据与自训练：优化训练材料。外层按内层学习收益训练数据 / 自编辑生成策略。
 - 预训练中的 AI4AI → 自生成数据与自训练：扩展训练材料。AI 合成 / 改写语料可以进入预训练；这条使用关系不证明训练反馈反向改进生成器。
 
-**论文与团队（包括初筛与跨路线联系）**
+**论文与团队（包括跨路线联系）**
 
-- [SPIN](https://github.com/uclaml/SPIN) · UCLA · Quanquan Gu 团队。以当前输出与原始示范分布比较，迭代改进模型；self-play 一词不等于动态出题。
-- [SEAL](https://arxiv.org/html/2506.10943v1) · MIT · Improbable AI Lab / CSAIL。学习自编辑数据 / 更新指令，并用内层适应效果训练编辑策略。
-- [STaR](https://arxiv.org/abs/2203.14465) · Stanford / Google Research。正确答案筛选自生推理链，答案辅助 rationalization 后再微调。
-- [ReST-EM](https://arxiv.org/html/2312.06585v4) · Google DeepMind / Mila。自生样本按外部二元反馈筛选，E/M 轮交替。
-- [AlphaProof](https://www.nature.com/articles/s41586-025-09833-y) · Google DeepMind。Lean 验证搜索经验，训练证明网络并做 test-time RL。
-- [Constitutional AI](https://arxiv.org/html/2212.08073v1) · Anthropic。原则引导 self-critique / revision，再以 AI 偏好训练奖励与策略；非多代奖励者共演证据。
-- [Self-Taught Evaluators](https://arxiv.org/html/2408.02666v1) · Meta FAIR。合成判断与偏好训练 evaluator，再以新评价生成下一轮训练数据。
-- [rStar-Math](https://arxiv.org/abs/2501.04519) · Microsoft Research Asia / Peking University / Tsinghua。搜索轨迹训练 policy 与 process preference model，结果验证约束反馈。
-- [Self-Evolved Reward](https://arxiv.org/abs/2411.00418) · Fudan / Peking University / Microsoft。奖励模型用自生训练反馈迭代学习评价能力。
-- [DeepSeekMath-V2](https://arxiv.org/html/2511.22570v1) · DeepSeek-AI。验证器、元验证与生成器迭代；轮间 rejection fine-tuning 融合能力。
-- [LLMs Can Self-Improve](https://aclanthology.org/2023.emnlp-main.67.pdf) · Google / UIUC。self-consistency 筛选自生推理，回流 SFT；保留一轮自训练范围。
-- [SEED Distillation](https://arxiv.org/html/2607.14777v1) · Tsinghua / Zhejiang University / CUHK / NTU / Tongji。同一策略承担 actor 与训练期 analyzer；从自身轨迹提炼 hindsight skills，形成 on-policy distillation 与 RL 信号。部署时移除 analyzer，保留更新后的策略模型。
-- [WebEvolver](https://arxiv.org/html/2504.21024v2) · Tencent AI Lab。策略 LLM 与 world-model LLM 从交互轨迹中共同训练；世界模型提供合成经验与前瞻规划。可变对象是两类模型的参数。
+- [SPIN](https://github.com/uclaml/SPIN) · UCLA · Quanquan Gu 团队。Model 路线的迭代偏好自训练机制；不是自主修改训练算法的强 RSI。
+- [SEAL](https://arxiv.org/html/2506.10943v1) · MIT · Improbable AI Lab / CSAIL。Model 路线的元学习：参数更新生成策略由更新后的任务效果训练，训练程序本身固定。
+- [STaR](https://arxiv.org/abs/2203.14465) · Stanford / Google Research。Model 路线的结果筛选推理自训练基础方法，含答案条件化补救，不是训练算法自主改写。
+- [ReST-EM](https://arxiv.org/html/2312.06585v4) · Google DeepMind / Mila。Model 路线的验证式自训练；通过更好的生成数据迭代改进，验证器与训练程序固定。
+- [AlphaProof](https://www.nature.com/articles/s41586-025-09833-y) · Google DeepMind。Model 路线的验证式经验学习与测试时训练；证明者和形式化者存在反馈，harness 实现由研究者固定。
+- [Constitutional AI](https://arxiv.org/html/2212.08073v1) · Anthropic。Model 路线的 RLAIF/原则监督基础方法；不是多代改进器自改的直接证据。
+- [Self-Taught Evaluators](https://arxiv.org/html/2408.02666v1) · Meta FAIR。Model 路线的评价器自训练；提升改进信号生成组件，未同时训练回答政策。
+- [rStar-Math](https://arxiv.org/abs/2501.04519) · Microsoft Research Asia / Peking University / Tsinghua。Model机制参考；实际完整演化目标7B，不把236B启动教师计为训练规模。
+- [Self-Evolved Reward](https://arxiv.org/abs/2411.00418) · Fudan / Peking University / Microsoft。Model主线，评价器自训练；70B实验配置有披露，但量化结果不足以单独建立70B结论。
+- [DeepSeekMath-V2](https://arxiv.org/html/2511.22570v1) · DeepSeek-AI。Model主线：生成器与验证器参数迭代，固定测试搜索不单独构成Harness进化。
+- [LLMs Can Self-Improve](https://aclanthology.org/2023.emnlp-main.67.pdf) · Google / UIUC。单轮模型自训练基础；保留重要机制，但不计为已实验多轮递归RSI。
+- [SEED Distillation](https://arxiv.org/html/2607.14777v1) · Tsinghua / Zhejiang University / CUHK / NTU / Tongji。Model主线：技能仅是训练条件，部署不保留持续更新的harness技能库。
+- [WebEvolver](https://arxiv.org/html/2504.21024v2) · Tencent AI Lab。Model主线：两个可变对象都是模型参数；WMLA是固定推理模块。
 
 ### 自批评与 AI 偏好反馈 · Self-critique & AI feedback
 
@@ -562,13 +574,13 @@
 - 评价器学习与生成—验证共演 → 自批评与 AI 偏好反馈：形成 AI 偏好。评价模型把开放式回答比较转为偏好训练信号。
 - 自批评与 AI 偏好反馈 → 评价器学习与生成—验证共演：共同更新评价能力。生成与判断共享参数时，偏好训练可能同时改变二者；需实测判断能力。
 
-**论文与团队（包括初筛与跨路线联系）**
+**论文与团队（包括跨路线联系）**
 
-- [SPIN](https://github.com/uclaml/SPIN) · UCLA · Quanquan Gu 团队。以当前输出与原始示范分布比较，迭代改进模型；self-play 一词不等于动态出题。
-- [Self-Rewarding LM](https://arxiv.org/html/2401.10020v1) · Meta / NYU。回答与 judge 共享模型；自生偏好用于逐轮 DPO。
-- [Constitutional AI](https://arxiv.org/html/2212.08073v1) · Anthropic。原则引导 self-critique / revision，再以 AI 偏好训练奖励与策略；非多代奖励者共演证据。
-- [Iterative RPO](https://arxiv.org/html/2404.19733v2) · Meta FAIR / NYU。答案正确性形成正负推理对，以 DPO+NLL 迭代训练；AI 生成数据不等于 AI 决定偏好真值。
-- [Kimi K2](https://arxiv.org/html/2507.20534v1) · Moonshot AI（月之暗面）。RLVR 信号校准 K2 critic，rubric 评价开放任务；另有预训练 rephrasing，二者不是一个已证递归环。
+- [SPIN](https://github.com/uclaml/SPIN) · UCLA · Quanquan Gu 团队。Model 路线的迭代偏好自训练机制；不是自主修改训练算法的强 RSI。
+- [Self-Rewarding LM](https://arxiv.org/html/2401.10020v1) · Meta / NYU。Model 路线中回答者与自奖励 judge 共享参数，训练信号生成能力随模型更新；并无 harness 自改。
+- [Constitutional AI](https://arxiv.org/html/2212.08073v1) · Anthropic。Model 路线的 RLAIF/原则监督基础方法；不是多代改进器自改的直接证据。
+- [Iterative RPO](https://arxiv.org/html/2404.19733v2) · Meta FAIR / NYU。Model主线：70B参数真实更新；不是奖励模型或harness共同进化。
+- [Kimi K2](https://arxiv.org/html/2507.20534v1) · Moonshot AI（月之暗面）。Model主线；训练管线虽使用大量工具与环境，其自动共同演化没有公开实验证据。
 
 ### 可验证反馈与策略改进 · Verifiable feedback & policy improvement
 
@@ -596,19 +608,19 @@
 - 环境交互与长程经验学习 → 可验证反馈与策略改进：产生执行结果。环境动作和程序执行产生可检验的状态变化与反馈。
 - 可验证反馈与策略改进 → 持续学习与测试时适应：支持测试时参数学习。测试时的可验证尝试可回流参数，而不只增加搜索量。
 
-**论文与团队（包括初筛与跨路线联系）**
+**论文与团队（包括跨路线联系）**
 
-- [STaR](https://arxiv.org/abs/2203.14465) · Stanford / Google Research。正确答案筛选自生推理链，答案辅助 rationalization 后再微调。
-- [ReST-EM](https://arxiv.org/html/2312.06585v4) · Google DeepMind / Mila。自生样本按外部二元反馈筛选，E/M 轮交替。
-- [AlphaProof](https://www.nature.com/articles/s41586-025-09833-y) · Google DeepMind。Lean 验证搜索经验，训练证明网络并做 test-time RL。
-- [Absolute Zero](https://arxiv.org/abs/2505.03335) · Tsinghua / BIGAI / Penn State。同一模型兼任 proposer / solver，执行器给 correctness，求解成功率给 learnability。
-- [Tool-R0](https://arxiv.org/abs/2602.21320) · UIUC / ETH Zürich。工具任务生成与工具求解互相反馈；运行结果支持训练信号。
-- [rStar-Math](https://arxiv.org/abs/2501.04519) · Microsoft Research Asia / Peking University / Tsinghua。搜索轨迹训练 policy 与 process preference model，结果验证约束反馈。
-- [Teaching LLMs to Self-Evolve](https://arxiv.org/abs/2607.21971) · UIUC。用执行反馈训练多轮程序修订；meta-skills 不等于学习优化器。
-- [RL Tango](https://arxiv.org/abs/2505.15034) · MIT / MIT–IBM Watson AI Lab。生成者与过程验证者交替训练，结果正确性提供外部评价锚点。
-- [Iterative RPO](https://arxiv.org/html/2404.19733v2) · Meta FAIR / NYU。答案正确性形成正负推理对，以 DPO+NLL 迭代训练；AI 生成数据不等于 AI 决定偏好真值。
-- [Kimi K2](https://arxiv.org/html/2507.20534v1) · Moonshot AI（月之暗面）。RLVR 信号校准 K2 critic，rubric 评价开放任务；另有预训练 rephrasing，二者不是一个已证递归环。
-- [INTELLECT-3 / PRIME-RL](https://www.primeintellect.ai/blog/intellect-3) · Prime Intellect。以合成数据、可验证环境和异步 RL 训练 106B MoE，公开训练框架、环境与模型。
+- [STaR](https://arxiv.org/abs/2203.14465) · Stanford / Google Research。Model 路线的结果筛选推理自训练基础方法，含答案条件化补救，不是训练算法自主改写。
+- [ReST-EM](https://arxiv.org/html/2312.06585v4) · Google DeepMind / Mila。Model 路线的验证式自训练；通过更好的生成数据迭代改进，验证器与训练程序固定。
+- [AlphaProof](https://www.nature.com/articles/s41586-025-09833-y) · Google DeepMind。Model 路线的验证式经验学习与测试时训练；证明者和形式化者存在反馈，harness 实现由研究者固定。
+- [Absolute Zero](https://arxiv.org/abs/2505.03335) · Tsinghua / BIGAI / Penn State。Model 路线的自提任务—环境验证—联合参数学习；固定Python环境不属于被进化的harness。
+- [Tool-R0](https://arxiv.org/abs/2602.21320) · UIUC / ETH Zürich。Model 路线的工具调用课程共演化。工具schema是合成任务内容，未见运行时工具或harness代码自主升级。
+- [rStar-Math](https://arxiv.org/abs/2501.04519) · Microsoft Research Asia / Peking University / Tsinghua。Model机制参考；实际完整演化目标7B，不把236B启动教师计为训练规模。
+- [Teaching LLMs to Self-Evolve](https://arxiv.org/abs/2607.21971) · UIUC。Model使能方法：学习程序改进策略；外部程序搜索不自动构成模型自身RSI。
+- [RL Tango](https://arxiv.org/abs/2505.15034) · MIT / MIT–IBM Watson AI Lab。Model主线：生成器与评价器共同训练；harness和奖励定义固定。
+- [Iterative RPO](https://arxiv.org/html/2404.19733v2) · Meta FAIR / NYU。Model主线：70B参数真实更新；不是奖励模型或harness共同进化。
+- [Kimi K2](https://arxiv.org/html/2507.20534v1) · Moonshot AI（月之暗面）。Model主线；训练管线虽使用大量工具与环境，其自动共同演化没有公开实验证据。
+- [INTELLECT-3 / PRIME-RL](https://www.primeintellect.ai/blog/intellect-3) · Prime Intellect。Model使能研究，可连到Harness基础设施节点；没有公开自动协同进化实证。
 
 ### 评价器学习与生成—验证共演 · Evaluator learning & generator–verifier co-training
 
@@ -637,16 +649,16 @@
 - 可验证反馈与策略改进 → 评价器学习与生成—验证共演：校准评价器。结果可靠的任务为 learned critic / verifier 提供训练信号。
 - 自生成数据与自训练 → 评价器学习与生成—验证共演：提供新判断样本。自生成候选及其选择结果构造新的 evaluator 训练材料。
 
-**论文与团队（包括初筛与跨路线联系）**
+**论文与团队（包括跨路线联系）**
 
-- [Self-Rewarding LM](https://arxiv.org/html/2401.10020v1) · Meta / NYU。回答与 judge 共享模型；自生偏好用于逐轮 DPO。
-- [Self-Taught Evaluators](https://arxiv.org/html/2408.02666v1) · Meta FAIR。合成判断与偏好训练 evaluator，再以新评价生成下一轮训练数据。
-- [rStar-Math](https://arxiv.org/abs/2501.04519) · Microsoft Research Asia / Peking University / Tsinghua。搜索轨迹训练 policy 与 process preference model，结果验证约束反馈。
-- [Self-Evolved Reward](https://arxiv.org/abs/2411.00418) · Fudan / Peking University / Microsoft。奖励模型用自生训练反馈迭代学习评价能力。
-- [CoVerRL](https://arxiv.org/abs/2603.17775) · Zhejiang University / Baidu。同一模型交替生成与验证，通过验证缓解 self-consistency 错误。
-- [RL Tango](https://arxiv.org/abs/2505.15034) · MIT / MIT–IBM Watson AI Lab。生成者与过程验证者交替训练，结果正确性提供外部评价锚点。
-- [DeepSeekMath-V2](https://arxiv.org/html/2511.22570v1) · DeepSeek-AI。验证器、元验证与生成器迭代；轮间 rejection fine-tuning 融合能力。
-- [Kimi K2](https://arxiv.org/html/2507.20534v1) · Moonshot AI（月之暗面）。RLVR 信号校准 K2 critic，rubric 评价开放任务；另有预训练 rephrasing，二者不是一个已证递归环。
+- [Self-Rewarding LM](https://arxiv.org/html/2401.10020v1) · Meta / NYU。Model 路线中回答者与自奖励 judge 共享参数，训练信号生成能力随模型更新；并无 harness 自改。
+- [Self-Taught Evaluators](https://arxiv.org/html/2408.02666v1) · Meta FAIR。Model 路线的评价器自训练；提升改进信号生成组件，未同时训练回答政策。
+- [rStar-Math](https://arxiv.org/abs/2501.04519) · Microsoft Research Asia / Peking University / Tsinghua。Model机制参考；实际完整演化目标7B，不把236B启动教师计为训练规模。
+- [Self-Evolved Reward](https://arxiv.org/abs/2411.00418) · Fudan / Peking University / Microsoft。Model主线，评价器自训练；70B实验配置有披露，但量化结果不足以单独建立70B结论。
+- [CoVerRL](https://arxiv.org/abs/2603.17775) · Zhejiang University / Baidu。Model主线机制参考；无参数外的持久harness优化。
+- [RL Tango](https://arxiv.org/abs/2505.15034) · MIT / MIT–IBM Watson AI Lab。Model主线：生成器与评价器共同训练；harness和奖励定义固定。
+- [DeepSeekMath-V2](https://arxiv.org/html/2511.22570v1) · DeepSeek-AI。Model主线：生成器与验证器参数迭代，固定测试搜索不单独构成Harness进化。
+- [Kimi K2](https://arxiv.org/html/2507.20534v1) · Moonshot AI（月之暗面）。Model主线；训练管线虽使用大量工具与环境，其自动共同演化没有公开实验证据。
 
 ### 任务生成与自博弈 · Task generation & self-play
 
@@ -673,17 +685,17 @@ proposer、challenger 或 opponent 根据当前 solver 的表现改变任务或�
 - 可验证反馈与策略改进 → 任务生成与自博弈：验证任务与解答。可执行环境同时检查自生任务是否合法、解答是否正确。
 - 任务生成与自博弈 → 环境交互与长程经验学习：驱动新交互。AI 生成任务使执行者获得新的环境轨迹。
 
-**论文与团队（包括初筛与跨路线联系）**
+**论文与团队（包括跨路线联系）**
 
-- [SIMA 2](https://arxiv.org/html/2512.04797v1) · Google DeepMind。AI 提供游戏任务与轨迹反馈，执行代理从交互经验学习；此映射不声称出题者同步训练。
-- [GPT-Red](https://cdn.openai.com/pdf/gpt-red-automated-red-teaming-via-self-play-at-scale.pdf) · OpenAI。攻防模型相互提供训练压力；角色关系是 adversarial self-play。
-- [Dr. Zero](https://arxiv.org/html/2601.07055v2) · Meta Superintelligence Labs / UIUC。搜索增强的 proposer / solver 共训，求解表现决定训练任务。
-- [Agent0](https://arxiv.org/abs/2511.16043) · UNC / Google / Stanford / Recursive Superintelligence。课程代理与工具执行代理形成任务生成和求解反馈。
-- [R-Zero](https://arxiv.org/abs/2508.05004) · Tencent AI Seattle / WashU / Maryland / UT Dallas。challenger 围绕 solver 能力边缘生成下一批任务。
-- [Absolute Zero](https://arxiv.org/abs/2505.03335) · Tsinghua / BIGAI / Penn State。同一模型兼任 proposer / solver，执行器给 correctness，求解成功率给 learnability。
-- [Tool-R0](https://arxiv.org/abs/2602.21320) · UIUC / ETH Zürich。工具任务生成与工具求解互相反馈；运行结果支持训练信号。
-- [Agent-World](https://arxiv.org/abs/2604.18292) · RUC / ByteDance Seed。真实工具生态中构造可验证任务，按能力缺口产生后续训练经验。
-- [AgentEvolver](https://arxiv.org/abs/2511.10395) · Alibaba Tongyi Lab。自提问生成任务，自导航重用经验，自归因分配训练反馈。
+- [SIMA 2](https://arxiv.org/html/2512.04797v1) · Google DeepMind。Model 路线的交互经验自改进；未证明出题者、judge 或世界模型随之共同训练。
+- [GPT-Red](https://cdn.openai.com/pdf/gpt-red-automated-red-teaming-via-self-play-at-scale.pdf) · OpenAI。Model 路线的对抗共同训练：攻击者和防御者参数都更新；harness支持搜索但未自改。
+- [Dr. Zero](https://arxiv.org/html/2601.07055v2) · Meta Superintelligence Labs / UIUC。Model 路线的双模型课程共演化，检索 harness 不随训练自主改写。
+- [Agent0](https://arxiv.org/abs/2511.16043) · UNC / Google / Stanford / Recursive Superintelligence。Model 路线的双模型课程共演化和工具推理策略训练；工具存在不等于 harness 自进化。
+- [R-Zero](https://arxiv.org/abs/2508.05004) · Tencent AI Seattle / WashU / Maryland / UT Dallas。Model 路线的双模型自生成课程；反馈依据多数票，缺少独立可执行真值。
+- [Absolute Zero](https://arxiv.org/abs/2505.03335) · Tsinghua / BIGAI / Penn State。Model 路线的自提任务—环境验证—联合参数学习；固定Python环境不属于被进化的harness。
+- [Tool-R0](https://arxiv.org/abs/2602.21320) · UIUC / ETH Zürich。Model 路线的工具调用课程共演化。工具schema是合成任务内容，未见运行时工具或harness代码自主升级。
+- [Agent-World](https://arxiv.org/abs/2604.18292) · RUC / ByteDance Seed。Model主线的环境课程闭环；可跨连Model×Harness训练环境节点，但不能说部署harness被策略重写。
+- [AgentEvolver](https://arxiv.org/abs/2511.10395) · Alibaba Tongyi Lab。Model主线经验内化/课程训练；固定harness、外部生成器和judge，不自动算完整双侧RSI。
 
 ### 课程与数据价值学习 · Adaptive curriculum & data selection
 
@@ -710,16 +722,16 @@ proposer、challenger 或 opponent 根据当前 solver 的表现改变任务或�
 - 环境交互与长程经验学习 → 课程与数据价值学习：从失败调整课程。失败与能力缺口改变下一批任务。
 - 课程与数据价值学习 → 预训练中的 AI4AI：连接数据混合优化。按学习反馈选数据的思想也用于预训练数据配比；DoReMi 是机制参考，不列为当前大模型 RSI 主案例。
 
-**论文与团队（包括初筛与跨路线联系）**
+**论文与团队（包括跨路线联系）**
 
-- [Dr. Zero](https://arxiv.org/html/2601.07055v2) · Meta Superintelligence Labs / UIUC。搜索增强的 proposer / solver 共训，求解表现决定训练任务。
-- [Agent0](https://arxiv.org/abs/2511.16043) · UNC / Google / Stanford / Recursive Superintelligence。课程代理与工具执行代理形成任务生成和求解反馈。
-- [R-Zero](https://arxiv.org/abs/2508.05004) · Tencent AI Seattle / WashU / Maryland / UT Dallas。challenger 围绕 solver 能力边缘生成下一批任务。
-- [Absolute Zero](https://arxiv.org/abs/2505.03335) · Tsinghua / BIGAI / Penn State。同一模型兼任 proposer / solver，执行器给 correctness，求解成功率给 learnability。
-- [WebRL](https://arxiv.org/abs/2411.02337) · Tsinghua / Zhipu AI。失败轨迹产生新课程，outcome reward 与在线 RL 更新网页行动策略。
-- [Self-Evolving Curriculum](https://arxiv.org/abs/2505.14970) · Mila / Montréal / KAIST / Microsoft Research / HEC Montréal / ServiceNow AI。以 advantage-derived learning gain 更新非平稳 bandit 课程。
-- [Actor-Curator](https://arxiv.org/abs/2602.20532) · UIC / Caltech / RPI / MBZUAI / UChicago / NEC Labs America。学习 neural curator，以预计策略提升而非单纯难度选题。
-- [Agent-World](https://arxiv.org/abs/2604.18292) · RUC / ByteDance Seed。真实工具生态中构造可验证任务，按能力缺口产生后续训练经验。
+- [Dr. Zero](https://arxiv.org/html/2601.07055v2) · Meta Superintelligence Labs / UIUC。Model 路线的双模型课程共演化，检索 harness 不随训练自主改写。
+- [Agent0](https://arxiv.org/abs/2511.16043) · UNC / Google / Stanford / Recursive Superintelligence。Model 路线的双模型课程共演化和工具推理策略训练；工具存在不等于 harness 自进化。
+- [R-Zero](https://arxiv.org/abs/2508.05004) · Tencent AI Seattle / WashU / Maryland / UT Dallas。Model 路线的双模型自生成课程；反馈依据多数票，缺少独立可执行真值。
+- [Absolute Zero](https://arxiv.org/abs/2505.03335) · Tsinghua / BIGAI / Penn State。Model 路线的自提任务—环境验证—联合参数学习；固定Python环境不属于被进化的harness。
+- [WebRL](https://arxiv.org/abs/2411.02337) · Tsinghua / Zhipu AI。Model主线；新课程是训练输入，优化器和网页harness保持固定。
+- [Self-Evolving Curriculum](https://arxiv.org/abs/2505.14970) · Mila / Montréal / KAIST / Microsoft Research / HEC Montréal / ServiceNow AI。Model训练机制参考；bandit自适应课程不等于改进器递归自修改。
+- [Actor-Curator](https://arxiv.org/abs/2602.20532) · UIC / Caltech / RPI / MBZUAI / UChicago / NEC Labs America。Model主线训练机制参考；学习参数化课程控制器，固定优化公式。
+- [Agent-World](https://arxiv.org/abs/2604.18292) · RUC / ByteDance Seed。Model主线的环境课程闭环；可跨连Model×Harness训练环境节点，但不能说部署harness被策略重写。
 
 ### 环境交互与长程经验学习 · Interactive learning & experience reuse
 
@@ -748,21 +760,22 @@ proposer、challenger 或 opponent 根据当前 solver 的表现改变任务或�
 - 环境交互与长程经验学习 → 自生成数据与自训练：回放 / 蒸馏有效经验。经反馈选择的交互经验可变为后续监督训练材料；与在线 RL 可组合。
 - 学习如何改进学习者 → 环境交互与长程经验学习：训练经验整理策略。改进器把经历改写为 skills 或 harness，后续执行效果训练改进器。
 
-**论文与团队（包括初筛与跨路线联系）**
+**论文与团队（包括跨路线联系）**
 
-- [EvoHarness-RL](https://arxiv.org/abs/2608.05446) · UIUC / Meta AI / Rutgers / Carnegie Mellon。SFT 与 cost-aware GRPO 训练外部 BPE 状态访问策略；不因名称含 harness 就当成学习更新器。
-- [SIMA 2](https://arxiv.org/html/2512.04797v1) · Google DeepMind。AI 提供游戏任务与轨迹反馈，执行代理从交互经验学习；此映射不声称出题者同步训练。
-- [Dr. Zero](https://arxiv.org/html/2601.07055v2) · Meta Superintelligence Labs / UIUC。搜索增强的 proposer / solver 共训，求解表现决定训练任务。
-- [Agent0](https://arxiv.org/abs/2511.16043) · UNC / Google / Stanford / Recursive Superintelligence。课程代理与工具执行代理形成任务生成和求解反馈。
-- [Tool-R0](https://arxiv.org/abs/2602.21320) · UIUC / ETH Zürich。工具任务生成与工具求解互相反馈；运行结果支持训练信号。
-- [WebRL](https://arxiv.org/abs/2411.02337) · Tsinghua / Zhipu AI。失败轨迹产生新课程，outcome reward 与在线 RL 更新网页行动策略。
-- [Agent-World](https://arxiv.org/abs/2604.18292) · RUC / ByteDance Seed。真实工具生态中构造可验证任务，按能力缺口产生后续训练经验。
-- [SkillOS](https://arxiv.org/abs/2605.06614) · UIUC / Google Cloud AI Research / MIT。冻结执行者，训练 skill curator；较晚关联任务评价早先 SkillRepo 更新。
-- [AgentEvolver](https://arxiv.org/abs/2511.10395) · Alibaba Tongyi Lab。自提问生成任务，自导航重用经验，自归因分配训练反馈。
-- [Teaching LLMs to Self-Evolve](https://arxiv.org/abs/2607.21971) · UIUC。用执行反馈训练多轮程序修订；meta-skills 不等于学习优化器。
-- [SEED Distillation](https://arxiv.org/html/2607.14777v1) · Tsinghua / Zhejiang University / CUHK / NTU / Tongji。同一策略承担 actor 与训练期 analyzer；从自身轨迹提炼 hindsight skills，形成 on-policy distillation 与 RL 信号。部署时移除 analyzer，保留更新后的策略模型。
-- [WebEvolver](https://arxiv.org/html/2504.21024v2) · Tencent AI Lab。策略 LLM 与 world-model LLM 从交互轨迹中共同训练；世界模型提供合成经验与前瞻规划。可变对象是两类模型的参数。
-- [INTELLECT-3 / PRIME-RL](https://www.primeintellect.ai/blog/intellect-3) · Prime Intellect。以合成数据、可验证环境和异步 RL 训练 106B MoE，公开训练框架、环境与模型。
+- [EvoHarness-RL](https://arxiv.org/abs/2608.05446) · UIUC / Meta AI / Rutgers / Carnegie Mellon。主更新对象为模型的 harness 协调策略；经验库共同更新形成混合连接，但不涉及 runtime 自编程。
+- [SIMA 2](https://arxiv.org/html/2512.04797v1) · Google DeepMind。Model 路线的交互经验自改进；未证明出题者、judge 或世界模型随之共同训练。
+- [Dr. Zero](https://arxiv.org/html/2601.07055v2) · Meta Superintelligence Labs / UIUC。Model 路线的双模型课程共演化，检索 harness 不随训练自主改写。
+- [Agent0](https://arxiv.org/abs/2511.16043) · UNC / Google / Stanford / Recursive Superintelligence。Model 路线的双模型课程共演化和工具推理策略训练；工具存在不等于 harness 自进化。
+- [Tool-R0](https://arxiv.org/abs/2602.21320) · UIUC / ETH Zürich。Model 路线的工具调用课程共演化。工具schema是合成任务内容，未见运行时工具或harness代码自主升级。
+- [WebRL](https://arxiv.org/abs/2411.02337) · Tsinghua / Zhipu AI。Model主线；新课程是训练输入，优化器和网页harness保持固定。
+- [Agent-World](https://arxiv.org/abs/2604.18292) · RUC / ByteDance Seed。Model主线的环境课程闭环；可跨连Model×Harness训练环境节点，但不能说部署harness被策略重写。
+- [SkillOS](https://arxiv.org/abs/2605.06614) · UIUC / Google Cloud AI Research / MIT。Model×Harness：学习技能改进器。训练期curator权重与组内SkillRepo耦合；部署时权重固定而技能库更新。不是executor权重与永久技能库同步共进化。
+- [AgentEvolver](https://arxiv.org/abs/2511.10395) · Alibaba Tongyi Lab。Model主线经验内化/课程训练；固定harness、外部生成器和judge，不自动算完整双侧RSI。
+- [Teaching LLMs to Self-Evolve](https://arxiv.org/abs/2607.21971) · UIUC。Model使能方法：学习程序改进策略；外部程序搜索不自动构成模型自身RSI。
+- [SEED Distillation](https://arxiv.org/html/2607.14777v1) · Tsinghua / Zhejiang University / CUHK / NTU / Tongji。Model主线：技能仅是训练条件，部署不保留持续更新的harness技能库。
+- [WebEvolver](https://arxiv.org/html/2504.21024v2) · Tencent AI Lab。Model主线：两个可变对象都是模型参数；WMLA是固定推理模块。
+- [INTELLECT-3 / PRIME-RL](https://www.primeintellect.ai/blog/intellect-3) · Prime Intellect。Model使能研究，可连到Harness基础设施节点；没有公开自动协同进化实证。
+- [Execution-Grounded Research](https://arxiv.org/abs/2601.14525) · Stanford。Model路线：研究想法生成器参数学习；固定执行harness，不是双对象共同演化。
 
 ### 学习如何改进学习者 · Learning to adapt & learned improvement policies
 
@@ -789,12 +802,13 @@ proposer、challenger 或 opponent 根据当前 solver 的表现改变任务或�
 - 持续学习与测试时适应 → 学习如何改进学习者：把更新策略用于新任务。学习如何 self-edit 可用于部署时知识吸收；长期保留仍需单独解决。
 - 学习如何改进学习者 → 预训练中的 AI4AI：研究预训练改进器。把训练收益用作数据生成器或更新规则的外层目标是研究方向；此处没有据此声称现有目录已经实现前沿预训练 RSI。
 
-**论文与团队（包括初筛与跨路线联系）**
+**论文与团队（包括跨路线联系）**
 
-- [SEAL](https://arxiv.org/html/2506.10943v1) · MIT · Improbable AI Lab / CSAIL。学习自编辑数据 / 更新指令，并用内层适应效果训练编辑策略。
-- [DERL](https://arxiv.org/html/2512.13399v3) · Waterloo / HKU / CUHK-Shenzhen / Duke。奖励程序设计者通过内层策略训练后的验证效果更新。
-- [Harness-R1](https://arxiv.org/abs/2608.02276) · SJTU / Xiaohongshu / Southeast University。训练 harness 编辑模型，用目标 agent 重跑后的成功评价编辑效果；与 Hybrid 关联。
-- [SkillOS](https://arxiv.org/abs/2605.06614) · UIUC / Google Cloud AI Research / MIT。冻结执行者，训练 skill curator；较晚关联任务评价早先 SkillRepo 更新。
+- [SEAL](https://arxiv.org/html/2506.10943v1) · MIT · Improbable AI Lab / CSAIL。Model 路线的元学习：参数更新生成策略由更新后的任务效果训练，训练程序本身固定。
+- [DERL](https://arxiv.org/html/2512.13399v3) · Waterloo / HKU / CUHK-Shenzhen / Duke。Model主位置为奖励proposer学习，连接训练harness奖励程序；DERL-full在搜索中跨轮继承优胜policy，最后以选出的奖励序列从头训练报告模型。
+- [Harness-R1](https://arxiv.org/abs/2608.02276) · SJTU / Xiaohongshu / Southeast University。Model 路线训练 harness 编辑者，连到 Harness 产物；未展示持续 model×harness 双向共同进化。
+- [SkillOS](https://arxiv.org/abs/2605.06614) · UIUC / Google Cloud AI Research / MIT。Model×Harness：学习技能改进器。训练期curator权重与组内SkillRepo耦合；部署时权重固定而技能库更新。不是executor权重与永久技能库同步共进化。
+- [Execution-Grounded Research](https://arxiv.org/abs/2601.14525) · Stanford。Model路线：研究想法生成器参数学习；固定执行harness，不是双对象共同演化。
 
 ### 持续学习与测试时适应 · Continual learning & test-time adaptation
 
@@ -819,10 +833,10 @@ proposer、challenger 或 opponent 根据当前 solver 的表现改变任务或�
 - 持续学习与测试时适应 → 学习如何改进学习者：把更新策略用于新任务。学习如何 self-edit 可用于部署时知识吸收；长期保留仍需单独解决。
 - 可验证反馈与策略改进 → 持续学习与测试时适应：支持测试时参数学习。测试时的可验证尝试可回流参数，而不只增加搜索量。
 
-**论文与团队（包括初筛与跨路线联系）**
+**论文与团队（包括跨路线联系）**
 
-- [SEAL](https://arxiv.org/html/2506.10943v1) · MIT · Improbable AI Lab / CSAIL。学习自编辑数据 / 更新指令，并用内层适应效果训练编辑策略。
-- [AlphaProof](https://www.nature.com/articles/s41586-025-09833-y) · Google DeepMind。Lean 验证搜索经验，训练证明网络并做 test-time RL。
+- [SEAL](https://arxiv.org/html/2506.10943v1) · MIT · Improbable AI Lab / CSAIL。Model 路线的元学习：参数更新生成策略由更新后的任务效果训练，训练程序本身固定。
+- [AlphaProof](https://www.nature.com/articles/s41586-025-09833-y) · Google DeepMind。Model 路线的验证式经验学习与测试时训练；证明者和形式化者存在反馈，harness 实现由研究者固定。
 
 ### 预训练中的 AI4AI · AI-assisted pretraining
 
@@ -848,11 +862,11 @@ AI 改写语料、选择数据混合、设计损失 / 优化器或改进训练�
 - 课程与数据价值学习 → 预训练中的 AI4AI：连接数据混合优化。按学习反馈选数据的思想也用于预训练数据配比；DoReMi 是机制参考，不列为当前大模型 RSI 主案例。
 - 学习如何改进学习者 → 预训练中的 AI4AI：研究预训练改进器。把训练收益用作数据生成器或更新规则的外层目标是研究方向；此处没有据此声称现有目录已经实现前沿预训练 RSI。
 
-**论文与团队（包括初筛与跨路线联系）**
+**论文与团队（包括跨路线联系）**
 
-- [Kimi K2](https://arxiv.org/html/2507.20534v1) · Moonshot AI（月之暗面）。RLVR 信号校准 K2 critic，rubric 评价开放任务；另有预训练 rephrasing，二者不是一个已证递归环。
-- [OPHIS](https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch) · MetaCircle。以训练内部观测提出假设和干预，再用重复训练结果决定下一步研究。
-- [Apex-Tune](https://www.apexin.ai/assets/papers/what-happens-when-ai-starts-improving-ai.pdf) · Apex Intelligence。自动提出并验证 scaling law、训练实现和 GPU kernel 的改进，以实验结果继续搜索。
+- [Kimi K2](https://arxiv.org/html/2507.20534v1) · Moonshot AI（月之暗面）。Model主线；训练管线虽使用大量工具与环境，其自动共同演化没有公开实验证据。
+- [OPHIS](https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch) · MetaCircle。AI4AI 机制引导实验系统；公开材料未证实改进器自身迭代升级。与 Harness 研究相关，不能推定 Model–Harness 协同训练。
+- [Apex-Tune](https://www.apexin.ai/assets/papers/what-happens-when-ai-starts-improving-ai.pdf) · Apex Intelligence。AI4AI 自动优化成果；不能据公开产物推定研究器本体递归改写或 Model–Harness 联合训练。
 
 ### 持续研究的问题
 
@@ -896,14 +910,16 @@ Model指系统内所有被学习的参数，包括策略、reward model、world 
 - 组织结构与角色能力共同学习 → 工作流与策略共同适配：规定分工与路由。角色分工和通信拓扑成为工作流可优化的内容。
 - 部署变化与再适配 → 工作流与策略共同适配：暴露兼容性变化。接口、工具或模型版本变化会使既有工作流失配，从而要求重新适配。
 
-**论文与团队（包括初筛与跨路线联系）**
+**论文与团队（包括跨路线联系）**
 
-- [SIA](https://github.com/hexo-ai/sia) · Hexo Labs / University of Oxford。反馈代理同时修改目标agent scaffold并训练其LoRA；主实验更新目标agent，未说明反馈代理自身权重随代更新。
-- [Co-Harness](https://arxiv.org/abs/2607.22688) · Meituan / Ai2 / Independent。HarnessCritic修订外部系统后，用成功轨迹SFT；原文报告两轮。两轮结果不代表无限持续改善。
-- [MASS](https://arxiv.org/html/2610.12176v1) · Sakana AI / UC Berkeley。优化的是文本形式的多agent工作流；底层coding harness、工具和记忆固定。共享模型经SFT后再次承担执行、优化和评价角色；报告两轮。
-- [Harness-Zero](https://arxiv.org/abs/2609.24974) · Peking University / Google / HKUST。先演化harness，再由harnessing agent在学生动作空间生成干预轨迹并SFT；支持H→M内化，未直接展示更新学生继续演化H的反复闭环。
-- [On-policy Co-evolution](https://arxiv.org/html/2609.09134v1) · Salesforce AI。对进化后harness做学生访问状态上的局部纠错与LoRA-SFT；主要实证是一次顺序适配，循环接续是提出的方向。on-policy描述采样状态，不代表训练算法为RL。
-- [TaoLive HAT](https://arxiv.org/abs/2608.15763) · TaoLive AIGC LLM Team。harness-state augmentation使模型适应skills/tool schemas/prompts/hooks变体；这是训练鲁棒性与部署适配，不证明AI自动演化harness。
+- [SIA](https://github.com/hexo-ai/sia) · Hexo Labs / University of Oxford。联合改目标模型与harness；固定外部改进器，属于有限任务上的协同优化。
+- [Co-Harness](https://arxiv.org/abs/2607.22688) · Meituan / Ai2 / Independent。Model×Harness交替优化；32B分支符合选定规模，8B应单独标记。
+- [MASS](https://arxiv.org/html/2610.12176v1) · Sakana AI / UC Berkeley。工作流文本与共享模型两轮协同；底层coding harness固定。
+- [Harness-Zero](https://arxiv.org/abs/2609.24974) · Peking University / Google / HKUST。Harness→Model内化的支撑方法；不是多代共同优化。
+- [On-policy Co-evolution](https://arxiv.org/html/2609.09134v1) · Salesforce AI。Model×Harness适配机制的直接研究；有双对象更新，尚无已证多代继任。
+- [TaoLive HAT](https://arxiv.org/abs/2608.15763) · TaoLive AIGC LLM Team。工业Model×Harness适配研究；更新真实但有人类决策，不是无人科研闭环。
+- [HASE](https://arxiv.org/html/2607.03935v1) · HKU / China Mobile Jiutian Research / Grace Investment Machine。Model × Harness / 统一训练解题与系统编辑；实际训练8B，按既定规模偏好放补充机制。
+- [Continual Harness](https://arxiv.org/abs/2605.09998) · Princeton / Google DeepMind / ARISE Foundation。主实验为持久 Harness 适应；§3.3/附录 D 还含 Model–Harness 协同更新。Refiner 程序及学习规则未显示自主改写。
 
 ### 外部经验进入参数 · Harness-to-Model Internalization
 
@@ -941,22 +957,22 @@ Model指系统内所有被学习的参数，包括策略、reward model、world 
 - 外部经验进入参数 → 部署变化与再适配：改变所需外部支持。被内化的行为可能降低复杂harness依赖，但必须在目标部署接口下检验。
 - 部署变化与再适配 → 外部经验进入参数：提供适配训练分布。训练覆盖不同harness状态或当前学生实际访问状态，以学习稳健行为。
 
-**论文与团队（包括初筛与跨路线联系）**
+**论文与团队（包括跨路线联系）**
 
-- [Co-Harness](https://arxiv.org/abs/2607.22688) · Meituan / Ai2 / Independent。HarnessCritic修订外部系统后，用成功轨迹SFT；原文报告两轮。两轮结果不代表无限持续改善。
-- [Frontis-MA1 / OpenMLE](https://arxiv.org/html/2607.28568v1) · Horizon Research / Frontis.AI / 清华大学。研发操作经过SFT/RL，部署执行长程ML搜索；主要改外部ML解法，系统本身固定。不能按“训练模型+有harness”认定协同RSI。
-- [MASS](https://arxiv.org/html/2610.12176v1) · Sakana AI / UC Berkeley。优化的是文本形式的多agent工作流；底层coding harness、工具和记忆固定。共享模型经SFT后再次承担执行、优化和评价角色；报告两轮。
-- [RLAnything](https://arxiv.org/html/2602.02488v1) · Yinjie Wang · Tianbao Xie · Ke Shen · Mengdi Wang · Ling Yang（作者；机构待核）。同时训练策略和奖励模型，依据错误模式改写外部任务；Hybrid归属来自任务侧变化，并非来自“有两个模型”。
-- [Harness-Zero](https://arxiv.org/abs/2609.24974) · Peking University / Google / HKUST。先演化harness，再由harnessing agent在学生动作空间生成干预轨迹并SFT；支持H→M内化，未直接展示更新学生继续演化H的反复闭环。
-- [SkillRL](https://arxiv.org/html/2602.08234v1) · UNC / UChicago / UCSD / NEC Labs / Berkeley / UCSC。外部SkillBank与策略GRPO共同更新，teacher负责技能提炼且非被训练主体。训练主体7B，属于机制补充。
-- [MemSkill](https://arxiv.org/html/2602.02474v1) · NTU / UIUC / UIC / Tsinghua。训练对象是轻量MLP技能选择controller（PPO，精确参数量未报告）；Qwen3-Embedding-0.6B作shared encoder，LLaMA70B与Qwen80B通过API使用，executor/designer固定。不得将70B/80B当作被训练模型。
-- [EvoDS](https://arxiv.org/abs/2606.03841) · HKUST。共享骨干的多角色策略经过SFT和online RL，产生并复用可执行技能；组织架构本身固定，不应把多角色训练说成拓扑演化。
-- [On-policy Co-evolution](https://arxiv.org/html/2609.09134v1) · Salesforce AI。对进化后harness做学生访问状态上的局部纠错与LoRA-SFT；主要实证是一次顺序适配，循环接续是提出的方向。on-policy描述采样状态，不代表训练算法为RL。
-- [TaoLive HAT](https://arxiv.org/abs/2608.15763) · TaoLive AIGC LLM Team。harness-state augmentation使模型适应skills/tool schemas/prompts/hooks变体；这是训练鲁棒性与部署适配，不证明AI自动演化harness。
-- [WebEvolver](https://arxiv.org/html/2504.21024v2) · Tencent AI Lab。跨路线机制联系。同时改多个模型仍是参数侧共学；已读方法没有非参数工作流/工具/环境包装被优化。 策略 LLM 与 world-model LLM 从交互轨迹中共同训练；世界模型提供合成经验与前瞻规划。可变对象是两类模型的参数。
-- [EnvHarness](https://arxiv.org/abs/2608.19880) · WashU / Google Cloud AI Research / Google Cloud / UNC。EnvRigger根据失败生成环境wrapper，原环境底层和verifier冻结；再用重塑环境训练policy。是否跨多代反复重建wrapper应依据训练流程逐项说明。
-- [Socratic-SWE](https://arxiv.org/abs/2606.07412) · Alibaba AI Data / SJTU。从软件求解轨迹提炼技能并生成新任务训练求解者；是否有跨轮持久可调用技能库及其明确更新边界，需方法全文确认。
-- [SEED Distillation](https://arxiv.org/html/2607.14777v1) · Tsinghua / Zhejiang University / CUHK / NTU / Tongji。跨路线机制联系。明确更新模型参数；未显示持久非参数harness共同演化。 同一策略承担 actor 与训练期 analyzer；从自身轨迹提炼 hindsight skills，形成 on-policy distillation 与 RL 信号。部署时移除 analyzer，保留更新后的策略模型。
+- [Co-Harness](https://arxiv.org/abs/2607.22688) · Meituan / Ai2 / Independent。Model×Harness交替优化；32B分支符合选定规模，8B应单独标记。
+- [Frontis-MA1 / OpenMLE](https://arxiv.org/html/2607.28568v1) · Horizon Research / Frontis.AI / 清华大学 / 浙江大学 / 上海交通大学 / Georgia Tech。AI4AI模型训练与搜索协同支撑方法；并无已验证的harness自重构多代RSI。
+- [MASS](https://arxiv.org/html/2610.12176v1) · Sakana AI / UC Berkeley。工作流文本与共享模型两轮协同；底层coding harness固定。
+- [RLAnything](https://arxiv.org/html/2602.02488v1) · Yinjie Wang · Tianbao Xie · Ke Shen · Mengdi Wang · Ling Yang（作者；机构待核）。策略+奖励模型+任务课程协同训练；按训练侧harness广义归入混合路线。
+- [Harness-Zero](https://arxiv.org/abs/2609.24974) · Peking University / Google / HKUST。Harness→Model内化的支撑方法；不是多代共同优化。
+- [SkillRL](https://arxiv.org/html/2602.08234v1) · UNC / UChicago / UCSD / NEC Labs / Berkeley / UCSC。学生权重与技能库协同的小规模直接机制研究。
+- [MemSkill](https://arxiv.org/html/2602.02474v1) · NTU / UIUC / UIC / Tsinghua。Harness路线：学到的选择控制器及演化技能库；Model定义为基础模型/adapter时不属于双路线协同。
+- [EvoDS](https://arxiv.org/abs/2606.03841) · HKUST。共享基础模型训练与运行期技能积累的混合机制；不是已经证明长期自我强化。
+- [On-policy Co-evolution](https://arxiv.org/html/2609.09134v1) · Salesforce AI。Model×Harness适配机制的直接研究；有双对象更新，尚无已证多代继任。
+- [TaoLive HAT](https://arxiv.org/abs/2608.15763) · TaoLive AIGC LLM Team。工业Model×Harness适配研究；更新真实但有人类决策，不是无人科研闭环。
+- [WebEvolver](https://arxiv.org/html/2504.21024v2) · Tencent AI Lab。Model主线：两个可变对象都是模型参数；WMLA是固定推理模块。
+- [EnvHarness](https://arxiv.org/abs/2608.19880) · WashU / Google Cloud AI Research / Google Cloud / UNC。主归Harness：环境wrapper与外部技能共演化；另有8B模型训练支撑实验，非≥27B混合循环。
+- [Socratic-SWE](https://arxiv.org/abs/2606.07412) · Alibaba AI Data / SJTU。共享模型与外部技能课程多轮协同；基础执行harness固定，规模低于27B。
+- [SEED Distillation](https://arxiv.org/html/2607.14777v1) · Tsinghua / Zhejiang University / CUHK / NTU / Tongji。Model主线：技能仅是训练条件，部署不保留持续更新的harness技能库。
 
 ### 模型能力用于系统改写 · Model-to-Harness Design
 
@@ -986,23 +1002,24 @@ Model指系统内所有被学习的参数，包括策略、reward model、world 
 - 模型能力用于系统改写 → 任务、环境与学习共同变化：生成任务和包装。设计者根据失败轨迹生成课程或环境包装，改变可获得的训练经验。
 - 模型能力用于系统改写 → 训练器与学习系统共同优化：设计训练干预。研究模型产生可执行训练程序、诊断工具和配方修改。
 
-**论文与团队（包括初筛与跨路线联系）**
+**论文与团队（包括跨路线联系）**
 
-- [SIA](https://github.com/hexo-ai/sia) · Hexo Labs / University of Oxford。反馈代理同时修改目标agent scaffold并训练其LoRA；主实验更新目标agent，未说明反馈代理自身权重随代更新。
-- [Co-Harness](https://arxiv.org/abs/2607.22688) · Meituan / Ai2 / Independent。HarnessCritic修订外部系统后，用成功轨迹SFT；原文报告两轮。两轮结果不代表无限持续改善。
-- [MASS](https://arxiv.org/html/2610.12176v1) · Sakana AI / UC Berkeley。优化的是文本形式的多agent工作流；底层coding harness、工具和记忆固定。共享模型经SFT后再次承担执行、优化和评价角色；报告两轮。
-- [Eureka](https://arxiv.org/abs/2310.12931) · NVIDIA / UPenn / Caltech / UT Austin。奖励程序与机器人策略更新；奖励设计LLM冻结。它是AI设计学习信号的参考，不能当LLM研究者自身参数递归升级。
-- [Automated Alignment Researchers](https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures) · Anthropic。研究代理提出干预并训练外部目标模型；目标改善没有直接证明研究代理自身学习或自改。
-- [Seed for Seed](https://seed.bytedance.com/en/blog/seed2-1-officially-released-advancing-ai-productivity) · ByteDance Seed。官方描述AI参与数据、算法和工程开发；尚无统一公开的自我递归协议可从介绍推定。
-- [Skill Self-Play](https://arxiv.org/html/2607.22529v1) · Alibaba Qwen / CUHK / RUC / SYSU / PKU / ETH / UZH / Buffalo。技能保存任务生成与验证结构，出题/求解策略与技能内容共同变化；实际训练规模单列，不以教师规模替代。
-- [EvoTrainer](https://arxiv.org/html/2606.03108v2) · Alibaba Tongyi Lab / SIAT-CAS / SUAT。训练侧诊断工具/流程与目标策略版本共同改进；训练者LLM为固定Sonnet，昂贵执行有人类把关。不能描述成训练者权重自进化。
-- [Execution-Grounded Research](https://arxiv.org/abs/2601.14525) · Stanford。执行候选AI研究方案并反馈构思者；训练构思模型与改进目标模型须分开计，不把外部训练目标当成其自身后继。
-- [SkillRL](https://arxiv.org/html/2602.08234v1) · UNC / UChicago / UCSD / NEC Labs / Berkeley / UCSC。外部SkillBank与策略GRPO共同更新，teacher负责技能提炼且非被训练主体。训练主体7B，属于机制补充。
-- [MemSkill](https://arxiv.org/html/2602.02474v1) · NTU / UIUC / UIC / Tsinghua。训练对象是轻量MLP技能选择controller（PPO，精确参数量未报告）；Qwen3-Embedding-0.6B作shared encoder，LLaMA70B与Qwen80B通过API使用，executor/designer固定。不得将70B/80B当作被训练模型。
-- [EvoDS](https://arxiv.org/abs/2606.03841) · HKUST。共享骨干的多角色策略经过SFT和online RL，产生并复用可执行技能；组织架构本身固定，不应把多角色训练说成拓扑演化。
-- [RewardHarness](https://arxiv.org/html/2605.08703v1) · UBC / Vector / Kuaishou Kolors / Etude AI / Waterloo / Carnegie Mellon / Tsinghua / Georgia Tech。跨路线机制联系。主贡献是评价Harness演化；下游训练提供跨路线联系，未建立更新目标反向改进奖励系统的闭环。 冻结视觉语言模型，通过偏好误差改进 reward agent 的技能和工具；该评价系统随后用于外部图像编辑模型的 GRPO 训练。
-- [EnvHarness](https://arxiv.org/abs/2608.19880) · WashU / Google Cloud AI Research / Google Cloud / UNC。EnvRigger根据失败生成环境wrapper，原环境底层和verifier冻结；再用重塑环境训练policy。是否跨多代反复重建wrapper应依据训练流程逐项说明。
-- [AIRA-Compose / Design](https://arxiv.org/abs/2605.15871) · Meta FAIR / Oxford。研究代理搜索架构/计算原语，候选扩展到外部目标预训练；没有据此证明目标模型回到下一代研究者角色。
+- [SIA](https://github.com/hexo-ai/sia) · Hexo Labs / University of Oxford。联合改目标模型与harness；固定外部改进器，属于有限任务上的协同优化。
+- [Co-Harness](https://arxiv.org/abs/2607.22688) · Meituan / Ai2 / Independent。Model×Harness交替优化；32B分支符合选定规模，8B应单独标记。
+- [MASS](https://arxiv.org/html/2610.12176v1) · Sakana AI / UC Berkeley。工作流文本与共享模型两轮协同；底层coding harness固定。
+- [Eureka](https://arxiv.org/abs/2310.12931) · NVIDIA / UPenn / Caltech / UT Austin。自动奖励设计与外部策略学习支撑方法，不是LLM自身Model×Harness协同RSI。
+- [Automated Alignment Researchers](https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures) · Anthropic。AI4AI自动后训练研究支撑，具备大模型实验但未证明目标模型成为自身改进器。
+- [Seed for Seed](https://seed.bytedance.com/en/blog/seed2-1-officially-released-advancing-ai-productivity) · ByteDance Seed。公开AI4AI工业方向，双路线具体闭环尚缺技术披露。
+- [Skill Self-Play](https://arxiv.org/html/2607.22529v1) · Alibaba Qwen / CUHK / RUC / SYSU / PKU / ETH / UZH / Buffalo。proposer/solver权重与技能库共同更新的课程协同机制，规模低于主范围。
+- [EvoTrainer](https://arxiv.org/html/2606.03108v2) · Alibaba Tongyi Lab / SIAT-CAS / SUAT。训练侧harness与目标策略共同演化，保留有限自治与小模型范围。
+- [Execution-Grounded Research](https://arxiv.org/abs/2601.14525) · Stanford。Model路线：研究想法生成器参数学习；固定执行harness，不是双对象共同演化。
+- [SkillRL](https://arxiv.org/html/2602.08234v1) · UNC / UChicago / UCSD / NEC Labs / Berkeley / UCSC。学生权重与技能库协同的小规模直接机制研究。
+- [MemSkill](https://arxiv.org/html/2602.02474v1) · NTU / UIUC / UIC / Tsinghua。Harness路线：学到的选择控制器及演化技能库；Model定义为基础模型/adapter时不属于双路线协同。
+- [EvoDS](https://arxiv.org/abs/2606.03841) · HKUST。共享基础模型训练与运行期技能积累的混合机制；不是已经证明长期自我强化。
+- [RewardHarness](https://arxiv.org/html/2605.08703v1) · UBC / Vector / Kuaishou Kolors / Etude AI / Waterloo / Carnegie Mellon / Tsinghua / Georgia Tech。Harness奖励器自适应后用于外部模型GRPO；未展示模型—奖励器持续互教
+- [EnvHarness](https://arxiv.org/abs/2608.19880) · WashU / Google Cloud AI Research / Google Cloud / UNC。主归Harness：环境wrapper与外部技能共演化；另有8B模型训练支撑实验，非≥27B混合循环。
+- [AIRA-Compose / Design](https://arxiv.org/abs/2605.15871) · Meta FAIR / Oxford。AI设计外部模型与训练程序的支撑/评测工作，不是自身递归联合进化。
+- [SkillOS](https://arxiv.org/abs/2605.06614) · UIUC / Google Cloud AI Research / MIT。Model×Harness：学习技能改进器。训练期curator权重与组内SkillRepo耦合；部署时权重固定而技能库更新。不是executor权重与永久技能库同步共进化。
 
 ### 技能、记忆与策略共演 · Skill–Memory–Policy Co-evolution
 
@@ -1031,17 +1048,18 @@ Model指系统内所有被学习的参数，包括策略、reward model、world 
 - 外部经验进入参数 → 技能、记忆与策略共演：产生新的能力缺口。更新后的策略产生新成败轨迹，暴露技能库或记忆操作尚未覆盖的情况。
 - 技能、记忆与策略共演 → 训练器与学习系统共同优化：复用研究经验。训练诊断和失效经验沉淀成可调用技能，影响后续训练干预。
 
-**论文与团队（包括初筛与跨路线联系）**
+**论文与团队（包括跨路线联系）**
 
-- [Skill Self-Play](https://arxiv.org/html/2607.22529v1) · Alibaba Qwen / CUHK / RUC / SYSU / PKU / ETH / UZH / Buffalo。技能保存任务生成与验证结构，出题/求解策略与技能内容共同变化；实际训练规模单列，不以教师规模替代。
-- [EvoTrainer](https://arxiv.org/html/2606.03108v2) · Alibaba Tongyi Lab / SIAT-CAS / SUAT。训练侧诊断工具/流程与目标策略版本共同改进；训练者LLM为固定Sonnet，昂贵执行有人类把关。不能描述成训练者权重自进化。
-- [AutoScientists](https://arxiv.org/abs/2605.28655) · Harvard。研究团队共享实验知识并搜索外部目标训练方案；需要单独验证团队系统本身是否更新。
-- [SkillRL](https://arxiv.org/html/2602.08234v1) · UNC / UChicago / UCSD / NEC Labs / Berkeley / UCSC。外部SkillBank与策略GRPO共同更新，teacher负责技能提炼且非被训练主体。训练主体7B，属于机制补充。
-- [MemSkill](https://arxiv.org/html/2602.02474v1) · NTU / UIUC / UIC / Tsinghua。训练对象是轻量MLP技能选择controller（PPO，精确参数量未报告）；Qwen3-Embedding-0.6B作shared encoder，LLaMA70B与Qwen80B通过API使用，executor/designer固定。不得将70B/80B当作被训练模型。
-- [EvoDS](https://arxiv.org/abs/2606.03841) · HKUST。共享骨干的多角色策略经过SFT和online RL，产生并复用可执行技能；组织架构本身固定，不应把多角色训练说成拓扑演化。
-- [RewardHarness](https://arxiv.org/html/2605.08703v1) · UBC / Vector / Kuaishou Kolors / Etude AI / Waterloo / Carnegie Mellon / Tsinghua / Georgia Tech。跨路线机制联系。主贡献是评价Harness演化；下游训练提供跨路线联系，未建立更新目标反向改进奖励系统的闭环。 冻结视觉语言模型，通过偏好误差改进 reward agent 的技能和工具；该评价系统随后用于外部图像编辑模型的 GRPO 训练。
-- [Socratic-SWE](https://arxiv.org/abs/2606.07412) · Alibaba AI Data / SJTU。从软件求解轨迹提炼技能并生成新任务训练求解者；是否有跨轮持久可调用技能库及其明确更新边界，需方法全文确认。
-- [SEED Distillation](https://arxiv.org/html/2607.14777v1) · Tsinghua / Zhejiang University / CUHK / NTU / Tongji。跨路线机制联系。明确更新模型参数；未显示持久非参数harness共同演化。 同一策略承担 actor 与训练期 analyzer；从自身轨迹提炼 hindsight skills，形成 on-policy distillation 与 RL 信号。部署时移除 analyzer，保留更新后的策略模型。
+- [Skill Self-Play](https://arxiv.org/html/2607.22529v1) · Alibaba Qwen / CUHK / RUC / SYSU / PKU / ETH / UZH / Buffalo。proposer/solver权重与技能库共同更新的课程协同机制，规模低于主范围。
+- [EvoTrainer](https://arxiv.org/html/2606.03108v2) · Alibaba Tongyi Lab / SIAT-CAS / SUAT。训练侧harness与目标策略共同演化，保留有限自治与小模型范围。
+- [AutoScientists](https://arxiv.org/abs/2605.28655) · Harvard。外部AI研究与动态团队组织支撑方法；非研究者模型自身协同训练。
+- [SkillRL](https://arxiv.org/html/2602.08234v1) · UNC / UChicago / UCSD / NEC Labs / Berkeley / UCSC。学生权重与技能库协同的小规模直接机制研究。
+- [MemSkill](https://arxiv.org/html/2602.02474v1) · NTU / UIUC / UIC / Tsinghua。Harness路线：学到的选择控制器及演化技能库；Model定义为基础模型/adapter时不属于双路线协同。
+- [EvoDS](https://arxiv.org/abs/2606.03841) · HKUST。共享基础模型训练与运行期技能积累的混合机制；不是已经证明长期自我强化。
+- [RewardHarness](https://arxiv.org/html/2605.08703v1) · UBC / Vector / Kuaishou Kolors / Etude AI / Waterloo / Carnegie Mellon / Tsinghua / Georgia Tech。Harness奖励器自适应后用于外部模型GRPO；未展示模型—奖励器持续互教
+- [Socratic-SWE](https://arxiv.org/abs/2606.07412) · Alibaba AI Data / SJTU。共享模型与外部技能课程多轮协同；基础执行harness固定，规模低于27B。
+- [SEED Distillation](https://arxiv.org/html/2607.14777v1) · Tsinghua / Zhejiang University / CUHK / NTU / Tongji。Model主线：技能仅是训练条件，部署不保留持续更新的harness技能库。
+- [SkillOS](https://arxiv.org/abs/2605.06614) · UIUC / Google Cloud AI Research / MIT。Model×Harness：学习技能改进器。训练期curator权重与组内SkillRepo耦合；部署时权重固定而技能库更新。不是executor权重与永久技能库同步共进化。
 
 ### 任务、环境与学习共同变化 · Environment–Curriculum Co-adaptation
 
@@ -1070,16 +1088,16 @@ Model指系统内所有被学习的参数，包括策略、reward model、world 
 - 任务、环境与学习共同变化 → 外部经验进入参数：决定训练分布。环境与课程的改变决定模型采样到哪些状态、动作和反馈。
 - 任务、环境与学习共同变化 → 奖励、评价与策略互相影响：改变反馈可学习性。任务过难或过易会改变成功/失败样本平衡，进而影响评价器训练。
 
-**论文与团队（包括初筛与跨路线联系）**
+**论文与团队（包括跨路线联系）**
 
-- [RSI-Anything](https://github.com/Gen-Verse/RSI-Anything) · Gen-Verse（项目团队；机构未核准）。官方仓库给出预测—交互—反馈—保留循环。不同领域更新对象可能不同，需逐域核实是否同时改参数与非参数系统。
-- [Eureka](https://arxiv.org/abs/2310.12931) · NVIDIA / UPenn / Caltech / UT Austin。奖励程序与机器人策略更新；奖励设计LLM冻结。它是AI设计学习信号的参考，不能当LLM研究者自身参数递归升级。
-- [Skill Self-Play](https://arxiv.org/html/2607.22529v1) · Alibaba Qwen / CUHK / RUC / SYSU / PKU / ETH / UZH / Buffalo。技能保存任务生成与验证结构，出题/求解策略与技能内容共同变化；实际训练规模单列，不以教师规模替代。
-- [RLAnything](https://arxiv.org/html/2602.02488v1) · Yinjie Wang · Tianbao Xie · Ke Shen · Mengdi Wang · Ling Yang（作者；机构待核）。同时训练策略和奖励模型，依据错误模式改写外部任务；Hybrid归属来自任务侧变化，并非来自“有两个模型”。
-- [WebEvolver](https://arxiv.org/html/2504.21024v2) · Tencent AI Lab。跨路线机制联系。同时改多个模型仍是参数侧共学；已读方法没有非参数工作流/工具/环境包装被优化。 策略 LLM 与 world-model LLM 从交互轨迹中共同训练；世界模型提供合成经验与前瞻规划。可变对象是两类模型的参数。
-- [EnvHarness](https://arxiv.org/abs/2608.19880) · WashU / Google Cloud AI Research / Google Cloud / UNC。EnvRigger根据失败生成环境wrapper，原环境底层和verifier冻结；再用重塑环境训练policy。是否跨多代反复重建wrapper应依据训练流程逐项说明。
-- [Socratic-SWE](https://arxiv.org/abs/2606.07412) · Alibaba AI Data / SJTU。从软件求解轨迹提炼技能并生成新任务训练求解者；是否有跨轮持久可调用技能库及其明确更新边界，需方法全文确认。
-- [INTELLECT-3 / PRIME-RL](https://www.primeintellect.ai/blog/intellect-3) · Prime Intellect。以合成数据、可验证环境和异步 RL 训练 106B MoE，公开训练框架、环境与模型。
+- [RSI-Anything](https://arxiv.org/html/2610.13912) · Gen-Verse（项目团队；机构未核准）。世界模型介导的多组件改进研究；各应用需分别标记Model或工作流更新，不能整项当作成熟协同闭环。
+- [Eureka](https://arxiv.org/abs/2310.12931) · NVIDIA / UPenn / Caltech / UT Austin。自动奖励设计与外部策略学习支撑方法，不是LLM自身Model×Harness协同RSI。
+- [Skill Self-Play](https://arxiv.org/html/2607.22529v1) · Alibaba Qwen / CUHK / RUC / SYSU / PKU / ETH / UZH / Buffalo。proposer/solver权重与技能库共同更新的课程协同机制，规模低于主范围。
+- [RLAnything](https://arxiv.org/html/2602.02488v1) · Yinjie Wang · Tianbao Xie · Ke Shen · Mengdi Wang · Ling Yang（作者；机构待核）。策略+奖励模型+任务课程协同训练；按训练侧harness广义归入混合路线。
+- [WebEvolver](https://arxiv.org/html/2504.21024v2) · Tencent AI Lab。Model主线：两个可变对象都是模型参数；WMLA是固定推理模块。
+- [EnvHarness](https://arxiv.org/abs/2608.19880) · WashU / Google Cloud AI Research / Google Cloud / UNC。主归Harness：环境wrapper与外部技能共演化；另有8B模型训练支撑实验，非≥27B混合循环。
+- [Socratic-SWE](https://arxiv.org/abs/2606.07412) · Alibaba AI Data / SJTU。共享模型与外部技能课程多轮协同；基础执行harness固定，规模低于27B。
+- [INTELLECT-3 / PRIME-RL](https://www.primeintellect.ai/blog/intellect-3) · Prime Intellect。Model使能研究，可连到Harness基础设施节点；没有公开自动协同进化实证。
 
 ### 奖励、评价与策略互相影响 · Reward–Evaluator–Policy Coupling
 
@@ -1109,19 +1127,20 @@ Model指系统内所有被学习的参数，包括策略、reward model、world 
 - 任务、环境与学习共同变化 → 奖励、评价与策略互相影响：改变反馈可学习性。任务过难或过易会改变成功/失败样本平衡，进而影响评价器训练。
 - 奖励、评价与策略互相影响 → 训练器与学习系统共同优化：触发训练诊断。分数与实际行为的差异可以触发奖励、数据过滤或训练诊断工具修改。
 
-**论文与团队（包括初筛与跨路线联系）**
+**论文与团队（包括跨路线联系）**
 
-- [MASS](https://arxiv.org/html/2610.12176v1) · Sakana AI / UC Berkeley。优化的是文本形式的多agent工作流；底层coding harness、工具和记忆固定。共享模型经SFT后再次承担执行、优化和评价角色；报告两轮。
-- [RSI-Anything](https://github.com/Gen-Verse/RSI-Anything) · Gen-Verse（项目团队；机构未核准）。官方仓库给出预测—交互—反馈—保留循环。不同领域更新对象可能不同，需逐域核实是否同时改参数与非参数系统。
-- [Eureka](https://arxiv.org/abs/2310.12931) · NVIDIA / UPenn / Caltech / UT Austin。奖励程序与机器人策略更新；奖励设计LLM冻结。它是AI设计学习信号的参考，不能当LLM研究者自身参数递归升级。
-- [Automated Alignment Researchers](https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures) · Anthropic。研究代理提出干预并训练外部目标模型；目标改善没有直接证明研究代理自身学习或自改。
-- [RLAnything](https://arxiv.org/html/2602.02488v1) · Yinjie Wang · Tianbao Xie · Ke Shen · Mengdi Wang · Ling Yang（作者；机构待核）。同时训练策略和奖励模型，依据错误模式改写外部任务；Hybrid归属来自任务侧变化，并非来自“有两个模型”。
-- [EvoTrainer](https://arxiv.org/html/2606.03108v2) · Alibaba Tongyi Lab / SIAT-CAS / SUAT。训练侧诊断工具/流程与目标策略版本共同改进；训练者LLM为固定Sonnet，昂贵执行有人类把关。不能描述成训练者权重自进化。
-- [Execution-Grounded Research](https://arxiv.org/abs/2601.14525) · Stanford。执行候选AI研究方案并反馈构思者；训练构思模型与改进目标模型须分开计，不把外部训练目标当成其自身后继。
-- [RewardHarness](https://arxiv.org/html/2605.08703v1) · UBC / Vector / Kuaishou Kolors / Etude AI / Waterloo / Carnegie Mellon / Tsinghua / Georgia Tech。跨路线机制联系。主贡献是评价Harness演化；下游训练提供跨路线联系，未建立更新目标反向改进奖励系统的闭环。 冻结视觉语言模型，通过偏好误差改进 reward agent 的技能和工具；该评价系统随后用于外部图像编辑模型的 GRPO 训练。
-- [SEED Distillation](https://arxiv.org/html/2607.14777v1) · Tsinghua / Zhejiang University / CUHK / NTU / Tongji。跨路线机制联系。明确更新模型参数；未显示持久非参数harness共同演化。 同一策略承担 actor 与训练期 analyzer；从自身轨迹提炼 hindsight skills，形成 on-policy distillation 与 RL 信号。部署时移除 analyzer，保留更新后的策略模型。
-- [OPHIS](https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch) · MetaCircle。以训练内部观测提出假设和干预，再用重复训练结果决定下一步研究。
-- [ASI-Bench](https://arxiv.org/abs/2608.17271) · Tsinghua / University of Michigan / MIT / Harvard / Carnegie Mellon / UIUC / Boston University / University of Queensland / USTC / Flatiron Institute / Microsoft Research / AG2 AI / Independent Researchers。在相同科研任务上逐步撤去方法指导，区分按步骤执行和自主选择科研方法的能力。
+- [MASS](https://arxiv.org/html/2610.12176v1) · Sakana AI / UC Berkeley。工作流文本与共享模型两轮协同；底层coding harness固定。
+- [RSI-Anything](https://arxiv.org/html/2610.13912) · Gen-Verse（项目团队；机构未核准）。世界模型介导的多组件改进研究；各应用需分别标记Model或工作流更新，不能整项当作成熟协同闭环。
+- [Eureka](https://arxiv.org/abs/2310.12931) · NVIDIA / UPenn / Caltech / UT Austin。自动奖励设计与外部策略学习支撑方法，不是LLM自身Model×Harness协同RSI。
+- [Automated Alignment Researchers](https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures) · Anthropic。AI4AI自动后训练研究支撑，具备大模型实验但未证明目标模型成为自身改进器。
+- [RLAnything](https://arxiv.org/html/2602.02488v1) · Yinjie Wang · Tianbao Xie · Ke Shen · Mengdi Wang · Ling Yang（作者；机构待核）。策略+奖励模型+任务课程协同训练；按训练侧harness广义归入混合路线。
+- [EvoTrainer](https://arxiv.org/html/2606.03108v2) · Alibaba Tongyi Lab / SIAT-CAS / SUAT。训练侧harness与目标策略共同演化，保留有限自治与小模型范围。
+- [Execution-Grounded Research](https://arxiv.org/abs/2601.14525) · Stanford。Model路线：研究想法生成器参数学习；固定执行harness，不是双对象共同演化。
+- [RewardHarness](https://arxiv.org/html/2605.08703v1) · UBC / Vector / Kuaishou Kolors / Etude AI / Waterloo / Carnegie Mellon / Tsinghua / Georgia Tech。Harness奖励器自适应后用于外部模型GRPO；未展示模型—奖励器持续互教
+- [SEED Distillation](https://arxiv.org/html/2607.14777v1) · Tsinghua / Zhejiang University / CUHK / NTU / Tongji。Model主线：技能仅是训练条件，部署不保留持续更新的harness技能库。
+- [OPHIS](https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch) · MetaCircle。AI4AI 机制引导实验系统；公开材料未证实改进器自身迭代升级。与 Harness 研究相关，不能推定 Model–Harness 协同训练。
+- [ASI-Bench](https://arxiv.org/abs/2608.17271) · Tsinghua / University of Michigan / MIT / Harvard / Carnegie Mellon / UIUC / Boston University / University of Queensland / USTC / Flatiron Institute / Microsoft Research / AG2 AI / Independent Researchers。跨路线的理论、方法或评测；不单独计作已实现递归自改进的系统。
+- [HASE](https://arxiv.org/html/2607.03935v1) · HKU / China Mobile Jiutian Research / Grace Investment Machine。Model × Harness / 统一训练解题与系统编辑；实际训练8B，按既定规模偏好放补充机制。
 
 ### 训练器与学习系统共同优化 · Training-Harness Co-evolution
 
@@ -1151,24 +1170,26 @@ Model指系统内所有被学习的参数，包括策略、reward model、world 
 - 训练器与学习系统共同优化 → 外部经验进入参数：实施参数更新。训练系统决定如何把经验变为梯度更新，以及哪些模型版本继续保留。
 - 技能、记忆与策略共演 → 训练器与学习系统共同优化：复用研究经验。训练诊断和失效经验沉淀成可调用技能，影响后续训练干预。
 
-**论文与团队（包括初筛与跨路线联系）**
+**论文与团队（包括跨路线联系）**
 
-- [SIA](https://github.com/hexo-ai/sia) · Hexo Labs / University of Oxford。反馈代理同时修改目标agent scaffold并训练其LoRA；主实验更新目标agent，未说明反馈代理自身权重随代更新。
-- [Frontis-MA1 / OpenMLE](https://arxiv.org/html/2607.28568v1) · Horizon Research / Frontis.AI / 清华大学。研发操作经过SFT/RL，部署执行长程ML搜索；主要改外部ML解法，系统本身固定。不能按“训练模型+有harness”认定协同RSI。
-- [RSI-Anything](https://github.com/Gen-Verse/RSI-Anything) · Gen-Verse（项目团队；机构未核准）。官方仓库给出预测—交互—反馈—保留循环。不同领域更新对象可能不同，需逐域核实是否同时改参数与非参数系统。
-- [Eureka](https://arxiv.org/abs/2310.12931) · NVIDIA / UPenn / Caltech / UT Austin。奖励程序与机器人策略更新；奖励设计LLM冻结。它是AI设计学习信号的参考，不能当LLM研究者自身参数递归升级。
-- [Automated Alignment Researchers](https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures) · Anthropic。研究代理提出干预并训练外部目标模型；目标改善没有直接证明研究代理自身学习或自改。
-- [Seed for Seed](https://seed.bytedance.com/en/blog/seed2-1-officially-released-advancing-ai-productivity) · ByteDance Seed。官方描述AI参与数据、算法和工程开发；尚无统一公开的自我递归协议可从介绍推定。
-- [EvoTrainer](https://arxiv.org/html/2606.03108v2) · Alibaba Tongyi Lab / SIAT-CAS / SUAT。训练侧诊断工具/流程与目标策略版本共同改进；训练者LLM为固定Sonnet，昂贵执行有人类把关。不能描述成训练者权重自进化。
-- [AutoScientists](https://arxiv.org/abs/2605.28655) · Harvard。研究团队共享实验知识并搜索外部目标训练方案；需要单独验证团队系统本身是否更新。
-- [Execution-Grounded Research](https://arxiv.org/abs/2601.14525) · Stanford。执行候选AI研究方案并反馈构思者；训练构思模型与改进目标模型须分开计，不把外部训练目标当成其自身后继。
-- [RewardHarness](https://arxiv.org/html/2605.08703v1) · UBC / Vector / Kuaishou Kolors / Etude AI / Waterloo / Carnegie Mellon / Tsinghua / Georgia Tech。跨路线机制联系。主贡献是评价Harness演化；下游训练提供跨路线联系，未建立更新目标反向改进奖励系统的闭环。 冻结视觉语言模型，通过偏好误差改进 reward agent 的技能和工具；该评价系统随后用于外部图像编辑模型的 GRPO 训练。
-- [AIRA-Compose / Design](https://arxiv.org/abs/2605.15871) · Meta FAIR / Oxford。研究代理搜索架构/计算原语，候选扩展到外部目标预训练；没有据此证明目标模型回到下一代研究者角色。
-- [OPHIS](https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch) · MetaCircle。以训练内部观测提出假设和干预，再用重复训练结果决定下一步研究。
-- [ComfyResearch](https://meta-circle.com/blog/comfyresearch-see-how-learning-happens) · MetaCircle。把训练协议、观测与分析组织成可执行依赖图，供人或 agent 构造、运行和比较实验。
-- [Apex-Tune](https://www.apexin.ai/assets/papers/what-happens-when-ai-starts-improving-ai.pdf) · Apex Intelligence。自动提出并验证 scaling law、训练实现和 GPU kernel 的改进，以实验结果继续搜索。
-- [Recursive · First Steps](https://www.recursive.com/articles/first-steps-toward-automated-ai-research) · Recursive Superintelligence。长时程并行研究线程积累实验上下文、组合候选分支，并对改进进行方差与 reward-hack 检查。
-- [INTELLECT-3 / PRIME-RL](https://www.primeintellect.ai/blog/intellect-3) · Prime Intellect。以合成数据、可验证环境和异步 RL 训练 106B MoE，公开训练框架、环境与模型。
+- [SIA](https://github.com/hexo-ai/sia) · Hexo Labs / University of Oxford。联合改目标模型与harness；固定外部改进器，属于有限任务上的协同优化。
+- [Frontis-MA1 / OpenMLE](https://arxiv.org/html/2607.28568v1) · Horizon Research / Frontis.AI / 清华大学 / 浙江大学 / 上海交通大学 / Georgia Tech。AI4AI模型训练与搜索协同支撑方法；并无已验证的harness自重构多代RSI。
+- [RSI-Anything](https://arxiv.org/html/2610.13912) · Gen-Verse（项目团队；机构未核准）。世界模型介导的多组件改进研究；各应用需分别标记Model或工作流更新，不能整项当作成熟协同闭环。
+- [Eureka](https://arxiv.org/abs/2310.12931) · NVIDIA / UPenn / Caltech / UT Austin。自动奖励设计与外部策略学习支撑方法，不是LLM自身Model×Harness协同RSI。
+- [Automated Alignment Researchers](https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures) · Anthropic。AI4AI自动后训练研究支撑，具备大模型实验但未证明目标模型成为自身改进器。
+- [Seed for Seed](https://seed.bytedance.com/en/blog/seed2-1-officially-released-advancing-ai-productivity) · ByteDance Seed。公开AI4AI工业方向，双路线具体闭环尚缺技术披露。
+- [EvoTrainer](https://arxiv.org/html/2606.03108v2) · Alibaba Tongyi Lab / SIAT-CAS / SUAT。训练侧harness与目标策略共同演化，保留有限自治与小模型范围。
+- [AutoScientists](https://arxiv.org/abs/2605.28655) · Harvard。外部AI研究与动态团队组织支撑方法；非研究者模型自身协同训练。
+- [Execution-Grounded Research](https://arxiv.org/abs/2601.14525) · Stanford。Model路线：研究想法生成器参数学习；固定执行harness，不是双对象共同演化。
+- [RewardHarness](https://arxiv.org/html/2605.08703v1) · UBC / Vector / Kuaishou Kolors / Etude AI / Waterloo / Carnegie Mellon / Tsinghua / Georgia Tech。Harness奖励器自适应后用于外部模型GRPO；未展示模型—奖励器持续互教
+- [AIRA-Compose / Design](https://arxiv.org/abs/2605.15871) · Meta FAIR / Oxford。AI设计外部模型与训练程序的支撑/评测工作，不是自身递归联合进化。
+- [OPHIS](https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch) · MetaCircle。AI4AI 机制引导实验系统；公开材料未证实改进器自身迭代升级。与 Harness 研究相关，不能推定 Model–Harness 协同训练。
+- [ComfyResearch](https://meta-circle.com/blog/comfyresearch-see-how-learning-happens) · MetaCircle。观测与实验基础设施；公开演示研究循环由人运行，不能作为直接 RSI 成果计数。
+- [Apex-Tune](https://www.apexin.ai/assets/papers/what-happens-when-ai-starts-improving-ai.pdf) · Apex Intelligence。AI4AI 自动优化成果；不能据公开产物推定研究器本体递归改写或 Model–Harness 联合训练。
+- [Recursive · First Steps](https://www.recursive.com/articles/first-steps-toward-automated-ai-research) · Recursive Superintelligence。具有公开优化产物的 AI4AI 研究系统；没有足够证据推定研究器本身发生递归权重/harness 协同更新。
+- [INTELLECT-3 / PRIME-RL](https://www.primeintellect.ai/blog/intellect-3) · Prime Intellect。Model使能研究，可连到Harness基础设施节点；没有公开自动协同进化实证。
+- [HASE](https://arxiv.org/html/2607.03935v1) · HKU / China Mobile Jiutian Research / Grace Investment Machine。Model × Harness / 统一训练解题与系统编辑；实际训练8B，按既定规模偏好放补充机制。
+- [Continual Harness](https://arxiv.org/abs/2605.09998) · Princeton / Google DeepMind / ARISE Foundation。主实验为持久 Harness 适应；§3.3/附录 D 还含 Model–Harness 协同更新。Refiner 程序及学习规则未显示自主改写。
 
 ### 组织结构与角色能力共同学习 · Organization–Policy Co-learning
 
@@ -1196,14 +1217,14 @@ Model指系统内所有被学习的参数，包括策略、reward model、world 
 - 组织结构与角色能力共同学习 → 工作流与策略共同适配：规定分工与路由。角色分工和通信拓扑成为工作流可优化的内容。
 - 组织结构与角色能力共同学习 → 外部经验进入参数：提供多角色监督。局部执行轨迹与编排轨迹训练同一模型或不同角色策略。
 
-**论文与团队（包括初筛与跨路线联系）**
+**论文与团队（包括跨路线联系）**
 
-- [Frontis-MA1 / OpenMLE](https://arxiv.org/html/2607.28568v1) · Horizon Research / Frontis.AI / 清华大学。研发操作经过SFT/RL，部署执行长程ML搜索；主要改外部ML解法，系统本身固定。不能按“训练模型+有harness”认定协同RSI。
-- [MASS](https://arxiv.org/html/2610.12176v1) · Sakana AI / UC Berkeley。优化的是文本形式的多agent工作流；底层coding harness、工具和记忆固定。共享模型经SFT后再次承担执行、优化和评价角色；报告两轮。
-- [Seed for Seed](https://seed.bytedance.com/en/blog/seed2-1-officially-released-advancing-ai-productivity) · ByteDance Seed。官方描述AI参与数据、算法和工程开发；尚无统一公开的自我递归协议可从介绍推定。
-- [AutoScientists](https://arxiv.org/abs/2605.28655) · Harvard。研究团队共享实验知识并搜索外部目标训练方案；需要单独验证团队系统本身是否更新。
-- [EvoDS](https://arxiv.org/abs/2606.03841) · HKUST。共享骨干的多角色策略经过SFT和online RL，产生并复用可执行技能；组织架构本身固定，不应把多角色训练说成拓扑演化。
-- [AIRA-Compose / Design](https://arxiv.org/abs/2605.15871) · Meta FAIR / Oxford。研究代理搜索架构/计算原语，候选扩展到外部目标预训练；没有据此证明目标模型回到下一代研究者角色。
+- [Frontis-MA1 / OpenMLE](https://arxiv.org/html/2607.28568v1) · Horizon Research / Frontis.AI / 清华大学 / 浙江大学 / 上海交通大学 / Georgia Tech。AI4AI模型训练与搜索协同支撑方法；并无已验证的harness自重构多代RSI。
+- [MASS](https://arxiv.org/html/2610.12176v1) · Sakana AI / UC Berkeley。工作流文本与共享模型两轮协同；底层coding harness固定。
+- [Seed for Seed](https://seed.bytedance.com/en/blog/seed2-1-officially-released-advancing-ai-productivity) · ByteDance Seed。公开AI4AI工业方向，双路线具体闭环尚缺技术披露。
+- [AutoScientists](https://arxiv.org/abs/2605.28655) · Harvard。外部AI研究与动态团队组织支撑方法；非研究者模型自身协同训练。
+- [EvoDS](https://arxiv.org/abs/2606.03841) · HKUST。共享基础模型训练与运行期技能积累的混合机制；不是已经证明长期自我强化。
+- [AIRA-Compose / Design](https://arxiv.org/abs/2605.15871) · Meta FAIR / Oxford。AI设计外部模型与训练程序的支撑/评测工作，不是自身递归联合进化。
 
 ### 部署变化与再适配 · Deployment-time Re-adaptation
 
@@ -1232,13 +1253,14 @@ Model指系统内所有被学习的参数，包括策略、reward model、world 
 - 外部经验进入参数 → 部署变化与再适配：改变所需外部支持。被内化的行为可能降低复杂harness依赖，但必须在目标部署接口下检验。
 - 部署变化与再适配 → 外部经验进入参数：提供适配训练分布。训练覆盖不同harness状态或当前学生实际访问状态，以学习稳健行为。
 
-**论文与团队（包括初筛与跨路线联系）**
+**论文与团队（包括跨路线联系）**
 
-- [SIA](https://github.com/hexo-ai/sia) · Hexo Labs / University of Oxford。反馈代理同时修改目标agent scaffold并训练其LoRA；主实验更新目标agent，未说明反馈代理自身权重随代更新。
-- [Harness-Zero](https://arxiv.org/abs/2609.24974) · Peking University / Google / HKUST。先演化harness，再由harnessing agent在学生动作空间生成干预轨迹并SFT；支持H→M内化，未直接展示更新学生继续演化H的反复闭环。
-- [On-policy Co-evolution](https://arxiv.org/html/2609.09134v1) · Salesforce AI。对进化后harness做学生访问状态上的局部纠错与LoRA-SFT；主要实证是一次顺序适配，循环接续是提出的方向。on-policy描述采样状态，不代表训练算法为RL。
-- [TaoLive HAT](https://arxiv.org/abs/2608.15763) · TaoLive AIGC LLM Team。harness-state augmentation使模型适应skills/tool schemas/prompts/hooks变体；这是训练鲁棒性与部署适配，不证明AI自动演化harness。
-- [WebEvolver](https://arxiv.org/html/2504.21024v2) · Tencent AI Lab。跨路线机制联系。同时改多个模型仍是参数侧共学；已读方法没有非参数工作流/工具/环境包装被优化。 策略 LLM 与 world-model LLM 从交互轨迹中共同训练；世界模型提供合成经验与前瞻规划。可变对象是两类模型的参数。
+- [SIA](https://github.com/hexo-ai/sia) · Hexo Labs / University of Oxford。联合改目标模型与harness；固定外部改进器，属于有限任务上的协同优化。
+- [Harness-Zero](https://arxiv.org/abs/2609.24974) · Peking University / Google / HKUST。Harness→Model内化的支撑方法；不是多代共同优化。
+- [On-policy Co-evolution](https://arxiv.org/html/2609.09134v1) · Salesforce AI。Model×Harness适配机制的直接研究；有双对象更新，尚无已证多代继任。
+- [TaoLive HAT](https://arxiv.org/abs/2608.15763) · TaoLive AIGC LLM Team。工业Model×Harness适配研究；更新真实但有人类决策，不是无人科研闭环。
+- [WebEvolver](https://arxiv.org/html/2504.21024v2) · Tencent AI Lab。Model主线：两个可变对象都是模型参数；WMLA是固定推理模块。
+- [Continual Harness](https://arxiv.org/abs/2605.09998) · Princeton / Google DeepMind / ARISE Foundation。主实验为持久 Harness 适应；§3.3/附录 D 还含 Model–Harness 协同更新。Refiner 程序及学习规则未显示自主改写。
 
 ### 持续研究的问题
 
