@@ -7,7 +7,7 @@
 <br>
 
 [![Status](https://img.shields.io/badge/status-research%20in%20progress-111827?style=flat-square)](#status)
-[![Corpus](https://img.shields.io/badge/research%20catalog-138%20entries-C58B35?style=flat-square)](research/scope-catalog.md)
+[![Corpus](https://img.shields.io/badge/candidate%20sources-622%20records-C58B35?style=flat-square)](research/scope-catalog.md)
 [![Claim depth](https://img.shields.io/badge/claim%20depth-D0%E2%86%92D4-5C9C96?style=flat-square)](#claim-depth)
 [![CI](https://img.shields.io/github/actions/workflow/status/Cherish0925/BeforeRSI/validate.yml?branch=main&style=flat-square&label=data)](https://github.com/Cherish0925/BeforeRSI/actions)
 [![License](https://img.shields.io/badge/license-MIT-6B7280?style=flat-square)](LICENSE)
@@ -20,7 +20,7 @@
 
 ## 三张领域知识图谱：先看研究结构，再读论文
 
-**[打开 RSI_Field_Atlas_v5_1.html](research/atlas/RSI_Field_Atlas_v5_1.html)** · **[领域结构文字版](research/atlas/field-guide.md)** · **[138 项阅读档案](research/atlas/literature-cards.md)** · **[参考文献](research/atlas/references.md)**
+**[打开 RSI_Field_Atlas_v5_1.html](research/atlas/RSI_Field_Atlas_v5_1.html)** · **[领域结构文字版](research/atlas/field-guide.md)** · **[图谱阅读档案](research/atlas/literature-cards.md)** · **[参考文献](research/atlas/references.md)**
 
 ![首页直接呈现三张领域知识图谱](assets/atlas/landscape-overview.png)
 
@@ -34,9 +34,11 @@
 
 [Harness 领域图](assets/atlas/harness-field-graph.svg) · [Model 领域图](assets/atlas/model-field-graph.svg) · [Model × Harness 领域图](assets/atlas/hybrid-field-graph.svg)。图中关系的解释与原文例证可点击读取；论文关系图另外区分明确引用、扩展与方法对照。
 
-当前研究目录位置为 **49 / 36 / 22**，共 107 项路线研究；加上 9 项跨路线评测/理论与 22 项历史/背景，共 138 项。53 项已有选定方法或机制资料阅读，63 项仍是摘要/发布资料初筛，22 项为历史背景。48 条研究关系包括 18 条原文明示关系、30 条综述对照。**这些是收录和阅读进度，不是全领域总数或最终质量排名。**
+本轮对 **622 条候选来源记录**进行逐项原文阅读与比较：567 条检索记录，加 55 项未被检索池覆盖的既有资料。这个数目包含论文、技术报告、历史与相邻研究，不是 622 项独立 RSI 成果，也不是全世界研究的普查总量。当前仍在审读，动态统计见 HTML 的“全量阅读与研究取舍”及 [完整审查数据](data/corpus-review.json)。
 
-已确认低于 27B 的 9 项 Model/混合机制参考默认不进入论文主视图，规模未知另行标记。A–F 卡片解释目标、思想、原理、方法、反馈和成果；本次重写 27 项，并纠正 Dream-RSI、SEED Distillation、WebEvolver、RewardHarness 的主路线位置。HTML 专门呈现公开文献，不含项目自己的理论或方案。旧 PDF 保留为 2026-10-18 快照。
+主图默认显示比较后选出的重点研究；可扩展到方法、证据与规模补充。**完整搜索覆盖全部候选，包括移出主图的工作与具体理由。** 原文明示的继承/使用关系和综述分析的机制比较分别标记。约 20% 的保留预期不作为数量配额；范围外、重复、证据不足和相关但不入重点图均不等同“劣质”。
+
+Model / 混合路线以实际训练主体 ≥27B 为默认范围偏好，冻结教师不计入训练规模，部分披露或源间冲突另行说明。全文阅读、承接既有阅读后的原文复核、仅有官方技术材料分别记录；读取分析不等于独立复现。HTML 只呈现公开研究及审查，不包含本项目自己的理论方案。早期 PDF 是旧快照，不代表本轮结论。
 
 **公司与团队入口已接入三张领域图。** 共 27 个来源档案：24 个关联具体研究、Discovery Loop 仅公开方向、Reflection / MiroMind 另列邻近研究。元环智能、Apex、Nous Research、Recursive、Intology、Autoscience 等均可按公司名或项目名检索；关联 34 项去重研究。发布、共同署名和项目托管分别记录。公司数量不是已验证 RSI 系统数量，也不是全球普查结果。
 
@@ -44,7 +46,7 @@
 
 ## What must be true before RSI is real?
 
-**Current scope and coverage:** The catalog preserves the original 127 IDs and adds 11 company research releases: 138 entries, 107 route positions, 9 cross-route evaluation/theory references, and 22 historical/background items. The current reader contains 53 selected-method/mechanism cards and 63 abstract/source screens. The earlier 38 claim reviews and 19-case shortlist remain a separate, dated review record; neither is a field census. A universal predictive theory has not been established.
+**Current scope and coverage:** A full-source audit is in progress over a fixed inventory of 622 candidate records. The original catalog IDs are preserved, with new selected research added through explicit curation bindings. The current source ledger, decisions and access boundaries are in [corpus-review.json](data/corpus-review.json). Earlier numbered catalogs and claim reviews remain dated historical records; none is a field census or a final quality ranking. The survey HTML is separate from this repository's theoretical research below.
 
 **BeforeRSI** studies one question:
 

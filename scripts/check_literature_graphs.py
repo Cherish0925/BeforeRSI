@@ -110,7 +110,7 @@ def check():
  for k in ['skillrl','harness-r1','harness-zero','rstar-math','skillos','socratic-swe']:assert works[k]['placement']=='small'
  assert works['webrl']['scale_status']=='eligible'
  assert any(m['total_b']==70 and '实际训练' in m.get('role','') for m in works['webrl']['models'])
- assert works['automated-alignment-researchers']['scale_status']=='eligible'
+ assert works['automated-alignment-researchers']['route']=='crosscut' and works['automated-alignment-researchers']['scale_status']=='not_applicable' # Fixed AI researchers optimize external target models.
  for wid,route in [('dream-rsi','harness'),('rewardharness','harness'),('seed-distillation','model'),('webevolver','model')]:assert works[wid]['route']==route
  assert works['memskill']['route']=='harness' and works['memskill']['scale_status']=='not_applicable'
  assert works['execution-grounded-research']['route']=='model'

@@ -1602,6 +1602,225 @@
           "source_location": "§2–5，Tables2–5，AppendicesE分割、F训练与多轮技能、H限制。",
           "basis": "primary_source_read",
           "primary_route": "harness"
+        },
+        {
+          "work_id": "skilladam",
+          "topic_ids": [
+            "h-capabilities",
+            "h-search",
+            "h-inheritance"
+          ],
+          "summary": "用持久结构化issue memory稳定修正方向，用case gain variance EMA调节下一轮编辑量。",
+          "source_urls": [
+            "https://arxiv.org/html/2609.08944v1"
+          ],
+          "source_location": "完整主文、方法、实验、结果与结论；该HTML未含技术附录；作者affiliation"
+        },
+        {
+          "work_id": "dspy",
+          "topic_ids": [
+            "h-instructions",
+            "h-control",
+            "h-search",
+            "h-inheritance"
+          ],
+          "summary": "把signature、module与teleprompter分离；以完整程序正确性筛选内部轨迹，再把局部提示作为可优化参数。",
+          "source_urls": [
+            "https://arxiv.org/html/2310.03714v1"
+          ],
+          "source_location": "§1–8及AppA–F全部伪代码、示例和表1/2"
+        },
+        {
+          "work_id": "coral",
+          "topic_ids": [
+            "h-search",
+            "h-memory",
+            "h-control",
+            "h-inheritance"
+          ],
+          "summary": "将搜索控制交给持续agent，以文件式共享知识、异步并行和可配置heartbeat支持长程工作。",
+          "source_urls": [
+            "https://arxiv.org/html/2604.01658v3"
+          ],
+          "source_location": "主文1–5与表1–3；附录A局限、B全部统计与web结果、C全部系统/完整prompt/heartbeat及知识示例、D任务schema与四类评价器修复、E运行/预算全读。"
+        },
+        {
+          "work_id": "open-ended-optimization",
+          "topic_ids": [
+            "h-improver",
+            "h-search",
+            "h-capabilities"
+          ],
+          "summary": "区分外部optimization contract与可委托的meta-policy，用最小合法动作循环让模型在线选择优化流程，并对两种不同固定流程作对照。",
+          "source_urls": [
+            "https://arxiv.org/html/2608.09629v1"
+          ],
+          "source_location": "§§1–7；表1–5，附录A.1–A.4与Algorithm1"
+        },
+        {
+          "work_id": "ttt-discover",
+          "topic_ids": [
+            "h-search"
+          ],
+          "summary": "把偏向极值的自适应entropic目标与以最好子代价值为准的PUCT档案复用共同用于测试时RL。",
+          "source_urls": [
+            "https://arxiv.org/html/2601.16175v2"
+          ],
+          "source_location": "§§1–6，Algorithm 1，Tables 1–10，Appendices A–F（训练推导、验证协议、完整生成程序与提示）"
+        },
+        {
+          "work_id": "alma",
+          "topic_ids": [
+            "h-memory",
+            "h-improver",
+            "h-search",
+            "h-inheritance"
+          ],
+          "summary": "以(U,D,R)可执行程序作为搜索对象，用新任务对旧经验的利用效能评价设计，并保留非最佳祖先以支持跳板探索",
+          "source_urls": [
+            "https://arxiv.org/html/2602.07755v1"
+          ],
+          "source_location": "§1–5、Tables1–2、Figures2–6；AppendixA–C包括MiniHack完整设计代码"
+        },
+        {
+          "work_id": "polyskill",
+          "topic_ids": [
+            "h-capabilities",
+            "h-inheritance",
+            "h-experience"
+          ],
+          "summary": "把技能定义成抽象接口、站点子类和调用抽象接口的组合程序；未实现方法还为自主探索提供课程结构。",
+          "source_urls": [
+            "https://arxiv.org/html/2510.15863v2"
+          ],
+          "source_location": "§1–5，算法1–2，表1–10，附录A–G"
+        },
+        {
+          "work_id": "expel",
+          "topic_ids": [
+            "h-memory",
+            "h-experience",
+            "h-instructions",
+            "h-inheritance"
+          ],
+          "summary": "成功失败对照提取可编辑/投票洞察，再结合成功轨迹检索构成非参数学习状态",
+          "source_urls": [
+            "https://arxiv.org/pdf/2308.10144v3"
+          ],
+          "source_location": "完整主文与附录A–J；PDF图2–5和图7–27的提示、洞察、轨迹、统计通过页面渲染/OCR补读，所有相关技术附录均已读。"
+        },
+        {
+          "work_id": "aira-design",
+          "topic_ids": [
+            "h-search"
+          ],
+          "summary": "分离架构组合与真正新机制",
+          "source_urls": [
+            "https://arxiv.org/html/2605.15871v2"
+          ],
+          "source_location": "既有全文/AppendicesB–F；本次重核§2–5、§6.1、LRA规模/聚合/test选择"
+        },
+        {
+          "work_id": "growing-harness",
+          "topic_ids": [
+            "h-control",
+            "h-capabilities",
+            "h-search",
+            "h-inheritance"
+          ],
+          "summary": "函数轨迹限定修复面，联合多个失败学共享控制，并事务式回滚整个修复过程。",
+          "source_urls": [
+            "https://arxiv.org/html/2609.26760v2"
+          ],
+          "source_location": "§1–5，算法1，表1–5，附录A–B及图6"
+        },
+        {
+          "work_id": "fragility-self-improving-agents",
+          "topic_ids": [
+            "h-memory",
+            "h-inheritance",
+            "h-evaluation"
+          ],
+          "summary": "把重复单位设为完整演化历史，随机任务顺序，升级基线并保留真实奖励，随后用规格反馈做局部干预。",
+          "source_urls": [
+            "https://arxiv.org/html/2608.18066v2"
+          ],
+          "source_location": "主文 §1–6、全部结果表与 Appendix A–G（追加6次运行/额外模型/企业文件记忆实验、完整可见提示、错误案例）；AWM 两个示例提示原文明确省略。"
+        },
+        {
+          "work_id": "practice-makes-unsafe",
+          "topic_ids": [
+            "h-capabilities",
+            "h-inheritance",
+            "h-evaluation"
+          ],
+          "summary": "把技能污染分解为写入、显式检索和行为执行，并只迁移技能文件到干净会话；加入等预算全良性曝光对照及技能风险修复/退役。",
+          "source_urls": [
+            "https://arxiv.org/html/2608.12851v2"
+          ],
+          "source_location": "§1–7；Tables 1–10；Appendices A–J"
+        },
+        {
+          "work_id": "trusting-trust-revisited",
+          "topic_ids": [
+            "h-improver",
+            "h-evaluation",
+            "h-inheritance"
+          ],
+          "summary": "端到端投毒benchmark，追踪提案、实现、实际调用与后代中性任务漏洞，并继续在多类清洁基准上演化检验清毒。",
+          "source_urls": [
+            "https://arxiv.org/html/2609.17817v1"
+          ],
+          "source_location": "§1–6；Tables1–7；Figures1–9；AppendicesA–E"
+        },
+        {
+          "work_id": "eureka",
+          "topic_ids": [
+            "h-search"
+          ],
+          "summary": "用源码约束接口、用分量轨迹指导奖励修改",
+          "source_urls": [
+            "https://arxiv.org/html/2310.12931v2"
+          ],
+          "source_location": "此前§2–4与A–F完整阅读；本轮重核§3算法、§4控制、AppendixD/F/H限制"
+        },
+        {
+          "work_id": "youtube-self-evolving-recommendation",
+          "topic_ids": [
+            "h-search",
+            "h-experience"
+          ],
+          "summary": "双时标科研循环、按修改对象选择可比较代理指标，真实线上结果回流共享journal",
+          "source_urls": [
+            "https://arxiv.org/html/2602.10226v3"
+          ],
+          "source_location": "完整正文、全部方法/结果/限制；无技术附录"
+        },
+        {
+          "work_id": "co-scientist",
+          "topic_ids": [
+            "h-search",
+            "h-memory",
+            "h-control",
+            "h-evaluation"
+          ],
+          "summary": "在候选进化之外加入系统级meta-review，将失败模式变成所有agent下一轮的工作上下文；配合异步队列和假说相似图管理推理预算。",
+          "source_urls": [
+            "https://arxiv.org/pdf/2502.18864v2"
+          ],
+          "source_location": "v2主文Architecture/System analysis/Real-world validations/Discussion/Methods；Supplementary Notes2–3评测与消融、4专家预筛选、5.1–5.5细胞验证、8伪代码、9提示、11工具示例、12关系工作。"
+        },
+        {
+          "work_id": "automated-alignment-researchers",
+          "topic_ids": [
+            "h-search",
+            "h-evaluation"
+          ],
+          "summary": "研究代码可审查与独立评价结合",
+          "source_urls": [
+            "https://alignment.anthropic.com/2026/automated-alignment-researchers/"
+          ],
+          "source_location": "§2–8；AppendicesA/B/D/E/G"
         }
       ]
     },
@@ -2858,6 +3077,83 @@
           "source_location": "§2–5；Table1；AppendixA.1替代RL设计及执行样例。",
           "basis": "primary_source_read",
           "primary_route": "model"
+        },
+        {
+          "work_id": "ttrl",
+          "topic_ids": [
+            "m-continual-adaptation",
+            "m-bootstrapping",
+            "m-verifiable-feedback"
+          ],
+          "summary": "将当前模型多数答案转成二元reward并在线RL刷新标签，而非只做self-consistency投票或静态伪标签SFT。",
+          "source_urls": [
+            "https://arxiv.org/html/2504.16084v3"
+          ],
+          "source_location": "§§1–7，式1–3、投票reward代码、表1–3；附录A–C、表4和训练指标"
+        },
+        {
+          "work_id": "ttt-discover",
+          "topic_ids": [
+            "m-verifiable-feedback",
+            "m-continual-adaptation"
+          ],
+          "summary": "把偏向极值的自适应entropic目标与以最好子代价值为准的PUCT档案复用共同用于测试时RL。",
+          "source_urls": [
+            "https://arxiv.org/html/2601.16175v2"
+          ],
+          "source_location": "§§1–6，Algorithm 1，Tables 1–10，Appendices A–F（训练推导、验证协议、完整生成程序与提示）"
+        },
+        {
+          "work_id": "rest-meets-react",
+          "topic_ids": [
+            "m-bootstrapping",
+            "m-experience-learning",
+            "m-verifiable-feedback"
+          ],
+          "summary": "将ReST grow/improve推广到ReAct流程，按状态采样、由固定LLM排序各步，迭代训练生成下一代更有用轨迹。",
+          "source_urls": [
+            "https://arxiv.org/html/2312.10003v1"
+          ],
+          "source_location": "§2–7 Tables1–3；Appendix A Listings1–8/Table4"
+        },
+        {
+          "work_id": "can-reasoning-models-self-train",
+          "topic_ids": [
+            "m-bootstrapping",
+            "m-verifiable-feedback",
+            "m-continual-adaptation"
+          ],
+          "summary": "用极简多数奖励控制在线教师更新，直接对比固定教师，并追踪长程真准确、伪奖励、KL、输出形态和课程干预。",
+          "source_urls": [
+            "https://arxiv.org/html/2505.21444v2"
+          ],
+          "source_location": "§3–6 Tables1–2 Figures2–8；Appendix A–L尤其B/C/G/I/J；复看SVG Figure2/5/6/31"
+        },
+        {
+          "work_id": "deepseek-r1",
+          "topic_ids": [
+            "m-verifiable-feedback",
+            "m-bootstrapping",
+            "m-experience-learning"
+          ],
+          "summary": "把规则验证的结果奖励、大规模GRPO策略探索、拒绝采样数据回流及后续SFT/RL连接成工业规模训练链。",
+          "source_urls": [
+            "https://arxiv.org/pdf/2501.12948v2"
+          ],
+          "source_location": "v2主文§1–6、Appendix A–H方法/训练/实验/失效分析、I披露；Tables3/7/12–17；v1完整主文§1–5；与v2比较训练披露和R1-Zero结果口径"
+        },
+        {
+          "work_id": "qwen3",
+          "topic_ids": [
+            "m-pretraining-ai4ai",
+            "m-bootstrapping",
+            "m-verifiable-feedback"
+          ],
+          "summary": "模型既是训练对象，也是数据清洗器、推理数据生成器、奖励器和on-policy教师；学生在自己的访问分布上获得强模型教学信号，减少只模仿教师轨迹的分布偏移。",
+          "source_urls": [
+            "https://arxiv.org/html/2505.09388v1"
+          ],
+          "source_location": "§2–3 架构、预训练及Table3–8；§4.1–4.7 完整后训练方法、评测协议、Table11–22；Appendix A.1.1–A.1.2 与Table23–37"
         }
       ]
     },
@@ -3653,53 +3949,6 @@
           "primary_route": "hybrid"
         },
         {
-          "work_id": "eureka",
-          "topic_ids": [
-            "x-feedback",
-            "x-environment",
-            "x-externalization",
-            "x-training"
-          ],
-          "summary": "自动奖励设计与外部策略学习支撑方法，不是LLM自身Model×Harness协同RSI。",
-          "source_urls": [
-            "https://arxiv.org/html/2310.12931"
-          ],
-          "source_location": "§2–4；Algorithm1；AppendicesA提示、B环境、C/D基线与训练、F消融。",
-          "basis": "primary_source_read",
-          "primary_route": "hybrid"
-        },
-        {
-          "work_id": "automated-alignment-researchers",
-          "topic_ids": [
-            "x-training",
-            "x-feedback",
-            "x-externalization"
-          ],
-          "summary": "AI4AI自动后训练研究支撑，具备大模型实验但未证明目标模型成为自身改进器。",
-          "source_urls": [
-            "https://alignment.anthropic.com/2026/automated-alignment-researchers/",
-            "https://www-cdn.anthropic.com/7b1c44894e980876479947dcdd40716278aeeffd/automated-alignment-researchers-august-2026.pdf"
-          ],
-          "source_location": "完整官方技术报告§2–8；AppendicesA/B评测与harness、D消融、E32B/72B、G监控。",
-          "basis": "primary_source_read",
-          "primary_route": "hybrid"
-        },
-        {
-          "work_id": "seed-for-seed",
-          "topic_ids": [
-            "x-training",
-            "x-externalization",
-            "x-organization"
-          ],
-          "summary": "公开AI4AI工业方向，双路线具体闭环尚缺技术披露。",
-          "source_urls": [
-            "https://seed.bytedance.com/en/blog/seed2-1-officially-released-advancing-ai-productivity"
-          ],
-          "source_location": "官方Seed2.1发布博客中Seed for Seed与内部研发工作流段落；完整公开博客已读。",
-          "basis": "primary_source_read",
-          "primary_route": "hybrid"
-        },
-        {
           "work_id": "skill-self-play",
           "topic_ids": [
             "x-memory",
@@ -3915,21 +4164,6 @@
           "primary_route": "harness"
         },
         {
-          "work_id": "aira-design",
-          "topic_ids": [
-            "x-training",
-            "x-externalization",
-            "x-organization"
-          ],
-          "summary": "AI设计外部模型与训练程序的支撑/评测工作，不是自身递归联合进化。",
-          "source_urls": [
-            "https://arxiv.org/html/2605.15871"
-          ],
-          "source_location": "§2–6，Tables1–5，AppendicesB小模型排序、C/D尺度与F训练脚本环境。",
-          "basis": "primary_source_read",
-          "primary_route": "hybrid"
-        },
-        {
           "work_id": "socratic-swe",
           "topic_ids": [
             "x-environment",
@@ -4094,6 +4328,108 @@
           "source_location": "§3、Algorithm1、§4–5、Tables1–4、AppendixB–D",
           "basis": "primary_source_read",
           "primary_route": "hybrid"
+        },
+        {
+          "work_id": "sage-skill-library",
+          "topic_ids": [
+            "x-memory",
+            "x-externalization",
+            "x-internalization"
+          ],
+          "summary": "将技能编写嵌入执行本身，训练短任务链；用后任务真实调用且成功的信号给前任务生成token奖励。",
+          "source_urls": [
+            "https://arxiv.org/html/2512.17102v2"
+          ],
+          "source_location": "全部正文和技术附录；PDF companion页12、19–21图3/4/9–13"
+        },
+        {
+          "work_id": "aira-design",
+          "topic_ids": [
+            "x-training"
+          ],
+          "summary": "分离架构组合与真正新机制",
+          "source_urls": [
+            "https://arxiv.org/html/2605.15871v2"
+          ],
+          "source_location": "既有全文/AppendicesB–F；本次重核§2–5、§6.1、LRA规模/聚合/test选择"
+        },
+        {
+          "work_id": "fragility-self-improving-agents",
+          "topic_ids": [
+            "x-feedback"
+          ],
+          "summary": "把重复单位设为完整演化历史，随机任务顺序，升级基线并保留真实奖励，随后用规格反馈做局部干预。",
+          "source_urls": [
+            "https://arxiv.org/html/2608.18066v2"
+          ],
+          "source_location": "主文 §1–6、全部结果表与 Appendix A–G（追加6次运行/额外模型/企业文件记忆实验、完整可见提示、错误案例）；AWM 两个示例提示原文明确省略。"
+        },
+        {
+          "work_id": "practice-makes-unsafe",
+          "topic_ids": [
+            "x-deployment"
+          ],
+          "summary": "把技能污染分解为写入、显式检索和行为执行，并只迁移技能文件到干净会话；加入等预算全良性曝光对照及技能风险修复/退役。",
+          "source_urls": [
+            "https://arxiv.org/html/2608.12851v2"
+          ],
+          "source_location": "§1–7；Tables 1–10；Appendices A–J"
+        },
+        {
+          "work_id": "trusting-trust-revisited",
+          "topic_ids": [
+            "x-feedback"
+          ],
+          "summary": "端到端投毒benchmark，追踪提案、实现、实际调用与后代中性任务漏洞，并继续在多类清洁基准上演化检验清毒。",
+          "source_urls": [
+            "https://arxiv.org/html/2609.17817v1"
+          ],
+          "source_location": "§1–6；Tables1–7；Figures1–9；AppendicesA–E"
+        },
+        {
+          "work_id": "can-reasoning-models-self-train",
+          "topic_ids": [
+            "x-feedback"
+          ],
+          "summary": "用极简多数奖励控制在线教师更新，直接对比固定教师，并追踪长程真准确、伪奖励、KL、输出形态和课程干预。",
+          "source_urls": [
+            "https://arxiv.org/html/2505.21444v2"
+          ],
+          "source_location": "§3–6 Tables1–2 Figures2–8；Appendix A–L尤其B/C/G/I/J；复看SVG Figure2/5/6/31"
+        },
+        {
+          "work_id": "eureka",
+          "topic_ids": [
+            "x-environment",
+            "x-feedback"
+          ],
+          "summary": "用源码约束接口、用分量轨迹指导奖励修改",
+          "source_urls": [
+            "https://arxiv.org/html/2310.12931v2"
+          ],
+          "source_location": "此前§2–4与A–F完整阅读；本轮重核§3算法、§4控制、AppendixD/F/H限制"
+        },
+        {
+          "work_id": "youtube-self-evolving-recommendation",
+          "topic_ids": [
+            "x-training"
+          ],
+          "summary": "双时标科研循环、按修改对象选择可比较代理指标，真实线上结果回流共享journal",
+          "source_urls": [
+            "https://arxiv.org/html/2602.10226v3"
+          ],
+          "source_location": "完整正文、全部方法/结果/限制；无技术附录"
+        },
+        {
+          "work_id": "automated-alignment-researchers",
+          "topic_ids": [
+            "x-training"
+          ],
+          "summary": "研究代码可审查与独立评价结合",
+          "source_urls": [
+            "https://alignment.anthropic.com/2026/automated-alignment-researchers/"
+          ],
+          "source_location": "§2–8；AppendicesA/B/D/E/G"
         }
       ]
     }

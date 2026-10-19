@@ -1,11 +1,11 @@
 # Evidence and judgment
 
-> Current source review: see “2026-10-19 — primary-source reading and discovery reconciliation” below. Earlier dated sections preserve the state of reading at that time; current classifications, model scales and source access are in that section and `data/primary-reading.json`.
+> Current source review: the 622-record audit and comparative selection in `data/corpus-review.json` supersede earlier screening statuses. Reading is still in progress. The source-level records are preserved in `data/reading-reviews/`; the offline HTML searches the entire inventory. Earlier dated sections below are historical research notes, not current selection counts.
 
 
 This document separates scientific value from the label attached to a project. A work can be useful without being RSI. A work can also contain a genuine result while making a broader claim than its evidence supports.
 
-The current catalog separates relevance from demonstrated recursion. See [RSI_SCOPE.md](RSI_SCOPE.md): 66 direct self-evolution studies, 31 enablers, 7 evaluations, 3 theories, 14 foundations and 6 background entries. A primary abstract screen is not a full quality review.
+The earlier scope catalog separated relevance from demonstrated recursion. Its 127-item counts are retained in [RSI_SCOPE.md](RSI_SCOPE.md) as a dated snapshot. Current source reading and selection are recorded separately in the 622-record audit; an abstract screen is not a full quality review.
 
 ## 1. The evidence test
 
@@ -904,3 +904,12 @@ The 567 arXiv identifiers have individually retrieved original metadata and abst
 ### Full-corpus primary-reading checkpoint — 2026-10-19
 
 The new audit joins 567 discovery identifiers and 55 unmatched catalog records into 622 source entries. This is a source inventory, not a claim of 622 distinct intellectual contributions. At this checkpoint 154 entries have primary-reading or public-material review records in `data/reading-reviews/`; the remaining entries have no new merit decision. Each record specifies the actual changed object, feedback, inherited state, experimental comparisons, source locations, and a reasoned selection. The prior 141-entry catalog and its earlier counts remain a historical edition until integration completes. No 20% retention quota is imposed. Primary source retrieval (619 of 622 fetched automatically) is not counted as reading.
+
+
+## 2026-10-19 — 622-source audit, intermediate checkpoint
+
+The current checkpoint contains 318 completed source reviews and 304 pending records. It does not authorize a final retention fraction. The 46 current core selections, 154 supporting records, 97 scale/mechanism supplements, 10 insufficient-disclosure decisions, 7 out-of-scope records and 4 overlapping records are provisional until the remaining inventory and cross-family comparisons are complete. Every completed record includes actual update targets, fixed components, inherited state, feedback, experiments, cost, limitations, primary locations and selection reasoning.
+
+The reader now searches all 622 records; core and expanded graph views remain separate from the full evidence index. Incoming and outgoing paper relations are readable in both endpoints, with original-source relationships separated from analytical comparisons. Canonical affiliations no longer treat chairs or program titles as independent research institutions.
+
+Validation: bibliography/graph provenance, exact embedded offline data, three field maps, complete-index search and pagination, all source cards, typed two-way relations, scale and institution filters pass. Browser binary installation is unavailable in the current runtime; the browser interaction harness is retained for the release check.

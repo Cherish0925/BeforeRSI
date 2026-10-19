@@ -6,7 +6,7 @@ def build_actors(spec, works, industry):
     actors = {x['id']: dict(x) for x in spec['actors']}
     aliases = {}
     for a in actors.values():
-        for label in a['aliases']:
+        for label in dict.fromkeys(a['aliases']+[a['name']]):
             assert label not in aliases, label
             aliases[label] = [a['id']]
     aliases.update(spec['alias_expansions'])

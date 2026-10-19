@@ -13,10 +13,10 @@
   "counts": {
     "theory": 3,
     "foundation": 14,
-    "direct": 70,
-    "enabler": 37,
-    "evaluation": 8,
-    "background": 6,
+    "direct": 79,
+    "enabler": 44,
+    "evaluation": 13,
+    "background": 3,
     "disclosure": 3
   },
   "works": [
@@ -25,24 +25,24 @@
       "name": "Good：智能机器设计",
       "year": 1965,
       "scope": "theory",
-      "closure_assessment": "paper_sections_read",
-      "operation": "设计更强机器→更强设计能力的设想",
-      "boundary": "历史机制与技术背景；保留 archive，不计入当代三条 RSI 成果路线。 是前提很强的设想而非数学定理；历史地位不依赖把其预测当成事实。",
-      "reading_scope": "原始论文 §1–2 的自改进论证与工程假设；保留为思想史背景。",
-      "primary_source": "https://doi.org/10.1016/S0065-2458(08)60418-0",
-      "provenance": "2026-10-19 primary-source reading"
+      "closure_assessment": "main_text_and_relevant_appendix",
+      "operation": "更强机器→设计更强机器的条件式设想；其余大量篇幅为首台机器的语义/信息检索/神经结构议程。",
+      "boundary": "保留历史起点和问题表述；不计方法成果、理论证明或现代LLM系统。 超过人类机器设计不自动推出可设计严格优于自己的后继，尚需可达改进、物理资源/成本和验证条件；文中这些没有形式化。20世纪建成预测是作者当时判断，不是现代理论保证。神经子装配与因果信息公式不是现代LLM RSI的已验证机制。",
+      "reading_scope": "此前仅§1–2，现补全所有主文和信息交互附录；OCR公式缺漏的附录pp81–83已渲染核对A1–A7与max-entropy命题。",
+      "primary_source": "https://languagelog.ldc.upenn.edu/myl/Good1964.pdf",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "eurisko",
       "name": "EURISKO",
       "year": 1983,
       "scope": "foundation",
-      "closure_assessment": "paper_sections_read",
-      "operation": "执行启发式→评价→修改规则库与未来议程",
-      "boundary": "历史机制与技术背景；保留 archive，不计入当代三条 RSI 成果路线。 控制循环任意重写未获成功；不以历史案例替代现代泛化证据。",
-      "reading_scope": "原论文关于 unit/slot/heuristic 表征及三个 agenda 的执行结构，pp.64–67 的控制反思。",
-      "primary_source": "https://www.cs.northwestern.edu/~mek802/papers/not-mine/Lenat_EURISKO.pdf",
-      "provenance": "2026-10-19 primary-source reading"
+      "closure_assessment": "main_text_and_relevant_appendix",
+      "operation": "选topic→选task→组装解释器/执行rule→postmortem更新价值→生成领域规则或修改规则的规则；外部人工检查与领域编码贯穿。",
+      "boundary": "不可删的元启发式历史先例和风险/表示边界；人类参与、案例证据与无现代可控基线使其不应充当现代自治RSI成果。 §1.2明确主控制改写总出bug，不能写成自由改写控制器成功；但§3.2确有少量自身函数局部加速，亦不可一概说从不改代码。H59把自己列入高价值发现者骗得999分，最终依靠protected meta代码防御；负例证明无边界信用评价可被利用，不反驳所有自改进。作者承认§4适用域原则由这些案例归纳，§5回头解释属于循环论证待新域验证。",
+      "reading_scope": "此前仅控制章节，现完整读代表论文38页正文；逐项核对8类任务、人类干预、规则/表示演化、预算和失败。",
+      "primary_source": "https://users.cs.northwestern.edu/~mek802/papers/not-mine/Lenat_EURISKO.pdf",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "godel-machine",
@@ -50,11 +50,11 @@
       "year": 2003,
       "scope": "theory",
       "closure_assessment": "main_text_and_relevant_appendix",
-      "operation": "寻找候选证明→验证目标定理→切换",
-      "boundary": "历史机制与技术背景；保留 archive，不计入当代三条 RSI 成果路线。 不保证绝对最优程序、持续改进或可计算地找到改进。",
-      "reading_scope": "§2–4，尤其 §4 global optimality theorem 的目标定理、证明与不可证明性限制。",
-      "primary_source": "https://arxiv.org/abs/cs/0309048",
-      "provenance": "2026-10-19 primary-source reading"
+      "operation": "并行执行初始策略与proof-technique搜索→证明switch的未来效用高于继续现行search→计入检查/等待耗时后切换→新程序。",
+      "boundary": "历史形式基准必保留，但不列LLM自改进实验成果。修正此前“公理/效用恒定”简写：它们可改，须按原标准先证明。 global不是所有程序的绝对最大值，而是相对当前策略/搜索偏置和成本的二分比较。形式一致性本身不证明外部环境假设正确，实际效用保证还需公理正确适用。不完备性/不可判定性及有限时间可让所有有益修改都不可获证。总体期望效用提高不等于每条实现轨迹无害或每个未来checkpoint都单调提高。§6.6把全程序自省称conscious只是术语类比，不提供主观意识结论。",
+      "reading_scope": "完整主文与所有形式构造、定理证明、比较及FAQ；无另附技术appendix。目录年份2003为v1，实际核读v5。",
+      "primary_source": "https://arxiv.org/pdf/cs/0309048",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "maml",
@@ -62,35 +62,35 @@
       "year": 2017,
       "scope": "foundation",
       "closure_assessment": "main_text_and_relevant_appendix",
-      "operation": "内层适应→外层元梯度更新",
-      "boundary": "历史机制与技术背景；保留 archive，不计入当代三条 RSI 成果路线。 不能仅因“learning to learn”就归为模型和harness共同递归进化。 原文说明Omniglot先前工作的划分不可获得，横向数值不完全可比。",
-      "reading_scope": "主文 §2–3 算法与 §5全部实验；官方补充材料 A–C 的超参、额外正弦/多任务/上下文适应对照。",
-      "primary_source": "https://proceedings.mlr.press/v70/finn17a.html",
-      "provenance": "2026-10-19 primary-source reading"
+      "operation": "抽任务→少步梯度适应→在新样本计算loss→元梯度穿过适应更新初始化。",
+      "boundary": "作为元学习背景与评价定义保留，不进入大模型RSI成果主图。此前背景定位维持，补齐独立supplement与数值证据。 model-agnostic指可微参数模型的广泛兼容，并非任意程序/环境保证；论文无普适收敛/样本复杂度定理。“maximize sensitivity”是直觉非独立定理。meta-train需要大量外部任务数据；没有自造任务、改进器权重递归再训练或无限改善。原预训练baseline跨任务标签冲突本来会平均输出，补充仍不足代表所有现代预训练。",
+      "reading_scope": "复读全部主文并补取单独公开supplement，完整读A–C。",
+      "primary_source": "https://proceedings.mlr.press/v70/finn17a/finn17a.pdf",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "alphago-zero",
       "name": "AlphaGo Zero",
       "year": 2017,
       "scope": "foundation",
-      "closure_assessment": "paper_sections_read",
-      "operation": "搜索自对弈→训练→对局门控→更强数据生成者",
-      "boundary": "历史机制与技术背景；保留 archive，不计入当代三条 RSI 成果路线。 不能把推理硬件当作全部训练预算，也不能从围棋闭环推出所有任务单调改进。",
-      "reading_scope": "主文训练闭环与结果；Methods 的自对弈、checkpoint评价及搜索算法。",
-      "primary_source": "https://www.nature.com/articles/nature24270",
-      "provenance": "2026-10-19 primary-source reading"
+      "closure_assessment": "main_text_and_relevant_appendix",
+      "operation": "best网络指导搜索自对弈→SGD拟合搜索/胜负→对局筛选新best→重复。",
+      "boundary": "不可缺的历史模型学习与可靠反馈例证；宜做现代推理自举方法的支撑/范围边界，不算新LLM递归成果。 without human knowledge指不用棋谱，不是无规则/架构/对称性/超参先验；MCTS超参经GPBayesopt，40day还按3day网络重调。55%400局门控无lifetime多重检验控制，不能证明任意任务/任意代单调提升。强棋力不是提高搜索器代码或普遍改进能力。",
+      "reading_scope": "原HTML缺Methods，补完整PDF逐节读并渲染最后3页图像表格；算法、实验与技术补充齐全。",
+      "primary_source": "https://ai6034.mit.edu/wiki/images/Nature24270_AlphaGoZero.pdf",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "automl-zero",
       "name": "AutoML-Zero",
       "year": 2020,
       "scope": "foundation",
-      "closure_assessment": "paper_sections_read",
-      "operation": "生成程序→训练模型→评估→进化程序",
-      "boundary": "历史机制与技术背景；保留 archive，不计入当代三条 RSI 成果路线。 程序搜索不自动意味着递归改写搜索器；小模型规模不是把机制判为无价值的依据。",
-      "reading_scope": "§3 搜索空间、进化算法与实验设定；数学原语构造训练程序的限制。",
-      "primary_source": "https://proceedings.mlr.press/v119/real20a.html",
-      "provenance": "2026-10-19 primary-source reading"
+      "closure_assessment": "main_text_and_relevant_appendix",
+      "operation": "空/随机/已知seed程序→训练评测→锦标赛选parent→变异→替换最老成员→迁移；最终人类检查/解耦常数再迁移与调参。",
+      "boundary": "保留为学习程序发现的历史机制，不能作为≥27B或自主递归改进实证。补读后应在主说明加人工迁移解耦与受限rediscovery条件。 from scratch仍有人工三阶段协议、内存维度、指令选择和训练数据；teacher-backprop恢复实验特意限定所需ops及程序长度，不能称完全无先验再发现。FEC仅20预测截断hash，不是形式函数等价证明。最终迁移含人工解耦与重调，原始raw code和主图简化程序有实质规范化。不能表示batchnorm/convolution/循环，现代图像SOTA未比较，更未递归改进外层evolution。",
+      "reading_scope": "原缓存仅PMLR landing摘要，已补主文及独立supplement；完整读主文与S1–S10，含raw code、人工迁移处理、超参数与全部消融。",
+      "primary_source": "https://proceedings.mlr.press/v119/real20a/real20a.pdf",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "stop",
@@ -99,10 +99,10 @@
       "scope": "direct",
       "closure_assessment": "main_text_and_relevant_appendix",
       "operation": "自应用→下游评价→选择→后继继续自应用",
-      "boundary": "Harness 改进器递归替换，直接自修改研究 效用可被利用；有限算法任务和轮次；下游效用不直接等同未来自改进能力。",
-      "reading_scope": "已读正文的问题定义、算法、实验设置、主结果与局限，核对所列相关附录；属于证据复核，未重跑实验，也不等于复现全部结论。",
-      "primary_source": "https://arxiv.org/pdf/2310.02304",
-      "provenance": "2026-10-19 primary-source reading"
+      "boundary": "实质自修改可执行改进算法，是Harness递归路线不可替代的早期机制和失败证据；规模不适用参数门槛。 外部元utility固定且仅间接测量自改能力；AppA界需utility∈[0,1]、程序长度≤l、iid任务，约sqrt((l ln|Σ|+ln1/δ)/n)，不保证递归单调、发现好解或跨分布迁移；主实验重复同一任务不满足跨任务iid实证。",
+      "reading_scope": "在既有主文/关键附录完整阅读上，重新核验算法、迁移控制、模型退化、泛化证明假设、迁移所用真实代码和成本。",
+      "primary_source": "https://arxiv.org/pdf/2310.02304v3",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "promptbreeder",
@@ -111,22 +111,22 @@
       "scope": "direct",
       "closure_assessment": "main_text_and_relevant_appendix",
       "operation": "选择→提示/变异指令变异→任务评价→种群替换",
-      "boundary": "Harness 的任务提示与变异策略协同演化 外层遗传程序固定；变异器收益主要通过绑定任务提示间接选择；部分基线模型不同。",
-      "reading_scope": "已读正文的问题定义、算法、实验设置、主结果与局限，核对所列相关附录；属于证据复核，未重跑实验，也不等于复现全部结论。",
-      "primary_source": "https://arxiv.org/pdf/2309.16797",
-      "provenance": "2026-10-19 primary-source reading"
+      "boundary": "任务提示与可继承的改写指令协同演化是与普通prompt搜索实质不同的反馈层，保留为Harness核心并明确固定外层与归因限制。 外部fitness和提示拓扑固定；9算子均匀选；mutation-prompt通过绑定任务提示间接受选择，缺少独立跨任务改进器迁移或长时evolvability检验。",
+      "reading_scope": "此前主文与相关附录完整阅读；本轮复核实际更新对象、控制实验、训练测试口径、成本和局限原文。",
+      "primary_source": "https://arxiv.org/html/2309.16797v1",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "funsearch",
       "name": "FunSearch",
       "year": 2024,
       "scope": "foundation",
-      "closure_assessment": "paper_sections_read",
-      "operation": "生成候选→执行→评分→保留并重组",
-      "boundary": "历史机制与技术背景；保留 archive，不计入当代三条 RSI 成果路线。 主文与Methods已读，未把所有补充构造证明和全部运行代码宣称已复现。",
-      "reading_scope": "主文cap set结果与Methods的数据库、采样、执行评估、islands和复现实验。",
-      "primary_source": "https://www.nature.com/articles/s41586-023-06924-6",
-      "provenance": "2026-10-19 primary-source reading"
+      "closure_assessment": "main_text_and_relevant_appendix",
+      "operation": "采样岛与程序→LLM生成→固定骨架执行评价→入库；每4小时淘汰一半弱岛，以存活岛最佳程序重启。",
+      "boundary": "作为可验证程序进化和科学发现的关键背景；不因高影响结果强塞为自身学习器改写的核心成果。 最强渐近界有明确人类参与：E.3先人工将解释性加入评分，观察生成代码后定义对称性、证明pre-admissible展开并改写骨架。D.1证明的是特定构造保持admissibility，不是搜索收敛或RSI定理。bin-packing比较限于FF/BF及选定分布，100k只有1例；冻结LLM及进化器从未自修改。",
+      "reading_scope": "重读全部主文/Methods，补读39页Supplement A–F所有方法、统计、构造、证明和程序；核看主要结果及消融图。",
+      "primary_source": "https://www.nature.com/articles/s41586-023-06924-6?error=cookies_not_supported&code=3505ea57-c0b3-4947-8362-29105adfef05",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "spin",
@@ -147,10 +147,10 @@
       "scope": "direct",
       "closure_assessment": "main_text_and_relevant_appendix",
       "operation": "种子 SFT → 自生成答案/评分 → DPO，重复两轮",
-      "boundary": "Model 路线中回答者与自奖励 judge 共享参数，训练信号生成能力随模型更新；并无 harness 自改。 固定出题模型和评分 rubric；外部早停；回答长度增长；只测试两轮自奖励 DPO。",
-      "reading_scope": "阅读主文方法、实验、消融与相关实现附录；据原文重建训练闭环，未独立复现实验。",
-      "primary_source": "https://arxiv.org/html/2401.10020v1",
-      "provenance": "2026-10-19 primary-source reading"
+      "boundary": "真实70B共享策略/评判参数迭代并独立测量奖励能力，是Model评价器共同演化的代表；精确限制为两次DPO与对齐任务。 评分标准和DPO固定；3个模型含seed轮，实际两个自奖励DPO更新。答案平均长度1092→1552→2552，自动评价未长度控制；奖励5-best从44.3跌43.2，不能称所有评价指标单调提升。",
+      "reading_scope": "既有全文阅读后，本轮核对seed构建、三模型序列、独立评判能力、非单调基准、长度偏差与全部关键对照。",
+      "primary_source": "https://arxiv.org/html/2401.10020v3",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "godel-agent",
@@ -158,11 +158,11 @@
       "year": 2024,
       "scope": "direct",
       "closure_assessment": "main_text_and_relevant_appendix",
-      "operation": "读取自身→规划修改→动态执行→评价→递归继续",
-      "boundary": "Harness 自修改，包含改进逻辑但尚缺其贡献的隔离迁移实验 不能把free版本成绩视作冻结同模型的纯harness提升；基线部分沿用ADAS报告；不保证单调。",
-      "reading_scope": "已读正文的问题定义、算法、实验设置、主结果与局限，核对所列相关附录；属于证据复核，未重跑实验，也不等于复现全部结论。",
-      "primary_source": "https://github.com/Arvid-pku/Godel_Agent",
-      "provenance": "2026-10-19 primary-source reading"
+      "operation": "inspect→规划动作→代码替换/交互评价→调用修改后的自身继续",
+      "boundary": "保留为自指运行时代码实现与失败边界的关键节点；核心价值是明确可修改范围，非持续递归能力增长已获证明。 允许修改改进器不等于改进器已被因果验证变强；未隔离递归修改收益或测试其跨任务迁移。free包含模型升级，Game24是已知枚举算法，百分比不能视为开放式RSI加速",
+      "reading_scope": "承接前次主文与相关附录完整阅读；本轮复核署名、§4–6、Table1/2、Appendix B/C/D，并新读v4 Appendix E/F全部新增代码和随机采样比较。",
+      "primary_source": "https://arxiv.org/html/2410.04444v4",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "adas",
@@ -170,11 +170,11 @@
       "year": 2024,
       "scope": "enabler",
       "closure_assessment": "main_text_and_relevant_appendix",
-      "operation": "提案→反思/修复→执行评价→入档→新提案",
-      "boundary": "固定meta-agent优化目标harness，属于AI4AI支撑方法 搜索表达力不等于实际覆盖任意程序；结果依赖验证集和基础模型；不是改进器递归替换。",
-      "reading_scope": "已读正文的问题定义、算法、实验设置、主结果与局限，核对所列相关附录；属于证据复核，未重跑实验，也不等于复现全部结论。",
-      "primary_source": "https://arxiv.org/html/2408.08435v1",
-      "provenance": "2026-10-19 primary-source reading"
+      "operation": "提案→反思/修错→验证→入档→再提案",
+      "boundary": "作为自动agent研发主线代表保留详细讲解；明确其是AI4AI/外部搜索而非递归改进器 非改进器自修改；小型受控任务；有源test选候选口径和比较预算局限",
+      "reading_scope": "前次完整主文与相关附录阅读，本轮复核方法、实验、规模、成本与迁移原文。",
+      "primary_source": "https://arxiv.org/html/2408.08435v2",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "aflow",
@@ -182,11 +182,11 @@
       "year": 2024,
       "scope": "enabler",
       "closure_assessment": "main_text_and_relevant_appendix",
-      "operation": "选父节点→LLM扩展→执行→经验回传",
-      "boundary": "固定搜索器优化目标harness，AI4AI支撑方法 平均指标不可解释为统一准确率；改进目标工作流而不是递归替换优化器；跨模型存在适配差异。",
-      "reading_scope": "已读正文的问题定义、算法、实验设置、主结果与局限，核对所列相关附录；属于证据复核，未重跑实验，也不等于复现全部结论。",
+      "operation": "从top3/空模板软混合选父→LLM单步扩展→执行→回传→20轮/5轮停滞停止",
+      "boundary": "与ADAS共同解释外部架构搜索，重点保留效率/迁移/预算口径，而不重复核心程序空间介绍 不自改外层MCTS；不同指标均值不是统一成功率；附录有限轮最优声称缺严谨证明；理论非零概率不足有限步保证",
+      "reading_scope": "前次完整主文与相关附录阅读，本轮复核方法、实验、规模、成本与迁移原文。",
       "primary_source": "https://arxiv.org/html/2410.10762v4",
-      "provenance": "2026-10-19 primary-source reading"
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "sica",
@@ -206,11 +206,11 @@
       "year": 2025,
       "scope": "direct",
       "closure_assessment": "main_text_and_relevant_appendix",
-      "operation": "选谱系→父代诊断和实现→分层评价→扩充档案",
-      "boundary": "Harness 代理谱系递归自修改，外层演化规则固定 200题SWE结果不能当完整Verified榜单；主要对照费用不等；外层探索未自修改。",
-      "reading_scope": "已读正文的问题定义、算法、实验设置、主结果与局限，核对所列相关附录；属于证据复核，未重跑实验，也不等于复现全部结论。",
+      "operation": "按质量和有效后代数选父→o1诊断→父代理实现修改→10/60/200或10/50分层评价→归档",
+      "boundary": "可继承代码谱系和非贪心归档的代表性证据，边界与对照较明确；纠正“父代全自主诊断”及“50%为独立完整SWE”的误读。 自修改只包括agent代码而不包括外层归档/选择，诊断由独立o1负责；编码分数代理改进能力的假设未全面验证；费用不同且搜索集50%不是独立SWE全测成绩，未证明无限或加速递归增长 后续 Trusting Trust Revisited §3.4.1 在Polyglot式容器中发现reset后git历史仍含隐藏测试/参考解，预实验Sonnet4.5确实读取；同问题见DGM，Hyperagents作者确认及建议strip历史。该后续实验已修复。它证明可利用污染通道存在，未证明原论文o3-mini/Sonnet3.5分数实际受污染。",
+      "reading_scope": "前次完整主文/相关附录基础上复核§3–6、Appendix C.2/C.3、D/E成本与数据分割；新读A.3/A.4 Greedy、功能率、三次稳定性以及跨模型/基准结果。",
       "primary_source": "https://arxiv.org/html/2505.22954v3",
-      "provenance": "2026-10-19 primary-source reading"
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "gepa",
@@ -218,11 +218,11 @@
       "year": 2025,
       "scope": "enabler",
       "closure_assessment": "main_text_and_relevant_appendix",
-      "operation": "选择候选/模块→轨迹反思→提示修改→小批验证→入池",
-      "boundary": "固定优化器的Harness提示优化，属于AI4AI支撑方法 非所有任务胜过RL；执行与反思计算需分开；权重及优化器固定。",
-      "reading_scope": "已读正文的问题定义、算法、实验设置、主结果与局限，核对所列相关附录；属于证据复核，未重跑实验，也不等于复现全部结论。",
-      "primary_source": "https://arxiv.org/pdf/2507.19457v2",
-      "provenance": "2026-10-19 primary-source reading"
+      "operation": "按样例级非支配优势抽选父本→轮转选模块→3例轨迹反思改写→同batch优于父本才全验证入池→可选有限次互补Merge",
+      "boundary": "代表性的可复用Harness优化机制：信息密集反馈和样例级多样性选择均可分离解释，不以某个技能文件或任务胜率充当递归证据。 改进器不演化；提示优化与权重RL改变对象不同；成本需含反思与验证，主表缺普遍多种子置信区间。kernel同任务搜索不能外推跨任务学习。",
+      "reading_scope": "以既有主文及相关附录阅读为基础，重读全部机制、基准与选择消融、Merge、成本、模型迁移；补读§5推理时kernel搜索及对抗prompt结果。原始冗长提示历史和日志不逐字复述。",
+      "primary_source": "https://arxiv.org/html/2507.19457v2",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "agentbreeder",
@@ -242,11 +242,11 @@
       "year": 2025,
       "scope": "evaluation",
       "closure_assessment": "main_text_and_relevant_appendix",
-      "operation": "提出修改→容量及验证门控→接受或拒绝",
-      "boundary": "跨路线的理论、方法或评测；不单独计作已实现递归自改进的系统。 有限 VC 条件不能直接变成大模型通用能力增长定律；非 i.i.d.、分布漂移、计算可达性需另行处理。",
-      "reading_scope": "v3：§3–7 的定义与容量条件，附录 D.1–D.3 的证明；与 v1 核对关键更正。",
-      "primary_source": "https://arxiv.org/abs/2510.04399",
-      "provenance": "2026-10-19 primary-source reading"
+      "operation": "候选自修改→utility证明触发→验证margin与envelope容量检查→接受→继续。",
+      "boundary": "严谨区分统一保证、具体任务表现和计算可达性，对图谱的验证泄漏界限有价值；不作为新LLM自进化成果。 无限VC只排除对所有分布的统一样本复杂度，不证明任何特定任务必然退化或开放RSI不可能。destruction还要求Local-URP及utility严格奖励容量，不适用所有理性目标。有限VC保证存在ERM式学习器而不保证当前修改策略求得到；计算可实现性另需条件。稳定性定理强加replacement-invariant调度，排除训练样本敏感的自调参；gate自己修改仍需保持不变量，未解决守护递归。",
+      "reading_scope": "完整v3主文与技术附录；另抽查v1 §1–4以确认版本修正，未把v1实验/错误容量条件混入v3。",
+      "primary_source": "https://arxiv.org/html/2510.04399v3",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "seal",
@@ -254,11 +254,11 @@
       "year": 2025,
       "scope": "direct",
       "closure_assessment": "main_text_and_relevant_appendix",
-      "operation": "生成编辑 → 内层微调 → 评价 → 外层筛选 SFT",
-      "boundary": "Model 路线的元学习：参数更新生成策略由更新后的任务效果训练，训练程序本身固定。 ARC 预筛可解子集；内层计算昂贵；知识评分用 GPT-4.1 参考金标准；连续编辑发生遗忘。",
-      "reading_scope": "阅读主文方法、实验、消融与相关实现附录；据原文重建训练闭环，未独立复现实验。",
-      "primary_source": "https://arxiv.org/html/2506.10943v1",
-      "provenance": "2026-10-19 primary-source reading"
+      "operation": "知识2轮，每轮50篇×5编辑×3种子内环，选最佳编辑SFT；ARC仅1外轮，11题×15配置，过滤>375更新步。",
+      "boundary": "机制代表性强，需在主线关系图显著连接，但最大实际7B按学生规模归补充；保留真实学习增益奖励与成本/长提示对照。 元梯度对reward参数依赖stop-gradient；GRPO/PPO不稳定才用ReST-EM。内环成本高，代理奖励近似成绩仅需极少成本；原始长提示、外部教师及结构启发式相当强。没有规模化无标签或无限连续更新证据。",
+      "reading_scope": "旧版完整阅读基础上复核全部主文与相关附录，并补读新版B.6–B.11扩展；更新旧CPT数字。",
+      "primary_source": "https://arxiv.org/html/2506.10943v2",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "hyperagents",
@@ -266,11 +266,11 @@
       "year": 2026,
       "scope": "direct",
       "closure_assessment": "main_text_and_relevant_appendix",
-      "operation": "选父→自改任务/meta模块→评价→入档→跨域继续",
-      "boundary": "Harness 任务代理与改进代理共同自修改；主实验外层固定 迁移task+meta整体；初始格式失败影响0分基线；200轮迁移优势未显著；有限固定分布。",
-      "reading_scope": "已读正文的问题定义、算法、实验设置、主结果与局限，核对所列相关附录；属于证据复核，未重跑实验，也不等于复现全部结论。",
-      "primary_source": "https://arxiv.org/html/2603.19461v1",
-      "provenance": "2026-10-19 primary-source reading"
+      "operation": "选父→自身meta模块修改task/meta→固定评测→合法子代入档，元模块改变后续修改方式",
+      "boundary": "代表性地将改进器自身纳入可编辑对象，并直接测量跨领域产出能力，同时公开不显著的复利和选父结果 整程序迁移和弱格式初始状态限制归因；优于DGM-custom及200轮复利均未显著；主外层固定，无无限自加速证据 后续 Trusting Trust Revisited §3.4.1 在Polyglot式容器中发现reset后git历史仍含隐藏测试/参考解，预实验Sonnet4.5确实读取；同问题见DGM，Hyperagents作者确认及建议strip历史。该后续实验已修复。它证明可利用污染通道存在，未证明原论文o3-mini/Sonnet3.5分数实际受污染。",
+      "reading_scope": "前次完整主文及A/B/C/D/E相关附录；本轮逐段复核主文方法、全部结果、D.1–D.4、E.3代码实例和E.5选父实验；PDF首页确认机构。",
+      "primary_source": "https://arxiv.org/pdf/2603.19461v1",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "harness-updating-benefit",
@@ -278,11 +278,11 @@
       "year": 2026,
       "scope": "evaluation",
       "closure_assessment": "main_text_and_relevant_appendix",
-      "operation": "先执行计分→再用该任务证据更新",
-      "boundary": "跨路线的理论、方法或评测；不单独计作已实现递归自改进的系统。 最大收益取决于有限锚点集合；遵循度依赖模型判定；部分案例不能证明全域尺度规律。",
-      "reading_scope": "§3–4；附录 B 的任务流、可写范围，C–D 的配对矩阵、案例及遵循度判定。",
+      "operation": "固定solver换7个evolver与固定3锚点evolver换6个solver的交叉评价。",
+      "boundary": "关键能力定义及受控评测证据，支持harness路线论证与边界，不当作新通用递归机制成果。 benefit的max取样有选择偏差，依赖3个锚点而非能力上界；updating平均可掩盖配对差异（SB单solver跨度9.3pp）；“flat”无显著性/等价性检验。高端较小增益仅与天花板解释一致，非因果确认；低端错误可能来自统一runner接口，不是所有弱模型固有。judge相关性并未通过干预训练证实因果。",
+      "reading_scope": "复核全部主文、相关工作、实验配置、完整配对结果与案例、遵循度判定提示；补齐此前记录未说明的in-situ指标定义及附录限制。",
       "primary_source": "https://arxiv.org/html/2605.30621v1",
-      "provenance": "2026-10-19 primary-source reading"
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "sia",
@@ -291,10 +291,10 @@
       "scope": "direct",
       "closure_assessment": "main_text_and_relevant_appendix",
       "operation": "执行→分析→选harness/RL更新→再执行",
-      "boundary": "联合改目标模型与harness；固定外部改进器，属于有限任务上的协同优化。 LawBench test split参与奖励反馈；固定强反馈模型；缺少匹配总预算的多代迁移验证。",
-      "reading_scope": "已阅读方法、实验结果、消融及相关附录；未独立复现实验。",
-      "primary_source": "https://github.com/hexo-ai/sia",
-      "provenance": "2026-10-19 primary-source reading"
+      "boundary": "早期直接把120B参数与持久harness纳入同一反馈选择接口，是协同机制节点；三任务展示主要先harness后weights，应强调基准反馈优化、外部改进器固定而非自主代际继任 LawBench所谓test split直接提供RL reward；主要staged而非充分多轮析因；训练总预算和重复方差未报告；反馈模型不训练",
+      "reading_scope": "既有主文及相关附录完整阅读基础上，复核§3/5、模型与LoRA设定、§6.2阶段安排、§6.3.1 test-split reward及Table3三任务分解。",
+      "primary_source": "https://arxiv.org/html/2605.27276v2",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "rhi",
@@ -314,11 +314,11 @@
       "year": 2026,
       "scope": "evaluation",
       "closure_assessment": "main_text_and_relevant_appendix",
-      "operation": "执行→分析→修订→继续探索",
-      "boundary": "跨路线的理论、方法或评测；不单独计作已实现递归自改进的系统。 终端轮数并非严格等总token或总成本；游戏报告最佳过程得分，不能当独立终态跨任务泛化。",
-      "reading_scope": "v4：§3–5；附录 A.1 的预算、pass@k与成本，B/C 的游戏协议。",
+      "operation": "多次rollout→同模型debugger摘要→meta-agent改harness→重新执行，与同预算parallel/sequential任务搜索比较。",
+      "boundary": "对三条成果图的证据门槛非常关键，作为跨路线评测支撑详述；其正面游戏结果属于单任务harness适配，不能强塞为通用RSI成果。 没有验证所有harness evolution方法：只实例化关闭explore的AHE；两run、有限任务与K预算限制结论。games正结果与TB holdout测不同对象。ARC编辑工具可调用额外程序搜索，匹配动作数不能称完全匹配算力；TB未计编辑成本反而偏惠harness一侧，但不消除其余实现差异。",
+      "reading_scope": "完整主文、附录实验设置、预算消融、ARC逐游戏分数/完成率、工件使用计数、案例代码与EdgeBench时间表；未执行原仓库。",
       "primary_source": "https://arxiv.org/html/2607.12227v4",
-      "provenance": "2026-10-19 primary-source reading"
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "co-harness",
@@ -326,11 +326,11 @@
       "year": 2026,
       "scope": "direct",
       "closure_assessment": "main_text_and_relevant_appendix",
-      "operation": "HarnessCritic→成功轨迹→SFT→下一轮",
-      "boundary": "Model×Harness交替优化；32B分支符合选定规模，8B应单独标记。 训练规模和最终评测划分披露不足；局部修补不是自主架构重建；时间倍率有内部不一致。",
-      "reading_scope": "已阅读方法、实验结果、消融及相关附录；未独立复现实验。",
-      "primary_source": "https://arxiv.org/abs/2607.22688",
-      "provenance": "2026-10-19 primary-source reading"
+      "operation": "冻结权重做K=5次harness内循环→冻结harness收集验证成功轨迹→SFT→重复两轮",
+      "boundary": "32B实际两轮双状态继承，代表批次式Model×Harness交替；保留但降低证据强度，不接受论文的普遍复利或harness独立迁移宣称 SFT数据量、优化器、训练/测试隔离、总成本和方差披露不足；结构重构仍由人设计",
+      "reading_scope": "此前完整正文及相关附录；本轮重新阅读算法、训练/评估设置、结果、消融和限制的关键原文。§3算法与§4；Table6；AppendicesA–H",
+      "primary_source": "https://arxiv.org/html/2607.22688",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "helix",
@@ -338,11 +338,11 @@
       "year": 2026,
       "scope": "enabler",
       "closure_assessment": "main_text_and_relevant_appendix",
-      "operation": "组合→执行→验证→候选比较/数据导出；模型更新尚未实现",
-      "boundary": "已测Harness组合/数据生成；Model×Harness闭环仅提出，未训练后继模型 未训练更新模型；100题非随机且只公开测试；事后union非实际路由；组件归因不足。",
-      "reading_scope": "已读正文的问题定义、算法、实验设置、主结果与局限，核对所列相关附录；属于证据复核，未重跑实验，也不等于复现全部结论。",
-      "primary_source": "https://github.com/HKUDS/HELIX",
-      "provenance": "2026-10-19 primary-source reading"
+      "operation": "组合候选→执行验证→比较组合/导出数据；尚无后继模型训练或rebuild",
+      "boundary": "有用的数据和组件工程，但单轮65候选不等于已实现模型—harness多轮协同进化 Model×Harness闭环只形式化/准备数据；79%是事后组合上界不是部署成功率",
+      "reading_scope": "前次已完整主文与A/B；本轮复核§5–6、训练记录细分、§7.1与§9全部局限，作者署名。",
+      "primary_source": "https://arxiv.org/html/2608.13951v1",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "hsi",
@@ -350,11 +350,11 @@
       "year": 2026,
       "scope": "direct",
       "closure_assessment": "main_text_and_relevant_appendix",
-      "operation": "选seed→harness演化→多commit保留→meta修改Σ",
-      "boundary": "Harness与其evolver联合修改，最外meta机制固定 meta-on非全面优于off；跨环境通用改进器迁移未测；困难环境受限。",
-      "reading_scope": "已读正文的问题定义、算法、实验设置、主结果与局限，核对所列相关附录；属于证据复核，未重跑实验，也不等于复现全部结论。",
-      "primary_source": "https://github.com/TailinZhou/hsi",
-      "provenance": "2026-10-19 primary-source reading"
+      "operation": "5轮：选择seed→最多80 react演化H/多commit→最多50 react元演化Σ→终局固定选择并测试",
+      "boundary": "有真实Σ编辑与任务族留出实验，但额外计算、配置歧义及有限元能力分离使其更适合作为Hyperagents的互补案例 元改进额外计算未匹配；main§3.3.5称final selection可改，与B.1终局选择不可改冲突，应以明确约束保守解释；Table3 meta开关/episode配置与正文也不完全一致；能力/反馈边界是经验观察而非定理",
+      "reading_scope": "前次完整阅读；本轮复核主文§1–6、Tables1–3、Appendix A全部和B.1提示/权限约束；核对meta-on结果与终局选择的正文/附录冲突。",
+      "primary_source": "https://arxiv.org/html/2608.08466v1",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "evoharness-rl",
@@ -373,12 +373,12 @@
       "name": "Harness Tampering",
       "year": 2026,
       "scope": "evaluation",
-      "closure_assessment": "paper_sections_read",
-      "operation": "离线审计，不构成新的递归改进闭环",
-      "boundary": "跨路线的理论、方法或评测；不单独计作已实现递归自改进的系统。 自然运行中的标记不能直接称已证实作弊；补充材料中的人工抽查细节本次未完整取得。",
-      "reading_scope": "正文任务定义、数据构造、实验与谱系分析全部读取；所引 Supplementary Materials 未在当前公开正文中展开。",
-      "primary_source": "https://arxiv.org/abs/2609.00069",
-      "provenance": "2026-10-19 primary-source reading"
+      "closure_assessment": "public_materials",
+      "operation": "构造注入语料→评测审计器→选择Luna检查原论文主运行，分析prevalence/persistence/profile。",
+      "boundary": "审计分类与机制边界有用，保留为中置信评测支撑；真实高发生率带“Luna发现”限定，补充材料缺失不作强反驳边。 不能把自动findings百分比当确认作弊率、恶意意图或全系统真实性否定；作者定义不依赖意图和是否带来收益。没有replay/修复反事实量化score被虚增多少；无supplement使自然数据精度/人工一致性难核。matched生成降低风格捷径不保证所有标签语义正确。",
+      "reading_scope": "公开主文完整阅读，HTML/PDF与abs核查；搜索未找到可访问补充链接。",
+      "primary_source": "https://arxiv.org/html/2609.00069v1",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "harnessdev",
@@ -398,11 +398,11 @@
       "year": 2026,
       "scope": "direct",
       "closure_assessment": "main_text_and_relevant_appendix",
-      "operation": "受约束提案→泄漏筛查→重复评价→稳定/成本接纳→剪枝",
-      "boundary": "多轮Harness优化；外层改进器/正则化规则固定 L0/L1/L2是类比；token较初始增加；等候选预算不等总算力；没有后继改进器独立检验。",
-      "reading_scope": "已读正文的问题定义、算法、实验设置、主结果与局限，核对所列相关附录；属于证据复核，未重跑实验，也不等于复现全部结论。",
-      "primary_source": "https://arxiv.org/html/2609.24972v1",
-      "provenance": "2026-10-19 primary-source reading"
+      "operation": "cosine编辑预算4或3→1→critic筛diff→多次评测→历史最高分噪声floor和成本门控→选最高 admissible",
+      "boundary": "跨域外测、重复搜索和两侧消融把自适应过拟合与复杂度控制变成实证中心，具有独立于自修改层级的关键解释价值 L0/L1/L2仅类比，无norm优化/统计泛化保证；多编辑共享同候选Δ非因果credit；critic编码跑38候选仅1拒且因组件不符，未单独证明防泄漏；D.3称weights列Table5但表未给ws/wc/wn；GDP185题与204comparisons叙述不一致",
+      "reading_scope": "前次完整阅读；本轮复核主文全部方法/实验/局限及A–F全部技术附录、伪代码、两次搜索/paired-bootstrap和实际拒绝案例。Google由原文首页Cloud AI Research注记确认。",
+      "primary_source": "https://arxiv.org/html/2609.24972v3",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "meta-harness",
@@ -422,11 +422,11 @@
       "year": 2026,
       "scope": "direct",
       "closure_assessment": "main_text_and_relevant_appendix",
-      "operation": "固定外层提出→内层固定预算研究→私有评价→接受后继",
-      "boundary": "主运行固定外层优化研究harness；外层替换的ignition试验未确认优越性 主外层固定；ignition仅3seed且无显著优越性；复杂新增代码未必有效；天气仅1任务。",
-      "reading_scope": "已读正文的问题定义、算法、实验设置、主结果与局限，核对所列相关附录；属于证据复核，未重跑实验，也不等于复现全部结论。",
+      "operation": "固定外层提案→内层在固定美元预算做AI研发→私有分数选下一incumbent；另单独晋升AIDE47做ignition test",
+      "boundary": "固定预算、外部任务与匹配起点点火检验使其成为AI4AI研发效率的关键证据；应明确保留未证实元加速的结论 主8天run外层固定，不是自动递归升级outer；ignition三seed不能证明更快/更强；privategrade被外层反复选择非未触碰test；一项评分脚本被修补改变评价，组件贡献未隔离",
+      "reading_scope": "前次完整阅读；本轮重读主文§1–3、§5及Appendix A–E全部，核对完整预算/三seed点火检验与脚本修补。",
       "primary_source": "https://arxiv.org/html/2609.26457v1",
-      "provenance": "2026-10-19 primary-source reading"
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "openrsi",
@@ -435,10 +435,10 @@
       "scope": "enabler",
       "closure_assessment": "main_text_and_relevant_appendix",
       "operation": "离线SFT→在线执行RL→部署时长程搜索",
-      "boundary": "AI4AI模型训练与搜索协同支撑方法；并无已验证的harness自重构多代RSI。 搜索框架基本固定；外部ML解法优化；模型服务与训练成本不可用沙箱预算替代。",
-      "reading_scope": "已阅读方法、实验结果、消融及相关附录；未独立复现实验。",
+      "boundary": "≥27B实际训练、固定框架换模型/固定模型换框架及NatureBench迁移支持两部分互补；但系统主要演化外部ML解法，未自改搜索harness，作为AI4AI能力训练支撑 §8明确演化系统本身大体固定；任务预算12h单4090不含LLM服务/训练；只有22/10题Lite集，不能当成熟多代自身递归改进",
+      "reading_scope": "既有§2–6/8与B–D完整阅读基础上，原文复核§4.2–4.3、§6.2/6.6、§8、AppendixB.1–B.3全参数训练和评估配套关系；作者页单位。",
       "primary_source": "https://arxiv.org/html/2607.28568v1",
-      "provenance": "2026-10-19 primary-source reading"
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "mass",
@@ -446,11 +446,11 @@
       "year": 2026,
       "scope": "direct",
       "closure_assessment": "main_text_and_relevant_appendix",
-      "operation": "工作流搜索→自选轨迹SFT→新模型承担三角色",
-      "boundary": "工作流文本与共享模型两轮协同；底层coding harness固定。 8个训练任务；自评共享偏差；部分基准退化；token效率不等于总计算效率。",
-      "reading_scope": "已阅读方法、实验结果、消融及相关附录；未独立复现实验。",
+      "operation": "固定权重优化工作流→每任务M=18轨迹取top16并留1验证→移除工作流提示做SFT→第二代同流程",
+      "boundary": "实际27B两代同质闭环，并有固定旧执行器检验新优化器的关键对照，是联合谱系中不可替代的有限代证据 初始任务由外部强模型生成；主流程checkpoint按验证CE选，消融另用外部judge选；仅两代小任务集且软件基准回退；评价一致不是真值",
+      "reading_scope": "此前完整正文及相关附录；本轮重新阅读算法、训练/评估设置、结果、消融和限制的关键原文。§2–5；Algorithm1；AppendicesB–G训练、消融与工作流分析",
       "primary_source": "https://arxiv.org/html/2610.12176v1",
-      "provenance": "2026-10-19 primary-source reading"
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "rsi-anything",
@@ -459,10 +459,10 @@
       "scope": "direct",
       "closure_assessment": "main_text_and_relevant_appendix",
       "operation": "提案→预测→选择→执行→更新→组合接受",
-      "boundary": "世界模型介导的多组件改进研究；各应用需分别标记Model或工作流更新，不能整项当作成熟协同闭环。 应用只实例化部分更新路径；联合持续循环未建立；代码与规划主体<27B。",
-      "reading_scope": "已阅读方法、实验结果、消融及相关附录；未独立复现实验。",
+      "boundary": "预测器适配与政策版本保留有机制价值，但实际证据分散在不同应用，不能把框架全部箭头视为共同完成的协同闭环 §5明确同一任务联合多轮互促仍待验证；GUI训练配置不足；化学仅反馈条件搜索、免疫下游预测器冻结；五领域不是同一模型迁移",
+      "reading_scope": "此前完整正文与相关附录，本轮重核机制、实际训练对象及结果/限制。",
       "primary_source": "https://arxiv.org/html/2610.13912",
-      "provenance": "2026-10-19 primary-source reading"
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "dream-rsi",
@@ -470,11 +470,11 @@
       "year": 2026,
       "scope": "direct",
       "closure_assessment": "main_text_and_relevant_appendix",
-      "operation": "在线发现→树重放→代码策略修订→选优→下一轮在线",
-      "boundary": "Harness探索策略跨轮适应，固定外部代码改进者 重放分布受已有树限制；有场景缺固定探索对照；同集终端结果与留出泛化分开。",
-      "reading_scope": "已读正文的问题定义、算法、实验设置、主结果与局限，核对所列相关附录；属于证据复核，未重跑实验，也不等于复现全部结论。",
-      "primary_source": "https://arxiv.org/html/2609.14858v2",
-      "provenance": "2026-10-19 primary-source reading"
+      "operation": "真实搜索→冻结历史树→固定开发agent改policy→历史重放选优→下一轮真实搜索",
+      "boundary": "历史树重放为昂贵元优化提供独立且有受控实验支撑的机制；必须与完整改进器自修改及总成本加速区分 历史分数单调是同历史选优保证；不是在线单调或总成本保证；详细开发提示已经规定恢复、批处理、beta和grid启发式",
+      "reading_scope": "前次已完整读主文及B/C/E；本轮复核§2–5、Tables1–2、B/C并完整补读D两份实际提示，PDF首页确认机构。",
+      "primary_source": "https://arxiv.org/pdf/2609.14858v2",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "hgm",
@@ -482,11 +482,11 @@
       "year": 2025,
       "scope": "direct",
       "closure_assessment": "main_text_and_relevant_appendix",
-      "operation": "选择扩展或补测→自修改/评价→更新子树后验→再分配预算",
-      "boundary": "Harness代理自修改，外层谱系搜索由人类固定 oracle定理依赖强假设；经验CMP不是最优性证明；评价数相同不代表全部计算相同。",
-      "reading_scope": "已读正文的问题定义、算法、实验设置、主结果与局限，核对所列相关附录；属于证据复核，未重跑实验，也不等于复现全部结论。",
-      "primary_source": "https://arxiv.org/html/2510.21614v1",
-      "provenance": "2026-10-19 primary-source reading"
+      "operation": "阈值决定扩展或补测→clade统计选父自修改/个体统计选agent单题测试→更新祖先计数→异步重复→终止选best-belief代理。",
+      "boundary": "直接研究后继改进潜力与自修改谱系选择，有超出当前任务优化的核心问题与实证，限制理论等价和递归层级主张后值得主线保留。 Theorem1建立在真实CMPoracle、本体已知效用、终局奖励、可重置、免费证明、等成本修改与有限预算；实际Beta聚合并非该oracle，也无误差界。AppendixB坦承异步早完成简单题导致选择偏差。AppendixF Listing1的attempt_error_resolution主要记录“Would”与注释，没有执行安装/修复，不能单凭该片段支持任意深度meta-improvement；嵌套diff不是能力递归证明。",
+      "reading_scope": "旧review已覆盖主文与相关附录，本次读主文全部、完整证明、算法和新恢复代码listing；复核所有用于比较的关键结果。",
+      "primary_source": "https://arxiv.org/html/2510.21614v3",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "ace",
@@ -494,11 +494,11 @@
       "year": 2025,
       "scope": "direct",
       "closure_assessment": "main_text_and_relevant_appendix",
-      "operation": "执行→反思提炼→delta整理→确定性合并→检索/复用",
-      "boundary": "Harness持久context适应，改进流程本身固定 依赖强反思模型；复杂记忆并非每任务有益；静态测试与在线适应协议不同。",
-      "reading_scope": "已读正文的问题定义、算法、实验设置、主结果与局限，核对所列相关附录；属于证据复核，未重跑实验，也不等于复现全部结论。",
-      "primary_source": "https://arxiv.org/html/2510.04618v1",
-      "provenance": "2026-10-19 primary-source reading"
+      "operation": "Generator执行→Reflector提炼并可多轮细化→Curator局部delta→非LLM逻辑合并/去重→后续题复用",
+      "boundary": "解释持久经验表示与更新为什么影响持续学习，直接增量消融、跨模型和负反馈边界充分；不把持久context更新称递归改进器。 优化器/整理策略仍固定；自反馈不可靠时可退化；API缓存降低计费不等于消除长上下文内存与计算；公开leaderboard对CUGA仅背景而非受控比较。",
+      "reading_scope": "在此前完整阅读基础重读机制、全部主文结果；补读新增跨模型/医学/SQL、token成本、恶意反思及增量更新/超参消融；F重复prompt图仅核对图题，不逐字复述。",
+      "primary_source": "https://arxiv.org/html/2510.04618v3",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "alphaevolve",
@@ -506,11 +506,11 @@
       "year": 2025,
       "scope": "enabler",
       "closure_assessment": "main_text_and_relevant_appendix",
-      "operation": "取父程序及上下文→LLM修改→自动运行评分→数据库保留→下一轮；部分程序优化AI基础设施",
-      "boundary": "AI4AI基础设施改进与可变meta-prompts的重要机制参考；主实验未闭合模型权重和改进器多代协同训练 自动评价器与问题形式化需人工；工业细节与总成本不完全公开；复矩阵48乘不等于任意硬件实数GEMM普遍提速；多代研究能力复利未验证。",
-      "reading_scope": "已读正文的问题定义、算法、实验设置、主结果与局限，核对所列相关附录；属于证据复核，未重跑实验，也不等于复现全部结论。",
-      "primary_source": "https://arxiv.org/abs/2506.13131",
-      "provenance": "2026-10-19 primary-source reading"
+      "operation": "取父程序及历史上下文→LLM代码diff→执行评分→保留多目标多样性→继续；可共同演化搜索算法和构造",
+      "boundary": "代表AI4AI从程序搜索走向生产训练基础设施的实质增量；研究循环尚未成为已验证的多代递归自提升。 主要外层进化器固定；改善基础设施到下一代模型的反馈周期仍数月、收益温和；未证明模型/改进器多代协同自强化。RTL优化也被后续综合器独立发现；各百分比口径不能相加",
+      "reading_scope": "前次完整主文与数学技术附录基础上，复核§2所有机制、§3.2/3.3各应用、§4消融、§6限制、附录A全目标统计与作者署名。",
+      "primary_source": "https://arxiv.org/html/2506.13131v1",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "opro",
@@ -519,22 +519,22 @@
       "scope": "enabler",
       "closure_assessment": "main_text_and_relevant_appendix",
       "operation": "历史+样例→8候选→执行评分→更新历史；改进器代码不改变",
-      "boundary": "固定改进器优化持久任务提示的支撑方法，未展示改进器自身递归更新 测试最高提示的报告选择、少量优化数据与默认无validation限制最优值解释；泛化是相近任务，不是所有目标；改进器与权重不更新。",
-      "reading_scope": "已读正文的问题定义、算法、实验设置、主结果与局限，核对所列相关附录；属于证据复核，未重跑实验，也不等于复现全部结论。",
-      "primary_source": "https://arxiv.org/abs/2309.03409",
-      "provenance": "2026-10-19 primary-source reading"
+      "boundary": "带评分历史的冻结语言优化器是清楚可复用基元，但不更新改进器自身；作为谱系支撑。 Table4列每对模型最高测试准确率；默认无validation，不能将最优测试口径视为无偏部署效果；EvoPrompt对比还涉及样例与初始化差别。",
+      "reading_scope": "此前主文与相关附录完整阅读；本轮复核实际更新对象、控制实验、训练测试口径、成本和局限原文。",
+      "primary_source": "https://arxiv.org/html/2309.03409v3",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "learned-optimizer-2016",
       "name": "Learned Optimizer",
       "year": 2016,
       "scope": "foundation",
-      "closure_assessment": "paper_sections_read",
-      "operation": "内层模型训练→外层更新优化器",
-      "boundary": "历史机制与技术背景；保留 archive，不计入当代三条 RSI 成果路线。 元训练与部署任务差异是核心限制；不宣称大模型训练已经受益。",
-      "reading_scope": "§2 的LSTM更新器与展开优化损失；§3实验、优化器对照和迁移限制。",
-      "primary_source": "https://arxiv.org/abs/1606.04474",
-      "provenance": "2026-10-19 primary-source reading"
+      "closure_assessment": "main_text_and_relevant_appendix",
+      "operation": "抽optimizee/初值→LSTM给更新→任务损失→反传部分轨迹训练LSTM→holdout选best→冻结用于新任务。",
+      "boundary": "历史学习规则机制必须保留，属于小模型基础；图谱宜用作MAML及自训练优化器的对照，不能算已经递归优化了自身。 反传明确stop-gradient通过optimizee gradients的依赖，忽略Hessian项，是有偏近似而非完全精确二阶元梯度；短视sum-loss与最终解目标不同。未证明单调/收敛/普适优于Adam；每步计算量未匹配。所谓NTM-BFGS可模拟仅在controller能计算任意函数等表达能力假设，不等于其训练成功。",
+      "reading_scope": "全部正文/附录公式与方法；主量化图4–8实际下载渲染核查。附录B视觉分析按文字与图注读取，未逐坐标数字化。",
+      "primary_source": "https://arxiv.org/html/1606.04474",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "poet",
@@ -542,11 +542,11 @@
       "year": 2019,
       "scope": "foundation",
       "closure_assessment": "main_text_and_relevant_appendix",
-      "operation": "生成环境→训练策略→跨环境迁移",
-      "boundary": "历史机制与技术背景；保留 archive，不计入当代三条 RSI 成果路线。 环境空间有人工上界；小网络不削弱机制研究价值，也不构成当代大模型RSI结果。 评价目标部分来自POET已生成并解出的环境，不能当作预先固定的独立目标集。通用补充算法按新颖性排序，主文§4.2实验描述超额候选按低回报优先，二者的实现层次需区分。",
-      "reading_scope": "主文 §2–4全部方法与直接ES、direct-path课程、禁用transfer对照；Supplement §6.1–6.2 Algorithms3–4。",
-      "primary_source": "https://arxiv.org/abs/1901.01753",
-      "provenance": "2026-10-19 primary-source reading"
+      "operation": "从能行走的环境变异新环境→过滤并按新颖度保留→各自ES优化→测试其他环境的策略/提案并替换更好者。",
+      "boundary": "历史共演化机制与迁移消融必要；不把受限小控制器实验写成大模型无界RSI证明。 open-ended不是无界定理：地形参数、身体和奖励固定且有上限。选择POET已解任务的后验评价不证明任意预定任务优势；单POET分数与五ES样本的one-sample t-test、以及3000距离点的显著性，不等于独立算法run的大样本比较。",
+      "reading_scope": "重新完整阅读正文、全部公开补充算法，复核编码、课程预算、统计单位、迁移消融和难度限制。",
+      "primary_source": "https://arxiv.org/html/1901.01753",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "self-training-optimizer-2020",
@@ -554,11 +554,11 @@
       "year": 2020,
       "scope": "foundation",
       "closure_assessment": "main_text_and_relevant_appendix",
-      "operation": "元训练优化器→用其训练另一优化器",
-      "boundary": "历史机制与技术背景；保留 archive，不计入当代三条 RSI 成果路线。 未展示无限递归；附录外部裁剪是必要条件；训练成本不能忽略。",
-      "reading_scope": "§4.2–4.6；自训练附录F/G；基础设施附录H.2。",
-      "primary_source": "https://arxiv.org/abs/2009.11243",
-      "provenance": "2026-10-19 primary-source reading"
+      "operation": "6000任务族元训练→holdout选φ→冻结部署新模型；另以φ替代Adam训练新ψ，ES与原先[-.1,.1]clip保留。",
+      "boundary": "保留完整历史自训练证据和失稳边界；规模小且无跨代增强，不塞入当代≥27B核心成果。 无多代递归增益、无普适优于调参优化器、无长期收敛保证；PES无偏针对平滑meta目标不保证全局优化。外部裁剪、固定梯度来源、人工checkpoint/LR选择与大量先验训练仍必需。",
+      "reading_scope": "完整主文和A–H；另下载渲染Figs2–8观察曲线，包括10k之后自训练失稳与ImageNet表现。",
+      "primary_source": "https://arxiv.org/html/2009.11243",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "star",
@@ -566,11 +566,11 @@
       "year": 2022,
       "scope": "enabler",
       "closure_assessment": "main_text_and_relevant_appendix",
-      "operation": "生成 → 筛选/答案条件化 → 微调原基座 → 迭代",
-      "boundary": "Model 路线的结果筛选推理自训练基础方法，含答案条件化补救，不是训练算法自主改写。 最终答案正确不保证推理过程正确；每轮重置基座；多选题猜测及数据偏差可进入训练。",
-      "reading_scope": "阅读主文方法、实验、消融与相关实现附录；据原文重建训练闭环，未独立复现实验。",
-      "primary_source": "https://arxiv.org/abs/2203.14465",
-      "provenance": "2026-10-19 primary-source reading"
+      "operation": "生成→正确结果筛选→失败题答案条件化→合并数据重训基座→新模型生成",
+      "boundary": "应作为历史与机制关键补充保留；实际训练仅6B，主线的大模型规模叙事由ReST-EM等承接。 不是零监督；正确结果不保证过程有效或忠实；每轮重启权重，算法不自改写；最佳轮和大模型对照不能冒充大模型训练证据。",
+      "reading_scope": "继承已有主文和相关附录阅读；本轮复核权重重启、标签来源、各任务数值、rationalization消融、计算代价与解释忠实性。",
+      "primary_source": "https://arxiv.org/html/2203.14465v2",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "rest-em",
@@ -589,12 +589,12 @@
       "name": "Expert Iteration",
       "year": 2017,
       "scope": "foundation",
-      "closure_assessment": "paper_sections_read",
-      "operation": "学徒指导搜索→专家标签→训练学徒",
-      "boundary": "历史机制与技术背景；保留 archive，不计入当代三条 RSI 成果路线。 需有可验证环境和搜索优势；不能从Hex直接推出开放科研自治。",
-      "reading_scope": "§3 Algorithm 1；§6.1–6.3 的在线/批次、价值网络及MoHex比较。",
-      "primary_source": "https://arxiv.org/abs/1705.08439",
-      "provenance": "2026-10-19 primary-source reading"
+      "closure_assessment": "main_text_and_relevant_appendix",
+      "operation": "学徒自对弈采state→当前网络引导MCTS提供更强标签→监督学习新apprentice→装回搜索→重复；没有AG0式400局替换门控。",
+      "boundary": "保留搜索—蒸馏的历史机制及精确比较基线，不能当大模型或元改进器递归成果。 无普遍单调定理，Fig2/3初期性能明显下降，后期也微回落；均值总体进步不是逐代保证。tabula rasa仍有连接通道、hex卷积和RAVE先验；访问分布含相对偏好，不直接等于有校准的行动损失。无改进算法自身演化。",
+      "reading_scope": "所有正文与技术附录已读；下载两张结果图核对不稳定初期与后续曲线；Appendix E棋谱说明与版本纠错齐全。",
+      "primary_source": "https://arxiv.org/html/1705.08439",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "dreamcoder",
@@ -613,48 +613,48 @@
       "name": "Selecting Computations",
       "year": 2012,
       "scope": "foundation",
-      "closure_assessment": "paper_sections_read",
-      "operation": "选择计算→更新后验→继续或停止",
-      "boundary": "历史机制与技术背景；保留 archive，不计入当代三条 RSI 成果路线。 理论中的概率模型与成本条件不可省略；任意长路径不等于最优策略正概率不停止。",
-      "reading_scope": "§2的metalevel MDP、Theorem4–10与证明；§3非indexability反例及近似策略目的。",
-      "primary_source": "https://arxiv.org/abs/1207.5879",
-      "provenance": "2026-10-19 primary-source reading"
+      "closure_assessment": "main_text_and_relevant_appendix",
+      "operation": "比较进一步计算的预期收益与成本，选择计算或停止并采取当前最优行动。",
+      "boundary": "必要的计算分配和停止理论背景，没有修改学习器的持续闭环，不列为现代RSI三路线成果。 摘要“可能永远计算”不能读成正概率无限计算。独立arm是blinkered分解的额外条件。Th10印刷阈值λ(1−λ)/c−3需处理负数/整数边界，其证明误引Th7而非Th9；这不支持任意计算模型的统一界。VOI的采样均值假设不是任意自适应评估器保证。",
+      "reading_scope": "正文§1–7、Definitions/Examples/Theorems 1–12及所给证明、Figures 1–5；PDF复核负阈值和正文排版",
+      "primary_source": "https://arxiv.org/html/1207.5879",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "levin-tree-search",
       "name": "Levin Tree Search",
       "year": 2018,
       "scope": "foundation",
-      "closure_assessment": "paper_sections_read",
-      "operation": "固定策略指导搜索→找到解",
-      "boundary": "历史机制与技术背景；保留 archive，不计入当代三条 RSI 成果路线。 上界以解路径概率为条件，低概率解仍很昂贵；节点数不等于完整墙钟成本。",
-      "reading_scope": "§2–4 的确定性搜索模型、Theorem1–4及证明；§7固定A3C策略Sokoban对照。",
-      "primary_source": "https://arxiv.org/abs/1811.10928",
-      "provenance": "2026-10-19 primary-source reading"
+      "closure_assessment": "main_text_and_relevant_appendix",
+      "operation": "依据路径策略概率分配展开预算或轨迹重启，找到任一目标即停。",
+      "boundary": "搜索保证的必要历史支撑；实验证明固定策略搜索而非自我改进能力增长。 小π时界指数大，π=0无有限保证；没有学到好策略的理论。App B Lemma12对很小γ的打印界会变负，应对N截为非负并另处理γ≤1/2；该边界问题可用f(k)≤k修补Lemma13，不据此否定主结论。训练、展开、墙钟不可混为同一成本。",
+      "reading_scope": "正文§1–8、Algorithms 1–3、Table 1、Appendices A/B全部含Lemmas 8–14证明；PDF复核记号和边界",
+      "primary_source": "https://arxiv.org/html/1811.10928",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "policy-guided-heuristic-search",
       "name": "PHS",
       "year": 2021,
       "scope": "foundation",
-      "closure_assessment": "paper_sections_read",
-      "operation": "有限预算搜索→训练→扩大覆盖",
-      "boundary": "历史机制与技术背景；保留 archive，不计入当代三条 RSI 成果路线。 理论、近似训练损失与实际剪枝是不同层；不能省略适用条件。",
-      "reading_scope": "§2–4定义、Algorithm1、Theorem1证明；§5训练/测试及结果。",
-      "primary_source": "https://arxiv.org/abs/2103.11505",
-      "provenance": "2026-10-19 primary-source reading"
+      "closure_assessment": "main_text_and_relevant_appendix",
+      "operation": "网络引导搜索→解轨迹训练策略及启发式→重新尝试训练问题；无新解时倍增搜索预算。",
+      "boundary": "保留可分析搜索—训练互促机制，同时将树定理、近似训练和实际剪枝三层拆开；不是现代大模型RSI成果。 MSE拟合已找到路径不保证A*-admissible；PHS*本身非admissible，策略梯度忽略常数/边界对参数的依赖，是近似损失而非真搜索梯度定理。AppG状态剪枝证明要求η是state-only，但ηh=(g+h)/g及η*依赖路径g/π，故“实验全部满足”未由所述假设推出。主树定理仍成立，不能自动延伸到实验剪枝实现。",
+      "reading_scope": "正文§1–6、Appendices A–G全部证明与Algorithms 1–2、Tables 1–5；Figures 1/6全部曲线及PDF记号复核",
+      "primary_source": "https://arxiv.org/html/2103.11505",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "lts-context-models",
       "name": "LTS + Context Models",
       "year": 2023,
       "scope": "foundation",
-      "closure_assessment": "paper_sections_read",
-      "operation": "搜索解题→更新凸目标→再搜索",
-      "boundary": "历史机制与技术背景；保留 archive，不计入当代三条 RSI 成果路线。 凸性不保证发现全新解或全流程全局最优；正文已读，未声称附录全部证明复核。",
-      "reading_scope": "IJCAI主文 §3–6：LTS上下界、context product-of-experts、凸性条件与实验表1。",
-      "primary_source": "https://www.ijcai.org/proceedings/2023/0624.pdf",
-      "provenance": "2026-10-19 primary-source reading"
+      "closure_assessment": "main_text_and_relevant_appendix",
+      "operation": "对训练问题搜索解→最小化已找到解的LTS损失加正则→调整预算→再搜索；部署以固定已学策略搜索新问题。",
+      "boundary": "保留为理论机制背景：贡献是可证明的搜索—学习耦合和明确的保证边界，不列入当代LLM RSI三主图成果。 regret比较的是同一解轨迹序列，不是所有可能解；实际延迟更新Bootstrap不等同标准在线学习，作者明确没有证明其完整流程regret。下界需要proper policy，剪枝可使下界失效；训练用εmix=0而搜索混入εmix>0。",
+      "reading_scope": "完整阅读主文与公开补充A–I；重新推导log-concavity到inverse-path-probability凸性及下界证明的适用条件。",
+      "primary_source": "https://arxiv.org/pdf/2305.16945v3",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "openai-o1",
@@ -662,35 +662,35 @@
       "year": 2024,
       "scope": "background",
       "closure_assessment": "public_materials",
-      "operation": "训练改进模型；未公开自治研究闭环",
-      "boundary": "历史机制与技术背景；保留 archive，不计入当代三条 RSI 成果路线。 只把公开研究材料作为证据；算法与规模未披露不能补猜。",
-      "reading_scope": "官方研究发布页：训练/推理compute、数学评测、IOI设定、chain-of-thought与附录说明。",
+      "operation": "训练阶段学习推理策略；测试阶段生成、评估、选择答案。公开证据没有证明改进过程本身递归增强。",
+      "boundary": "重要推理训练背景，但不属于已公开自治改进器闭环的代表。保留其能力参照与通向Model路线的关系，不占据三路线RSI成果主图。 这是训练结果与公开方法概述，不是完整可复现算法或强RSI证据。正文GPT-4o AIME约12%与Appendix A 9.3%不同，保留表格值与正文值各自口径，不自行调和。",
+      "reading_scope": "重新阅读研究发布全文及附录结果表，分别核对 o1、o1-preview 与额外编程微调模型；不把发布报道当成完整算法论文。",
       "primary_source": "https://openai.com/index/learning-to-reason-with-llms/",
-      "provenance": "2026-10-19 primary-source reading"
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "deepseek-r1",
       "name": "DeepSeek-R1",
       "year": 2025,
-      "scope": "background",
-      "closure_assessment": "paper_sections_read",
-      "operation": "生成轨迹→验证→参数训练及数据再生成",
-      "boundary": "历史机制与技术背景；保留 archive，不计入当代三条 RSI 成果路线。 不能把“self-evolution”修辞当作强RSI证明；多样本与单样本分数不混用。",
-      "reading_scope": "§2.2–2.4 GRPO、奖励、分阶段训练及蒸馏；§3–5结果、失败尝试与局限。",
-      "primary_source": "https://arxiv.org/html/2501.12948v1",
-      "provenance": "2026-10-19 primary-source reading"
+      "scope": "enabler",
+      "closure_assessment": "main_text_and_relevant_appendix",
+      "operation": "策略采样→外部验证→GRPO→更强策略；将较强策略的轨迹回流为后续SFT/RL数据并蒸馏学生。改进的是模型能力与数据，未让模型改写GRPO或自行决定全训练流程。",
+      "boundary": "作为Model路线的AI4AI基础使能代表纳入：公开的大规模可验证RL与轨迹回流支撑后续自训练研究；主图明确标注固定外层训练程序，不将它列为训练器自递归的实证。旧版archive分类不足以呈现其机制地位。 不是零先验学习：基座已见大量数学/代码推理材料。v2 §2.1在8.2K步人工将最大长度32,768翻倍至65,536并报告性能/长度跳升，不能把该跳升全归自发演化；反思词频也不是内部推理能力的因果证明。训练器及元流程未递归自改。",
+      "reading_scope": "完整阅读v1技术报告主文；补读v2主文及各训练、数据、评价、消融、迁移、失败分析附录，核对同模型不同阶段和实际训练计算。示例输出和安全多语言逐语言图只作抽核，不作逐样本能力证据。",
+      "primary_source": "https://arxiv.org/pdf/2501.12948v2",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "qwen3",
       "name": "Qwen3 Technical Report",
       "year": 2025,
-      "scope": "background",
-      "closure_assessment": "paper_sections_read",
-      "operation": "生成/验证→RL或SFT→教师传递",
-      "boundary": "历史机制与技术背景；保留 archive，不计入当代三条 RSI 成果路线。 36T描述数据/训练规模不等于全部细粒度数据可复现；参数规模不能替代闭环证据。",
-      "reading_scope": "§2–3规模与预训练数据；§4.1–4.6四阶段后训练、蒸馏与评测。",
+      "scope": "enabler",
+      "closure_assessment": "main_text_and_relevant_appendix",
+      "operation": "预训练用强模型OCR/清洗/合成数据→冷启动CoT→3995个query-verifier问题的GRPO→强模型拒绝采样并融合非thinking数据→20余类任务通用RL；学生先off-policy蒸馏，再在自己的轨迹上蒸馏教师。",
+      "boundary": "保留在Model路线的工业级AI4AI支撑层：有实训235B/32B、方法和阶段对照，特别补足预训练数据/教师闭环；核心图由R1等代表参数自举机制，Qwen3作为重要工程和机制补充，不归无关或低质量。 不是Model×Harness共同自治进化，人工chat template与推理预算插入不是自改harness；不保证每一能力随训练单调增长；数据、奖励与总成本披露不足以完整复现。",
+      "reading_scope": "主文方法、模型/基线结果、阶段消融、成本比较和完整评测附录已读；HTML表格另作按行提取核对。",
       "primary_source": "https://arxiv.org/html/2505.09388v1",
-      "provenance": "2026-10-19 primary-source reading"
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "alphaproof",
@@ -710,23 +710,23 @@
       "year": 2019,
       "scope": "background",
       "closure_assessment": "main_text_and_relevant_appendix",
-      "operation": "规划行动→环境反馈→联合学习→更好规划",
-      "boundary": "历史机制与技术背景；保留 archive，不计入当代三条 RSI 成果路线。 模型误差及确定性潜模型限制仍在；跨游戏各训练不等于单模型零样本通用。 搜索根部仍从环境取得合法动作；Reanalyze还同时改采样复用、价值权重和n-step长度，不能把全部增益归于重分析单因素。",
-      "reading_scope": "主文 §3–4算法、训练和全部主要对照；Appendix A–I 的规则使用、搜索、输入/网络/训练、Reanalyze与评价。",
-      "primary_source": "https://arxiv.org/abs/1911.08265",
-      "provenance": "2026-10-19 primary-source reading"
+      "operation": "潜模型搜索→真实环境执行→把搜索策略和真实回报写入replay→端到端拟合→新模型再次搜索；Reanalyze在旧轨迹上调用新模型更新目标。",
+      "boundary": "保留历史机制参考与跨代关系，退出当代LLM三路线主图计数；这反映研究对象与时期范围，不是质量否定。 原文“无需游戏规则”指树内模型，不代表没有环境交互/奖励/根合法动作知识；MCTS和训练算法不自修改，多游戏分别训练不等于单模型全域泛化。",
+      "reading_scope": "本轮逐段复核主文方法与结果、Appendix A–I及对照/成本口径；继承原有完整主文与相关附录记录。",
+      "primary_source": "https://arxiv.org/html/1911.08265",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "xland",
       "name": "Open-Ended Learning Leads to Generally Capable Agents (XLand)",
       "year": 2021,
       "scope": "background",
-      "closure_assessment": "paper_sections_read",
-      "operation": "RL→适配课程/PBT→代际蒸馏与新增对手",
-      "boundary": "历史机制与技术背景；保留 archive，不计入当代三条 RSI 成果路线。 动态validation与固定test必须区分；不能写成没有协同进化，也不能写成所有元规则自治。 附录中前代蒸馏仅在非获奖状态施加，后续代前4B步有权重4，之后关闭；不是全程强制复制教师。",
-      "reading_scope": "§4评价；§5.1–5.4三时间尺度训练；§6.1–6.2五代结果与消融。 补读Appendix A.3–A.5的训练/测试隔离、V-MPO和代际蒸馏，A.7的PBT门控与变异。",
-      "primary_source": "https://arxiv.org/abs/2107.12808",
-      "provenance": "2026-10-19 primary-source reading"
+      "closure_assessment": "main_text_and_relevant_appendix",
+      "operation": "秒级V-MPO更新→小时级按当前能力过滤课程并PBT演化→天级新种群蒸馏前代、增加对手并调整validation参照；环境基底另外通过单任务world-agent最小成功条件共演化构造。",
+      "boundary": "作为重要历史协同进化先例保留，但不进入ChatGPT之后LLM三路线核心系统数量；退出主图是范围选择，不能称小模型无意义。 不是当代LLM系统，亦未自主重写训练元算法。形式化空间平滑不保证学习价值平滑或无限进步；Theorem5.1把增加合取项n′≥n写成上界方向，按奖励定义应为更严格的下界（PDF亦如此），GOAT使用的“完整析取目标≥单选项”性质仍成立。",
+      "reading_scope": "补足原有选节阅读；主文机制与结果、相关技术附录、隔离协议、代际继承、成本及理论适用范围已读。枚举任务和视频用于解释案例，不声称逐视频独立判定行为。",
+      "primary_source": "https://arxiv.org/html/2107.12808",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "sima2",
@@ -746,11 +746,11 @@
       "year": 2022,
       "scope": "enabler",
       "closure_assessment": "main_text_and_relevant_appendix",
-      "operation": "批评改写 SFT → AI 偏好训练 PM → RL",
-      "boundary": "Model 路线的 RLAIF/原则监督基础方法；不是多代改进器自改的直接证据。 无害性不新增逐条人类标签不等于无人类数据；固定原则和阶段式训练；奖励过拟合。",
-      "reading_scope": "阅读主文方法、实验、消融与相关实现附录；据原文重建训练闭环，未独立复现实验。",
+      "operation": "四次任务内批评修订→一次SFT→SL政策采比较对→固定feedbackLM标注→训练PM→RL；online更新PM被§6.1列未来。",
+      "boundary": "保持原有enabling_method定位：真实52B RLAIF基础支撑，区别于后续反馈者共同更新和元优化器递归。 不等于完全去人类监督；人类帮助标签、原则/few-shot/初始RLHF仍在。评价标准及评审来源变化影响与旧HH比较；过训Goodhart化，且自然语言批评常不准确。没有多代共同进化。",
+      "reading_scope": "继承已有主文及相关附录完整阅读；本轮重新核对主文全部机制/实验/限制、A批评个案、B评测、C全部原则、E全部few-shot。D长对话例由previous_review覆盖，未重复逐条读。",
       "primary_source": "https://arxiv.org/html/2212.08073v1",
-      "provenance": "2026-10-19 primary-source reading"
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "self-taught-evaluators",
@@ -771,22 +771,22 @@
       "scope": "enabler",
       "closure_assessment": "main_text_and_relevant_appendix",
       "operation": "奖励生成→策略训练→fitness与reflection→奖励修订",
-      "boundary": "自动奖励设计与外部策略学习支撑方法，不是LLM自身Model×Harness协同RSI。 被训练的是机器人策略；GPT-4不更新；主要仿真、奖励搜索计算较大。",
-      "reading_scope": "已阅读方法、实验结果、消融及相关附录；未独立复现实验。",
-      "primary_source": "https://arxiv.org/abs/2310.12931",
-      "provenance": "2026-10-19 primary-source reading"
+      "boundary": "自动训练信号设计的关键历史先例，清楚区分AI4AI与语言模型自身递归。 冻结奖励设计者，外部策略不能接任改进器；搜索预算高于一次人工奖励训练；最大检查点/搜索选择影响所报性能；独立fitness外设",
+      "reading_scope": "此前§2–4与A–F完整阅读；本轮重核§3算法、§4控制、AppendixD/F/H限制",
+      "primary_source": "https://arxiv.org/html/2310.12931v2",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "co-scientist",
       "name": "Co-Scientist",
       "year": 2025,
-      "scope": "background",
-      "closure_assessment": "paper_sections_read",
-      "operation": "生成→审查/辩论→排序→新候选及meta反馈",
-      "boundary": "历史机制与技术背景；保留 archive，不计入当代三条 RSI 成果路线。 未复核全部生物机制与湿实验原始数据；Elo不是独立真值，11目标偏好不能替代临床或全域泛化证据。",
-      "reading_scope": "v2主文系统、203/15/11目标评测；Methods各agent、专家流程；Supplementary Note2；非全部生物实验附录复核。",
-      "primary_source": "https://arxiv.org/abs/2502.18864v2",
-      "provenance": "2026-10-19 primary-source reading"
+      "scope": "enabler",
+      "closure_assessment": "main_text_and_relevant_appendix",
+      "operation": "生成→查证/分解假设→配对辩论排序→合成/变异新假说；跨候选总结共同问题→修改下一轮提示上下文与调度；研究者选择候选开展外部实验。",
+      "boundary": "由旧archive调整为Harness路线的目标内适应/科研agent支撑：确有共享提示反馈与调度更新，不能简化为只改假说；未提供跨目标持续研究器进化证据，故不进入重点RSI主图。保留其外部科学价值与产业/学术合作关系。 内部Elo指导候选选择，增长不是独立科研能力真值；Evolution比较有事后子集选择且GPQA差值CI跨零。专家预筛选使78项好评不代表原始输出总体成功率。尚无新目标上继承修改的长期研究器评测，自动实验学习在Discussion列为未来。",
+      "reading_scope": "完成系统机制、所有主要对照与统计口径、关键技术附录、细胞实验方法/阴性结果/组合结果、专家选择流程；本轮补足旧稿未复核湿实验附录。",
+      "primary_source": "https://arxiv.org/pdf/2502.18864v2",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "gpt-red",
@@ -807,10 +807,10 @@
       "scope": "enabler",
       "closure_assessment": "main_text_and_relevant_appendix",
       "operation": "提出训练方法→审核→训练目标→独立评价→再提案",
-      "boundary": "AI4AI自动后训练研究支撑，具备大模型实验但未证明目标模型成为自身改进器。 目标与研究员不同；公开基准代理目标；人类对照不能迭代；部分消融单run；未验证长期能力后训练后的对齐保持。",
-      "reading_scope": "已阅读方法、实验结果、消融及相关附录；未独立复现实验。",
-      "primary_source": "https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures",
-      "provenance": "2026-10-19 primary-source reading"
+      "boundary": "大规模可执行AI4AI方法搜索、明确训练大模型和评测隔离/作弊审计，作为外部自动研究系统核心；不计同质递归或Model×自身harness继任闭环 大模型Petri附录E是被直接搜索的目标，不是独立泛化；主实验选大模型/Petri迁移方法时隐藏集变验证集；论坛/文献消融各一run且run间差异更大；人类不能迭代，不是公平AI胜人结论；目标不接任研究员",
+      "reading_scope": "此前完整正文与相关附录，本轮重核机制、实际训练对象及结果/限制。",
+      "primary_source": "https://alignment.anthropic.com/2026/automated-alignment-researchers/",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "seed-for-seed",
@@ -819,10 +819,10 @@
       "scope": "disclosure",
       "closure_assessment": "public_materials",
       "operation": "内部研发协作；自主继任循环未公开",
-      "boundary": "公开AI4AI工业方向，双路线具体闭环尚缺技术披露。 无独立算法/受控效果/模型规模/循环轮数；产品总成绩无法归因。",
-      "reading_scope": "已阅读公开项目材料；按实际披露范围解释。",
+      "boundary": "保留工业方向节点；材料已完整阅读但技术机制和独立结果披露不足，不当作已证递归成果 无独立训练实验、轮次、组件接受算法、实际规模、消融、总成本或继任证据",
+      "reading_scope": "此前完整正文与相关附录，本轮重核机制、实际训练对象及结果/限制。本轮完整阅读官方发布材料。",
       "primary_source": "https://seed.bytedance.com/en/blog/seed2-1-officially-released-advancing-ai-productivity",
-      "provenance": "2026-10-19 primary-source reading"
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "sol-pi",
@@ -830,11 +830,11 @@
       "year": 2026,
       "scope": "enabler",
       "closure_assessment": "main_text_and_relevant_appendix",
-      "operation": "152方向广搜→独立实现review/开发评测→组合冻结→单向留出验收；下一代使用改进harness尚属计划",
-      "boundary": "harness自动研究的路线成果；后继以更低成本改进自身的闭环未实测，论文自称RSI-inspired 完整栈降分不能隐去；汇总51任务包含11验收任务；最佳单组件是按backend结果选择；开发总成本与研究后继复利未披露/未验证。",
-      "reading_scope": "已读完整正文方法、结果、单组件分析、发现案例与局限；该版本无独立技术附录；未重跑实验。",
+      "operation": "152方向→oracle分析→独立autoresearch/implementation-review→开发验证→组合/调参→冻结后one-way验证",
+      "boundary": "实际效率机制和跨backend代价曲线可保留，但只是固定优化器自动研发，能力损失及测试后选Performance点限制headline解读 未展示改进器递归效率复利；该方向明确属§5.1未来计划；无需误称能力无损：TB少3题，IMO不及Codex；Performance按评测结果选择，51混用11acceptance；无总研发成本/重复种子",
+      "reading_scope": "前次完整阅读；本轮主文§1–5与全部结果表/成本、机制、开发案例重读，全文无独立技术附录。",
       "primary_source": "https://arxiv.org/html/2609.20519v1",
-      "provenance": "2026-10-19 primary-source reading"
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "modular-rsi",
@@ -842,11 +842,11 @@
       "year": 2026,
       "scope": "direct",
       "closure_assessment": "main_text_and_relevant_appendix",
-      "operation": "各模块独立3epoch→整合1epoch→冻结函数库；终评任务动态选择库中函数",
-      "boundary": "受进化agent参与分析和改写自身模块，属于harness自改进；外层算法固定，尚无独立元改进能力复利实验 Code-Modify使用进化agent不等于外层元优化协议被进化；门控两任务只检验执行合法性；预算匹配不是精确token/算力匹配；跨域限于软件/终端。",
-      "reading_scope": "已读正文的问题定义、算法、实验设置、主结果与局限，核对所列相关附录；属于证据复核，未重跑实验，也不等于复现全部结论。",
+      "operation": "五模块独立各3epoch→1epoch整合→冻结函数库，终评按题选函数",
+      "boundary": "独立任务开发、模块约束与迁移控制使其代表harness自改进泛化证据，也说明扩大可修改范围并非必然有益 对照是启发式归因而非随机因果干预；两题门控验运行协议不验性能；外层改进过程没有递归演化控制",
+      "reading_scope": "前次完整主文及C/F/G/H/J/M；本轮复核全§3–6和作者署名、附录C/D/F/H；确认平均Acc与pass@3的区别。",
       "primary_source": "https://arxiv.org/html/2609.14857v2",
-      "provenance": "2026-10-19 primary-source reading"
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "prime-agent",
@@ -866,11 +866,11 @@
       "year": 2026,
       "scope": "direct",
       "closure_assessment": "main_text_and_relevant_appendix",
-      "operation": "Harness 内任务代理—评价器—元代理共演；没有模型权重训练",
-      "boundary": "Harness 内任务代理—评价器—元代理共演；没有模型权重训练 工作后验与时期内平稳有假设；裁判共漂移靠锚点限制；写作无客观真值。",
-      "reading_scope": "main_text_and_relevant_appendix",
-      "primary_source": "https://arxiv.org/html/2606.26294v3",
-      "provenance": "2026-10-19 primary-source reading"
+      "operation": "任务/评委/meta共同编辑→固定epoch评分→锚点挑新评委→依赖记录选择性清除→继续",
+      "boundary": "评价器共演与效用统计失效的处理是实质新层次，且有独立锚点/留出/消融；不能把代理接受率或winner时点成本夸大 理论仅epoch内平稳和额外HGM假设；生成论文被旧评委接受即作为应拒绝对抗样本，均等接受率不是质量校准真值；部分headline非同总成本",
+      "reading_scope": "前次已完整v3主文和B/C.6–7/D.2–4/E/G；本轮复核§3–5、PDF署名及C数据分割与heldout协议、D消融/完整成本、G局限。",
+      "primary_source": "https://arxiv.org/pdf/2606.26294v3",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "dr-zero",
@@ -879,10 +879,10 @@
       "scope": "direct",
       "closure_assessment": "main_text_and_relevant_appendix",
       "operation": "proposer HRPO → 合成 QA → solver GRPO → 重复三轮",
-      "boundary": "Model 路线的双模型课程共演化，检索 harness 不随训练自主改写。 Wikipedia 及起始文档是外部数据；生成答案不等同金标准；7B 第三轮回退；仅短答案检索评估。",
-      "reading_scope": "阅读主文方法、实验、消融与相关实现附录；据原文重建训练闭环，未独立复现实验。",
+      "boundary": "重要小模型搜索课程补充，提供成本对照和规模反转，不能声称总体胜过监督Search-R1。 gold由proposer从Wikipedia检索后生成，匹配不保证事实真；需外部语料与预设hop配比；7B第三轮退化；仅短答案QA，Deep Research名义不代表长报告泛化；HRPO多跳若干集不如GRPO。",
+      "reading_scope": "继承已有主文及相关附录全文阅读；本轮逐段复核方法、主结果、消融和限制，核对HTML作者机构。",
       "primary_source": "https://arxiv.org/html/2601.07055v2",
-      "provenance": "2026-10-19 primary-source reading"
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "skill-self-play",
@@ -891,10 +891,10 @@
       "scope": "direct",
       "closure_assessment": "main_text_and_relevant_appendix",
       "operation": "技能引导/探索出题→验证→双策略GRPO→技能更新",
-      "boundary": "proposer/solver权重与技能库共同更新的课程协同机制，规模低于主范围。 <27B；限定工具调用和逻辑题；一致性门控仍可能共享错误，未证明跨开放世界泛化。",
-      "reading_scope": "已阅读方法、实验结果、消融及相关附录；未独立复现实验。",
+      "boundary": "相比SkillRL的技能指导求解，本作技能主要用于出题；双策略、技能库和课程互相反馈，五轮和冻结部件对照值得机制保留。 所有实际骨干3–14B；工具验证含当前solver多数一致不是真值；逻辑依赖固定确定性编译/唯一解runtime；固定混合比和路由；HTML Table1/2原生nicematrix占位，沿用此前全文核查表事实。",
+      "reading_scope": "此前完整正文/相关技术附录，本轮重新核对算法、实际训练对象、控制、结果、限制，并补齐此前未列的附录。§3–4；附录B–I（本轮补G–I全部基准、限制与技能包）",
       "primary_source": "https://arxiv.org/html/2607.22529v1",
-      "provenance": "2026-10-19 primary-source reading"
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "rlanything",
@@ -903,10 +903,10 @@
       "scope": "direct",
       "closure_assessment": "main_text_and_relevant_appendix",
       "operation": "策略轨迹→奖励器训练→批评驱动改题→下一轮策略训练",
-      "boundary": "策略+奖励模型+任务课程协同训练；按训练侧harness广义归入混合路线。 <27B实际训练；预定义可验证环境边界；理论条件化，不证明无限自改进。",
-      "reading_scope": "已阅读方法、实验结果、消融及相关附录；未独立复现实验。",
+      "boundary": "结果反馈锚定过程自评，并主动变课程平衡奖励学习；清楚的多组件消融，但最大实际14B进入机制补充。 外部结果/验证器固定；GUI仅47个训练任务预造目标扰动及验证器，非任意改世界；理论独立评价不保证同源偏差消失；训练节点数不能换算GPU小时。",
+      "reading_scope": "此前完整正文/相关技术附录，本轮重新核对算法、实际训练对象、控制、结果、限制，并补齐此前未列的附录。§2–3；Table1/2；附录A–C（含C.9完整算法）",
       "primary_source": "https://arxiv.org/html/2602.02488v1",
-      "provenance": "2026-10-19 primary-source reading"
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "agent0",
@@ -915,10 +915,10 @@
       "scope": "direct",
       "closure_assessment": "main_text_and_relevant_appendix",
       "operation": "课程GRPO → 筛题 → 多轮工具轨迹 → ADPO → 三轮",
-      "boundary": "Model 路线的双模型课程共演化和工具推理策略训练；工具存在不等于 harness 自进化。 多数票不等于正确；固定工具环境；有限三轮；§4.1筛选范围0.3–0.8与δ=0.25公式不完全一致。",
-      "reading_scope": "阅读主文方法、实验、消融与相关实现附录；据原文重建训练闭环，未独立复现实验。",
-      "primary_source": "https://arxiv.org/abs/2511.16043",
-      "provenance": "2026-10-19 primary-source reading"
+      "boundary": "有工具基座和组件消融，作为小模型工具课程机制保留；非harness自修改。 Python只辅助推理，最终奖励仍多数票；仅三轮不证明防长期崩塌；工具调用增多不独立证明更复杂；未给完整训练种子误差/计算成本。",
+      "reading_scope": "继承已有主文及相关附录全文阅读；本轮逐段复核方法、主结果、消融和限制，核对HTML作者机构。",
+      "primary_source": "https://arxiv.org/html/2511.16043v2",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "r-zero",
@@ -927,10 +927,10 @@
       "scope": "direct",
       "closure_assessment": "main_text_and_relevant_appendix",
       "operation": "challenger GRPO → 筛8k题 → solver GRPO → 有限迭代",
-      "boundary": "Model 路线的双模型自生成课程；反馈依据多数票，缺少独立可执行真值。 一致率并非正确率；后期性能/伪标签质量下降；主表与正文数值有残留不一致；预训练先验仍关键。",
-      "reading_scope": "阅读主文方法、实验、消融与相关实现附录；据原文重建训练闭环，未独立复现实验。",
-      "primary_source": "https://arxiv.org/abs/2508.05004",
-      "provenance": "2026-10-19 primary-source reading"
+      "boundary": "小模型关键补充，必须同时呈现初始收益和后续崩塌。 多数票不是独立真值；4B第四轮跌落、0.6B第一轮后跌落；GPT-4o审计200题标签79→69→63%，附录Gemini另样本71→56.2→48.8%，不能合并；噪声不是唯一因素仅有相关性诊断。",
+      "reading_scope": "继承已有主文及相关附录全文阅读；本轮逐段复核方法、主结果、消融和限制，核对HTML作者机构。",
+      "primary_source": "https://arxiv.org/html/2508.05004v4",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "absolute-zero",
@@ -939,10 +939,10 @@
       "scope": "direct",
       "closure_assessment": "main_text_and_relevant_appendix",
       "operation": "提出三类任务 → 验证 → 求解 → TRR++联合更新",
-      "boundary": "Model 路线的自提任务—环境验证—联合参数学习；固定Python环境不属于被进化的harness。 有限测试不构成程序全域正确证明；执行两次只近似检查确定性；依赖基座与任务语言；没有≥27B实证。",
-      "reading_scope": "阅读主文方法、实验、消融与相关实现附录；据原文重建训练闭环，未独立复现实验。",
-      "primary_source": "https://arxiv.org/abs/2505.03335",
-      "provenance": "2026-10-19 primary-source reading"
+      "boundary": "机制必要代表；实际≤14B置小模型补充，保留完整A–F和历史地位。 预训练与固定Python语义是外部锚点；确定性仅重复2次、归纳仅有限测试；全局变量泄露答案未全去除；主比较非预算匹配；无多种子显著性。",
+      "reading_scope": "继承已有主文及相关附录全文阅读；本轮逐段复核方法、主结果、消融和限制，核对HTML作者机构。",
+      "primary_source": "https://arxiv.org/html/2505.03335v3",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "tool-r0",
@@ -951,10 +951,10 @@
       "scope": "direct",
       "closure_assessment": "main_text_and_relevant_appendix",
       "operation": "GeneratorGRPO → 合成/去重/交叉核验 → SolverGRPO → 迭代",
-      "boundary": "Model 路线的工具调用课程共演化。工具schema是合成任务内容，未见运行时工具或harness代码自主升级。 AST匹配非真实API任务成功；语义由当前solver评价；小模型后期饱和；表格及batch算术有局部不一致待复核。",
-      "reading_scope": "阅读主文方法、实验、消融与相关实现附录；据原文重建训练闭环，未独立复现实验。",
-      "primary_source": "https://arxiv.org/abs/2602.21320",
-      "provenance": "2026-10-19 primary-source reading"
+      "boundary": "小模型工具调用课程机制补充，不把合成工具schema称运行时harness自进化。 AST/JSON匹配而非实际API执行成功；flat primitive参数且值须逐字在题目中；语义judge是当前solver；没有完整多种子误差；相同基座基线各用原SFT/RL配方，非等算法等总算力隔离数据效应。",
+      "reading_scope": "继承已有主文及相关附录全文阅读；本轮逐段复核方法、主结果、消融和限制，核对HTML作者机构。",
+      "primary_source": "https://arxiv.org/html/2602.21320v1",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "evotrainer",
@@ -963,10 +963,10 @@
       "scope": "direct",
       "closure_assessment": "main_text_and_relevant_appendix",
       "operation": "训练→诊断→升级分析器/干预→审批执行→下一版本",
-      "boundary": "训练侧harness与目标策略共同演化，保留有限自治与小模型范围。 训练启动及晋升有人类审批；固定Sonnet改进器；<27B策略；自然轨迹反事实非充分随机消融。",
-      "reading_scope": "已阅读方法、实验结果、消融及相关附录；未独立复现实验。",
+      "boundary": "区别于只看分数搜索，可扩充诊断harness并跨域复用技能；明确规模仅4B/9B，保留训练侧协同机制而不把冻结研究员算成已自训 数学/代码模型规模未明；单训练种子，任务bootstrap不能替代训练重复；7–10保留版本；训练启动和晋升需要人批准；同一验证设置反复指导选择",
+      "reading_scope": "此前完整正文及相关附录，本轮复核核心算法、实际训练对象、结果/控制与权限或数据隔离；修订与原文冲突的旧卡片事实。",
       "primary_source": "https://arxiv.org/html/2606.03108v2",
-      "provenance": "2026-10-19 primary-source reading"
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "autoscientists",
@@ -1022,11 +1022,11 @@
       "year": 2026,
       "scope": "direct",
       "closure_assessment": "main_text_and_relevant_appendix",
-      "operation": "固定改进器生成层级Harness；Ω本身没有学习或重写",
-      "boundary": "固定改进器生成层级Harness；Ω本身没有学习或重写 archive-best不是统一部署政策；深层角色由上下文格式部分引导；高阶自改的命名不能替代Ω固定这一事实。",
-      "reading_scope": "main_text_and_relevant_appendix",
-      "primary_source": "https://arxiv.org/abs/2608.24735",
-      "provenance": "2026-10-19 primary-source reading"
+      "operation": "固定Ω逐层添加wrapper，档案搜索链；Ω本身从未学习/重写",
+      "boundary": "层级条件化是有价值的机制补充，主要证据指向固定improver的harness组合和档案覆盖，而非更深改进器递归自改 所谓2.5层是作者自定义非标准界限；Ω固定且输入最多20轨迹/溢出删旧层，非无限严格增广；archive-best不能作统一部署分数；单因素消融比例非可加因果分解",
+      "reading_scope": "前次完整主文和D–G；本轮复核§2–4、Tables1–3、C/D/E.2/E.3/G/J，补充不同题数与token口径限制。",
+      "primary_source": "https://arxiv.org/html/2608.24735v1",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "self-harness",
@@ -1034,11 +1034,11 @@
       "year": 2026,
       "scope": "direct",
       "closure_assessment": "main_text_and_relevant_appendix",
-      "operation": "固定模型在当前Harness下提案并继承新Harness；外层接受规则不变",
-      "boundary": "固定模型在当前Harness下提案并继承新Harness；外层接受规则不变 初始Harness刻意简化；held-out为接受门的一部分；有限轮数不支持无界递归增长。",
-      "reading_scope": "main_text_and_relevant_appendix",
-      "primary_source": "https://arxiv.org/abs/2606.09498",
-      "provenance": "2026-10-19 primary-source reading"
+      "operation": "评测→聚类失败→同模型并行提案→两分区回归→合并接受编辑",
+      "boundary": "实际配置修复和同模型能力有价值，但选择集复用、极简起点及无元机制增量使其适合作为受限harness优化补充 反复以held-out门控意味着“全部held-out不退化”部分由接受规则保证，不能当独立泛化证据；最外改进算法不可编辑；无完整计算成本/组件对照",
+      "reading_scope": "前次完整阅读；本轮复核全部方法/主实验/局限及Appendix A–B，重点检查held-out接受门控与工具/代码权限。图内完整diff以前次阅读为基础，正文逐条核对保留机制。",
+      "primary_source": "https://arxiv.org/html/2606.09498v3",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "harness-zero",
@@ -1047,10 +1047,10 @@
       "scope": "enabler",
       "closure_assessment": "main_text_and_relevant_appendix",
       "operation": "harness搜索→私有指导→学生状态局部修正→SFT",
-      "boundary": "Harness→Model内化的支撑方法；不是多代共同优化。 9B低于主尺度；单次搜索→蒸馏；三任务分别训练；部分领域未追平进化harness。",
-      "reading_scope": "已阅读方法、实验结果、消融及相关附录；未独立复现实验。",
-      "primary_source": "https://arxiv.org/abs/2609.24974",
-      "provenance": "2026-10-19 primary-source reading"
+      "boundary": "局部监督分布与动作空间对齐是混合路线关键支撑；实训9B且只验证一次harness→model单向内化 三域分别训练、无新学生再次进化harness；487/282为成功轨迹，但USPTO保留全部500任务含失败，不能全称成功轨迹；总搜索教师成本未知",
+      "reading_scope": "此前完整正文及相关附录，本轮复核核心算法、实际训练对象、结果/控制与权限或数据隔离；修订与原文冲突的旧卡片事实。",
+      "primary_source": "https://arxiv.org/html/2609.24974v1",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "harness-r1",
@@ -1058,11 +1058,11 @@
       "year": 2026,
       "scope": "enabler",
       "closure_assessment": "main_text_and_relevant_appendix",
-      "operation": "失败包 → 八个补丁 → 重跑目标 → GRPO",
-      "boundary": "Model 路线训练 harness 编辑者，连到 Harness 产物；未展示持续 model×harness 双向共同进化。 主环目标冻结；顺序适配不等于持续共同进化；迁移的大模型未被本研究训练；补丁接口限定。",
-      "reading_scope": "阅读主文方法、实验、消融与相关实现附录；据原文重建训练闭环，未独立复现实验。",
-      "primary_source": "https://arxiv.org/abs/2608.02276",
-      "provenance": "2026-10-19 primary-source reading"
+      "operation": "失败轨迹包→8个patch→同批目标重跑→GRPO更新工程师。另做一次target SFT后针对新target重训工程师，并非持续双向共演化。",
+      "boundary": "保留AI改进AI的学习型编辑器代表，Model路线关联Harness产物；实际9B未达主线偏好，顺序一次适配不足以标完整Hybrid共演化。 不是持续模型×harness交替进化；主训练同批奖励可能过拟合，补丁会增加未计入奖励的运行成本。无效零分相对有害负分可鼓励不干预；仍受固定host接口约束。",
+      "reading_scope": "已有完整主文及相关附录阅读记录，本次复核方法、主实验解释、B–D资源与接口、F留出、G–H消融与实例，并比较路线定位。",
+      "primary_source": "https://arxiv.org/html/2608.02276v1",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "skillrl",
@@ -1071,10 +1071,10 @@
       "scope": "direct",
       "closure_assessment": "main_text_and_relevant_appendix",
       "operation": "技能检索rollout→GRPO→失败抽象增修技能→再训练",
-      "boundary": "学生权重与技能库协同的小规模直接机制研究。 实际训练7B；依赖固定强教师；跨模型大小比较不等预算；未更新训练算法。",
-      "reading_scope": "已阅读方法、实验结果、消融及相关附录；未独立复现实验。",
-      "primary_source": "https://arxiv.org/html/2602.08234v1",
-      "provenance": "2026-10-19 primary-source reading"
+      "boundary": "SkillBank与策略双向继承的代表机制，动态库相对静态库有直接消融及五QA迁移；新增Kimi扩展改变旧稿“全7B”断言，但大模型训练细节不足，先列主图支撑并保留规模待核验 新增D.3写1.1T Kimi/Tinker且给能力提升，未给该分支训练超参数；正文与D.1 batch16/64不同，教师/API成本未齐；库管理和o3未学习",
+      "reading_scope": "既有§3–4和附录完整阅读基础上，复核§3.1–3.3、Tables1–3、Algorithm1、AppendixD.1–D.3，并补读此前漏记的大模型教师消融；官方README未找到Kimi/Tinker配置。",
+      "primary_source": "https://arxiv.org/html/2602.08234v2",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "skillopt",
@@ -1106,11 +1106,11 @@
       "year": 2026,
       "scope": "direct",
       "closure_assessment": "main_text_and_relevant_appendix",
-      "operation": "选技能→固定LLM构建记忆→任务奖励→PPO/技能修订",
-      "boundary": "Harness路线：学到的选择控制器及演化技能库；Model定义为基础模型/adapter时不属于双路线协同。 LoCoMo10对话；部分LLM评审；未更新70B/80B权重；MLP精确参数量未披露。",
-      "reading_scope": "已阅读方法、实验结果、消融及相关附录；未独立复现实验。",
-      "primary_source": "https://arxiv.org/html/2602.02474v1",
-      "provenance": "2026-10-19 primary-source reading"
+      "operation": "按span选Top-K→固定LLM一次产生更新→整条轨迹末端奖励PPO→每100步最多3技能编辑→新技能前50步按0.3衰减概率激励；末25步训练均奖决定技能库回滚/早停。",
+      "boundary": "作为“改进记忆策略而非只增内容”的核心互补节点，选择器训练与操作指令演化闭环有直接消融；仍是Harness，不能借70B/80B冻结骨干算Model核心。 只生成INSERT/UPDATE语义变体，非任意记忆程序或改进器自写；回滚依据训练尾段均奖不是独立验证。小对话切分、无重复方差、专家轨迹与选择性排除任务限制普遍性。",
+      "reading_scope": "完整复核v2主文、全部补充结果、PPO/Top-K推导、回滚与训练划分、初始/演化技能、所有提示；更新旧v1结论数字。",
+      "primary_source": "https://arxiv.org/html/2602.02474v2",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "memrl",
@@ -1118,11 +1118,11 @@
       "year": 2026,
       "scope": "direct",
       "closure_assessment": "main_text_and_relevant_appendix",
-      "operation": "Harness记忆的非参数强化学习；更新器固定",
-      "boundary": "Harness记忆的非参数强化学习；更新器固定 累积成功率不能等同部署准确率；部分基线未跑满；EMA理论依赖平稳/独立噪声条件。",
-      "reading_scope": "main_text_and_relevant_appendix",
-      "primary_source": "https://arxiv.org/html/2601.03192v1",
-      "provenance": "2026-10-19 primary-source reading"
+      "operation": "相似度阈值召回k1→0.5标准化相似度+0.5标准化Q选k2→执行→所有被用记忆Q←.7Q+.3r→总结新经验入库；重复10epoch。",
+      "boundary": "记忆检索的反馈信用分配是机制谱系独立核心；用实证支持有限收益，不采用其过强全局稳定/不遗忘理论表述。 多记忆同奖无法识别各条因果贡献。A.1仅在固定(s,m)、stationary reward、无限更新下证明EMA期望收敛/有界方差；A.4将MSE校准当GEM同一目标上升不成立：单记忆Q1奖励0时EMA降低线性J。实际标准化Top-k也不等价Boltzmann策略，故不能推出不遗忘/全局单调。",
+      "reading_scope": "完整复核主文、理论证明、跨模型/合并实验、数据划分/成本、限制、近失误案例与全部提示；更新v1数字。",
+      "primary_source": "https://arxiv.org/html/2601.03192v2",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "evods",
@@ -1131,10 +1131,10 @@
       "scope": "direct",
       "closure_assessment": "main_text_and_relevant_appendix",
       "operation": "SFT→多角色RL，执行中生成验证复用技能",
-      "boundary": "共享基础模型训练与运行期技能积累的混合机制；不是已经证明长期自我强化。 8B；架构固定；未隔离多代交替收益；理论保证依赖强假设且线性化等价不充分。",
-      "reading_scope": "已阅读方法、实验结果、消融及相关附录；未独立复现实验。",
-      "primary_source": "https://arxiv.org/abs/2606.03841",
-      "provenance": "2026-10-19 primary-source reading"
+      "boundary": "可执行技能与上下文控制同时作为学习动作，去压缩损失比去技能更大；与MASS的代际改进器回流不同，支持任务技能积累。 仅8B；未单独验证多代新模型/新库交替继任；技能以同名重复三次晋升，非严格语义去重；理论额外高斯独立误差和收益线性化假设。",
+      "reading_scope": "此前完整正文/相关技术附录，本轮重新核对算法、实际训练对象、控制、结果、限制，并补齐此前未列的附录。§3–6；附录A–E（补E全部角色/工具提示）",
+      "primary_source": "https://arxiv.org/html/2606.03841v1",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "on-policy-harness-coevolution",
@@ -1142,11 +1142,11 @@
       "year": 2026,
       "scope": "direct",
       "closure_assessment": "main_text_and_relevant_appendix",
-      "operation": "harness优化→学生状态纠错SFT；回到下一轮尚属方案",
-      "boundary": "Model×Harness适配机制的直接研究；有双对象更新，尚无已证多代继任。 只实测一次两阶段；失效标签由LLM判断；局部纠错平均增益1.7pp；重复代际未验证。",
-      "reading_scope": "已阅读方法、实验结果、消融及相关附录；未独立复现实验。",
+      "operation": "弱模型驱动harness搜索→验证选h*→学生on-policy轨迹→定位失败turn→专家3候选择优纠错→LoRA→固定h*测试",
+      "boundary": "实际30B训练和跨七任务负结果改变混合图的关键因果假设，应作为兼容性边界与纠错设计核心；不能把标题误画为已完成多轮共同进化 主要是staged adaptation；结尾明确把真正joint optimization和后续RL列为未来；最佳LoRA配置选择与失败分类的独立性有限",
+      "reading_scope": "完整阅读313行正文、实验、参考文献与四个技术附录，补读输出截断处§3.3.2–3.3.3。",
       "primary_source": "https://arxiv.org/html/2609.09134v1",
-      "provenance": "2026-10-19 primary-source reading"
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "taolive-hat",
@@ -1155,10 +1155,10 @@
       "scope": "enabler",
       "closure_assessment": "main_text_and_relevant_appendix",
       "operation": "harness开发→配置增广训练→固定模型外部编辑验证",
-      "boundary": "工业Model×Harness适配研究；更新真实但有人类决策，不是无人科研闭环。 人类确认harness晋升；配置扰动范围有限；A/B整系统且统计细节未公开；LLM评审校准有限。",
-      "reading_scope": "已阅读方法、实验结果、消融及相关附录；未独立复现实验。",
-      "primary_source": "https://arxiv.org/abs/2608.15763",
-      "provenance": "2026-10-19 primary-source reading"
+      "boundary": "35B工业实验表明训练可改变接受未来harness改进的能力；这是混合路线兼容性方法而非自主继任RSI 受约束配置空间泛化；人类批准修改、评测与晋升；A/B测整系统，平台只显示一天显著且未披露检验阈值/CI；总训练成本未披露",
+      "reading_scope": "此前完整正文及相关附录，本轮复核核心算法、实际训练对象、结果/控制与权限或数据隔离；修订与原文冲突的旧卡片事实。",
+      "primary_source": "https://arxiv.org/html/2608.15763v5",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "rewardharness",
@@ -1166,11 +1166,11 @@
       "year": 2026,
       "scope": "direct",
       "closure_assessment": "main_text_and_relevant_appendix",
-      "operation": "Harness奖励器自适应后用于外部模型GRPO；未展示模型—奖励器持续互教",
-      "boundary": "Harness奖励器自适应后用于外部模型GRPO；未展示模型—奖励器持续互教 40例验证被反复选择；LLM评分和视觉感知有误差；后续模型4B，未构成≥27B混合RSI证据。",
-      "reading_scope": "main_text_and_relevant_appendix",
-      "primary_source": "https://arxiv.org/html/2605.08703v1",
-      "provenance": "2026-10-19 primary-source reading"
+      "operation": "评分→按失败原因提议skill/tool修改→候选快照验证→接受或回滚，固定预算77轮；最终7条库冻结服务推理/下游奖励。Tools实际是Markdown协议和次级VLM结构化调用，不是新生成外部OCR/裁剪代码。",
+      "boundary": "奖励器harness演化及下游同RL对照有独立价值，保留在harness奖励设计支线；不作为≥27B模型共演核心。 非评价器参数与策略参数反复共同演化；工具证据仍来自VLM而非独立视觉仪器。主文称K路ranking转pairwise accuracy，但表K4仅3.4–13.5%，统计口径需进一步核对，不能擅自解释为普通二元准确率。无系统等计算对照或显著性。",
+      "reading_scope": "在已有主文/附录精读基础上重新读完正文方法结果及全部附录，补清Tools实际实现、MMMU训练协议与split口径。",
+      "primary_source": "https://arxiv.org/html/2605.08703v2",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "webevolver",
@@ -1190,11 +1190,11 @@
       "year": 2024,
       "scope": "direct",
       "closure_assessment": "main_text_and_relevant_appendix",
-      "operation": "SFT→新任务生成筛选→在线rollout→off-policy actor/critic更新，8阶段",
-      "boundary": "Model主线；新课程是训练输入，优化器和网页harness保持固定。 任务生成依赖GPT-4o；ORM不完美；主要是固定五类网页环境，且部分baseline来源于全WebArena而非165题子集，表1有星号标明。",
-      "reading_scope": "已读原文方法、训练与评价设置、主要结果、消融及相关附录；未复现实验。",
-      "primary_source": "https://arxiv.org/abs/2411.02337",
-      "provenance": "2026-10-19 primary-source reading"
+      "operation": "1186人工示范SFT→8阶段，每阶段固定GPT4o以旧失败为种子造500适中任务→交互/ORM→以当前轨迹+适中困惑度成功回放更新actor/critic→累积经验。",
+      "boundary": "有真实多阶段任务—策略反馈循环、反遗忘消融、70B实际训练；虽外部生成器/ORM固定，仍是Model路线清晰代表。 A.2需精确soft value、能逼近目标策略和数据行为策略不弱于旧策略；只保存成功轨迹并不能一般证明最后一个条件，近似误差/ORM误差均无界。Eq16将exp优势直接作归一化政策也未说明配分处理。不能将其当实际单调/最优收敛保证。模型value critic更新不等于终局reward evaluator共同进化。",
+      "reading_scope": "继承previous_review主文与A–B完整阅读；本轮重新核对§§1–5关键方法/实验、Table1–7、AppendixA全部推导、B全部算法/超参、补读C。额外下载并渲染D Figures17–22全部SVG提示，逐条读生成、过滤、ORM、baseline模板。",
+      "primary_source": "https://arxiv.org/html/2411.02337v3",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "rstar-math",
@@ -1214,11 +1214,11 @@
       "year": 2024,
       "scope": "direct",
       "closure_assessment": "main_text_and_relevant_appendix",
-      "operation": "RM自标注→筛选→重训约3轮；完成后PPO",
-      "boundary": "Model主线，评价器自训练；70B实验配置有披露，但量化结果不足以单独建立70B结论。 伪标签可能放大偏差；数据筛选阈值人工调优；未实验生成器-RM共同闭环；单调提升证明缺少必要泛化条件。",
-      "reading_scope": "已读原文方法、训练与评价设置、主要结果、消融及相关附录；未复现实验。",
-      "primary_source": "https://arxiv.org/abs/2411.00418",
-      "provenance": "2026-10-19 primary-source reading"
+      "operation": "15%RM份额标签启动→固定池打分→根据人工阈值判阶段/过滤→LoRA训练约3轮→冻结RM做PPO；§4.2/5明确联合生成器回流未实验。",
+      "boundary": "保留评价器自训练的独立支线，机制可复用且实验支持有限轮收益；标准自训练基础较强、70B量化缺失、理论及端到端标签叙事须收缩，不把它列作已证大模型自主共同进化。 15%不是端到端全部监督预算；UF原标签也是GPT4而非人类。Theorem1由所选子集准确率>50%和经验拟合直接推出全分布单调提升，缺少噪声/偏移/遗忘控制；Theorem2由SGD驻点跳到全局近最优，Lipschitz奖励和boundedupdate不足以支持，均不采为有效一般收敛保证。正文discussion也承认严格理论仍需建立。",
+      "reading_scope": "重新完整核对主文与所有附录；复核70B证据、15%分母、PPO是否进入循环及两条证明。",
+      "primary_source": "https://arxiv.org/html/2411.00418v3",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "self-evolving-curriculum",
@@ -1227,10 +1227,10 @@
       "scope": "enabler",
       "closure_assessment": "main_text_and_relevant_appendix",
       "operation": "抽题→rollout/RL→绝对优势更新Q→再抽题",
-      "boundary": "Model训练机制参考；bandit自适应课程不等于改进器递归自修改。 代理奖励不等于长期泛化；报告最佳checkpoint；能力较强时部分任务无显著额外收益；未验证≥27B。",
-      "reading_scope": "已读原文方法、训练与评价设置、主要结果、消融及相关附录；未复现实验。",
-      "primary_source": "https://arxiv.org/abs/2505.14970",
-      "provenance": "2026-10-19 primary-source reading"
+      "boundary": "保留小模型课程基线，与任务生成对照；不能写成自主生成题库。 不是所有任务优于随机；绝对优势忽略梯度log概率范数，非元梯度；报告最佳checkpoint的8次解码均值，没有训练多种子方差；类别/温度需人工选择。",
+      "reading_scope": "继承已有主文及相关附录全文阅读；本轮逐段复核方法、主结果、消融和限制，核对HTML作者机构。",
+      "primary_source": "https://arxiv.org/html/2505.14970v4",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "skillweaver",
@@ -1250,11 +1250,11 @@
       "year": 2025,
       "scope": "enabler",
       "closure_assessment": "main_text_and_relevant_appendix",
-      "operation": "Harness任务内在线工具适应；没有跨代改进器自改证据",
-      "boundary": "Harness任务内在线工具适应；没有跨代改进器自改证据 跨任务继承未展示；初始prompt提醒与工具建设成本随模型变化；不同历史基线不能视为同预算。",
-      "reading_scope": "main_text_and_relevant_appendix",
-      "primary_source": "https://arxiv.org/html/2511.13646v1",
-      "provenance": "2026-10-19 primary-source reading"
+      "operation": "每次bash执行后提醒反思是否需工具；按问题需要创建脚本后反复使用直到提交",
+      "boundary": "保留作为运行时工具适应的强实用证据及递归自修改的边界；不把任务结束即丢弃的工具视为跨代进化。 作用限任务内，明确未修改agentic loop、跨任务继承未实现；初始提示要求至少建编辑工具，工具数量不是自发发现程度指标；消融50题无重复方差，弱模型被工具诱导拖累",
+      "reading_scope": "承接v1完整主文/相关附录阅读，本轮复核§2–4与全部表，新增Gemini3Pro实验、明确跨任务继承未来工作，并读完整Appendix D所有提示及A新增设置。",
+      "primary_source": "https://arxiv.org/html/2511.13646v3",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "group-evolving-agents",
@@ -1262,11 +1262,11 @@
       "year": 2026,
       "scope": "direct",
       "closure_assessment": "main_text_and_relevant_appendix",
-      "operation": "Harness代码种群进化；跨分支经验继承，而非模型权重训练",
-      "boundary": "Harness代码种群进化；跨分支经验继承，而非模型权重训练 底座分阶段更换；小子集选择可能过拟合；论文把未见任务称OOD不等于广泛域外泛化。",
-      "reading_scope": "main_text_and_relevant_appendix",
-      "primary_source": "https://arxiv.org/abs/2602.04837",
-      "provenance": "2026-10-19 primary-source reading"
+      "operation": "K2父代按性能×4近邻新颖度选择→每人各采一失败→全组共享→各自反思/改框架→测试→入档案；SWE30组轮60后代、Poly20组轮40后代。",
+      "boundary": "跨谱系共享经验是对程序自改路线有解释力的机制增量，且有工具来源与修复分析；核心应突出机制，不照抄跨榜单优越或无限演化结论。 没有证明无界开放式或改进速度递归加速；中途换更强模型混入单系统曲线，外层反思/选择规则固定。给bug-free peer的修复实验是额外信息优势，不能泛化为无条件鲁棒性。",
+      "reading_scope": "重读主文全部机制、实验和限制，复核原先全文结论；补机构、成本与评估子集口径。",
+      "primary_source": "https://arxiv.org/html/2602.04837v1",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "adaptive-auto-harness",
@@ -1274,11 +1274,11 @@
       "year": 2026,
       "scope": "direct",
       "closure_assessment": "main_text_and_relevant_appendix",
-      "operation": "Harness持续演化与任务级路由；模型固定，主实验无HITL",
-      "boundary": "Harness持续演化与任务级路由；模型固定，主实验无HITL 损失分解非实测oracle；模型/检索访问差异影响结果；主实验与人工辅助须区分。",
-      "reading_scope": "main_text_and_relevant_appendix",
-      "primary_source": "https://arxiv.org/abs/2606.01770",
-      "provenance": "2026-10-19 primary-source reading"
+      "operation": "每批任务→时间门揭晓标签→四角色多agent构建→验证提交→下批按任务路由；可选人工source/credential",
+      "boundary": "持续流和负迁移问题是重要互补方向，原文提供路由失败及外部来源约束，但未证明自改进器加速或等总成本优势 分解为oracle加减恒等式而非可估计性能保证；无法从其证明人类通道不可替代；缺evolver成本/重复种子。Historical forecasting仍受时态过滤可靠性限制；main并非全benchmark最好",
+      "reading_scope": "前次完整阅读；本轮复核完整主文方法/实验/局限，A–B时间与成本协议、H完整人工事件日志、I运行成本、J全部system prompts；其余诊断附录以前次完整阅读为基础。",
+      "primary_source": "https://arxiv.org/html/2606.01770v2",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "continual-harness",
@@ -1287,10 +1287,10 @@
       "scope": "direct",
       "closure_assessment": "main_text_and_relevant_appendix",
       "operation": "主实验为持久 Harness 适应；§3.3/附录 D 还含 Model–Harness 协同更新。Refiner 程序及学习规则未显示自主改写。",
-      "boundary": "主实验为持久 Harness 适应；§3.3/附录 D 还含 Model–Harness 协同更新。Refiner 程序及学习规则未显示自主改写。 31B/26B 在线初始 policy 在附录 D.2 与 D.4 内部不一致；里程碑稀疏、长时程随机性及 memory 使用率限制解释；不能据此宣称全面优于固定 harness",
-      "reading_scope": "main_text_and_relevant_appendix",
-      "primary_source": "https://arxiv.org/abs/2605.09998",
-      "provenance": "2026-10-19 primary-source reading"
+      "boundary": "重要的reset-free部署适应实例及能力不足时负收益，联合参数学习局部且规模披露冲突，作主图支撑 在线模型26B/31B冲突；仅展示持续推进的五条轨迹，不能据此说明所有运行成功；同一环境运行跨训练继承，不是独立测试；总训练成本未给",
+      "reading_scope": "此前完整正文及相关附录，本轮复核核心算法、实际训练对象、结果/控制与权限或数据隔离；修订与原文冲突的旧卡片事实。",
+      "primary_source": "https://arxiv.org/html/2605.09998v1",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "envharness",
@@ -1311,10 +1311,10 @@
       "scope": "enabler",
       "closure_assessment": "main_text_and_relevant_appendix",
       "operation": "固定研究员搜索→代理模型训练评估→人工聚合放大",
-      "boundary": "AI设计外部模型与训练程序的支撑/评测工作，不是自身递归联合进化。 设计LLM与harness固定；训练模型≤3B且未继任；小模型test被聚合选型使用；部分single-seed。",
-      "reading_scope": "已阅读方法、实验结果、消融及相关附录；未独立复现实验。",
-      "primary_source": "https://arxiv.org/abs/2605.15871",
-      "provenance": "2026-10-19 primary-source reading"
+      "boundary": "AI4AI研究方法的执行型对照与创新边界重要，但不是目标LLM自身双表面共演；保留为架构研究支撑节点 搜索harness与研究LLM不更新；test用于架构聚合已成为选择集；规模到3B，拟合斜率优点不能直接宣称前沿模型算力节省",
+      "reading_scope": "以前完整主文和相关技术附录基础上复核搜索算子、训练对象、代理验证与研究者test聚合区别、isoToken/isoFLOP和预算。",
+      "primary_source": "https://arxiv.org/html/2605.15871v2",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "ai4ai-bench",
@@ -1334,11 +1334,11 @@
       "year": 2026,
       "scope": "theory",
       "closure_assessment": "main_text_and_relevant_appendix",
-      "operation": "评价→modifier提出新配置→替换agent部分",
-      "boundary": "跨路线的理论、方法或评测；不单独计作已实现递归自改进的系统。 将组件纳入可写集合不等于已发生有益自改写；框架不含普适算法或经验预测。",
-      "reading_scope": "§3形式定义、§4系统映射、§5失效条件、§6局限；全文无独立技术附录。",
+      "operation": "evaluation→当前m提出新的agent实例→配置替换；只有m属于Ag才按其定义闭合递归。",
+      "boundary": "可用于术语和机制边界，不能把formal framework标题当成证明了RSI稳定性或新自进化能力。 作者承认归约仍是文字而非显式假设命题；无新证明或实验。把所有固定outer loops称GPI不使神经近似或任意搜索继承经典收敛保证；把可编辑标准命名goal drift表示风险而非测得必然漂移。“不能写成配置MDP”的论断也不排除用包含程序状态的固定解释器描述过程。",
+      "reading_scope": "主文全部及唯一符号附录；HTML漏出的定义/公式框已从PDF补齐。",
       "primary_source": "https://arxiv.org/html/2609.13406v1",
-      "provenance": "2026-10-19 primary-source reading"
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "aspire",
@@ -1358,11 +1358,11 @@
       "year": 2026,
       "scope": "evaluation",
       "closure_assessment": "main_text_and_relevant_appendix",
-      "operation": "固定框架下替换经验→比较任务行为",
-      "boundary": "跨路线的理论、方法或评测；不单独计作已实现递归自改进的系统。 干预同时可能改变难度和格式；不同摘要质量、已有知识及任务需求均影响结果，不宜把低敏感度统一判为无学习。",
-      "reading_scope": "§2–5方法与结果；附录 C 实现、D.1–D.2干预设计及D.3–D.8扩展结果。",
-      "primary_source": "https://arxiv.org/abs/2601.22436",
-      "provenance": "2026-10-19 primary-source reading"
+      "operation": "同框架经验输入作对照干预→运行benchmark→比较aggregate成功→诊断semantic/position/taskprior假说。",
+      "boundary": "应纳入经验方法的机制检验/限制关系；不列新自演化成果，也不把结论升级为记忆普遍无用。 faithfulness定义为任何扰动引起显著行为变化，但实测主要aggregate成功率且未显著性检验；正确忽略有害/无关内容不等于不忠实。样例中摘要造成失败本身证明有语义影响；不能从成功率接近证明不使用经验。归因proxy不能排除summary已被编码进currenttrajectory的中介路径，last-turn局部gradient低不等于之前因果无效。raw乱序在多强模型不降，不能证明普遍利用时序结构。",
+      "reading_scope": "完整正文与全部附录；关键量化图原图核查；附录多尺度attribution余图按图注与对应方法文字读，未逐点数值重建。",
+      "primary_source": "https://arxiv.org/html/2601.22436v3",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "shinkaevolve",
@@ -1370,11 +1370,11 @@
       "year": 2025,
       "scope": "enabler",
       "closure_assessment": "main_text_and_relevant_appendix",
-      "operation": "通用外部程序进化；含 AI4AI 应用但没有证据证明进化器本身递归改写或基础模型在线自训练。",
-      "boundary": "通用外部程序进化；含 AI4AI 应用但没有证据证明进化器本身递归改写或基础模型在线自训练。 人工固定目标和评价；MoE 规模远低于 27B；不可把圆堆积等非 AI 任务成绩计作直接 RSI 证据",
-      "reading_scope": "main_text_and_relevant_appendix",
-      "primary_source": "https://arxiv.org/abs/2509.19349",
-      "provenance": "2026-10-19 primary-source reading"
+      "operation": "选岛与父代/灵感→diff/rewrite/crossover→拒绝重复或无效修改→执行→更新档案、UCB和摘要",
+      "boundary": "有用的外部程序搜索基础设施及AI4AI跨规模证据，贡献集中在采样效率和可复用实现；不需重复展开为已闭环RSI，低规模训练分支单列。 不演化外部改进器代码，摘要/UCB状态更新不等价算法自发明；多数消融仅圆堆积。MoE阈值公式0.064/N与Listing6的0.01*(64/N)=0.64/N相差10倍，训练轮数亦歧义；不得将损失机制按公式直接复现",
+      "reading_scope": "前次完整主文及相关附录基础上，复核§3–6、Appendix A/B.2/B.4、全部MoE训练配置与C.4损失代码；确认实际2.7B迁移及阈值/轮数歧义。",
+      "primary_source": "https://arxiv.org/html/2509.19349v1",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "coverrl",
@@ -1406,11 +1406,11 @@
       "year": 2026,
       "scope": "direct",
       "closure_assessment": "main_text_and_relevant_appendix",
-      "operation": "环境建造→SFT/RL→动态arena诊断→针对性环境任务扩展→续训2轮",
-      "boundary": "Model主线的环境课程闭环；可跨连Model×Harness训练环境节点，但不能说部署harness被策略重写。 部分评测为抽样子集；生成工具仅要求自身测试通过率>0.5，执行性不等于语义完备；部分奖励为LLMjudge；τ2-Bench表文冲突。",
-      "reading_scope": "已读原文方法、训练与评价设置、主要结果、消融及相关附录；未复现实验。",
-      "primary_source": "https://arxiv.org/abs/2604.18292",
-      "provenance": "2026-10-19 primary-source reading"
+      "operation": "网页真实主题/数据→合成工具与任务→SFT+RL→动态arena测试→固定120B诊断弱环境→定向扩题/复杂化→续训两轮。",
+      "boundary": "保持Model训练环境课程闭环的机制节点，14B实际规模，固定大教师不能抬升至≥27B主线；不把训练环境资源更新直接标成部署Harness演化。 真实数据库不保证合成工具/验证器正确；工具自测试过半、题至少2/5可解不是完备验证。部分reward依赖LLM，缺诊断vs随机续训控制与总成本；固定生成器能力未随代提升。",
+      "reading_scope": "依据此前主文及相关附录阅读，本次复核全部机制、配置、两轮结果、诊断提示及比较边界；原文表文矛盾保留。",
+      "primary_source": "https://arxiv.org/html/2604.18292v1",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "skillos",
@@ -1419,10 +1419,10 @@
       "scope": "direct",
       "closure_assessment": "main_text_and_relevant_appendix",
       "operation": "相关任务流→编辑库→后续执行收益→训练curator；部署参数固定持续编辑库",
-      "boundary": "Model×Harness：学习技能改进器。训练期curator权重与组内SkillRepo耦合；部署时权重固定而技能库更新。不是executor权重与永久技能库同步共进化。 训练组间技能库重置；未训练executor；单文件技能不含真实脚本/层次组合；主文KL移除与Table4 KL0.001不一致。",
-      "reading_scope": "已读原文方法、训练与评价设置、主要结果、消融及相关附录；未复现实验。",
-      "primary_source": "https://arxiv.org/abs/2605.06614",
-      "provenance": "2026-10-19 primary-source reading"
+      "boundary": "把harness维护行为本身训练为可迁移策略，比固定教师技能整理更进一步；但库在训练组之间清空、executor不训练，应画为学习改进器后部署演化的分阶段模式 每训练组库清空，部署参数固定，未展示同一永久库与权重跨组同步共演；训练正文去KL但Table4系数0.001；ALFWorld评估使用valid_seen140，不能泛称unseen环境",
+      "reading_scope": "既有全文/技术附录阅读上重读§3、Algorithm1、§4配置与迁移、Table3/4、AppendixB数据划分和新增C.1新executor。",
+      "primary_source": "https://arxiv.org/html/2605.06614v1",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "socratic-swe",
@@ -1431,10 +1431,10 @@
       "scope": "direct",
       "closure_assessment": "main_text_and_relevant_appendix",
       "operation": "求解→技能提炼→定向出题验证→双角色RL→下一轮",
-      "boundary": "共享模型与外部技能课程多轮协同；基础执行harness固定，规模低于27B。 9B实际训练；固定仓库；验证梯度构成外部监督；GRPO无偏/全局方向理论表述不充分。",
-      "reading_scope": "已阅读方法、实验结果、消融及相关附录；未独立复现实验。",
-      "primary_source": "https://arxiv.org/abs/2606.07412",
-      "provenance": "2026-10-19 primary-source reading"
+      "boundary": "Socratic-SWE区分任务合法性、困难度与学习价值；相对Skill Self-Play的成功率边界奖励，多可信验证梯度方向；实际9B保持机制补充。 固定仓库使五轮趋于平台；验证任务虽不直接SFT仍是生成器监督；附录9.1的组内均值包括自身，未校正估计有(1−1/K)偏差，9.2每组缩放不能推出跨任务总方向不变。",
+      "reading_scope": "此前完整正文/相关技术附录，本轮重新核对算法、实际训练对象、控制、结果、限制，并补齐此前未列的附录。§3–5；附录7–14（本轮补14完整案例）",
+      "primary_source": "https://arxiv.org/html/2606.07412v1",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "voyager",
@@ -1443,10 +1443,10 @@
       "scope": "direct",
       "closure_assessment": "main_text_and_relevant_appendix",
       "operation": "具有跨任务持久继承的 Harness 学习；技能生成/验证器框架本身固定，未展示参数更新或改进器递归改写。",
-      "boundary": "具有跨任务持久继承的 Harness 学习；技能生成/验证器框架本身固定，未展示参数更新或改进器递归改写。 高层 API 降低动作难度；成功验证有误判、物品/API 幻觉；三次重复不足以证明长时程稳定性",
-      "reading_scope": "main_text_and_relevant_appendix",
+      "boundary": "跨任务继承可执行程序、有新世界清空inventory迁移和关键组件消融，是持久Harness能力累积的代表。 反馈/验证器可误判；没有证明优化器本身自改。基于Mineflayer高层API而非像素到动作；钻石仅1/3，四个新任务各3/3且无技能版本也可解部分。",
+      "reading_scope": "既有完整主文/相关附录阅读基础上重核。Reflexion重读§3–5、Tables1–5、AppendixA/B.1；Voyager重读主文1–4、Tables1–2与B.4.3新世界迁移，其他方法附录沿用已读记录。",
       "primary_source": "https://arxiv.org/html/2305.16291v2",
-      "provenance": "2026-10-19 primary-source reading"
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "agentevolver",
@@ -1538,11 +1538,11 @@
       "year": 2022,
       "scope": "enabler",
       "closure_assessment": "main_text_and_relevant_appendix",
-      "operation": "单轮离线32样本→多数答案过滤→四格式扩增→SFT",
-      "boundary": "单轮模型自训练基础；保留重要机制，但不计为已实验多轮递归RSI。 只有一次生成再训练，没有多代循环；多数答案可能共同错误；少量CoT人工示例仍依赖监督；研究存在选择温度等调参；无法推出无标签无限改进。",
-      "reading_scope": "已读原文方法、训练与评价设置、主要结果、消融及相关附录；未复现实验。",
-      "primary_source": "https://aclanthology.org/2023.emnlp-main.67.pdf",
-      "provenance": "2026-10-19 primary-source reading"
+      "operation": "原模型离线32路径→多数答案筛选→有/无fewshot、有/无CoT四格式扩增→SFT→单次/多次推理测试。",
+      "boundary": "540B实际自训练与跨任务迁移是不可替代的规模/谱系节点；标明单轮Model使能而非已实现递归RSI。 一次离线内化而非已证明递归；多数标签可错且依赖已有推理能力和人工fewshot；无多seed、成本或污染完整审计，训练前后温度不同。",
+      "reading_scope": "既有记录已读主文与相关附录；本轮复核方法、全部主结果、关键消融及UL2附录，与新读评测文比较。",
+      "primary_source": "https://arxiv.org/html/2210.11610v2",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "metacircle-ophis",
@@ -1610,11 +1610,11 @@
       "year": 2026,
       "scope": "evaluation",
       "closure_assessment": "main_text_and_relevant_appendix",
-      "operation": "独立科研任务运行→评分；无RSI闭环",
-      "boundary": "跨路线的理论、方法或评测；不单独计作已实现递归自改进的系统。 基准仍受任务设计与评分覆盖限制；附录D二阶导与Fourier符号存在待核对的不一致，不据示例推断全部任务失效。",
-      "reading_scope": "§2基准结构、§3结果与成本；附录B署名、C任务格式、D同任务B1–B4实例。",
-      "primary_source": "https://arxiv.org/abs/2608.17271",
-      "provenance": "2026-10-19 primary-source reading"
+      "operation": "固定系统在独立科研任务上执行并交付产物→评分；B1完整方法步骤/B2方法级提示/B3目标数据/B4加入干扰，属于能力评价而非RSI演化循环。",
+      "boundary": "保留跨路线评测支撑与产业/学术合作关系，不计入三条路线的自改进系统数。具有诊断设计价值；任务有效性和开放创新外推仍有明确边界。 只有部分交叉组合且预算不同，不能完全识别model×harness因果贡献；Appendix D给u_xx+μu_yy却写对应线性谱项+kx²+μky²，按其Fourier定义应为负号，示例内部不一致，需对照真实任务代码/数据后再判断影响；不据一个示例推断60任务全部失效。",
+      "reading_scope": "在此前主文/相关附录审读基础上，本轮重新阅读实验条件、资源、关系工作及Appendix C–D；独立核对样例的傅里叶导数符号。",
+      "primary_source": "https://arxiv.org/html/2608.17271v1",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "recursive-first-steps",
@@ -1683,10 +1683,10 @@
       "scope": "enabler",
       "closure_assessment": "main_text_and_relevant_appendix",
       "operation": "执行 → 评分 → 反思 → 更新记忆 → 重试",
-      "boundary": "Harness / 反思记忆；以任务内跨试验学习为主要证据，不计为改进器递归自修改。 反馈可能误判；MBPP 与 WebShop 有负结果；未展示长期递归改进。",
-      "reading_scope": "阅读主文、实验与相关附录；重建更新机制、实验对照和结论边界，未独立运行复现。",
+      "boundary": "基础性反思反馈方法，但主要证据是同任务重试，不把long-term buffer标签升级为跨任务持续RSI。 反馈/验证器可误判；没有证明优化器本身自改。HumanEval pass@1是一次最终提交、内部可多次修订；MBPP与WebShop负结果明确，starchat-beta .26→.26。",
+      "reading_scope": "既有完整主文/相关附录阅读基础上重核。Reflexion重读§3–5、Tables1–5、AppendixA/B.1；Voyager重读主文1–4、Tables1–2与B.4.3新世界迁移，其他方法附录沿用已读记录。",
       "primary_source": "https://arxiv.org/html/2303.11366v4",
-      "provenance": "2026-10-19 primary-source reading"
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     },
     {
       "id": "reasoningbank",
@@ -1707,27 +1707,246 @@
       "scope": "direct",
       "closure_assessment": "main_text_and_relevant_appendix",
       "operation": "多轮解题/编辑rollout → GRPO → 候选评审 → 持久提交 → 新阶段",
-      "boundary": "Model × Harness / 统一训练解题与系统编辑；实际训练8B，按既定规模偏好放补充机制。 oracle正确性为假设；评估运行非独立训练seed；金融结果为有成本约束的历史模拟，不是实盘收益。",
-      "reading_scope": "阅读主文、实验与相关附录；重建更新机制、实验对照和结论边界，未独立运行复现。",
+      "boundary": "单一可训练策略统一任务与系统编辑的真实协同机制，值得小规模机制补充；比只有交替阶段更直接训练编辑能力 人为设置脆弱局部评分器、oracle正确性外设；修复已见错配不保证未来可靠；8B实验；5次评估非训练seed重复；最终统一跨域迁移未测",
+      "reading_scope": "此前完整正文与相关附录，本轮重核机制、实际训练对象及结果/限制。补读E–G全部进化artifact。",
       "primary_source": "https://arxiv.org/html/2607.03935v1",
-      "provenance": "2026-10-19 primary-source reading"
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
+    },
+    {
+      "id": "skilladam",
+      "name": "SkillAdam",
+      "year": 2026,
+      "scope": "direct",
+      "closure_assessment": "main_text_and_relevant_appendix",
+      "operation": "持久优化器状态改变后续改动方向和幅度；未修改优化器代码/学习算法本身。",
+      "boundary": "选为stateful external-skill optimization代表：贡献是明确可继承优化状态和方差控制，有成本/迁移检验；须保留split与单seed限制。 Adam是功能类比不是理论收敛证明；同批验收无额外validation且对照split不同；单seed和累计消融限制因果归因。",
+      "reading_scope": "已阅读全文主文（不逐字复述参考书目）；公式、表格、限制性讨论均覆盖。",
+      "primary_source": "https://arxiv.org/html/2609.08944v1",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
+    },
+    {
+      "id": "dspy",
+      "name": "DSPy",
+      "year": 2023,
+      "scope": "enabler",
+      "closure_assessment": "main_text_and_relevant_appendix",
+      "operation": "声明signature与图→执行并记录teacher轨迹→过滤完整结果→选择模块示例→再编译/可选集成或微调。",
+      "boundary": "Harness路线的基础机制代表：把可继承示例与程序编译分离，支持递归自举但清楚保留固定优化器边界；主贡献不依赖权重模型规模门槛。 所谓higher-order优化实际主要是预设集成；程序结构和编译器由人写，未展示开放式自重写。较大headline跨程序/推理预算，不能全部归因示例优化。",
+      "reading_scope": "主文、全部附录读完；AppC引用的大段旧提示亦读，仅省略排版空行/行号及参考文献。",
+      "primary_source": "https://arxiv.org/html/2310.03714v1",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
+    },
+    {
+      "id": "coral",
+      "name": "CORAL",
+      "year": 2026,
+      "scope": "enabler",
+      "closure_assessment": "main_text_and_relevant_appendix",
+      "operation": "长时agent自主检索→修改/测试→评价→记录/整理→继续；heartbeat提醒反思/转向，可有限修改提示频率，未验证完整改进器递归。",
+      "boundary": "自主搜索决策、共享知识和独立并行消融共同解释AI4AI研发能力的增量；作为程序搜索核心节点，同时明确与改进器自修改的边界。 未展示LLM训练或外层程序递归改写；提交前局部测试使evaluation count不能代表总预算。作者8/11新SOTA声明在表中四舍五入值不完全可确认，且系统评价器修复改变旧分数可比性。无web与web压力结果不可混写。",
+      "reading_scope": "主文1–5与表1–3；附录A局限、B全部统计与web结果、C全部系统/完整prompt/heartbeat及知识示例、D任务schema与四类评价器修复、E运行/预算全读。",
+      "primary_source": "https://arxiv.org/html/2604.01658v3",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
+    },
+    {
+      "id": "open-ended-optimization",
+      "name": "Open-Ended Optimization",
+      "year": 2026,
+      "scope": "direct",
+      "closure_assessment": "main_text_and_relevant_appendix",
+      "operation": "每步元模型选择合法操作，修订立即生效，可回选旧检查点。没有跨任务训练/继承元策略参数或递归改写runner。",
+      "boundary": "直接比较固定与委托优化流程，且包含零交互与能力阶梯反证；作为harness元优化边界研究有独立解释价值，需同时呈现单次运行、资源不完全匹配及无持久元学习限制。 无法证明所有固定流程已被取代，也非优化器权重自学习。弱优化器预算并非同完整上限，4B失败是具体接口可执行性；只一run/格且没有总成本匹配，34.3%限定目标交互。",
+      "reading_scope": "完整主文、完整附录；核对预算基准、弱模型控制、GEPA条件和单次运行限制。",
+      "primary_source": "https://arxiv.org/html/2608.09629v1",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
+    },
+    {
+      "id": "ttrl",
+      "name": "TTRL",
+      "year": 2025,
+      "scope": "direct",
+      "closure_assessment": "main_text_and_relevant_appendix",
+      "operation": "每个测试基准单独无标签RL适应；64vote→下采样32条训练→GRPO更新→再采样，MATH10/AMC30/AIME80 episodes。",
+      "boundary": "多数共识作为在线RL奖励的代表机制，并有实际32B训练；对测试适应和持久能力要分别标记，核心结论不依赖211%相对增幅宣传。 “maj@n上界”只是经验参照，非定理；“unbounded lifelong learning”不受有限实验支持。92%奖励准确率可能由大量错误答案都获0主导，不能单凭它证明优势方向正确或梯度可靠，这是基于reward定义的分析。多数错误仍会被强化，任务先验、温度和小样本超参很关键。",
+      "reading_scope": "完整正文、结果表、所有附录；检查实际32B训练、测试适应协议、失败结果、奖励正确率解释。",
+      "primary_source": "https://arxiv.org/html/2504.16084v3",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
+    },
+    {
+      "id": "ttt-discover",
+      "name": "TTT-Discover",
+      "year": 2026,
+      "scope": "direct",
+      "closure_assessment": "main_text_and_relevant_appendix",
+      "operation": "模型生成候选→外部执行验证→更新档案并进行一次在线RL→再从优良且未充分探索状态采样；产物目标是最佳程序/构造，不是通用策略。",
+      "boundary": "实际120B训练、学习与固定搜索规则的实质闭环、同采样消融和外部可检验产物，代表AI4AI程序发现中的Model核心。PUCT规则未进化，候选程序档案与访问计数属搜索状态，不是被改进的harness。 不是通用RSI或学习器自改；问题与验证器由人类给定。OpenEvolve因长提示被截断，比较受限；同采样不等于同总算力；单次最佳解统计不能替代训练稳定性。生物MSE改善不证明生物发现有效，FP16内核只满足指定容差。",
+      "reading_scope": "已读全部主文、方法、实验与限制及相关附录；定位以章节表号为准。",
+      "primary_source": "https://arxiv.org/html/2601.16175v2",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
+    },
+    {
+      "id": "alma",
+      "name": "ALMA",
+      "year": 2026,
+      "scope": "direct",
+      "closure_assessment": "main_text_and_relevant_appendix",
+      "operation": "抽历史设计→反思轨迹→改写代码→trial/debug→无记忆收集轨迹并建库→固定库新任务评估→archive；最终设计在ALFWorld动态更新实验继续学经验",
+      "boundary": "代表从记忆内容优化转向记忆算法设计的清晰第二层机制，且有任务/actor迁移、相同候选预算搜索消融；保留上述static/动态边界与附录代码混合前处理限制。 搜索离线且固定；未实现在线记忆设计自改。代码搜索的Turingcomplete不等于实际开放无限能力。MiniHack示例包含静态地图解析、radius5 BFS、actionmask、硬编码物体priors及无数据库也生成策略，收益不能全归因于从经验学习；样例还有彼此矛盾方向提示和potion of sickness风险建议。低基础成绩与小样本、仅三部署重复限制普适结论。",
+      "reading_scope": "全部主文、算法/采样/元智能体prompt、分割/基线/测试、成本定义及完整MiniHack示例代码和输出；数据库API模板无需逐字复述。",
+      "primary_source": "https://arxiv.org/html/2602.07755v1",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
+    },
+    {
+      "id": "polyskill",
+      "name": "PolySkill",
+      "year": 2025,
+      "scope": "direct",
+      "closure_assessment": "main_text_and_relevant_appendix",
+      "operation": "执行→成功轨迹→抽象语义接口+站点实现→重放验证→库继承；任务自由变体根据已有库和页面提出下一任务/站点。",
+      "boundary": "保留为技能表示和泛化机制核心例，因其具体展示“抽象接口—环境实现—自主探索”耦合并有多模型/课程比较；不是更强递归等级。数字与成本边界须随图注保留。 域类仍人为定义；LLM评判85%一致率来自引用而非本实验重标。技能数量只计接口不计子类实现，较小库不可等同更小代码量；结论73%迁移与正文31%复用不一致，GPT cross-domain表增量也算错；零样本静态有退化。",
+      "reading_scope": "完整主文、实验附录、动作空间、真实站点任务列表、评判/归纳提示和成本；另读取并渲染表1/4 SVG与PNG代码图，核对抽象接口和实现。",
+      "primary_source": "https://arxiv.org/html/2510.15863v2",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
+    },
+    {
+      "id": "expel",
+      "name": "ExpeL",
+      "year": 2023,
+      "scope": "direct",
+      "closure_assessment": "main_text_and_relevant_appendix",
+      "operation": "训练任务试错最多3次重试→收集经验→GPT4提取/修订规则→测试检索相似成功轨迹和注入规则",
+      "boundary": "经验型自改进从局部重试走向留出任务能力的代表性机制，消融和有限迁移使其在谱系中具有独立解释价值。 数据集小且文本确定环境；GPT4教师的知识贡献未剥离；全程成本未计，测试token显著增加；未改写提取/检索算法，长期记忆扩展未试验",
+      "reading_scope": "完整主文与附录A–J；PDF图2–5和图7–27的提示、洞察、轨迹、统计通过页面渲染/OCR补读，所有相关技术附录均已读。",
+      "primary_source": "https://arxiv.org/pdf/2308.10144v3",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
+    },
+    {
+      "id": "sage-skill-library",
+      "name": "SAGE · Skill Library",
+      "year": 2025,
+      "scope": "direct",
+      "closure_assessment": "main_text_and_relevant_appendix",
+      "operation": "教师SFT学格式→同场景两任务顺序执行、生成/使用函数→后任务收益奖励前技能生成→更新32B→部署时继续写技能。",
+      "boundary": "32B实际训练，明确下一任务收益回流技能生成的信用分配及有信息量负结果，是Model学会构造可继承Harness能力的代表；主文必须标注短链局部继承。 只一环境、一训练checkpoint的三次评测；主协议知道场景标签，基线rollout预算不等，32H100训练总费不明。非跨代同一权重与全局库无限循环；三任务链变差反而给出扩展边界。",
+      "reading_scope": "全部正文§1–5与AppA–L，补读PDF页12、19–21中图片化代码、完整prompt及所有执行案例。",
+      "primary_source": "https://arxiv.org/html/2512.17102v2",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
+    },
+    {
+      "id": "growing-harness",
+      "name": "Growing Harness",
+      "year": 2026,
+      "scope": "direct",
+      "closure_assessment": "main_text_and_relevant_appendix",
+      "operation": "从无任务控制器scaffold开始→积累K失败→只改main/被调用函数及≤10新改函数→重跑失败→按周期gate非下降筛选→回滚整个修复序列。Q正文是累计修好任务后的gate间隔，算法1却写单候选修复阈值；WebK4/Q8使后者不可执行。",
+      "boundary": "是“持久能力由文本经验变为可执行控制”的清晰核心例，有独立测试、跨部署模型与直接机制消融；不夸大为外层改进器自演化。 未改变外层优化器；无完整优化成本和代码搜索基线，50测试题CI宽；Web仅三站点、纯文本适配基线较弱。协议Q伪代码冲突需澄清。",
+      "reading_scope": "全文主文、相关工作、所有实验/统计与成本配置，额外渲染图6两份SVG核对生成控制结构。",
+      "primary_source": "https://arxiv.org/html/2609.26760v2",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
+    },
+    {
+      "id": "phantom-gains",
+      "name": "Phantom Gains",
+      "year": 2026,
+      "scope": "evaluation",
+      "closure_assessment": "main_text_and_relevant_appendix",
+      "operation": "同题流每轮生成/筛选256训练题→3epoch SFT或1epoch RL→固定题面逐题重评→与同协议冻结对照比较，不把观测0成功等同潜在成功概率为0。",
+      "boundary": "作为跨路线测量核心保留：给出可复用的实测null、逐题状态与功效框架，且明确区分强教师稀有题提升、self-SFT真实损失与评测幻象。实际模型小不妨碍跨路线评测方法价值。 band刻意选中难题不能估全分布忘记率；teacher与self token/采样成本不完全匹配，截断属于真实固定预算退化。正文称所有self在baseline-zero题最多1正确样本，与Table2部分self出现检测、union2题不一致，不能照抄绝对非扩展结论。110配对不独立，论文用baseline簇bootstrap处理；低样本子群仍低功效。",
+      "reading_scope": "已读全部主文、方法、实验与限制及相关附录；定位以章节表号为准。",
+      "primary_source": "https://arxiv.org/html/2608.20290v1",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
+    },
+    {
+      "id": "rest-meets-react",
+      "name": "ReST meets ReAct",
+      "year": 2023,
+      "scope": "enabler",
+      "closure_assessment": "main_text_and_relevant_appendix",
+      "operation": "固定2000题→L自生轨迹→步骤拆分/AI排序→全参SFT→用改进L再生成；共2轮，另同数据训练XS/S。",
+      "boundary": "作为Model路线的过程自训练基础节点，早期清楚连接搜索代理、AI反馈、持续数据质量和蒸馏；实际训练PaLM2-L但规模公开未知，保留未知标记而不假定≥27B数值。 不是harness演化或自主改训练规则；冻结同系列强评审和外部检索是锚点，非纯闭合自我评价。Bamboogle是验证集，留出测试只100题一次人评；权重重启细节和绝对成本未披露。",
+      "reading_scope": "已读全部主文、方法、实验与限制及相关附录；定位以章节表号为准。",
+      "primary_source": "https://arxiv.org/html/2312.10003v1",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
+    },
+    {
+      "id": "youtube-self-evolving-recommendation",
+      "name": "YouTube · Self-Evolving Recommendation",
+      "year": 2026,
+      "scope": "enabler",
+      "closure_assessment": "main_text_and_relevant_appendix",
+      "operation": "快环分析日志→提案训练/相关性→慢环选topK上线→持续收集业务指标/淘汰→journal影响下一日提案",
+      "boundary": "真实工业AI4AI的双时标反馈及两个生产入口A/B证据，提供静态bench研究系统缺少的实际部署方法；规模未知但不虚构，独立于自我继任。 目标模型参数、完整业务指标、试验样本量/时间窗、未成功候选分布与总训练预算未披露；RMSprop/GLU/Wide&Deep属于已有方法的发现/适配，非算法首次发明；人类最终审核；persona必要性叙述超出CI",
+      "reading_scope": "完整主文、方法公式、实验结果与限制；参考文献定位前驱，不逐条当独立阅读",
+      "primary_source": "https://arxiv.org/html/2602.10226v3",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
+    },
+    {
+      "id": "fragility-self-improving-agents",
+      "name": "Fragility of Self-Improving Agents",
+      "year": 2026,
+      "scope": "evaluation",
+      "closure_assessment": "main_text_and_relevant_appendix",
+      "operation": "任务执行→真实奖励→记忆生成/保存→后续任务检索，完整历史多次重复并随机改序。",
+      "boundary": "提供关键的经验反证与完整历史评价方法，附录新增模型/文件记忆外测加强适用边界，应进入稳定性与反馈验证主线。 三次主运行/两种乱序仍有限；增强规格不能解释全部退化，案例检查只是记忆子集；harness 与模型同时升级，不能把差异全归于模型增强；未测全部近期记忆机制。",
+      "reading_scope": "主文 §1–6、全部结果表与 Appendix A–G（追加6次运行/额外模型/企业文件记忆实验、完整可见提示、错误案例）；AWM 两个示例提示原文明确省略。",
+      "primary_source": "https://arxiv.org/html/2608.18066v2",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
+    },
+    {
+      "id": "practice-makes-unsafe",
+      "name": "Practice Makes Unsafe",
+      "year": 2026,
+      "scope": "evaluation",
+      "closure_assessment": "main_text_and_relevant_appendix",
+      "operation": "每25个episode含3×(3M+3B)及3P，六次块级更新；研究经验如何丢掉边界再被良性任务调用。SafeEvolve至多两次风险删减，复用时效用减风险排序、两次危害或风险≥0.6退役，库上限32。",
+      "boundary": "对持久技能RSI提供不可由短期拒绝率替代的反例：干净新会话、仅技能迁移和全良性曝光对照构成关键机制证据。选其诊断而非把SafeEvolve视最优防御；实现差异与定向选样限制推广。 URR只计显式选择，Codex/EvoSkill可通过注入上下文传播而无检索事件，三指标不是必要串联门。RQ2 K=0无技能时P危害6.67%/25.33%明显不同主表NoEvolution近零，未充分解释，不能将累积曲线当严格配对剂量效应。SafeEvolve主文学习BU仅降0.44pp掩盖P效用降12.66pp；UP在两方法均值被SecureClaw危害/效用同时优于，且EvoSkill单项utility-only更优。修复依赖可用危害判别，非纯效用自发涌现。",
+      "reading_scope": "全文机制、21个配置、良性曝光对照、独立与人工judge、方法接入差异、全部消融、风险修复伪流程及案例。",
+      "primary_source": "https://arxiv.org/html/2608.12851v2",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
+    },
+    {
+      "id": "trusting-trust-revisited",
+      "name": "Trusting Trust Revisited",
+      "year": 2026,
+      "scope": "evaluation",
+      "closure_assessment": "main_text_and_relevant_appendix",
+      "operation": "投毒基准评估→诊断→自修改→按分数保留→新任务生成代码；再换clean/通用安全/定向清毒benchmark追踪是否恢复。",
+      "boundary": "对RSI评价与递归继承的可信性提出清楚且有反事实的实证反例：冻结强模型、源基准撤除后持续、定向奖励才能清除。失败案例/原DGM边界必须与成功共同保留。 原版DGM未被此攻击攻破，成功版人为删除通用性约束、加入领域片段生成鼓励；不能称三原系统全破。按最高分且携毒agent选择有条件偏差，虽主要成功行确是tip；强制不安全的五题饱和基准与常见网络默认之组合限制推广。清毒SICA称partial是因条件指令仍在，测试漏洞实际0，不应说完全未恢复。研究报告git-history答案泄漏预实验已修，不能直接推定原论文测分作弊。",
+      "reading_scope": "全主文、完整攻击/失败对照、DGM提示修改、探针、所有延续清毒和JWT/YAML/后门附录结果。",
+      "primary_source": "https://arxiv.org/html/2609.17817v1",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
+    },
+    {
+      "id": "can-reasoning-models-self-train",
+      "name": "Can Reasoning Models Self-Train?",
+      "year": 2025,
+      "scope": "evaluation",
+      "closure_assessment": "main_text_and_relevant_appendix",
+      "operation": "明确区分在线自标签质量改善和长期目标被利用；没有证明训练机制自身递归改写。",
+      "boundary": "作为跨路线失效与边界核心节点，系统对照和明确正反条件不可由一般model-collapse口号替代；不把14B规模包装成大模型递归成功。 崩溃不是全部配置的定理，低lr最终必崩只是推测；合成任务需要金监督初始化，Llama筛题使用金正确率。数值多为峰值和单训练曲线，未证明新的高k能力边界。",
+      "reading_scope": "已读全部主文、方法、实验与限制及相关附录；定位以章节表号为准。",
+      "primary_source": "https://arxiv.org/html/2505.21444v2",
+      "provenance": "2026-10-19 full-corpus primary reading and comparative selection"
     }
   ],
   "deferred_or_excluded": [
     {
       "arxiv_id": "2606.29871",
-      "status": "defer",
-      "reason": "人工构造训练故障上的有界控制案例；暂未显示控制器本身学习，先保留为候选，非断言无价值。"
+      "status": "support",
+      "reason": "清楚区分训练过程中状态控制与跨实验科研搜索，保留为训练管理支撑；尚无大模型或自主修改研究算法证据。",
+      "superseded_by_full_reading": true
     },
     {
       "arxiv_id": "2606.28374",
-      "status": "defer",
-      "reason": "摘要中的 held-out 接受集实际参与反复选择；单调安全的外推需核全文，不据摘要认证。"
+      "status": "support",
+      "reason": "保留为上下文形式的域依赖比较与val回退案例，核心三层形式不必要、门槛效果被正文夸大，不能作为单调安全或改进器自修改的代表。",
+      "superseded_by_full_reading": true
     },
     {
       "arxiv_id": "2606.21090",
-      "status": "defer",
-      "reason": "有限模型/任务上的退化案例，需核完整协议与资源；当前以 Aspire 等覆盖此问题，暂不重复扩容。"
+      "status": "insufficient",
+      "reason": "保留审计记录和问题线索，移出详细证据主线：最核心逐步退化指标混入不同题难度，部署内容与理论描述脱节且若干协议数字冲突；待固定heldout逐checkpoint复核后再提升。",
+      "superseded_by_full_reading": true
     },
     {
       "arxiv_id": "2610.11613",
@@ -1746,8 +1965,9 @@
     },
     {
       "arxiv_id": "2608.20290",
-      "status": "retrieval_incomplete",
-      "reason": "原始页面未成功获取，不用二手摘要代替原文核查。"
+      "status": "core",
+      "reason": "作为跨路线测量核心保留：给出可复用的实测null、逐题状态与功效框架，且明确区分强教师稀有题提升、self-SFT真实损失与评测幻象。实际模型小不妨碍跨路线评测方法价值。",
+      "superseded_by_full_reading": true
     },
     {
       "arxiv_id": "2608.27287",

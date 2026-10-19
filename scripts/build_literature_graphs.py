@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Build the literature-only, three-route knowledge graph and offline reader."""
-import json,re,html
+import json,re,html,hashlib
 from pathlib import Path
 from collections import Counter
 from research_actors import build_actors
@@ -17,6 +17,8 @@ route_specs=[
 # Common aliases support institution browsing without turning funding into authorship.
 alias={'UC Berkeley':'Berkeley','University of California Berkeley':'Berkeley','UC Santa Barbara':'UCSB','UC Santa Cruz':'UCSC','University of Waterloo':'Waterloo','Stanford University':'Stanford','University of Bristol':'Bristol','University of British Columbia':'UBC','Google Deepmind':'Google DeepMind','DeepSeek-AI':'DeepSeek','Moonshot AI（月之暗面）':'Moonshot AI','Meta':'Meta AI','Meta FAIR':'Meta AI','FAIR at Meta':'Meta AI','University of Illinois Urbana-Champaign':'UIUC','Washington University':'WashU','University of Washington':'UW','University of Oxford':'Oxford','The Ohio State University':'Ohio State','University of Minnesota':'Minnesota','Tianjin University':'Tianjin','Shanxi University':'Shanxi','Shanghai Jiao Tong University':'SJTU','University of California San Diego':'UCSD','UNC-Chapel Hill':'UNC','Pennsylvania State University':'Penn State','Nanyang Technological University':'NTU','The Chinese University of Hong Kong':'CUHK','University of Chicago':'UChicago','University of Science and Technology of China':'USTC','Zhejiang University':'Zhejiang','Carnegie Mellon University':'Carnegie Mellon','Microsoft Research Asia':'Microsoft Research Asia','The University of Hong Kong':'HKU','University of Toronto':'Toronto','Vector Institute':'Vector','iGent AI':'iGent AI','Microsoft Research':'Microsoft Research','Google Research':'Google Research'}
 alias.update({'清华大学':'Tsinghua','浙江大学':'Zhejiang','上海交通大学':'SJTU'})
+ACTOR_SPEC=read('data/research-actors.json')
+actor_names={label:a['name'] for a in ACTOR_SPEC['actors'] for label in a['aliases']+[a['name']]}
 works=[];orgs={};nodes=[];edges=[]
 for r in E['works']:
  w=old.get(r['id'],r);b=w.get('layer',r);urls=list(dict.fromkeys([r['primary_url']]+[s['url'] for s in BIB[r['id']]['sources']]))
@@ -35,9 +37,11 @@ for r in E['works']:
    if name.startswith('HKU ·'):name='HKU'
    if name.startswith('Douglas B. Lenat'):name='Stanford'
    name=alias.get(name,name)
+   if name in ACTOR_SPEC.get('non_affiliation_labels',[]):continue
+   name=actor_names.get(name,name)
    if name and name not in tnames:tnames.append(name)
   for name in tnames:
-   oid='org-'+re.sub(r'[^a-z0-9]+','-',name.lower()).strip('-')
+   oid='org-'+re.sub(r'[^a-z0-9]+','-',name.lower()).strip('-')+'-'+hashlib.sha256(name.encode()).hexdigest()[:8]
    if oid in orgs and orgs[oid]['label']!=name:raise ValueError('institution id collision: '+name+' / '+orgs[oid]['label'])
    orgs[oid]={'id':oid,'label':name,'type':'institution'}
    edges.append(dict(id=f'aff-{r["id"]}-{oid}',source=oid,target=r['id'],kind='affiliation',label='署名机构 / 团队',evidence='source_metadata',sources=[dict(url=r['team_source'],location=r.get('team_location','论文首页署名；官方报告团队'))]))
@@ -76,12 +80,21 @@ a['discovery_coverage']={'total':len(pool),'overlap':len(pool & catalog_arxiv),'
 a['reading_coverage']={**dict.fromkeys(['main_text_and_relevant_appendix','paper_sections_read','public_materials','abstract_only','unavailable','unreviewed'],0),**dict(Counter(w.get('review',{}).get('source_coverage','unreviewed') for w in works))}
 if (R/'data/discovery-review.json').exists():a['discovery_review']=read('data/discovery-review.json')
 else:a['discovery_review']={'entries':[],'counts':{}}
+# Full-corpus decisions are editorial evidence, separate from reading depth.
+if (R/'data/corpus-review.json').exists():
+ a['corpus_review']=read('data/corpus-review.json')
+ for entry in a['corpus_review']['entries']:
+  if entry.get('work_id') in byid and entry.get('review'):
+   w=byid[entry['work_id']];w['corpus_entry_id']=entry['entry_id'];w['corpus_selection']=entry['review']['selection']
+ for rt in route_specs:
+  rt['counts']['core']=sum(w['route']==rt['id'] and w.get('corpus_selection',{}).get('decision')=='core' for w in works)
+
 a['reader_guide']=read('data/reader-guide.json')
 for c in a['reader_guide']['cases']:
  if c['id'] in byid and 'review' in byid[c['id']]:
   w=byid[c['id']];rv=w['review'];m=rv['mechanism']
   c.update(loop=m['loop'],changed=m['changed'],fixed=m['fixed'],feedback=m['feedback'],retained=m['inheritance'],insight=rv['contribution']['insight'],boundary=w['limitations'],basis=w['source_location'])
-a['actors']=build_actors(read('data/research-actors.json'),works,I)
+a['actors']=build_actors(ACTOR_SPEC,works,I)
 for actor in a['actors']['actors']:
  nodes.append(dict(id='actor-'+actor['id'],type='research_actor',label=actor['name'],actor_kind=actor['kind']))
 for w in works:
@@ -101,7 +114,7 @@ for rt in F['routes']:
    edges.append(dict(id='addresses-'+rt['id']+'-'+q['work_id']+'-'+tid,source=q['work_id'],target='topic-'+tid,kind='addresses_topic',label='研究此主题 / 相关机制',explanation=q['summary'],evidence='survey_classification',sources=[dict(url=u,location=q['source_location']) for u in q['source_urls']]))
 write('data/knowledge-graph.json',{'schema_version':'5.1.0','updated':E['updated'],'scope':E['scope'],'nodes':nodes,'edges':edges,'field_views':{r['id']:['topic-'+n['id'] for n in r['nodes']] for r in F['routes']},'route_views':{rt['id']:[w['id'] for w in works if w['route']==rt['id']] for rt in route_specs},'work_bindings':[dict(work_id=w['id'],node_ids=[m for m in w['methods'] if m in {g['id'] for g in E['groups']}]) for w in works]})
 template=(R/'scripts/atlas-template.html').read_text().replace('__ACTOR_STYLE__',(R/'scripts/actor-style.css').read_text()).replace('__ACTOR_SCRIPT__',(R/'scripts/actor-views.js').read_text());assert '__LITERATURE_DATA__' in template
-page=template.replace('__READER_STYLE__',(R/'scripts/reader-guide.css').read_text()).replace('__READER_SCRIPT__',(R/'scripts/reader-guide.js').read_text()).replace('__DOMAIN_STYLE__',(R/'scripts/domain-style.css').read_text()).replace('__DOMAIN_SCRIPT__',(R/'scripts/domain-views.js').read_text()).replace('__INDUSTRY_SCRIPT__',(R/'scripts/industry-views.js').read_text()).replace('__INDUSTRY_STYLE__',(R/'scripts/industry-style.css').read_text()).replace('__LITERATURE_DATA__',json.dumps(a,ensure_ascii=False,separators=(',',':')).replace('</','<\\/'))
+page=template.replace('__CORPUS_STYLE__',(R/'scripts/corpus-style.css').read_text()).replace('__CORPUS_SCRIPT__',(R/'scripts/corpus-views.js').read_text()).replace('__READER_STYLE__',(R/'scripts/reader-guide.css').read_text()).replace('__READER_SCRIPT__',(R/'scripts/reader-guide.js').read_text()).replace('__DOMAIN_STYLE__',(R/'scripts/domain-style.css').read_text()).replace('__DOMAIN_SCRIPT__',(R/'scripts/domain-views.js').read_text()).replace('__INDUSTRY_SCRIPT__',(R/'scripts/industry-views.js').read_text()).replace('__INDUSTRY_STYLE__',(R/'scripts/industry-style.css').read_text()).replace('__LITERATURE_DATA__',json.dumps(a,ensure_ascii=False,separators=(',',':')).replace('</','<\\/'))
 for name in ['index.html','RSI_Field_Atlas_v5_1.html']:(R/'research/atlas'/name).write_text(page)
 md=['# RSI 领域知识图谱 · v5.1','','[打开三张领域图谱](research/atlas/RSI_Field_Atlas_v5_1.html) · [文字版研究结构](research/atlas/field-guide.md)','','![首页三张领域图谱](assets/atlas/landscape-overview.png)','','首页直接显示 Harness、Model、Model × Harness 三张领域图。29 个研究主题、其下的具体子问题以及 60 条机制联系先组织研究空间；论文、团队和机构再挂接到对应位置。主题间联系是综述归纳，论文间的引用、扩展和方法对照另行标注。','','点击主题可展开关键问题、原理、技术、相邻关系与对应研究；点击箭头可看联系的含义和原文例证。本综述仅讨论公开研究，不包含项目自身理论或设计。','','## 当前收录进度','','| 路线 | 收录研究 | 论文原文研读 | 公开材料研读 |','|---|---:|---:|---:|']
 for r in route_specs:

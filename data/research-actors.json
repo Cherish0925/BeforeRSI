@@ -6,7 +6,7 @@
       "id": "academic",
       "title": "高校与科研机构",
       "short": "高校 / 科研",
-      "description": "大学、公共及独立科研机构",
+      "description": "大学、公共及独立科研机构、医学研究机构",
       "main": true
     },
     {
@@ -36,6 +36,13 @@
       "short": "待确认",
       "description": "保留原始署名，不推断机构类型",
       "main": false
+    },
+    {
+      "id": "industry",
+      "title": "其他产业机构",
+      "short": "其他产业",
+      "description": "以金融、医疗或其他行业为主体的参与机构",
+      "main": false
     }
   ],
   "scope": "机构类型用于浏览研究参与关系；研究价值、证据强度和模型规模在工作记录中分别表达。",
@@ -45,7 +52,8 @@
     "合作是同一工作上的多方参与关系。同一工作可出现在多个主体类别中，矩阵单元格按工作去重，不能横向或纵向直接相加。",
     "仅托管代码的关系不计为研究署名；公开方向与已收录工作分开展示。",
     "MIT–IBM 联合实验室归到 MIT 与 IBM 的浏览入口，关系标记为联合实验室署名；不把它解释为两条独立署名。",
-    "原始署名尚未整理的工作保留待确认状态，不因缺少机构信息从研究目录删除。"
+    "原始署名尚未整理的工作保留待确认状态，不因缺少机构信息从研究目录删除。",
+    "同一机构的中英文、部门和实验室署名归并到机构入口；每项工作的原始署名及来源仍完整保留。作者头衔、资助项目与仅有作者姓名不单计为机构。"
   ],
   "actors": [
     {
@@ -55,7 +63,8 @@
       "aliases": [
         "Alibaba AI Data",
         "Alibaba Qwen",
-        "Alibaba Tongyi Lab"
+        "Alibaba Tongyi Lab",
+        "Qwen Team"
       ],
       "search_aliases": [
         "阿里巴巴",
@@ -74,7 +83,10 @@
         "Google Cloud AI Research",
         "Google DeepMind",
         "Google Research",
-        "Google Cloud AI"
+        "Google Cloud AI",
+        "DeepMind",
+        "Google Brain/Google Research",
+        "Google Research, Brain Team"
       ],
       "search_aliases": [
         "谷歌"
@@ -111,7 +123,9 @@
       "kind": "tech",
       "aliases": [
         "Tencent AI Lab",
-        "Tencent AI Seattle"
+        "Tencent AI Seattle",
+        "Tencent AI Seattle Lab",
+        "Tencent"
       ],
       "search_aliases": [
         "腾讯"
@@ -154,7 +168,8 @@
       "name": "Kuaishou",
       "kind": "tech",
       "aliases": [
-        "Kuaishou Kolors"
+        "Kuaishou Kolors",
+        "KlingAI Research"
       ],
       "search_aliases": [
         "快手"
@@ -165,7 +180,8 @@
       "name": "Salesforce",
       "kind": "tech",
       "aliases": [
-        "Salesforce AI"
+        "Salesforce AI",
+        "Salesforce AI Research"
       ],
       "search_aliases": []
     },
@@ -183,7 +199,8 @@
       "name": "ServiceNow",
       "kind": "tech",
       "aliases": [
-        "ServiceNow AI"
+        "ServiceNow AI",
+        "ServiceNow AI Research"
       ],
       "search_aliases": []
     },
@@ -210,7 +227,9 @@
       "name": "Amazon",
       "kind": "tech",
       "aliases": [
-        "Amazon"
+        "Amazon",
+        "Amazon Alexa AI",
+        "AWS Agentic AI"
       ],
       "search_aliases": [
         "亚马逊"
@@ -272,7 +291,8 @@
       "name": "Xiaohongshu",
       "kind": "tech",
       "aliases": [
-        "Xiaohongshu"
+        "Xiaohongshu",
+        "Xiaohongshu Inc."
       ],
       "search_aliases": [
         "小红书"
@@ -284,7 +304,9 @@
       "kind": "academic",
       "aliases": [
         "MIT",
-        "CSAIL"
+        "CSAIL",
+        "Massachusetts Institute of Technology",
+        "麻省理工学院"
       ],
       "search_aliases": [
         "麻省理工",
@@ -297,7 +319,8 @@
       "kind": "academic",
       "aliases": [
         "ETH",
-        "ETH Zürich"
+        "ETH Zürich",
+        "ETH Zurich"
       ],
       "search_aliases": []
     },
@@ -320,7 +343,9 @@
       "kind": "academic",
       "aliases": [
         "Tsinghua",
-        "清华大学"
+        "清华大学",
+        "Tsinghua University",
+        "Beijing National Research Center for Information Science and Technology"
       ],
       "search_aliases": [
         "清华",
@@ -332,7 +357,8 @@
       "name": "UC Berkeley",
       "kind": "academic",
       "aliases": [
-        "Berkeley"
+        "Berkeley",
+        "University of California, Berkeley"
       ],
       "search_aliases": [
         "加州大学伯克利分校",
@@ -560,7 +586,8 @@
       "name": "MemTensor",
       "kind": "ai",
       "aliases": [
-        "MemTensor"
+        "MemTensor",
+        "MemTensor (Shanghai) Technology Co., Ltd."
       ],
       "profile_id": "memtensor",
       "search_aliases": [
@@ -811,7 +838,8 @@
       "name": "SambaNova",
       "kind": "ai",
       "aliases": [
-        "SambaNova"
+        "SambaNova",
+        "SambaNova Systems"
       ],
       "search_aliases": []
     },
@@ -854,7 +882,8 @@
       "kind": "independent",
       "aliases": [
         "Independent",
-        "Independent Researchers"
+        "Independent Researchers",
+        "Independent Researcher"
       ],
       "countable": false,
       "type_note": "按每篇工作的作者署名分别记录；这是浏览分组，不是同一个机构。",
@@ -875,7 +904,8 @@
       "name": "Ai2",
       "kind": "academic",
       "aliases": [
-        "Ai2"
+        "Ai2",
+        "Allen Institute for AI"
       ],
       "search_aliases": [
         "艾伦人工智能研究所"
@@ -886,7 +916,8 @@
       "name": "Beihang",
       "kind": "academic",
       "aliases": [
-        "Beihang"
+        "Beihang",
+        "Beihang University"
       ],
       "search_aliases": []
     },
@@ -904,7 +935,8 @@
       "name": "BIGAI",
       "kind": "academic",
       "aliases": [
-        "BIGAI"
+        "BIGAI",
+        "Beijing Institute for General Artificial Intelligence"
       ],
       "search_aliases": []
     },
@@ -949,7 +981,8 @@
       "name": "Cambridge",
       "kind": "academic",
       "aliases": [
-        "Cambridge"
+        "Cambridge",
+        "University of Cambridge"
       ],
       "search_aliases": []
     },
@@ -1003,7 +1036,8 @@
       "name": "Edinburgh",
       "kind": "academic",
       "aliases": [
-        "Edinburgh"
+        "Edinburgh",
+        "爱丁堡大学"
       ],
       "search_aliases": []
     },
@@ -1012,7 +1046,9 @@
       "name": "Emory",
       "kind": "academic",
       "aliases": [
-        "Emory"
+        "Emory",
+        "Emory University",
+        "埃默里大学"
       ],
       "search_aliases": []
     },
@@ -1030,7 +1066,8 @@
       "name": "Fudan",
       "kind": "academic",
       "aliases": [
-        "Fudan"
+        "Fudan",
+        "Fudan University"
       ],
       "search_aliases": [
         "复旦大学",
@@ -1042,7 +1079,8 @@
       "name": "Georgia Tech",
       "kind": "academic",
       "aliases": [
-        "Georgia Tech"
+        "Georgia Tech",
+        "Georgia Institute of Technology"
       ],
       "search_aliases": []
     },
@@ -1060,7 +1098,8 @@
       "name": "Harvard",
       "kind": "academic",
       "aliases": [
-        "Harvard"
+        "Harvard",
+        "Harvard University"
       ],
       "search_aliases": [
         "哈佛大学"
@@ -1089,7 +1128,9 @@
       "name": "HKUST",
       "kind": "academic",
       "aliases": [
-        "HKUST"
+        "HKUST",
+        "The Hong Kong University of Science and Technology",
+        "香港科技大学"
       ],
       "search_aliases": []
     },
@@ -1098,7 +1139,8 @@
       "name": "HKUST(GZ)",
       "kind": "academic",
       "aliases": [
-        "HKUST(GZ)"
+        "HKUST(GZ)",
+        "The Hong Kong University of Science and Technology (Guangzhou)"
       ],
       "search_aliases": []
     },
@@ -1107,7 +1149,8 @@
       "name": "Hohai",
       "kind": "academic",
       "aliases": [
-        "Hohai"
+        "Hohai",
+        "Hohai University"
       ],
       "search_aliases": []
     },
@@ -1134,7 +1177,9 @@
       "name": "KAUST",
       "kind": "academic",
       "aliases": [
-        "KAUST"
+        "KAUST",
+        "King Abdullah University of Science and Technology",
+        "King Abdullah University of Science and Technology (KAUST)"
       ],
       "search_aliases": []
     },
@@ -1143,7 +1188,8 @@
       "name": "Manchester",
       "kind": "academic",
       "aliases": [
-        "Manchester"
+        "Manchester",
+        "University of Manchester"
       ],
       "search_aliases": []
     },
@@ -1152,7 +1198,8 @@
       "name": "Maryland",
       "kind": "academic",
       "aliases": [
-        "Maryland"
+        "Maryland",
+        "University of Maryland, College Park"
       ],
       "search_aliases": []
     },
@@ -1179,7 +1226,8 @@
       "name": "Mila",
       "kind": "academic",
       "aliases": [
-        "Mila"
+        "Mila",
+        "Mila – Quebec AI Institute"
       ],
       "search_aliases": []
     },
@@ -1197,7 +1245,8 @@
       "name": "Montréal",
       "kind": "academic",
       "aliases": [
-        "Montréal"
+        "Montréal",
+        "Université de Montréal"
       ],
       "search_aliases": []
     },
@@ -1206,7 +1255,8 @@
       "name": "Nanjing",
       "kind": "academic",
       "aliases": [
-        "Nanjing"
+        "Nanjing",
+        "Nanjing University"
       ],
       "search_aliases": []
     },
@@ -1215,7 +1265,9 @@
       "name": "Northeastern",
       "kind": "academic",
       "aliases": [
-        "Northeastern"
+        "Northeastern",
+        "Northeastern University",
+        "东北大学"
       ],
       "search_aliases": []
     },
@@ -1224,7 +1276,8 @@
       "name": "Notre Dame",
       "kind": "academic",
       "aliases": [
-        "Notre Dame"
+        "Notre Dame",
+        "University of Notre Dame"
       ],
       "search_aliases": []
     },
@@ -1233,7 +1286,8 @@
       "name": "NTU",
       "kind": "academic",
       "aliases": [
-        "NTU"
+        "NTU",
+        "南洋理工大学"
       ],
       "search_aliases": []
     },
@@ -1242,7 +1296,8 @@
       "name": "NUS",
       "kind": "academic",
       "aliases": [
-        "NUS"
+        "NUS",
+        "National University of Singapore"
       ],
       "search_aliases": []
     },
@@ -1251,7 +1306,9 @@
       "name": "NYU",
       "kind": "academic",
       "aliases": [
-        "NYU"
+        "NYU",
+        "New York University",
+        "纽约大学"
       ],
       "search_aliases": []
     },
@@ -1269,7 +1326,8 @@
       "name": "Oxford",
       "kind": "academic",
       "aliases": [
-        "Oxford"
+        "Oxford",
+        "Trinity College, University of Oxford"
       ],
       "search_aliases": []
     },
@@ -1278,7 +1336,9 @@
       "name": "Penn State",
       "kind": "academic",
       "aliases": [
-        "Penn State"
+        "Penn State",
+        "Penn State University",
+        "宾夕法尼亚州立大学"
       ],
       "search_aliases": []
     },
@@ -1287,7 +1347,8 @@
       "name": "Princeton",
       "kind": "academic",
       "aliases": [
-        "Princeton"
+        "Princeton",
+        "Princeton University"
       ],
       "search_aliases": []
     },
@@ -1314,7 +1375,8 @@
       "name": "RUC",
       "kind": "academic",
       "aliases": [
-        "RUC"
+        "RUC",
+        "Renmin University of China"
       ],
       "search_aliases": []
     },
@@ -1341,7 +1403,9 @@
       "name": "Shanghai AI Laboratory",
       "kind": "academic",
       "aliases": [
-        "Shanghai AI Laboratory"
+        "Shanghai AI Laboratory",
+        "上海人工智能实验室",
+        "Shanghai AI Lab"
       ],
       "search_aliases": [
         "上海人工智能实验室"
@@ -1370,7 +1434,8 @@
       "name": "SIAT-CAS",
       "kind": "academic",
       "aliases": [
-        "SIAT-CAS"
+        "SIAT-CAS",
+        "Shenzhen Institutes of Advanced Technology, Chinese Academy of Sciences"
       ],
       "search_aliases": []
     },
@@ -1410,7 +1475,9 @@
       "name": "Stanford",
       "kind": "academic",
       "aliases": [
-        "Stanford"
+        "Stanford",
+        "斯坦福大学",
+        "Stanford University School of Medicine"
       ],
       "search_aliases": [
         "斯坦福",
@@ -1422,7 +1489,8 @@
       "name": "SUAT",
       "kind": "academic",
       "aliases": [
-        "SUAT"
+        "SUAT",
+        "Shenzhen University of Advanced Technology"
       ],
       "search_aliases": []
     },
@@ -1476,7 +1544,8 @@
       "name": "UBC",
       "kind": "academic",
       "aliases": [
-        "UBC"
+        "UBC",
+        "英属哥伦比亚大学"
       ],
       "search_aliases": []
     },
@@ -1503,7 +1572,8 @@
       "name": "UCSB",
       "kind": "academic",
       "aliases": [
-        "UCSB"
+        "UCSB",
+        "University of California, Santa Barbara"
       ],
       "search_aliases": []
     },
@@ -1512,7 +1582,8 @@
       "name": "UCSC",
       "kind": "academic",
       "aliases": [
-        "UCSC"
+        "UCSC",
+        "University of California, Santa Cruz"
       ],
       "search_aliases": []
     },
@@ -1532,7 +1603,8 @@
       "name": "UESTC",
       "kind": "academic",
       "aliases": [
-        "UESTC"
+        "UESTC",
+        "University of Electronic Science and Technology of China"
       ],
       "search_aliases": []
     },
@@ -1541,7 +1613,8 @@
       "name": "UIC",
       "kind": "academic",
       "aliases": [
-        "UIC"
+        "UIC",
+        "University of Illinois Chicago"
       ],
       "search_aliases": []
     },
@@ -1550,7 +1623,9 @@
       "name": "UIUC",
       "kind": "academic",
       "aliases": [
-        "UIUC"
+        "UIUC",
+        "伊利诺伊大学厄巴纳香槟分校",
+        "University of Illinois Urbana–Champaign"
       ],
       "search_aliases": []
     },
@@ -1559,7 +1634,8 @@
       "name": "UNC",
       "kind": "academic",
       "aliases": [
-        "UNC"
+        "UNC",
+        "北卡罗来纳大学教堂山分校"
       ],
       "search_aliases": []
     },
@@ -1622,7 +1698,8 @@
       "name": "UT Dallas",
       "kind": "academic",
       "aliases": [
-        "UT Dallas"
+        "UT Dallas",
+        "The University of Texas at Dallas"
       ],
       "search_aliases": []
     },
@@ -1640,7 +1717,9 @@
       "name": "UW–Madison",
       "kind": "academic",
       "aliases": [
-        "UW–Madison"
+        "UW–Madison",
+        "UW Madison",
+        "University of Wisconsin–Madison"
       ],
       "search_aliases": []
     },
@@ -1667,7 +1746,8 @@
       "name": "Virginia",
       "kind": "academic",
       "aliases": [
-        "Virginia"
+        "Virginia",
+        "University of Virginia"
       ],
       "search_aliases": []
     },
@@ -1676,7 +1756,9 @@
       "name": "WashU",
       "kind": "academic",
       "aliases": [
-        "WashU"
+        "WashU",
+        "圣路易斯华盛顿大学",
+        "Washington University in St. Louis"
       ],
       "search_aliases": []
     },
@@ -1694,7 +1776,8 @@
       "name": "Xidian",
       "kind": "academic",
       "aliases": [
-        "Xidian"
+        "Xidian",
+        "Xidian University"
       ],
       "search_aliases": []
     },
@@ -1724,7 +1807,9 @@
       "id": "gen-verse",
       "name": "Gen-Verse",
       "kind": "unresolved",
-      "aliases": [],
+      "aliases": [
+        "Gen-Verse"
+      ],
       "type_note": "项目团队名称已记录；署名机构尚未核定。",
       "search_aliases": []
     },
@@ -1754,17 +1839,383 @@
         "Grace Investment Machine"
       ],
       "search_aliases": []
+    },
+    {
+      "id": "idsia",
+      "name": "IDSIA",
+      "kind": "academic",
+      "aliases": [
+        "IDSIA"
+      ],
+      "search_aliases": [],
+      "type_note": "依据原文署名记录研究参与；机构分类不表示其规模或研究质量。"
+    },
+    {
+      "id": "tum",
+      "name": "Technical University of Munich",
+      "kind": "academic",
+      "aliases": [
+        "Technische Universität München"
+      ],
+      "search_aliases": [],
+      "type_note": "依据原文署名记录研究参与；机构分类不表示其规模或研究质量。"
+    },
+    {
+      "id": "cifar",
+      "name": "CIFAR",
+      "kind": "academic",
+      "aliases": [
+        "Canadian Institute for Advanced Research"
+      ],
+      "search_aliases": [],
+      "type_note": "依据原文署名记录研究参与；机构分类不表示其规模或研究质量。"
+    },
+    {
+      "id": "ucl",
+      "name": "University College London",
+      "kind": "academic",
+      "aliases": [
+        "University College London"
+      ],
+      "search_aliases": [],
+      "type_note": "依据原文署名记录研究参与；机构分类不表示其规模或研究质量。"
+    },
+    {
+      "id": "turing-institute",
+      "name": "Alan Turing Institute",
+      "kind": "academic",
+      "aliases": [
+        "Alan Turing Institute"
+      ],
+      "search_aliases": [],
+      "type_note": "依据原文署名记录研究参与；机构分类不表示其规模或研究质量。"
+    },
+    {
+      "id": "alberta",
+      "name": "University of Alberta",
+      "kind": "academic",
+      "aliases": [
+        "University of Alberta"
+      ],
+      "search_aliases": [],
+      "type_note": "依据原文署名记录研究参与；机构分类不表示其规模或研究质量。"
+    },
+    {
+      "id": "amii",
+      "name": "Alberta Machine Intelligence Institute",
+      "kind": "academic",
+      "aliases": [
+        "Alberta Machine Intelligence Institute"
+      ],
+      "search_aliases": [],
+      "type_note": "依据原文署名记录研究参与；机构分类不表示其规模或研究质量。"
+    },
+    {
+      "id": "houston-methodist",
+      "name": "Houston Methodist",
+      "kind": "academic",
+      "aliases": [
+        "Houston Methodist"
+      ],
+      "search_aliases": [],
+      "type_note": "依据原文署名记录研究参与；机构分类不表示其规模或研究质量。"
+    },
+    {
+      "id": "sequome",
+      "name": "Sequome",
+      "kind": "unresolved",
+      "aliases": [
+        "Sequome"
+      ],
+      "search_aliases": [],
+      "type_note": "原文明确署名；组织形态尚未核准。"
+    },
+    {
+      "id": "fleming-initiative",
+      "name": "Fleming Initiative",
+      "kind": "academic",
+      "aliases": [
+        "Fleming Initiative"
+      ],
+      "search_aliases": [],
+      "type_note": "依据原文署名记录研究参与；机构分类不表示其规模或研究质量。"
+    },
+    {
+      "id": "imperial",
+      "name": "Imperial College London",
+      "kind": "academic",
+      "aliases": [
+        "Imperial College London"
+      ],
+      "search_aliases": [],
+      "type_note": "依据原文署名记录研究参与；机构分类不表示其规模或研究质量。"
+    },
+    {
+      "id": "iit-bombay",
+      "name": "IIT Bombay",
+      "kind": "academic",
+      "aliases": [
+        "IIT Bombay"
+      ],
+      "search_aliases": [],
+      "type_note": "依据原文署名记录研究参与；机构分类不表示其规模或研究质量。"
+    },
+    {
+      "id": "calera-capital",
+      "name": "Calera Capital",
+      "kind": "industry",
+      "aliases": [
+        "Calera Capital"
+      ],
+      "search_aliases": [],
+      "type_note": "依据原文署名记录研究参与；机构分类不表示其规模或研究质量。"
+    },
+    {
+      "id": "two-sigma",
+      "name": "Two Sigma",
+      "kind": "industry",
+      "aliases": [
+        "Two Sigma Investments"
+      ],
+      "search_aliases": [],
+      "type_note": "依据原文署名记录研究参与；机构分类不表示其规模或研究质量。"
+    },
+    {
+      "id": "dashworks",
+      "name": "Dashworks",
+      "kind": "ai",
+      "aliases": [
+        "Dashworks Technologies"
+      ],
+      "search_aliases": [],
+      "type_note": "依据原文署名记录研究参与；机构分类不表示其规模或研究质量。",
+      "type_sources": [
+        "https://www.dashworks.ai/features"
+      ]
+    },
+    {
+      "id": "mcgill",
+      "name": "McGill University",
+      "kind": "academic",
+      "aliases": [
+        "McGill University"
+      ],
+      "search_aliases": [],
+      "type_note": "依据原文署名记录研究参与；机构分类不表示其规模或研究质量。"
+    },
+    {
+      "id": "smart",
+      "name": "Singapore-MIT Alliance for Research and Technology",
+      "kind": "academic",
+      "aliases": [
+        "Singapore-MIT Alliance for Research and Technology"
+      ],
+      "search_aliases": [],
+      "type_note": "依据原文署名记录研究参与；机构分类不表示其规模或研究质量。"
+    },
+    {
+      "id": "minimax",
+      "name": "MiniMax",
+      "kind": "ai",
+      "aliases": [
+        "MiniMax"
+      ],
+      "search_aliases": [],
+      "type_note": "依据原文署名记录研究参与；机构分类不表示其规模或研究质量。"
+    },
+    {
+      "id": "together",
+      "name": "Together AI",
+      "kind": "ai",
+      "aliases": [
+        "Together AI"
+      ],
+      "search_aliases": [],
+      "type_note": "依据原文署名记录研究参与；机构分类不表示其规模或研究质量。"
+    },
+    {
+      "id": "astera",
+      "name": "Astera Institute",
+      "kind": "academic",
+      "aliases": [
+        "Astera Institute"
+      ],
+      "search_aliases": [],
+      "type_note": "依据原文署名记录研究参与；机构分类不表示其规模或研究质量。",
+      "type_sources": [
+        "https://astera.org/mission-and-vision/"
+      ]
+    },
+    {
+      "id": "uniphore",
+      "name": "Uniphore",
+      "kind": "ai",
+      "aliases": [
+        "Uniphore"
+      ],
+      "search_aliases": [],
+      "type_note": "依据原文署名记录研究参与；机构分类不表示其规模或研究质量。",
+      "type_sources": [
+        "https://www.uniphore.com/about-us/"
+      ]
+    },
+    {
+      "id": "ucas",
+      "name": "University of Chinese Academy of Sciences",
+      "kind": "academic",
+      "aliases": [
+        "University of Chinese Academy of Sciences"
+      ],
+      "search_aliases": [],
+      "type_note": "依据原文署名记录研究参与；机构分类不表示其规模或研究质量。"
+    },
+    {
+      "id": "macau",
+      "name": "University of Macau",
+      "kind": "academic",
+      "aliases": [
+        "University of Macau"
+      ],
+      "search_aliases": [],
+      "type_note": "依据原文署名记录研究参与；机构分类不表示其规模或研究质量。"
+    },
+    {
+      "id": "uc-davis",
+      "name": "UC Davis",
+      "kind": "academic",
+      "aliases": [
+        "University of California, Davis"
+      ],
+      "search_aliases": [],
+      "type_note": "依据原文署名记录研究参与；机构分类不表示其规模或研究质量。"
+    },
+    {
+      "id": "dalian-tech",
+      "name": "Dalian University of Technology",
+      "kind": "academic",
+      "aliases": [
+        "Dalian University of Technology"
+      ],
+      "search_aliases": [],
+      "type_note": "依据原文署名记录研究参与；机构分类不表示其规模或研究质量。"
+    },
+    {
+      "id": "atlas-computer-laboratory",
+      "name": "Atlas Computer Laboratory",
+      "kind": "academic",
+      "aliases": [
+        "Atlas Computer Laboratory, Chilton"
+      ],
+      "search_aliases": [],
+      "type_note": "按1965年论文署名保留历史机构，不代表当前组织状态。"
+    },
+    {
+      "id": "lyon",
+      "name": "Université de Lyon",
+      "kind": "academic",
+      "aliases": [
+        "University of Lyon"
+      ],
+      "search_aliases": [],
+      "type_note": "按原文机构署名归类，机构类别不代表研究质量。"
+    },
+    {
+      "id": "ens-lyon",
+      "name": "ENS de Lyon",
+      "kind": "academic",
+      "aliases": [
+        "ENS Lyon"
+      ],
+      "search_aliases": [],
+      "type_note": "按原文机构署名归类，机构类别不代表研究质量。"
+    },
+    {
+      "id": "ucbl",
+      "name": "Université Claude Bernard Lyon 1",
+      "kind": "academic",
+      "aliases": [
+        "UCBL"
+      ],
+      "search_aliases": [],
+      "type_note": "按原文机构署名归类，机构类别不代表研究质量。"
+    },
+    {
+      "id": "cnrs",
+      "name": "CNRS",
+      "kind": "academic",
+      "aliases": [],
+      "search_aliases": [],
+      "type_note": "按原文机构署名归类，机构类别不代表研究质量。"
+    },
+    {
+      "id": "uber",
+      "name": "Uber",
+      "kind": "tech",
+      "aliases": [
+        "Uber AI Labs"
+      ],
+      "search_aliases": [],
+      "type_note": "按原文机构署名归类，机构类别不代表研究质量。"
+    },
+    {
+      "id": "ben-gurion",
+      "name": "Ben-Gurion University of the Negev",
+      "kind": "academic",
+      "aliases": [],
+      "search_aliases": [],
+      "type_note": "按原文机构署名归类，机构类别不代表研究质量。"
+    },
+    {
+      "id": "ufv",
+      "name": "Universidade Federal de Viçosa",
+      "kind": "academic",
+      "aliases": [],
+      "search_aliases": [],
+      "type_note": "按原文机构署名归类，机构类别不代表研究质量。"
+    },
+    {
+      "id": "cityu",
+      "name": "City University of Hong Kong",
+      "kind": "academic",
+      "aliases": [],
+      "search_aliases": [],
+      "type_note": "按原文机构署名归类，机构类别不代表研究质量。"
+    },
+    {
+      "id": "adelaide",
+      "name": "Adelaide University",
+      "kind": "academic",
+      "aliases": [],
+      "search_aliases": [],
+      "type_note": "按原文机构署名归类，机构类别不代表研究质量。"
+    },
+    {
+      "id": "georgetown",
+      "name": "Georgetown University",
+      "kind": "academic",
+      "aliases": [],
+      "search_aliases": [],
+      "type_note": "按原文机构署名归类，机构类别不代表研究质量。"
     }
   ],
   "alias_expansions": {
     "MIT–IBM Watson AI Lab": [
       "mit",
       "ibm"
+    ],
+    "LIP": [
+      "ens-lyon",
+      "ucbl",
+      "cnrs"
     ]
   },
   "work_overrides": {
     "rsi-anything": [
       "gen-verse"
     ]
-  }
+  },
+  "non_affiliation_labels": [
+    "Canada CIFAR AI Chair",
+    "Yinjie Wang · Tianbao Xie · Ke Shen · Mengdi Wang · Ling Yang"
+  ]
 }

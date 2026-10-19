@@ -313,7 +313,7 @@ RL、验证器迭代与递归改进器不能混同；这里按具体技术报告
 
 **关联研究**
 
-- [DeepSeek-R1](https://arxiv.org/html/2501.12948v1) · coauthored · 历史 / 背景。原文署名中的参与机构；不推断整个公司只有这一条路线。
+- [DeepSeek-R1](https://arxiv.org/html/2501.12948v1) · coauthored · Model。原文署名中的参与机构；不推断整个公司只有这一条路线。
 - [DeepSeekMath-V2](https://arxiv.org/html/2511.22570v1) · coauthored · Model。原文署名中的参与机构；不推断整个公司只有这一条路线。
 
 **其他公开资料**

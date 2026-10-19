@@ -1,0 +1,1121 @@
+{
+  "updated": "2026-10-19",
+  "entries": [
+    {
+      "source": "arxiv-2609-08228",
+      "target": "Graph-of-Skills: Dependency-Aware Structural Retrieval for Massive Agent Skills",
+      "kind": "complementary",
+      "basis": "source_explicit",
+      "explanation": "extends GoS的静态retrieval；相比SkillDAG在线LLM edit，采用离线确定性共现规则；与SkillGraph权重训练区别明确。",
+      "source_url": "https://arxiv.org/html/2609.08228v2",
+      "location": "主文1–5、全部附录A–D"
+    },
+    {
+      "source": "arxiv-2609-09153",
+      "target": "AutoGuide",
+      "kind": "complementary",
+      "basis": "analytical_comparison",
+      "explanation": "AutoGuide已有条件规则、AWM已有流程、AFlow已有工作流搜索；新增是相连图局部状态引导与可编辑边属性组合，不是图结构本身首次",
+      "source_url": "https://arxiv.org/html/2609.09153v1",
+      "location": "Related Work；方法和实验比较"
+    },
+    {
+      "source": "arxiv-2609-08183",
+      "target": "Agentic Routing: The Harness-Native Data Flywheel",
+      "kind": "extends",
+      "basis": "source_explicit",
+      "explanation": "从部署路由记录扩展到学生后训练和能力分层课程。",
+      "source_url": "https://arxiv.org/html/2609.08183v2",
+      "location": "§1、3.4–3.5"
+    },
+    {
+      "source": "arxiv-2609-08183",
+      "target": "On-policy distillation of language models: learning from self-generated mistakes",
+      "kind": "uses",
+      "basis": "source_explicit",
+      "explanation": "固定教师在学生采样prefix上给logits；增加路由引导起始context课程。",
+      "source_url": "https://arxiv.org/html/2609.08183v2",
+      "location": "§4.3"
+    },
+    {
+      "source": "arxiv-2609-04665",
+      "target": "Scaling Laws for Reward Model Overoptimization",
+      "kind": "extends",
+      "basis": "source_explicit",
+      "explanation": "把固定gold proxy与可见奖励差距从离线诊断转为逐代检测和候选选择；不继承其模型规模证据。",
+      "source_url": "https://arxiv.org/html/2609.04665v1",
+      "location": "§1、Appendix A"
+    },
+    {
+      "source": "arxiv-2609-11677",
+      "target": "HarnessCompass",
+      "kind": "complementary",
+      "basis": "analytical_comparison",
+      "explanation": "Self-Harness允许修模型弱点；HarnessCompass靠硬约束限制特化；Ecdysis软证据归因。它未演化改进器本身，也不是权重+harness共同训练",
+      "source_url": "https://arxiv.org/html/2609.11677v2",
+      "location": "Related Work；方法和实验比较"
+    },
+    {
+      "source": "arxiv-2609-11677",
+      "target": "Phantom Guardrails",
+      "kind": "complementary",
+      "basis": "analytical_comparison",
+      "explanation": "Self-Harness允许修模型弱点；HarnessCompass靠硬约束限制特化；Ecdysis软证据归因。它未演化改进器本身，也不是权重+harness共同训练",
+      "source_url": "https://arxiv.org/html/2609.11677v2",
+      "location": "Related Work；方法和实验比较"
+    },
+    {
+      "source": "arxiv-2609-08832",
+      "target": "Trajectory-informed Memory Generation for Self-Improving Agent Systems",
+      "kind": "complementary",
+      "basis": "analytical_comparison",
+      "explanation": "继承Trajectory-informed Memory全部存储/检索，仅新增上游一致性目标；与ExpeL结果对照和Self-Consistency在线投票不同",
+      "source_url": "https://arxiv.org/html/2609.08832v1",
+      "location": "方法与实验对照"
+    },
+    {
+      "source": "arxiv-2609-08832",
+      "target": "On the Fragility of Self-Improving Agents",
+      "kind": "complementary",
+      "basis": "analytical_comparison",
+      "explanation": "继承Trajectory-informed Memory全部存储/检索，仅新增上游一致性目标；与ExpeL结果对照和Self-Consistency在线投票不同",
+      "source_url": "https://arxiv.org/html/2609.08832v1",
+      "location": "方法与实验对照"
+    },
+    {
+      "source": "arxiv-2304-03442",
+      "target": "Social Simulacra",
+      "kind": "extends",
+      "basis": "source_explicit",
+      "explanation": "从当前情境persona提示转为持续动态经验、反思与计划",
+      "source_url": "https://arxiv.org/html/2304.03442v2",
+      "location": "§2.3"
+    },
+    {
+      "source": "arxiv-2310-08560",
+      "target": "FLARE",
+      "kind": "extends",
+      "basis": "analytical_comparison",
+      "explanation": "在主动取证之外加入可写working/archival和heartbeat控制多步检索",
+      "source_url": "https://arxiv.org/html/2310.08560v2",
+      "location": "§2、§4"
+    },
+    {
+      "source": "arxiv-2310-03714",
+      "target": "Chain-of-Thought / ReAct",
+      "kind": "extends",
+      "basis": "source_explicit",
+      "explanation": "将任务特定提示技术改为可声明、可自举示例的模块。",
+      "location": "§2–4,AppD/E",
+      "source_url": "https://arxiv.org/html/2310.03714v1"
+    },
+    {
+      "source": "arxiv-2211-01910",
+      "target": "Instruction Induction: From Few Examples to Natural Language Task Descriptions",
+      "kind": "extends",
+      "basis": "source_explicit",
+      "explanation": "把单个greedy instruction induction扩展为执行反馈下的候选集合搜索。",
+      "source_url": "https://arxiv.org/html/2211.01910v2",
+      "location": "§4.1"
+    },
+    {
+      "source": "arxiv-2401-10020",
+      "target": "Pairwise Cringe Optimization",
+      "kind": "extends",
+      "basis": "source_explicit",
+      "explanation": "使用相似iterative DPO但去除冻结外部RM，改用当前模型评分。",
+      "source_url": "https://arxiv.org/html/2401.10020v3",
+      "location": "§2.4"
+    },
+    {
+      "source": "arxiv-2408-08435",
+      "target": "Darwin Godel Machine",
+      "kind": "complementary",
+      "basis": "analytical_comparison",
+      "explanation": "Promptbreeder主要变提示；ADAS变完整目标程序；AFLOW改进搜索经验结构；STOP/DGM进一步改变自修改关系",
+      "source_url": "https://arxiv.org/html/2408.08435v2",
+      "location": "方法与实验对照"
+    },
+    {
+      "source": "arxiv-2410-10762",
+      "target": "Darwin Godel Machine",
+      "kind": "complementary",
+      "basis": "analytical_comparison",
+      "explanation": "延续ADAS代码空间，新增树结构搜索及算子先验；并未升级到DGM/Hyperagents的自修改改进器",
+      "source_url": "https://arxiv.org/html/2410.10762v4",
+      "location": "方法与实验对照"
+    },
+    {
+      "source": "arxiv-2502-04180",
+      "target": "G-Designer",
+      "kind": "complementary",
+      "basis": "analytical_comparison",
+      "explanation": "承接AFlow/ADAS的程序算子优化，增加条件分布与成本约束；与G-Designer条件通信图互补",
+      "source_url": "https://arxiv.org/html/2502.04180v2",
+      "location": "方法与实验对照"
+    },
+    {
+      "source": "arxiv-2502-04180",
+      "target": "AgentSquare",
+      "kind": "complementary",
+      "basis": "analytical_comparison",
+      "explanation": "承接AFlow/ADAS的程序算子优化，增加条件分布与成本约束；与G-Designer条件通信图互补",
+      "source_url": "https://arxiv.org/html/2502.04180v2",
+      "location": "方法与实验对照"
+    },
+    {
+      "source": "arxiv-2502-02533",
+      "target": "GPTSwarm: Language Agents as Optimizable Graphs",
+      "kind": "compares",
+      "basis": "source_explicit",
+      "explanation": "AppC4比较图优化，并归因prompt阶段带来较大任务增益；实现对照依赖另一复现。",
+      "source_url": "https://arxiv.org/html/2502.02533v2",
+      "location": "App.C.4 Table8"
+    },
+    {
+      "source": "arxiv-2410-11782",
+      "target": "GPTSwarm",
+      "kind": "complementary",
+      "basis": "analytical_comparison",
+      "explanation": "相对GPTSwarm的直接图优化，G-Designer训练query条件化生成器；MaAS进一步选择agent/工作流分布。二者均不同于agent改写自己改进程序。",
+      "source_url": "https://arxiv.org/html/2410.11782v3",
+      "location": "方法与实验对照"
+    },
+    {
+      "source": "arxiv-2601-21268",
+      "target": "Language Model Self-improvement by Reinforcement Learning Contemplation",
+      "kind": "extends",
+      "basis": "source_explicit",
+      "explanation": "从冻结自身Likert/PPO改为target概率/CISPO，并比较多类judge及失败模式。",
+      "source_url": "https://arxiv.org/pdf/2601.21268v1",
+      "location": "§2"
+    },
+    {
+      "source": "arxiv-2507-19457",
+      "target": "MIPROv2",
+      "kind": "compares",
+      "basis": "source_explicit",
+      "explanation": "在相近rollout预算下以轨迹反思替代主要基于任务/演示的提示搜索",
+      "source_url": "https://arxiv.org/html/2507.19457v2",
+      "location": "§3–4, Appendix E"
+    },
+    {
+      "source": "arxiv-2601-16175",
+      "target": "ThetaEvolve",
+      "kind": "parallel",
+      "basis": "source_explicit",
+      "explanation": "同期均结合逐实例RL与复用；本作比较采用Qwen3-8B而Theta为R1-Qwen3-8B，不应称完全同模型，且采样预算25,600对33,280。",
+      "location": "§4.1.2，Table2",
+      "source_url": "https://arxiv.org/html/2601.16175v2"
+    },
+    {
+      "source": "arxiv-2305-10250",
+      "target": "Dense Passage Retrieval",
+      "kind": "uses",
+      "basis": "source_explicit",
+      "explanation": "会话片段与当前上下文双塔embedding检索，FAISS索引",
+      "source_url": "https://arxiv.org/html/2305.10250v3",
+      "location": "§2.2"
+    },
+    {
+      "source": "arxiv-2602-15902",
+      "target": "Text-to-LoRA",
+      "kind": "extends",
+      "basis": "source_explicit",
+      "explanation": "共享即时生成适配器思路，替换为context-distillation KL和按块组合，关注知识内化。",
+      "location": "§7及AppC.2",
+      "source_url": "https://arxiv.org/pdf/2602.15902v1"
+    },
+    {
+      "source": "arxiv-2606-04536",
+      "target": "MemAgent / MEM1",
+      "kind": "extends",
+      "basis": "source_explicit",
+      "explanation": "沿用任务和RL数据协议，以快LoRA写入取代文本摘要，最终奖励覆盖QA抽取动作。",
+      "location": "§2–5",
+      "source_url": "https://arxiv.org/html/2606.04536v1"
+    },
+    {
+      "source": "arxiv-2512-24695",
+      "target": "Titans",
+      "kind": "extends",
+      "basis": "source_explicit",
+      "explanation": "从固定投影的长时神经记忆扩展到自指投影/更新目标，并叠加CMS。",
+      "location": "§§7–8",
+      "source_url": "https://arxiv.org/html/2512.24695v1"
+    },
+    {
+      "source": "arxiv-2602-07755",
+      "target": "Darwin Gödel Machine",
+      "kind": "uses",
+      "basis": "source_explicit",
+      "explanation": "借鉴按表现/访问次数保留历史archive及非最优跳板探索",
+      "location": "§3.3/AppendixA.4",
+      "source_url": "https://arxiv.org/html/2602.07755v1"
+    },
+    {
+      "source": "arxiv-2605-08703",
+      "target": "EditReward",
+      "kind": "compares",
+      "basis": "source_explicit",
+      "explanation": "同Qwen评估底座及同FlowGRPO换奖励；前者有额外Claude和调用量，后者对整体下游效果更直接。",
+      "source_url": "https://arxiv.org/html/2605.08703v2",
+      "location": "表1–2"
+    },
+    {
+      "source": "arxiv-2603-02766",
+      "target": "arxiv-2511-07919",
+      "kind": "extends",
+      "basis": "source_explicit",
+      "explanation": "论文明确以Feedback Descent为失败诊断与反思出发点，增加技能目录和分支选择。",
+      "location": "§2–3",
+      "source_url": "https://arxiv.org/html/2603.02766v1"
+    },
+    {
+      "source": "arxiv-2509-18133",
+      "target": "MoCL: Rehearsal-Free Modular and Compositional Continual Learning for Language Models",
+      "kind": "compares",
+      "basis": "source_explicit",
+      "explanation": "同为每任务PEFT模块跨任务组合，MoE-CL加共享/私有LoRA及task-ID对抗。",
+      "source_url": "https://arxiv.org/html/2509.18133v4",
+      "location": "§2.3、§4、表2–3"
+    },
+    {
+      "source": "arxiv-2608-20920",
+      "target": "arxiv-2512-18746",
+      "kind": "complements",
+      "basis": "source_explicit",
+      "explanation": "引用记忆体系架构演化，具体化为MemGuide/MemTools。",
+      "location": "§5.2",
+      "source_url": "https://arxiv.org/html/2608.20920v2"
+    },
+    {
+      "source": "arxiv-2512-17102",
+      "target": "DynaSaur",
+      "kind": "uses",
+      "basis": "source_explicit",
+      "explanation": "沿用先定义函数再执行的统一动作/技能表示，增加跨题未来复用奖励。",
+      "location": "§3.1–3.2",
+      "source_url": "https://arxiv.org/html/2512.17102v2"
+    },
+    {
+      "source": "arxiv-2506-03136",
+      "target": "CodeT",
+      "kind": "extends",
+      "basis": "source_explicit",
+      "explanation": "从生成单测做候选选择扩展到训练生成器的准确性/辨别性，并延续execution-basedBoN。",
+      "source_url": "https://arxiv.org/html/2506.03136v2",
+      "location": "§2.1–2.2、§3"
+    },
+    {
+      "source": "arxiv-2510-21614",
+      "target": "Darwin Gödel Machine",
+      "kind": "extends",
+      "basis": "source_explicit",
+      "explanation": "同初始代理与自修改结构，改变选父依据及评价分配；非DGM首次机制重述。",
+      "source_url": "https://arxiv.org/html/2510.21614v3",
+      "location": "§§2–4、AppendixE"
+    },
+    {
+      "source": "arxiv-2604-05142",
+      "target": "Darwin Gödel Machine",
+      "kind": "complementary",
+      "basis": "analytical_comparison",
+      "explanation": "archive保留候选与hereditary reserve概念相近，但DGM有限搜索/有限算力/交互修改不满足无限质量精确fitness模型，不能直接套convergence theorem。",
+      "source_url": "https://arxiv.org/html/2604.05142v2",
+      "location": "§3.2、§6、§8"
+    },
+    {
+      "source": "arxiv-2510-10232",
+      "target": "High-Confidence Policy Improvement",
+      "kind": "compares",
+      "basis": "source_explicit",
+      "explanation": "HCPI也有重复更新；差别在被认证目标、证据分布及全程预算，不能说HCPI仅单步。",
+      "source_url": "https://arxiv.org/html/2510.10232v2",
+      "location": "§2、Appendix I"
+    },
+    {
+      "source": "arxiv-2607-12227",
+      "target": "Agentic Harness Engineering",
+      "kind": "compares",
+      "basis": "source_explicit",
+      "explanation": "保留反馈驱动编辑、禁用外部检索benchmark harness的explore，以同初始harness和K rollout对照任务搜索；结论范围限此实例。",
+      "source_url": "https://arxiv.org/html/2607.12227v4",
+      "location": "§3.4、Appendix A.1"
+    },
+    {
+      "source": "arxiv-2607-12227",
+      "target": "VISTA",
+      "kind": "extends",
+      "basis": "source_explicit",
+      "explanation": "在memory evolution基础加skills/tools/hooks，公开游戏内工具解析和程序搜索增益显著，未测跨游戏继承。",
+      "source_url": "https://arxiv.org/html/2607.12227v4",
+      "location": "§5.2、Appendix B"
+    },
+    {
+      "source": "arxiv-2605-30621",
+      "target": "ACE / GEPA / MemEvolve",
+      "kind": "complementary",
+      "basis": "source_explicit",
+      "explanation": "相关工作将这些列为持久harness机制；本研究诊断生成及利用能力而非全面复现比较其算法优劣。",
+      "source_url": "https://arxiv.org/html/2605.30621v1",
+      "location": "Appendix A.2"
+    },
+    {
+      "source": "arxiv-2408-02632",
+      "target": "MART",
+      "kind": "extends",
+      "basis": "source_explicit",
+      "explanation": "继承红队/目标迭代更新，改变为自动构造双方偏好对DPO，与SFT同数据对照。",
+      "source_url": "https://arxiv.org/html/2408.02632v2",
+      "location": "§2.1、§4.2Table6"
+    },
+    {
+      "source": "arxiv-2604-18292",
+      "target": "EnvScaler",
+      "kind": "extends",
+      "basis": "source_explicit",
+      "explanation": "动态失败诊断和两轮续训可直接应用EnvScaler8B，并采用更真实数据库及工具合成。",
+      "location": "§4.3.4",
+      "source_url": "https://arxiv.org/html/2604.18292v1"
+    },
+    {
+      "source": "arxiv-2605-09315",
+      "target": "EvoAgentX / MemSkill / STaR / Dynamic Cheatsheet",
+      "kind": "extends",
+      "basis": "source_explicit",
+      "explanation": "各自分别加入行为锚定、容量合并、EWC或证据保护；不是四者共同训练一个统一系统。",
+      "source_url": "https://arxiv.org/html/2605.09315v1",
+      "location": "§4、Appendix B–F"
+    },
+    {
+      "source": "arxiv-2605-09315",
+      "target": "EWC",
+      "kind": "uses",
+      "basis": "source_explicit",
+      "explanation": "模型分支直接Fisher重要性LoRA正则，局部定理解释而非新优化器。",
+      "source_url": "https://arxiv.org/html/2605.09315v1",
+      "location": "§3.3、Appendix E.1"
+    },
+    {
+      "source": "arxiv-2510-16079",
+      "target": "Search-R1",
+      "kind": "extends",
+      "basis": "source_explicit",
+      "explanation": "在事实检索RL中增加自身原则检索及离线维护。",
+      "location": "§3–4",
+      "source_url": "https://arxiv.org/html/2510.16079v3"
+    },
+    {
+      "source": "arxiv-2606-06114",
+      "target": "Absolute Zero Reasoner / R-Zero",
+      "kind": "extends",
+      "basis": "source_explicit",
+      "explanation": "保留原训练和verifier，增加阶段review、retry与累积上下文；因此零外数据设定转为teacher辅助。",
+      "source_url": "https://arxiv.org/pdf/2606.06114v3",
+      "location": "§3–5、Supplementary A/B"
+    },
+    {
+      "source": "arxiv-2508-19504",
+      "target": "SWE-agent",
+      "kind": "extends",
+      "basis": "source_explicit",
+      "explanation": "受专门agent环境界面启发，将工具观测/计算设计的原则推广到五域。",
+      "source_url": "https://arxiv.org/html/2508.19504v1",
+      "location": "§7"
+    },
+    {
+      "source": "arxiv-2607-27687",
+      "target": "ForeAgent",
+      "kind": "complementary",
+      "basis": "analytical_comparison",
+      "explanation": "相对 ForeAgent 的已成形代码择优，本作比较待实施增量提案且按演化深度评价；相对 AIDE/AlphaEvolve，增加执行前的相似结果判断，外部选择算法仍固定。",
+      "source_url": "https://arxiv.org/html/2607.27687v1",
+      "location": "方法与实验对照"
+    },
+    {
+      "source": "arxiv-2605-20086",
+      "target": "OpenEvolve",
+      "kind": "compares",
+      "basis": "source_explicit",
+      "explanation": "直接分析其程序轨迹及private表现。",
+      "source_url": "https://arxiv.org/html/2605.20086v1",
+      "location": "§3–5/AppB"
+    },
+    {
+      "source": "arxiv-2605-20086",
+      "target": "EvoX",
+      "kind": "compares",
+      "basis": "source_explicit",
+      "explanation": "直接分析选定数学/ALE runs。",
+      "source_url": "https://arxiv.org/html/2605.20086v1",
+      "location": "§3–5"
+    },
+    {
+      "source": "arxiv-2605-27905",
+      "target": "AI Scientist",
+      "kind": "compares",
+      "basis": "source_explicit",
+      "explanation": "仅5轮ideation/reflection，不运行后续experiment tree search。",
+      "source_url": "https://arxiv.org/html/2605.27905v2",
+      "location": "S1.2"
+    },
+    {
+      "source": "arxiv-2605-27905",
+      "target": "ResearchAgent",
+      "kind": "compares",
+      "basis": "source_explicit",
+      "explanation": "固定五篇context三stagevalidator，entity空，存在简化fallback，不能等同完整默认系统。",
+      "source_url": "https://arxiv.org/html/2605.27905v2",
+      "location": "S1.2"
+    },
+    {
+      "source": "arxiv-2601-22436",
+      "target": "Dynamic Cheatsheet",
+      "kind": "compares",
+      "basis": "source_explicit",
+      "explanation": "Game24较依赖raw，知识QA效果较弱，不能统一归因。",
+      "source_url": "https://arxiv.org/html/2601.22436v3",
+      "location": "Fig3"
+    },
+    {
+      "source": "arxiv-2601-22436",
+      "target": "G-Memory",
+      "kind": "compares",
+      "basis": "source_explicit",
+      "explanation": "ALF与FEVER依赖程度不同，两类raw来源也不同。",
+      "source_url": "https://arxiv.org/html/2601.22436v3",
+      "location": "§4.3/Figs5,13,14"
+    },
+    {
+      "source": "arxiv-2603-24647",
+      "target": "autoresearch",
+      "kind": "compares",
+      "basis": "source_explicit",
+      "explanation": "同训练预算比较固定空间经典HPO和代码编辑LLM；负结果限nanochat5min实验，非开放研究普遍反证。",
+      "source_url": "https://arxiv.org/html/2603.24647v5",
+      "location": "§3–5"
+    },
+    {
+      "source": "arxiv-2603-24647",
+      "target": "LLAMBO",
+      "kind": "compares",
+      "basis": "source_explicit",
+      "explanation": "区分原论文连续surrogate/可见失败与Optuna实现，避免移植版失误冒充方法全部失败。",
+      "source_url": "https://arxiv.org/html/2603.24647v5",
+      "location": "Appendix A.9"
+    },
+    {
+      "source": "arxiv-2509-26354",
+      "target": "AgentGen",
+      "kind": "compares",
+      "basis": "source_explicit",
+      "explanation": "70B已训练模型在AgentSafetyBench的前后评测扩展到大模型参数路线。",
+      "source_url": "https://arxiv.org/pdf/2509.26354v2",
+      "location": "§3.1/Fig3(d)、C1"
+    },
+    {
+      "source": "arxiv-2509-26354",
+      "target": "SE-Agent",
+      "kind": "compares",
+      "basis": "source_explicit",
+      "explanation": "coding memory/strategy跨任务保留改变拒绝行为；与GUI模型SEAgent是不同方法。",
+      "source_url": "https://arxiv.org/pdf/2509.26354v2",
+      "location": "§3.2/C2.1"
+    },
+    {
+      "source": "arxiv-2609-00069",
+      "target": "Darwin Gödel Machine / HyperAgents / AFlow / ADAS",
+      "kind": "compares",
+      "basis": "source_explicit",
+      "explanation": "审计原文公开主运行diff及best lineage；发现是模型标注，不足独立否定其所有能力收益。",
+      "source_url": "https://arxiv.org/html/2609.00069v1",
+      "location": "Auditing Self-Improving Agents、Table3"
+    },
+    {
+      "source": "arxiv-2609-17817",
+      "target": "Self-Improving Coding Agent",
+      "kind": "compares",
+      "basis": "source_explicit",
+      "explanation": "SICA原生委员会未防止评分驱动的危险指令，安全审查者在第二代才纠正；展示judge同目标相关性。",
+      "location": "§3.3；§4.2",
+      "source_url": "https://arxiv.org/html/2609.17817v1"
+    },
+    {
+      "source": "arxiv-2607-25886",
+      "target": "PostTrainBench",
+      "kind": "extends",
+      "basis": "source_explicit",
+      "explanation": "缩小自动后训练权限至数据及白名单配置，固定训练/serving/eval服务以隔离数据研究。",
+      "location": "§2，Table1",
+      "source_url": "https://arxiv.org/html/2607.25886v1"
+    },
+    {
+      "source": "arxiv-2607-25886",
+      "target": "DataEnvGym",
+      "kind": "extends",
+      "basis": "source_explicit",
+      "explanation": "同以student反馈改课程；新增固定服务、可执行经验和完整候选研究轨迹。",
+      "location": "§2",
+      "source_url": "https://arxiv.org/html/2607.25886v1"
+    },
+    {
+      "source": "arxiv-2505-23885",
+      "target": "Direct Preference Optimization",
+      "kind": "uses",
+      "basis": "source_explicit",
+      "explanation": "固定DPO目标训练规划器，偏好由任务终局正确性得到。",
+      "source_url": "https://arxiv.org/html/2505.23885v2",
+      "location": "§4"
+    },
+    {
+      "source": "arxiv-2212-10560",
+      "target": "Unnatural Instructions",
+      "kind": "parallel",
+      "basis": "source_explicit",
+      "explanation": "同期自生指令路线，种子分布和教师已对齐程度不同；不是单纯更大教师蒸馏。",
+      "source_url": "https://arxiv.org/html/2212.10560v2",
+      "location": "§5"
+    },
+    {
+      "source": "arxiv-2310-00533",
+      "target": "Self-Refine",
+      "kind": "extends",
+      "basis": "source_explicit",
+      "explanation": "从任务内反馈修订扩展到学习技能和多轮参数自训练。",
+      "source_url": "https://arxiv.org/html/2310.00533v4",
+      "location": "§2"
+    },
+    {
+      "source": "arxiv-2407-12874",
+      "target": "Self-Instruct",
+      "kind": "extends",
+      "basis": "source_explicit",
+      "explanation": "同模型合成后训练，但把许多不同指令变为同一目标指令的许多实例。",
+      "location": "§1、§5",
+      "source_url": "https://arxiv.org/html/2407.12874v2"
+    },
+    {
+      "source": "arxiv-2505-03059",
+      "target": "Mixture-of-Agents",
+      "kind": "extends",
+      "basis": "source_explicit",
+      "explanation": "复用固定proposer/aggregator结构生成SFT及DPO训练数据，将推理集合压缩到单模型。",
+      "source_url": "https://arxiv.org/html/2505.03059v1",
+      "location": "§§3–4"
+    },
+    {
+      "source": "arxiv-2505-03059",
+      "target": "Meta-Rewarding Language Models",
+      "kind": "compares",
+      "basis": "source_explicit",
+      "explanation": "引用迭代4模型结果作对话分数基准，但训练基座和预算不完全相同。",
+      "source_url": "https://arxiv.org/html/2505.03059v1",
+      "location": "Appendix E/Table13"
+    },
+    {
+      "source": "arxiv-2503-12303",
+      "target": "VILA2",
+      "kind": "extends",
+      "basis": "source_explicit",
+      "explanation": "由自caption和专家属性扩展到CoD+VQA CoT+文本回放，目标从perception扩为感知/推理联合。",
+      "location": "§2、AppendixB",
+      "source_url": "https://arxiv.org/html/2503.12303v6"
+    },
+    {
+      "source": "arxiv-2506-10055",
+      "target": "Search-R1",
+      "kind": "uses",
+      "basis": "source_explicit",
+      "explanation": "3202合成SFT轨迹为Search-R1 PPO初始化，使用其搜索、数据与训练流程。",
+      "location": "§4.4 / Appendix D",
+      "source_url": "https://arxiv.org/html/2506.10055v2"
+    },
+    {
+      "source": "arxiv-2504-21561",
+      "target": "MAT",
+      "kind": "extends",
+      "basis": "source_explicit",
+      "explanation": "复用工具、任务种子/提示和20K SFT热启动，新增探索步骤偏好。",
+      "source_url": "https://arxiv.org/html/2504.21561v5",
+      "location": "§§3.2–3.4;F"
+    },
+    {
+      "source": "arxiv-2504-21561",
+      "target": "STEP-DPO",
+      "kind": "complementary",
+      "basis": "source_explicit",
+      "explanation": "同为逐步偏好，SPORT从执行观察得到AI判断，不需数学正确轨迹。",
+      "source_url": "https://arxiv.org/html/2504.21561v5",
+      "location": "§2.2"
+    },
+    {
+      "source": "arxiv-2505-22660",
+      "target": "Intuitor",
+      "kind": "compares",
+      "basis": "source_explicit",
+      "explanation": "同自信度强化但分布目标不同；同batch/epoch/eval对照AIME20→RENT27，其他近似。",
+      "location": "§4.5",
+      "source_url": "https://arxiv.org/html/2505.22660v4"
+    },
+    {
+      "source": "arxiv-2505-21493",
+      "target": "LaTRO",
+      "kind": "compares",
+      "basis": "source_explicit",
+      "explanation": "概率而非log概率奖励，并对答案项按其条件概率加权；不能无条件称同一目标。",
+      "location": "§2.3",
+      "source_url": "https://arxiv.org/html/2505.21493v1"
+    },
+    {
+      "source": "arxiv-2605-13803",
+      "target": "Time-R1",
+      "kind": "compares",
+      "basis": "source_explicit",
+      "explanation": "同TimeRFT视频源，前者人工标签/冷启动，EvoGround交替生伪标签RL；数据源相同不意味着训练预算全匹配。",
+      "location": "A.4",
+      "source_url": "https://arxiv.org/html/2605.13803v1"
+    },
+    {
+      "source": "arxiv-2212-08073",
+      "target": "RLHF",
+      "kind": "extends",
+      "basis": "source_explicit",
+      "explanation": "偏好建模与RL保持相同，改无害性标签来源；帮助性仍人工。",
+      "source_url": "https://arxiv.org/html/2212.08073v1",
+      "location": "§4.1"
+    },
+    {
+      "source": "arxiv-2312-10003",
+      "target": "RAFT",
+      "kind": "uses",
+      "basis": "source_explicit",
+      "explanation": "排名而非绝对奖励阈值选择，论文明确称更近RAFT。",
+      "location": "§3.5",
+      "source_url": "https://arxiv.org/html/2312.10003v1"
+    },
+    {
+      "source": "arxiv-2504-02902",
+      "target": "Pride and Prejudice: LLM Amplifies Self-Bias in Self-Refinement",
+      "kind": "complementary",
+      "basis": "analytical_comparison",
+      "explanation": "扩展Pride and Prejudice/Intrinsic Self-Correction对self-bias的观察到置信度；相较RLAnything评价器共训，只诊断题内反思和一次微调",
+      "source_url": "https://arxiv.org/html/2504.02902v1",
+      "location": "方法与结果"
+    },
+    {
+      "source": "arxiv-2506-02918",
+      "target": "GenRM",
+      "kind": "extends",
+      "basis": "source_explicit",
+      "explanation": "生成式验证器与策略共用模型，且把实际工具反馈作为在线辅助目标。",
+      "location": "§2–3",
+      "source_url": "https://arxiv.org/html/2506.02918v2"
+    },
+    {
+      "source": "arxiv-2505-08827",
+      "target": "LADDER",
+      "kind": "uses",
+      "basis": "source_explicit",
+      "explanation": "MIT训练变体沿用LADDER合成流程。",
+      "source_url": "https://arxiv.org/html/2505.08827v2",
+      "location": "§3.3"
+    },
+    {
+      "source": "arxiv-2505-24726",
+      "target": "SCoRe",
+      "kind": "complementary",
+      "basis": "source_explicit",
+      "explanation": "同属多次试答的强化自纠错；本文将策略梯度局限反思token。",
+      "source_url": "https://arxiv.org/html/2505.24726v1",
+      "location": "§§2–3"
+    },
+    {
+      "source": "arxiv-2601-07180",
+      "target": "SCoRE: Training Language Models to Self-Correct via Reinforcement Learning",
+      "kind": "complementary",
+      "basis": "source_explicit",
+      "explanation": "同为强化训练自纠错，SCR加入可监督评审和终止片段，但未直接对比SCoRE。",
+      "location": "§3，5",
+      "source_url": "https://arxiv.org/html/2601.07180v1"
+    },
+    {
+      "source": "arxiv-2601-03193",
+      "target": "SRUM",
+      "kind": "extends",
+      "basis": "source_explicit",
+      "explanation": "同用理解能力评价生成，UniCorn改用自产提示和GCJR重构，未作同预算直接对比。",
+      "location": "§2–3，AppendixB",
+      "source_url": "https://arxiv.org/html/2601.03193v2"
+    },
+    {
+      "source": "arxiv-2606-14302",
+      "target": "GiGPO",
+      "kind": "extends",
+      "basis": "source_explicit",
+      "explanation": "保留episode/同观测step分组优势，加入回顾进度差与对齐奖励。",
+      "location": "§4.3，AppendixA",
+      "source_url": "https://arxiv.org/html/2606.14302v2"
+    },
+    {
+      "source": "arxiv-2605-22905",
+      "target": "arxiv-2506-14302",
+      "kind": "parallel",
+      "basis": "analytical_comparison",
+      "explanation": "均用额外上下文生成自监督：EVE源span增益，RePro完整轨迹终局；代理改善不等于独立真值。",
+      "location": "§3",
+      "source_url": "https://arxiv.org/html/2605.22905v1"
+    },
+    {
+      "source": "arxiv-2306-11706",
+      "target": "Gato",
+      "kind": "extends",
+      "basis": "source_explicit",
+      "explanation": "沿用generalist自回归策略架构，改变视觉tokenizer与goal-conditioned训练并加入自采集回流。",
+      "location": "§§2.1,6.3",
+      "source_url": "https://arxiv.org/html/2306.11706v2"
+    },
+    {
+      "source": "arxiv-2505-16410",
+      "target": "ReCall",
+      "kind": "compares",
+      "basis": "source_explicit",
+      "explanation": "同3B多工具基线，对比同时改变合成数据与训练流程，非单独自批评因果检验。",
+      "source_url": "https://arxiv.org/html/2505.16410v1",
+      "location": "Table1/AppendixC.4"
+    },
+    {
+      "source": "arxiv-2506-11425",
+      "target": "SWE-Gym",
+      "kind": "uses",
+      "basis": "source_explicit",
+      "explanation": "593训练环境来自SWE-Gym，并用类似采集标注流程扩展。",
+      "source_url": "https://arxiv.org/html/2506.11425v2",
+      "location": "§2.2.3"
+    },
+    {
+      "source": "arxiv-2411-02337",
+      "target": "DigiRL",
+      "kind": "extends",
+      "basis": "source_explicit",
+      "explanation": "复现actor-critic网页RL并补同课程对照，课程与更新/回放各有增益。",
+      "source_url": "https://arxiv.org/html/2411.02337v3",
+      "location": "§3.7/AppendixB.2/C"
+    },
+    {
+      "source": "arxiv-2504-03160",
+      "target": "Search-R1",
+      "kind": "extends",
+      "basis": "source_explicit",
+      "explanation": "从固定local检索转开放web交互，沿用结果反馈强化训练。",
+      "source_url": "https://arxiv.org/html/2504.03160v4",
+      "location": "§§2–3/5.2"
+    },
+    {
+      "source": "arxiv-2505-01441",
+      "target": "ReTool",
+      "kind": "compares",
+      "basis": "source_explicit",
+      "explanation": "论文区别其SFT冷启动与自己的直接GRPO，但未报告同预算直接实验。",
+      "source_url": "https://arxiv.org/html/2505.01441v1",
+      "location": "§6"
+    },
+    {
+      "source": "arxiv-2504-20073",
+      "target": "DAPO",
+      "kind": "uses",
+      "basis": "source_explicit",
+      "explanation": "去KL、非对称clip借用已有单轮稳定技巧并在多轮验证。",
+      "source_url": "https://arxiv.org/html/2504.20073v2",
+      "location": "§4.2/AppendixD"
+    },
+    {
+      "source": "arxiv-2606-07367",
+      "target": "IQL",
+      "kind": "extends",
+      "basis": "source_explicit",
+      "explanation": "critic按成功/时间重加权，policy改BPPO而非原AWR。",
+      "source_url": "https://arxiv.org/html/2606.07367v1",
+      "location": "§§3–4/AppendixB.2"
+    },
+    {
+      "source": "arxiv-2609-39306",
+      "target": "SDPO",
+      "kind": "extends",
+      "basis": "source_explicit",
+      "explanation": "保留其离线自蒸馏目标，在步骤选择、归一化和PI视图正则层面加模块。",
+      "source_url": "https://arxiv.org/html/2609.39306v1",
+      "location": "§3; Appendix B"
+    },
+    {
+      "source": "arxiv-2609-39306",
+      "target": "OEL",
+      "kind": "extends",
+      "basis": "source_explicit",
+      "explanation": "在日志状态新采学生响应的OEL框架上评估主要组合和保留消融。",
+      "source_url": "https://arxiv.org/html/2609.39306v1",
+      "location": "Tables1–3"
+    },
+    {
+      "source": "arxiv-2610-11384",
+      "target": "RLTF",
+      "kind": "extends",
+      "basis": "source_explicit",
+      "explanation": "§2明确其已结合反馈自蒸馏与文本批评预测；这里改为实际环境响应预测。",
+      "source_url": "https://arxiv.org/html/2610.11384v1",
+      "location": "§2"
+    },
+    {
+      "source": "arxiv-2610-11384",
+      "target": "SDPO",
+      "kind": "extends",
+      "basis": "source_explicit",
+      "explanation": "同型EMA hindsight反向KL，增加共享参数环境响应NLL。",
+      "source_url": "https://arxiv.org/html/2610.11384v1",
+      "location": "§§3.2–3.4"
+    },
+    {
+      "source": "arxiv-2405-14205",
+      "target": "KnowAgent",
+      "kind": "extends",
+      "basis": "source_explicit",
+      "explanation": "从固定人写动作知识转向自身合成的实例任务知识和状态库软约束。",
+      "location": "§4.2 / §5",
+      "source_url": "https://arxiv.org/html/2405.14205v4"
+    },
+    {
+      "source": "arxiv-2405-14205",
+      "target": "AutoGuide",
+      "kind": "uses",
+      "basis": "source_explicit",
+      "explanation": "知识总结部分提示来自AutoGuide。",
+      "location": "AppendixI",
+      "source_url": "https://arxiv.org/html/2405.14205v4"
+    },
+    {
+      "source": "arxiv-2511-09515",
+      "target": "DAPO",
+      "kind": "uses",
+      "basis": "source_explicit",
+      "explanation": "去KL、非对称clip及全同奖组动态重采样沿用DAPO。",
+      "source_url": "https://arxiv.org/html/2511.09515v1",
+      "location": "§3.4"
+    },
+    {
+      "source": "arxiv-2511-09515",
+      "target": "OpenVLA-OFT",
+      "kind": "uses",
+      "basis": "source_explicit",
+      "explanation": "受训政策基础，移除本体/腕摄像头，换并行动作离散head。",
+      "source_url": "https://arxiv.org/html/2511.09515v1",
+      "location": "§4.1; Appendix6"
+    },
+    {
+      "source": "arxiv-2601-00930",
+      "target": "Early Experience",
+      "kind": "extends",
+      "basis": "source_explicit",
+      "explanation": "采用人类动作对比替代轨迹并解释后果的训练哲学，转为persona用户模拟。",
+      "source_url": "https://arxiv.org/html/2601.00930v1",
+      "location": "§2"
+    },
+    {
+      "source": "arxiv-2601-00930",
+      "target": "SimUSER",
+      "kind": "uses",
+      "basis": "source_explicit",
+      "explanation": "+版图记忆、检索、因果验证以及persona匹配直接沿其实现。",
+      "source_url": "https://arxiv.org/html/2601.00930v1",
+      "location": "§4.3; AppendixA"
+    },
+    {
+      "source": "arxiv-2506-23468",
+      "target": "Dreamer",
+      "kind": "extends",
+      "basis": "source_explicit",
+      "explanation": "采用RSSM潜在转移/重构思想，增加CEM及视觉语言导航未来路径监督。",
+      "location": "§2–3",
+      "source_url": "https://arxiv.org/html/2506.23468v2"
+    },
+    {
+      "source": "arxiv-2506-23468",
+      "target": "FSTTA",
+      "kind": "compares",
+      "basis": "source_explicit",
+      "explanation": "梯度测试适应与前向场景记忆更新比较；需连同无在线更新SE*对照才可隔离适应增量。",
+      "location": "Table5 / Supplement Table8/10",
+      "source_url": "https://arxiv.org/html/2506.23468v2"
+    },
+    {
+      "source": "arxiv-2602-11075",
+      "target": "RECAP",
+      "kind": "extends",
+      "basis": "source_explicit",
+      "explanation": "沿用优势条件策略训练，二值改10bin、人类示范固定最高优势，加入短程想象。",
+      "source_url": "https://arxiv.org/html/2602.11075v2",
+      "location": "II-B; III-B/C; XI-D"
+    },
+    {
+      "source": "arxiv-2407-00247",
+      "target": "Promptist",
+      "kind": "compares",
+      "basis": "source_explicit",
+      "explanation": "正文把Promptist作为强化学习提示改写基线，并讨论语义偏移；PRIP改用图像偏好中介。",
+      "source_url": "https://arxiv.org/html/2407.00247v1",
+      "location": "Related Work、实验基线及结果表"
+    },
+    {
+      "source": "arxiv-2409-15199",
+      "target": "AutoHint",
+      "kind": "uses",
+      "basis": "source_explicit",
+      "explanation": "错题正确理由与三例总结直接承其设计，重复采样10个候选。",
+      "source_url": "https://arxiv.org/html/2409.15199v1",
+      "location": "§2.2.1"
+    },
+    {
+      "source": "arxiv-2402-04624",
+      "target": "ROME",
+      "kind": "compares",
+      "basis": "source_explicit",
+      "explanation": "知识编辑对照；本法把在线知识留在记忆状态而不是改部署权重。",
+      "location": "Table 1–2",
+      "source_url": "https://arxiv.org/html/2402.04624v2"
+    },
+    {
+      "source": "arxiv-2505-09081",
+      "target": "Generative Agents",
+      "kind": "discusses",
+      "basis": "source_explicit",
+      "explanation": "相关工作把Generative Agents作为LLM社会仿真前驱，实验表的仿真步数比较未控制模型与预算。",
+      "source_url": "https://arxiv.org/html/2505.09081v2",
+      "location": "Related Work、长期仿真比较表"
+    },
+    {
+      "source": "arxiv-2503-08026",
+      "target": "MemoryBank",
+      "kind": "extends",
+      "basis": "source_explicit",
+      "explanation": "从固定粒度/启发式访问改为主题合并与学习式重排。",
+      "location": "§5–6 / Table1–2",
+      "source_url": "https://arxiv.org/html/2503.08026v2"
+    },
+    {
+      "source": "arxiv-2511-19399",
+      "target": "Rubrics as Rewards",
+      "kind": "extends",
+      "basis": "source_explicit",
+      "explanation": "由固定参考答案准则改为当前搜索轨迹和回答差异驱动的持久标准。",
+      "location": "§3 / AppendixB–D",
+      "source_url": "https://arxiv.org/html/2511.19399v3"
+    },
+    {
+      "source": "arxiv-2603-00724",
+      "target": "RewardAgent",
+      "kind": "extends",
+      "basis": "source_explicit",
+      "explanation": "由预设奖励工具组合扩展为自动搜资源/写评分程序，并在GRPO训练中使用。",
+      "location": "§3 / §5.2",
+      "source_url": "https://arxiv.org/html/2603.00724v1"
+    },
+    {
+      "source": "arxiv-2504-20157",
+      "target": "Meta-Judge",
+      "kind": "complementary",
+      "basis": "source_explicit",
+      "explanation": "Meta-Judge更新角色参数而评分量表固定；MPO固定两个judge并动态改量表。",
+      "location": "AppendixA.3",
+      "source_url": "https://arxiv.org/html/2504.20157v2"
+    },
+    {
+      "source": "arxiv-2606-18388",
+      "target": "Population Based Training",
+      "kind": "extends",
+      "basis": "source_explicit",
+      "explanation": "同属动态超参数与checkpoint继承，改为冻结LLM诊断提案及串行树搜索，未作PBT实测。",
+      "location": "AppendixA",
+      "source_url": "https://arxiv.org/html/2606.18388v2"
+    },
+    {
+      "source": "catalog-godel-machine",
+      "target": "Statistical Gödel Machines",
+      "kind": "complementary",
+      "basis": "analytical_comparison",
+      "explanation": "统计alpha spending保证受保护评测上的误批准率，不等价于本篇比较所有未来执行成本/收益的formal target theorem。",
+      "source_url": "https://arxiv.org/pdf/cs/0309048",
+      "location": "§3.2、4.1"
+    },
+    {
+      "source": "catalog-godel-machine",
+      "target": "Darwin Gödel Machine",
+      "kind": "complementary",
+      "basis": "analytical_comparison",
+      "explanation": "代码级自改继承可编辑边界的设想，经验benchmark筛选不继承形式全局最优性。",
+      "source_url": "https://arxiv.org/pdf/cs/0309048",
+      "location": "§2.2、4.1"
+    },
+    {
+      "source": "catalog-muzero",
+      "target": "AlphaZero",
+      "kind": "extends",
+      "basis": "source_explicit",
+      "explanation": "以学习h/g/f替代树内真实动力学，并允许中间奖励；保留固定MCTS与搜索策略监督的框架。",
+      "source_url": "https://arxiv.org/html/1911.08265",
+      "location": "§2–3；Appendix A"
+    },
+    {
+      "source": "catalog-xland",
+      "target": "PAIRED",
+      "kind": "compares",
+      "basis": "source_explicit",
+      "explanation": "同为学习驱动环境生成；PAIRED以protagonist/antagonist regret驱动生成，XLand采用单agent成功概率筛选。",
+      "source_url": "https://arxiv.org/html/2107.12808",
+      "location": "§7 World-agent co-evolution；Appendix A.1.1"
+    },
+    {
+      "source": "catalog-co-scientist",
+      "target": "The AI Scientist",
+      "kind": "compares",
+      "basis": "source_explicit",
+      "explanation": "比较科研工作流自动化与本系统的假说推理/测试时计算及专家实验验证。",
+      "source_url": "https://arxiv.org/pdf/2502.18864v2",
+      "location": "Supplementary Note12"
+    },
+    {
+      "source": "catalog-co-scientist",
+      "target": "Virtual Lab",
+      "kind": "compares",
+      "basis": "source_explicit",
+      "explanation": "同为人类指导下多agent科研协作，本文以假说种群和meta-review组织任务内反馈。",
+      "source_url": "https://arxiv.org/pdf/2502.18864v2",
+      "location": "Supplementary Note12"
+    },
+    {
+      "source": "catalog-asi-bench",
+      "target": "RE-Bench",
+      "kind": "compares",
+      "basis": "source_explicit",
+      "explanation": "AI R&D评价与跨学科信息梯度评价互补；均非自身演化系统。",
+      "source_url": "https://arxiv.org/html/2608.17271v1",
+      "location": "Table1；Appendix A"
+    },
+    {
+      "source": "catalog-asi-bench",
+      "target": "PaperBench",
+      "kind": "compares",
+      "basis": "source_explicit",
+      "explanation": "复现指定论文的研究流程，与撤去方法/步骤的信息条件测试不同。",
+      "source_url": "https://arxiv.org/html/2608.17271v1",
+      "location": "Table1；Appendix A"
+    },
+    {
+      "source": "catalog-asi-bench",
+      "target": "ScienceAgentBench",
+      "kind": "compares",
+      "basis": "source_explicit",
+      "explanation": "已有专家信息辅助/不辅助的科学编程比较；ASI采用四级指导条件扩展项目级任务。",
+      "source_url": "https://arxiv.org/html/2608.17271v1",
+      "location": "Table1；Appendix A"
+    }
+  ]
+}
