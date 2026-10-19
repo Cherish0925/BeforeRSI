@@ -64,7 +64,9 @@
         "Alibaba AI Data",
         "Alibaba Qwen",
         "Alibaba Tongyi Lab",
-        "Qwen Team"
+        "Qwen Team",
+        "Alibaba Group",
+        "Tongyi Lab, Alibaba Group"
       ],
       "search_aliases": [
         "阿里巴巴",
@@ -138,7 +140,8 @@
       "kind": "tech",
       "aliases": [
         "NEC Labs",
-        "NEC Labs America"
+        "NEC Labs America",
+        "NEC Laboratories America"
       ],
       "search_aliases": []
     },
@@ -191,7 +194,8 @@
       "name": "Samsung",
       "kind": "tech",
       "aliases": [
-        "Samsung AI Center–Toronto"
+        "Samsung AI Center–Toronto",
+        "Samsung Electronics AI Center-Toronto"
       ],
       "search_aliases": []
     },
@@ -241,7 +245,8 @@
       "name": "Baidu",
       "kind": "tech",
       "aliases": [
-        "Baidu"
+        "Baidu",
+        "Baidu Inc."
       ],
       "search_aliases": [
         "百度"
@@ -359,7 +364,8 @@
       "kind": "academic",
       "aliases": [
         "Berkeley",
-        "University of California, Berkeley"
+        "University of California, Berkeley",
+        "加州大学伯克利分校"
       ],
       "search_aliases": [
         "加州大学伯克利分校",
@@ -716,7 +722,8 @@
       "name": "Einsia.AI",
       "kind": "ai",
       "aliases": [
-        "Einsia.AI"
+        "Einsia.AI",
+        "Navers Lab"
       ],
       "profile_id": "einsia",
       "search_aliases": [
@@ -748,7 +755,8 @@
       "name": "Moonshot AI · 月之暗面",
       "kind": "ai",
       "aliases": [
-        "Moonshot AI"
+        "Moonshot AI",
+        "Kimi Team"
       ],
       "profile_id": "moonshot",
       "search_aliases": [
@@ -955,7 +963,8 @@
       "name": "Bristol",
       "kind": "academic",
       "aliases": [
-        "Bristol"
+        "Bristol",
+        "布里斯托大学"
       ],
       "search_aliases": []
     },
@@ -1019,7 +1028,8 @@
       "name": "CUHK-Shenzhen",
       "kind": "academic",
       "aliases": [
-        "CUHK-Shenzhen"
+        "CUHK-Shenzhen",
+        "The Chinese University of Hong Kong, Shenzhen"
       ],
       "search_aliases": []
     },
@@ -1028,7 +1038,8 @@
       "name": "Duke",
       "kind": "academic",
       "aliases": [
-        "Duke"
+        "Duke",
+        "Duke University"
       ],
       "search_aliases": []
     },
@@ -1038,7 +1049,8 @@
       "kind": "academic",
       "aliases": [
         "Edinburgh",
-        "爱丁堡大学"
+        "爱丁堡大学",
+        "University of Edinburgh"
       ],
       "search_aliases": []
     },
@@ -1218,7 +1230,8 @@
       "name": "MCML",
       "kind": "academic",
       "aliases": [
-        "MCML"
+        "MCML",
+        "Munich Center for Machine Learning"
       ],
       "search_aliases": []
     },
@@ -1328,7 +1341,8 @@
       "kind": "academic",
       "aliases": [
         "Oxford",
-        "Trinity College, University of Oxford"
+        "Trinity College, University of Oxford",
+        "牛津大学"
       ],
       "search_aliases": []
     },
@@ -1358,7 +1372,8 @@
       "name": "Purdue",
       "kind": "academic",
       "aliases": [
-        "Purdue"
+        "Purdue",
+        "Purdue University"
       ],
       "search_aliases": []
     },
@@ -1367,7 +1382,8 @@
       "name": "RPI",
       "kind": "academic",
       "aliases": [
-        "RPI"
+        "RPI",
+        "Rensselaer Polytechnic Institute"
       ],
       "search_aliases": []
     },
@@ -1386,7 +1402,8 @@
       "name": "Rutgers",
       "kind": "academic",
       "aliases": [
-        "Rutgers"
+        "Rutgers",
+        "Rutgers University"
       ],
       "search_aliases": []
     },
@@ -1503,7 +1520,8 @@
       "name": "SUTD",
       "kind": "academic",
       "aliases": [
-        "SUTD"
+        "SUTD",
+        "Singapore University of Technology and Design"
       ],
       "search_aliases": []
     },
@@ -1540,7 +1558,8 @@
       "name": "Toronto",
       "kind": "academic",
       "aliases": [
-        "Toronto"
+        "Toronto",
+        "多伦多大学"
       ],
       "search_aliases": []
     },
@@ -1793,7 +1812,8 @@
       "name": "York",
       "kind": "academic",
       "aliases": [
-        "York"
+        "York",
+        "约克大学"
       ],
       "search_aliases": []
     },
@@ -2252,6 +2272,39 @@
       "aliases": [],
       "search_aliases": [],
       "type_note": "按原文机构署名归类；机构类别不表示研究质量。"
+    },
+    {
+      "id": "huawei",
+      "name": "Huawei",
+      "kind": "tech",
+      "aliases": [
+        "华为"
+      ],
+      "search_aliases": [],
+      "type_note": "保留原文的机构署名；主体类别用于交叉浏览，不表示研究质量。"
+    },
+    {
+      "id": "wuhan",
+      "name": "Wuhan University",
+      "kind": "academic",
+      "aliases": [
+        "武汉大学"
+      ],
+      "search_aliases": [],
+      "type_note": "保留原文的机构署名；主体类别用于交叉浏览，不表示研究质量。"
+    },
+    {
+      "id": "ict-cas",
+      "name": "Institute of Computing Technology, CAS",
+      "kind": "academic",
+      "aliases": [
+        "Institute of Computing Technology, Chinese Academy of Sciences"
+      ],
+      "search_aliases": [
+        "中国科学院计算技术研究所",
+        "中科院计算所"
+      ],
+      "type_note": "DRAFT 首页作者署名；不把资助项目或相邻研究所合并为作者单位。"
     }
   ],
   "alias_expansions": {

@@ -90,3 +90,9 @@ AutoScientists补充冻结科研模型在外部实验反馈下更新团队roster
 
 
 关系终审：将30条把引用、基线或主题相近混写为extends的边收紧为discusses/compares/uses；明确算法结构或数据/代码复用才uses，保留MemoryLLM→M+、AWM→WMA、DataFlow→ANDES、Kermut→AutoScientists等有直接基础的扩展。分析性关系明确标analytical_comparison，不作为作者承认的谱系。
+
+## 2026-10-19 关系别名终审修正
+
+删除 AutoScientists（arxiv-2605-28655）指向不存在的 `catalog-autonomous-ai-research` 的分析比较边。该条解释称“AAR 还训练研究策略”，却无法唯一确定所指原始工作；Automated Alignment Researchers 的研究员权重实际冻结，而执行反馈训练研究想法模型属于另一项研究，不能仅凭主题相似补接。删除边不改变 AutoScientists 的全文结论与其他四条已核关系。
+
+同步删除该条目 `nearest_stronger_or_complementary` 中不存在的 ID，以及 `relative_to_prior_work` 中无法确认的“AAR 训练研究策略”比较；保留已由 AutoScientists 原文支持的研究员参数冻结、外部目标模型不接任研究员的系统边界。递归检查该条完整记录，已无 AAR 或不存在 ID 的残留。

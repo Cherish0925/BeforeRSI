@@ -960,22 +960,6 @@
           "primary_route": "harness"
         },
         {
-          "work_id": "harnessdev",
-          "topic_ids": [
-            "h-control",
-            "h-runtime",
-            "h-search",
-            "h-inheritance"
-          ],
-          "summary": "Harness开发与演化的测量支撑，未递归替换开发环境",
-          "source_urls": [
-            "https://arxiv.org/html/2609.01437v1"
-          ],
-          "source_location": "§3–4、§6，Tables1–2/7，Figure8；Appendix B/C/D/F–I的配置与代表轨迹。",
-          "basis": "primary_source_read",
-          "primary_route": "harness"
-        },
-        {
           "work_id": "rrsi",
           "topic_ids": [
             "h-improver",
@@ -1375,87 +1359,6 @@
           "primary_route": "harness"
         },
         {
-          "work_id": "metacircle-ophis",
-          "topic_ids": [
-            "h-experience",
-            "h-search",
-            "h-evaluation"
-          ],
-          "summary": "AI4AI 机制引导实验系统；公开材料未证实改进器自身迭代升级。与 Harness 研究相关，不能推定 Model–Harness 协同训练。",
-          "source_urls": [
-            "https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch"
-          ],
-          "source_location": "官方技术发布 2026-07-23：框架、Grokking 对照、NanoGPT observables / 干预与统计结果、披露边界",
-          "basis": "primary_source_read",
-          "primary_route": "harness",
-          "cross_route_reference": false
-        },
-        {
-          "work_id": "comfyresearch",
-          "topic_ids": [
-            "h-runtime",
-            "h-experience",
-            "h-evaluation"
-          ],
-          "summary": "观测与实验基础设施；公开演示研究循环由人运行，不能作为直接 RSI 成果计数。",
-          "source_urls": [
-            "https://meta-circle.com/blog/comfyresearch-see-how-learning-happens",
-            "https://github.com/MetaCircleAI/ComfyResearch"
-          ],
-          "source_location": "官方发布 2026-08-11 全文：typed graph、33 observable nodes、parameter sweeps、实验案例及 human-in-the-loop 说明；官方仓库 README",
-          "basis": "primary_source_read",
-          "primary_route": "harness",
-          "cross_route_reference": false
-        },
-        {
-          "work_id": "nanogpt-observables",
-          "topic_ids": [
-            "h-experience",
-            "h-evaluation"
-          ],
-          "summary": "学习动力学观测资源，属于 RSI 的使能工具而非直接 RSI 系统。",
-          "source_urls": [
-            "https://meta-circle.com/blog/observe-learning-in-full"
-          ],
-          "source_location": "官方发布 2026-08-06 全文：数据集/训练设置、1820 curves、Block 1 attention entropy 对照、观察与解释边界",
-          "basis": "primary_source_read",
-          "primary_route": "harness",
-          "cross_route_reference": false
-        },
-        {
-          "work_id": "apex-tune",
-          "topic_ids": [
-            "h-search",
-            "h-runtime",
-            "h-evaluation"
-          ],
-          "summary": "AI4AI 自动优化成果；不能据公开产物推定研究器本体递归改写或 Model–Harness 联合训练。",
-          "source_urls": [
-            "https://www.apexin.ai/assets/papers/what-happens-when-ai-starts-improving-ai.pdf",
-            "https://github.com/apexin-ai/Apex-Tune-results"
-          ],
-          "source_location": "八页官方报告全文（四项技术案例）；成果仓库 README 当前 NanoChat / TriMul / attention / SLDBench 表及来源说明",
-          "basis": "primary_source_read",
-          "primary_route": "harness",
-          "cross_route_reference": false
-        },
-        {
-          "work_id": "apex-research",
-          "topic_ids": [
-            "h-evaluation",
-            "h-search"
-          ],
-          "summary": "自动科研流程及外部评审案例；研究器自身 RSI 机制与完整项目证据披露不足。",
-          "source_urls": [
-            "https://www.apexin.ai/assets/papers/apex-research-2026.pdf",
-            "https://github.com/apexin-ai/apex-research-report"
-          ],
-          "source_location": "官方四页报告全文：34 项项目、资源/人工占比、ARR 评分、撤稿与未来公开计划；官方仓库 README",
-          "basis": "primary_source_read",
-          "primary_route": "harness",
-          "cross_route_reference": false
-        },
-        {
           "work_id": "asi-bench",
           "topic_ids": [
             "h-evaluation"
@@ -1469,24 +1372,6 @@
           "basis": "primary_source_read",
           "primary_route": "crosscut",
           "cross_route_reference": true
-        },
-        {
-          "work_id": "recursive-first-steps",
-          "topic_ids": [
-            "h-search",
-            "h-experience",
-            "h-evaluation",
-            "h-runtime"
-          ],
-          "summary": "具有公开优化产物的 AI4AI 研究系统；没有足够证据推定研究器本身发生递归权重/harness 协同更新。",
-          "source_urls": [
-            "https://www.recursive.com/articles/first-steps-toward-automated-ai-research",
-            "https://github.com/recursive-org/first-steps-toward-automated-ai-research"
-          ],
-          "source_location": "官方 2026-06-11 发布全文（NanoChat、NanoGPT、SOL、有效评估与局限）；成果仓库 README",
-          "basis": "primary_source_read",
-          "primary_route": "harness",
-          "cross_route_reference": false
         },
         {
           "work_id": "hermes-agent",
@@ -1503,42 +1388,6 @@
             "https://hermes-agent.nousresearch.com/docs/user-guide/features/memory"
           ],
           "source_location": "官方仓库 README；Skills System 的 Agent-Managed Skills / Gating writes；Persistent Memory 的 frozen snapshot、capacity、session search、background review / model routing / budget",
-          "basis": "primary_source_read",
-          "primary_route": "harness",
-          "cross_route_reference": false
-        },
-        {
-          "work_id": "intology-locus",
-          "topic_ids": [
-            "h-search",
-            "h-experience"
-          ],
-          "summary": "AI4AI 自动研究与目标模型训练；不等于研究 agent 自身参数与 Harness 协同进化。PTB 目标 1.7B–4B，不满足 ≥27B 模型主线门槛。",
-          "source_urls": [
-            "https://intology.ai/blog/previewing-locus",
-            "https://intology.ai/blog/scaling-automated-post-training",
-            "https://github.com/IntologyAI/scaling-automated-post-training/blob/master/artifacts/README.md"
-          ],
-          "source_location": "Previewing Locus（2025-11-19）全文与脚注；Scaling Automated Post-Training（2026-08-03）正文和附录 A–G；公开 artifacts README 的复现限制",
-          "basis": "primary_source_read",
-          "primary_route": "harness",
-          "cross_route_reference": false
-        },
-        {
-          "work_id": "autoscience-lab",
-          "topic_ids": [
-            "h-search",
-            "h-control",
-            "h-evaluation"
-          ],
-          "summary": "自动 AI 研究实验室方向；目前公开可读证据不足以判定直接 RSI 算法类别。",
-          "source_urls": [
-            "https://www.businesswire.com/news/home/20260318760407/en/Autoscience-Raises-$14M-to-Build-the-Worlds-First-Automated-AI-Research-Lab",
-            "https://www.autoscience.ai/blog/autoscience-autonomous-ai-lab",
-            "https://www.autoscience.ai/blog/meet-carl",
-            "https://www.autoscience.ai/blog/introducing-mira"
-          ],
-          "source_location": "公司署名 Business Wire 2026-03-18 完整发布稿；官方 Carl/Mira/实验室页面访问受限，仅检索索引可见",
           "basis": "primary_source_read",
           "primary_route": "harness",
           "cross_route_reference": false
@@ -1801,6 +1650,153 @@
           "source_location": "§1–7；Tables 1–11；附录 A–C"
         },
         {
+          "work_id": "mce",
+          "topic_ids": [
+            "h-improver",
+            "h-instructions",
+            "h-memory",
+            "h-search",
+            "h-inheritance"
+          ],
+          "summary": "把CE学习程序本身封装成可演化skill，外层据历史验证效果改程序，内层以自由文件/代码实现context与检索。",
+          "source_urls": [
+            "https://arxiv.org/html/2601.21557v2"
+          ],
+          "source_location": "v2 §1–5、Algorithm1、Tables1–4、Appendix A–E完整数据/提示/技能/五域案例/工具代码；PDF第9页Figures3–4；PDF p.9 Figures3–4"
+        },
+        {
+          "work_id": "skill-kd",
+          "topic_ids": [
+            "h-capabilities",
+            "h-memory",
+            "h-evaluation",
+            "h-inheritance"
+          ],
+          "summary": "以同题师生行为差异生成技能补丁，通过学生重跑校验可用性，并用可按需读回的历史轨迹说明每次编辑缘由。",
+          "source_urls": [
+            "https://arxiv.org/html/2607.28048v4"
+          ],
+          "source_location": "§1–6、Tables1–7、Appendix A–C所有划分/计算设置/工具schema/38条最终技能节选"
+        },
+        {
+          "work_id": "memq",
+          "topic_ids": [
+            "h-memory",
+            "h-search",
+            "h-evaluation",
+            "h-inheritance"
+          ],
+          "summary": "用经验产生的来源DAG替代时间轴传播TD(λ)信用，并显式分离外生任务与内生记忆状态。",
+          "source_urls": [
+            "https://arxiv.org/html/2605.08374v4"
+          ],
+          "source_location": "v4 全部主文§1–6、算法1、图1–13、表1–8；附录A固定图理论全部证明、B/C学习与Q诊断、D全消融、E基线实现、F全部数据与参数；另核PDF页11–13、24–27原图"
+        },
+        {
+          "work_id": "metis-memory",
+          "topic_ids": [
+            "h-memory",
+            "h-capabilities",
+            "h-inheritance"
+          ],
+          "summary": "以计划重复使用为晋升信号，文字作为候选层，稳定多查询程序变成参数化可调用工具，并用依赖闭包与编译门保障装载。",
+          "source_urls": [
+            "https://arxiv.org/html/2606.24151v1"
+          ],
+          "source_location": "全文§1–5、算法1、表1–4、附录A.1全部profiling协议与图3–5；SVG原图核对全部成本/准确率图"
+        },
+        {
+          "work_id": "draft-tool-docs",
+          "topic_ids": [
+            "h-instructions",
+            "h-capabilities",
+            "h-experience",
+            "h-inheritance"
+          ],
+          "summary": "将工具文档作为可继承的能力接口，由主动试用的真实返回不断改写；多样性拒绝与文档变化停止控制重复探索和冗余。",
+          "source_urls": [
+            "https://arxiv.org/html/2410.08197v2"
+          ],
+          "source_location": "全文 §§1–5、Algorithm1、Figures1–7、Tables1–12；AppendicesA–E 完整提示、评审、额外消融及五轮原始文档演变"
+        },
+        {
+          "work_id": "latm",
+          "topic_ids": [
+            "h-capabilities",
+            "h-inheritance"
+          ],
+          "summary": "强模型一次写可执行通用函数，弱模型把后续自然语言请求映射成参数；缓存保存的是功能而非相近文本答案。",
+          "source_urls": [
+            "https://arxiv.org/html/2305.17126v2"
+          ],
+          "source_location": "全文 §§1–6、Tables1–5、Figures1–4、AppendicesA–E全部提示/封装工具/数据构造；PDF附录21–22页复核代码"
+        },
+        {
+          "work_id": "harnessdev",
+          "topic_ids": [
+            "h-evaluation",
+            "h-runtime",
+            "h-search",
+            "h-inheritance"
+          ],
+          "summary": "冻结可运行artifact并解耦creator/D/executor/judge，对每个演化版本额外事后测未反馈的留出集。",
+          "source_urls": [
+            "https://arxiv.org/html/2609.01437v1"
+          ],
+          "source_location": "沿用前轮主文与AppB/C/D/F–I完整相关阅读；本轮复核§3协议、§4.1/4.3与表6/7、§6.1、AppB成本、AppE演化完整合约；PDF首页机构。"
+        },
+        {
+          "work_id": "selfsearch",
+          "topic_ids": [
+            "h-search",
+            "h-improver",
+            "h-control",
+            "h-inheritance"
+          ],
+          "summary": "把修改agent自身时的轨迹当可复用经验，以无下游分数的双谱系连续自修改生成可迁移代码接口；后继自身承担下轮修改。",
+          "source_urls": [
+            "https://arxiv.org/html/2609.37968v2"
+          ],
+          "source_location": "§§2–4; Tables1–13; AppendicesA–F"
+        },
+        {
+          "work_id": "meta-team",
+          "topic_ids": [
+            "h-control",
+            "h-capabilities",
+            "h-memory",
+            "h-inheritance"
+          ],
+          "summary": "用原执行agent本地上下文和针对性交互，生成多尺度可继承修改；不是让外部单分析器只看总分改图。",
+          "source_urls": [
+            "https://arxiv.org/html/2605.29790v2"
+          ],
+          "source_location": "完整主文§1–6；AppA–F（全部理论、运行算法与L1–3工具/提示、真实GAIA例、完整split/基线适配、显著性/成本/跨模型/团队大小/独立运行表）；PDF图1/3–6图形实读。"
+        },
+        {
+          "work_id": "paperbench",
+          "topic_ids": [
+            "h-evaluation",
+            "h-runtime"
+          ],
+          "summary": "原作者确认的重要性加权rubric，三种部分完成证据，新环境复跑，以及专门检验自动裁判的JudgeEval。",
+          "source_urls": [
+            "https://arxiv.org/html/2504.01848v3"
+          ],
+          "source_location": "§1–8、App A–I、Tables1–18全部逐项结果、Figures7–14完整裁判/agent提示；PDF Figures2/3/6图像核查"
+        },
+        {
+          "work_id": "aide",
+          "topic_ids": [
+            "h-search"
+          ],
+          "summary": "把完整可独立运行的程序作为搜索节点，以validationscore选择父代并用局部编码与摘要控制上下文。",
+          "source_urls": [
+            "https://arxiv.org/html/2502.13138v1"
+          ],
+          "source_location": "全文§1–6、AppendicesA–C含baselineprompts/成本/完整任务表；PDFtext复核Table2"
+        },
+        {
           "work_id": "eureka",
           "topic_ids": [
             "h-search"
@@ -1862,6 +1858,97 @@
             "https://alignment.anthropic.com/2026/automated-alignment-researchers/"
           ],
           "source_location": "§2–8；AppendicesA/B/D/E/G"
+        },
+        {
+          "work_id": "metacircle-ophis",
+          "topic_ids": [
+            "h-evaluation",
+            "h-runtime"
+          ],
+          "summary": "将可观测现象、问题、可检验假说和干预连接为研究循环，而非只根据最终分数盲搜。",
+          "source_urls": [
+            "https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch"
+          ],
+          "source_location": "2026-07-23官方文章全部正文、Grokking与NanoGPT实验及限制；观测—干预映射的私有实现未公开。"
+        },
+        {
+          "work_id": "comfyresearch",
+          "topic_ids": [
+            "h-evaluation",
+            "h-runtime"
+          ],
+          "summary": "以类型化依赖图直接执行实验，同时把观测与训练目标分离，保存足够的运行上下文。",
+          "source_urls": [
+            "https://meta-circle.com/blog/comfyresearch-see-how-learning-happens"
+          ],
+          "source_location": "2026-08-11官方介绍完整正文、全部演示及公开README全文；未安装软件或逐行审计代码。；完整README：Why、运行示例、系统结构、检查与文档说明"
+        },
+        {
+          "work_id": "nanogpt-observables",
+          "topic_ids": [
+            "h-evaluation",
+            "h-runtime"
+          ],
+          "summary": "公开多层、多对象、跨时间的观测集合，用受控配置差异发现值得研究的动力学模式。",
+          "source_urls": [
+            "https://meta-circle.com/blog/observe-learning-in-full"
+          ],
+          "source_location": "2026-08-06官方文章全部正文、三种训练设置、8类1820观测曲线说明、假说和开放问题。"
+        },
+        {
+          "work_id": "apex-tune",
+          "topic_ids": [
+            "h-search"
+          ],
+          "summary": "把模型配方、内存稀疏性、数值实现与GPU访问布局作为同一研究循环中的可编辑对象。",
+          "source_urls": [
+            "https://www.apexin.ai/assets/papers/what-happens-when-ai-starts-improving-ai.pdf"
+          ],
+          "source_location": "官方What Happens When AI Starts Improving AI报告完整正文；官方结果仓库README、NanoChat与SLDBench子目录完整README。；根README与四类产物目录；完整README，10种子数值、硬件与机制；完整README，修正后的基线口径与外推协议"
+        },
+        {
+          "work_id": "apex-research",
+          "topic_ids": [
+            "h-search"
+          ],
+          "summary": "将常规同行评议作为端到端研究产物评价，补充代码基准和论文文本评估。",
+          "source_urls": [
+            "https://www.apexin.ai/assets/papers/apex-research-2026.pdf"
+          ],
+          "source_location": "官方Apex Research 2026报告全部4页：声明、34项目资源/参与记录、评分、代表案例和开放问题。"
+        },
+        {
+          "work_id": "recursive-first-steps",
+          "topic_ids": [
+            "h-search"
+          ],
+          "summary": "长时程并行探索、组合候选与逐步加强正确性审查；发现涉及稀疏ngram、FP8、梯度/通信和融合kernel。",
+          "source_urls": [
+            "https://www.recursive.com/articles/first-steps-toward-automated-ai-research"
+          ],
+          "source_location": "2026-06-11文章全文、全部展开代码说明及脚注；官方根README、NanoGPT Speedrun和SOL-ExecBench README全文。；全文；完整同硬件对照、多种子与环境；全文，10/235公开范围"
+        },
+        {
+          "work_id": "intology-locus",
+          "topic_ids": [
+            "h-search"
+          ],
+          "summary": "把实验组织、模型行为诊断、checkpoint回退和方案多样性作为研究能力。",
+          "source_urls": [
+            "https://github.com/IntologyAI/scaling-automated-post-training/blob/master/README.md"
+          ],
+          "source_location": "本次完整阅读官方Scaling Automated Post-Training仓库及artifacts两份README，并核对既有完整博客阅读记录。旧记录涵盖预览全文与2026更新正文/附录A–G；本次两个博客仅返回网页壳，未重新取回全文。；全文：复评、composite与代码/checkpoint复现限制；此前全文/附录记录；本次主体不可获取；此前全文/脚注记录；本次主体不可获取"
+        },
+        {
+          "work_id": "autoscience-lab",
+          "topic_ids": [
+            "h-search"
+          ],
+          "summary": "以自动科学家负责假说和试验，自动工程师负责优化部署，组织服务型研究实验室。",
+          "source_urls": [
+            "https://www.businesswire.com/news/home/20260318760407/en/Autoscience-Raises-$14M-to-Build-the-Worlds-First-Automated-AI-Research-Lab"
+          ],
+          "source_location": "2026-03-18公司署名Business Wire完整发布稿；本次重试官方实验室/Carl页仍无法获取正文。；再次访问仅网页壳，不计为正文已读"
         }
       ]
     },
@@ -3061,35 +3148,6 @@
           "primary_route": "model"
         },
         {
-          "work_id": "metacircle-ophis",
-          "topic_ids": [
-            "m-pretraining-ai4ai"
-          ],
-          "summary": "AI4AI 机制引导实验系统；公开材料未证实改进器自身迭代升级。与 Harness 研究相关，不能推定 Model–Harness 协同训练。",
-          "source_urls": [
-            "https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch"
-          ],
-          "source_location": "官方技术发布 2026-07-23：框架、Grokking 对照、NanoGPT observables / 干预与统计结果、披露边界",
-          "basis": "primary_source_read",
-          "primary_route": "harness",
-          "cross_route_reference": true
-        },
-        {
-          "work_id": "apex-tune",
-          "topic_ids": [
-            "m-pretraining-ai4ai"
-          ],
-          "summary": "AI4AI 自动优化成果；不能据公开产物推定研究器本体递归改写或 Model–Harness 联合训练。",
-          "source_urls": [
-            "https://www.apexin.ai/assets/papers/what-happens-when-ai-starts-improving-ai.pdf",
-            "https://github.com/apexin-ai/Apex-Tune-results"
-          ],
-          "source_location": "八页官方报告全文（四项技术案例）；成果仓库 README 当前 NanoChat / TriMul / attention / SLDBench 表及来源说明",
-          "basis": "primary_source_read",
-          "primary_route": "harness",
-          "cross_route_reference": true
-        },
-        {
           "work_id": "intellect-3",
           "topic_ids": [
             "m-verifiable-feedback",
@@ -3196,6 +3254,17 @@
           "source_location": "§§3–5；Tables 1–5,7；Appendices A–I, especially B,D,F"
         },
         {
+          "work_id": "paperbench",
+          "topic_ids": [
+            "m-pretraining-ai4ai"
+          ],
+          "summary": "原作者确认的重要性加权rubric，三种部分完成证据，新环境复跑，以及专门检验自动裁判的JudgeEval。",
+          "source_urls": [
+            "https://arxiv.org/html/2504.01848v3"
+          ],
+          "source_location": "§1–8、App A–I、Tables1–18全部逐项结果、Figures7–14完整裁判/agent提示；PDF Figures2/3/6图像核查"
+        },
+        {
           "work_id": "arena-learning",
           "topic_ids": [
             "m-bootstrapping",
@@ -3207,7 +3276,18 @@
           "source_urls": [
             "https://arxiv.org/html/2407.10627v1"
           ],
-          "source_location": "全文§1–5、Tables 1–11、Figures 8–12；Appendix A"
+          "source_location": "全文§1–5、Tables 1–11、Figures 8–12；Appendix A；PDF首页机构标签与方法核对"
+        },
+        {
+          "work_id": "aide",
+          "topic_ids": [
+            "m-pretraining-ai4ai"
+          ],
+          "summary": "把完整可独立运行的程序作为搜索节点，以validationscore选择父代并用局部编码与摘要控制上下文。",
+          "source_urls": [
+            "https://arxiv.org/html/2502.13138v1"
+          ],
+          "source_location": "全文§1–6、AppendicesA–C含baselineprompts/成本/完整任务表；PDFtext复核Table2"
         },
         {
           "work_id": "deepseek-r1",
@@ -3234,6 +3314,95 @@
             "https://arxiv.org/html/2505.09388v1"
           ],
           "source_location": "§2–3 架构、预训练及Table3–8；§4.1–4.7 完整后训练方法、评测协议、Table11–22；Appendix A.1.1–A.1.2 与Table23–37"
+        },
+        {
+          "work_id": "metacircle-ophis",
+          "topic_ids": [
+            "m-pretraining-ai4ai"
+          ],
+          "summary": "将可观测现象、问题、可检验假说和干预连接为研究循环，而非只根据最终分数盲搜。",
+          "source_urls": [
+            "https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch"
+          ],
+          "source_location": "2026-07-23官方文章全部正文、Grokking与NanoGPT实验及限制；观测—干预映射的私有实现未公开。"
+        },
+        {
+          "work_id": "comfyresearch",
+          "topic_ids": [
+            "m-pretraining-ai4ai"
+          ],
+          "summary": "以类型化依赖图直接执行实验，同时把观测与训练目标分离，保存足够的运行上下文。",
+          "source_urls": [
+            "https://meta-circle.com/blog/comfyresearch-see-how-learning-happens"
+          ],
+          "source_location": "2026-08-11官方介绍完整正文、全部演示及公开README全文；未安装软件或逐行审计代码。；完整README：Why、运行示例、系统结构、检查与文档说明"
+        },
+        {
+          "work_id": "nanogpt-observables",
+          "topic_ids": [
+            "m-pretraining-ai4ai"
+          ],
+          "summary": "公开多层、多对象、跨时间的观测集合，用受控配置差异发现值得研究的动力学模式。",
+          "source_urls": [
+            "https://meta-circle.com/blog/observe-learning-in-full"
+          ],
+          "source_location": "2026-08-06官方文章全部正文、三种训练设置、8类1820观测曲线说明、假说和开放问题。"
+        },
+        {
+          "work_id": "apex-tune",
+          "topic_ids": [
+            "m-pretraining-ai4ai"
+          ],
+          "summary": "把模型配方、内存稀疏性、数值实现与GPU访问布局作为同一研究循环中的可编辑对象。",
+          "source_urls": [
+            "https://www.apexin.ai/assets/papers/what-happens-when-ai-starts-improving-ai.pdf"
+          ],
+          "source_location": "官方What Happens When AI Starts Improving AI报告完整正文；官方结果仓库README、NanoChat与SLDBench子目录完整README。；根README与四类产物目录；完整README，10种子数值、硬件与机制；完整README，修正后的基线口径与外推协议"
+        },
+        {
+          "work_id": "apex-research",
+          "topic_ids": [
+            "m-pretraining-ai4ai"
+          ],
+          "summary": "将常规同行评议作为端到端研究产物评价，补充代码基准和论文文本评估。",
+          "source_urls": [
+            "https://www.apexin.ai/assets/papers/apex-research-2026.pdf"
+          ],
+          "source_location": "官方Apex Research 2026报告全部4页：声明、34项目资源/参与记录、评分、代表案例和开放问题。"
+        },
+        {
+          "work_id": "recursive-first-steps",
+          "topic_ids": [
+            "m-pretraining-ai4ai"
+          ],
+          "summary": "长时程并行探索、组合候选与逐步加强正确性审查；发现涉及稀疏ngram、FP8、梯度/通信和融合kernel。",
+          "source_urls": [
+            "https://www.recursive.com/articles/first-steps-toward-automated-ai-research"
+          ],
+          "source_location": "2026-06-11文章全文、全部展开代码说明及脚注；官方根README、NanoGPT Speedrun和SOL-ExecBench README全文。；全文；完整同硬件对照、多种子与环境；全文，10/235公开范围"
+        },
+        {
+          "work_id": "intology-locus",
+          "topic_ids": [
+            "m-bootstrapping",
+            "m-verifiable-feedback"
+          ],
+          "summary": "把实验组织、模型行为诊断、checkpoint回退和方案多样性作为研究能力。",
+          "source_urls": [
+            "https://github.com/IntologyAI/scaling-automated-post-training/blob/master/README.md"
+          ],
+          "source_location": "本次完整阅读官方Scaling Automated Post-Training仓库及artifacts两份README，并核对既有完整博客阅读记录。旧记录涵盖预览全文与2026更新正文/附录A–G；本次两个博客仅返回网页壳，未重新取回全文。；全文：复评、composite与代码/checkpoint复现限制；此前全文/附录记录；本次主体不可获取；此前全文/脚注记录；本次主体不可获取"
+        },
+        {
+          "work_id": "autoscience-lab",
+          "topic_ids": [
+            "m-pretraining-ai4ai"
+          ],
+          "summary": "以自动科学家负责假说和试验，自动工程师负责优化部署，组织服务型研究实验室。",
+          "source_urls": [
+            "https://www.businesswire.com/news/home/20260318760407/en/Autoscience-Raises-$14M-to-Build-the-Worlds-First-Automated-AI-Research-Lab"
+          ],
+          "source_location": "2026-03-18公司署名Business Wire完整发布稿；本次重试官方实验室/Carl页仍无法获取正文。；再次访问仅网页壳，不计为正文已读"
         }
       ]
     },
@@ -4260,51 +4429,6 @@
           "cross_route_reference": true
         },
         {
-          "work_id": "metacircle-ophis",
-          "topic_ids": [
-            "x-training",
-            "x-feedback"
-          ],
-          "summary": "AI4AI 机制引导实验系统；公开材料未证实改进器自身迭代升级。与 Harness 研究相关，不能推定 Model–Harness 协同训练。",
-          "source_urls": [
-            "https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch"
-          ],
-          "source_location": "官方技术发布 2026-07-23：框架、Grokking 对照、NanoGPT observables / 干预与统计结果、披露边界",
-          "basis": "primary_source_read",
-          "primary_route": "harness",
-          "cross_route_reference": true
-        },
-        {
-          "work_id": "comfyresearch",
-          "topic_ids": [
-            "x-training"
-          ],
-          "summary": "观测与实验基础设施；公开演示研究循环由人运行，不能作为直接 RSI 成果计数。",
-          "source_urls": [
-            "https://meta-circle.com/blog/comfyresearch-see-how-learning-happens",
-            "https://github.com/MetaCircleAI/ComfyResearch"
-          ],
-          "source_location": "官方发布 2026-08-11 全文：typed graph、33 observable nodes、parameter sweeps、实验案例及 human-in-the-loop 说明；官方仓库 README",
-          "basis": "primary_source_read",
-          "primary_route": "harness",
-          "cross_route_reference": true
-        },
-        {
-          "work_id": "apex-tune",
-          "topic_ids": [
-            "x-training"
-          ],
-          "summary": "AI4AI 自动优化成果；不能据公开产物推定研究器本体递归改写或 Model–Harness 联合训练。",
-          "source_urls": [
-            "https://www.apexin.ai/assets/papers/what-happens-when-ai-starts-improving-ai.pdf",
-            "https://github.com/apexin-ai/Apex-Tune-results"
-          ],
-          "source_location": "八页官方报告全文（四项技术案例）；成果仓库 README 当前 NanoChat / TriMul / attention / SLDBench 表及来源说明",
-          "basis": "primary_source_read",
-          "primary_route": "harness",
-          "cross_route_reference": true
-        },
-        {
           "work_id": "asi-bench",
           "topic_ids": [
             "x-feedback"
@@ -4317,21 +4441,6 @@
           "source_location": "§2基准结构、§3结果与成本；附录B署名、C任务格式、D同任务B1–B4实例。",
           "basis": "primary_source_read",
           "primary_route": "crosscut",
-          "cross_route_reference": true
-        },
-        {
-          "work_id": "recursive-first-steps",
-          "topic_ids": [
-            "x-training"
-          ],
-          "summary": "具有公开优化产物的 AI4AI 研究系统；没有足够证据推定研究器本身发生递归权重/harness 协同更新。",
-          "source_urls": [
-            "https://www.recursive.com/articles/first-steps-toward-automated-ai-research",
-            "https://github.com/recursive-org/first-steps-toward-automated-ai-research"
-          ],
-          "source_location": "官方 2026-06-11 发布全文（NanoChat、NanoGPT、SOL、有效评估与局限）；成果仓库 README",
-          "basis": "primary_source_read",
-          "primary_route": "harness",
           "cross_route_reference": true
         },
         {

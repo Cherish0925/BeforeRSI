@@ -7,7 +7,7 @@
 <br>
 
 [![Status](https://img.shields.io/badge/status-research%20in%20progress-111827?style=flat-square)](#status)
-[![Corpus](https://img.shields.io/badge/candidate%20sources-622%20records-C58B35?style=flat-square)](research/scope-catalog.md)
+[![Corpus](https://img.shields.io/badge/reviewed%20sources-622%20records-C58B35?style=flat-square)](research/atlas/reading-audit.md)
 [![Claim depth](https://img.shields.io/badge/claim%20depth-D0%E2%86%92D4-5C9C96?style=flat-square)](#claim-depth)
 [![CI](https://img.shields.io/github/actions/workflow/status/Cherish0925/BeforeRSI/validate.yml?branch=main&style=flat-square&label=data)](https://github.com/Cherish0925/BeforeRSI/actions)
 [![License](https://img.shields.io/badge/license-MIT-6B7280?style=flat-square)](LICENSE)
@@ -22,7 +22,7 @@
 
 **[打开 RSI_Field_Atlas_v5_1.html](research/atlas/RSI_Field_Atlas_v5_1.html)** · **[领域结构文字版](research/atlas/field-guide.md)** · **[图谱阅读档案](research/atlas/literature-cards.md)** · **[参考文献](research/atlas/references.md)**
 
-![首页直接呈现三张领域知识图谱](assets/atlas/landscape-overview.png)
+![三张领域图的界面示意；最新数字以 HTML 为准](assets/atlas/landscape-overview.png)
 
 三条路线包含 **29 个研究主题、146 个子问题、60 条机制联系**。首页直接显示三张图；进入路线后可展开全部子问题，也可点击主题查看关键问题、技术、相邻联系及论文与团队。图谱首先组织研究对象和机制，再挂接公开工作；空白研究位置不会因当前目录缺少论文而消失。
 
@@ -34,7 +34,7 @@
 
 [Harness 领域图](assets/atlas/harness-field-graph.svg) · [Model 领域图](assets/atlas/model-field-graph.svg) · [Model × Harness 领域图](assets/atlas/hybrid-field-graph.svg)。图中关系的解释与原文例证可点击读取；论文关系图另外区分明确引用、扩展与方法对照。
 
-本轮对 **622 条候选来源记录**进行逐项原文阅读与比较：567 条检索记录，加 55 项未被检索池覆盖的既有资料。这个数目包含论文、技术报告、历史与相邻研究，不是 622 项独立 RSI 成果，也不是全世界研究的普查总量。当前仍在审读，动态统计见 HTML 的“全量阅读与研究取舍”及 [完整审查数据](data/corpus-review.json)。
+本轮对 **622 条候选来源记录**进行逐项原文阅读与比较：567 条检索记录，加 55 项未被检索池覆盖的既有资料。这个数目包含论文、技术报告、历史与相邻研究，不是 622 项独立 RSI 成果，也不是全世界研究的普查总量。已完成 622／622 条：499 条原文与相关附录研读、111 条承接既有研读后的原文复核、12 条官方技术材料。比较后选出 77 条重点：Harness 42、Model 19、混合路线 6、跨路线支撑 10。口径及完整分布见 [全量审查说明](research/atlas/reading-audit.md) 与 [逐项审查数据](data/corpus-review.json)。
 
 主图默认显示比较后选出的重点研究；可扩展到方法、证据与规模补充。**完整搜索覆盖全部候选，包括移出主图的工作与具体理由。** 原文明示的继承/使用关系和综述分析的机制比较分别标记。约 20% 的保留预期不作为数量配额；范围外、重复、证据不足和相关但不入重点图均不等同“劣质”。
 
@@ -46,7 +46,7 @@ Model / 混合路线以实际训练主体 ≥27B 为默认范围偏好，冻结�
 
 ## What must be true before RSI is real?
 
-**Current scope and coverage:** A full-source audit is in progress over a fixed inventory of 622 candidate records. The original catalog IDs are preserved, with new selected research added through explicit curation bindings. The current source ledger, decisions and access boundaries are in [corpus-review.json](data/corpus-review.json). Earlier numbered catalogs and claim reviews remain dated historical records; none is a field census or a final quality ranking. The survey HTML is separate from this repository's theoretical research below.
+**Current scope and coverage:** The fixed inventory audit is complete: 622/622 source records, with 77 selected focal readings and an explicit disposition for every other record. The original catalog IDs are preserved, with new selected research added through explicit curation bindings. The current source ledger, decisions and access boundaries are in [corpus-review.json](data/corpus-review.json). Earlier numbered catalogs and claim reviews remain dated historical records; none is a field census or a final quality ranking. The survey HTML is separate from this repository's theoretical research below.
 
 **BeforeRSI** studies one question:
 
@@ -241,7 +241,7 @@ Generality requires mechanism coverage and testable predictions across methods. 
 | **[SEARCH.md](SEARCH.md)** | search-effort objectives, complete-computation preservation, and the executable learning loop |
 | **[THEORY.md](THEORY.md)** | implementation boundaries, common-target improvement tests, coupling, and mathematical counterexamples |
 | **[RSI_SCOPE.md](RSI_SCOPE.md)** | Chinese scope correction, filtering results, key evidence and research consequences |
-| **[research/scope-catalog.md](research/scope-catalog.md)** | all 138 entries separated by relevance, plus deferred/excluded candidates |
+| **[research/scope-catalog.md](research/scope-catalog.md)** | historical 138-entry scope snapshot; superseded by the full-source reading audit |
 | **[COMPATIBILITY.md](COMPATIBILITY.md)** | dated representation of the earlier 127 catalog entries and limits of universality claims |
 | **[MECHANISMS.md](MECHANISMS.md)** | conditional explanations, derivations, interventions and learner-aware research route |
 | **[research/mechanism-map.md](research/mechanism-map.md)** | causal operation, failure condition and separating intervention for the earlier 127-entry mechanism review |

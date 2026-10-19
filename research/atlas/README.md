@@ -1,70 +1,45 @@
-# RSI Field Atlas v5.1
+# RSI Field Atlas · 全量来源审查版
 
-Open **`RSI_Field_Atlas_v5_1.html`** locally. `index.html` is identical. The reader works offline, without a server, API key, external script or network connection. Source links open the original publications when a connection is available.
+本地打开 **RSI_Field_Atlas_v5_1.html**。不需要服务器、API key 或联网；点击原文链接时才需要网络。`index.html` 是相同文件。
 
-## Three maps, one corpus
+截至 2026-10-19，固定清单 622 条来源记录中已完成 622 条逐项分析，待完成 0 条。重点 77 条，其余保留方法补充、机制参考、相近、范围外或证据不足等具体理由。完整口径见 [审查与取舍说明](reading-audit.md)。
 
-The first screen shows the **Harness**, **Model** and **Model × Harness** field graphs. They contain 29 themes, 146 subquestions and 60 conceptual relations. Click a theme to see its research question, mechanisms, associated work and institutions. Paper-to-paper relations are a separate view: 34 source-explicit links and 35 editorial method comparisons, each with provenance.
+## 从三张知识图谱开始
 
-The route is determined by what actually changes. A frozen large-model teacher is not a trained target. A learned small controller can be part of a harness. Sequential distillation is distinguished from repeated bidirectional coevolution. Training stage, data collection, objective, roles and schedule are additional descriptors rather than competing taxonomies.
+首页直接呈现 Harness、Model、Model × Harness 三张领域图，包含 29 个主题、146 个子问题和 60 条机制联系。先看研究问题与更新对象，再查看对应论文、团队及原文。评价、理论和外部 AI4AI 作为跨路线支撑展示。
 
-| Principal route | Records | Paper main text, experiments and relevant appendices | Official public materials |
-|---|---:|---:|---:|
-| Harness | 52 | 43 | 9 |
-| Model | 36 | 36 | 0 |
-| Model × Harness | 22 | 21 | 1 |
-| **Three routes** | **110** | **100** | **10** |
+默认论文图呈现重点研究；可切换到方法与证据补充，并开启小模型机制参考。所有来源仍能从全量搜索进入完整阅读记录。领域图的主题联系与论文之间的来源关系分别说明。
 
-The catalog also contains nine cross-route evaluation/theory references and 22 historical/background records: **141 records overall**, including the previous 138 and three additions (Reflexion, ReasoningBank, HASE). Across the full catalog, 113 have paper main-text/experiment/relevant-appendix readings, 17 have explicitly bounded method/result-section readings, and 11 have official-public-material readings. These are reading scopes, not quality certifications or independent replications. Materials not disclosed by a company remain unknown.
+## 阅读顺序
 
-The three routes include 70 route-research records, 37 enabling methods and three cases with insufficient mechanism disclosure. They are not 110 demonstrations of strong recursive improvement. Thirty known sub-27B Model/mixed records appear in the supplementary view; enabling it restores all 110 route records from the default 80. Small scale is a viewing preference, not a quality rejection. Undisclosed or internally inconsistent model sizes remain marked as unverified.
+1. 首页选择一条路线，点击主题，了解问题、机制与相邻联系。
+2. 打开论文卡片，先读 A–F，再查看更新对象、实验、资源、局限及原文位置。
+3. 通过关系查看前作、采用的方法、比较对象和互补机制；综述分析与作者明示分开标记。
+4. 在机构视图按高校科研、工业研究团队、初创公司与独立研究者交叉浏览。联合工作可属于多个机构类别，不能按类别相加计总数。
+5. 用全量搜索或取舍页查阅未进主图的来源及原因；未入重点不等于劣质。
 
-## Discovery pool: every disposition is inspectable
+导航目录 174 项与完整来源清单 622 条是不同口径。公司入口有 27 个公开资料档案，不能当作全球公司普查或 27 个已验证 RSI 系统。
 
-The 567 unique arXiv leads have original metadata and abstracts. Eighty-six identifiers match catalog sources; the other 481 are individually screened. A study may have multiple arXiv identifiers, and company releases may have none, so this is not a one-to-one comparison with the 141 study records.
+## 证据与范围
 
-| Current disposition | Leads |
-|---|---:|
-| Linked to catalog records | 86 |
-| Route/method candidates; full reading pending | 240 |
-| Evaluation/theory candidates | 64 |
-| Enabling/background references | 133 |
-| Surveys/roadmaps | 17 |
-| Outside the current scope | 27 |
-| **Total** | **567** |
+实际学习的权重或 adapter 决定 Model 归属；冻结教师不计入训练规模。持久提示、代码、记忆、工具和控制机制决定 Harness 归属。两种学习共同发生且有交互才归混合路线。任务内重试或外部候选程序变好不自动成立系统自改进。
 
-**No lead has been excluded on a demonstrated low-quality judgment.** Absence from the map is not evidence of worthlessness. The Coverage page provides title/author/ID/abstract search, disposition filters, individual reasons and source links. [The textual ledger](discovery-ledger.md) preserves the same decisions. This is an auditable research inventory, not a claim of worldwide completeness.
+≥27B 是 Model/混合主图的选题范围偏好，不是质量定理。小模型和参数未公开分别记录，未披露的训练成本、迁移与多代进步不会补写成事实。全文分析不等于独立复现，也不意味着全球资料已经穷尽。
 
-## Reading and navigation
+## 数据与重建
 
-Each work has an A–F explanation: goal/value; research judgment; problem/theory; method; implementation/feedback; results/transfer. The expanded evidence panel records changed and fixed objects, feedback and inheritance, experimental comparisons, ablations, cost, generalization and exact source locations. It distinguishes author-reported results from survey interpretation.
-
-The “读懂 RSI” guide explains how to read the feedback loop. Search supports Chinese and English names, institutions, mechanisms and company aliases. Institution and team views provide a route-by-participant matrix, collaboration filters and work lists. Academic, large-technology-company, specialist-AI-company and independent-research categories describe participants; they do not rank quality. Joint work can appear in more than one participant row.
-
-The company index contains 27 profiles, including research-linked firms, declared directions and adjacent programs. Publication, coauthorship and hosting are separate relations. Discovery Loop is a declared direction with limited disclosed mechanism; founders' previous work is not assigned to the new company. MetaCircle, Apex, Nous, Recursive, Intology and Autoscience have explicit entries and source boundaries.
-
-## Sources of truth
-
-- `data/works.json`: bibliography, changed objects, sources and strongest supported claims.
-- `data/literature-editorial.json`: A–F explanations, routes, reading scopes and paper relations.
-- `data/primary-reading.json`: all 141 structured readings, corrections and unresolved source questions.
-- `data/discovery-review.json`: all 567 original abstracts, dispositions and reasons.
-- `data/field-knowledge.json`: themes, subquestions, conceptual relations and work placements.
-- `data/research-actors.json`: canonical institutions, aliases and participant categories.
-- `data/industry-landscape.json`: company profiles, publication roles and declared directions.
-- `data/industry-reading-log.json`: company-material access and disclosure limits.
-- `data/literature-atlas.json` and `data/knowledge-graph.json`: generated reader and typed graph.
-
-[Field guide](field-guide.md) · [Research cards](literature-cards.md) · [References](references.md) · [Actors](actor-guide.md) · [Companies](industry-guide.md) · [Discovery ledger](discovery-ledger.md).
-
-The older claim audit, 127-item scope review and nine-page PDF remain dated snapshots. They do not describe the current reading status or establish a field census. Current evidence is in the files above.
-
-## Rebuild and verification
+`data/full-reading-entries.json` 固定来源清单；`data/reading-reviews/` 逐项审查与横向综合；`data/corpus-review.json` 全量索引；`data/corpus-curation.json` 主图挂接；`data/corpus-relation-aliases.json` 经核对的别名。其他图谱、机构和公司数据分别保留来源。
 
 ```bash
+python scripts/build_corpus_review.py --require-complete
+python scripts/integrate_corpus_reviews.py
+python scripts/integrate_corpus_relations.py
 python scripts/build_literature_graphs.py
+python scripts/build_reading_audit.py
 python scripts/check_literature_graphs.py
 node scripts/check_atlas_ui.cjs
 ```
 
-The Python build uses the standard library. Set `CHROMIUM_PATH`, optionally `PLAYWRIGHT_MODULE`, and `ATLAS_SCREENSHOTS` for browser checks. A CJK font is required for Chinese screenshot rendering. Checks cover exact embedded data, stable identifiers, reading coverage, routes/scale, field and paper relations, search, cards, company/institution navigation and desktop/mobile layout. Reported research experiments have not been independently reproduced.
+自动检查覆盖数据一致性、三图、搜索、卡片、分页、筛选和双向关系。真实浏览器截图检查需另设 CHROMIUM_PATH；本轮没有完成这项视觉验收。离线包不分发整篇第三方论文，仅保留分析、公开链接与来源哈希。
+
+[领域结构](field-guide.md) · [图谱阅读档案](literature-cards.md) · [参考文献](references.md) · [机构](actor-guide.md) · [公司](industry-guide.md)

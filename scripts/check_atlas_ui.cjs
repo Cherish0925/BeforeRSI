@@ -48,7 +48,7 @@ for(const [decision,count] of Object.entries(corpus.counts.selection)){run(`stat
 run("state.corpusDecision='all';state.corpusQuery='2411.02337'");assert.equal(run('corpusMatches().length'),1);
 run("state.corpusQuery='';openPaper('webrl')");assert(nodes['paper-content'].innerHTML.includes('70B'));
 run("openPaper('eurisko')");assert(!nodes['paper-content'].innerHTML.includes('既有操作记录'));
-for(const e of data.relations){run(`selectEdge('${e.id}')`);assert(nodes.inspector.innerHTML.includes(e.sources[0].url));}
+for(const e of data.relations){run(`selectEdge('${e.id}')`);assert(nodes.inspector.innerHTML.includes(run('esc('+JSON.stringify(e.sources[0].url)+')')),e.id+' '+e.sources[0].url);}
 run("locate('skillrl')");assert.equal(run('state.small'),true);assert.equal(run('state.selected'),'skillrl');assert(run("selectedWorks().some(w=>w.id==='skillrl')"));
 assert(!/<script[^>]+src=|<link[^>]+href=/.test(html));assert(!/\bfetch\(/.test(scripts[1]));
 run("setPage('companies')");

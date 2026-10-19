@@ -21,13 +21,13 @@
 
 Science of AI → AI for AI：用训练动力学观测、机制假设和可执行实验帮助 AI 改进学习系统。
 
-三项公开工作分属自动研究、实验工作台和观测资料。其技术价值与当前实验规模分开记录；没有把小型案例写成 ≥27B 模型自训练证明。
+三项公开工作分别是外部模型自动研究、人工实验工作台与训练观测资料，作为AI4AI支撑连接三条路线；尚无研究器自身权重或持久Harness更新的公开闭环证据。
 
 **关联研究**
 
-- [OPHIS](https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch) · published · Harness。官方发布
-- [ComfyResearch](https://meta-circle.com/blog/comfyresearch-see-how-learning-happens) · published · Harness。官方发布
-- [nanoGPT Observable Library](https://meta-circle.com/blog/observe-learning-in-full) · published · Harness。官方发布
+- [OPHIS](https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch) · published · 跨路线评测 / 理论。官方发布
+- [ComfyResearch](https://meta-circle.com/blog/comfyresearch-see-how-learning-happens) · published · 跨路线评测 / 理论。官方发布
+- [nanoGPT Observable Library](https://meta-circle.com/blog/observe-learning-in-full) · published · 跨路线评测 / 理论。官方发布
 
 **其他公开资料**
 
@@ -42,8 +42,8 @@ Science of AI → AI for AI：用训练动力学观测、机制假设和可执�
 
 **关联研究**
 
-- [Apex-Tune](https://www.apexin.ai/assets/papers/what-happens-when-ai-starts-improving-ai.pdf) · published · Harness。官方发布
-- [Apex Research report](https://github.com/apexin-ai/apex-research-report) · published · Harness。官方发布
+- [Apex-Tune](https://www.apexin.ai/assets/papers/what-happens-when-ai-starts-improving-ai.pdf) · published · 跨路线评测 / 理论。官方发布
+- [Apex Research report](https://github.com/apexin-ai/apex-research-report) · published · 跨路线评测 / 理论。官方发布
 - [ASI-Bench](https://github.com/apexin-ai/ASI-Bench) · hosted · 跨路线评测 / 理论。官方项目托管；论文作者机构另列。
 - 方向：Model × Harness。公司研究目标与训练栈应用；未据官网愿景认证双向自更新。
 
@@ -68,11 +68,11 @@ Science of AI → AI for AI：用训练动力学观测、机制假设和可执�
 
 用 Locus 推进自动 AI R&D，用 Zochi 探索自动科研产出和外部同行评审。
 
-已读 Locus 预览与 2026 年自动后训练技术发布（含附录）；公开结果支持自动 AI R&D，部分系统仍私有，未证明研究器自身递归升级。
+此前已读技术发布，本次完整复核公开后训练仓库与产物说明；博客正文当前不可访问。结果支持外部模型自动后训练，研究器自身持续更新仍未披露。
 
 **关联研究**
 
-- [Locus](https://intology.ai/blog/previewing-locus) · published · Harness。官方发布
+- [Locus](https://intology.ai/blog/previewing-locus) · published · 跨路线评测 / 理论。官方发布
 
 **其他公开资料**
 
@@ -86,7 +86,7 @@ Science of AI → AI for AI：用训练动力学观测、机制假设和可执�
 
 **关联研究**
 
-- [Autoscience · Carl / Mira](https://www.autoscience.ai/blog/autoscience-autonomous-ai-lab) · published · Harness。官方发布
+- [Autoscience · Carl / Mira](https://www.autoscience.ai/blog/autoscience-autonomous-ai-lab) · published · 跨路线评测 / 理论。官方发布
 
 **其他公开资料**
 
@@ -99,7 +99,7 @@ First Steps 公开的是训练和 kernel 发现物；Agent0 是联合署名的�
 
 **关联研究**
 
-- [Recursive · First Steps](https://www.recursive.com/articles/first-steps-toward-automated-ai-research) · published · Harness。原文署名中的参与机构；不推断整个公司只有这一条路线。
+- [Recursive · First Steps](https://www.recursive.com/articles/first-steps-toward-automated-ai-research) · published · 跨路线评测 / 理论。原文署名中的参与机构；不推断整个公司只有这一条路线。
 - [Agent0](https://arxiv.org/pdf/2511.16043) · coauthored · Model。原文署名中的参与机构；不推断整个公司只有这一条路线。
 
 **其他公开资料**
@@ -282,11 +282,11 @@ RewardHarness 的冻结基座与外部奖励系统更新分开；下游训练不
 
 参与 harness 自动开发和相关评测研究。
 
-原文署名关系与作者主张分开；HarnessDev 与 Aspire 是两项不同类型的材料。
+HarnessDev与Aspire分别评价Harness开发及宽目标下的学习，放在共同评价支撑；其接口支持面与实际实验更新面分开记载，未据此认定混合RSI。
 
 **关联研究**
 
-- [HarnessDev](https://arxiv.org/pdf/2609.01437) · coauthored · Harness。原文署名中的参与机构；不推断整个公司只有这一条路线。
+- [HarnessDev](https://arxiv.org/pdf/2609.01437) · coauthored · 跨路线评测 / 理论。原文署名中的参与机构；不推断整个公司只有这一条路线。
 - [Aspire](https://arxiv.org/pdf/2608.31111) · coauthored · 跨路线评测 / 理论。原文署名中的参与机构；不推断整个公司只有这一条路线。
 
 **其他公开资料**

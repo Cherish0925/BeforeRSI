@@ -1,6 +1,6 @@
 # Evidence and judgment
 
-> Current source review: the 622-record audit and comparative selection in `data/corpus-review.json` supersede earlier screening statuses. Reading is still in progress. The source-level records are preserved in `data/reading-reviews/`; the offline HTML searches the entire inventory. Earlier dated sections below are historical research notes, not current selection counts.
+> Current source review: the 622-record audit and comparative selection in `data/corpus-review.json` supersede earlier screening statuses. All 622 entries now have completed source-scoped reviews: 499 full-primary readings, 111 rechecks completing earlier reading, and 12 official-public-material reviews. The comparative selection contains 77 focal records; see [counting and scope](research/atlas/reading-audit.md). The source-level records are preserved in `data/reading-reviews/`; the offline HTML searches the entire inventory. Earlier dated sections below are historical research notes, not current selection counts.
 
 
 This document separates scientific value from the label attached to a project. A work can be useful without being RSI. A work can also contain a genuine result while making a broader claim than its evidence supports.
@@ -919,3 +919,14 @@ Validation: bibliography/graph provenance, exact embedded offline data, three fi
 The current committed snapshot reviews 448 of 622 source records; 174 remain pending. These are reading records, not 448 independent RSI systems. Decisions so far are 54 core, 227 supporting, 127 scale/mechanism supplements, 16 insufficient-evidence, 13 outside-scope and 11 overlapping records. No fixed retention quota is imposed. Reading coverage is 358 full-primary reviews, 87 rechecks of previously completed primary reading, and 3 public-material reviews. Public disclosure and actual model-training roles remain explicit.
 
 The offline atlas contains all 622 searchable source records and 164 catalog cards. Its three route maps distinguish persistent agent updates from external program search; 54 core selections include 8 cross-cutting evidence or enabling works, which are not a fourth RSI route. Institution and source-backed relationship checks pass. Automated offline UI checks pass for maps, cards, search, filters and bidirectional relations; a browser visual pass is not claimed. This is an intermediate research checkpoint, not a complete survey release.
+
+
+## 2026-10-19 — completed 622-source review and release
+
+The fixed inventory is fully reviewed: 622 unique source IDs, zero pending and zero unaccounted-for access blocks. Reading coverage is 499 full-primary records, 111 rechecked primary readings and 12 public-material records. Some source-specific appendices, implementation details, model sizes or costs remain undisclosed and are identified in individual records; completion is not a claim that private information is known or reported experiments were independently reproduced.
+
+Comparative decisions: 77 focal records, 324 supporting records, 161 scope/scale mechanism references, 30 insufficient-evidence records, 17 outside-scope records and 13 overlapping records. The three route selections are Harness 42, Model 19 and Model × Harness 6, plus 10 cross-route evaluation/theory records. No fixed retention quota or blanket poor-quality verdict was applied.
+
+All 622 records have searchable evidence cards. The separate navigation catalog contains 174 works, including all focal selections; it is not the review denominator. The full source index resolves 1,178 inter-record relations (354 source-explicit and 824 analytical comparisons), with 324 external or ambiguous targets preserved as text. The three field maps retain 29 themes, 146 subquestions and 60 conceptual links; their navigation catalog has 375 sourced/typed paper relationships.
+
+Verification: the complete-inventory gate, graph/data consistency check and offline UI contract checks pass. They cover three field maps, all record cards, search/pagination, source links, bidirectional relations and institution/company filters. A real-browser screenshot pass was not available in this environment. This update changes the literature survey and evidence ledger; the downloadable survey omits the repository's own theory and experiments.

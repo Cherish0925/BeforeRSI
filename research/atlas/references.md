@@ -1,6 +1,6 @@
 # 参考文献与阅读位置
 
-164 个稳定编号是引用索引，不是质量排名；包含论文、技术报告、仓库和产品机制文档。当前路线归属、阅读深度和来源如下；完整解释见 [阅读档案](literature-cards.md)。
+174 个稳定编号是引用索引，不是质量排名；包含论文、技术报告、仓库和产品机制文档。当前路线归属、阅读深度和来源如下；完整解释见 [阅读档案](literature-cards.md)。
 
 ## [001] Good：智能机器设计 · 1965
 
@@ -181,9 +181,9 @@ Harness · 论文主文、实验与相关附录研读 · DeepWisdom / The Hong K
 
 A Self-Improving Coding Agent
 
-Harness · 论文主文、实验与相关附录研读 · iGent AI / University of Bristol
+Harness · 论文主文、实验与相关附录研读 · 布里斯托大学 / iGent AI
 
-§3–4，Algorithm1，Table1，Figures3–4；Appendix A/C/D。
+前次主文与App A/C/D阅读；本轮复核§3–6、Algorithm 1、Table 1完整各轮、App A–D全部提示/函数接口/修改序列及两条执行trace，作者署名。
 
 - [来源 1](https://arxiv.org/html/2504.15228v1)
 - [来源 2](https://github.com/MaximeRobeyns/self_improving_coding_agent)
@@ -219,13 +219,13 @@ Harness · 论文主文、实验与相关附录研读 · UC Berkeley / Stanford 
 
 AgentBreeder
 
-Harness · 论文主文、实验与相关附录研读 · University of Oxford
+Harness · 论文主文、实验与相关附录研读 · 牛津大学
 
-§4–6，Algorithm1，Tables1–3；Appendix A/B/C。
+前次主文及App A–C完整阅读；本轮复核§4–8、Algorithm1、Table1–3全部数值、App A–C全部提示/算子/实际scaffold代码及作者署名。
 
-- [来源 1](https://arxiv.org/abs/2502.00757)
-- [来源 2](https://arxiv.org/pdf/2502.00757)
-- [来源 3](https://arxiv.org/html/2502.00757v1)
+- [来源 1](https://arxiv.org/html/2502.00757v1)
+- [来源 2](https://arxiv.org/abs/2502.00757)
+- [来源 3](https://arxiv.org/pdf/2502.00757)
 
 ## [019] Statistical Limits · 2025
 
@@ -294,9 +294,9 @@ Model × Harness · 论文主文、实验与相关附录研读 · Hexo Labs / Un
 
 Recursive Harness Self-Improvement
 
-Harness · 论文主文、实验与相关附录研读 · Sakana AI / UC Berkeley
+Harness · 论文主文、实验与相关附录研读 · Sakana AI / 加州大学伯克利分校
 
-§3–6，Algorithm1，Figures5–11；Appendix B/C/E/F。
+前次完整主文及App B/C/E/F；本轮复核§3–7、Algorithm1、Figures5–11对应结果和方法、App C完整优化器输入/历史、App E评分rubric及F成本边界。
 
 - [来源 1](https://arxiv.org/html/2607.15524v1)
 - [来源 2](https://arxiv.org/abs/2607.15524)
@@ -356,12 +356,13 @@ Harness · 论文主文、实验与相关附录研读 · 香港科技大学
 
 EvoHarness-RL
 
-Model · 论文主文、实验与相关附录研读 · UIUC / Meta AI / Rutgers / Carnegie Mellon
+Model · 论文主文、实验与相关附录研读 · University of Illinois Urbana-Champaign / Meta AI / Rutgers University / Carnegie Mellon University
 
-§2–3；Tables 1–4；Appendices B–G、K
+复核§2–4、Tables1/4/6/7、Appendices E/F.3/G/K；此前已读主文与B–G/K相关附录
 
-- [来源 1](https://arxiv.org/abs/2608.05446)
-- [来源 2](https://arxiv.org/pdf/2608.05446)
+- [来源 1](https://arxiv.org/html/2608.05446)
+- [来源 2](https://arxiv.org/abs/2608.05446)
+- [来源 3](https://arxiv.org/pdf/2608.05446)
 
 ## [030] Harness Tampering · 2026
 
@@ -378,15 +379,15 @@ Auditing Harness Tampering in Self-Improving Agents
 
 ## [031] HarnessDev · 2026
 
-HarnessDev
+HarnessDev: Can LLMs Create and Evolve Their Own Agent Harness?
 
-Harness · 论文主文、实验与相关附录研读 · ByteDance Seed / SUTD / Georgia Tech / M-A-P / TokenWave.AI
+跨路线评测 / 理论 · 论文主文、实验与相关附录研读 · ByteDance / Singapore University of Technology and Design / Georgia Institute of Technology / M-A-P / TokenWave.AI
 
-§3–4、§6，Tables1–2/7，Figure8；Appendix B/C/D/F–I的配置与代表轨迹。
+沿用前轮主文与AppB/C/D/F–I完整相关阅读；本轮复核§3协议、§4.1/4.3与表6/7、§6.1、AppB成本、AppE演化完整合约；PDF首页机构。
 
-- [来源 1](https://arxiv.org/abs/2609.01437)
-- [来源 2](https://arxiv.org/pdf/2609.01437)
-- [来源 3](https://arxiv.org/html/2609.01437v1)
+- [来源 1](https://arxiv.org/html/2609.01437v1)
+- [来源 2](https://arxiv.org/abs/2609.01437)
+- [来源 3](https://arxiv.org/pdf/2609.01437)
 
 ## [032] RRSI · 2026
 
@@ -405,9 +406,9 @@ Harness · 论文主文、实验与相关附录研读 · Google Cloud AI Researc
 
 Meta-Harness
 
-Harness · 论文主文、实验与相关附录研读 · Stanford / KRAFTON / MIT
+Harness · 论文主文、实验与相关附录研读 · 斯坦福大学 / KRAFTON / 麻省理工学院
 
-§3–4，Algorithm1，Tables5–7；Appendix A/B/C/D。
+前次完整主文与App A–D阅读；本轮复核§3–5、Algorithm1、Tables2–7、App A实际失败诊断轨迹、B全部发现算法、C拆分/去污染、D工程预算、E关系边界及署名。
 
 - [来源 1](https://arxiv.org/html/2603.28052v1)
 - [来源 2](https://github.com/stanford-iris-lab/meta-harness)
@@ -574,7 +575,7 @@ Beyond Human Data: Scaling Self-Training for Problem-Solving with Language Model
 
 Model · 论文主文、实验与相关附录研读 · Google DeepMind / Mila
 
-§2–3；Algorithm 1；§5.1–5.4；Figures 2–10；§6
+复核§2–3 Algorithm1及§5.1–5.4/§6全部；此前全主文与Figures2–10阅读
 
 - [来源 1](https://arxiv.org/html/2312.06585v4)
 - [来源 2](https://arxiv.org/abs/2312.06585)
@@ -686,9 +687,12 @@ AlphaProof
 
 Model · 论文主文、实验与相关附录研读 · Google DeepMind
 
-主文 AlphaProof、Main RL progress、Inference-time scaling；Methods: Lean environment、Prover agent、Training、TTRL
+复核主文AlphaProof/Main RL/Inference-time scaling、Methods全部关键训练与评测章节；补读Supplementary Information Tables1–7及证明示例，Nature Table1；此前全主文及Methods；Supplementary Tables1–7及证明案例；Table1全表
 
-- [来源 1](https://www.nature.com/articles/s41586-025-09833-y)
+- [来源 1](https://www.nature.com/articles/s41586-025-09833-y?error=cookies_not_supported&code=293dc88c-08f7-4ea6-9e8b-44309e917493)
+- [来源 2](https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-025-09833-y/MediaObjects/41586_2025_9833_MOESM1_ESM.pdf)
+- [来源 3](https://www.nature.com/articles/s41586-025-09833-y/tables/1)
+- [来源 4](https://www.nature.com/articles/s41586-025-09833-y)
 
 ## [058] MuZero · 2019
 
@@ -719,7 +723,7 @@ SIMA 2: A Generalist Embodied Agent for Virtual Worlds
 
 Model · 论文主文、实验与相关附录研读 · Google DeepMind
 
-§3.3–3.4；§4.2、4.5；Figures 15–17；Appendix C；§5
+复核§3.1–3.4、§4.2–4.5、Figures15–17原图、Table1及AppendixC；此前全主文及相关附录
 
 - [来源 1](https://arxiv.org/html/2512.04797v1)
 - [来源 2](https://deepmind.google/blog/sima-2-an-agent-that-plays-reasons-and-learns-with-you-in-virtual-3d-worlds/)
@@ -741,7 +745,7 @@ Self-Taught Evaluators
 
 Model · 论文主文、实验与相关附录研读 · Meta FAIR
 
-§3–6；Tables 1–6；Appendix A.1–A.2；§8
+复核§3–6、Tables1–8、§8与Appendix A.1/A.2；此前完整主文与相关附录
 
 - [来源 1](https://arxiv.org/html/2408.02666v1)
 
@@ -775,7 +779,7 @@ GPT-Red: Automated Red Teaming via Self-Play at Scale
 
 Model · 论文主文、实验与相关附录研读 · OpenAI
 
-§4–8；Figures 4–7、10–13；Appendices A、C
+§4–8；Figures 3–7、10–14；Appendix A、C；复核主方法、训练/终测区别
 
 - [来源 1](https://cdn.openai.com/pdf/gpt-red-automated-red-teaming-via-self-play-at-scale.pdf)
 
@@ -827,13 +831,13 @@ Harness · 论文主文、实验与相关附录研读 · Beihang University / Un
 
 Prime Agent: A Self-Improving RLM Harness
 
-Harness · 论文主文、实验与相关附录研读 · Princeton / Prime Intellect / MIT
+Harness · 论文主文、实验与相关附录研读 · Princeton University / Prime Intellect / Massachusetts Institute of Technology
 
-§2.1–2.6；§3.1–3.5 Table1/Figs5–10；§5；App.A/B
+沿用前轮完整主文与相关附录阅读；本轮复核§2.1–2.6、§3.1–3.5/Table1、AppA/B的实际程序案例、署名，确认训练对象、refinement边界与负结果。
 
-- [来源 1](https://arxiv.org/abs/2608.23552)
-- [来源 2](https://arxiv.org/pdf/2608.23552)
-- [来源 3](https://arxiv.org/html/2608.23552v1)
+- [来源 1](https://arxiv.org/html/2608.23552v1)
+- [来源 2](https://arxiv.org/abs/2608.23552)
+- [来源 3](https://arxiv.org/pdf/2608.23552)
 
 ## [071] Red Queen Gödel Machine · 2026
 
@@ -955,9 +959,9 @@ Harness · 论文主文、实验与相关附录研读 · Harvard University
 
 Dual-Evolving Reinforcement Learning for Automated Reward Design
 
-Model · 论文主文、实验与相关附录研读 · Waterloo / HKU / CUHK-Shenzhen / Duke
+Model · 论文主文、实验与相关附录研读 · University of Waterloo / The University of Hong Kong / The Chinese University of Hong Kong, Shenzhen / Duke University
 
-§3–5；Tables1–2；Appendices A–C、F–I
+v3全文§1–6、表1–6，附录A–I全部复核；重点重启/继承、最终重训、算力匹配与外层梯度
 
 - [来源 1](https://arxiv.org/html/2512.13399v3)
 - [来源 2](https://arxiv.org/abs/2512.13399)
@@ -966,24 +970,26 @@ Model · 论文主文、实验与相关附录研读 · Waterloo / HKU / CUHK-She
 
 GEAR: Genetic AutoResearch for Agentic Code Evolution
 
-Harness · 论文主文、实验与相关附录研读 · Toronto / Vector / Samsung AI Center–Toronto / York
+Harness · 论文主文、实验与相关附录研读 · 多伦多大学 / Vector Institute / Samsung Electronics AI Center-Toronto / 约克大学
 
-§§3.1–3.3、4.1–4.3，表1–2；当前PDF的若干附录引用仍为??
+前次主文阅读；本轮完整复核§1–5及Table 1–3，特别是6次实际控制器修改；作者署名。公开源在References后结束，无其声称的完整prompt/超参附录。
 
-- [来源 1](https://arxiv.org/abs/2605.13874)
-- [来源 2](https://arxiv.org/pdf/2605.13874)
+- [来源 1](https://arxiv.org/html/2605.13874v1)
+- [来源 2](https://arxiv.org/abs/2605.13874)
+- [来源 3](https://arxiv.org/pdf/2605.13874)
 
 ## [083] Execution-Grounded Research · 2026
 
 Towards Execution-Grounded Automated AI Research
 
-Model · 论文主文、实验与相关附录研读 · Stanford
+Model · 论文主文、实验与相关附录研读 · Stanford University
 
-§2–5；Table1；AppendixA.1替代RL设计及执行样例。
+复核全§1–5、§8、Algorithm1、Table1、Appendix A.1；此前全主文及相关附录，含A.2–A.3案例
 
-- [来源 1](https://arxiv.org/abs/2601.14525)
-- [来源 2](https://arxiv.org/pdf/2601.14525)
-- [来源 3](https://arxiv.org/html/2601.14525)
+- [来源 1](https://arxiv.org/html/2601.14525v1)
+- [来源 2](https://arxiv.org/abs/2601.14525)
+- [来源 3](https://arxiv.org/pdf/2601.14525)
+- [来源 4](https://arxiv.org/html/2601.14525)
 
 ## [084] Metaⁿ · 2026
 
@@ -1063,12 +1069,13 @@ Harness · 论文主文、实验与相关附录研读 · Microsoft / Shanghai Ji
 
 Mem$^2$Evolve: Towards Self-Evolving Agents via Co-Evolutionary Capability Expansion and Experience Distillation
 
-Harness · 论文主文、实验与相关附录研读 · Beihang / Beijing Institute of Technology / Independent / MCML / Edinburgh
+Harness · 论文主文、实验与相关附录研读 · Beihang University / Beijing Institute of Technology / Munich Center for Machine Learning / University of Edinburgh
 
-§§3.1–3.3、4–5表2–4；附录B.3、C的规划/创建/反思提示与限制
+全文§1–6、表1–6；附录A全部定义/先例/实现、B全部实验细节、C全部提示、D全部五个代码案例与图3/4/7/9原图
 
-- [来源 1](https://arxiv.org/abs/2604.10923)
-- [来源 2](https://arxiv.org/pdf/2604.10923)
+- [来源 1](https://arxiv.org/html/2604.10923v1)
+- [来源 2](https://arxiv.org/abs/2604.10923)
+- [来源 3](https://arxiv.org/pdf/2604.10923)
 
 ## [091] MemSkill · 2026
 
@@ -1211,12 +1218,13 @@ Model · 论文主文、实验与相关附录研读 · Mila – Quebec AI Instit
 
 SkillWeaver: Web Agents can Self-Improve by Discovering and Honing Skills
 
-Harness · 论文主文、实验与相关附录研读 · Ohio State / Virginia / Purdue / Carnegie Mellon / Cisco Research
+Harness · 论文主文、实验与相关附录研读 · The Ohio State University / University of Virginia / Purdue University / Carnegie Mellon University / Cisco Research
 
-§§2.1–2.3、3.3–3.4、4.1–4.3表1–2；附录A与D.2.1
+全文 §§1–6、Tables 1–2、Figure 3；Appendices A–D 全部机制提示、基准任务、成功/失败代码及 Figures 9–10
 
-- [来源 1](https://arxiv.org/abs/2504.07079)
-- [来源 2](https://arxiv.org/pdf/2504.07079)
+- [来源 1](https://arxiv.org/html/2504.07079v1)
+- [来源 2](https://arxiv.org/abs/2504.07079)
+- [来源 3](https://arxiv.org/pdf/2504.07079)
 
 ## [103] Live-SWE-agent · 2025
 
@@ -1296,13 +1304,15 @@ Agentic Discovery of Neural Architectures: AIRA-Compose and AIRA-Design
 
 AI4AI-Bench: Benchmarking LLM Agents in Algorithmic Design for Recursive Self-Improvement
 
-跨路线评测 / 理论 · 论文主文、实验与相关附录研读 · NAVER Labs / Einsia.AI / Tsinghua
+跨路线评测 / 理论 · 论文主文、实验与相关附录研读 · Einsia.AI / Navers Lab / Tsinghua University
 
-§2任务合同与评分，§3–4实验及代码修改分析；附录 A 十任务与 B 完整RAGEN合同。
+完整主文§1–6、全部表、Appendix A全部10任务和B完整任务契约；另读官方项目页、仓库README、tools/docs/evaluation.md及commit 5ced1e2eb1882baf52e6d928f9257006aa71968c的orchestrator/final_score.py完整代码。；完整读取；best_valid_of_up_to_3、invalid与infrastructure error分离、结果来源验证；未执行；完整95行；self-hosted与未开放官方盲测服务、source patch/容器/硬件核验协议
 
-- [来源 1](https://arxiv.org/abs/2608.20318)
-- [来源 2](https://arxiv.org/pdf/2608.20318)
-- [来源 3](https://arxiv.org/html/2608.20318v1)
+- [来源 1](https://arxiv.org/html/2608.20318v1)
+- [来源 2](https://github.com/Einsia/AI4AI-Bench/blob/5ced1e2eb1882baf52e6d928f9257006aa71968c/orchestrator/final_score.py)
+- [来源 3](https://github.com/Einsia/AI4AI-Bench/blob/main/tools/docs/evaluation.md)
+- [来源 4](https://arxiv.org/abs/2608.20318)
+- [来源 5](https://arxiv.org/pdf/2608.20318)
 
 ## [110] Generalized Agent Iteration · 2026
 
@@ -1320,13 +1330,13 @@ Generalized Agent Iteration: One Formal Framework for Iterative Policy Improveme
 
 Aspire: Can Models Self-Evolve from Vague Goals?
 
-跨路线评测 / 理论 · 论文主文、实验与相关附录研读 · ByteDance Seed / SUTD / M-A-P / TokenWave.AI
+跨路线评测 / 理论 · 论文主文、实验与相关附录研读 · ByteDance Seed / Singapore University of Technology and Design / M-A-P / TokenWave.AI
 
-§3协议与评测隔离；§4三组实验；附录 C 的原始/保留分数、预算与 D 的harness案例。
+完整主文§1–7、全部表与图注，Appendix A–D全部协议、逐项结果、资源账本和三条creator案例；本轮从原文重新阅读，未沿用旧卡结论代替阅读全文。
 
-- [来源 1](https://arxiv.org/abs/2608.31111)
-- [来源 2](https://arxiv.org/pdf/2608.31111)
-- [来源 3](https://arxiv.org/html/2608.31111v1)
+- [来源 1](https://arxiv.org/html/2608.31111v1)
+- [来源 2](https://arxiv.org/abs/2608.31111)
+- [来源 3](https://arxiv.org/pdf/2608.31111)
 
 ## [112] Faithful Self-Evolvers · 2026
 
@@ -1367,15 +1377,15 @@ Model · 论文主文、实验与相关附录研读 · Zhejiang University / Bai
 
 ## [115] Actor-Curator · 2026
 
-Actor-Curator: Co-adaptive Curriculum Learning via Policy-Improvement Bandits for RL Post-Training
+Actor-Curator: Co-adaptive Curriculum Learning via Policy-Improvement Bandits for Scalable RL Post-Training
 
-Model · 论文主文、实验与相关附录研读 · UIC / Caltech / RPI / MBZUAI / UChicago / NEC Labs America
+Model · 论文主文、实验与相关附录研读 · University of Illinois Chicago / Caltech / Rensselaer Polytechnic Institute / MBZUAI / University of Chicago / NEC Laboratories America
 
-§2–4、Eq4–12、Table1、AppendixB–J
+§§2–4; AppendixB Theorems3/4; AppendixD Lemma3; Tables1/3/4; Figure7
 
-- [来源 1](https://arxiv.org/abs/2602.20532)
-- [来源 2](https://arxiv.org/pdf/2602.20532)
-- [来源 3](https://arxiv.org/html/2602.20532v1)
+- [来源 1](https://arxiv.org/html/2602.20532v1)
+- [来源 2](https://arxiv.org/abs/2602.20532)
+- [来源 3](https://arxiv.org/pdf/2602.20532)
 
 ## [116] Agent-World · 2026
 
@@ -1429,36 +1439,37 @@ Harness · 论文主文、实验与相关附录研读 · NVIDIA / Caltech / UT A
 
 AgentEvolver: Towards Efficient Self-Evolving Agent System
 
-Model · 论文主文、实验与相关附录研读 · Alibaba Tongyi Lab
+Model · 论文主文、实验与相关附录研读 · Tongyi Lab, Alibaba Group
 
-§2–7；Eq15–21；Tables1–7；实现/消融§7.1、§7.3–7.6
+§2–7；Eq13–17、步骤归因；Tables1–7；重点复核§3.3–3.4、4.1–4.3、7.1–7.6
 
-- [来源 1](https://arxiv.org/abs/2511.10395)
-- [来源 2](https://arxiv.org/pdf/2511.10395)
-- [来源 3](https://arxiv.org/html/2511.10395v1)
+- [来源 1](https://arxiv.org/html/2511.10395v1)
+- [来源 2](https://arxiv.org/abs/2511.10395)
+- [来源 3](https://arxiv.org/pdf/2511.10395)
 
 ## [121] Teaching LLMs to Self-Evolve · 2026
 
 Teaching LLMs to Self-Evolve: Cultivating Core Meta-Skills with Reinforcement Learning
 
-Model · 论文主文、实验与相关附录研读 · UIUC
+Model · 论文主文、实验与相关附录研读 · University of Illinois Urbana-Champaign
 
-§2–4、Tables2/4/7、AppendixA–B
+全文§1–5；Tables 1–7；Appendix A–D；Figure 2完整原图
 
-- [来源 1](https://arxiv.org/abs/2607.21971)
-- [来源 2](https://arxiv.org/pdf/2607.21971)
-- [来源 3](https://arxiv.org/html/2607.21971)
+- [来源 1](https://arxiv.org/html/2607.21971)
+- [来源 2](https://arxiv.org/abs/2607.21971)
+- [来源 3](https://arxiv.org/pdf/2607.21971)
 
 ## [122] SEED Distillation · 2026
 
 SEED: Self-Evolving On-Policy Distillation for Agentic Reinforcement Learning
 
-Model · 论文主文、实验与相关附录研读 · Tsinghua / Zhejiang University / CUHK / NTU / Tongji
+Model · 论文主文、实验与相关附录研读 · Tsinghua University / Zhejiang University / The Chinese University of Hong Kong / Nanyang Technological University / Tongji University
 
-§3–4、Tables1–3、AppendixB.4及C、OOD附表
+全部主文§1–5；Tables1–8；Appendix A完整命题/证明、B完整算法/超参、C–E；原图Figures8–17；PDF第9页Table1交叉核查及算术复算；Table1原PDF第9页目视核对，确认Avg与HTML相同；全主文与附录阅读来自同版HTML
 
 - [来源 1](https://arxiv.org/html/2607.14777v1)
-- [来源 2](https://arxiv.org/abs/2607.14777)
+- [来源 2](https://arxiv.org/pdf/2607.14777v1)
+- [来源 3](https://arxiv.org/abs/2607.14777)
 
 ## [123] RL Tango · 2025
 
@@ -1477,11 +1488,13 @@ Model · 论文主文、实验与相关附录研读 · MIT / MIT-IBM Watson AI L
 
 Iterative Reasoning Preference Optimization
 
-Model · 论文主文、实验与相关附录研读 · Meta FAIR / NYU
+Model · 论文主文、实验与相关附录研读 · Meta FAIR / New York University
 
-§2、§3.1–3.4、Tables1–5、AppendixA
+arXiv v2全文§1–5、Tables1–2、Figures2–3、Appendix A；另全文补读NeurIPS正式版§1–5、Figures2–4、Appendices A/B与复现Checklist，PDF Eq.1逐式核对；PDF第3页旧Eq.1、第6页概率曲线，原图核对；正式版全部主文§1–5、Figures2–4、Appendix A–B、Checklist；Eq.1原图核对
 
 - [来源 1](https://arxiv.org/html/2404.19733v2)
+- [来源 2](https://arxiv.org/pdf/2404.19733v2)
+- [来源 3](https://proceedings.neurips.cc/paper_files/paper/2024/file/d37c9ad425fe5b65304d500c6edcba00-Paper-Conference.pdf)
 
 ## [125] DeepSeekMath-V2 · 2025
 
@@ -1489,19 +1502,20 @@ DeepSeekMath-V2: Towards Self-Verifiable Mathematical Reasoning
 
 Model · 论文主文、实验与相关附录研读 · DeepSeek-AI
 
-§2.1–2.3、§3.1–3.3、Table1、AppendixA.1–A.4
+§1–3、Table1、Figures1–3、AppendixA.1–A.4；官方模型卡与基座仓库补充规模；官方模型卡：基座与Safetensors 685B统计；浏览2026-10-19；官方基座仓库：config_671B_v3.2.json命名
 
 - [来源 1](https://arxiv.org/html/2511.22570v1)
-- [来源 2](https://huggingface.co/deepseek-ai/DeepSeek-Math-V2/blob/main/config.json)
+- [来源 2](https://huggingface.co/deepseek-ai/DeepSeek-Math-V2)
 - [来源 3](https://github.com/deepseek-ai/DeepSeek-V3.2-Exp)
+- [来源 4](https://huggingface.co/deepseek-ai/DeepSeek-Math-V2/blob/main/config.json)
 
 ## [126] Kimi K2 · 2025
 
 Kimi K2: Open Agentic Intelligence
 
-Model · 论文主文、实验与相关附录研读 · Moonshot AI（月之暗面）
+Model · 论文主文、实验与相关附录研读 · Kimi Team / Moonshot AI
 
-§3.1–3.3、§4.1、Table3、AppendixC/F；§2.3–2.5提供规模背景
+§2.3–2.5、§3.1–3.3、§4.1/Table3、§5、AppendixC、F、G；重核critic在线更新
 
 - [来源 1](https://arxiv.org/html/2507.20534v1)
 
@@ -1521,9 +1535,9 @@ Model · 论文主文、实验与相关附录研读 · Google / University of Il
 
 OPHIS: Towards Mechanistic Auto-Research
 
-Harness · 公开材料研读 · MetaCircle
+跨路线评测 / 理论 · 公开材料研读 · MetaCircle
 
-官方技术发布 2026-07-23：框架、Grokking 对照、NanoGPT observables / 干预与统计结果、披露边界
+2026-07-23官方文章全部正文、Grokking与NanoGPT实验及限制；观测—干预映射的私有实现未公开。
 
 - [来源 1](https://meta-circle.com/blog/ophis-a-new-paradigm-for-autoresearch)
 
@@ -1531,20 +1545,21 @@ Harness · 公开材料研读 · MetaCircle
 
 ComfyResearch: See How Learning Happens
 
-Harness · 公开材料研读 · MetaCircle
+跨路线评测 / 理论 · 公开材料研读 · MetaCircle
 
-官方发布 2026-08-11 全文：typed graph、33 observable nodes、parameter sweeps、实验案例及 human-in-the-loop 说明；官方仓库 README
+2026-08-11官方介绍完整正文、全部演示及公开README全文；未安装软件或逐行审计代码。；完整README：Why、运行示例、系统结构、检查与文档说明
 
 - [来源 1](https://meta-circle.com/blog/comfyresearch-see-how-learning-happens)
-- [来源 2](https://github.com/MetaCircleAI/ComfyResearch)
+- [来源 2](https://github.com/MetaCircleAI/ComfyResearch/blob/main/README.md)
+- [来源 3](https://github.com/MetaCircleAI/ComfyResearch)
 
 ## [130] nanoGPT Observable Library · 2026
 
 nanoGPT Observable Library: Observe Learning in Full
 
-Harness · 公开材料研读 · MetaCircle
+跨路线评测 / 理论 · 公开材料研读 · MetaCircle
 
-官方发布 2026-08-06 全文：数据集/训练设置、1820 curves、Block 1 attention entropy 对照、观察与解释边界
+2026-08-06官方文章全部正文、三种训练设置、8类1820观测曲线说明、假说和开放问题。
 
 - [来源 1](https://meta-circle.com/blog/observe-learning-in-full)
 
@@ -1552,23 +1567,25 @@ Harness · 公开材料研读 · MetaCircle
 
 Apex-Tune: Discovered Improvements Across the AI Training Stack
 
-Harness · 公开材料研读 · Apex Intelligence
+跨路线评测 / 理论 · 公开材料研读 · Apex Intelligence
 
-八页官方报告全文（四项技术案例）；成果仓库 README 当前 NanoChat / TriMul / attention / SLDBench 表及来源说明
+官方What Happens When AI Starts Improving AI报告完整正文；官方结果仓库README、NanoChat与SLDBench子目录完整README。；根README与四类产物目录；完整README，10种子数值、硬件与机制；完整README，修正后的基线口径与外推协议
 
 - [来源 1](https://www.apexin.ai/assets/papers/what-happens-when-ai-starts-improving-ai.pdf)
 - [来源 2](https://github.com/apexin-ai/Apex-Tune-results)
+- [来源 3](https://github.com/apexin-ai/Apex-Tune-results/blob/main/nanochat_autoresearch/README.md)
+- [来源 4](https://github.com/apexin-ai/Apex-Tune-results/blob/main/sldbench/README.md)
 
 ## [132] Apex Research report · 2026
 
 Apex Research: AI Can Publish at Top AI Conferences Now!
 
-Harness · 公开材料研读 · Apex Intelligence
+跨路线评测 / 理论 · 公开材料研读 · Apex Intelligence
 
-官方四页报告全文：34 项项目、资源/人工占比、ARR 评分、撤稿与未来公开计划；官方仓库 README
+官方Apex Research 2026报告全部4页：声明、34项目资源/参与记录、评分、代表案例和开放问题。
 
-- [来源 1](https://github.com/apexin-ai/apex-research-report)
-- [来源 2](https://www.apexin.ai/assets/papers/apex-research-2026.pdf)
+- [来源 1](https://www.apexin.ai/assets/papers/apex-research-2026.pdf)
+- [来源 2](https://github.com/apexin-ai/apex-research-report)
 
 ## [133] ASI-Bench · 2026
 
@@ -1586,12 +1603,15 @@ ASI-Bench: At the Dawn of Artificial Superintelligence
 
 First Steps Toward Automated AI Research
 
-Harness · 公开材料研读 · Recursive Superintelligence
+跨路线评测 / 理论 · 公开材料研读 · Recursive Superintelligence
 
-官方 2026-06-11 发布全文（NanoChat、NanoGPT、SOL、有效评估与局限）；成果仓库 README
+2026-06-11文章全文、全部展开代码说明及脚注；官方根README、NanoGPT Speedrun和SOL-ExecBench README全文。；全文；完整同硬件对照、多种子与环境；全文，10/235公开范围
 
 - [来源 1](https://www.recursive.com/articles/first-steps-toward-automated-ai-research)
-- [来源 2](https://github.com/recursive-org/first-steps-toward-automated-ai-research)
+- [来源 2](https://github.com/recursive-org/first-steps-toward-automated-ai-research/blob/main/README.md)
+- [来源 3](https://github.com/recursive-org/first-steps-toward-automated-ai-research/blob/main/nanoGPT_speedrun/README.md)
+- [来源 4](https://github.com/recursive-org/first-steps-toward-automated-ai-research/blob/main/SOL-ExecBench/README.md)
+- [来源 5](https://github.com/recursive-org/first-steps-toward-automated-ai-research)
 
 ## [135] Hermes Agent · 2026
 
@@ -1599,11 +1619,16 @@ Hermes Agent: Experience, Persistent Memory and Self-Improving Skills
 
 Harness · 公开材料研读 · Nous Research
 
-官方仓库 README；Skills System 的 Agent-Managed Skills / Gating writes；Persistent Memory 的 frozen snapshot、capacity、session search、background review / model routing / budget
+完整官方 README；功能与研究用途声明；完整 Skills System 文档：技能写入、分层读取、门控、版本、依赖、缓存与反馈；完整 Persistent Memory 文档：两类记忆、容量、会话快照、历史检索和背景 review；完整 Curator 文档：状态迁移、自动整理、合并、来源策略与回滚；开头 1–180 行及 apply_automatic_transitions 完整函数；14/30 天阈值与自动状态迁移；_background_delete_gate 完整函数；无人值守 patch/remove 始终进入 staging；_locate_for_write、_guarded_write、_edit_skill、_patch_skill、_delete_skill、_record_success 及 skill_manage preflight；只读上述相关实现段落
 
-- [来源 1](https://github.com/NousResearch/hermes-agent)
+- [来源 1](https://raw.githubusercontent.com/NousResearch/hermes-agent/main/README.md)
 - [来源 2](https://hermes-agent.nousresearch.com/docs/user-guide/features/skills)
 - [来源 3](https://hermes-agent.nousresearch.com/docs/user-guide/features/memory)
+- [来源 4](https://hermes-agent.nousresearch.com/docs/user-guide/features/curator)
+- [来源 5](https://github.com/NousResearch/hermes-agent/blob/6e9b3e3b8852f12bf965f888213470574b72803e/agent/curator.py)
+- [来源 6](https://github.com/NousResearch/hermes-agent/blob/6e9b3e3b8852f12bf965f888213470574b72803e/tools/memory_tool.py)
+- [来源 7](https://github.com/NousResearch/hermes-agent/blob/6e9b3e3b8852f12bf965f888213470574b72803e/tools/skill_manager_tool.py)
+- [来源 8](https://github.com/NousResearch/hermes-agent)
 
 ## [136] INTELLECT-3 / PRIME-RL · 2025
 
@@ -1611,37 +1636,38 @@ INTELLECT-3: A 100B+ MoE Trained with Large-Scale RL
 
 Model · 论文主文、实验与相关附录研读 · Prime Intellect
 
-§2.1.2–2.1.6、§3.1–3.3、§4、Tables1–2、AppendixA
+§2.1.2–2.1.8、§2.2–2.4、§3.1–3.3、Tables1–2、Figures9–10、§5、AppendixA
 
-- [来源 1](https://www.primeintellect.ai/blog/intellect-3)
-- [来源 2](https://github.com/PrimeIntellect-ai/prime-rl)
-- [来源 3](https://github.com/PrimeIntellect-ai/verifiers)
-- [来源 4](https://storage.googleapis.com/intellect-3-paper/INTELLECT_3_Technical_Report.pdf)
+- [来源 1](https://storage.googleapis.com/intellect-3-paper/INTELLECT_3_Technical_Report.pdf)
+- [来源 2](https://www.primeintellect.ai/blog/intellect-3)
+- [来源 3](https://github.com/PrimeIntellect-ai/prime-rl)
+- [来源 4](https://github.com/PrimeIntellect-ai/verifiers)
 
 ## [137] Locus · 2025
 
 Intology Locus: Previewing Automated AI R&D
 
-Harness · 公开材料研读 · Intology
+跨路线评测 / 理论 · 公开材料研读 · Intology
 
-Previewing Locus（2025-11-19）全文与脚注；Scaling Automated Post-Training（2026-08-03）正文和附录 A–G；公开 artifacts README 的复现限制
+本次完整阅读官方Scaling Automated Post-Training仓库及artifacts两份README，并核对既有完整博客阅读记录。旧记录涵盖预览全文与2026更新正文/附录A–G；本次两个博客仅返回网页壳，未重新取回全文。；全文：复评、composite与代码/checkpoint复现限制；此前全文/附录记录；本次主体不可获取；此前全文/脚注记录；本次主体不可获取
 
-- [来源 1](https://intology.ai/blog/previewing-locus)
-- [来源 2](https://intology.ai/about)
-- [来源 3](https://intology.ai/blog/zochi-tech-report)
-- [来源 4](https://intology.ai/blog/scaling-automated-post-training)
-- [来源 5](https://github.com/IntologyAI/scaling-automated-post-training/blob/master/artifacts/README.md)
+- [来源 1](https://github.com/IntologyAI/scaling-automated-post-training/blob/master/README.md)
+- [来源 2](https://github.com/IntologyAI/scaling-automated-post-training/blob/master/artifacts/README.md)
+- [来源 3](https://intology.ai/blog/scaling-automated-post-training)
+- [来源 4](https://intology.ai/blog/previewing-locus)
+- [来源 5](https://intology.ai/about)
+- [来源 6](https://intology.ai/blog/zochi-tech-report)
 
 ## [138] Autoscience · Carl / Mira · 2026
 
 Autoscience: Automated AI Scientists and Engineers
 
-Harness · 公开材料研读 · Autoscience
+跨路线评测 / 理论 · 公开材料研读 · Autoscience
 
-公司署名 Business Wire 2026-03-18 完整发布稿；官方 Carl/Mira/实验室页面访问受限，仅检索索引可见
+2026-03-18公司署名Business Wire完整发布稿；本次重试官方实验室/Carl页仍无法获取正文。；再次访问仅网页壳，不计为正文已读
 
-- [来源 1](https://www.autoscience.ai/blog/autoscience-autonomous-ai-lab)
-- [来源 2](https://www.businesswire.com/news/home/20260318760407/en/Autoscience-Raises-$14M-to-Build-the-Worlds-First-Automated-AI-Research-Lab)
+- [来源 1](https://www.businesswire.com/news/home/20260318760407/en/Autoscience-Raises-$14M-to-Build-the-Worlds-First-Automated-AI-Research-Lab)
+- [来源 2](https://www.autoscience.ai/blog/autoscience-autonomous-ai-lab)
 - [来源 3](https://www.autoscience.ai/blog/meet-carl)
 - [来源 4](https://www.autoscience.ai/blog/introducing-mira)
 
@@ -1904,7 +1930,109 @@ Arena Learning: Build Data Flywheel for LLMs Post-training via Simulated Chatbot
 
 Model · 论文主文、实验与相关附录研读 · Microsoft Corporation / Tsinghua University / SIAT-UCAS
 
-全文§1–5、Tables 1–11、Figures 8–12；Appendix A
+全文§1–5、Tables 1–11、Figures 8–12；Appendix A；PDF首页机构标签与方法核对
 
 - [来源 1](https://arxiv.org/html/2407.10627v1)
+- [来源 2](https://arxiv.org/pdf/2407.10627v1)
+
+## [165] SelfSearch · 2026
+
+SelfSearch: Reward-Free Search for Self-Improving Agents
+
+Harness · 论文主文、实验与相关附录研读 · Seoul National University
+
+§§2–4; Tables1–13; AppendicesA–F
+
+- [来源 1](https://arxiv.org/html/2609.37968v2)
+
+## [166] AIDE · 2025
+
+AIDE: AI-Driven Exploration in the Space of Code
+
+跨路线评测 / 理论 · 论文主文、实验与相关附录研读 · Weco AI
+
+全文§1–6、AppendicesA–C含baselineprompts/成本/完整任务表；PDFtext复核Table2
+
+- [来源 1](https://arxiv.org/html/2502.13138v1)
+
+## [167] MCE · 2026
+
+Meta Context Engineering via Agentic Skill Evolution
+
+Harness · 论文主文、实验与相关附录研读 · Peking University
+
+v2 §1–5、Algorithm1、Tables1–4、Appendix A–E完整数据/提示/技能/五域案例/工具代码；PDF第9页Figures3–4；PDF p.9 Figures3–4
+
+- [来源 1](https://arxiv.org/html/2601.21557v2)
+- [来源 2](https://arxiv.org/pdf/2601.21557v2)
+
+## [168] SKILL-KD · 2026
+
+SKILL-KD: Contrastive Skill Distillation for LLM Agents
+
+Harness · 论文主文、实验与相关附录研读 · Zhejiang University / Peking University / Alibaba Group
+
+§1–6、Tables1–7、Appendix A–C所有划分/计算设置/工具schema/38条最终技能节选
+
+- [来源 1](https://arxiv.org/html/2607.28048v4)
+
+## [169] Meta-Team · 2026
+
+Evolve as a Team: Collaborative Self-Evolution for LLM-based Multi-Agent Systems
+
+Harness · 论文主文、实验与相关附录研读 · Tencent / Zhejiang University / The Hong Kong University of Science and Technology
+
+完整主文§1–6；AppA–F（全部理论、运行算法与L1–3工具/提示、真实GAIA例、完整split/基线适配、显著性/成本/跨模型/团队大小/独立运行表）；PDF图1/3–6图形实读。
+
+- [来源 1](https://arxiv.org/html/2605.29790v2)
+
+## [170] MemQ · 2026
+
+MemQ: Integrating Q-Learning into Self-Evolving Memory Agents over Provenance DAGs
+
+Harness · 论文主文、实验与相关附录研读 · Shanghai Jiao Tong University / National University of Singapore / Xidian University / Shanghai Innovation Institute / University of Science and Technology of China / MemTensor (Shanghai) Technology Co., Ltd.
+
+v4 全部主文§1–6、算法1、图1–13、表1–8；附录A固定图理论全部证明、B/C学习与Q诊断、D全消融、E基线实现、F全部数据与参数；另核PDF页11–13、24–27原图
+
+- [来源 1](https://arxiv.org/html/2605.08374v4)
+
+## [171] PaperBench · 2025
+
+PaperBench: Evaluating AI's Ability to Replicate AI Research
+
+跨路线评测 / 理论 · 论文主文、实验与相关附录研读 · OpenAI
+
+§1–8、App A–I、Tables1–18全部逐项结果、Figures7–14完整裁判/agent提示；PDF Figures2/3/6图像核查
+
+- [来源 1](https://arxiv.org/html/2504.01848v3)
+
+## [172] Metis · 2026
+
+Metis: Bridging Text and Code Memory for Self-Evolving Agents
+
+Harness · 论文主文、实验与相关附录研读 · The Chinese University of Hong Kong / Huawei / Wuhan University
+
+全文§1–5、算法1、表1–4、附录A.1全部profiling协议与图3–5；SVG原图核对全部成本/准确率图
+
+- [来源 1](https://arxiv.org/html/2606.24151v1)
+
+## [173] DRAFT · 2024
+
+From Exploration to Mastery: Enabling LLMs to Master Tools via Self-Driven Interactions
+
+Harness · 论文主文、实验与相关附录研读 · Renmin University of China / Baidu Inc. / Institute of Computing Technology, Chinese Academy of Sciences
+
+全文 §§1–5、Algorithm1、Figures1–7、Tables1–12；AppendicesA–E 完整提示、评审、额外消融及五轮原始文档演变
+
+- [来源 1](https://arxiv.org/html/2410.08197v2)
+
+## [174] LATM · 2023
+
+Large Language Models as Tool Makers
+
+Harness · 论文主文、实验与相关附录研读 · Google DeepMind / Princeton University / Stanford University
+
+全文 §§1–6、Tables1–5、Figures1–4、AppendicesA–E全部提示/封装工具/数据构造；PDF附录21–22页复核代码
+
+- [来源 1](https://arxiv.org/html/2305.17126v2)
 

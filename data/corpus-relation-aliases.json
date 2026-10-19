@@ -1,0 +1,194 @@
+[
+  {
+    "alias": "Agentic Harness Engineering",
+    "entry_id": "arxiv-2604-25850",
+    "evidence": "full-reading/entries.json 的 arxiv-2604-25850 标题为《Agentic Harness Engineering: Observability-Driven Automatic Evolution of Coding-Agent Harnesses》；full-reading/sources/arxiv-2604-25850.txt 的标题（缓存前4行）确认该短名。当前来源明确比较 observability 驱动的 coding harness 编辑，并关闭其 explore 外部检索。 当前全部出现来源：arxiv-2607-12227。此映射仅确认工作身份，不提升既有关系的证据等级。"
+  },
+  {
+    "alias": "AgentSquare",
+    "entry_id": "arxiv-2410-06153",
+    "evidence": "full-reading/entries.json 的 arxiv-2410-06153 标题为《AgentSquare: Automatic LLM Agent Search in Modular Design Space》；full-reading/sources/arxiv-2410-06153.txt 的标题（缓存前4行）确认该短名。当前 MaAS 比较对应模块化 agent 搜索空间。 当前全部出现来源：arxiv-2502-04180。此映射仅确认工作身份，不提升既有关系的证据等级。"
+  },
+  {
+    "alias": "AIDE",
+    "entry_id": "arxiv-2502-13138",
+    "evidence": "full-reading/entries.json 的 arxiv-2502-13138 标题为《AIDE: AI-Driven Exploration in the Space of Code》；full-reading/sources/arxiv-2502-13138.txt 的标题（缓存前4行）确认该短名。所有当前关系均指外部候选程序的固定树搜索研究器；与 AIDE²、MLGym 等其他工作没有合并。 当前全部出现来源：arxiv-2606-06473, arxiv-2605-28655, arxiv-2605-15308, arxiv-2604-14116, arxiv-2505-14738。此映射仅确认工作身份，不提升既有关系的证据等级。"
+  },
+  {
+    "alias": "arxiv-2506-14302",
+    "entry_id": "arxiv-2606-14302",
+    "evidence": "仅修正当前 arxiv-2605-22905 分析比较边中的年份误植：其 explanation 明说 RePro 完整轨迹终局，而 full-reading/entries.json 与 sources/arxiv-2606-14302.txt 第35行明确对应 Retrospective Progress-Aware Training (RePro)。此证据只支持该来源关系的目标修正，不能把真实的 arxiv:2506.14302 在其他语境全局重定向。",
+    "source_entry_id": "arxiv-2605-22905"
+  },
+  {
+    "alias": "arxiv-2607-22688",
+    "entry_id": "catalog-co-harness",
+    "evidence": "full-reading/entries.json 的 catalog-co-harness 明确 arxiv_id=2607.22688，source_urls=https://arxiv.org/pdf/2607.22688；缓存 source.json 实际 HTML 也为同一 arXiv ID。当前 Aspire arxiv-2608-31111 §5 的 Co-Harness 相关工作目标直接对应。"
+  },
+  {
+    "alias": "Automated Design of Agentic Systems (ADAS)",
+    "entry_id": "arxiv-2408-08435",
+    "evidence": "目录完整标题为 Automated Design of Agentic Systems；该目标只是附加论文使用的 ADAS 缩写。当前 arxiv-2505-18524 §4.1、Appendices D/F 实现 ADAS-TG 作为内层结构优化器，身份明确。"
+  },
+  {
+    "alias": "Darwin Godel Machine",
+    "entry_id": "arxiv-2505-22954",
+    "evidence": "full-reading/entries.json 的 arxiv-2505-22954 标题为《Darwin Godel Machine: Open-Ended Evolution of Self-Improving Agents》；full-reading/sources/arxiv-2505-22954.txt 的标题（缓存前4行）确认该短名。Godel/Gödel 是同一专名的去音符差异；所有当前关系均讨论 DGM 的代码自改、档案或后继选择。 当前全部出现来源：arxiv-2408-08435, arxiv-2410-10762。此映射仅确认工作身份，不提升既有关系的证据等级。"
+  },
+  {
+    "alias": "Darwin Gödel Machine",
+    "entry_id": "arxiv-2505-22954",
+    "evidence": "full-reading/entries.json 的 arxiv-2505-22954 标题为《Darwin Godel Machine: Open-Ended Evolution of Self-Improving Agents》；full-reading/sources/arxiv-2505-22954.txt 的标题（缓存前4行）确认该短名。现有目录标题将 Gödel 写成 Godel，原文标题明确保留 Gödel；所有当前关系均讨论 DGM 的代码自改、档案或后继选择。 当前全部出现来源：arxiv-2510-21614, arxiv-2609-37968, arxiv-2602-07755, arxiv-2604-05142, catalog-godel-machine。此映射仅确认工作身份，不提升既有关系的证据等级。"
+  },
+  {
+    "alias": "Dynamic Cheatsheet",
+    "entry_id": "arxiv-2504-07952",
+    "evidence": "full-reading/entries.json 的 arxiv-2504-07952 标题为《Dynamic Cheatsheet: Test-Time Learning with Adaptive Memory》；full-reading/sources/arxiv-2504-07952.txt 的标题（缓存前4行）确认该短名。当前经验归因研究讨论 Game24 和问答中的 raw/condensed 记忆干预。 当前全部出现来源：arxiv-2601-22436。此映射仅确认工作身份，不提升既有关系的证据等级。"
+  },
+  {
+    "alias": "EnvGen",
+    "entry_id": "arxiv-2403-12014",
+    "evidence": "full-reading/entries.json 的 arxiv-2403-12014 标题为《EnvGen: Generating and Adapting Environments via LLMs for Training Embodied Agents》；full-reading/sources/arxiv-2403-12014.txt 的标题（缓存前4行）确认该短名。当前环境课程比较讨论生成并调整可执行环境来训练外部 RL policy。 当前全部出现来源：arxiv-2508-09586。此映射仅确认工作身份，不提升既有关系的证据等级。"
+  },
+  {
+    "alias": "FT-Dojo",
+    "entry_id": "arxiv-2603-01712",
+    "evidence": "full-reading/entries.json 的 arxiv-2603-01712 标题为《FT-Dojo: Towards Autonomous LLM Fine-Tuning with Language Agents》；full-reading/sources/arxiv-2603-01712.txt 的标题（缓存前4行）确认该短名。当前 TREX 比较明确指冻结研究员、blind test 和预算约束下的 LLM fine-tuning。 当前全部出现来源：arxiv-2604-14116。此映射仅确认工作身份，不提升既有关系的证据等级。"
+  },
+  {
+    "alias": "G-Designer",
+    "entry_id": "arxiv-2410-11782",
+    "evidence": "full-reading/entries.json 的 arxiv-2410-11782 标题为《G-Designer: Architecting Multi-agent Communication Topologies via Graph Neural Networks》；full-reading/sources/arxiv-2410-11782.txt 的标题（缓存前4行）确认该短名。当前 MaAS 比较明确讨论按 query 条件化的多代理通信图生成器。 当前全部出现来源：arxiv-2502-04180。此映射仅确认工作身份，不提升既有关系的证据等级。"
+  },
+  {
+    "alias": "G-Memory",
+    "entry_id": "arxiv-2506-07398",
+    "evidence": "full-reading/entries.json 的 arxiv-2506-07398 标题为《G-Memory: Tracing Hierarchical Memory for Multi-Agent Systems》；full-reading/sources/arxiv-2506-07398.txt 的标题（缓存前4行）确认该短名。当前经验归因研究讨论 ALFWorld/FEVER 的层次记忆及 raw 来源干预。 当前全部出现来源：arxiv-2601-22436。此映射仅确认工作身份，不提升既有关系的证据等级。"
+  },
+  {
+    "alias": "Generative Agents",
+    "entry_id": "arxiv-2304-03442",
+    "evidence": "full-reading/entries.json 的 arxiv-2304-03442 标题为《Generative Agents: Interactive Simulacra of Human Behavior》；full-reading/sources/arxiv-2304-03442.txt 的标题（缓存前4行）确认该短名。当前 LLM 社会仿真研究把它作为社会仿真前驱。 当前全部出现来源：arxiv-2505-09081。此映射仅确认工作身份，不提升既有关系的证据等级。"
+  },
+  {
+    "alias": "GPTSwarm",
+    "entry_id": "arxiv-2402-16823",
+    "evidence": "目录标题省略 GPTSwarm 前缀；full-reading/sources/arxiv-2402-16823.txt 第1行完整标题为 GPTSwarm: Language Agents as Optimizable Graphs，第32行自称 GPTSwarm 框架。当前 arxiv-2410-11782 的图优化比较与 arxiv-2410-10934 Appendix D 的相关工作均对应此框架。"
+  },
+  {
+    "alias": "GPTSwarm: Language Agents as Optimizable Graphs",
+    "entry_id": "arxiv-2402-16823",
+    "evidence": "该完整标题与 full-reading/sources/arxiv-2402-16823.txt 第1行逐字对应；目录只省略方法名前缀。当前 arxiv-2502-02533 App.C.4 Table8 的图优化基线语境一致。"
+  },
+  {
+    "alias": "Huxley Gödel Machine",
+    "entry_id": "arxiv-2510-21614",
+    "evidence": "full-reading/sources/arxiv-2510-21614.txt 第1行标题为 Huxley-Gödel Machine: Human-Level Coding Agent Development by an Approximation of the Optimal Self-Improving Machine；当前 arxiv-2608-07645 参考文献约第1205行列出同名工作。该目标只省略 Huxley 与 Gödel 间连接号；不映射到一般 Gödel Machine。"
+  },
+  {
+    "alias": "Intuitor",
+    "entry_id": "arxiv-2505-19590",
+    "evidence": "full-reading/sources/arxiv-2505-19590.txt Abstract 第20行及§1明确将 Intuitor 定义为本篇 Learning to Reason without External Rewards 的 RLIF 方法。当前 arxiv-2505-22660 §4.5 比较自信度奖励，机制及引用对象相符。"
+  },
+  {
+    "alias": "LADDER",
+    "entry_id": "arxiv-2503-00735",
+    "evidence": "full-reading/entries.json 的 arxiv-2503-00735 标题为《LADDER: Self-Improving LLMs Through Recursive Problem Decomposition》；full-reading/sources/arxiv-2503-00735.txt 的标题（缓存前4行）确认该短名。当前 MIT 训练变体明确沿用递归问题分解的合成流程。 当前全部出现来源：arxiv-2505-08827。此映射仅确认工作身份，不提升既有关系的证据等级。"
+  },
+  {
+    "alias": "LLM-ALSO",
+    "entry_id": "arxiv-2605-29293",
+    "evidence": "full-reading/entries.json 的 arxiv-2605-29293 标题为《LLM-ALSO: LLM-Driven Adaptive Learning-Signal Optimization for Multi-Agent Reinforcement Learning》；full-reading/sources/arxiv-2605-29293.txt 的标题（缓存前4行）确认该短名。三处当前比较均描述共享 checkpoint、固定 PBRS 基的在线学习信号选择及胜出 policy 继承。 当前全部出现来源：arxiv-2602-23876, arxiv-2604-28056, arxiv-2412-13492。此映射仅确认工作身份，不提升既有关系的证据等级。"
+  },
+  {
+    "alias": "MemoryBank",
+    "entry_id": "arxiv-2305-10250",
+    "evidence": "full-reading/entries.json 的 arxiv-2305-10250 标题为《MemoryBank: Enhancing Large Language Models with Long-Term Memory》；full-reading/sources/arxiv-2305-10250.txt 的标题（缓存前4行）确认该短名。当前 TEMA 的固定粒度/启发式访问实验参照。 当前全部出现来源：arxiv-2503-08026。此映射仅确认工作身份，不提升既有关系的证据等级。"
+  },
+  {
+    "alias": "Meta-Harness: End-to-End Optimization of Model Harnesses",
+    "entry_id": "catalog-meta-harness",
+    "evidence": "目录 catalog-meta-harness 的 arxiv_id=2603.28052；full-reading/sources/catalog-meta-harness.txt 第1行正是该完整标题。当前 arxiv-2609-35530 App.E 的 proposer skill 改编对象相符。"
+  },
+  {
+    "alias": "Mind2Web",
+    "entry_id": "arxiv-2306-06070",
+    "evidence": "full-reading/entries.json 的 arxiv-2306-06070 标题为《Mind2Web: Towards a Generalist Agent for the Web》；full-reading/sources/arxiv-2306-06070.txt 的标题（缓存前4行）确认该短名。AutoWebGLM §3 明确从该网页任务集抽取780任务，并重标为实时任务。 当前全部出现来源：arxiv-2406-12373。此映射仅确认工作身份，不提升既有关系的证据等级。"
+  },
+  {
+    "alias": "MIPROv2",
+    "entry_id": "arxiv-2406-11695",
+    "evidence": "仅对当前 GEPA 来源作论文级归属：full-reading/sources/arxiv-2507-19457.txt §1 第55行明确 MIPROv2 (Opsahl-Ong et al., 2024)，参考文献第705–709行完整标题和作者与 arxiv-2406-11695 完全相同。后者 Abstract/§4.3 称 MIPRO，因此保留 v2 为 GEPA 使用的实现版本，不把两个算法版本所有细节视作相同。",
+    "source_entry_id": "arxiv-2507-19457"
+  },
+  {
+    "alias": "On the Fragility of Self-Improving Agents",
+    "entry_id": "arxiv-2608-18066",
+    "evidence": "full-reading/entries.json 的 arxiv-2608-18066 标题为《On the Fragility of Self-Improving Agents: Variance, Task Order, and Underspecification》；full-reading/sources/arxiv-2608-18066.txt 的标题（缓存前4行）确认该短名。现有同名标题前缀对应在线经验适用性、任务顺序及 underspecification 研究。 当前全部出现来源：arxiv-2609-08832。此映射仅确认工作身份，不提升既有关系的证据等级。"
+  },
+  {
+    "alias": "Phantom Guardrails",
+    "entry_id": "arxiv-2607-13083",
+    "evidence": "full-reading/entries.json 的 arxiv-2607-13083 标题为《Phantom Guardrails: When Self-Improving Agent Harnesses Fix Failures That Never Happened》；full-reading/sources/arxiv-2607-13083.txt 的标题（缓存前4行）确认该短名。相关比较语境是自改 harness 对失败证据的依赖，而非其他 guardrail 工作。 当前全部出现来源：arxiv-2609-11677。此映射仅确认工作身份，不提升既有关系的证据等级。"
+  },
+  {
+    "alias": "ProTeGi",
+    "entry_id": "arxiv-2305-03495",
+    "evidence": "full-reading/sources/arxiv-2305-03495.txt Abstract 第12行明确展开 Prompt Optimization with Textual Gradients (ProTeGi)，Algorithm1 同名；当前 arxiv-2405-03845 讨论的自动提示优化器是此方法。"
+  },
+  {
+    "alias": "RAGEN",
+    "entry_id": "arxiv-2504-20073",
+    "evidence": "full-reading/entries.json 的 arxiv-2504-20073 标题为《RAGEN: Understanding Self-Evolution in LLM Agents via Multi-Turn Reinforcement Learning》；full-reading/sources/arxiv-2504-20073.txt 的标题（缓存前4行）确认该短名。AI4AI-Bench Appendix A.2 明确采用 RAGEN 的 Sokoban/Qwen2.5-3B/GRPO 工作流。 当前全部出现来源：arxiv-2608-20318。此映射仅确认工作身份，不提升既有关系的证据等级。"
+  },
+  {
+    "alias": "REvolve",
+    "entry_id": "arxiv-2406-01309",
+    "evidence": "full-reading/entries.json 的 arxiv-2406-01309 标题为《REvolve: Reward Evolution with Large Language Models using Human Feedback》；full-reading/sources/arxiv-2406-01309.txt 的标题（缓存前4行）确认该短名。当前 LLM-ALSO Appendix D 明确复现 REvolve 算法及 evolution prompts。 当前全部出现来源：arxiv-2602-23876。此映射仅确认工作身份，不提升既有关系的证据等级。"
+  },
+  {
+    "alias": "RHyVE",
+    "entry_id": "arxiv-2604-28056",
+    "evidence": "full-reading/entries.json 的 arxiv-2604-28056 标题为《RHyVE: Competence-Aware Verification and Phase-Aware Deployment for LLM-Generated Reward Hypotheses》；full-reading/sources/arxiv-2604-28056.txt 的标题（缓存前4行）确认该短名。当前 ROSKA 比较明确指固定 reward 池、共享 checkpoint 验证和阶段部署。 当前全部出现来源：arxiv-2412-13492。此映射仅确认工作身份，不提升既有关系的证据等级。"
+  },
+  {
+    "alias": "SEC",
+    "entry_id": "arxiv-2505-14970",
+    "evidence": "full-reading/sources/arxiv-2505-14970.txt Abstract 第29行及§1明确展开 Self-Evolving Curriculum (SEC)，并使用分桶 MAB 与绝对 advantage。当前 arxiv-2602-20532 §4、Appendix A3 的比较同此机制。"
+  },
+  {
+    "alias": "Self-Improving Coding Agent",
+    "entry_id": "catalog-sica",
+    "evidence": "catalog-sica 的 arxiv_id=2504.15228、标题 A Self-Improving Coding Agent；当前 arxiv-2609-17817 §1（缓存第15行）明确同时写 Self-Improving Coding Agent (SICA) [47]，只是省略不定冠词。"
+  },
+  {
+    "alias": "Self-Instruct",
+    "entry_id": "arxiv-2212-10560",
+    "evidence": "full-reading/entries.json 的 arxiv-2212-10560 标题为《Self-Instruct: Aligning Language Models with Self-Generated Instructions》；full-reading/sources/arxiv-2212-10560.txt 的标题（缓存前4行）确认该短名。当前关系分别比较指令覆盖范围、复用 Alpaca 种子及扩充指令对照。 当前全部出现来源：arxiv-2407-12874, arxiv-2304-12244。此映射仅确认工作身份，不提升既有关系的证据等级。"
+  },
+  {
+    "alias": "Self-Refine",
+    "entry_id": "arxiv-2303-17651",
+    "evidence": "full-reading/entries.json 的 arxiv-2303-17651 标题为《Self-Refine: Iterative Refinement with Self-Feedback》；full-reading/sources/arxiv-2303-17651.txt 的标题（缓存前4行）确认该短名。当前两处关系均指任务内迭代自反馈修订，区别于多轮参数训练。 当前全部出现来源：arxiv-2310-00533, arxiv-2412-14841。此映射仅确认工作身份，不提升既有关系的证据等级。"
+  },
+  {
+    "alias": "Statistical Gödel Machines",
+    "entry_id": "arxiv-2510-10232",
+    "evidence": "目录保留标题 SGM: A Statistical Godel Machine for Risk-Controlled Recursive Self-Modification；同一 ID 的 full-reading/sources/arxiv-2510-10232.txt 第1–2行标题为 Statistical Gödel Machines: From Formal Proofs to Risk-Controlled Self-Improvement，第18、26行定义 SGM 与轨迹风险预算/CTHS。当前 catalog-godel-machine 的分析比较明确讨论这一统计接受保证，不是另篇 statistical limits 工作。"
+  },
+  {
+    "alias": "TextGrad",
+    "entry_id": "arxiv-2406-07496",
+    "evidence": "full-reading/entries.json 的 arxiv-2406-07496 标题为《TextGrad: Automatic \"Differentiation\" via Text》；full-reading/sources/arxiv-2406-07496.txt 的Abstract（缓存第26–31行）确认该短名。原文标题的图形标志在文本提取中缺失；缓存第26行明确自称 TextGrad 并描述 textual feedback backpropagation，当前 Semantic Backpropagation 关系讨论的正是该方法。 当前全部出现来源：arxiv-2412-03624。此映射仅确认工作身份，不提升既有关系的证据等级。"
+  },
+  {
+    "alias": "Trace / OptoPrime",
+    "entry_id": "arxiv-2406-16218",
+    "evidence": "full-reading/sources/arxiv-2406-16218.txt Abstract 第20行明确说明 Using Trace, we develop ... OptoPrime；§4为优化器。该斜线并列指同一篇论文的框架与优化器，而非两个独立条目。当前 arxiv-2412-03624 比较执行轨迹/语义反向传播。"
+  },
+  {
+    "alias": "WizardLM",
+    "entry_id": "arxiv-2304-12244",
+    "evidence": "full-reading/entries.json 的 arxiv-2304-12244 标题为《WizardLM: Empowering large pre-trained language models to follow complex instructions》；full-reading/sources/arxiv-2304-12244.txt 的标题（缓存前4行）确认该短名。当前继承的是 Evol-Instruct 的 depth-2 指令复杂化改写。 当前全部出现来源：arxiv-2510-24284。此映射仅确认工作身份，不提升既有关系的证据等级。"
+  }
+]

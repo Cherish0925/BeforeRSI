@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DECISIONS = {
     'core': '重点研究',
     'support': '方法与证据补充',
-    'mechanism_supplement': '范围外规模的机制参考',
+    'mechanism_supplement': '范围与规模的机制参考',
     'redundant': '相近工作，索引保留',
     'outside': '本综述范围外',
     'insufficient': '公开证据不足',
@@ -50,6 +50,11 @@ def compile_corpus(entries, reviews_dir, require_complete=False):
                 assert r['reading'].get('coverage'), f'{eid}: no reading coverage'
                 for field in ('mechanism', 'experiment', 'contribution'):
                     assert r.get(field), f'{eid}: missing {field}'
+            for relation in r.get('relations', []):
+                assert relation.get('basis') in {'source_explicit', 'analytical_comparison'}, f'{eid}: invalid relationship evidence basis'
+                assert relation.get('source_url') and relation.get('explanation'), f'{eid}: relationship lacks source or explanation'
+                if relation.get('kind') in {'extends', 'uses'}:
+                    assert relation['basis']=='source_explicit', f'{eid}: inheritance/reuse requires an explicit source, not editorial similarity'
             if decision == 'core':
                 assert r['reading']['status'] in {'full_primary', 'previous_primary_rechecked', 'public_materials'}, eid
                 assert {s['axis'] for s in r.get('sections', [])} == set('ABCDEF'), f'{eid}: incomplete core explanation'

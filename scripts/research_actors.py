@@ -10,6 +10,8 @@ def build_actors(spec, works, industry):
             assert label not in aliases, label
             aliases[label] = [a['id']]
     aliases.update(spec['alias_expansions'])
+    unknown = sorted({label for w in works for label in w['organizations'] if label not in aliases})
+    assert not unknown, f'Classify new affiliations: {unknown}'
     profiles = {a['profile_id']: a['id'] for a in actors.values() if a.get('profile_id')}
     for w in works:
         participants = {}

@@ -67,7 +67,7 @@
       "kind": "公司 / 产业研究团队",
       "status": "research",
       "focus": "Science of AI → AI for AI：用训练动力学观测、机制假设和可执行实验帮助 AI 改进学习系统。",
-      "boundary": "三项公开工作分属自动研究、实验工作台和观测资料。其技术价值与当前实验规模分开记录；没有把小型案例写成 ≥27B 模型自训练证明。",
+      "boundary": "三项公开工作分别是外部模型自动研究、人工实验工作台与训练观测资料，作为AI4AI支撑连接三条路线；尚无研究器自身权重或持久Harness更新的公开闭环证据。",
       "work_links": [
         {
           "work_id": "metacircle-ophis",
@@ -97,9 +97,7 @@
         "x-feedback",
         "x-training"
       ],
-      "primary_routes": [
-        "harness"
-      ],
+      "primary_routes": [],
       "directions": [],
       "sources": [
         "https://meta-circle.com/",
@@ -165,9 +163,7 @@
         "x-feedback",
         "x-training"
       ],
-      "primary_routes": [
-        "harness"
-      ],
+      "primary_routes": [],
       "directions": [
         {
           "route": "hybrid",
@@ -240,7 +236,7 @@
       "kind": "公司 / 产业研究团队",
       "status": "research",
       "focus": "用 Locus 推进自动 AI R&D，用 Zochi 探索自动科研产出和外部同行评审。",
-      "boundary": "已读 Locus 预览与 2026 年自动后训练技术发布（含附录）；公开结果支持自动 AI R&D，部分系统仍私有，未证明研究器自身递归升级。",
+      "boundary": "此前已读技术发布，本次完整复核公开后训练仓库与产物说明；博客正文当前不可访问。结果支持外部模型自动后训练，研究器自身持续更新仍未披露。",
       "work_links": [
         {
           "work_id": "intology-locus",
@@ -253,9 +249,7 @@
         "h-experience",
         "h-search"
       ],
-      "primary_routes": [
-        "harness"
-      ],
+      "primary_routes": [],
       "directions": [],
       "sources": [
         "https://intology.ai/",
@@ -298,9 +292,7 @@
         "h-evaluation",
         "h-search"
       ],
-      "primary_routes": [
-        "harness"
-      ],
+      "primary_routes": [],
       "directions": [],
       "sources": [
         "https://www.autoscience.ai/",
@@ -345,7 +337,6 @@
         "x-training"
       ],
       "primary_routes": [
-        "harness",
         "model"
       ],
       "directions": [],
@@ -868,7 +859,7 @@
       "kind": "公司 / 产业研究团队",
       "status": "research",
       "focus": "参与 harness 自动开发和相关评测研究。",
-      "boundary": "原文署名关系与作者主张分开；HarnessDev 与 Aspire 是两项不同类型的材料。",
+      "boundary": "HarnessDev与Aspire分别评价Harness开发及宽目标下的学习，放在共同评价支撑；其接口支持面与实际实验更新面分开记载，未据此认定混合RSI。",
       "work_links": [
         {
           "work_id": "harnessdev",
@@ -889,9 +880,7 @@
         "h-runtime",
         "h-search"
       ],
-      "primary_routes": [
-        "harness"
-      ],
+      "primary_routes": [],
       "directions": [],
       "sources": [
         "https://arxiv.org/pdf/2609.01437",

@@ -117,3 +117,79 @@ metaTextGrad实际改变内层TGD/ADAS-TG的优化器prompt及组合代码，区
 Appendix B Eq.(4)是固定θ的pointwise Hoeffding；Eq.(6)第一步将其替换成由同一S₁选出的θ̂，遗漏了数据依赖的选择效应。S₂独立可以条件于S₁证明Eq.(7)中的测试集中，但不能证明Eq.(6)。即使Θ有限也不能省掉容量项：令D为N=n²个点上的均匀分布，类中包含恒定损失1/4，以及对任意≤n点集合A的记忆损失 L_A(x)=0（x∈A）/1（否则）。经验最优器可选包含训练样本的A，经验损失0而总体损失≥1−1/n；总体最优恒定损失1/4。取n=m=1000、δ=.05，论文右界约.397，但记忆器独立测试损失接近.999。这个有限类反例说明该任意Θ结论不能成立；正确的有限类界须增加与log|Θ|有关的统一控制，或引入其他足够条件。它不反驳论文给定基准的数值结果，也不否认元优化可能有效。
 
 本批关系边均以实际复用标uses，实验对照标compares；与STOP/Promptbreeder等概念比较标analytical_comparison，不再把Related Work提及写成extends。
+
+## 第66–70项：随机历史、图结构、流程审计与planner训练
+
+TSGD-M、TPGO和JudgeFlow列机制补充，Agon列支撑，AgentFlow列小模型训练机制补充；累计完成70/94。本批没有改变元优化器核心集合。
+
+TSGD-M用历史候选的Gumbel-Top-K与新验证小批次选择/分块采样。与最强TextGrad基线比较的平均收益约1.16/1.63pp，而非相对弱基线的1.73/2.20；Hotpot耗时由2400秒升至5100/6900秒，不能把更短最终prompt写成完整优化更便宜。固定epoch下小batch也给更多更新，所谓上下文墙未与搜索预算解耦。Theorem D.6的证明以Var(g_I)≤σ²和Var(ḡ)≤cσ²(1+α)≤σ²推出Var(ḡ)≤Var(g_I)，上界不能这样排序。具体取两候选均值.5：g₁等概率.4/.6（方差.01），g₂等概率0/1（方差.25），σ²=.25、K=2、α=0，TSGD并列时选择I=1。独立抽取m=2个混合项给ρ=0；每项方差(.01+.25)/2=.13，平均项方差.065>.01，仍满足论文条件1/2≤1。此反例针对定理量词，不反驳表中实测增益；实际文本分块拼接也未证明等于数值梯度平均。
+
+TPGO把prompt编码成层级节点并用失败聚类、局部修订和有效策略记忆。GRAO没有训练GRPO或生成优化器代码；评测多在用于反思的同一批GAIA/MCP任务，跨工具域迁移才是相对更有信息的独立结果。JudgeFlow把执行图压成至多三seq/for/cond块，固定judge对失败责任排序；它与AFlow的对照同时改了表示和诊断，不能隔离哪部分产生收益。二者均属于固定搜索框架上的结构化反馈，不能按“graph”“self-evolution”名词升级为元优化。
+
+Agon的重要价值是长研究链的失败记录：机器人146轮、105审计仍出现大量空结果文件漏检；一个同能力单LLM接管快照能抓出问题，说明不可把失败直接归为人类独有识别能力。生物298轮仍未完成，错误功效公式、重复模型、预处理混杂由人工介入修正。核心harness也由人加入审计/文献角色。“零实验代码”与“无人工研究”不同，GPU当量费用未包含API/人工。研究成果只有定性效应报告，不能把版本、日志和产物数当科学正确率。
+
+AgentFlow只更新3B/7B planner，冻结executor/verifier/generator和GPT-4o奖励器；其奖励来自标准答案，memory是题内追加状态。主表同架构搜索47.2→57.3（正确差10.1pp）、GAIA17.2→33.1；六任务SFT掉到19.5，但未充分披露SFT配置，不足证明离线模仿必然失败。附录B.1证明的是裁剪代理目标的期望展开，不是实际return最优等价或各步独立可解；B.3真实优势和旧/新KL的界没有接到组标准化、token/turn归一、clip和固定reference KL的真实算法，单调收敛宣称不成立。案例F.6最终答案正确但工具公式仍错，F.5训练后7步反比原6步多；这些例子限制“更可靠推理/效率”的归因，并不抹去前后准确率增益。
+
+关系边复核：本批仅明确复用记uses，实测基线记compares，技术比较记analytical_comparison；截至70项无未经支撑的extends。
+
+## 第十五批：完成75/94（SelfSearch—EVOLVE）
+
+SelfSearch列为核心（中等置信）：自改进代理继承并改写自己的工具/编排代码，下一代代理本身又成为修改者；修改依据来自自改写过程的可观察记录，而不是目标任务分数。两条固定搜索方向和执行外壳仍由人设定。GPT与DeepSeek的两谱系总体均值提升且有跨模型迁移，但个别谱系/任务退化；与固定improver、无记录的对照支持继承机制，搜索预算不完全相同。其82% Terminal报告改变推理强度/调用上限，不能混入主表结论；全部模型冻结。AutoRef则是固定编码优化器的视觉工作流搜索，三图预算、独立人评和换模型/评价器有价值，但大部分基础增益已由grounded单图prompt带来，列support。TDD-Bench提供反馈质量基准：高覆盖并不等于有效断言，35%不满足fail-to-pass的测试仍可达到完美覆盖；隐藏人类修复是评价oracle，生成测试不能无条件代替它。
+
+SeRL与EVOLVE继续说明“同一模型循环参与”不意味着优化器或评价标准自行改进。SeRL让共享参数同时生成题与答案，固定多数规则+难度过滤是关键：去过滤后推理仍可算出正确中间结果，却将最终答案统一写0，奖励升而准确率崩。EVOLVE主分支以固定8B RM筛选，rule分支才使用第四稿>第一稿的无在线评分标签，而且继承外部偏好warm start；rule第二轮数据只有约63%得到两个固定RM认可，效果明显弱于主分支。其多轮实验出现SR平台和Direct追赶，不能把经验平台写成理论上界。SeRL的Maj16上界说法同样只是经验趋势。
+
+关系复核：本批只有明确复用的方法标uses、实做基线标compares；没有从Related Work自动生成extends。实际训练上限：SeRL7B，EVOLVE8B；SelfSearch、AutoRef、TDD全部冻结推理，不计≥27B训练。
+
+## Actor-Curator理论复核附记（第77项）
+
+原文§3.2 Eq4–6是对给定新旧策略的性能差/重要性采样恒等式。AppB Theorems3/4随后声称rollout估计无偏，论据为iid和期望线性；但Algorithm1及AppG明确同批rollout既更新actor又估计新策略改善。新策略由这批样本决定，固定函数的无偏抽样论证不能直接代入。
+
+一个单题、二元奖励的短反例：旧策略成功概率p=1/4，真实优势A(1)=3/4、A(0)=−1/4。采一个旧策略回答Y；若成功则更新后成功率q=p+ε，否则q=p，其中0<ε<3/4。真实随机更新的期望增益为E[q−p]=ε/4。原式同样本估计为π_new(Y)/π_old(Y)·A(Y)：成功时3(p+ε)，失败时−1/4，故期望3ε/4。即使使用真实优势、完全支持且更新任意小，仍有ε/2偏差。独立评价rollout或额外稳定性分析可修复某种版本，但原文未加sample splitting条件。此反例针对所写通用无偏定理，不宣称实际8-rollout课程一定失效。
+
+AppD Lemma3又将 E[(s⁻¹ΣX_r)²] 用所谓Jensen界为 E[X²]/s，遗漏了(s−1)(EX)²/s。取K=k=s=2、两臂loss都1、均匀抽样且α<1/2，Algorithm2重复两次独立抽臂；令N_i为次数，则Lhat_i=N_i，E[N_i²]=3/2，因此 E[Σp_i Lhat_i²]=3/2，大于声称k/s=1。这里s≤k且候选集包含全部臂，排除了候选缺失的干扰。正确的二阶矩一般还有均值平方项，不是方差单独按1/s缩小。
+
+此外，AppD证明引入分块restart和按V选步长，Algorithm2未列restart；Eq65给变化的comparator作KL望远镜也需补条件。理论只分析理想表格OSMD且忽略均匀探索的线性代价，不能直接覆盖实际神经模型+PPO clip。将这些限制与实证贡献分列，保留小模型课程效率support，不把论文的regret界用作递归自改进保证。
+
+## 第十六批：完成80/94（DNPO—EvoRubrics）
+
+这一批区分了四种变化对象：DNPO改变偏好筛选及reference负例噪声，Actor-Curator改变固定题库的抽样课程，ACE改变对抗输入，ECHO和EvoRubrics分别改变语言诊断与评价条目。真正被学习的对象不同，不能把它们合并为“评价器自我改进”。DNPO使用固定GPT-4o-mini打分；其UltraChat原论文明确是两个ChatGPT API角色交互生成，DNPO反复称human-annotated需纠正。书面案例把题目未给的酒盒尺寸/材质和亲身到访经验当高质量，说明偏好分数上升不是真实性校验。它的噪声策略有消融增益，但仍属固定外部裁判的小模型偏好优化补充。
+
+Actor-Curator保留support：动态课程有早期学习效率证据，跨题型收益并非一致，精确理论条件另见上述反例。ACE保留机制补充：新输入不需expected output，但solver仍要求已有GT测试≥80%通过；“部分程序不崩溃”不能验证输入合法或语义正确，必须与CURE类有输出oracle的共训分开。其主表与full消融CC结果46.7/34.8未解释，不能用消融差额直接分解主表收益。
+
+ECHO保留support：固定官方环境评分给critic学习提供外部锚定，而冻结critic和同8次重试控制支持同步学习反馈内容有价值。其log势差中的初始分数项在每组减均值后完全消失，实际优化是末次分数的非线性变换；不要将其描述为梯度独立按照初始接近满分程度加权。EvoRubrics也保留support：双LoRA确实使评价条目跟随policy变化，并有冻结生成器消融，但条目命中、标准相似度和重写成效仍由固定DeepSeek-V3.2裁判与gold rubric锚定。self-supervised版仅移除gold项，继承外部教师SFT和固定裁判，医疗提升同时伴随RaR/MT/Follow显著回退。完整训练60.5h高于gold33.9h，表内匹配基础rollout数又未完整计入四乘四重写；不能宣称无外部监督或等成本全面优越。
+
+截至80项，新增关系只记真实uses/compares或analytical_comparison，无未经证实的extends。最近五项受训目标都≤8B；多个32B/70B或商用模型仅冻结教师、裁判和推理基线，不能抬高实际训练规模。
+
+## 第十七批：完成85项（ICRL—RLAC）
+
+ICRL把批评辅助生成的重试轨迹删掉批评条件，再按无批评/有批评的token概率比训练首次策略；这是知识内化接口，不只是题内重试。消融支持其作为训练技巧，但逐token条件比值不校正整条前缀/状态占据分布，AppendixA也没有无偏定理，故列机制补充。JarvisEvo让共享8B编辑/评分角色一起更新，排除评分token的编辑梯度、并用Gemini初标且人工复核的数据持续校准，去两组件都退化；其“无需外部奖励”只指editor没有另一个在线RM，不能抹掉固定评分标签和Gemini反思教师。MagicGUI-RMS则由冻结GPT4o仲裁，回流训练两个8B角色；21个OOD app的RM判断有价值，但主要证据仍为静态单步，EOK的操作知识来源未明，不能将近97%准确率概括为纯自生反馈。两者均列机制补充。
+
+Mutual-Taught列机制补充：新版policy>旧版policy提供伪偏好，混合原RM自标数据比单用任一来源更好；学得RM用于Mistral7B也有收益。这是跨版本数据继承，不是每次都继续训练RM参数——附录明确RM从base重训，额外完整round连policy也重置。MMLU/GSM回退与RewardBench部分维度回退必须保留。其EM定理直接假设精确E/M最优化和伪标签对真最优分布无偏，实际流程没有建立这些前提；更根本地，BT似然对reward的平移不变，r与r−C可同为最优，而R(pi,r−C)=R(pi,r)−C。原文未固定reward gauge，因此不能由BT的M-step推出期望reward单调，更不能由未给上界的单调性推出收敛。验证赢率和过滤也未使神经优化子问题变凸。这是所写理论保证的缺口，并非否定给定偏好基准改善。
+
+RLAC保留support作为“学习查哪里、由外部判对错”的验证预算接口。事实训练减少4.4–5.7倍核验调用，代码执行数量大幅减少但训练题也只有基线9%，没有完整总成本。动态critic的事实精度.817低于静态.825，却保留更多正确事实21.58 vs17.77；这是信息量/精度取舍，不能写成全面优胜。minmax形式等价需要覆盖全部真实约束且内层critic求得最坏项，有限DPO训练没有实现证书；代码模拟参考仍来自7B生成与旧GPT4o测试，始终有oracle误差。
+
+关系复核：本批无extends。最后六项已由根协调器明确移交self_training，单独写self_training_extra_feedback.jsonl，根汇总时读取，避免重复；本组继续完成其余SAVE、Skill-SD、STRIDE并终审已有88条。
+
+## 第十八批：本组承担的88项全部完成
+
+SAVE列机制补充。它把policy当作刷新RM输入分布的生成器，RM再按自身分数相对学习value锚划分正负；新分组没有引入外部真值，只能借助原始强RM已有的偏好知识。4B版六RM基准均值76.0→77.3有对照和成本支持，却不是所有维度提高；共同训练AlpacaEval LC只提高1.60点，论文强调的2.56点来自最终RM另训一份policy。26h→29h和50GB→62GB是同配置RL阶段，不含单独后续policy训练的全流程成本。其AppendixA与前述错误定理应分开评价：明确假设沿policy梯度真实RM误差上升、自损失敏感且KL不抵消，条件下的局部方向推导成立；它没有从无标签数据证明这些强条件，也没有证明RM自训练必然更接近人的偏好。
+
+Skill-SD列机制补充。Seed1.8把自身轨迹总结为skill，skill只给训练teacher，学生始终用plain prompt rollout；每步同步teacher后，以GRPO加重要性加权reverse-KL内化知识。57个AppWorld dev任务和64个Sokoban测试关上，相对GRPO提高14.0/10.9个百分点，冻结teacher及直接给student skill的对照有解释力。它仍只有4B，外部Seed1.8和细粒度环境完成奖励没有消失；dev调lambda后继续报告dev，不能当独立test。AppendixD正确区分固定prefix的KL梯度和整个trajectory/变化teacher的收敛，保留这一诚实范围。UCB1的固定臂平稳奖励理论则不能直接迁移到新skill不断加入、policy不断变化的库。
+
+STRIDE列support。相对TANGO，它把co-trained verifier文字用于从多个前缀重新探索，将最终GT结果保留为梯度来源；单点/多点、文字/无文字、冻结verifier及等40h计算对照共同支持这个具体接口。Qwen7B MATH 84.6对TANGO81.4、同40h更大batch GRPO75.2；附录补三seed方差，因此不能遗漏其成本和重复证据。实际受训仅7/8B，70B仅SFT轨迹教师。不能保留“无害改进保证”：全失败组任务优势为零只阻止该组贡献该项梯度，混合组失败样本仍有负梯度，KL和共享参数也会改变行为；有限采样零通过不是真实通过概率零。其信息论说明对二元奖励的一次观测成立，但没有rate-distortion函数、量化精度或反馈成本定义，不能由文本“维度高”推出所有实值标量反馈必然无力。
+
+一个跨提示的简短反例说明STRIDE无害断言所缺的条件：设同一参数θ在重定向提示下的真实成功率为σ(θ)，原始提示下为σ(−θ)。在重定向分布沿真实结果奖励作任意小的上升步，θ增加，原始提示成功率便下降。例子甚至使用无噪oracle；需要补充跨分布梯度对齐或性能约束，才能把训练上下文改善推广成原始策略不下降。这不否定其已报告的greedy测试改善。
+
+## 完整比较后的方法脉络与取舍
+
+提示优化首先应拆成候选生成、评价信号与选择规则。APE/OPRO用固定LLM提出候选，ProTeGi加入失败批评及beam/bandit选择，TextGrad把反馈沿人工定义计算图传回变量，MIPRO联合搜索instruction与demos，Trace将执行图、异常、代码和prompt纳入统一优化接口。它们填补的是不同的搜索或信用分配瓶颈，不是优化器自我训练。MASS在固定阶段里组合prompt、拓扑和协作，PROMST增添小预测器，MAPS/DelvePO/TPGO/IDEAL等增加任务专属结构、操作集或检索；需要展示相对前述接口的真实增益，不能仅因名字含evolve就新增一条递归路线。
+
+改变改进规则本身的工作另列一层。Promptbreeder使mutation prompt可遗传，STOP使可执行改写器成为自身改写对象，HGM把选择压力从当前分数推进到后代改进潜力；SelfSearch以修改过程及局部自评记录支撑后继修改者继承，减少对目标任务分数的依赖。这四项的继承对象不同，应并列解释。OEO把优化流程交给冻结agent临场规划，提供反对固定流水线必然必要的证据，却没有跨任务持久元学习；metaTextGrad/SePO明确优化内层指令，但外层组合、检验、循环和预算仍人工固定。后两者作support，不能用内层prompt变化遮蔽外层固定部分。
+
+Model路线的分类关键是真值从哪里来。Self-Instruct/SELF/SPORT等主要由已有教师生成训练信息；Self-Rewarding让同一70B策略与判断能力一起变化，但人工rubric和初始偏好训练仍是锚。TTRL以同模型多数共识代替训练标签，属于测试分布适应，不能把多数票称能力上限。WebRL的策略、失败再生课程及buffer共同变化，任务教师和ORM固定。CURE、ECHO、RLAC、STRIDE这类critic共训把反馈内容、检查位置或重试分布变成可学习对象，最后的正确性仍由测试、环境或事实库决定。EvoRubrics改变评价条目但固定外部judge；MagicGUI-RMS由GPT4o仲裁；Mutual-Taught/SAVE主要利用已有RM和跨版本信念。共同更新两个角色不自动意味着评价标准获得独立进步。
+
+精读后的理论审查也应分层呈现：STOP的有限有界统一控制不能推长期改进；Skill-SD的固定prefix梯度恒等式成立但范围窄；SAVE是强假设下的局部条件结论。metaTextGrad对data-dependent ERM套pointwise Hoeffding、TSGD-M比较上界推实际方差排序、Actor-Curator同训练样本评更新后策略和二阶矩遗漏均有具体反例；Mutual-Taught的BT平移不变性破坏其所写M-step期望reward单调推论；STRIDE则把零梯度局部情形扩大成全局无害。应纠正精确命题，同时保留各自实验中得到的有限证据，不把理论缺口等同整个方法无效。
+
+本组终审保留core 8、support 30、mechanism_supplement 43、insufficient 2、outside 4、redundant 1，共88条；其余6条由self_training独立完成，根编译器直接读取，未合并重复。8项核心为Promptbreeder、STOP、Self-Rewarding、TTRL、WebRL、HGM、OEO、SelfSearch，后两项置信度medium，均保留预算/短程/归因限制。该数量来自机制代表性和证据，没有按20%凑额。
+
+88条中已知实际受训目标≥27B的只有Self-Rewarding70B、TTRL32B、OWL32B、Self-Instruct175B、CAI52B、Agent-RLVR72B、WebRL70B；OWL、Self-Instruct、CAI、Agent-RLVR仍列support，其基础/使能价值与闭环独特性分别讨论，不能只凭规模升core。大多数critic/prompt工作里的32/70/72B或商用大模型只是冻结教师/裁判/执行器。79条完整新读或补全全文，9条原有精读已回源复核必要比较段落；所有承担项均有可用原文，无blocked来源。全组关系共201条：uses67、compares35、complementary94、parallel5，无把Related Work提及升级成extends；SelfSearch来源链接已统一为实际读取的v2，Actor-Curator work_id已按assignment补齐。

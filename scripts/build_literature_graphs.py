@@ -26,8 +26,7 @@ for r in E['works']:
  title=BIB[r['id']]['name']; resources=r.get('resources') or w.get('scale') or w.get('tasks_and_resources','')
  if resources.startswith('本轮未统一'):resources=''
  resources=resources.replace('本卡只纳入','本条讨论').replace('本卡未提取统一总算力','总训练或搜索成本尚未提取')
- for sec in r['sections']:
-  sec['text']=sec['text'].replace('本卡纳入','这里讨论').replace('已核对','论文给出').replace('本卡不推测','未明确').replace('本轮','当前').replace('我们的贡献不能是组件改名；需额外给出可识别量与跨机制预测。','形式表示的贡献应与经验预测的效力区分。')
+ # Preserve review wording: an analyst's check must not become an author claim.
  tnames=[]
  if '机构待核' not in r['team'] and '机构未核准' not in r['team'] and r['team']!='署名机构尚未整理':
   for name in r['team'].split(' / '):
@@ -116,17 +115,25 @@ write('data/knowledge-graph.json',{'schema_version':'5.1.0','updated':E['updated
 template=(R/'scripts/atlas-template.html').read_text().replace('__ACTOR_STYLE__',(R/'scripts/actor-style.css').read_text()).replace('__ACTOR_SCRIPT__',(R/'scripts/actor-views.js').read_text());assert '__LITERATURE_DATA__' in template
 page=template.replace('__CORPUS_STYLE__',(R/'scripts/corpus-style.css').read_text()).replace('__CORPUS_SCRIPT__',(R/'scripts/corpus-views.js').read_text()).replace('__READER_STYLE__',(R/'scripts/reader-guide.css').read_text()).replace('__READER_SCRIPT__',(R/'scripts/reader-guide.js').read_text()).replace('__DOMAIN_STYLE__',(R/'scripts/domain-style.css').read_text()).replace('__DOMAIN_SCRIPT__',(R/'scripts/domain-views.js').read_text()).replace('__INDUSTRY_SCRIPT__',(R/'scripts/industry-views.js').read_text()).replace('__INDUSTRY_STYLE__',(R/'scripts/industry-style.css').read_text()).replace('__LITERATURE_DATA__',json.dumps(a,ensure_ascii=False,separators=(',',':')).replace('</','<\\/'))
 for name in ['index.html','RSI_Field_Atlas_v5_1.html']:(R/'research/atlas'/name).write_text(page)
-md=['# RSI 领域知识图谱 · v5.1','','[打开三张领域图谱](research/atlas/RSI_Field_Atlas_v5_1.html) · [文字版研究结构](research/atlas/field-guide.md)','','![首页三张领域图谱](assets/atlas/landscape-overview.png)','','首页直接显示 Harness、Model、Model × Harness 三张领域图。29 个研究主题、其下的具体子问题以及 60 条机制联系先组织研究空间；论文、团队和机构再挂接到对应位置。主题间联系是综述归纳，论文间的引用、扩展和方法对照另行标注。','','点击主题可展开关键问题、原理、技术、相邻关系与对应研究；点击箭头可看联系的含义和原文例证。本综述仅讨论公开研究，不包含项目自身理论或设计。','','## 当前收录进度','','| 路线 | 收录研究 | 论文原文研读 | 公开材料研读 |','|---|---:|---:|---:|']
+md=['# RSI 领域知识图谱 · v5.1','','[打开三张领域图谱](research/atlas/RSI_Field_Atlas_v5_1.html) · [文字版研究结构](research/atlas/field-guide.md)','','![三张领域图的界面示意；最新数字以 HTML 为准](assets/atlas/landscape-overview.png)','','首页直接显示 Harness、Model、Model × Harness 三张领域图。29 个研究主题、其下的具体子问题以及 60 条机制联系先组织研究空间；论文、团队和机构再挂接到对应位置。主题间联系是综述归纳，论文间的引用、扩展和方法对照另行标注。','','点击主题可展开关键问题、原理、技术、相邻关系与对应研究；点击箭头可看联系的含义和原文例证。本综述仅讨论公开研究，不包含项目自身理论或设计。','','## 当前收录进度','','| 路线 | 收录研究 | 论文原文研读 | 公开材料研读 |','|---|---:|---:|---:|']
+if a.get('corpus_review'):
+ cr=a['corpus_review'];cc=cr['counts'];reading=cc['reading'];sel=cc['selection']
+ audit=['## 全量来源审查','',f'固定清单共 **{cc["total"]} 条来源记录**，已完成 **{cc["reviewed"]} 条**，待完成 **{cc["pending"]} 条**。这些数字不是独立 RSI 系统数，也不是全球文献总量。所有记录均可在 HTML 中搜索；图谱目录是其中用于导航的挂接层，并不限制阅读卡片的覆盖范围。','',f'阅读依据：{reading.get("full_primary",0)} 条原文与相关附录研读，{reading.get("previous_primary_rechecked",0)} 条既有研读加本次原文复核，{reading.get("public_materials",0)} 条官方技术材料。已读范围和未披露部分逐项记录；不把文献分析写成独立实验复现。','','| 研究位置 | 审查记录 | 重点研究 | 方法 / 证据补充 | 范围 / 机制参考 | 其他取舍 |','|---|---:|---:|---:|---:|---:|']
+ for route,title in [(r['id'],r['title']) for r in route_specs]+[('crosscut','跨路线支撑'),('background','历史与基础'),('outside','范围外')]:
+  z=cc['routes'].get(route,{})
+  audit.append(f'| {title} | {z.get("reviewed",0)} | {z.get("core",0)} | {z.get("support",0)} | {z.get("mechanism_supplement",0)} | {sum(z.get(k,0) for k in ["redundant","outside","insufficient","blocked"])} |')
+ audit+=['',f'重点研究合计 **{sel.get("core",0)} 条**，包括跨路线的评价与理论材料。未入重点图谱不等于劣质；相近工作、范围外、公开证据不足分别说明。没有按 20% 配额倒推筛选。','', '[完整审查说明](research/atlas/reading-audit.md) · 原始结构记录：`data/reading-reviews/`。','']
+ pos=md.index('## 当前收录进度');md[pos:pos+1]=audit+['## 图谱挂接目录']
 for r in route_specs:
  ws=[w for w in works if w['route']==r['id']];md.append(f'| {r["title"]} | {len(ws)} | {sum(w.get("review",{}).get("source_coverage")=="main_text_and_relevant_appendix" for w in ws)} | {sum(w.get("review",{}).get("source_coverage")=="public_materials" for w in ws)} |')
-md+=['',f'合计 {counts["routed"]} 项路线研究，另有 {counts["crosscut"]} 项跨路线评测/形式研究与 22 项历史、背景材料，共 {len(works)} 项。路线数量包括自改进研究、相关使能方法和披露有限的公开机制，不等于认证的高质量 RSI 系统数。','',f'{counts["relations"]} 条逐项解释的论文关系；机构署名与方法归类作为单独边类型。','', '## 阅读方式','','1. 首页先读三张领域图；点击主题，展开子问题与具体方法。','2. 沿主题联系看经验、反馈、参数和程序怎样相互作用；论文不决定主题是否存在。','3. 读主题下的论文与团队，打开 A–F 研究卡片；卡片可以定位回相关领域主题。','4. 切换论文关系图，看明确引用、扩展与综述方法对照。','5. 使用全局检索查论文、机构、算法或任务。','','已确认低于 27B 的 Model / 混合机制参考默认不出现在路线论文主视图，可在补充区或搜索中读取。未公开规模与低质量不是同一判断。','', '## 数据与复建','','`data/field-knowledge.json` 保存领域主题、子问题、机制联系和论文挂接；`data/literature-editorial.json` 保存逐篇叙述与论文关系；`data/literature-atlas.json` 是阅读数据，`data/knowledge-graph.json` 是带来源的多关系图。','','```bash','python scripts/build_literature_graphs.py','python scripts/check_literature_graphs.py','node scripts/check_atlas_ui.cjs','```','', '上一轮九页 PDF 是 2026-10-18 的导读快照；当前图谱以 v5.1 HTML 与上述数据为准。']
+md+=['',f'目录挂接 {counts["routed"]} 项路线研究、{counts["crosscut"]} 项跨路线评测/形式研究及 {counts["archive"]} 项历史、背景材料，共 {len(works)} 项。此目录数量不同于全量审查记录数或重点研究数；完整索引中所有记录都有各自阅读卡片。','',f'{counts["relations"]} 条逐项解释的目录论文关系；机构署名与方法归类作为单独边类型。全量索引还保留目录之外的关系与解释。','', '## 阅读方式','','1. 首页先读三张领域图；点击主题，展开子问题与具体方法。','2. 沿主题联系看经验、反馈、参数和程序怎样相互作用；论文不决定主题是否存在。','3. 读主题下的论文与团队，打开 A–F 研究卡片；卡片可以定位回相关领域主题。','4. 切换论文关系图，看明确引用、扩展与综述方法对照。','5. 使用全局检索查全部来源记录中的论文、机构、算法或任务。','','已确认低于 27B 的 Model / 混合机制参考默认不出现在路线论文主视图，可在补充区或搜索中读取。未公开规模与低质量不是同一判断。','', '## 数据与复建','','`data/field-knowledge.json` 保存领域主题、子问题、机制联系和论文挂接；`data/literature-editorial.json` 保存逐篇叙述与论文关系；`data/literature-atlas.json` 是阅读数据，`data/knowledge-graph.json` 是带来源的多关系图。','','```bash','python scripts/build_corpus_review.py --require-complete','python scripts/integrate_corpus_reviews.py','python scripts/integrate_corpus_relations.py','python scripts/build_literature_graphs.py','python scripts/check_literature_graphs.py','node scripts/check_atlas_ui.cjs','```','', '上一轮九页 PDF 是 2026-10-18 的导读快照；当前图谱以 v5.1 HTML 与上述数据为准。']
 md += ['', '## 公司与产业团队', '', f"公司索引共 {I['counts']['total']} 项：{I['counts']['research']} 项关联具体研究、{I['counts']['direction']} 项仅公开方向、{I['counts']['adjacent']} 项邻近研究待确认。关联 {I['counts']['linked_works']} 项去重研究；不是全球公司总数。", '', '[公司与研究关联表](research/atlas/industry-guide.md) · 来源：`data/industry-landscape.json`。公司索引与各领域主题双向连接。', '']
 (R/'RESEARCH_ATLAS.md').write_text('\n'.join(md)+'\n')
 actor_guide=['# 研究主体与三条 RSI 路线','','研究路线解释更新对象与机制；主体类别解释研究由谁开展。合作记录在具体工作上，不把合作团队另造为互斥的第四类机构。','','| 研究主体 | 定义 |','|---|---|']
 for t in a['actors']['types']:
  actor_guide.append(f'| {t["title"]} | {t["description"]} |')
 small_count=sum(w['placement']=='small' and w['route'] in {'harness','model','hybrid'} for w in works)
-actor_guide+=['','## 交叉统计','',f'下表包括全部 {counts["routed"]} 项主路线工作。HTML 默认隐藏其中 {small_count} 项 <27B 补充机制，因此默认矩阵显示 {counts["routed"]-small_count} 项；勾选后与下表一致。单元格对工作去重；合作研究可出现在多个主体行中，不能将各行相加。','','| 主体 | Harness | Model | Model × Harness | 三条路线合计 |','|---|---:|---:|---:|---:|']
+actor_guide+=['','## 交叉统计','',f'下表列出导航目录中全部 {counts["routed"]} 项主路线工作，包含 {small_count} 项 <27B 机制参考。HTML 默认矩阵按重点研究筛选，可另选方法补充与小模型；因此不能把此全目录表等同默认重点数量。单元格对工作去重；合作研究可出现在多个主体行中，不能将各行相加。','','| 主体 | Harness | Model | Model × Harness | 三条路线合计 |','|---|---:|---:|---:|---:|']
 routed=[w for w in works if w['route'] in {'harness','model','hybrid'}]
 for t in a['actors']['types']:
  ws=[w for w in routed if t['id'] in w['actor_types']]

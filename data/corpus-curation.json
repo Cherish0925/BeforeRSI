@@ -734,6 +734,367 @@
         "team_roster",
         "research_state"
       ]
+    },
+    "arxiv-2502-13138": {
+      "work_id": "aide",
+      "short": "AIDE",
+      "cluster": "h-research",
+      "methods": [
+        "h-research"
+      ],
+      "topic_ids": [
+        "h-search",
+        "m-pretraining-ai4ai"
+      ],
+      "scope_kind": "enabler",
+      "scope_label": "AI4AI 支撑",
+      "reported_depth": "persistent",
+      "changed_objects": [
+        "external_program_archive"
+      ]
+    },
+    "arxiv-2609-37968": {
+      "work_id": "selfsearch",
+      "short": "SelfSearch",
+      "cluster": "h-self",
+      "methods": [
+        "h-self",
+        "h-workflow"
+      ],
+      "topic_ids": [
+        "h-search",
+        "h-improver",
+        "h-control",
+        "h-inheritance"
+      ],
+      "scope_kind": "direct",
+      "reported_depth": "recursive",
+      "changed_objects": [
+        "agent_code"
+      ]
+    },
+    "catalog-alphaproof": {
+      "scale_status": "unverified",
+      "placement": "main"
+    },
+    "catalog-metacircle-ophis": {
+      "cluster": "h-research",
+      "methods": [
+        "h-research"
+      ],
+      "topic_ids": [
+        "h-evaluation",
+        "h-runtime",
+        "m-pretraining-ai4ai"
+      ],
+      "scope_kind": "enabler",
+      "scope_label": "AI4AI 支撑",
+      "reported_depth": "persistent",
+      "changed_objects": [
+        "external_research_artifacts"
+      ]
+    },
+    "catalog-comfyresearch": {
+      "cluster": "h-research",
+      "methods": [
+        "h-research"
+      ],
+      "topic_ids": [
+        "h-evaluation",
+        "h-runtime",
+        "m-pretraining-ai4ai"
+      ],
+      "scope_kind": "enabler",
+      "scope_label": "AI4AI 支撑",
+      "reported_depth": "persistent",
+      "changed_objects": [
+        "external_research_artifacts"
+      ]
+    },
+    "catalog-nanogpt-observables": {
+      "cluster": "h-research",
+      "methods": [
+        "h-research"
+      ],
+      "topic_ids": [
+        "h-evaluation",
+        "h-runtime",
+        "m-pretraining-ai4ai"
+      ],
+      "scope_kind": "enabler",
+      "scope_label": "AI4AI 支撑",
+      "reported_depth": "persistent",
+      "changed_objects": [
+        "external_research_artifacts"
+      ]
+    },
+    "catalog-apex-tune": {
+      "cluster": "h-research",
+      "methods": [
+        "h-research"
+      ],
+      "topic_ids": [
+        "h-search",
+        "m-pretraining-ai4ai"
+      ],
+      "scope_kind": "enabler",
+      "scope_label": "AI4AI 支撑",
+      "reported_depth": "persistent",
+      "changed_objects": [
+        "external_research_artifacts"
+      ]
+    },
+    "catalog-apex-research": {
+      "cluster": "h-research",
+      "methods": [
+        "h-research"
+      ],
+      "topic_ids": [
+        "h-search",
+        "m-pretraining-ai4ai"
+      ],
+      "scope_kind": "enabler",
+      "scope_label": "AI4AI 支撑",
+      "reported_depth": "persistent",
+      "changed_objects": [
+        "external_research_artifacts"
+      ]
+    },
+    "catalog-recursive-first-steps": {
+      "cluster": "h-research",
+      "methods": [
+        "h-research"
+      ],
+      "topic_ids": [
+        "h-search",
+        "m-pretraining-ai4ai"
+      ],
+      "scope_kind": "enabler",
+      "scope_label": "AI4AI 支撑",
+      "reported_depth": "persistent",
+      "changed_objects": [
+        "external_research_artifacts"
+      ]
+    },
+    "catalog-intology-locus": {
+      "cluster": "h-research",
+      "methods": [
+        "h-research"
+      ],
+      "topic_ids": [
+        "h-search",
+        "m-bootstrapping",
+        "m-verifiable-feedback"
+      ],
+      "scope_kind": "enabler",
+      "scope_label": "AI4AI 支撑",
+      "reported_depth": "persistent",
+      "changed_objects": [
+        "external_research_artifacts"
+      ]
+    },
+    "catalog-autoscience-lab": {
+      "cluster": "h-research",
+      "methods": [
+        "h-research"
+      ],
+      "topic_ids": [
+        "h-search",
+        "m-pretraining-ai4ai"
+      ],
+      "scope_kind": "enabler",
+      "scope_label": "AI4AI 支撑",
+      "reported_depth": "persistent",
+      "changed_objects": [
+        "external_research_artifacts"
+      ]
+    },
+    "arxiv-2605-29790": {
+      "work_id": "meta-team",
+      "short": "Meta-Team",
+      "cluster": "h-workflow",
+      "methods": [
+        "h-workflow",
+        "h-memory"
+      ],
+      "topic_ids": [
+        "h-control",
+        "h-capabilities",
+        "h-memory",
+        "h-inheritance"
+      ],
+      "scope_kind": "direct",
+      "reported_depth": "transfer",
+      "changed_objects": [
+        "agent_skills",
+        "teammate_profiles",
+        "team_constitution",
+        "role_roster"
+      ]
+    },
+    "arxiv-2601-21557": {
+      "work_id": "mce",
+      "short": "MCE",
+      "cluster": "h-self",
+      "methods": [
+        "h-self",
+        "h-memory",
+        "h-prompt"
+      ],
+      "topic_ids": [
+        "h-improver",
+        "h-instructions",
+        "h-memory",
+        "h-search",
+        "h-inheritance"
+      ],
+      "scope_kind": "direct",
+      "reported_depth": "persistent",
+      "changed_objects": [
+        "context_learning_skill",
+        "context_files",
+        "retrieval_program"
+      ]
+    },
+    "arxiv-2607-28048": {
+      "work_id": "skill-kd",
+      "short": "SKILL-KD",
+      "cluster": "h-memory",
+      "methods": [
+        "h-memory",
+        "h-prompt"
+      ],
+      "topic_ids": [
+        "h-capabilities",
+        "h-memory",
+        "h-evaluation",
+        "h-inheritance"
+      ],
+      "scope_kind": "direct",
+      "reported_depth": "persistent",
+      "changed_objects": [
+        "skill_library",
+        "edit_history"
+      ]
+    },
+    "arxiv-2609-01437": {
+      "work_id": "harnessdev",
+      "short": "HarnessDev",
+      "cluster": "cross-evaluation",
+      "methods": [
+        "cross-evaluation"
+      ],
+      "topic_ids": [
+        "h-evaluation",
+        "h-runtime",
+        "h-search",
+        "h-inheritance"
+      ],
+      "scope_kind": "evaluation",
+      "scope_label": "评测与反例",
+      "reported_depth": "persistent",
+      "changed_objects": [
+        "candidate_harness_code"
+      ]
+    },
+    "arxiv-2605-08374": {
+      "work_id": "memq",
+      "short": "MemQ",
+      "cluster": "h-memory",
+      "methods": [
+        "h-memory"
+      ],
+      "topic_ids": [
+        "h-memory",
+        "h-search",
+        "h-evaluation",
+        "h-inheritance"
+      ],
+      "scope_kind": "direct",
+      "reported_depth": "persistent",
+      "changed_objects": [
+        "provenance_memory_dag",
+        "retrieval_q_values"
+      ]
+    },
+    "arxiv-2504-01848": {
+      "work_id": "paperbench",
+      "short": "PaperBench",
+      "cluster": "cross-evaluation",
+      "methods": [
+        "cross-evaluation"
+      ],
+      "topic_ids": [
+        "h-evaluation",
+        "h-runtime",
+        "m-pretraining-ai4ai"
+      ],
+      "scope_kind": "evaluation",
+      "scope_label": "评测与反例",
+      "reported_depth": "evaluation",
+      "changed_objects": [
+        "external_reproduction_code"
+      ]
+    },
+    "arxiv-2606-24151": {
+      "work_id": "metis-memory",
+      "short": "Metis",
+      "cluster": "h-memory",
+      "methods": [
+        "h-memory"
+      ],
+      "topic_ids": [
+        "h-memory",
+        "h-capabilities",
+        "h-inheritance"
+      ],
+      "scope_kind": "direct",
+      "reported_depth": "transfer",
+      "changed_objects": [
+        "text_memory",
+        "executable_tools",
+        "promotion_history"
+      ]
+    },
+    "arxiv-2410-08197": {
+      "work_id": "draft-tool-docs",
+      "short": "DRAFT",
+      "cluster": "h-prompt",
+      "methods": [
+        "h-prompt",
+        "h-memory"
+      ],
+      "topic_ids": [
+        "h-instructions",
+        "h-capabilities",
+        "h-experience",
+        "h-inheritance"
+      ],
+      "scope_kind": "direct",
+      "reported_depth": "transfer",
+      "changed_objects": [
+        "tool_documentation",
+        "exploration_directions"
+      ]
+    },
+    "arxiv-2305-17126": {
+      "work_id": "latm",
+      "short": "LATM",
+      "cluster": "h-memory",
+      "methods": [
+        "h-memory"
+      ],
+      "topic_ids": [
+        "h-capabilities",
+        "h-inheritance"
+      ],
+      "scope_kind": "enabler",
+      "reported_depth": "transfer",
+      "changed_objects": [
+        "executable_tools",
+        "tool_examples",
+        "functional_cache"
+      ]
     }
   }
 }
