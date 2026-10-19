@@ -1,0 +1,1100 @@
+{
+  "updated": "2026-10-19",
+  "purpose": "新增主图工作的人工比较与挂接；来源、实验和取舍理由见 corpus-review.json。",
+  "bindings": {
+    "arxiv-2609-08944": {
+      "work_id": "skilladam",
+      "short": "SkillAdam",
+      "cluster": "h-memory",
+      "methods": [
+        "h-memory",
+        "h-prompt"
+      ],
+      "topic_ids": [
+        "h-capabilities",
+        "h-search",
+        "h-inheritance"
+      ],
+      "scope_kind": "direct",
+      "reported_depth": "transfer",
+      "changed_objects": [
+        "skill_documents",
+        "optimizer_state"
+      ]
+    },
+    "arxiv-2608-09629": {
+      "work_id": "open-ended-optimization",
+      "short": "Open-Ended Optimization",
+      "cluster": "h-self",
+      "methods": [
+        "h-self",
+        "h-memory"
+      ],
+      "topic_ids": [
+        "h-improver",
+        "h-search",
+        "h-capabilities"
+      ],
+      "scope_kind": "direct",
+      "reported_depth": "persistent",
+      "changed_objects": [
+        "skills",
+        "optimization_decisions"
+      ]
+    },
+    "arxiv-2604-01658": {
+      "work_id": "coral",
+      "short": "CORAL",
+      "cluster": "h-research",
+      "methods": [
+        "h-research",
+        "h-memory",
+        "h-workflow"
+      ],
+      "topic_ids": [
+        "h-search",
+        "h-memory",
+        "h-control",
+        "h-inheritance"
+      ],
+      "scope_kind": "enabler",
+      "reported_depth": "persistent",
+      "changed_objects": [
+        "programs",
+        "research_memory"
+      ]
+    },
+    "arxiv-2504-16084": {
+      "work_id": "ttrl",
+      "short": "TTRL",
+      "cluster": "m-proof",
+      "methods": [
+        "m-proof",
+        "m-selftrain"
+      ],
+      "topic_ids": [
+        "m-continual-adaptation",
+        "m-bootstrapping",
+        "m-verifiable-feedback"
+      ],
+      "scope_kind": "direct",
+      "reported_depth": "adaptation",
+      "models": [
+        {
+          "name": "Qwen2.5-32B",
+          "total_b": 32,
+          "active_b": null,
+          "role": "策略模型：实际GRPO训练"
+        },
+        {
+          "name": "Qwen2.5-Math-7B",
+          "total_b": 7,
+          "active_b": null,
+          "role": "补充训练实验"
+        },
+        {
+          "name": "Qwen2.5-Math-1.5B",
+          "total_b": 1.5,
+          "active_b": null,
+          "role": "补充训练实验"
+        }
+      ],
+      "changed_objects": [
+        "model_weights"
+      ]
+    },
+    "arxiv-2601-16175": {
+      "work_id": "ttt-discover",
+      "short": "TTT-Discover",
+      "cluster": "m-proof",
+      "methods": [
+        "m-proof"
+      ],
+      "topic_ids": [
+        "m-verifiable-feedback",
+        "m-continual-adaptation",
+        "h-search"
+      ],
+      "scope_kind": "direct",
+      "reported_depth": "adaptation",
+      "models": [
+        {
+          "name": "gpt-oss-120b",
+          "total_b": 120,
+          "active_b": null,
+          "role": "主实验：LoRA在线RL训练"
+        },
+        {
+          "name": "Qwen3-8B",
+          "total_b": 8,
+          "active_b": null,
+          "role": "数学补充训练比较"
+        }
+      ],
+      "changed_objects": [
+        "model_weights"
+      ]
+    },
+    "arxiv-2310-03714": {
+      "work_id": "dspy",
+      "short": "DSPy",
+      "cluster": "h-prompt",
+      "methods": [
+        "h-prompt",
+        "h-workflow"
+      ],
+      "topic_ids": [
+        "h-instructions",
+        "h-control",
+        "h-search",
+        "h-inheritance"
+      ],
+      "scope_kind": "enabler",
+      "reported_depth": "persistent",
+      "changed_objects": [
+        "module_demonstrations",
+        "compiled_program"
+      ]
+    },
+    "arxiv-2602-07755": {
+      "work_id": "alma",
+      "short": "ALMA",
+      "cluster": "h-memory",
+      "methods": [
+        "h-memory",
+        "h-self"
+      ],
+      "topic_ids": [
+        "h-memory",
+        "h-improver",
+        "h-search",
+        "h-inheritance"
+      ],
+      "scope_kind": "direct",
+      "reported_depth": "transfer",
+      "changed_objects": [
+        "memory_design",
+        "memory_contents"
+      ]
+    },
+    "arxiv-2510-15863": {
+      "work_id": "polyskill",
+      "short": "PolySkill",
+      "cluster": "h-memory",
+      "methods": [
+        "h-memory"
+      ],
+      "topic_ids": [
+        "h-capabilities",
+        "h-inheritance",
+        "h-experience"
+      ],
+      "scope_kind": "direct",
+      "reported_depth": "transfer",
+      "changed_objects": [
+        "skill_interfaces",
+        "skill_implementations"
+      ]
+    },
+    "arxiv-2308-10144": {
+      "work_id": "expel",
+      "short": "ExpeL",
+      "cluster": "h-memory",
+      "methods": [
+        "h-memory",
+        "h-prompt"
+      ],
+      "topic_ids": [
+        "h-memory",
+        "h-experience",
+        "h-instructions",
+        "h-inheritance"
+      ],
+      "scope_kind": "direct",
+      "reported_depth": "transfer",
+      "changed_objects": [
+        "experience_memory",
+        "insight_rules"
+      ]
+    },
+    "arxiv-2512-17102": {
+      "work_id": "sage-skill-library",
+      "short": "SAGE · Skill Library",
+      "cluster": "x-skills",
+      "methods": [
+        "x-skills"
+      ],
+      "topic_ids": [
+        "x-memory",
+        "x-externalization",
+        "x-internalization"
+      ],
+      "scope_kind": "direct",
+      "reported_depth": "adaptation",
+      "changed_objects": [
+        "model_weights",
+        "skill_library"
+      ],
+      "models": [
+        {
+          "name": "Qwen2.5-32B-Instruct",
+          "total_b": 32,
+          "active_b": null,
+          "role": "实际全参 SFT 与 RL 训练"
+        }
+      ]
+    },
+    "arxiv-2609-26760": {
+      "work_id": "growing-harness",
+      "short": "Growing Harness",
+      "cluster": "h-self",
+      "methods": [
+        "h-self",
+        "h-workflow"
+      ],
+      "topic_ids": [
+        "h-control",
+        "h-capabilities",
+        "h-search",
+        "h-inheritance"
+      ],
+      "scope_kind": "direct",
+      "reported_depth": "transfer",
+      "changed_objects": [
+        "agent_program",
+        "search_checkpoint"
+      ]
+    },
+    "arxiv-2608-20290": {
+      "work_id": "phantom-gains",
+      "short": "Phantom Gains",
+      "cluster": "cross-evaluation",
+      "methods": [
+        "cross-evaluation"
+      ],
+      "topic_ids": [],
+      "scope_kind": "evaluation",
+      "reported_depth": "evaluation",
+      "changed_objects": [
+        "audit_protocol"
+      ]
+    },
+    "arxiv-2312-10003": {
+      "work_id": "rest-meets-react",
+      "short": "ReST meets ReAct",
+      "cluster": "m-selftrain",
+      "methods": [
+        "m-selftrain",
+        "m-proof"
+      ],
+      "topic_ids": [
+        "m-bootstrapping",
+        "m-experience-learning",
+        "m-verifiable-feedback"
+      ],
+      "scope_kind": "enabler",
+      "reported_depth": "adaptation",
+      "changed_objects": [
+        "model_weights",
+        "training_trajectories"
+      ],
+      "models": [
+        {
+          "name": "PaLM 2-L / S / XS",
+          "total_b": null,
+          "active_b": null,
+          "role": "实际全参训练；参数量未披露，L 为自生成闭环主体"
+        }
+      ]
+    },
+    "arxiv-2602-10226": {
+      "work_id": "youtube-self-evolving-recommendation",
+      "short": "YouTube · Self-Evolving Recommendation",
+      "cluster": "cross-evaluation",
+      "methods": [
+        "cross-evaluation"
+      ],
+      "topic_ids": [
+        "x-training",
+        "h-search",
+        "h-experience"
+      ],
+      "scope_kind": "enabler",
+      "reported_depth": "external_optimization",
+      "changed_objects": [
+        "recommendation_model",
+        "training_program",
+        "research_journal"
+      ]
+    },
+    "arxiv-2605-15871": {
+      "cluster": "cross-evaluation",
+      "methods": [
+        "cross-evaluation"
+      ],
+      "topic_ids": [
+        "x-training",
+        "h-search"
+      ],
+      "scope_kind": "enabler"
+    },
+    "arxiv-2310-12931": {
+      "cluster": "cross-evaluation",
+      "methods": [
+        "cross-evaluation"
+      ],
+      "topic_ids": [
+        "x-environment",
+        "x-feedback",
+        "h-search"
+      ],
+      "scope_kind": "enabler"
+    },
+    "catalog-automated-alignment-researchers": {
+      "cluster": "cross-evaluation",
+      "methods": [
+        "cross-evaluation"
+      ],
+      "topic_ids": [
+        "x-training",
+        "h-search",
+        "h-evaluation"
+      ],
+      "scope_kind": "enabler"
+    },
+    "catalog-seed-for-seed": {
+      "cluster": "cross-evaluation",
+      "methods": [
+        "cross-evaluation"
+      ],
+      "topic_ids": [],
+      "scope_kind": "disclosure"
+    },
+    "catalog-deepseek-r1": {
+      "cluster": "m-proof",
+      "methods": [
+        "m-proof",
+        "m-selftrain"
+      ],
+      "topic_ids": [
+        "m-verifiable-feedback",
+        "m-bootstrapping",
+        "m-experience-learning"
+      ],
+      "scope_kind": "enabler",
+      "models": [
+        {
+          "name": "DeepSeek-V3-Base → R1-Zero / R1",
+          "total_b": 671,
+          "active_b": 37,
+          "role": "实际强化学习与 SFT 训练"
+        }
+      ],
+      "changed_objects": [
+        "model_weights",
+        "training_trajectories"
+      ]
+    },
+    "catalog-qwen3": {
+      "cluster": "m-selftrain",
+      "methods": [
+        "m-selftrain",
+        "m-proof"
+      ],
+      "topic_ids": [
+        "m-pretraining-ai4ai",
+        "m-bootstrapping",
+        "m-verifiable-feedback"
+      ],
+      "scope_kind": "enabler",
+      "models": [
+        {
+          "name": "Qwen3-235B-A22B",
+          "total_b": 235,
+          "active_b": 22,
+          "role": "实际预训练与后训练"
+        },
+        {
+          "name": "Qwen3-32B",
+          "total_b": 32,
+          "active_b": null,
+          "role": "实际后训练"
+        },
+        {
+          "name": "Qwen3-30B-A3B",
+          "total_b": 30,
+          "active_b": 3,
+          "role": "实际蒸馏训练"
+        }
+      ],
+      "changed_objects": [
+        "model_weights",
+        "training_data"
+      ]
+    },
+    "catalog-co-scientist": {
+      "cluster": "h-research",
+      "methods": [
+        "h-research",
+        "h-memory",
+        "h-workflow"
+      ],
+      "topic_ids": [
+        "h-search",
+        "h-memory",
+        "h-control",
+        "h-evaluation"
+      ],
+      "scope_kind": "enabler"
+    },
+    "arxiv-2411-00418": {
+      "models": [
+        {
+          "name": "Mistral-7B",
+          "total_b": 7,
+          "active_b": null,
+          "role": "实际训练且报告量化结果"
+        },
+        {
+          "name": "Llama3-8B",
+          "total_b": 8,
+          "active_b": null,
+          "role": "实际训练且报告量化结果"
+        },
+        {
+          "name": "Llama2-13B",
+          "total_b": 13,
+          "active_b": null,
+          "role": "实际训练且报告量化结果"
+        }
+      ]
+    },
+    "arxiv-2606-03108": {
+      "scale_status": "unverified",
+      "placement": "main"
+    },
+    "arxiv-2605-09998": {
+      "scale_status": "unverified",
+      "placement": "main"
+    },
+    "arxiv-2608-18066": {
+      "work_id": "fragility-self-improving-agents",
+      "short": "Fragility of Self-Improving Agents",
+      "cluster": "cross-evaluation",
+      "methods": [
+        "cross-evaluation"
+      ],
+      "topic_ids": [
+        "h-memory",
+        "h-inheritance",
+        "h-evaluation",
+        "x-feedback"
+      ],
+      "scope_kind": "evaluation",
+      "reported_depth": "persistent",
+      "changed_objects": [
+        "evaluation_protocol",
+        "diagnostic_controls"
+      ],
+      "role": "evaluation"
+    },
+    "arxiv-2505-21444": {
+      "work_id": "can-reasoning-models-self-train",
+      "short": "Can Reasoning Models Self-Train?",
+      "cluster": "cross-evaluation",
+      "methods": [
+        "cross-evaluation"
+      ],
+      "topic_ids": [
+        "m-bootstrapping",
+        "m-verifiable-feedback",
+        "m-continual-adaptation",
+        "x-feedback"
+      ],
+      "scope_kind": "evaluation",
+      "reported_depth": "persistent",
+      "changed_objects": [
+        "evaluation_protocol",
+        "diagnostic_controls"
+      ],
+      "role": "evaluation"
+    },
+    "arxiv-2608-12851": {
+      "work_id": "practice-makes-unsafe",
+      "short": "Practice Makes Unsafe",
+      "cluster": "cross-evaluation",
+      "methods": [
+        "cross-evaluation"
+      ],
+      "topic_ids": [
+        "h-capabilities",
+        "h-inheritance",
+        "h-evaluation",
+        "x-deployment"
+      ],
+      "scope_kind": "evaluation",
+      "reported_depth": "persistent",
+      "changed_objects": [
+        "evaluation_protocol",
+        "diagnostic_controls"
+      ],
+      "role": "evaluation"
+    },
+    "arxiv-2609-17817": {
+      "work_id": "trusting-trust-revisited",
+      "short": "Trusting Trust Revisited",
+      "cluster": "cross-evaluation",
+      "methods": [
+        "cross-evaluation"
+      ],
+      "topic_ids": [
+        "h-improver",
+        "h-evaluation",
+        "h-inheritance",
+        "x-feedback"
+      ],
+      "scope_kind": "evaluation",
+      "reported_depth": "persistent",
+      "changed_objects": [
+        "evaluation_protocol",
+        "diagnostic_controls"
+      ],
+      "role": "evaluation"
+    },
+    "arxiv-2507-14172": {
+      "work_id": "soar-arc",
+      "short": "SOAR",
+      "cluster": "m-selftrain",
+      "methods": [
+        "m-selftrain",
+        "m-proof"
+      ],
+      "topic_ids": [
+        "m-bootstrapping",
+        "m-experience-learning",
+        "m-verifiable-feedback",
+        "m-continual-adaptation"
+      ],
+      "scope_kind": "direct",
+      "reported_depth": "transfer",
+      "changed_objects": [
+        "model_weights",
+        "training_data"
+      ],
+      "models": [
+        {
+          "name": "Qwen2.5-Coder-32B",
+          "total_b": 32,
+          "active_b": null,
+          "role": "实际RS-QLoRA训练"
+        },
+        {
+          "name": "Qwen2.5-72B",
+          "total_b": 72,
+          "active_b": null,
+          "role": "实际RS-QLoRA训练"
+        },
+        {
+          "name": "Mistral-large-2407",
+          "total_b": 123,
+          "active_b": null,
+          "role": "实际RS-QLoRA训练"
+        }
+      ]
+    },
+    "arxiv-2608-19197": {
+      "work_id": "spade",
+      "short": "SPADE",
+      "cluster": "x-environment",
+      "methods": [
+        "x-environment",
+        "x-training"
+      ],
+      "topic_ids": [
+        "x-environment",
+        "x-externalization",
+        "x-feedback",
+        "x-memory",
+        "m-curriculum-learning"
+      ],
+      "scope_kind": "direct",
+      "reported_depth": "transfer",
+      "changed_objects": [
+        "model_weights",
+        "environment_programs",
+        "environment_memory"
+      ],
+      "models": [
+        {
+          "name": "Qwen3-30B-A3B-Instruct-2507",
+          "total_b": 30,
+          "active_b": 3,
+          "role": "共享环境设计/求解策略，实际RL训练"
+        },
+        {
+          "name": "Nemotron-30B-A3B",
+          "total_b": 30,
+          "active_b": 3,
+          "role": "补充实际RL训练"
+        }
+      ]
+    },
+    "arxiv-2608-25776": {
+      "work_id": "evomal",
+      "short": "EvoMal",
+      "cluster": "cross-evaluation",
+      "methods": [
+        "cross-evaluation"
+      ],
+      "topic_ids": [
+        "h-capabilities",
+        "h-inheritance",
+        "h-evaluation",
+        "x-deployment"
+      ],
+      "scope_kind": "evaluation",
+      "reported_depth": "persistent",
+      "changed_objects": [
+        "evaluation_protocol",
+        "tool_lineage_controls"
+      ],
+      "role": "evaluation"
+    },
+    "arxiv-2409-07429": {
+      "work_id": "agent-workflow-memory",
+      "short": "AWM",
+      "cluster": "h-memory",
+      "methods": [
+        "h-memory",
+        "h-workflow"
+      ],
+      "topic_ids": [
+        "h-memory",
+        "h-capabilities",
+        "h-inheritance",
+        "h-control"
+      ],
+      "scope_kind": "direct",
+      "reported_depth": "transfer",
+      "changed_objects": [
+        "workflow_memory"
+      ]
+    },
+    "arxiv-2407-10627": {
+      "work_id": "arena-learning",
+      "short": "Arena Learning",
+      "cluster": "m-selftrain",
+      "methods": [
+        "m-selftrain",
+        "m-preference"
+      ],
+      "topic_ids": [
+        "m-bootstrapping",
+        "m-preferences",
+        "m-experience-learning",
+        "m-continual-adaptation"
+      ],
+      "scope_kind": "enabler",
+      "reported_depth": "persistent",
+      "changed_objects": [
+        "model_weights",
+        "training_data"
+      ],
+      "models": [
+        {
+          "name": "Mixtral-8x22B",
+          "total_b": 141,
+          "active_b": 39,
+          "role": "目标学生：实际SFT/DPO/PPO训练"
+        },
+        {
+          "name": "Mistral-7B",
+          "total_b": 7,
+          "active_b": null,
+          "role": "学生及多数消融"
+        }
+      ]
+    },
+    "arxiv-2605-28655": {
+      "cluster": "h-research",
+      "methods": [
+        "h-research",
+        "h-workflow"
+      ],
+      "topic_ids": [
+        "h-search",
+        "h-control",
+        "h-experience",
+        "h-inheritance"
+      ],
+      "scope_kind": "enabler",
+      "scope_label": "AI4AI 支撑",
+      "reported_depth": "transfer",
+      "changed_objects": [
+        "team_roster",
+        "research_state"
+      ]
+    },
+    "arxiv-2502-13138": {
+      "work_id": "aide",
+      "short": "AIDE",
+      "cluster": "h-research",
+      "methods": [
+        "h-research"
+      ],
+      "topic_ids": [
+        "h-search",
+        "m-pretraining-ai4ai"
+      ],
+      "scope_kind": "enabler",
+      "scope_label": "AI4AI 支撑",
+      "reported_depth": "persistent",
+      "changed_objects": [
+        "external_program_archive"
+      ]
+    },
+    "arxiv-2609-37968": {
+      "work_id": "selfsearch",
+      "short": "SelfSearch",
+      "cluster": "h-self",
+      "methods": [
+        "h-self",
+        "h-workflow"
+      ],
+      "topic_ids": [
+        "h-search",
+        "h-improver",
+        "h-control",
+        "h-inheritance"
+      ],
+      "scope_kind": "direct",
+      "reported_depth": "recursive",
+      "changed_objects": [
+        "agent_code"
+      ]
+    },
+    "catalog-alphaproof": {
+      "scale_status": "unverified",
+      "placement": "main"
+    },
+    "catalog-metacircle-ophis": {
+      "cluster": "h-research",
+      "methods": [
+        "h-research"
+      ],
+      "topic_ids": [
+        "h-evaluation",
+        "h-runtime",
+        "m-pretraining-ai4ai"
+      ],
+      "scope_kind": "enabler",
+      "scope_label": "AI4AI 支撑",
+      "reported_depth": "persistent",
+      "changed_objects": [
+        "external_research_artifacts"
+      ]
+    },
+    "catalog-comfyresearch": {
+      "cluster": "h-research",
+      "methods": [
+        "h-research"
+      ],
+      "topic_ids": [
+        "h-evaluation",
+        "h-runtime",
+        "m-pretraining-ai4ai"
+      ],
+      "scope_kind": "enabler",
+      "scope_label": "AI4AI 支撑",
+      "reported_depth": "persistent",
+      "changed_objects": [
+        "external_research_artifacts"
+      ]
+    },
+    "catalog-nanogpt-observables": {
+      "cluster": "h-research",
+      "methods": [
+        "h-research"
+      ],
+      "topic_ids": [
+        "h-evaluation",
+        "h-runtime",
+        "m-pretraining-ai4ai"
+      ],
+      "scope_kind": "enabler",
+      "scope_label": "AI4AI 支撑",
+      "reported_depth": "persistent",
+      "changed_objects": [
+        "external_research_artifacts"
+      ]
+    },
+    "catalog-apex-tune": {
+      "cluster": "h-research",
+      "methods": [
+        "h-research"
+      ],
+      "topic_ids": [
+        "h-search",
+        "m-pretraining-ai4ai"
+      ],
+      "scope_kind": "enabler",
+      "scope_label": "AI4AI 支撑",
+      "reported_depth": "persistent",
+      "changed_objects": [
+        "external_research_artifacts"
+      ]
+    },
+    "catalog-apex-research": {
+      "cluster": "h-research",
+      "methods": [
+        "h-research"
+      ],
+      "topic_ids": [
+        "h-search",
+        "m-pretraining-ai4ai"
+      ],
+      "scope_kind": "enabler",
+      "scope_label": "AI4AI 支撑",
+      "reported_depth": "persistent",
+      "changed_objects": [
+        "external_research_artifacts"
+      ]
+    },
+    "catalog-recursive-first-steps": {
+      "cluster": "h-research",
+      "methods": [
+        "h-research"
+      ],
+      "topic_ids": [
+        "h-search",
+        "m-pretraining-ai4ai"
+      ],
+      "scope_kind": "enabler",
+      "scope_label": "AI4AI 支撑",
+      "reported_depth": "persistent",
+      "changed_objects": [
+        "external_research_artifacts"
+      ]
+    },
+    "catalog-intology-locus": {
+      "cluster": "h-research",
+      "methods": [
+        "h-research"
+      ],
+      "topic_ids": [
+        "h-search",
+        "m-bootstrapping",
+        "m-verifiable-feedback"
+      ],
+      "scope_kind": "enabler",
+      "scope_label": "AI4AI 支撑",
+      "reported_depth": "persistent",
+      "changed_objects": [
+        "external_research_artifacts"
+      ]
+    },
+    "catalog-autoscience-lab": {
+      "cluster": "h-research",
+      "methods": [
+        "h-research"
+      ],
+      "topic_ids": [
+        "h-search",
+        "m-pretraining-ai4ai"
+      ],
+      "scope_kind": "enabler",
+      "scope_label": "AI4AI 支撑",
+      "reported_depth": "persistent",
+      "changed_objects": [
+        "external_research_artifacts"
+      ]
+    },
+    "arxiv-2605-29790": {
+      "work_id": "meta-team",
+      "short": "Meta-Team",
+      "cluster": "h-workflow",
+      "methods": [
+        "h-workflow",
+        "h-memory"
+      ],
+      "topic_ids": [
+        "h-control",
+        "h-capabilities",
+        "h-memory",
+        "h-inheritance"
+      ],
+      "scope_kind": "direct",
+      "reported_depth": "transfer",
+      "changed_objects": [
+        "agent_skills",
+        "teammate_profiles",
+        "team_constitution",
+        "role_roster"
+      ]
+    },
+    "arxiv-2601-21557": {
+      "work_id": "mce",
+      "short": "MCE",
+      "cluster": "h-self",
+      "methods": [
+        "h-self",
+        "h-memory",
+        "h-prompt"
+      ],
+      "topic_ids": [
+        "h-improver",
+        "h-instructions",
+        "h-memory",
+        "h-search",
+        "h-inheritance"
+      ],
+      "scope_kind": "direct",
+      "reported_depth": "persistent",
+      "changed_objects": [
+        "context_learning_skill",
+        "context_files",
+        "retrieval_program"
+      ]
+    },
+    "arxiv-2607-28048": {
+      "work_id": "skill-kd",
+      "short": "SKILL-KD",
+      "cluster": "h-memory",
+      "methods": [
+        "h-memory",
+        "h-prompt"
+      ],
+      "topic_ids": [
+        "h-capabilities",
+        "h-memory",
+        "h-evaluation",
+        "h-inheritance"
+      ],
+      "scope_kind": "direct",
+      "reported_depth": "persistent",
+      "changed_objects": [
+        "skill_library",
+        "edit_history"
+      ]
+    },
+    "arxiv-2609-01437": {
+      "work_id": "harnessdev",
+      "short": "HarnessDev",
+      "cluster": "cross-evaluation",
+      "methods": [
+        "cross-evaluation"
+      ],
+      "topic_ids": [
+        "h-evaluation",
+        "h-runtime",
+        "h-search",
+        "h-inheritance"
+      ],
+      "scope_kind": "evaluation",
+      "scope_label": "评测与反例",
+      "reported_depth": "persistent",
+      "changed_objects": [
+        "candidate_harness_code"
+      ]
+    },
+    "arxiv-2605-08374": {
+      "work_id": "memq",
+      "short": "MemQ",
+      "cluster": "h-memory",
+      "methods": [
+        "h-memory"
+      ],
+      "topic_ids": [
+        "h-memory",
+        "h-search",
+        "h-evaluation",
+        "h-inheritance"
+      ],
+      "scope_kind": "direct",
+      "reported_depth": "persistent",
+      "changed_objects": [
+        "provenance_memory_dag",
+        "retrieval_q_values"
+      ]
+    },
+    "arxiv-2504-01848": {
+      "work_id": "paperbench",
+      "short": "PaperBench",
+      "cluster": "cross-evaluation",
+      "methods": [
+        "cross-evaluation"
+      ],
+      "topic_ids": [
+        "h-evaluation",
+        "h-runtime",
+        "m-pretraining-ai4ai"
+      ],
+      "scope_kind": "evaluation",
+      "scope_label": "评测与反例",
+      "reported_depth": "evaluation",
+      "changed_objects": [
+        "external_reproduction_code"
+      ]
+    },
+    "arxiv-2606-24151": {
+      "work_id": "metis-memory",
+      "short": "Metis",
+      "cluster": "h-memory",
+      "methods": [
+        "h-memory"
+      ],
+      "topic_ids": [
+        "h-memory",
+        "h-capabilities",
+        "h-inheritance"
+      ],
+      "scope_kind": "direct",
+      "reported_depth": "transfer",
+      "changed_objects": [
+        "text_memory",
+        "executable_tools",
+        "promotion_history"
+      ]
+    },
+    "arxiv-2410-08197": {
+      "work_id": "draft-tool-docs",
+      "short": "DRAFT",
+      "cluster": "h-prompt",
+      "methods": [
+        "h-prompt",
+        "h-memory"
+      ],
+      "topic_ids": [
+        "h-instructions",
+        "h-capabilities",
+        "h-experience",
+        "h-inheritance"
+      ],
+      "scope_kind": "direct",
+      "reported_depth": "transfer",
+      "changed_objects": [
+        "tool_documentation",
+        "exploration_directions"
+      ]
+    },
+    "arxiv-2305-17126": {
+      "work_id": "latm",
+      "short": "LATM",
+      "cluster": "h-memory",
+      "methods": [
+        "h-memory"
+      ],
+      "topic_ids": [
+        "h-capabilities",
+        "h-inheritance"
+      ],
+      "scope_kind": "enabler",
+      "reported_depth": "transfer",
+      "changed_objects": [
+        "executable_tools",
+        "tool_examples",
+        "functional_cache"
+      ]
+    }
+  }
+}

@@ -1,0 +1,2416 @@
+{
+  "updated": "2026-10-18",
+  "version": "3.0.0",
+  "minimum_total_parameters_b": 27,
+  "threshold_basis": "Model / 混合重点案例要求实际训练目标总参数≥27B；可由公开总量或可验证的架构下界核准。MoE激活量另列，教师大小不能替代；未公开规模的工业研究单列保留。",
+  "routes": [
+    {
+      "id": "harness",
+      "title": "Harness",
+      "subtitle": "外部机制与持久状态进化",
+      "criterion": "模型参数固定；改进被保留在系统边界内的代码、规则、外部记忆、工具或执行设施中。",
+      "question": "怎样让同一模型更会行动、学习、评价和继续改进？"
+    },
+    {
+      "id": "model",
+      "title": "Model",
+      "subtitle": "模型权重与学习机制",
+      "criterion": "实际更新参数化组件；下一代参与产生后续训练、反馈或改进。数据流变化本身不等于 harness 自改。",
+      "question": "怎样让学习改变下一轮学习信号或改进行为？"
+    },
+    {
+      "id": "hybrid",
+      "title": "Model × Harness",
+      "subtitle": "联合适配与闭环共演",
+      "criterion": "权重与外部机制均实际更新；另区分单向内化、序列适配、互相回流和持续多轮。",
+      "question": "两条更新路径怎样相互适应，而不是互相破坏？"
+    }
+  ],
+  "placement_labels": {
+    "main": "已核对重点案例",
+    "small": "<27B 机制参考",
+    "scale_unverified": "规模未核准",
+    "adjacent": "关键前身 / AI4AI 支撑",
+    "crosscut": "评测与形式工具",
+    "pending": "候选待审",
+    "historical": "历史与机制参考",
+    "background": "外围背景"
+  },
+  "contribution_axes": {
+    "a1": "目标与问题",
+    "a2": "价值与意义",
+    "a3": "优先级与成功条件",
+    "a4": "约束与资源",
+    "b1": "认知与理解",
+    "b2": "思想与视野",
+    "b3": "洞察力与直觉",
+    "b4": "判断力与研究品味",
+    "b5": "全局意识与审美",
+    "c1": "问题本质",
+    "c2": "第一性原理与基本规律",
+    "c3": "结构与逻辑",
+    "c4": "变量、关系与因果",
+    "c5": "模型与表征",
+    "c6": "假设与理论",
+    "d1": "创造力与创新",
+    "d2": "思路与策略",
+    "d3": "方法、技术与路径",
+    "d4": "算法与推理",
+    "d5": "证明与构造",
+    "d6": "实验、计算与仿真",
+    "d7": "跨学科联系与突破",
+    "e1": "主动性与行动力",
+    "e2": "实现与实践",
+    "e3": "坚持与持续推进",
+    "e4": "反馈、学习与调整",
+    "e5": "路线重构与持续突破",
+    "e6": "知识积累与能力进化",
+    "f1": "新知识与新发现",
+    "f2": "新解释与新理论",
+    "f3": "新方法与新技术",
+    "f4": "证明、预测与实际解决方案",
+    "f5": "泛化、迁移与可复用能力",
+    "f6": "实际价值与长期影响"
+  },
+  "works": [
+    {
+      "id": "good-1965",
+      "route": "unresolved",
+      "placement": "historical",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "eurisko",
+      "route": "unresolved",
+      "placement": "historical",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "godel-machine",
+      "route": "unresolved",
+      "placement": "historical",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "maml",
+      "route": "unresolved",
+      "placement": "historical",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "alphago-zero",
+      "route": "unresolved",
+      "placement": "historical",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "automl-zero",
+      "route": "unresolved",
+      "placement": "historical",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "stop",
+      "route": "harness",
+      "placement": "main",
+      "audit": "selected_sections",
+      "why": "机制和回流已核对，纳入重点案例；不等于所有递归主张均已证明。",
+      "models": [],
+      "scale_status": "not_applicable",
+      "focus": [],
+      "changed": "用调用冻结 GPT-4 的改进程序修改该改进程序自身。",
+      "return_path": "改进程序产生后继；后继继续生成程序改进。",
+      "training": {
+        "stage": "不训练权重",
+        "algorithm": "外部状态/代码更新",
+        "data_regime": "执行轨迹与任务反馈",
+        "cadence": "按轮更新"
+      },
+      "source_url": "https://arxiv.org/pdf/2310.02304v3",
+      "source_location": "首页署名与脚注；§3–4、Algorithm 1、迁移实验",
+      "provenance": {
+        "institutions": "Microsoft Research / Stanford / OpenAI（研究在微软期间完成）",
+        "sector": "joint",
+        "source_url": "https://arxiv.org/pdf/2310.02304v3",
+        "location": "论文首页作者署名；STOP 同时记录研究期间脚注"
+      }
+    },
+    {
+      "id": "promptbreeder",
+      "route": "harness",
+      "placement": "main",
+      "audit": "selected_sections",
+      "why": "机制和回流已核对，纳入重点案例；不等于所有递归主张均已证明。",
+      "models": [],
+      "scale_status": "not_applicable",
+      "focus": [],
+      "changed": "共同演化任务提示与生成变异的提示，基础模型冻结。",
+      "return_path": "任务提示与对应变异提示共同进入后继种群。",
+      "training": {
+        "stage": "不训练权重",
+        "algorithm": "外部状态/代码更新",
+        "data_regime": "执行轨迹与任务反馈",
+        "cadence": "按轮更新"
+      },
+      "source_url": "https://arxiv.org/pdf/2309.16797v1",
+      "source_location": "首页；§3、§4、Table 1；ICML 2024 正式版另列",
+      "provenance": {
+        "institutions": "Google DeepMind",
+        "sector": "industry",
+        "source_url": "https://arxiv.org/pdf/2309.16797v1",
+        "location": "论文首页作者署名；STOP 同时记录研究期间脚注"
+      }
+    },
+    {
+      "id": "funsearch",
+      "route": "unresolved",
+      "placement": "historical",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "spin",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "self-rewarding-lm",
+      "route": "model",
+      "placement": "main",
+      "audit": "selected_sections",
+      "why": "70B 的回答与自奖励参数共同继承；外部训练程序固定。",
+      "models": [
+        {
+          "name": "Llama 2 70B",
+          "total_b": 70,
+          "active_b": null,
+          "role": "实际训练对象"
+        }
+      ],
+      "scale_status": "eligible",
+      "focus": [
+        "d3",
+        "e4"
+      ],
+      "changed": "同一模型的回答/评价权重；每轮偏好数据",
+      "return_path": "M1 生成回答与偏好训练 M2；M2 再生成偏好训练 M3；出题模型固定。",
+      "training": {
+        "stage": "后训练",
+        "algorithm": "种子 SFT → 迭代 DPO",
+        "data_regime": "轮间在线生成偏好；每轮 DPO 优化已收集的偏好对，不等于 PPO 在线 RL。",
+        "cadence": "一次种子 SFT + 两轮 DPO"
+      },
+      "source_url": "https://arxiv.org/html/2401.10020v1",
+      "source_location": "§2.1–2.4，§3.1–3.2；特别是 §3.1.3 的固定出题模型。",
+      "provenance": {
+        "institutions": "Meta / NYU",
+        "sector": "joint",
+        "source_url": "https://arxiv.org/html/2401.10020v1",
+        "location": "论文首页作者署名；STOP 同时记录研究期间脚注"
+      }
+    },
+    {
+      "id": "godel-agent",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "adas",
+      "route": "harness",
+      "placement": "adjacent",
+      "audit": "selected_sections",
+      "why": "关键前身/比较基线，保留贡献但不计入直接演化重点数。",
+      "models": [],
+      "scale_status": "not_applicable",
+      "focus": [],
+      "changed": "固定 meta-agent 依据档案编写、评测目标 agent 的 forward 实现。",
+      "return_path": "设计结果写回档案；改进器从档案学习上下文，但其实现固定。",
+      "training": {
+        "stage": "不训练权重",
+        "algorithm": "外部状态/代码更新",
+        "data_regime": "执行轨迹与任务反馈",
+        "cadence": "按轮更新"
+      },
+      "source_url": "https://arxiv.org/html/2408.08435v1",
+      "source_location": "首页；§3、§4.3、Appendix G",
+      "provenance": {
+        "institutions": "UBC / Vector Institute",
+        "sector": "academic",
+        "source_url": "https://arxiv.org/html/2408.08435v1",
+        "location": "论文首页作者署名；STOP 同时记录研究期间脚注"
+      }
+    },
+    {
+      "id": "aflow",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "sica",
+      "route": "harness",
+      "placement": "main",
+      "audit": "selected_sections",
+      "why": "机制和回流已核对，纳入重点案例；不等于所有递归主张均已证明。",
+      "models": [],
+      "scale_status": "not_applicable",
+      "focus": [],
+      "changed": "从历史档案选当前最佳 agent，让它修改自己的代码库。",
+      "return_path": "被选中的后继 agent 承担下一轮自修改。",
+      "training": {
+        "stage": "不训练权重",
+        "algorithm": "外部状态/代码更新",
+        "data_regime": "执行轨迹与任务反馈",
+        "cadence": "按轮更新"
+      },
+      "source_url": "https://arxiv.org/html/2504.15228v1",
+      "source_location": "首页；§3、Algorithm 1；§4 与 Appendix D",
+      "provenance": {
+        "institutions": "iGent AI / University of Bristol",
+        "sector": "joint",
+        "source_url": "https://arxiv.org/html/2504.15228v1",
+        "location": "论文首页作者署名；STOP 同时记录研究期间脚注"
+      }
+    },
+    {
+      "id": "dgm",
+      "route": "harness",
+      "placement": "main",
+      "audit": "selected_sections",
+      "why": "已定位的改动在外部软件/状态；未训练基础模型权重。",
+      "models": [],
+      "scale_status": "not_applicable",
+      "focus": [
+        "d4",
+        "e6"
+      ],
+      "changed": "执行代码、工具及代理实现",
+      "return_path": "保留候选代理并用于后续代码改进；不等于已证明改进速度持续增长",
+      "training": {
+        "stage": "不涉及参数训练",
+        "algorithm": "不涉及参数训练",
+        "data_regime": "执行轨迹与评价反馈",
+        "cadence": "离散候选 / 评价 / 继承"
+      },
+      "source_url": "https://arxiv.org/html/2505.22954v3",
+      "source_location": "§3–4，尤其 §4.2–4.4 与谱系图",
+      "provenance": {
+        "institutions": "Sakana AI / UBC / Vector Institute",
+        "sector": "joint",
+        "source_url": "https://arxiv.org/html/2505.22954v3",
+        "location": "论文首页作者署名；STOP 同时记录研究期间脚注"
+      }
+    },
+    {
+      "id": "gepa",
+      "route": "harness",
+      "placement": "adjacent",
+      "audit": "selected_sections",
+      "why": "关键前身/比较基线，保留贡献但不计入直接演化重点数。",
+      "models": [],
+      "scale_status": "not_applicable",
+      "focus": [],
+      "changed": "反思执行轨迹、修改提示，并从 Pareto 前沿组合互补候选。",
+      "return_path": "候选提示及轨迹反馈进入后续搜索；外层优化算法固定。",
+      "training": {
+        "stage": "不训练权重",
+        "algorithm": "外部状态/代码更新",
+        "data_regime": "执行轨迹与任务反馈",
+        "cadence": "按轮更新"
+      },
+      "source_url": "https://arxiv.org/pdf/2507.19457v2",
+      "source_location": "首页；§2–4、Algorithm 1、实验与成本设置",
+      "provenance": {
+        "institutions": "UC Berkeley / Stanford / Notre Dame / MIT / Databricks / Bespoke Labs",
+        "sector": "joint",
+        "source_url": "https://arxiv.org/pdf/2507.19457v2",
+        "location": "论文首页作者署名；STOP 同时记录研究期间脚注"
+      }
+    },
+    {
+      "id": "agentbreeder",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "statistical-limits",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "seal",
+      "route": "model",
+      "placement": "small",
+      "audit": "selected_sections",
+      "why": "已核对的 1B / 7B 训练实验均低于 27B。",
+      "models": [
+        {
+          "name": "Qwen2.5-7B",
+          "total_b": 7,
+          "active_b": null,
+          "role": "实际训练对象"
+        },
+        {
+          "name": "Llama-3.2-1B",
+          "total_b": 1,
+          "active_b": null,
+          "role": "实际训练对象"
+        }
+      ],
+      "scale_status": "below",
+      "focus": [
+        "c4",
+        "d3"
+      ],
+      "changed": "自编辑生成策略与适应后的模型权重",
+      "return_path": "按内部微调后的效果更新编辑策略；受训练设置约束。",
+      "training": {
+        "stage": "后训练 / 测试时适应",
+        "algorithm": "ReST-EM 外层 + 内层微调",
+        "data_regime": "当前策略采编辑，执行内层学习后构造反馈。",
+        "cadence": "嵌套更新；知识分支两轮"
+      },
+      "source_url": "https://arxiv.org/html/2506.10943v1",
+      "source_location": "§3；§4 few-shot setup；Appendix A"
+    },
+    {
+      "id": "hyperagents",
+      "route": "harness",
+      "placement": "main",
+      "audit": "selected_sections",
+      "why": "已定位的改动在外部软件/状态；未训练基础模型权重。",
+      "models": [],
+      "scale_status": "not_applicable",
+      "focus": [
+        "c3",
+        "e5"
+      ],
+      "changed": "任务代理与元代理的共同代码",
+      "return_path": "后继的可编辑元代理继续提出改动；主要父节点选择仍由外层设定",
+      "training": {
+        "stage": "不涉及参数训练",
+        "algorithm": "不涉及参数训练",
+        "data_regime": "执行轨迹与评价反馈",
+        "cadence": "离散候选 / 评价 / 继承"
+      },
+      "source_url": "https://arxiv.org/html/2603.19461v1",
+      "source_location": "§3–5；§4.1 对照；Appendix D / E 元层变化",
+      "provenance": {
+        "institutions": "Meta / UBC / Vector / Edinburgh / NYU",
+        "sector": "joint",
+        "source_url": "https://arxiv.org/html/2603.19461v1",
+        "location": "论文首页作者署名；STOP 同时记录研究期间脚注"
+      }
+    },
+    {
+      "id": "harness-updating-benefit",
+      "route": "harness",
+      "placement": "crosscut",
+      "audit": "selected_sections",
+      "why": "作为评价/形式分析工具单列，不新增一种自改进系统路线。",
+      "models": [],
+      "scale_status": "not_applicable",
+      "focus": [
+        "c4",
+        "d6"
+      ],
+      "changed": "评价协议 / 形式定义",
+      "return_path": "检验闭环、收益与成本，不以评测论文冒充新的 RSI 系统。",
+      "training": {
+        "stage": "不涉及参数训练",
+        "algorithm": "不涉及参数训练",
+        "data_regime": "执行轨迹与评价反馈",
+        "cadence": "离散候选 / 评价 / 继承"
+      },
+      "source_url": "https://arxiv.org/html/2605.30621v1",
+      "source_location": "§3.2–3.3、§4；Appendix B–D"
+    },
+    {
+      "id": "sia",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "rhi",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "rethink-harness-eval",
+      "route": "harness",
+      "placement": "crosscut",
+      "audit": "selected_sections",
+      "why": "作为评价/形式分析工具单列，不新增一种自改进系统路线。",
+      "models": [],
+      "scale_status": "not_applicable",
+      "focus": [
+        "c4",
+        "d6"
+      ],
+      "changed": "评价协议 / 形式定义",
+      "return_path": "检验闭环、收益与成本，不以评测论文冒充新的 RSI 系统。",
+      "training": {
+        "stage": "不涉及参数训练",
+        "algorithm": "不涉及参数训练",
+        "data_regime": "执行轨迹与评价反馈",
+        "cadence": "离散候选 / 评价 / 继承"
+      },
+      "source_url": "https://arxiv.org/html/2607.12227v4",
+      "source_location": "v4 §3–5；§4.4 保留任务；§5.2–5.3 长时游戏"
+    },
+    {
+      "id": "co-harness",
+      "route": "hybrid",
+      "placement": "pending",
+      "audit": "selected_sections",
+      "why": "已读双循环方法及32B结果；两轮报告不能替代训练/选择/最终测试隔离、等预算对照和可追溯工件审查，暂不晋升精选。",
+      "models": [
+        {
+          "name": "Qwen3-32B",
+          "total_b": 32,
+          "active_b": null,
+          "role": "实际训练对象"
+        },
+        {
+          "name": "Qwen3-8B",
+          "total_b": 8,
+          "active_b": null,
+          "role": "实际训练对象"
+        }
+      ],
+      "scale_status": "eligible",
+      "focus": [
+        "d3",
+        "e4"
+      ],
+      "changed": "数学 agent harness + 模型权重",
+      "return_path": "每轮 harness 优化后用成功轨迹 SFT，两轮交替。",
+      "training": {
+        "stage": "后训练",
+        "algorithm": "harness 进化 + SFT",
+        "data_regime": "当前系统成功轨迹作监督。",
+        "cadence": "两轮，每轮 harness 内循环 K=5"
+      },
+      "source_url": "https://arxiv.org/abs/2607.22688",
+      "source_location": "§3–4、Table 5、Appendices E/G/H；32B 分支与8B案例分开；证据审查未完成。"
+    },
+    {
+      "id": "helix",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "hsi",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "evoharness-rl",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "harness-tampering",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "harnessdev",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "rrsi",
+      "route": "harness",
+      "placement": "main",
+      "audit": "selected_sections",
+      "why": "已定位的改动在外部软件/状态；未训练基础模型权重。",
+      "models": [],
+      "scale_status": "not_applicable",
+      "focus": [
+        "d3",
+        "f5"
+      ],
+      "changed": "提示、控制流、工具与上下文机制",
+      "return_path": "限制候选改动并筛掉过拟合/昂贵改动，保留到未见任务",
+      "training": {
+        "stage": "不涉及参数训练",
+        "algorithm": "不涉及参数训练",
+        "data_regime": "执行轨迹与评价反馈",
+        "cadence": "离散候选 / 评价 / 继承"
+      },
+      "source_url": "https://arxiv.org/html/2609.24972v1",
+      "source_location": "Table 2；提案 / 接受约束及消融",
+      "provenance": {
+        "institutions": "Google Cloud AI Research / Stanford / Washington University / UNC",
+        "sector": "joint",
+        "source_url": "https://arxiv.org/html/2609.24972v1",
+        "location": "论文首页作者署名；STOP 同时记录研究期间脚注"
+      }
+    },
+    {
+      "id": "meta-harness",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "aide2",
+      "route": "harness",
+      "placement": "main",
+      "audit": "selected_sections",
+      "why": "已定位的改动在外部软件/状态；未训练基础模型权重。",
+      "models": [],
+      "scale_status": "not_applicable",
+      "focus": [
+        "c4",
+        "d6"
+      ],
+      "changed": "研发代理代码与实验流程",
+      "return_path": "外层研发产生内层后继；另有后继接管共同目标的点火比较，增益并未明确成立",
+      "training": {
+        "stage": "不涉及参数训练",
+        "algorithm": "不涉及参数训练",
+        "data_regime": "执行轨迹与评价反馈",
+        "cadence": "离散候选 / 评价 / 继承"
+      },
+      "source_url": "https://arxiv.org/html/2609.26457v1",
+      "source_location": "§2.1–2.2，§3.6 ignition test",
+      "provenance": {
+        "institutions": "Weco AI",
+        "sector": "industry",
+        "source_url": "https://arxiv.org/html/2609.26457v1",
+        "location": "论文首页作者署名；STOP 同时记录研究期间脚注"
+      }
+    },
+    {
+      "id": "openrsi",
+      "route": "model",
+      "placement": "adjacent",
+      "audit": "selected_sections",
+      "why": "35B/30B 达规模门槛，但 §8 明示外部演化系统基本固定；主图不算闭环 RSI。",
+      "models": [
+        {
+          "name": "Qwen3.6-35B-A3B",
+          "total_b": 35,
+          "active_b": 3,
+          "role": "实际训练对象"
+        },
+        {
+          "name": "Qwen3-30B-A3B",
+          "total_b": 30,
+          "active_b": 3,
+          "role": "实际训练对象"
+        }
+      ],
+      "scale_status": "eligible",
+      "focus": [
+        "d3",
+        "e2"
+      ],
+      "changed": "程序改进算子的模型权重；外部 ML 候选解",
+      "return_path": "执行经验用于 SFT/RL；部署时搜索解法。未核实搜索系统本身反复自修改/接管训练。",
+      "training": {
+        "stage": "后训练",
+        "algorithm": "全参数 SFT + 执行反馈 RL",
+        "data_regime": "SFT 用筛选轨迹；RL 用执行结果；部署长程搜索另阶段。",
+        "cadence": "训练与部署搜索分开，不写成边部署边持续自训"
+      },
+      "source_url": "https://arxiv.org/html/2607.28568v1",
+      "source_location": "§4–6、§8 Limitations、Appendix B.2–B.3。"
+    },
+    {
+      "id": "mass",
+      "route": "hybrid",
+      "placement": "main",
+      "audit": "selected_sections",
+      "why": "27B 模型与多智能体工作流均更新，已报告两轮。",
+      "models": [
+        {
+          "name": "Qwen3.6-27B-FP8",
+          "total_b": 27,
+          "active_b": null,
+          "role": "实际训练对象"
+        }
+      ],
+      "scale_status": "eligible",
+      "focus": [
+        "d3",
+        "e6"
+      ],
+      "changed": "工作流角色与信息路由 + 同一 27B 模型权重",
+      "return_path": "当前模型演化工作流，执行轨迹用于 SFT，更新模型再次担任执行/优化/评价角色。",
+      "training": {
+        "stage": "后训练",
+        "algorithm": "工作流进化搜索 + SFT",
+        "data_regime": "每轮由当前模型与工作流采集轨迹；训练阶段做 SFT。",
+        "cadence": "2 个交替周期；非同时异步训练"
+      },
+      "source_url": "https://arxiv.org/html/2610.12176v1",
+      "source_location": "§3–4；Appendix C 轨迹与 SFT；Appendix C.5 跨基准回退。",
+      "provenance": {
+        "institutions": "Sakana AI / UC Berkeley",
+        "sector": "joint",
+        "source_url": "https://arxiv.org/html/2610.12176v1",
+        "location": "论文首页作者署名；STOP 同时记录研究期间脚注"
+      }
+    },
+    {
+      "id": "rsi-anything",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "dream-rsi",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "hgm",
+      "route": "harness",
+      "placement": "main",
+      "audit": "selected_sections",
+      "why": "已定位的改动在外部软件/状态；未训练基础模型权重。",
+      "models": [],
+      "scale_status": "not_applicable",
+      "focus": [
+        "c5",
+        "d4"
+      ],
+      "changed": "代理代码、谱系与搜索选择",
+      "return_path": "按分支未来产出分配扩展与评价；外层搜索规则是否自改须另判",
+      "training": {
+        "stage": "不涉及参数训练",
+        "algorithm": "不涉及参数训练",
+        "data_regime": "执行轨迹与评价反馈",
+        "cadence": "离散候选 / 评价 / 继承"
+      },
+      "source_url": "https://arxiv.org/html/2510.21614v1",
+      "source_location": "§2–4，Assumption 1 / Theorem 1；对照与资源口径",
+      "provenance": {
+        "institutions": "KAUST",
+        "sector": "academic",
+        "source_url": "https://arxiv.org/html/2510.21614v1",
+        "location": "论文首页作者署名；STOP 同时记录研究期间脚注"
+      }
+    },
+    {
+      "id": "ace",
+      "route": "harness",
+      "placement": "main",
+      "audit": "selected_sections",
+      "why": "机制和回流已核对，纳入重点案例；不等于所有递归主张均已证明。",
+      "models": [],
+      "scale_status": "not_applicable",
+      "focus": [],
+      "changed": "从轨迹提炼经验，以局部增量更新持久 playbook。",
+      "return_path": "新任务使用已维护的经验，再把成败反馈写回经验库。",
+      "training": {
+        "stage": "不训练权重",
+        "algorithm": "外部状态/代码更新",
+        "data_regime": "执行轨迹与任务反馈",
+        "cadence": "按轮更新"
+      },
+      "source_url": "https://arxiv.org/html/2510.04618v1",
+      "source_location": "首页；§3–4，尤其 §3.1–3.2、§4.5–4.6",
+      "provenance": {
+        "institutions": "Stanford / SambaNova / UC Berkeley",
+        "sector": "joint",
+        "source_url": "https://arxiv.org/html/2510.04618v1",
+        "location": "论文首页作者署名；STOP 同时记录研究期间脚注"
+      }
+    },
+    {
+      "id": "alphaevolve",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "opro",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "learned-optimizer-2016",
+      "route": "unresolved",
+      "placement": "historical",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "poet",
+      "route": "unresolved",
+      "placement": "historical",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "self-training-optimizer-2020",
+      "route": "unresolved",
+      "placement": "historical",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "star",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "rest-em",
+      "route": "model",
+      "placement": "scale_unverified",
+      "audit": "selected_sections",
+      "why": "机制有直接证据，实际训练总参数未核准；不是低价值排除。",
+      "models": [
+        {
+          "name": "PaLM 2-S / 2-L",
+          "total_b": null,
+          "active_b": null,
+          "role": "实际训练对象"
+        }
+      ],
+      "scale_status": "unverified",
+      "focus": [],
+      "changed": "生成自训练样本、用外部二元反馈筛选，再监督学习；反复交替。",
+      "return_path": "每轮从原基座重训，但样本由上轮改进模型产生。",
+      "training": {
+        "stage": "后训练",
+        "algorithm": "反馈筛选 SFT / EM 式自训练",
+        "data_regime": "按轮刷新数据；非连续 on-policy 梯度更新。",
+        "cadence": "多轮，学生重置基座"
+      },
+      "source_url": "https://arxiv.org/pdf/2312.06585v4",
+      "source_location": "首页；§3 Algorithm 1、§5–6、Figure 4/7",
+      "provenance": {
+        "institutions": "Google DeepMind / Mila",
+        "sector": "joint",
+        "source_url": "https://arxiv.org/pdf/2312.06585v4",
+        "location": "论文首页作者署名；STOP 同时记录研究期间脚注"
+      }
+    },
+    {
+      "id": "expert-iteration",
+      "route": "unresolved",
+      "placement": "historical",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "dreamcoder",
+      "route": "unresolved",
+      "placement": "historical",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "selecting-computations",
+      "route": "unresolved",
+      "placement": "historical",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "levin-tree-search",
+      "route": "unresolved",
+      "placement": "historical",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "policy-guided-heuristic-search",
+      "route": "unresolved",
+      "placement": "historical",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "lts-context-models",
+      "route": "unresolved",
+      "placement": "historical",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "openai-o1",
+      "route": "unresolved",
+      "placement": "background",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "deepseek-r1",
+      "route": "unresolved",
+      "placement": "background",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "qwen3",
+      "route": "unresolved",
+      "placement": "background",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "alphaproof",
+      "route": "model",
+      "placement": "small",
+      "audit": "selected_sections",
+      "why": "实际训练目标低于27B，保留机制参考；不是质量否定。",
+      "models": [
+        {
+          "name": "AlphaProof proof network",
+          "total_b": 3,
+          "active_b": null,
+          "role": "实际训练对象"
+        }
+      ],
+      "scale_status": "below",
+      "focus": [],
+      "changed": "证明搜索和 Lean 校验产生经验训练策略/价值网络，难题再做测试时 RL。",
+      "return_path": "搜索成功轨迹与变体反馈进入证明网络训练。",
+      "training": {
+        "stage": "后训练",
+        "algorithm": "搜索引导 RL + 测试时 RL",
+        "data_regime": "Lean 提供外部可验证信号。",
+        "cadence": "主训练与问题特定训练"
+      },
+      "source_url": "https://www.nature.com/articles/s41586-025-09833-y",
+      "source_location": "Agent / Training / Methods: Proof network；test-time RL",
+      "provenance": {
+        "institutions": "Google DeepMind",
+        "sector": "industry",
+        "source_url": "https://www.nature.com/articles/s41586-025-09833-y",
+        "location": "论文首页作者署名；STOP 同时记录研究期间脚注"
+      }
+    },
+    {
+      "id": "muzero",
+      "route": "unresolved",
+      "placement": "background",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "xland",
+      "route": "unresolved",
+      "placement": "background",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "sima2",
+      "route": "model",
+      "placement": "scale_unverified",
+      "audit": "selected_sections",
+      "why": "机制有直接证据，实际训练总参数未核准；不是低价值排除。",
+      "models": [
+        {
+          "name": "SIMA 2 / Gemini backbone",
+          "total_b": null,
+          "active_b": null,
+          "role": "实际训练对象"
+        }
+      ],
+      "scale_status": "unverified",
+      "focus": [],
+      "changed": "Gemini 出题并评价游戏轨迹；agent 从自生成经验继续训练。",
+      "return_path": "更新 agent 再产生经验，任务选择可聚焦弱项；外部 Gemini 组件未证参数共演。",
+      "training": {
+        "stage": "后训练",
+        "algorithm": "自生成经验训练；报告另含 RL 阶段",
+        "data_regime": "本卡不将所有训练阶段笼统写成同一个 RL 算法。",
+        "cadence": "多轮自改实验"
+      },
+      "source_url": "https://arxiv.org/html/2512.04797v1",
+      "source_location": "首页；§3.3、§4.5，Figures 15–17",
+      "provenance": {
+        "institutions": "Google DeepMind",
+        "sector": "industry",
+        "source_url": "https://arxiv.org/html/2512.04797v1",
+        "location": "论文首页作者署名；STOP 同时记录研究期间脚注"
+      }
+    },
+    {
+      "id": "constitutional-ai",
+      "route": "model",
+      "placement": "adjacent",
+      "audit": "selected_sections",
+      "why": "关键前身/比较基线，保留贡献但不计入直接演化重点数。",
+      "models": [
+        {
+          "name": "Anthropic 52B policy",
+          "total_b": 52,
+          "active_b": null,
+          "role": "实际训练对象"
+        }
+      ],
+      "scale_status": "eligible",
+      "focus": [],
+      "changed": "自批评/修订样本用于 SFT；AI 偏好训练奖励模型，再用于 RL。",
+      "return_path": "AI 输出和偏好进入后续权重训练；未证持续重复整个系统共演。",
+      "training": {
+        "stage": "后训练",
+        "algorithm": "自修订 SFT + RLAIF",
+        "data_regime": "固定 constitution；帮助性反馈含人工标注。",
+        "cadence": "分阶段训练"
+      },
+      "source_url": "https://arxiv.org/html/2212.08073v1",
+      "source_location": "§1.2、§3、§4；Figure 2 的 52B RL runs",
+      "provenance": {
+        "institutions": "Anthropic",
+        "sector": "industry",
+        "source_url": "https://arxiv.org/html/2212.08073v1",
+        "location": "论文首页作者署名；STOP 同时记录研究期间脚注"
+      }
+    },
+    {
+      "id": "self-taught-evaluators",
+      "route": "model",
+      "placement": "main",
+      "audit": "selected_sections",
+      "why": "实际训练 70B 评价器；属于评价角色的模型更新。",
+      "models": [
+        {
+          "name": "Llama3-70B-Instruct",
+          "total_b": 70,
+          "active_b": null,
+          "role": "实际训练对象"
+        }
+      ],
+      "scale_status": "eligible",
+      "focus": [
+        "d3",
+        "e4"
+      ],
+      "changed": "评价模型权重；合成判断训练集",
+      "return_path": "上一轮评价器生成下一轮判断；每轮学生从同一原始种子重新微调，而非连续接着上轮权重训练。",
+      "training": {
+        "stage": "后训练",
+        "algorithm": "SFT / 判断文本负对数似然",
+        "data_regime": "轮间刷新合成判断，轮内固定数据批次；构造偏好标签提供锚点。",
+        "cadence": "5 轮；生成与训练交替"
+      },
+      "source_url": "https://arxiv.org/html/2408.02666v1",
+      "source_location": "§3.3–3.5、§4.1、§5–6；70B 与种子重置在 §4.1。",
+      "provenance": {
+        "institutions": "Meta FAIR",
+        "sector": "industry",
+        "source_url": "https://arxiv.org/html/2408.02666v1",
+        "location": "论文首页作者署名；STOP 同时记录研究期间脚注"
+      }
+    },
+    {
+      "id": "eureka",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "co-scientist",
+      "route": "unresolved",
+      "placement": "background",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "gpt-red",
+      "route": "model",
+      "placement": "scale_unverified",
+      "audit": "selected_sections",
+      "why": "工业级规模描述不能替代实际被训练模型的公开参数量。",
+      "models": [
+        {
+          "name": "attacker / defender（未公开参数）",
+          "total_b": null,
+          "active_b": null,
+          "role": "实际训练对象"
+        }
+      ],
+      "scale_status": "unverified",
+      "focus": [
+        "d3",
+        "e4"
+      ],
+      "changed": "攻击者与防御者模型权重",
+      "return_path": "攻击/防御训练相互提供样本和反馈；多个模型共同训练仍属于 Model。",
+      "training": {
+        "stage": "后训练",
+        "algorithm": "自博弈 RL",
+        "data_regime": "攻击与防御交互生成训练信号。",
+        "cadence": "分阶段协同训练；本卡不推测在线异步细节"
+      },
+      "source_url": "https://cdn.openai.com/pdf/gpt-red-automated-red-teaming-via-self-play-at-scale.pdf",
+      "source_location": "论文 §5；官方自玩与生产应用说明"
+    },
+    {
+      "id": "automated-alignment-researchers",
+      "route": "hybrid",
+      "placement": "adjacent",
+      "audit": "selected_sections",
+      "why": "自动研究者训练其他目标模型有实际价值；未核实后继接管研究者的闭环，参数也未核准。",
+      "models": [
+        {
+          "name": "目标模型（参数未核准）",
+          "total_b": null,
+          "active_b": null,
+          "role": "实际训练对象"
+        }
+      ],
+      "scale_status": "unverified",
+      "focus": [
+        "a2",
+        "e2"
+      ],
+      "changed": "目标模型训练与研究流程/实验方案",
+      "return_path": "训练结果反馈给固定研究代理；不能直接声称研究代理参数自进化。",
+      "training": {
+        "stage": "后训练",
+        "algorithm": "自动对齐实验；不同干预不能归为单一训练算法",
+        "data_regime": "目标训练反馈与外部评测。",
+        "cadence": "研究代理迭代实验；递归接管未核准"
+      },
+      "source_url": "https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures",
+      "source_location": "官方研究报告；链接论文 task / transfer / production 段落"
+    },
+    {
+      "id": "seed-for-seed",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "sol-pi",
+      "route": "harness",
+      "placement": "main",
+      "audit": "selected_sections",
+      "why": "已定位的改动在外部软件/状态；未训练基础模型权重。",
+      "models": [],
+      "scale_status": "not_applicable",
+      "focus": [
+        "a4",
+        "d3"
+      ],
+      "changed": "harness 执行逻辑与效率实现",
+      "return_path": "自动研发保留执行优化；未来递归研发成本下降仍需单独实测",
+      "training": {
+        "stage": "不涉及参数训练",
+        "algorithm": "不涉及参数训练",
+        "data_regime": "执行轨迹与评价反馈",
+        "cadence": "离散候选 / 评价 / 继承"
+      },
+      "source_url": "https://arxiv.org/html/2609.20519v1",
+      "source_location": "§2.2、§3、§5.1",
+      "provenance": {
+        "institutions": "NVIDIA / NTU / MIT",
+        "sector": "joint",
+        "source_url": "https://arxiv.org/html/2609.20519v1",
+        "location": "论文首页作者署名；STOP 同时记录研究期间脚注"
+      }
+    },
+    {
+      "id": "modular-rsi",
+      "route": "harness",
+      "placement": "main",
+      "audit": "selected_sections",
+      "why": "已定位的改动在外部软件/状态；未训练基础模型权重。",
+      "models": [],
+      "scale_status": "not_applicable",
+      "focus": [
+        "c3",
+        "e6"
+      ],
+      "changed": "模块化代理代码、反馈记忆及验证环节",
+      "return_path": "模块反馈进入下一轮提案与筛选；基座保持冻结",
+      "training": {
+        "stage": "不涉及参数训练",
+        "algorithm": "不涉及参数训练",
+        "data_regime": "执行轨迹与评价反馈",
+        "cadence": "离散候选 / 评价 / 继承"
+      },
+      "source_url": "https://arxiv.org/html/2609.14857v2",
+      "source_location": "§3.1、§6.3–6.4，Table 5",
+      "provenance": {
+        "institutions": "IQuest Research / Langboat / Beihang / Manchester / Hohai / M-A-P",
+        "sector": "joint",
+        "source_url": "https://arxiv.org/html/2609.14857v2",
+        "location": "论文首页作者署名；STOP 同时记录研究期间脚注"
+      }
+    },
+    {
+      "id": "prime-agent",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "red-queen-godel-machine",
+      "route": "harness",
+      "placement": "main",
+      "audit": "selected_sections",
+      "why": "已定位的改动在外部软件/状态；未训练基础模型权重。",
+      "models": [],
+      "scale_status": "not_applicable",
+      "focus": [
+        "c4",
+        "e4"
+      ],
+      "changed": "任务代理及评价代理代码、选择记录",
+      "return_path": "新评价器接替后清理旧评价相关记录；评价器演化不代表评价模型权重训练",
+      "training": {
+        "stage": "不涉及参数训练",
+        "algorithm": "不涉及参数训练",
+        "data_regime": "执行轨迹与评价反馈",
+        "cadence": "离散候选 / 评价 / 继承"
+      },
+      "source_url": "https://arxiv.org/html/2606.26294v3",
+      "source_location": "评价器切换段落；Appendix D 消融与成本边界",
+      "provenance": {
+        "institutions": "Cambridge / NVIDIA / Flower Labs / MBZUAI / Inria",
+        "sector": "joint",
+        "source_url": "https://arxiv.org/pdf/2606.26294v3",
+        "location": "论文首页作者署名；STOP 同时记录研究期间脚注"
+      }
+    },
+    {
+      "id": "dr-zero",
+      "route": "model",
+      "placement": "small",
+      "audit": "selected_sections",
+      "why": "3B / 7B 训练实验均低于规模门槛。",
+      "models": [
+        {
+          "name": "Qwen2.5-3B-Instruct",
+          "total_b": 3,
+          "active_b": null,
+          "role": "实际训练对象"
+        },
+        {
+          "name": "Qwen2.5-7B-Instruct",
+          "total_b": 7,
+          "active_b": null,
+          "role": "实际训练对象"
+        }
+      ],
+      "scale_status": "below",
+      "focus": [
+        "d3",
+        "e4"
+      ],
+      "changed": "出题者与检索求解者权重",
+      "return_path": "求解结果指导出题者，新任务再训练求解者；搜索提供外部信息。",
+      "training": {
+        "stage": "后训练",
+        "algorithm": "HRPO 等自博弈 RL",
+        "data_regime": "按当前求解能力产生新问题，使用检索反馈。",
+        "cadence": "交替；报告多轮及后期平台"
+      },
+      "source_url": "https://arxiv.org/html/2601.07055v2",
+      "source_location": "§3–4；§4.1 基座、Table 3 多轮结果。"
+    },
+    {
+      "id": "skill-self-play",
+      "route": "model",
+      "placement": "small",
+      "audit": "selected_sections",
+      "why": "实际训练基座范围 3B–14B。",
+      "models": [
+        {
+          "name": "Granite4.1-3B",
+          "total_b": 3,
+          "active_b": null,
+          "role": "实际训练对象"
+        },
+        {
+          "name": "Qwen3-4B",
+          "total_b": 4,
+          "active_b": null,
+          "role": "实际训练对象"
+        },
+        {
+          "name": "Qwen3-8B",
+          "total_b": 8,
+          "active_b": null,
+          "role": "实际训练对象"
+        },
+        {
+          "name": "Ministral3-8B",
+          "total_b": 8,
+          "active_b": null,
+          "role": "实际训练对象"
+        },
+        {
+          "name": "Ministral3-14B",
+          "total_b": 14,
+          "active_b": null,
+          "role": "实际训练对象"
+        }
+      ],
+      "scale_status": "below",
+      "focus": [
+        "d3",
+        "e4"
+      ],
+      "changed": "共享基座的技能出题/求解参数",
+      "return_path": "技能任务生成与求解训练迭代；生成技能内容不自动构成外部可执行 harness 的自改。",
+      "training": {
+        "stage": "后训练",
+        "algorithm": "技能自博弈 RL",
+        "data_regime": "随能力更新任务。",
+        "cadence": "多轮交替"
+      },
+      "source_url": "https://arxiv.org/html/2607.22529v1",
+      "source_location": "§3.1–3.2、§4.1、§4.3–4.4"
+    },
+    {
+      "id": "rlanything",
+      "route": "hybrid",
+      "placement": "small",
+      "audit": "selected_sections",
+      "why": "策略/奖励训练均未达到 27B；32B/72B 为评审，不能越过门槛。",
+      "models": [
+        {
+          "name": "policy",
+          "total_b": 7,
+          "active_b": null,
+          "role": "实际训练对象"
+        },
+        {
+          "name": "GUI policy/reward",
+          "total_b": 8,
+          "active_b": null,
+          "role": "实际训练对象"
+        },
+        {
+          "name": "text reward",
+          "total_b": 14,
+          "active_b": null,
+          "role": "实际训练对象"
+        }
+      ],
+      "scale_status": "below",
+      "focus": [
+        "c4",
+        "e4"
+      ],
+      "changed": "策略/奖励权重 + 训练任务与环境配置",
+      "return_path": "策略错误 → 环境/任务难度干预 → 新轨迹 → 策略/奖励更新；环境侧是否可持续泛化需另验。",
+      "training": {
+        "stage": "后训练",
+        "algorithm": "策略与奖励 RL；任务改写",
+        "data_regime": "边交互边采样并更新；配置适应与权重优化交替。",
+        "cadence": "GUI 240、LLM 200、coding 300 步"
+      },
+      "source_url": "https://arxiv.org/html/2602.02488v1",
+      "source_location": "§2–3，Appendix C.1–C.2；较大模型是评价监督来源。"
+    },
+    {
+      "id": "agent0",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "r-zero",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "absolute-zero",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "tool-r0",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "evotrainer",
+      "route": "hybrid",
+      "placement": "scale_unverified",
+      "audit": "selected_sections",
+      "why": "已核对 SWE 为 4B/9B；其余域规模未核准，未发现可入主图的 ≥27B 训练分支。",
+      "models": [
+        {
+          "name": "SWE target",
+          "total_b": 4,
+          "active_b": null,
+          "role": "实际训练对象"
+        },
+        {
+          "name": "SWE target",
+          "total_b": 9,
+          "active_b": null,
+          "role": "实际训练对象"
+        },
+        {
+          "name": "Math/Coding（本轮未核准）",
+          "total_b": null,
+          "active_b": null,
+          "role": "实际训练对象"
+        }
+      ],
+      "scale_status": "unverified",
+      "focus": [
+        "c4",
+        "e5"
+      ],
+      "changed": "训练 harness、奖励实现、可复用技能 + 目标策略权重",
+      "return_path": "固定 Sonnet 训练代理读训练诊断并改训练流程，再启动策略训练；昂贵动作有人把关。",
+      "training": {
+        "stage": "后训练",
+        "algorithm": "GRPO 类策略训练 + 训练软件修改",
+        "data_regime": "按训练轨迹与诊断调整下一段训练。",
+        "cadence": "分段训练、版本选择；非无人工自治"
+      },
+      "source_url": "https://arxiv.org/html/2606.03108v2",
+      "source_location": "§3.5–3.6，§4.1–4.2 Table 3；Appendix E。"
+    },
+    {
+      "id": "autoscientists",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "derl",
+      "route": "model",
+      "placement": "small",
+      "audit": "selected_sections",
+      "why": "设计者 0.5B、学习者 1.5B，不得相加或用外部模型替代。",
+      "models": [
+        {
+          "name": "reward proposer",
+          "total_b": 0.5,
+          "active_b": null,
+          "role": "实际训练对象"
+        },
+        {
+          "name": "learner",
+          "total_b": 1.5,
+          "active_b": null,
+          "role": "实际训练对象"
+        }
+      ],
+      "scale_status": "below",
+      "focus": [
+        "c4",
+        "d4"
+      ],
+      "changed": "奖励设计者与目标学习者权重",
+      "return_path": "设计奖励 → 训练学习者 → 以学习增益训练设计者。",
+      "training": {
+        "stage": "后训练",
+        "algorithm": "双层强化学习",
+        "data_regime": "奖励设计依赖学习者训练反馈。",
+        "cadence": "交替更新"
+      },
+      "source_url": "https://arxiv.org/html/2512.13399v3",
+      "source_location": "§3.1、§5.1、Appendix C"
+    },
+    {
+      "id": "gear",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "execution-grounded-research",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "meta-n",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "self-harness",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "harness-zero",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "harness-r1",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "skillrl",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "skillopt",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "mem2evolve",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "memskill",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "memrl",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "evods",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "on-policy-harness-coevolution",
+      "route": "hybrid",
+      "placement": "main",
+      "audit": "selected_sections",
+      "why": "30B 分支达标；按序列联合适配纳入，不冒充多轮递归实证。",
+      "models": [
+        {
+          "name": "Qwen3-Coder-30B-A3B",
+          "total_b": 30,
+          "active_b": 3,
+          "role": "实际训练对象"
+        },
+        {
+          "name": "Gemma-4-26B-A4B（补充实验，移出主尺度）",
+          "total_b": 26,
+          "active_b": 4,
+          "role": "实际训练对象"
+        }
+      ],
+      "scale_status": "eligible",
+      "focus": [
+        "c4",
+        "d3"
+      ],
+      "changed": "演化 harness + 学生 LoRA 权重",
+      "return_path": "已读结果：H 演化 → 学生访问状态 → 教师局部纠错 → SFT；更新 M 再演化 H 是提出的接续路径。",
+      "training": {
+        "stage": "后训练",
+        "algorithm": "LoRA SFT；整轨迹模仿 vs 局部纠错",
+        "data_regime": "on-policy 指学生访问的状态；训练目标是 SFT，不是在线 RL。",
+        "cadence": "主要表格为一次联合适配；反复多轮未核准"
+      },
+      "source_url": "https://arxiv.org/html/2609.09134",
+      "source_location": "§3.1–3.4、Table 1、开头脚注；主结果和 proposed next round 分开。",
+      "provenance": {
+        "institutions": "Salesforce AI",
+        "sector": "industry",
+        "source_url": "https://arxiv.org/html/2609.09134",
+        "location": "论文首页作者署名；STOP 同时记录研究期间脚注"
+      }
+    },
+    {
+      "id": "taolive-hat",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "rewardharness",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "webevolver",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "webrl",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "rstar-math",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "self-evolved-reward",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "self-evolving-curriculum",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "skillweaver",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "live-swe-agent",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "group-evolving-agents",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "adaptive-auto-harness",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "continual-harness",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "envharness",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "aira-design",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "ai4ai-bench",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "generalized-agent-iteration",
+      "route": "crosscut",
+      "placement": "crosscut",
+      "audit": "selected_sections",
+      "why": "作为评价/形式分析工具单列，不新增一种自改进系统路线。",
+      "models": [],
+      "scale_status": "not_applicable",
+      "focus": [
+        "c5",
+        "c6"
+      ],
+      "changed": "评价协议 / 形式定义",
+      "return_path": "检验闭环、收益与成本，不以评测论文冒充新的 RSI 系统。",
+      "training": {
+        "stage": "不涉及参数训练",
+        "algorithm": "不涉及参数训练",
+        "data_regime": "执行轨迹与评价反馈",
+        "cadence": "离散候选 / 评价 / 继承"
+      },
+      "source_url": "https://arxiv.org/html/2609.13406v1",
+      "source_location": "§3.1–3.2：定义与两条区分轴"
+    },
+    {
+      "id": "aspire",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "faithful-self-evolvers",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "shinkaevolve",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "coverrl",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "actor-curator",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "agent-world",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "skillos",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "socratic-swe",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "voyager",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "agentevolver",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "metaevolve",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "seed-distillation",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "rl-tango",
+      "route": "unresolved",
+      "placement": "pending",
+      "audit": "not_layer_audited",
+      "why": "尚未按新三层规则逐项核准；既有主题/机制记录仍可检索，不作为主图证据。",
+      "models": [],
+      "scale_status": "unverified",
+      "focus": []
+    },
+    {
+      "id": "iterative-rpo",
+      "route": "model",
+      "placement": "main",
+      "audit": "selected_sections",
+      "why": "机制和回流已核对，纳入重点案例；不等于所有递归主张均已证明。",
+      "models": [
+        {
+          "name": "Llama-2-70B-Chat",
+          "total_b": 70,
+          "active_b": null,
+          "role": "实际训练对象"
+        }
+      ],
+      "scale_status": "eligible",
+      "focus": [],
+      "changed": "用当前模型生成推理候选，按答案正确性组成偏好对，再用 DPO+NLL 更新。",
+      "return_path": "新权重生成下一轮偏好对，并作为下一轮参数与参考模型。",
+      "training": {
+        "stage": "后训练",
+        "algorithm": "迭代 DPO + 正例 NLL",
+        "data_regime": "每轮重新采样；轮内偏好数据固定；不是 PPO。",
+        "cadence": "多轮，直至饱和"
+      },
+      "source_url": "https://arxiv.org/html/2404.19733v2",
+      "source_location": "首页；§2、§3.1–3.3、Appendix A",
+      "provenance": {
+        "institutions": "Meta FAIR / NYU",
+        "sector": "joint",
+        "source_url": "https://arxiv.org/html/2404.19733v2",
+        "location": "论文首页作者署名；STOP 同时记录研究期间脚注"
+      }
+    },
+    {
+      "id": "deepseek-math-v2",
+      "route": "model",
+      "placement": "main",
+      "audit": "selected_sections",
+      "why": "机制和回流已核对，纳入重点案例；不等于所有递归主张均已证明。",
+      "models": [
+        {
+          "name": "DeepSeek-V3.2-Exp-Base / Math-V2",
+          "total_b": null,
+          "active_b": null,
+          "role": "实际训练对象",
+          "total_lower_bound_b": 653.9,
+          "size_label": "671B级；架构下界 >653.9B"
+        }
+      ],
+      "scale_status": "eligible",
+      "focus": [],
+      "changed": "迭代训练证明验证器与生成器，并用元验证筛选自动标注。",
+      "return_path": "生成器产生更难证明→验证/元验证标注→更新验证器→再训练生成器。",
+      "training": {
+        "stage": "后训练",
+        "algorithm": "GRPO + 轮间 rejection fine-tuning",
+        "data_regime": "每轮生成器从验证器初始化；次轮验证器继承融合后的前轮能力。",
+        "cadence": "迭代验证与生成；末两轮自动标注"
+      },
+      "source_url": "https://arxiv.org/html/2511.22570v1",
+      "source_location": "§2.1–2.3、§3.1–3.3；官方 Math-V2 config.json 与 V3.2-Exp 部署配置",
+      "provenance": {
+        "institutions": "DeepSeek-AI",
+        "sector": "industry",
+        "source_url": "https://arxiv.org/html/2511.22570v1",
+        "location": "论文首页作者署名；STOP 同时记录研究期间脚注"
+      },
+      "parameter_check": "架构下界：58个MoE层 ×256路由专家 ×3个矩阵 ×7168×2048 =653,908,770,816个参数；未计共享专家、注意力、嵌入、MTP，因此足以核准≥27B，不声称这是完整总参数。"
+    },
+    {
+      "id": "kimi-k2",
+      "route": "model",
+      "placement": "main",
+      "audit": "selected_sections",
+      "why": "机制和回流已核对，纳入重点案例；不等于所有递归主张均已证明。",
+      "models": [
+        {
+          "name": "Kimi K2",
+          "total_b": 1040,
+          "active_b": 32,
+          "role": "实际训练对象"
+        }
+      ],
+      "scale_status": "eligible",
+      "focus": [],
+      "changed": "K2 actor 生成回答，K2 critic 按 rubric 提供偏好，critic 又从可验证的 on-policy 轨迹更新。",
+      "return_path": "当前策略轨迹更新 critic；critic 的反馈继续训练策略。",
+      "training": {
+        "stage": "后训练",
+        "algorithm": "策略 RL + critic 在线校准",
+        "data_regime": "可验证 on-policy 轨迹训练 critic；critic 为开放任务提供偏好。",
+        "cadence": "RL 训练期间持续更新"
+      },
+      "source_url": "https://arxiv.org/html/2507.20534v1",
+      "source_location": "§1、§3.2.2–3.2.3、§4 与 Appendix F",
+      "provenance": {
+        "institutions": "Moonshot AI（月之暗面）",
+        "sector": "industry",
+        "source_url": "https://arxiv.org/html/2507.20534v1",
+        "location": "论文首页作者署名；STOP 同时记录研究期间脚注"
+      }
+    },
+    {
+      "id": "llm-can-self-improve",
+      "route": "model",
+      "placement": "adjacent",
+      "audit": "selected_sections",
+      "why": "关键前身/比较基线，保留贡献但不计入直接演化重点数。",
+      "models": [
+        {
+          "name": "PaLM 540B",
+          "total_b": 540,
+          "active_b": null,
+          "role": "实际训练对象"
+        }
+      ],
+      "scale_status": "eligible",
+      "focus": [],
+      "changed": "用 self-consistency 筛选自生成推理样本，再微调同一模型。",
+      "return_path": "自身生成样本回到参数更新；未证多代循环。",
+      "training": {
+        "stage": "后训练",
+        "algorithm": "自一致性筛选 + SFT",
+        "data_regime": "无答案标签的训练问题，仍使用提示/选择规则。",
+        "cadence": "主要是一轮训练"
+      },
+      "source_url": "https://aclanthology.org/2023.emnlp-main.67.pdf",
+      "source_location": "首页；§2–3、消融；2022 预印本 / EMNLP 2023",
+      "provenance": {
+        "institutions": "Google / UIUC",
+        "sector": "joint",
+        "source_url": "https://aclanthology.org/2023.emnlp-main.67.pdf",
+        "location": "论文首页作者署名；STOP 同时记录研究期间脚注"
+      }
+    }
+  ],
+  "spaces": [
+    {
+      "id": "h-info",
+      "route": "harness",
+      "title": "信息与持久记忆",
+      "objects": "提示、上下文、经验、知识库、数据库与检索策略",
+      "evidence_ids": [
+        "modular-rsi",
+        "ace",
+        "memrl",
+        "memskill"
+      ],
+      "open_question": "更新事实、更新检索策略与真正增加后续改进能力，怎样分开测量？"
+    },
+    {
+      "id": "h-action",
+      "route": "harness",
+      "title": "工具与行动接口",
+      "objects": "工具代码、插件、skills、MCP 接口与操作权限",
+      "evidence_ids": [
+        "dgm",
+        "rrsi",
+        "skillweaver",
+        "voyager"
+      ],
+      "open_question": "学到可复用的动作原语，还是只为已见任务添加特例？"
+    },
+    {
+      "id": "h-control",
+      "route": "harness",
+      "title": "组织、控制与搜索",
+      "objects": "规划、路由、反思、多智能体分工、搜索与谱系选择",
+      "evidence_ids": [
+        "hyperagents",
+        "hgm",
+        "adas",
+        "aflow"
+      ],
+      "open_question": "后继改变的是任务策略、搜索策略，还是产生搜索策略的方法？"
+    },
+    {
+      "id": "h-learning",
+      "route": "harness",
+      "title": "学习与研发流程",
+      "objects": "训练程序、优化器代码、损失、数据筛选、实验设计",
+      "evidence_ids": [
+        "aide2",
+        "evotrainer",
+        "autoscientists"
+      ],
+      "open_question": "训练代码被优化后，能否跨目标模型复用并由后继继续研发？"
+    },
+    {
+      "id": "h-eval",
+      "route": "harness",
+      "title": "评价、选择与继承",
+      "objects": "测评程序、验证器、奖励代码、晋升/回退规则",
+      "evidence_ids": [
+        "red-queen-godel-machine",
+        "rrsi",
+        "hgm"
+      ],
+      "open_question": "评分规则变化时，怎样保留跨代可比较的外部锚点？"
+    },
+    {
+      "id": "h-exec",
+      "route": "harness",
+      "title": "执行、环境与资源",
+      "objects": "runtime、沙箱、训练环境、编译、调度、服务、infra",
+      "evidence_ids": [
+        "sol-pi",
+        "envharness"
+      ],
+      "open_question": "是固定预算下机制更有效，还是只获得更多算力或有利环境？"
+    },
+    {
+      "id": "m-sft",
+      "route": "model",
+      "title": "自生成监督与蒸馏",
+      "objects": "评价推理、轨迹、知识或技能内化",
+      "evidence_ids": [
+        "self-taught-evaluators",
+        "seed-distillation"
+      ],
+      "open_question": "每代生成的数据为何更有用；学生重置与继续训练有什么区别？"
+    },
+    {
+      "id": "m-preference",
+      "route": "model",
+      "title": "自奖励与偏好学习",
+      "objects": "DPO 等偏好优化、生成者/评价者参数",
+      "evidence_ids": [
+        "self-rewarding-lm",
+        "self-evolved-reward"
+      ],
+      "open_question": "奖励质量增长能否在独立任务上验证，是否随训练共同偏移？"
+    },
+    {
+      "id": "m-rl",
+      "route": "model",
+      "title": "在线交互与自博弈 RL",
+      "objects": "策略、评价模型、对手、提案模型的权重",
+      "evidence_ids": [
+        "gpt-red",
+        "dr-zero",
+        "skill-self-play",
+        "rl-tango"
+      ],
+      "open_question": "≥27B、反馈回流、实际代际收益三者能否同时公开核验？"
+    },
+    {
+      "id": "m-meta",
+      "route": "model",
+      "title": "学习如何更新与持续适应",
+      "objects": "自编辑、元学习、测试时权重更新、持续学习",
+      "evidence_ids": [
+        "seal",
+        "derl",
+        "metaevolve"
+      ],
+      "open_question": "学习者当前状态改变后，更新策略是否仍产生正增益？"
+    },
+    {
+      "id": "m-pretrain",
+      "route": "model",
+      "title": "预训练与继续预训练",
+      "objects": "语料生成/筛选、训练目标、训练配方与检查点",
+      "evidence_ids": [
+        "automl-zero",
+        "self-training-optimizer-2020"
+      ],
+      "open_question": "现有参考未构成 ≥27B LLM 自主预训练闭环；如何接到可核验的后继能力？"
+    },
+    {
+      "id": "m-structure",
+      "route": "model",
+      "title": "模型结构与可训练表征",
+      "objects": "网络结构、模块、专家、路由、容量与参数化方式",
+      "evidence_ids": [
+        "aira-design"
+      ],
+      "open_question": "发现其他模型的结构，不等于重构自身并继承其改进能力。"
+    },
+    {
+      "id": "x-distill",
+      "route": "hybrid",
+      "title": "外部能力内化再外化",
+      "objects": "工作流/技能轨迹 → 权重 → 新工作流",
+      "evidence_ids": [
+        "mass",
+        "harness-zero"
+      ],
+      "open_question": "去掉旧工作流后能力保留多少，更新模型是否又能设计更好工作流？"
+    },
+    {
+      "id": "x-fit",
+      "route": "hybrid",
+      "title": "行为分布与接口适配",
+      "objects": "模型策略改变与 harness 假设相互适配",
+      "evidence_ids": [
+        "on-policy-harness-coevolution",
+        "co-harness"
+      ],
+      "open_question": "联合更新何时正协同，何时破坏规划、接口或执行习惯？"
+    },
+    {
+      "id": "x-trainer",
+      "route": "hybrid",
+      "title": "训练器与学习者共演",
+      "objects": "训练软件、奖励实现、课程与目标策略",
+      "evidence_ids": [
+        "evotrainer",
+        "rewardharness"
+      ],
+      "open_question": "训练代理和目标模型的边界是什么；后继能否承担下一轮训练决策？"
+    },
+    {
+      "id": "x-memory",
+      "route": "hybrid",
+      "title": "外部知识与参数记忆共演",
+      "objects": "技能库/数据库更新 ↔ 参数学习",
+      "evidence_ids": [
+        "skillrl",
+        "mem2evolve"
+      ],
+      "open_question": "新知识应写入外部状态还是权重；淘汰与内化怎样避免遗忘和重复？"
+    },
+    {
+      "id": "x-world",
+      "route": "hybrid",
+      "title": "环境、评价与策略共演",
+      "objects": "可执行环境/验证规则 ↔ 世界模型/策略权重",
+      "evidence_ids": [
+        "rlanything",
+        "webevolver"
+      ],
+      "open_question": "系统是能力增长，还是创造了更容易被自己满足的世界与评价？"
+    },
+    {
+      "id": "x-resource",
+      "route": "hybrid",
+      "title": "模型结构与执行资源共设计",
+      "objects": "架构/稀疏度/精度 ↔ 编译、调度与训练系统",
+      "evidence_ids": [],
+      "open_question": "在本次已审集合中尚无确认实例；如何测量端到端收益而不把资源增加当能力增益？"
+    }
+  ]
+}

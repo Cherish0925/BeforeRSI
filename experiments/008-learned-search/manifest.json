@@ -1,0 +1,17 @@
+{
+  "artifact_sha256": "5dbfff2e25758a477b386fcb4bd106a0ce8899c7e2a25de6f340ef66092a8438",
+  "bundle_bytes": 1809810,
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "system": "Linux-6.18.55-x86_64-with-glibc2.39"
+  },
+  "sources": {
+    "run.py": "a4f6f7f42cc8f745edab7315f667ea972c4646b1b87ad3d259d40217fe57d884",
+    "followup.py": "ebab273753570a8382816f6b5f7f2f4b6d71cc11d38db67e91f2bb5b00fec2b4",
+    "analyze.py": "840676cb6f4682ce7c5c2768c47eb926a15ecc1deee3a90628441b5504170562",
+    "PROTOCOL.md": "965f300dc926d33fb47d9f7a645161f3f5ebcf5385bd3f752404e2ff69e9b860",
+    "FOLLOWUP.md": "14fbb1893d6153756ed3fa7ff51c271926d96bfa265e04ce8023112dbdacb138"
+  }
+}

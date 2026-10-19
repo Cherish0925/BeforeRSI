@@ -1,0 +1,42 @@
+{
+  "kind": "finite-class analytic counterexample, not an empirical LLM result",
+  "conditions": "same uniform tasks, observations, learner class and exact global likelihood projection",
+  "learner_class": {
+    "A": [
+      0.99,
+      0.99,
+      0.99,
+      0.001
+    ],
+    "B": [
+      0.6,
+      0.6,
+      0.4,
+      0.4
+    ]
+  },
+  "results": {
+    "perfect": {
+      "teacher_expected_accuracy": 1.0,
+      "teacher_greedy_accuracy": 1.0,
+      "KL_to_learners": {
+        "A": 1.7344765716356603,
+        "B": 0.7135581778200729
+      },
+      "selected_student": "B",
+      "student_expected_accuracy": 0.5,
+      "student_greedy_accuracy": 0.5
+    },
+    "compatible": {
+      "teacher_expected_accuracy": 0.74275,
+      "teacher_greedy_accuracy": 0.75,
+      "KL_to_learners": {
+        "A": 0.0,
+        "B": 0.5693289652961357
+      },
+      "selected_student": "A",
+      "student_expected_accuracy": 0.74275,
+      "student_greedy_accuracy": 0.75
+    }
+  }
+}

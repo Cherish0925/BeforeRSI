@@ -1,0 +1,33 @@
+{
+  "assigned": 109,
+  "completed": 109,
+  "unique_entry_ids": 109,
+  "files": {
+    "self_training.jsonl": 87,
+    "self_training_extra_theory.jsonl": 16,
+    "self_training_extra_feedback.jsonl": 6
+  },
+  "decisions": {
+    "mechanism_supplement": 62,
+    "core": 17,
+    "support": 22,
+    "insufficient": 4,
+    "redundant": 4
+  },
+  "reading_status": {
+    "full_primary": 79,
+    "previous_primary_rechecked": 30
+  },
+  "coverage_missing": [],
+  "coverage_unexpected": [],
+  "duplicate_ids": [],
+  "schema_errors": [],
+  "analytical_uses_or_extends": [],
+  "source_paths_missing": [],
+  "note": "分配87 self_training + 明确交接16 theory + 明确交接6 feedback，全部完成。保留root在self_training.jsonl对ReST meets ReAct→RAFT的discusses修正，本组终审未覆盖原文件。",
+  "synthesis_files": [
+    "self_training-synthesis.md",
+    "self_training_extra_theory-synthesis.md",
+    "self_training_extra_feedback-synthesis.md"
+  ]
+}

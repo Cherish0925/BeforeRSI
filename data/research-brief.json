@@ -1,0 +1,74 @@
+{
+  "updated": "2026-10-18",
+  "status": "调查进行中；不是最终领域统计",
+  "sector_labels": {
+    "industry": "工业界独立",
+    "academic": "学术/非营利独立",
+    "joint": "产学联合"
+  },
+  "sector_rule": "按论文首页署名机构分类；产学联合单列，一项只计一次。不是按经费、作者人数或主导权计数。STOP 按署名计为联合，研究期间在微软的脚注保留。",
+  "routes": {
+    "harness": {
+      "essence": "让经验和代码改变下一次执行或研发。",
+      "direction": "从提示与记忆，扩展到整套 agent、改进器和评价流程。",
+      "industry_goal": "减少人工维护，提高可靠性，降低调用与执行成本。",
+      "research_goal": "哪些改动能迁移？后继是否更会产生下一代改进？",
+      "evidence": "已有提示、代码、经验库和评价流程的更新实例；强度从任务适应到改进器自改不等。",
+      "examples": [
+        "promptbreeder",
+        "dgm",
+        "hyperagents",
+        "ace"
+      ],
+      "caution": "自动 harness 研发不自动等于递归能力增长；SoL-Pi 将新 harness 反哺后继研发列为未来方向。"
+    },
+    "model": {
+      "essence": "让模型产生的训练信号更新模型，并进入后续学习。",
+      "direction": "从自生成样本，走向策略、评价器、验证器的反馈闭环。",
+      "industry_goal": "扩展高质量训练信号，减少标注瓶颈，提升推理与 agent 能力。",
+      "research_goal": "反馈如何跟上模型？哪些条件下自训练改善、饱和或退化？",
+      "evidence": "已核对70B迭代偏好/评价训练、DeepSeek证明验证循环和Kimi自评价RL；不是只有两个70B案例。",
+      "examples": [
+        "self-rewarding-lm",
+        "iterative-rpo",
+        "deepseek-math-v2",
+        "kimi-k2"
+      ],
+      "caution": "ReST-EM、SIMA 2、GPT-Red 的机制应被保留；公开参数不足时另列，不当作低价值淘汰。"
+    },
+    "hybrid": {
+      "essence": "harness 改变可学轨迹，参数更新再改变 harness 的可行设计。",
+      "direction": "把数据产生、外部工作流和权重学习放进同一迭代流程。",
+      "industry_goal": "用可承担的模型规模完成更强的科研或企业 agent 任务。",
+      "research_goal": "双向适配何时有正收益？如何避免模仿失配与跨任务回退？",
+      "evidence": "MASS 报告两轮工作流/SFT交替；Salesforce工作主要证明一次联合适配。",
+      "examples": [
+        "mass",
+        "on-policy-harness-coevolution"
+      ],
+      "caution": "本次仅两项通过重点审查，不是全领域只有两项。EvoTrainer规模仍待核准；Co-Harness证据审查未完。"
+    }
+  },
+  "claim_labels": {
+    "stop": "改进器程序自改",
+    "promptbreeder": "任务/变异提示共同演化",
+    "sica": "后继继续修改自身代码",
+    "ace": "持久经验适应；更新算法固定",
+    "dgm": "多代代码自改与谱系搜索",
+    "hyperagents": "任务 agent / meta-agent 同时可改",
+    "rrsi": "面向迁移的 harness 搜索",
+    "aide2": "科研 agent 多代软件改进",
+    "hgm": "面向后代产出的谱系选择",
+    "sol-pi": "自动 harness 研发；递归回用待证",
+    "modular-rsi": "模块化 harness 演化与迁移",
+    "red-queen-godel-machine": "执行/评价 harness 共演",
+    "self-rewarding-lm": "回答与自奖励迭代 DPO",
+    "self-taught-evaluators": "迭代自训练评价器",
+    "iterative-rpo": "推理偏好迭代；学习算法固定",
+    "deepseek-math-v2": "生成/验证模型反馈训练",
+    "kimi-k2": "策略/critic 自评价 RL",
+    "mass": "两轮工作流与权重交替",
+    "on-policy-harness-coevolution": "一次联合适配；未证持续多轮"
+  },
+  "correction": "原 8/2/2 是未完成调查时选出的12个案例；既没有证明其余工作低质，也不能代表全球有价值工作的数量。此次补入14项机制审查，其中7项进入重点案例；仍不宣称完成全领域筛选。"
+}

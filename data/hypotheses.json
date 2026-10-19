@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "updated": "2026-10-17",
+  "updated": "2026-10-18",
   "status_definitions": {
     "open": "Plausible and undecided.",
     "supported": "Supported by multiple controlled results but revisable.",
@@ -12,8 +12,8 @@
     {
       "id": "improvement-operator",
       "status": "open",
-      "statement": "The resource-normalized successor-generating operator contains essential RSI information not captured by task capability alone.",
-      "decisive_test": "Compare systems with matched task capability but different descendant-generation performance.",
+      "statement": "Common-target improvement behavior adds predictive information beyond task performance alone.",
+      "decisive_test": "Compare actors on identical copies of common targets, then predict gains on withheld target families.",
       "files": [
         "THEORY.md",
         "experiments/003-successor-as-improver.md"
@@ -22,8 +22,8 @@
     {
       "id": "improvement-efficiency",
       "status": "open",
-      "statement": "Improvement efficiency eta is a useful macrostate for comparing recursive improvement across generations.",
-      "decisive_test": "Test whether eta predicts descendant quality across domains and scales better than current capability alone.",
+      "statement": "A gain-versus-budget curve or vector can summarize improvement behavior after testing conditional dependence on omitted state.",
+      "decisive_test": "Test state sufficiency, distinguish observationally compatible mechanisms through interventions, and assess withheld prediction before treating a scalar as a closed predictive macrostate.",
       "files": [
         "THEORY.md",
         "SIMULATION.md"
@@ -42,21 +42,24 @@
     {
       "id": "externalize-internalize",
       "status": "open",
-      "statement": "Alternating cheap harness exploration with verified model internalization is more efficient long-run than model-only or harness-only updating.",
-      "decisive_test": "Run equal-budget multi-generation schedule comparisons.",
+      "statement": "Harness-generated experience improves later system value when its execution advantage survives inheritance and transfer at an amortizable total cost.",
+      "decisive_test": "Compare execution-optimal and post-update-value-selected data sources under equal generation/training budgets; vary preserved decision inputs and source-task weights.",
       "files": [
         "PROGRAM.md",
-        "experiments/004-repeated-coevolution.md"
+        "experiments/004-repeated-coevolution.md",
+        "MECHANISMS.md"
       ]
     },
     {
       "id": "evaluator-phase-boundary",
       "status": "open",
-      "statement": "Candidate search has a fidelity-dependent phase boundary beyond which more search mainly selects noise or exploits.",
-      "decisive_test": "Sweep evaluator fidelity and candidate count against an independent ground-truth test.",
+      "statement": "Feedback fidelity and actionable localization affect different parts of search; scalar correctness alone need not predict improvement efficiency.",
+      "decisive_test": "Hold final correctness and per-query cost fixed while removing failure localization; separately vary label error and proposal quality.",
       "files": [
         "SIMULATION.md",
-        "experiments/005-evaluator-phase-boundary.md"
+        "experiments/005-evaluator-phase-boundary.md",
+        "MECHANISMS.md",
+        "experiments/007-feedback-structure/RESULTS.md"
       ]
     },
     {
@@ -71,9 +74,9 @@
     },
     {
       "id": "recursive-gain-vs-debt",
-      "status": "open",
-      "statement": "The sign of recursive design gain minus complexity and verification debt predicts whether improvement efficiency grows or decays.",
-      "decisive_test": "Fit the nonlinear dynamics and test out-of-sample forecasts under different intervention schedules.",
+      "status": "superseded",
+      "statement": "The earlier sign-only growth criterion and coordinate-based recursive interpretation fail explicit mathematical counterexamples.",
+      "decisive_test": "Use identifiable interventions and state-sufficiency tests to assess replacement reduced models; see THEORY.md.",
       "files": [
         "THEORY.md",
         "SIMULATION.md"
@@ -103,10 +106,11 @@
       "id": "adaptive-resource-allocation",
       "status": "open",
       "statement": "Adaptive resource allocation across model, harness, improver, data, and evaluation outperforms fixed update schedules.",
-      "decisive_test": "Compare fixed, greedy, and model-predictive allocation under equal multi-generation budgets.",
+      "decisive_test": "Compare expected terminal utility of fixed, greedy, and adaptive policies under the same resource budget; account for continuation value and the cost of estimating it.",
       "files": [
         "THEORY.md",
-        "SIMULATION.md"
+        "SIMULATION.md",
+        "experiments/006-recursive-optimizer/RESULTS.md"
       ]
     },
     {
@@ -123,10 +127,22 @@
       "id": "verified-causal-experience",
       "status": "open",
       "statement": "Evidence-bearing matched trajectories produce more transferable learning than equal-token successful-trace training.",
-      "decisive_test": "Train matched model updates on causal/evidence-rich versus success-only datasets.",
+      "decisive_test": "Hold teacher quality and training tokens approximately fixed while removing decision-relevant inputs or reweighting tasks, then test student behavior on new tasks.",
       "files": [
         "THEORY.md",
-        "PROGRAM.md"
+        "PROGRAM.md",
+        "MECHANISMS.md"
+      ]
+    },
+    {
+      "id": "research-production-prediction",
+      "status": "open",
+      "statement": "Experience generation, feedback quality, learning procedures and adopted resource/workflow changes add out-of-family predictive information about useful AI research output beyond solver scores and nominal compute.",
+      "decisive_test": "Fit shared mechanisms on one set of systems and predict withheld curriculum, opponent, feedback and infrastructure interventions with complete compute and human-input accounting.",
+      "files": [
+        "THEORY.md",
+        "PROGRAM.md",
+        "FRONTIER_COVERAGE.md"
       ]
     }
   ]

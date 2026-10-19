@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1040" viewBox="0 0 1500 1040" role="img"><title>BeforeRSI 核心研究地图</title><rect width="100%" height="100%" fill="#F4F7F8"/>
+<text x="60" y="82.0" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="40" fill="#152C42">同一个角色，可能在不同层实现</text>
+<text x="62" y="132.5" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="25" fill="#516577">判断“改了哪里”之后，还要追踪“为什么改善、是否进入下一轮”。</text>
+<rect x="60" y="190" width="640" height="235" rx="14" fill="#FFFFFF" stroke="#CCD9DF"/>
+<text x="84" y="244.0" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="30" fill="#126C72">Model：参数化组件</text>
+<text x="84" y="295.5" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="25" fill="#516577">执行者、评价模型、世界模型、提案模型；权重 / </text>
+<text x="84" y="330.5" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="25" fill="#516577">adapter / 模型结构</text>
+<text x="84" y="388.1" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="21" fill="#516577">自评价 SFT、偏好学习、RL、蒸馏、元学习</text>
+<rect x="800" y="190" width="640" height="235" rx="14" fill="#FFFFFF" stroke="#CCD9DF"/>
+<text x="824" y="244.0" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="30" fill="#126C72">Harness：外部机制</text>
+<text x="824" y="295.5" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="25" fill="#516577">知识与记忆、工具、组织控制、学习研发、评价选择</text>
+<text x="824" y="330.5" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="25" fill="#516577">、执行资源</text>
+<text x="824" y="388.1" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="21" fill="#516577">代码、提示、skills、MCP、数据库、runtime</text>
+<line x1="705" y1="275" x2="795" y2="275" stroke="#126C72" stroke-width="4"/>
+<line x1="785" y1="267" x2="795" y2="275" stroke="#126C72" stroke-width="3"/>
+<line x1="785" y1="283" x2="795" y2="275" stroke="#126C72" stroke-width="3"/>
+<line x1="795" y1="338" x2="705" y2="338" stroke="#126C72" stroke-width="4"/>
+<line x1="715" y1="330" x2="705" y2="338" stroke="#126C72" stroke-width="3"/>
+<line x1="715" y1="346" x2="705" y2="338" stroke="#126C72" stroke-width="3"/>
+<rect x="60" y="475" width="1380" height="205" rx="14" fill="#FFFFFF" stroke="#CCD9DF"/>
+<text x="85" y="529.0" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="30" fill="#152C42">混合需要实际反馈路径，不能由组件同时存在推出</text>
+<text x="85" y="582.7" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="27" fill="#516577">H → M：轨迹 / 课程 / 奖励进入训练。M → H：新模型改变可行策略，再产生和选择新外部机制。单向作用、一</text>
+<text x="85" y="619.7" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="27" fill="#516577">次联合适配、真实多轮回流，分别记录。</text>
+<rect x="60" y="730" width="670" height="190" rx="14" fill="#FFFFFF" stroke="#CCD9DF"/>
+<text x="84" y="780.8" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="28" fill="#126C72">评价既是可改对象，也是外部检验</text>
+<text x="84" y="832.5" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="25" fill="#516577">评价代码归 H，评价模型归 M；独立审计锚点不能与被</text>
+<text x="84" y="867.5" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="25" fill="#516577">优化的内部评分混同。</text>
+<rect x="770" y="730" width="670" height="190" rx="14" fill="#FFFFFF" stroke="#CCD9DF"/>
+<text x="794" y="780.8" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="28" fill="#126C72">结构共演不保证正协同</text>
+<text x="794" y="832.5" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="25" fill="#516577">交叉替换 M / H，检查收益、回退、迁移和总成本；后继</text>
+<text x="794" y="867.5" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="25" fill="#516577">改进能力另做共同目标比较。</text>
+<text x="62" y="1000.3" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="23" fill="#516577">本图是分析框架；箭头表示待追踪的作用方向，不代表所有论文已证明闭环。</text>
+</svg>

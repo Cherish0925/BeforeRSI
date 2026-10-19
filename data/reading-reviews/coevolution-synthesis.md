@@ -1,0 +1,98 @@
+# Model × Harness 与 AI4AI：完整阅读中的比较记录
+
+当前完成 85/85。本文随其余原文阅读更新，不代表其余候选已筛选。
+
+最关键的区分不是作者是否使用 co-evolution，而是更新后的对象在下一轮究竟承担什么角色。MASS 实际完成两个代际：当前27B共享模型设计工作流、执行并比较交付物，SFT后重新接管三种角色；固定旧执行器比较新旧模型设计的工作流，64%胜率直接检验了改进器回流。底层qwen-code工具和记忆仍固定。Co-Harness也明确继承harness和32B权重并重复两轮，但训练数据隔离、SFT配置和全因子控制不充分；不能把“二轮都上升”直接解释成广泛复利。
+
+另一个独立问题是如何把外部系统的经验写入权重。Co-Evolving Harnesses and Models报告成熟harness的成功轨迹SFT使七个企业任务全退步；局部on-policy correction缓解这一问题。Harness-Zero进一步要求纠正来自学生可见状态、只能使用最终部署动作空间：高成功率oracle轨迹并不产生最好的学生。两者是一次搜索后训练的staged内化实验，还未展示新学生再次设计下一代harness。Experience Funnel实际交替外部状态与4B学生，但教师27B冻结；其状态选择与选择性蒸馏不是同质改进器继任。
+
+HASE的8B机制值得独立保留：同一策略的RL动作既解题又提出程序补丁，阶段评审才把局部补丁变为持久harness。局部评分器可以改，外部oracle不能改；原始代码展示两次容差/边界漏洞修复。参数小不降低这一机制的解释价值。SkillRL让技能库参与策略训练，但主实验7B；附录的Kimi-K2.5巨大模型变体尚缺清楚的权重更新说明。SkillOS训练的是8B技能管理器，32B执行器冻结，而且每训练组重置技能库。不能把这些不同对象都按调用的最大模型规模计入主图。
+
+长期部署方面，Continual Harness把游戏状态、harness以及在线soft-SFT checkpoint跨窗口继承，但31B/26B在线主体的公开文字冲突。其Flash持续设置80%/$42，最小设置77%/$30；旧卡片曾反置，现已纠正。Flash-Lite持续自修改3%–13%低于最小20%，是维护能力不足时负收益的具体证据。TaoLive HAT用35B训练接受一族harness变化；完全相同的后续编辑使其错误减少51.7%，固定harness SFT仅18.1%。这是可迁移的配置适配，harness修改仍经人审核。
+
+外部AI4AI必须和继任式RSI分开。AAR固定Opus研究团队，实际搜索32B/72B目标模型后训练，主任务有隔离的heldout，大模型附录却直接优化Petri，因此后者Petri是搜索目标。目标模型没有接管研究员。EvoTrainer同样冻结Claude研究员，但修改诊断工具、训练配方与目标权重；检测Git泄漏和跨任务复用方差过滤技能，比只看分数的搜索多了有因果意义的诊断状态。A-Evolve-Training从固定基础分支搜索30B配方，公共榜分反复进入选择，不能称最终盲测。Frontis-MA1反过来实际训练35B研究agent，但外部进化框架基本固定，所发现的外部模型/代码并不成为该agent的后继者。AIRA-Compose/Design搜索外部神经架构，研究员权重不更新。
+
+MetaRSI提出typed数据/模型/harness算子和同一系统起点上的improver-swap，是有用的可检验设计。但定义为不改变行为的数据单算子仍报告性能收益，H在四列均最高却声称无单算子普遍领先，同时更改proposal policy与调度却把收益全归调度；这些未解决的内部不一致使其暂列支撑而非核心。宏大理论命题和35B规模不能替代具体控制。
+
+RSI-Anything展示若干不同应用的局部闭环：代码训3B预测器、规划训4B策略、GUI两个对象都改、化学按反馈选择实验、免疫下游预测器固定。作者也承认同一任务联合多轮互促仍待测试。Seed for Seed公开材料只足以确认工业研发应用方向，不能把邻近产品总基准归因于这套研发系统。
+
+
+技能库与模型训练这一支，关键分界是编辑动作是否真的进入优化目标。SAGE 在实际32B上把两项任务串成训练链：第一题留下可执行函数，第二题的成功和真实复用给第一题生成行为额外奖励；它比“先把成功轨迹总结成技能，再训练解题器”更直接处理可复用技能的信用分配。不过训练库每链重置，主评测提供scenario标签，三任务训练反而退步，故支持的是短链跨任务复用机制，不是无限自演化。CoSkill 的7B共享actor更进一步把reasoner与skill-editor轨迹拼入同一更新批次，以私有overlay在同题重测的收益训练编辑器，再筛选推广持久技能。其v1公开而v2撤回等待机构内容审批；撤回状态须公开，但不代替方法质量判断。
+
+EvolveR 的经验抽取阶段冻结当时策略，参数回流主要来自解题RL。Complementary RL 和 Evolving-RL则明确给摘要/提取token下游效用奖励；前者实际有30B-A3B提取器、7B执行器及持久merge库，后者共享7B并用相关多任务评估技能。两者关于参数冲突并非简单互相推翻：前者异步分离角色、跨任务平均credit，后者共享角色但不同训练目标和稳定化手段。Evolving-RL的Mind2Web会直接在测试任务采集轨迹/技能，不能误标纯zero-shot。ARISE虽然声称端到端优化selection/extraction，实际目标仅列solver rollout，离散选择与G+1摘要无明确loss；同一组全用技能时奖励倍率也可能被组内标准化抵消。因而不能把同样的“skill co-evolution”标题当作同等直接信用证据。
+
+JITAgent实际训练27B生成器、冻结执行器，并维护四槽可执行harness档案，足以与只更新数据archive区别；但教师、训练样本、硬件和各阶段消融均缺，暂列支撑。ScoreFlow、FlowReasoner、MAS-GPT则更接近学会一次性生成workflow：参数学到了生成能力，却没有证明生成的外部流程作为第二类状态在后续世代独立继承。AREX实际122B训练有规模价值，外部每题选择仍固定，不能把测试时候选自选等同改进器继任。
+
+记忆研究必须同时看“存什么”和“怎么更新”。MEMORYLLM保存跨层隐状态，部署仅前向写入；650K更新压力测试考查最新知识仍可写入，不代表早期事实保持650K步。M+把被淘汰的状态转入CPU长期池，延缓遗忘，却牺牲部分短上下文精度。MemGen更不同：经验编译在LoRA weaver中，当前潜在token即时生成；附录明确先训练weaver、再冻结它训练trigger，reasoner始终冻结。三者都不能仅因latent memory名称算外部harness自改。RMM真正改变外部主题库与轻量重排器，引用奖励训练的是控制接口；这与MemSkill同口径归Harness，而不是因为有几层参数训练就归Hybrid。
+
+环境与世界模型的边界也清楚。EnvGen固定GPT-4、改少量模拟器配置，根据4M/9M学生逐技能成绩做四轮课程；等步、固定环境与动态环境对照支持外部教学设计，但不是LLM模型自我继任。TaskCraft先自举生成提示再训3B学生，学生没有反向改生成器。WKM先比较专家与自身失败总结知识，再分别训练行动/知识LoRA，作者承认部署不能动态更新；WMA离线训练8B状态差异预测和价值模型，行动LLM始终冻结。DreamGym把模拟器移到训练期，以固定经验模型、检索缓冲和奖励方差课程供学生RL；缓冲内容更新不单独算harness算法进化。其0真实在线样本仍依赖数千真实离线轨迹，正文“WebArena成功率超过30%”与表中9.1–14.5%不符，不能照抄。NavMorph则是约.23B导航系统的场景向量EMA，补充实验分离出测试时记忆适应仅约1.04pp SR增量，大部分收益来自预训练世界模型。
+
+AI4AI工业价值无需借助自继任叙事成立。YouTube的冻结Gemini研究器优化外部推荐DNN，工业验证使它成为跨路线核心；其被修改对象、部署边界、研究器状态均要与LLM后继区分。Eureka和POISE分别搜索外部策略奖励与优化器，固定研究LLM并不因此变成被训练的Model路线主体。DSPy的可复用编译/自举思想是多个后续工作共同的基础，参数训练只是可选产物，主贡献仍在外部程序优化。
+
+评价准则这一支也需分清双角色与双状态。RLCER明确用真值相关性奖励共享rubricator，但准则不跨轮保存，属于模型内共训练。EvoRubric同时维护跨epoch准则池和共享回答/生成参数，才形成模型×外部评价记忆闭环。其8B/14B消融、三种子及固定回答组比较支撑直接生成信用和池的价值；然而池中错误逐渐增加、有效新维度占比下降，人审回答增益主要是简洁相关而非医学事实性，因此不能从平均分推断无限开放式奖励自进化。
+
+DR Tulu提供动态评价harness的另一基础：冻结外部生成器把当前检索证据和回答差异转成跨epoch准则池，策略及评价状态共同继承，但生成器不训练。其总RL增益不能全归动态准则，静态对动态差约2pp；27,000 GPU小时训练也不能被单次SQAv2推理千倍便宜的标题掩盖。RubricEM继承这个框架，增加阶段信用和直接训练的反思角色，两个外部库分别管评审与指导。600步匹配2×2消融有价值，但反思奖励仍是judge对用途的估计，并非SAGE/CoSkill式实际下游收益。其理论明确要求局部正梯度对齐且固定bank，不能作为动态库长期共进化的证明。
+
+MPO是较早的评分提示×学生权重交替机制：32/72B评审冻结，真正训练只有1.5B。它能补救title-only等具体reward hacking，但raw奖励尺度同时增加，最终伦理rubric又把某个RIGHT例子重复到各分数，不能把文字更细等同评价更真。RLAR则改可执行奖励工具和模型wrapper，96.4%实际评分仍来自现成RM。其GSM8K降零对照主要是答案标记解析失败，且附录数据与主实验不一致；工具可调用94.9%并不意味着评分正确94.9%。两者都须与有实际标准质量审计的EvoRubric、外部检索锚定的DRTulu作具体比较。
+
+
+外层自动算法发现须与联合训练分开：SearchReward每份奖励代码都从同一3B学生重新训练，DiscoPOP亦独立训练7B学生，研究GPT4/Kimi未更新。DiscoPOP以MT-Bench搜索后另检验Alpaca/摘要/情感任务，是比单一指标搜索更有力的算法迁移证据；但部分损失的β泛化由作者修正，TLDR并不胜DPO。SearchReward更突出反例：测试集反馈回流50次搜索，top3与diverse5的差距在宽松提取下消失，说明格式奖励可能主导表面收益。不同函数可组合并不自动构成两个持续继承状态的协同。
+
+
+Auto Research Specialist与LLMZero分别把反馈用于外部完整训练程序和可接续的训练阶段。前者用同200提交的角色/通用并行/无谱系控制，说明失败约束记录比只读当前最优有价值；后者stage继承避免每轮从零，但controller仍冻结。LLMZero的无visual和无早停准确率反而略高，只支持算力收益；其与自主agent不等GPU预算、固定schedule有任务胜出，均限制了“适应必然更好”的解释。
+
+
+UCOB最值得保留的是对技能teacher权威性的反证：同anchor的无技能分支常更优，双向蒸馏可纠错，技能库与共享writer同时学习，属真Hybrid但目前至7B。CodeSkill则更新完整4B管理器LLM与持久技能库，冻结35B执行者，归Hybrid小规模补充；其两遍测试集构库与provenance过滤是一种批量测试适应协议，不能与严格在线未知任务成功率混为一谈。
+
+
+SCORE显示“evaluator也学习”并不自动解决反馈漂移：其实验用结论TF-IDF相似度奖励rubric，仍需GPT5.2每5步更新持久评价约束，且更多rollout/更大数据可坍塌。Eureka的完整人工反馈例亦提示应区分自动fitness搜索与人工纠正目标：连续生成代码可能忘掉先前约束，不能只凭代码解释相信奖励语义。Skill-SP缺失主表已用PDF补齐；其大增益集中在工具schema起点较弱的模型，极难Zebra仍近零。
+
+SPADE补上30B环境程序×共享权重共同训练的重要节点：有/无hint差与难度anchor驱动设计者，旧环境记忆继承；外部语料维持多样性而非内部凭空产生领域。验证示例存在reset条件已真、一步通关，且最佳测试套选点、消融混淆与成本未披露，应连同核心结果呈现。
+
+AlphaApollo的“evolution”是每题十轮固定四角色评审搜索，参数RL另在独立阶段；14B Figure8实训但不达主图规模，不能将任务内memory误记为系统递归。
+
+口径更新：CodeSkill的4B manager是实际LoRA训练完整LLM，技能库同时进化，因此按任何learned model/adapter定义归Hybrid小模型机制补充；冻结35B执行者不计训练规模。此前与轻量controller一致的Harness归类已撤回。
+
+HillSampling提供必要负控：ES提高平均回报却可能损害最大发现，固定模型的best-program条件采样已很强。但它是外部数学解搜索，32B训练只在ES对照；不能据此宣称所有TTT无效。circle纪录差在浮点末位、独立重验证与等计算预算仍重要。
+
+
+SEVerA的增量是参数无关的形式guard：即使模型被学习，明确局部contract仍保持。它不把grammar合法变成数学正确，也不把可用工具调用变成完成任务。完整示例还揭示其解释边界：FGGM本身已保证grammar/noDiff/AgentCcheck，外层相同错误检测遂使所称多级修复分支不可达；应保留不变量机制而暂不接受这些结构为性能来源的叙事。实际LLM学习仅8B GSM，τ2模型冻结。
+
+S3Gym将自判断与外部真值拆开，局部判断质量与下次性能几乎不相关；但三回合评测、只积分正收益、缺oraclejudge干预限制因果解释。Summary和训练是互斥路径而非共同演化，SFT负结果不能替代完整训练控制。
+
+ANDES的回路实际在合成数据报告与下一调用之间，完整轨迹完成所有域合成后才训练学生；不能因同时存在树和权重就称双向协同。它有scaffold-only对照，说明工程执行和定向数据各自贡献，但外部GPT4o教师成本及报告独立质量未充分控制。
+
+DRACO的27/32B LoRA与四组消融把动态准则/信用分配交互说得更清楚，但准则每组重生，没有DRTulu/EvoRubric式持久pool，归Model。其信用守恒只守标量，不守梯度；“全同判据等于baseline”也与仍存在逆长度权重的附录公式矛盾，宜保留length-only对照缺口。
+
+M3-Agent是32B参数学习利用外部记忆的有效支撑，但先7B writer SFT、再固定图训练controller；语义图内容积累不是writer与controller互改。实体一致性可以改善多模态QA，却未证明长期开放流或机器人自主行动。
+
+AnchorGUI把错配截图保留用于同题反思，memorylessretry控制值得借鉴：69.2%的三次累计成功中，62.9%不需任何跨次记忆。AppH明示跨任务持续库尚未做，dual-scale learning不能误读为参数训练或持续技能继承。
+
+MCP-Flow是自动采集工具schema后训练小模型的资源路线，固定教师两次指令evolution不等模型×harness共进化。只有356/1166server产出有效响应；高选择准确率与现实多步任务成功须分开。
+
+DeepAgent把tool search/call/fold变成32B策略的可训练动作，冻结辅助32B负责模拟工具与三类JSON记忆。其GAIA46.7→53.3及移除fold44.7支持上下文管理训练的价值，但tool memory仍在单任务history内，没有持久技能库，也没有auxiliary反馈学习；应与M3Agent并列Model支撑，不能由“memory+RL”直接归Hybrid。30/235B扩展只有Base推理。
+
+SimWorld Studio的两类“学习”都不更新模型：生成器保存UE5工具/Markdown技能，导航器积累经验或30条以内规则；Case3实际是固定8级、三轴、5epoch成功率阈值课程。它将可运行场景接入学习的工程价值成立，但90% vs72%只说明此课程优于固定L3，未联合隔离生成器技能与导航规则，更不能计为27B参数协同。部分正文普遍优越性与Table9/10不一致，保留Harness支撑。
+
+Self-CriTeach是单向的分阶段Hybrid：初始模型写并修PDDL，符号搜索计划被转换为CoT，domain再固定为SFT/CPO训练的监督/奖励；4/8B学习完成后并不返回改写domain。4B .26→.46中SFT单独已达.43。其价值是双用符号知识源，不是joint adaptation；成功条件公式方向写反且将invalid state定义为空集，需要实现核验后才能据其指标作强论证。
+
+TRUSTEE的模拟器和agent可以同源，但模拟8B冻结，只agent更新；规则课程的scalar难度不是新的harness机制。其信息不对称消融支持“自己拥有不同上下文也能教自己”，不证明自继任或无条件structural gain。8B BFCLMultiTurn39.88→46.38；每run约208H20GPUh和1e8模拟token，free指权重许可，前处理仍用了80B。
+
+ADMIRE与DRACO形成重要边界对照：ADMIRE确有global milestone memory，被新policy成功轨迹反复修改再作下一轮奖励，故为Hybrid；DRACO只生成当组rubric。ADMIRE的“可验证”仍是SBERT对动作描述的81.3%匹配，不是环境状态验证；伪代码末指针不终止，可能重复hit导致k/K>1。7B44%比outcome39.7%高4.3pp，10pp宣传是对base；人工static在MiniWoB反而63%高于adaptive61.1%。
+
+ARBOR将奖励文本继承从ADMIRE任务专属milestone推进到跨query标准：最多6条commonrubric，候选8条合并，按方差/相关和生命周期管理。8B无memory58.5→full61.1且异源DeepSeek评审保持+4pp，支持复用机制；但“救回42%零梯度组”只证明奖励方差被打破，尚缺等方差随机/固定rubric控制，不能当成42%群组已学会。最大训练14B，保留机制补充。
+
+
+ATLAS 的1B EvoDPO把参考checkpoint晋升显式化，但冻结120B/32B支持者不能计训练规模，候选程序档案也不是可继承harness机制。PINN固定外部评分（§3.2/E.2）与候选自定义loss评分（C.2.2）、检查器prompt与Eq5存在同版本冲突，PDF复核确认；暂列insufficient而非把理论与多角色规模当核心证据。
+
+
+AutoScientists补充冻结科研模型在外部实验反馈下更新团队roster、共享负知识和研究程序的Harness/AI4AI支线。其Kermut固定recipe从单开发assay到217assays的迁移很有价值，但不能当研究LLM自训练；BioML同实验预算下API费用3984.7对910.1美元。GPT组件消融实际47/50对71实验，no-cross同时禁重组，主文的单组件等预算因果措辞过强；组织模式保留support，跨蛋白结果与这些限制分开。
+
+
+关系终审：将30条把引用、基线或主题相近混写为extends的边收紧为discusses/compares/uses；明确算法结构或数据/代码复用才uses，保留MemoryLLM→M+、AWM→WMA、DataFlow→ANDES、Kermut→AutoScientists等有直接基础的扩展。分析性关系明确标analytical_comparison，不作为作者承认的谱系。
+
+## 2026-10-19 关系别名终审修正
+
+删除 AutoScientists（arxiv-2605-28655）指向不存在的 `catalog-autonomous-ai-research` 的分析比较边。该条解释称“AAR 还训练研究策略”，却无法唯一确定所指原始工作；Automated Alignment Researchers 的研究员权重实际冻结，而执行反馈训练研究想法模型属于另一项研究，不能仅凭主题相似补接。删除边不改变 AutoScientists 的全文结论与其他四条已核关系。
+
+同步删除该条目 `nearest_stronger_or_complementary` 中不存在的 ID，以及 `relative_to_prior_work` 中无法确认的“AAR 训练研究策略”比较；保留已由 AutoScientists 原文支持的研究员参数冻结、外部目标模型不接任研究员的系统边界。递归检查该条完整记录，已无 AAR 或不存在 ID 的残留。

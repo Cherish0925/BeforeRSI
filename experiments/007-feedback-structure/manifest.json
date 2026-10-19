@@ -1,0 +1,26 @@
+{
+  "seed": 2026101807,
+  "repeats": 2000,
+  "dimensions": [
+    2,
+    4,
+    8,
+    16
+  ],
+  "choices": 4,
+  "budgets": [
+    4,
+    8,
+    16,
+    32,
+    64
+  ],
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "source_sha256": "97ed2544942a839ac76792a3e9130c2ccf4b73a0ac44cf7ad9199f23ad0876ae",
+  "protocol_sha256": "68b6bf445079a4075af4a4cee273a09014d8354e239bad618806d08a1ea512dd",
+  "records_sha256": "e5822304c85a3d0e284af10c5bce1f25ef8abb7592df510b81ec9b3080cf1929",
+  "archive_sha256": "70725c6296cd2c5b39dce16206aa4e9ccfc1ea0311d5ec199160cead2f2fe4b7",
+  "elapsed_seconds": 2.1764662630012026,
+  "primitive_checks": 4635614
+}

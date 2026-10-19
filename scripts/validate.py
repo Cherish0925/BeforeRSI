@@ -4,6 +4,7 @@ from __future__ import annotations
 import json
 import re
 import sys
+from collections import Counter
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -15,7 +16,7 @@ HYPOTHESES_PATH = ROOT / "data" / "hypotheses.json"
 ID_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 SNAKE_RE = re.compile(r"^[a-z0-9]+(?:_[a-z0-9]+)*$")
 EVIDENCE = {"reported", "reproduced", "replicated", "contradicted", "open"}
-AUDIT = {"pending", "in_progress", "complete"}
+AUDIT = {"pending", "in_progress", "complete", "primary_source_read", "selected_sections_read", "public_materials_read"}
 SOURCE_TYPES = {"paper", "repository", "project_page", "proceedings"}
 
 
@@ -53,6 +54,8 @@ def validate_works(data: object) -> set[str]:
             "id", "name", "year", "role", "reported_depth", "changed_objects",
             "evidence_status", "audit_status", "central_limit", "sources",
         }
+        if data['schema_version'] == '1.1.0':
+            required_work |= {'reading_scope', 'mechanism_review', 'evidence_review', 'contribution_review', 'scope_decision', 'source_locations'}
         if not isinstance(work, dict) or set(work) != required_work:
             fail(f"{context}: invalid keys")
         work_id = work["id"]
@@ -79,6 +82,23 @@ def validate_works(data: object) -> set[str]:
             fail(f"{work_id}: invalid evidence status")
         if work["audit_status"] not in AUDIT:
             fail(f"{work_id}: invalid audit status")
+        if data['schema_version'] == '1.1.0':
+            for field, keys in {
+                'mechanism_review': {'changed', 'fixed', 'feedback', 'inheritance', 'loop'},
+                'evidence_review': {'setup', 'comparison', 'result', 'ablation', 'cost', 'generalization'},
+                'contribution_review': {'bottleneck', 'insight', 'value', 'relation_to_rsi', 'comparison'},
+            }.items():
+                values = work[field]
+                if not isinstance(values, dict) or set(values) != keys or any(not isinstance(v,str) or not v.strip() for v in values.values()):
+                    fail(f'{work_id}: incomplete {field}')
+            if work['scope_decision'] not in {'route_research', 'enabling_method', 'background', 'insufficient_disclosure'}:
+                fail(f'{work_id}: invalid reading scope decision')
+            if not work['reading_scope'] or not work['source_locations']:
+                fail(f'{work_id}: source reading requires scope and locators')
+            for source in work['source_locations']:
+                validate_url(source.get('url'), work_id)
+                if not source.get('location'):
+                    fail(f'{work_id}: empty primary-source locator')
         if not isinstance(work["central_limit"], str) or len(work["central_limit"].strip()) < 20:
             fail(f"{work_id}: central_limit is too short")
         sources = work["sources"]
@@ -100,6 +120,10 @@ def validate_works(data: object) -> set[str]:
 def validate_graph(data: object, work_ids: set[str]) -> None:
     if not isinstance(data, dict):
         fail("knowledge graph root must be an object")
+    if data.get("schema_version") in {"4.0.0", "5.0.0", "5.1.0"}:
+        from check_literature_graphs import check
+        check()
+        return
     required = {"schema_version", "updated", "nodes", "edges", "work_bindings"}
     if set(data) != required:
         fail(f"knowledge graph keys must be exactly {sorted(required)}")
@@ -171,12 +195,156 @@ def validate_hypotheses(data: object) -> None:
             fail(f"{hypothesis_id}: files must be non-empty")
 
 
+def validate_scope_catalog(work_ids: set[str]) -> None:
+    scopes = load(ROOT / "data/scope-review.json")
+    rows = scopes["works"]
+    ids = [r["id"] for r in rows]
+    if len(ids) != len(set(ids)) or set(ids) != work_ids:
+        fail("scope catalog must classify every work exactly once")
+    if dict(Counter(r["scope"] for r in rows)) != scopes["counts"]:
+        fail("scope counts do not match classified works")
+    for r in rows:
+        if r["scope"] not in scopes["definitions"] or not r["reading_scope"]:
+            fail(f"{r['id']}: undefined scope or missing reading boundary")
+        validate_url(r["primary_source"], r["id"])
+    expanded = load(ROOT / "data/expansion-reviews.json")["works"]
+    expanded_ids = [r["id"] for r in expanded]
+    if len(expanded_ids) != len(set(expanded_ids)) or not set(expanded_ids) <= work_ids:
+        fail("expansion contains duplicate or unregistered work IDs")
+    for r in expanded:
+        if r["review_level"] not in {"abstract_screen", "selected_sections"}:
+            fail(f"{r['id']}: unsupported review level")
+        for field in ["reported_operation", "limit", "separating_intervention", "tasks_and_resources", "reading_scope"]:
+            if not r[field].strip():
+                fail(f"{r['id']}: missing {field}")
+    pool = load(ROOT / "data/discovery-pool.json")["entries"]
+    arxiv_ids = [r["arxiv_id"] for r in pool]
+    if len(arxiv_ids) != len(set(arxiv_ids)):
+        fail("discovery pool contains duplicate arXiv IDs")
+
+
+def validate_curated_atlas(work_ids: set[str]) -> None:
+    review = load(ROOT / "data/quality-review.json")
+    decisions = review["decisions"]
+    decision_ids = [r["id"] for r in decisions]
+    if len(decision_ids) != len(set(decision_ids)) or set(decision_ids) != work_ids:
+        fail("quality decisions must cover the complete catalog exactly once")
+    states = {"core", "pending", "historical", "background", "low_value"}
+    for row in decisions:
+        if row["admission"] not in states or not row["reason"].strip():
+            fail(f"{row['id']}: missing or invalid admission decision")
+    core = {r["id"] for r in decisions if r["admission"] == "core"}
+    cards = review["core_cards"]
+    if len(cards) != len(core) or {r["id"] for r in cards} != core:
+        fail("core cards and admission decisions disagree")
+    families = {r["id"] for r in review["families"]}
+    for card in cards:
+        if card["family"] not in families:
+            fail(f"{card['id']}: unknown mechanism family")
+        for field in ["principle", "distinct_contribution", "evidence", "scale", "limit", "insight", "source_location"]:
+            if not card[field].strip():
+                fail(f"{card['id']}: incomplete claim review ({field})")
+        validate_url(card["source_url"], card["id"])
+    for relation in review["relations"]:
+        if relation["source"] not in core or relation["target"] not in core:
+            fail("non-admitted work leaked into the core relationship graph")
+        if relation["type"].startswith("explicit"):
+            validate_url(relation.get("source_url"), "explicit relation")
+            if not relation.get("location"):
+                fail("explicit relationship lacks a primary-source locator")
+    layer = load(ROOT / "data/layer-review.json")
+    layers = layer["works"]
+    if len(layers) != len(work_ids) or {r["id"] for r in layers} != work_ids:
+        fail("layer decisions must cover every work exactly once")
+    route_ids = {r["id"] for r in layer["routes"]}
+    if route_ids != {"harness", "model", "hybrid"}:
+        fail("the primary atlas must have exactly three routes")
+    main = {r["id"] for r in layers if r["placement"] == "main"}
+    for r in layers:
+        if r["placement"] not in layer["placement_labels"] or not r["why"].strip():
+            fail(f"{r['id']}: missing placement decision")
+        if r["route"] not in route_ids | {"unresolved", "crosscut"}:
+            fail(f"{r['id']}: invalid route")
+        if any(k not in layer["contribution_axes"] for k in r["focus"]) or len(r["focus"]) > 3:
+            fail(f"{r['id']}: invalid contribution tags")
+        if r["audit"] == "selected_sections":
+            validate_url(r["source_url"], r["id"])
+            if not r["source_location"] or not r["return_path"] or not r["changed"]:
+                fail(f"{r['id']}: missing update/return-path locator")
+        if r["placement"] == "main":
+            if r["id"] not in core or r["route"] not in route_ids or r["audit"] != "selected_sections":
+                fail(f"{r['id']}: unreviewed or invalid main-view work")
+            if r["route"] in {"model", "hybrid"}:
+                eligible = [m for m in r["models"] if max(m["total_b"] or 0, m.get("total_lower_bound_b",0)) >= layer["minimum_total_parameters_b"] and m["role"] == "实际训练对象"]
+                if not eligible or r["scale_status"] != "eligible":
+                    fail(f"{r['id']}: no verified >=27B trained target")
+                for m in eligible:
+                    if m.get("total_lower_bound_b") and not r.get("parameter_check"):
+                        fail(f"{r['id']}: parameter lower bound needs a derivation")
+            provenance = r.get("provenance", {})
+            if provenance.get("sector") not in {"industry", "academic", "joint"} or not provenance.get("institutions"):
+                fail(f"{r['id']}: main-view institutional provenance missing")
+            validate_url(provenance.get("source_url"), r["id"])
+        if r["scale_status"] == "below" and any(m["total_b"] is None or m["total_b"] >= layer["minimum_total_parameters_b"] for m in r["models"]):
+            fail(f"{r['id']}: invalid below-threshold label")
+    for slot in layer["spaces"]:
+        if slot["route"] not in route_ids or not set(slot["evidence_ids"]) <= work_ids:
+            fail("invalid research-space association")
+    graph = load(GRAPH_PATH)
+    if graph.get("schema_version") not in {"4.0.0", "5.0.0", "5.1.0"}:
+        if {r["work_id"] for r in graph["work_bindings"]} != main:
+            fail("canonical graph must bind exactly the main-view works")
+        if {r["id"] for r in graph["nodes"] if r["type"] == "work"} != main:
+            fail("out-of-scope work leaked into main graph")
+        if {r["id"] for r in graph["nodes"] if r["type"] == "concept"} != {"route-"+k for k in route_ids}:
+            fail("main graph must use three route concepts")
+    atlas = load(ROOT / "data/research-atlas.json")
+    counts = dict(Counter(r["admission"] for r in decisions))
+    counts.setdefault("low_value", 0)
+    if atlas["counts"] != counts or {r["id"] for r in atlas["works"]} != work_ids:
+        fail("generated atlas is stale or incomplete")
+    if {r["id"] for r in atlas["works"] if r["main_view"]} != main:
+        fail("atlas main-view membership is stale")
+    if atlas["main_count"] != len(main) or atlas["reviewed_count"] != len(core):
+        fail("atlas headline counts disagree")
+    if atlas["placement_counts"] != dict(Counter(r["placement"] for r in layers)):
+        fail("placement counts disagree")
+    if atlas["route_counts"] != {k: sum(r["route"] == k and r["placement"] == "main" for r in layers) for k in route_ids}:
+        fail("route counts disagree")
+    expected_sectors = {k:dict(Counter(r['provenance']['sector'] for r in layers if r['placement']=='main' and r['route']==k)) for k in route_ids}
+    if atlas.get("sector_counts") != expected_sectors:
+        fail("mutually exclusive institutional counts disagree")
+    brief = load(ROOT / "data/research-brief.json")
+    if atlas.get("brief") != brief or set(brief['claim_labels']) != main:
+        fail("brief or per-case evidence labels disagree")
+    source_layers = {r["id"]:r for r in layers}
+    if any(r["layer"] != source_layers[r["id"]] for r in atlas["works"]):
+        fail("generated layer record differs from reviewed source")
+    if graph.get("schema_version") not in {"4.0.0", "5.0.0", "5.1.0"}:
+        page = (ROOT / "research/atlas/index.html").read_text(encoding="utf-8")
+        embedded = re.search(r'<script id="atlas-data" type="application/json">(.*?)</script>', page, re.S)
+        if not embedded or json.loads(embedded.group(1)) != atlas:
+            fail("offline atlas does not contain the current complete dataset")
+
+
 def main() -> int:
     try:
         work_ids = validate_works(load(WORKS_PATH))
         validate_graph(load(GRAPH_PATH), work_ids)
         validate_hypotheses(load(HYPOTHESES_PATH))
-    except (OSError, json.JSONDecodeError, ValueError) as exc:
+        validate_scope_catalog(work_ids)
+        # This review is an immutable, explicitly enumerated 127-item snapshot.
+        # Current full-catalog coverage is enforced by check_literature_graphs above.
+        import hashlib
+        snapshot = load(ROOT / "data/review-snapshots.json")
+        legacy_ids = set(snapshot["legacy_review_work_ids"])
+        if not legacy_ids <= work_ids:
+            fail("a legacy reviewed work disappeared from the current catalog")
+        for filename, digest in snapshot["legacy_files_sha256"].items():
+            if hashlib.sha256((ROOT / filename).read_bytes()).hexdigest() != digest:
+                fail("legacy review snapshot changed without an explicit revision: " + filename)
+        validate_curated_atlas(legacy_ids)
+    except (OSError, json.JSONDecodeError, ValueError, AssertionError) as exc:
         print(f"validation failed: {exc}", file=sys.stderr)
         return 1
 

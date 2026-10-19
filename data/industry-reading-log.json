@@ -1,0 +1,31 @@
+{
+  "updated": "2026-10-19",
+  "added_work_ids": [
+    "metacircle-ophis",
+    "comfyresearch",
+    "nanogpt-observables",
+    "apex-tune",
+    "apex-research",
+    "asi-bench",
+    "recursive-first-steps",
+    "hermes-agent",
+    "intellect-3",
+    "intology-locus",
+    "autoscience-lab"
+  ],
+  "reading_policy": "论文、技术报告、博客、仓库与公司正式发布均按实际可读内容记录；论文原文研读与公开材料研读分开。阅读完成不补全未披露机制，也不代表独立复现。",
+  "source_access_limits": [
+    {
+      "url": "https://intology.ai/blog/scaling-automated-post-training",
+      "limit": "已读完整正文、附录A–G及公开artifacts限制；部分研究系统私有，各任务checkpoint、单trial与分配预算分别记录。"
+    },
+    {
+      "url": "https://www.apexin.ai/assets/papers/apex-research-2026.pdf",
+      "limit": "已读四页完整报告；34项目的论文、代码与review全集未完整公开。"
+    },
+    {
+      "url": "https://www.autoscience.ai/blog/autoscience-autonomous-ai-lab",
+      "limit": "技术正文访问未成功；已读公司署名Business Wire完整新闻稿。不能据发布稿重建未披露算法。"
+    }
+  ]
+}

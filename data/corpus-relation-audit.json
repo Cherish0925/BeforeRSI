@@ -1,0 +1,540 @@
+{
+  "scope": {
+    "date": "2026-10-19",
+    "catalog_entries": 622,
+    "unresolved_snapshot": "BeforeRSI/data/corpus-unresolved-relations.json",
+    "unresolved_snapshot_sha256": "6b9b15c5bda7561d667b32f96a1b519119279b4fa395ff9f5e073942dd6dd6b8",
+    "unresolved_snapshot_edges": 306,
+    "unresolved_snapshot_unique_targets": 261,
+    "alias_candidates": 38,
+    "source_specific_alias_candidates": 2,
+    "method": "核对全部当前未解析目标名、622条目录身份、已有审阅的关系上下文；仅为有疑问的身份/边类型回查已缓存原文。另收录先前被自动冒号前缀临时解析的24个已人工核实短名。没有扩大文献范围，没有改动repo或他人reviews。",
+    "limits": "未解析不等于不存在或没有研究价值；没有明确目录同一性证据的目标保留未解析。只在发现问题的uses/extends边做定点复核，不声称重新审核全622项所有关系。"
+  },
+  "ambiguous_or_external": [
+    {
+      "alias": "OWL",
+      "status": "different_work",
+      "current_sources": [],
+      "reason": "AI4AI-Bench 的 OWL 是稀疏化基线，与目录中的多代理 Workforce Learning 同名异物。",
+      "evidence": "sources/arxiv-2608-20318.txt Appendix A.10，缓存1834–1837：OPT-6.7B、activation-aware OWL/Wanda、70% sparsity。该边当前快照已被旧前缀规则暂时解析，故不在 unresolved 中。",
+      "do_not_map_to": "arxiv-2505-23885"
+    },
+    {
+      "alias": "SE-Agent",
+      "status": "different_work",
+      "current_sources": [
+        "arxiv-2509-26354"
+      ],
+      "reason": "当前关系讨论编码 agent 的策略/经验跨任务保留，不是 GUI SEAgent。",
+      "evidence": "arxiv-2509-26354 §3.2/Appendix C.2.1 的审阅明确区分 coding SE-Agent；目录 arxiv-2508-04700 是 Self-Evolving Computer Use Agent。",
+      "do_not_map_to": "arxiv-2508-04700"
+    },
+    {
+      "alias": "SWE-bench",
+      "status": "different_work",
+      "current_sources": [
+        "arxiv-2410-06992",
+        "arxiv-2511-13998"
+      ],
+      "reason": "原 SWE-bench 与 SWE-Bench+ 不同；加号不能在身份归一化中删除。",
+      "evidence": "目录 arxiv-2410-06992 标题 SWE-Bench+: Enhanced Coding Benchmark for LLMs；当前多个评测关系明确是原 benchmark 或 Verified 版本。",
+      "do_not_map_to": "arxiv-2410-06992"
+    },
+    {
+      "alias": "SWE-bench Verified",
+      "status": "different_work",
+      "current_sources": [
+        "arxiv-2412-02883"
+      ],
+      "reason": "Verified 是原 SWE-bench 的人工验证子集，不能改指 SWE-Bench+。",
+      "evidence": "现有关系讨论500题 Verified 的训练/评测分割，目录 SWE-Bench+ 是另一增强基准工作。",
+      "do_not_map_to": "arxiv-2410-06992"
+    },
+    {
+      "alias": "Reinforced Self-Training (ReST)",
+      "status": "external_not_in_catalog",
+      "current_sources": [
+        "catalog-rest-em"
+      ],
+      "reason": "原 ReST 是 ReST-EM 的前驱，不能把 extends 的目标解析成来源自己，也不能解析为 ReST meets ReAct。",
+      "evidence": "sources/catalog-rest-em.txt §1缓存50行、§3明确区分 Gulcehre et al. 2023 的 ReST 与本篇 ReST-EM，并说明重置基座等改动；622目录没有原 ReST 条目。",
+      "do_not_map_to": [
+        "catalog-rest-em",
+        "arxiv-2312-10003"
+      ]
+    },
+    {
+      "alias": "DSPy COPRO",
+      "status": "implementation_not_identical_paper",
+      "current_sources": [
+        "arxiv-2506-00400"
+      ],
+      "reason": "目标是 DSPy 的 COPRO 实现，不能因同属 DSPy 就指向 MIPRO 原论文。保留软件方法名，等待独立代码/文档条目。",
+      "evidence": "sources/arxiv-2506-00400.txt §5.5、Appendix F9 使用 COPRO，参考为 DSPy 2025b；sources/arxiv-2406-11695.txt 的主方法是 MIPRO，未找到 COPRO 作为其自身方法的同一性证据。",
+      "do_not_map_to": "arxiv-2406-11695"
+    },
+    {
+      "alias": "Coscientist",
+      "status": "different_work",
+      "current_sources": [
+        "catalog-co-scientist"
+      ],
+      "reason": "Boiko 等的化学实验执行系统与 Google Co-Scientist 是两项工作。",
+      "evidence": "sources/catalog-co-scientist.txt Supplementary Note12，缓存5302–5313明确对比两者；5784行为 Boiko 等 Autonomous chemical research 引文。",
+      "do_not_map_to": "catalog-co-scientist"
+    },
+    {
+      "alias": "AlphaZero",
+      "status": "different_work",
+      "current_sources": [
+        "catalog-muzero"
+      ],
+      "reason": "MuZero 扩展的 AlphaZero 不应映射到专门围棋的 AlphaGo Zero。",
+      "evidence": "catalog-muzero §2–3/Appendix A 的关系目标明确 AlphaZero；catalog-alphago-zero 的来源是 Nature nature24270，标题 AlphaGo Zero。",
+      "do_not_map_to": "catalog-alphago-zero"
+    },
+    {
+      "alias": "DeepSeekMath",
+      "status": "different_work",
+      "current_sources": [
+        "catalog-deepseek-math-v2"
+      ],
+      "reason": "原 DeepSeekMath 与 DeepSeekMath-V2 分开；不能因为 V2 正文提到原方法就合并条目。",
+      "evidence": "622目录只有 catalog-deepseek-math-v2，标题显式含 V2；当前原名没有可确证同一性。",
+      "do_not_map_to": "catalog-deepseek-math-v2"
+    },
+    {
+      "alias": "arxiv-2512-18746",
+      "status": "external_not_in_catalog",
+      "current_sources": [
+        "arxiv-2608-20920",
+        "arxiv-2605-13941"
+      ],
+      "reason": "关系语境指 MemEvolve；未在622目录中找到该 arXiv 身份，不能指向 MetaMem。",
+      "evidence": "当前 arxiv-2608-20920、arxiv-2605-13941 的解释写 MemEvolve；arxiv-2602-07755 为 Learning to Continually Learn via Meta Memory Designs，ID不同。",
+      "do_not_map_to": "arxiv-2602-07755"
+    },
+    {
+      "alias": "Exploration–Compression with a learned recognition model (EC2)",
+      "status": "predecessor_not_same_work",
+      "current_sources": [
+        "catalog-dreamcoder"
+      ],
+      "reason": "EC2 是 DreamCoder 明确继承并改动的前驱，不是 DreamCoder 的别名。",
+      "evidence": "sources/catalog-dreamcoder.txt 缓存102行说 follow the architecture of EC2；279、318行明确 Unlike EC2。",
+      "do_not_map_to": "catalog-dreamcoder"
+    },
+    {
+      "alias": "AI Scientist",
+      "status": "external_not_in_catalog",
+      "current_sources": [
+        "arxiv-2605-27905"
+      ],
+      "reason": "原 AI Scientist 未在622目录中作为独立身份出现；不能映射到 AI co-scientist、EvoScientist 或包含 AI Scientist 普通词组的其他标题。",
+      "evidence": "目录标题及工作ID核对；未找到原 Lu 等 AI Scientist 的可确证条目。",
+      "do_not_map_to": "catalog-co-scientist"
+    },
+    {
+      "alias": "The AI Scientist",
+      "status": "external_not_in_catalog",
+      "current_sources": [
+        "catalog-co-scientist"
+      ],
+      "reason": "与 AI Scientist 同理，不能用相似词串解析。",
+      "evidence": "目录身份核对；当前对比关系应保留原名而不是改指 Co-Scientist。",
+      "do_not_map_to": "catalog-co-scientist"
+    },
+    {
+      "alias": "autoresearch / Autoresearch / AutoResearch",
+      "status": "external_implementation",
+      "current_sources": [],
+      "reason": "当前多处指 Karpathy autoresearch/nanochat 研究范式或仓库，不是任何标题包含 AutoResearch 的论文别名。",
+      "evidence": "例如 sources/arxiv-2605-28655.txt §4.3/Reproducibility 使用 nanochat 固定代码提交228791f；既有目录没有对应独立仓库条目。"
+    },
+    {
+      "alias": "SCoRe / SCoRE: Training Language Models to Self-Correct via Reinforcement Learning",
+      "status": "external_not_in_catalog",
+      "current_sources": [],
+      "reason": "不能映射到 ScoreFlow 或题目含一般 self-correction 的其他论文。",
+      "evidence": "当前 arxiv-2505-24726、arxiv-2601-07180、arxiv-2502-05605 的关系都是两阶段强化自纠错 SCoRe；目录没有该论文身份。",
+      "do_not_map_to": "arxiv-2502-04306"
+    }
+  ],
+  "compound_targets": [
+    {
+      "target": "Darwin Gödel Machine / HyperAgents / AFlow / ADAS",
+      "source_entry_id": "arxiv-2609-00069",
+      "confirmed_components": {
+        "Darwin Gödel Machine": "arxiv-2505-22954",
+        "HyperAgents": "arxiv-2603-19461",
+        "AFlow": "arxiv-2410-10762",
+        "ADAS": "arxiv-2408-08435"
+      },
+      "action": "这是四个被审计对象，不能写单一alias；若拆边，应分别保留审计范围与模型标注局限。AFlow/AFLOW 本身已有 exact work_id 解析，不需要把整个复合字符串改指 AFlow。"
+    },
+    {
+      "target": "ACE / GEPA / MemEvolve",
+      "source_entry_id": "arxiv-2605-30621",
+      "confirmed_components": {
+        "ACE": "arxiv-2510-04618",
+        "GEPA": "arxiv-2507-19457"
+      },
+      "unresolved_components": [
+        "MemEvolve"
+      ],
+      "action": "三项相关工作并列，不是一个工作；拆分应保留讨论性质，不能凭来源显式提及升级为uses。"
+    },
+    {
+      "target": "EvoAgentX / MemSkill / STaR / Dynamic Cheatsheet",
+      "source_entry_id": "arxiv-2605-09315",
+      "confirmed_components": {
+        "MemSkill": "arxiv-2602-02474",
+        "STaR": "arxiv-2203-14465",
+        "Dynamic Cheatsheet": "arxiv-2504-07952"
+      },
+      "unresolved_components": [
+        "EvoAgentX"
+      ],
+      "action": "原研究分别改造四种系统，不是共同训练；拆边需逐个方法保留对应改动。"
+    },
+    {
+      "target": "Absolute Zero Reasoner / R-Zero",
+      "source_entry_id": "arxiv-2606-06114",
+      "confirmed_components": {
+        "Absolute Zero Reasoner": "arxiv-2505-03335",
+        "R-Zero": "arxiv-2508-05004"
+      },
+      "action": "两个独立训练基线，不能把并列目标映射成其中一个；可分别保留阶段review/retry的实际扩展。"
+    },
+    {
+      "target": "Chain-of-Thought / ReAct",
+      "source_entry_id": "arxiv-2310-03714",
+      "confirmed_components": {},
+      "unresolved_components": [
+        "Chain-of-Thought",
+        "ReAct"
+      ],
+      "action": "两个推理模块；目录没有相应原始条目，不能改指 DSPy 自身。"
+    },
+    {
+      "target": "MemAgent / MEM1",
+      "confirmed_components": {},
+      "unresolved_components": [
+        "MemAgent",
+        "MEM1"
+      ],
+      "action": "没有目录同一性证据；不要因 memory 词根映射到 Agent Workflow Memory。"
+    },
+    {
+      "target": "ToolBench / ToolLLM 或 ToolLLM / DFSDT",
+      "confirmed_components": {},
+      "unresolved_components": [
+        "ToolBench",
+        "ToolLLM",
+        "DFSDT"
+      ],
+      "action": "未在现有目录确认独立原工作身份，保持未解析；不把工具名称自动改指本次使用它的工作。"
+    }
+  ],
+  "relation_recheck": [
+    {
+      "source_entry_id": "arxiv-2312-10003",
+      "target": "RAFT",
+      "current_kind": "uses",
+      "basis": "source_explicit",
+      "finding": "原文只说明选择方式 closer to RAFT，并在相关工作强调没有 RAFT 那样用人类偏好训练的 reward model；当前uses强于已定位的继承证据。",
+      "evidence": "sources/arxiv-2312-10003.txt §3.5，缓存85–86行；§7，250行。",
+      "recommended_review": "考虑 discusses/complementary；若保留uses，应补具体复用的算法或代码证据。未改原记录。"
+    },
+    {
+      "source_entry_id": "catalog-kimi-k2",
+      "target": "ACEBench",
+      "current_kind": "uses",
+      "basis": "source_explicit",
+      "finding": "当前关系解释自称限于概念借鉴；原文是 inspired by ACEBench 的综合数据合成框架，未在该处声明直接代码或完整算法复用。",
+      "evidence": "sources/catalog-kimi-k2.txt §3.1.1，缓存244–245行。",
+      "recommended_review": "核实是否有更直接的算法继承位置；若只有启发性引用，应降为discusses，且与实际ACEBench评测边分开。未改原记录。"
+    },
+    {
+      "source_entry_id": "arxiv-2502-13138",
+      "target": "MLE-Bench",
+      "current_kind": "uses",
+      "basis": "source_explicit",
+      "finding": "AIDE §4.2 是转述 Chan et al. 对AIDE的独立评测结果，不是本文新运行或直接继承 MLE-Bench 算法。",
+      "evidence": "sources/arxiv-2502-13138.txt §4.2，缓存315–316行明确 present results reported by Chan et al.；159–160行也说明 aggregate independent results。",
+      "recommended_review": "关系可标作reported evaluation/discusses（依现有schema），或保留广义uses但必须显示独立报告性评测限定；不能用其证明算法/代码继承。按parent要求本次未改这条边。"
+    }
+  ],
+  "checked_not_flagged": [
+    {
+      "source_entry_id": "catalog-intellect-3",
+      "targets": [
+        "AReal",
+        "PipelineRL"
+      ],
+      "finding": "虽然引文措辞为 as popularized by，正文确实说 we implement continuous batching with in-flight policy weight updates，并继续给出两个异步循环；这是实际机制采用证据，不因 inspired 类措辞一律判为仅引用。",
+      "evidence": "sources/catalog-intellect-3.txt §2.1.3，缓存286–288行。"
+    }
+  ],
+  "own_review_correction": {
+    "entry_id": "arxiv-2605-28655",
+    "removed_target": "catalog-autonomous-ai-research",
+    "fields_corrected": [
+      "relations",
+      "selection.nearest_stronger_or_complementary",
+      "contribution.relative_to_prior_work"
+    ],
+    "reason": "不存在目录ID且AAR训练研究策略的比较无法唯一归属；按parent明确指示删除，不补接相似标题。",
+    "log": "full-reading/reviews/coevolution-synthesis.md",
+    "validation": "整条记录递归检查不存在AAR或该失效ID残留。"
+  },
+  "remaining_snapshot_targets_without_confirmed_alias": [
+    "AB-MCTS",
+    "Absolute Zero Reasoner / R-Zero",
+    "ACE / GEPA / MemEvolve",
+    "ACEBench",
+    "AceCoder",
+    "AdaCoT",
+    "Agent-C",
+    "Agent-Flan",
+    "AgentCF",
+    "AgentGen",
+    "Agentic Routing: The Harness-Native Data Flywheel",
+    "AgentRxiv",
+    "AgentVerse",
+    "AI Scientist",
+    "AI2-THOR",
+    "AIRA-dojo",
+    "AlphaZero",
+    "AReal",
+    "ARIS",
+    "arxiv-2501-10893",
+    "arxiv-2509-07367",
+    "arxiv-2509-15155",
+    "arxiv-2511-07919",
+    "arxiv-2512-18746",
+    "arxiv-2604-19341",
+    "AutoCodeRover: Autonomous Program Improvement",
+    "AutoGuide",
+    "AutoHint",
+    "Autoresearch",
+    "AutoResearch",
+    "autoresearch",
+    "B4: Towards Optimal Assessment of Plausible Code Solutions with Plausible Tests",
+    "BOHB",
+    "Chain-of-Thought / ReAct",
+    "ChatEval",
+    "CodeIt",
+    "CodeT",
+    "COLT",
+    "conditional SFT",
+    "CORE-Bench",
+    "Coscientist",
+    "CRANE",
+    "Critique-GRPO",
+    "CTRL",
+    "DAPO",
+    "Darwin Gödel Machine / HyperAgents / AFlow / ADAS",
+    "DataEnvGym",
+    "DataFlow",
+    "DeepEyes",
+    "DeepSeek-V3.2-Exp",
+    "DeepSeekMath",
+    "Dense Passage Retrieval",
+    "DigiRL",
+    "Direct Preference Optimization",
+    "DPO",
+    "DRBO",
+    "Dreamer",
+    "DreamSmooth",
+    "DSPy COPRO",
+    "DynaSaur",
+    "Early Experience",
+    "EditReward",
+    "EnvScaler",
+    "EoH",
+    "EvalPlus",
+    "EvoAgentX / MemSkill / STaR / Dynamic Cheatsheet",
+    "Evolution through Large Models",
+    "EvoTune",
+    "EvoX",
+    "EWC",
+    "Exploration–Compression with a learned recognition model (EC2)",
+    "FactScore",
+    "FLARE",
+    "FlowTune",
+    "ForeAgent",
+    "From Local to Global: A Graph RAG Approach to Query-Focused Summarization",
+    "FSTTA",
+    "Gato",
+    "GEMS",
+    "GenEnv",
+    "GenEx",
+    "GenRM",
+    "GFM-RAG",
+    "GiGPO",
+    "Golden Rubrics",
+    "Graph-of-Skills: Dependency-Aware Structural Retrieval for Massive Agent Skills",
+    "GRPO",
+    "GSPO",
+    "H2O AutoML",
+    "HarnessCompass",
+    "High-Confidence Policy Improvement",
+    "Highway-env",
+    "HiRA",
+    "IcePop",
+    "IKEA",
+    "InferFix",
+    "Inspect Robots",
+    "INSTINCT",
+    "Instruction Induction: From Few Examples to Natural Language Task Descriptions",
+    "InstructZero",
+    "IQL",
+    "JarvisArt",
+    "Kermut",
+    "Kimi k1.5",
+    "Kirschner et al. Distributionally Robust Bayesian Optimization (2020)",
+    "KnowAgent",
+    "KTO",
+    "L2R",
+    "LAD-VF",
+    "Language Model Self-improvement by Reinforcement Learning Contemplation",
+    "LaTRO",
+    "LATS",
+    "LLaMA-Factory",
+    "LlamaFactory",
+    "LLAMBO",
+    "Lota-Bench",
+    "MagicGUI",
+    "MAMBA",
+    "MAPPO",
+    "Marion et al. (2023)",
+    "MART",
+    "MASFly",
+    "MAT",
+    "MCPToolBench++",
+    "MCPZero",
+    "MemAgent / MEM1",
+    "Meta-Judge",
+    "Meta-Rewarding Language Models",
+    "MiniWoB++",
+    "MiroFlow",
+    "Mixture-of-Agents",
+    "ML-Master",
+    "MLE-bench",
+    "MLE-Bench",
+    "Mobile-Agent-v3",
+    "MoCL: Rehearsal-Free Modular and Compositional Continual Learning for Language Models",
+    "Model Soups",
+    "Mokav",
+    "nanoGPT",
+    "NNetNav",
+    "OEL",
+    "On-policy distillation of language models: learning from self-generated mistakes",
+    "One Demo Is All It Takes: Planning Domain Derivation with LLMs from a Single Demonstration",
+    "OpenCompass",
+    "OpenEvolve",
+    "OpenHands",
+    "OpenVLA-OFT",
+    "ORSO",
+    "OSGenesis",
+    "PAIRED",
+    "Pairwise Cringe Optimization",
+    "PCL",
+    "Petri",
+    "PipelineRL",
+    "Population Based Training",
+    "PostTrainBench",
+    "Pride and Prejudice: LLM Amplifies Self-Bias in Self-Refinement",
+    "Prioritized Level Replay",
+    "Promptist",
+    "Pynguin",
+    "QMIX",
+    "Qwen-Agent",
+    "RAFT",
+    "RAP",
+    "RCO",
+    "RE-Bench",
+    "ReAct",
+    "ReasonFlux-Coder",
+    "ReCall",
+    "RECAP",
+    "ReEvo",
+    "Reinforced Self-Training (ReST)",
+    "ReMe",
+    "ResearchAgent",
+    "ReTool",
+    "RewardAgent",
+    "Richens & Everitt (2024), Robust agents learn causal world models",
+    "RLHF",
+    "RLTF",
+    "RMBench",
+    "RoboCasa365",
+    "ROME",
+    "Rubicon",
+    "Rubrics as Rewards",
+    "SALT",
+    "ScaleMCP",
+    "Scaling Laws for Reward Model Overoptimization",
+    "ScienceAgentBench",
+    "SCoRe",
+    "SCoRE: Training Language Models to Self-Correct via Reinforcement Learning",
+    "SDAR",
+    "SDPO",
+    "SE-Agent",
+    "SEAGym",
+    "Search-R1",
+    "SecLLMHolmes",
+    "SELA",
+    "Sentence-BERT",
+    "Sibyl",
+    "SimUSER",
+    "SimWorld: An Open-Ended Simulator for Agents in Physical and Social Worlds",
+    "SMAC3",
+    "Social Simulacra",
+    "Socratic Models",
+    "SPICE",
+    "SRUM",
+    "STaR-GATE",
+    "STEP-DPO",
+    "SWE-agent",
+    "SWE-Agent",
+    "SWE-bench",
+    "SWE-bench Verified",
+    "SWE-Gym",
+    "SWT-Bench",
+    "Synapse: Trajectory-as-Exemplar Prompting with Memory for Computer Control",
+    "Text-to-LoRA",
+    "Text2Reward",
+    "The AI Scientist",
+    "ThetaEvolve",
+    "Time-R1",
+    "Titans",
+    "ToolBench / ToolLLM",
+    "ToolkenGPT",
+    "ToolLLM",
+    "ToolLLM / DFSDT",
+    "ToolRL",
+    "ToRL",
+    "Trajectory-informed Memory Generation for Self-Improving Agent Systems",
+    "Tree of Thoughts",
+    "UI-TARS",
+    "UltraChat",
+    "Unnatural Instructions",
+    "VAGEN",
+    "VDN",
+    "VeRL",
+    "VerlTool",
+    "VGGT",
+    "VILA2",
+    "Virtual Lab",
+    "VISTA",
+    "VisualWebArena",
+    "WebArena",
+    "WebDreamer",
+    "WebShop",
+    "West-of-N",
+    "π0.5: A Vision-Language-Action Model with Open-World Generalization"
+  ]
+}

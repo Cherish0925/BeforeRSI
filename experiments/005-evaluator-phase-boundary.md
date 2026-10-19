@@ -1,4 +1,4 @@
-# Experiment 005 — Evaluator fidelity and the RSI phase boundary
+# Experiment 005 — Evaluator fidelity and search efficiency
 
 ## Question
 
@@ -20,7 +20,7 @@ $$
 \rho=\operatorname{Corr}(y,g).
 $$
 
-The working approximation predicts
+For independent identically distributed jointly Gaussian pairs, the large-candidate approximation predicts
 
 $$
 \mathbb E[g_{\rm selected}]
@@ -67,7 +67,7 @@ For each condition record:
 - gain per unit improvement cost;
 - optimal candidate count $n^*$.
 
-## Phase map
+## Response surface
 
 Estimate regions in the plane
 
@@ -81,7 +81,7 @@ $$
 (\mathcal V,n).
 $$
 
-Expected regimes:
+Candidate behaviors to test (not universal phases):
 
 - **signal-limited:** candidate differences are below evaluation noise;
 - **productive search:** more candidates increase true selected gain;
@@ -90,6 +90,6 @@ Expected regimes:
 
 ## Decisive result
 
-The hypothesis is supported if a reproducible boundary exists beyond which increasing search pressure reduces resource-normalized true gain, and if improving evaluator fidelity moves that boundary outward.
+Measure absolute true gain and gain per unit cost separately. With fixed positive fidelity and i.i.d. joint Gaussian candidates, true selected gain increases with candidate count; efficiency can still peak because cost grows faster. A decline in absolute true gain requires additional effects such as changing candidate distributions or exploitation.
 
-This experiment measures when more search ceases to be intelligence improvement.
+A reproducible efficiency optimum supports a budget-allocation claim. A sharp phase transition or a universal fidelity threshold requires separate evidence. Test whether better evaluation shifts the optimum; do not assume its direction before estimating costs and candidate distributions.

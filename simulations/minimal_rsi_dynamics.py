@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Illustrative resource-normalized dynamics for model-harness RSI.
+"""Illustrative trajectories from assumed equations; not an RSI identification test.
 
 Nothing in this file is an empirical forecast. The parameter sets are synthetic
 and exist to expose qualitative regimes and define quantities that future
@@ -78,7 +78,10 @@ def capability_from_elasticity(
     if np.isclose(epsilon, 1.0):
         return c0 * np.exp(a * resource)
     base = c0 ** (1.0 - epsilon) + (1.0 - epsilon) * a * resource
-    return np.maximum(base, 1e-12) ** (1.0 / (1.0 - epsilon))
+    result = np.full_like(base, np.nan, dtype=float)
+    valid = base > 0.0
+    result[valid] = base[valid] ** (1.0 / (1.0 - epsilon))
+    return result
 
 
 def search_efficiency(
@@ -120,19 +123,19 @@ def save_line_plot(
 
 def main() -> None:
     regimes = {
-        "Saturation": Parameters(
+        "Low final slope": Parameters(
             0.02, 0.12, 10.0, 0.08, 0.025, 0.8,
             0.50, 0.002, 0.04, 0.02,
         ),
-        "Steady improvement": Parameters(
+        "Bounded slope example": Parameters(
             0.07, 0.18, 10.0, 0.06, 0.002, 0.5,
             0.35, 0.004, 0.08, 0.02,
         ),
-        "Recursive acceleration": Parameters(
+        "Rising slope example": Parameters(
             0.09, 0.55, 8.0, 0.04, 0.0004, 0.4,
             0.18, 0.004, 0.18, 0.005,
         ),
-        "Verifier-limited": Parameters(
+        "Declining fidelity example": Parameters(
             0.09, 0.55, 8.0, 0.04, 0.0004, 0.4,
             0.18, 0.004, 0.02, 0.12,
         ),
@@ -149,7 +152,7 @@ def main() -> None:
         {name: state[0] for name, (_, state) in results.items()},
         "Cumulative improvement resource",
         "Protected transferable capability C",
-        "Coupled RSI dynamics: capability",
+        "Synthetic dynamics: capability",
         log_y=True,
     )
     save_line_plot(
@@ -157,8 +160,8 @@ def main() -> None:
         resource,
         {name: state[1] for name, (_, state) in results.items()},
         "Cumulative improvement resource",
-        "Improvement efficiency eta",
-        "Coupled RSI dynamics: improvement efficiency",
+        "Path slope eta (not common-target improvement ability)",
+        "Synthetic dynamics: path slope",
     )
     save_line_plot(
         output / "evaluator_fidelity.png",
@@ -166,7 +169,7 @@ def main() -> None:
         {name: state[2] for name, (_, state) in results.items()},
         "Cumulative improvement resource",
         "Evaluator fidelity q",
-        "Coupled RSI dynamics: evaluator fidelity",
+        "Synthetic dynamics: evaluator variable",
     )
 
     r_elasticity = np.linspace(0.0, 10.0, 500)
@@ -180,7 +183,7 @@ def main() -> None:
         },
         "Cumulative improvement resource",
         "Normalized capability C",
-        "Capability growth under recursive elasticity",
+        "Capability growth under assumed exponents",
     )
 
     candidate_count = np.array([1, 2, 4, 8, 16, 32, 64, 128])
@@ -198,7 +201,7 @@ def main() -> None:
     )
 
     summary: dict[str, object] = {
-        "disclaimer": "Synthetic parameter study; not an empirical forecast.",
+        "disclaimer": "Synthetic parameter study; path slope is not measured improvement ability. All reference scenarios have nonzero external forcing.",
         "regimes": {},
         "elasticity": {"a": 0.2, "C0": 1.0, "epsilons": elasticities},
         "search": {
@@ -241,3 +244,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
