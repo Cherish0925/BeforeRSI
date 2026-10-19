@@ -563,3 +563,242 @@ The earlier 8/2/2 view was an incomplete editorial selection. It was not the res
 ### EURISKO — historical explanation rewritten
 
 [Lenat primary paper, abstract and representation/control discussion](https://www.cs.northwestern.edu/~mek802/papers/not-mine/Lenat_EURISKO.pdf): concepts and heuristics have manipulable representations; retained rules influence later discovery. The card now explains the research problem, representation, feedback and domain limitations in Chinese. It remains historical background, outside the three contemporary LLM route views.
+
+## 2026-10-19 — v5 field maps and corrected mutable objects
+
+**Editorial structure:** `data/field-knowledge.json` organizes 29 research themes, 146 subquestions and 60 mechanism relations before attaching papers. These are explanatory survey coordinates, not a derived completeness theorem or a claim that every related method is strict RSI. Paper citations, survey comparisons, institutional affiliations and conceptual dependencies remain distinct edge types.
+
+**Source readings:** the following revisions are based on selected primary method/results passages. Results remain authors' reports; no independent replication or exhaustive resource reconstruction is claimed. The exact scope, models, distributions and budgets available from these readings are recorded in the current cards and `data/literature-reading-updates.json`. Sources and changed-object corrections also update `data/works.json`.
+
+### DGM
+
+[Primary source](https://arxiv.org/html/2505.22954v3) — arXiv v3（2026-03-12）；§3，§4.1–4.4。
+
+DGM 把 agent 自修改放进有历史档案的程序进化：被改进的 agent 也成为下一轮的改进者，基础模型权重保持冻结。 继承的是可运行代码、工具和工作流，而不是新的 LLM 权重。后继再用这些能力改写自身，因此反馈路径经过真实的软件执行与版本继承。
+
+已读自修改、父代选择、分阶段评测、消融和主要结果段落；未独立复现。
+
+### HyperAgents
+
+[Primary source](https://arxiv.org/html/2603.19461v1) — arXiv v1（2026-03-19）；§3–5.2；Appendix D.3；主文说明 Appendix E.5 为父代选择的另行探索。
+
+HyperAgents 将 task agent 与 meta-agent 放进同一可编辑程序，在 DGM 的谱系搜索上进一步开放修改策略本身。 继承的不仅是任务程序，还包括日志分析、预算安排、记忆和提出改动的方法。迁移测试将演化后的 meta-agent 固定下来，以区分已有改进能力与继续自修改。
+
+已读程序结构、主实验边界、改进能力测量和跨域迁移段落；未独立复现。
+
+### GEPA
+
+[Primary source](https://arxiv.org/pdf/2507.19457v2) — arXiv 2507.19457v2 PDF；§3、§3.1、Figure 3、Algorithms 1–2、§4。
+
+GEPA 用语言反思定位失败原因，再搜索模块提示；按任务实例维护互补候选，而非只追踪一个平均分最高的提示。 保存的提示、候选池及其成绩影响后续搜索；反思模型与外层搜索算法本身没有在这项实验中被训练或自改写。它属于 Harness 优化机制。
+
+已读反思更新、候选选择、组合机制及主要对照结果；未运行官方实现。
+
+### Self-Rewarding LM
+
+[Primary source](https://arxiv.org/html/2401.10020v1) — arXiv v1（2024-01-18）；§2.1–2.4，§3.1.3，§3.2.1–3.2.2，Tables 1–2。
+
+Self-Rewarding LM 用当前模型生成并评价回答，再由偏好对训练下一代；更新后的模型继续承担回答者与评审者。 跨轮继承模型参数及生成偏好的能力；评价 rubric 和出题流程不随之演化。训练是分轮收集偏好后做 DPO，并非 PPO 式在线交互。
+
+已读种子训练、偏好构造、两轮 DPO、评价与长度分析；未独立复现。
+
+### DeepSeekMath-V2
+
+[Primary source](https://arxiv.org/html/2511.22570v1) — arXiv v1（2025-11-27）；§2.1–2.3，§3.1–3.3；特别是 Eqs. 3、5–6。
+
+DeepSeekMath-V2 交替训练 proof verifier 与 generator，再用 meta-verification 检查批评是否成立，让验证能力追上更难的新证明。 更强 generator 提供更难判断的证明，更强 verifier 再指导生成；末两轮采用自动标注替代人工标注。持久更新发生在模型参数，评分规则仍由研究者给定。
+
+已读 verifier、meta-verifier、generator 奖励、轮间继承与推理时评测段落；未复现训练或重新审定证明。
+
+### Kimi K2
+
+[Primary source](https://arxiv.org/html/2507.20534v1) — arXiv v1（2025-07-28）；§3.2.2–3.2.3，§4；Appendix F。
+
+Kimi K2 的 Self-Critique Rubric Reward 用 critic 评价开放式回答，又以可验证任务中的当前策略轨迹更新 critic，将 RLVR 信号带入主观评价。 形成 actor → 当前轨迹 → critic 更新 → actor 奖励的反馈回路。演化对象是模型参数；人工 rubric 与训练基础设施没有在该闭环中自主改写。
+
+已读自评价奖励、critic 更新、策略目标和 rubric；本卡不覆盖整份预训练与基础设施报告。
+
+### MASS
+
+[Primary source](https://arxiv.org/html/2610.12176v1) — arXiv v1；§3（Algorithms 1–3），§4.1–4.4。
+
+MASS 交替运行 workflow evolution 与 SFT：同一代模型担任执行者、工作流优化器和评价者，下一代权重重新承担三种角色。 更新模型后重新执行、评价和优化，形成 H → 数据 → M → 新 H 的交替闭环。论文实验为两个周期；外层算法与 qwen-code 执行框架保持给定。
+
+已读工作流表示、搜索、轨迹选择、SFT 内化及主要公开测试结果；未复现私有任务与训练。
+
+### On-policy Co-evolution
+
+[Primary source](https://arxiv.org/html/2609.09134v1) — arXiv v1（2026-09-08）；§3.1–3.4，Tables 1–3；Appendix B–C。
+
+论文发现整段模仿强教师可能降低已演化 agent 的成功率；改为在学生实际访问的状态上局部纠错，再做 LoRA-SFT。 保留优化后的 Harness 与更新的学生权重；下一轮可以再围绕新学生优化 Harness。主要结果检验一次 Harness 演化后的模型适配，反复多轮属于提出的接续流程。
+
+已读 Harness 搜索、LoRA-SFT、回退分析与局部纠正结果；未复现实验。
+
+### ReST-EM
+
+[Primary source](https://arxiv.org/html/2312.06585v4) — v4：§3、Algorithm 1；§5.1–5.3、Figures 4/7
+
+当前模型采样，外部正确性检查筛选，原始基座再学习；迭代传递的是更好的训练分布。 每轮学生从同一个预训练基座重新开始，但教师是上一轮模型；新能力经生成数据传递，而非不断续训旧权重。
+
+已读方法、实验与重置基座对照；参数量未公开。结果为作者报告。
+
+### Iterative RPO
+
+[Primary source](https://arxiv.org/html/2404.19733v2) — v2：§2；§3.1–3.3；Table 1、Figures 2–3
+
+以最终答案正确性构造正负推理链，用 DPO 加正例 NLL 逐轮更新 Llama-2-70B-Chat。 上一轮权重既初始化学生，也作为 DPO reference；新模型重新采样下一轮数据，问题集与正确答案不变。
+
+已读完整方法和三个任务实验；数字均为作者报告。
+
+### Self-Taught Evaluators
+
+[Primary source](https://arxiv.org/html/2408.02666v1) — v1：§3.1–3.5、§4.1；§5.1–5.2、Tables 1–2
+
+先构造预期优劣已知的回答对，再用筛选过的自生成判断逐轮训练评价器。 每轮重新从种子模型微调，由上一轮评价器生成新的判断文本；裁决能力通过训练数据传递。
+
+已读合成回答、判断筛选、种子重置与结果；未把评价器改进等同于下游策略共同训练。
+
+### Constitutional AI
+
+[Primary source](https://arxiv.org/html/2212.08073v1) — v1：§1.2、§3.1–3.3、§4.1–4.4；Figure 2
+
+Constitution 指导自批评、修订和偏好判断；SFT 与 RLAIF 将这些反馈写入参数。 修订和偏好数据先离线生成，再进入策略训练。论文展示分阶段自改进，没有反复更新 constitution 或训练算法。
+
+已读两阶段方法、数据来源与人类评估；结果为作者报告。
+
+### LLMs Can Self-Improve
+
+[Primary source](https://aclanthology.org/2023.emnlp-main.67.pdf) — EMNLP 2023 正式版：§3–5、Figure 1、Tables 3–6
+
+PaLM 540B 用多次采样和多数投票产生伪标签，再学习通向该答案的多样推理链。 自身输出经筛选回到参数更新；主要实验是一轮 self-training，没有展示持续多代能力增长。
+
+已读方法、训练设置、域内与域外结果；年份沿用 2022 预印本，数字取 2023 正式版。
+
+### SIMA 2
+
+[Primary source](https://arxiv.org/html/2512.04797v1) — v1：§3.3.1–3.3.3；§4.5.1–4.5.2、Figures 15–17
+
+Gemini 负责提出任务与评价视频轨迹，SIMA 2 用这些交互经验继续训练。 训练后的 agent 再采集经验，评价反馈引导任务生成器聚焦弱项；改变的是 agent 参数与练习分布。
+
+已读基础训练与自生成经验实验；task setter、reward model、世界模型未报告同步参数训练。
+
+### GPT-Red
+
+[Primary source](https://cdn.openai.com/pdf/gpt-red-automated-red-teaming-via-self-play-at-scale.pdf) — 官方论文：§4–5.1；Figures 4–7；§8–9
+
+攻击者与多种防御模型共同进行 self-play RL；对手变化形成持续更新的训练课程。 双方更新后的策略成为下一轮对手。训练器与环境规则仍由外部定义，多模型共同训练本身不构成 harness 自改。
+
+已读 agentic harness、自博弈更新与核心对照；未展开具体攻击操作，结果为作者报告。
+
+### Dr. Zero
+
+[Primary source](https://arxiv.org/html/2601.07055v2) — v2：§3.1–3.4、Equations 1–5；§4、Appendix Tables 8–10
+
+proposer 检索后出题，solver 检索后解题；双方根据当前成功率交替强化学习。 更新后的 solver 改变题目成功率，进而改变 proposer 的奖励与下一轮题目；两个参数化策略交替更新。
+
+已读方法、模型规模及 HRPO/GRPO 对照；不把无人工 QA 数据表述成无外部信息。
+
+### Skill Self-Play
+
+[Primary source](https://arxiv.org/html/2607.22529v1) — v1：§3.1–3.4、Algorithm 1；§4.1–4.4、Tables 3–4
+
+proposer/solver 的 RL 与外部 skill library 更新联动；技能携带生成规则、示例及可执行验证器。 固定初始模型担任 skill controller，从失败轨迹修订技能、从探索归纳新技能、淘汰已过易的技能。参数与外部知识库均被保留到下一轮。
+
+已读目标、验证器、双策略更新及技能库生命周期；数字与对照均为作者报告。
+
+### EvoTrainer
+
+[Primary source](https://arxiv.org/html/2606.03108v2) — v2：§3.1–3.6；§4.1–4.4、Tables 2–3
+
+目标策略通过 RL 更新；固定权重的 trainer agent 修改训练 harness，并积累可复用的分析技能。 训练结果促使 trainer 修订分析工具并选择后续方案；版本与技能跨轮保留。训练启动和版本晋升仍由人确认。
+
+已读训练侧 harness、RL 配方、权限分工与实验；Math/Coding 训练对象参数量未据评价器型号推断。
+
+### STOP
+
+[Primary source](https://arxiv.org/pdf/2310.02304) — arXiv:2310.02304v3（COLM 2024），§3–5，Algorithm 1，Figure 4，Table 1。
+
+STOP 将调用固定 LLM 的代码改进器本身作为优化对象；后继改进器继续承担下一轮自修改。 后继源码实际进入下一轮自修改，因而搜索策略可以被继承。作者观察到 beam search、遗传搜索等策略，但每轮性能并不保证单调增长。
+
+已读问题形式化、递归算法、固定任务实验及五任务迁移实验；未逐项检查全部附录代码。
+
+### Promptbreeder
+
+[Primary source](https://arxiv.org/pdf/2309.16797) — arXiv:2309.16797v1，§3–6、Figure 1–2、Table 1；ICML 2024 论文页面核对出版信息。
+
+种群中的 task-prompts 与 mutation-prompt 一起传递；固定 LLM 既执行任务，也生成两类提示的变体。 更新后的任务提示和关联变异提示进入后继种群，影响以后候选的产生。初始任务描述、thinking styles 和变异算子框架由研究者提供，不是所有搜索规则都自动演化。
+
+已读演化单元、两级提示变异、锦标赛、算子设计及实验设置与主结果；未逐条分析所有生成提示。
+
+### SICA
+
+[Primary source](https://arxiv.org/html/2504.15228v1) — arXiv:2504.15228v1，§3、Algorithm 1、§4、Table 1、§4.1。
+
+SICA 从版本档案中选取效用最高的 agent，由它修改自身代码；选拔同时考虑任务表现、时间和费用。 候选版本及分数存入档案，被选中的版本成为后续修改者。轨迹中出现 diff/range 编辑器和 AST 符号定位器，具体工具改变成为可复用的系统资产。
+
+已读初始 agent 结构、自指更新算法、效用函数、逐轮编码结果及推理任务实验。
+
+### ACE
+
+[Primary source](https://arxiv.org/html/2510.04618v1) — arXiv:2510.04618v1，§2.2、§3.1–3.2、§4.1–4.3、Table 1；§4.5–4.6 的组件和成本分析。
+
+ACE 维护条目化 playbook：Reflector 从轨迹提炼经验，Curator 生成局部 delta，由确定性逻辑合并。 离线模式在训练数据上积累 playbook 后用于测试；在线模式先用当前 playbook 作答，再依据该任务反馈更新。继承的是可复用经验，维护算法本身保持固定。
+
+已读 context collapse 动机、条目化更新、三角色算法、离线/在线评测协议、主表和相关分析。
+
+### ADAS
+
+[Primary source](https://arxiv.org/html/2408.08435v1) — arXiv:2408.08435v1，§2–3、§4.1–4.3、Figure 3、Table 1；Appendix A–B 的接口与提示。
+
+固定 meta-agent 读取历史设计与验证结果，编写目标 agent 的 forward 函数；发现的设计进入不断扩充的档案。 后续搜索读取候选源码、得分和置信区间；被继承的是设计经验与代码。评价函数、搜索外循环和 meta-agent 实现由研究者固定，目标 agent 的成功不会自动升级设计器。
+
+已读代码搜索空间、Meta Agent Search、ARC/推理任务设置及跨模型/跨任务迁移结果；未重跑其搜索。
+
+### AFlow
+
+[Primary source](https://arxiv.org/html/2410.10762v4) — arXiv:2410.10762v4（ICLR 2025），§3.1–3.2、§4、Algorithm 1、§5.1–5.2、Table 1。
+
+AFlow 用 MCTS 变体搜索完整 workflow；LLM 根据执行反馈修改提示与代码连接，外层搜索算法保持固定。 保存相对父 workflow 的改动、效果及错误日志，下次扩展时复用这些经验。新 workflow 进入搜索树，但不替换搜索器代码；其能力积累发生在候选程序和搜索经验中。
+
+本轮补读搜索空间、MCTS 变体、五次评测、数据划分及主实验结果；从摘要初筛升级为方法已读。
+
+### Meta-Harness
+
+[Primary source](https://arxiv.org/html/2603.28052v1) — arXiv:2603.28052v1，§3、Algorithm 1、§4.1–4.3、Tables 2–7；尤其 §4.3 的同基准搜索设置。
+
+Meta-Harness 将每个候选的源码、分数和轨迹保存在文件系统中；固定 proposer 自行检索历史并改写目标 harness。 后续迭代可读取任意先前源码及 raw traces，再修改算法结构。保留的是候选种群和完整搜索经历；分类、数学的留出测试不反馈给 proposer，外层执行协议保持固定。
+
+本轮补读搜索方法、文件化反馈、分类主结果/OOD、数学迁移和终端任务设置与结果；未重跑候选程序。
+
+### Live-SWE-agent
+
+[Primary source](https://arxiv.org/html/2511.13646v1) — arXiv:2511.13646v1，§2.1–2.2、§3、§4.1–4.2、Tables 1–3；§2.1 明确“不改变 agentic loop”。
+
+Live-SWE-agent 在 mini-SWE-agent 的固定循环中加入工具创建与反思提示；实际变化是运行环境内的 custom tool scripts。 脚本执行输出和 issue 的测试反馈影响当前任务中的后续工具设计。论文展示同一任务内的创建、使用与修订，没有建立跨 issue 持久工具库或代际改进器替换实验。
+
+本轮补读工具合成算法、mini-SWE-agent 实现、预算、完整数据集主结果与工具案例；结果固定引用 v1。
+
+### WebEvolver
+
+[Primary source](https://arxiv.org/html/2504.21024v2) — v2：§3.1–3.3、§4.1–4.4，Tables 1–3
+
+策略 LLM 与 world-model LLM 从交互轨迹中共同训练；世界模型提供合成经验与前瞻规划。可变对象是两类模型的参数。 新策略继续采样，经验更新两个模型；实验使用特定迭代的模型组合，并非每轮统一同步更新。
+
+已读方法、训练对象、迭代设置与主要结果；未复现实验。
+
+### Principal-route corrections
+
+- **Dream-RSI → Harness.** [§3, policy improvement/selection; Appendix D.2](https://arxiv.org/html/2609.14858v2): the LLM edits executable exploration-policy code while the base agent and evaluator are fixed. The earlier wording incorrectly suggested policy-weight learning.
+- **SEED Distillation → Model.** [§3 opening, §3.3 and Figure 2](https://arxiv.org/html/2607.14777v1): one policy acts as actor/analyzer; training-time hindsight skills provide distillation signals, and the analyzer is removed at inference. This supports internalization, not demonstrated persistent nonparametric coevolution.
+- **WebEvolver → Model.** [§3.1–3.3 and §4.1–4.2](https://arxiv.org/html/2504.21024v2): both policy and world-model LLMs are trained from trajectories, using Llama-3.3-70B. Co-learning multiple parameterized models does not itself imply a mutable nonparametric harness. The world model generates training experience and supports WMLA; the inference search and GPT-4o evaluation are separately accounted for.
+- **RewardHarness → Harness.** [§1–3.2 and §4](https://arxiv.org/html/2605.08703v1): reward-agent base models remain frozen while tools/skills evolve. Subsequent GRPO training of an external image model is a cross-route application, not a demonstrated reverse feedback loop into the reward system.
+
+### Actual training scale
+
+[WebRL abstract v3](https://arxiv.org/abs/2411.02337) identifies Llama-3.1-8B and GLM-4-9B as the learned web policies. They are placed in the sub-27B supplement without a paper-quality rejection.
+
+[MemSkill §3.3.2, §3.4 and §4.1](https://arxiv.org/html/2602.02474v1) trains a lightweight MLP skill-selection controller with PPO; its exact parameter count is not provided in the read passage. A 0.6B embedding encoder is described separately. LLaMA-3.3-70B is an API executor and Qwen3-Next-80B-A3B a transfer model. The sizes of these frozen LLMs do not establish a ≥27B trained target.
+
+### Two additional explicit paper relations
+
+[ReST-EM §4](https://arxiv.org/html/2312.06585v4) relates Huang et al.'s self-training to a single iteration using majority voting rather than correctness rewards. [EvoTrainer §2.2](https://arxiv.org/html/2606.03108v2) explicitly discusses Meta-Harness and distinguishes inference-time harness search from training-side diagnostic evolution. These are discussion/comparison links, not a claim of implementation inheritance.

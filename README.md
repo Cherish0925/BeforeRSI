@@ -18,27 +18,29 @@
 
 ---
 
-## 先读三张 RSI 知识图谱
+## 三张领域知识图谱：先看研究结构，再读论文
 
-**[交互式 HTML：下载后可离线阅读](research/atlas/index.html)** · **[图谱导读与统计](RESEARCH_ATLAS.md)** · **[127 项阅读档案](research/atlas/literature-cards.md)** · **[参考文献](research/atlas/references.md)**
+**[打开 RSI_Field_Atlas_v5.html](research/atlas/RSI_Field_Atlas_v5.html)** · **[领域结构文字版](research/atlas/field-guide.md)** · **[127 项阅读档案](research/atlas/literature-cards.md)** · **[参考文献](research/atlas/references.md)**
 
-![三条研究路线总览](assets/atlas/landscape-overview.png)
+![首页直接呈现三张领域知识图谱](assets/atlas/landscape-overview.png)
 
-| 路线 | 目录位置 | 方法段落已读 | 摘要初筛 | 默认图中显示 |
-|---|---:|---:|---:|---:|
-| Harness | 38 | 16 | 22 | 38 |
-| Model | 34 | 14 | 20 | 29 |
-| Model × Harness | 25 | 8 | 17 | 22 |
+三条路线包含 **29 个研究主题、146 个子问题、60 条机制联系**。首页直接显示三张图；进入路线后可展开全部子问题，也可点击主题查看关键问题、技术、相邻联系及论文与团队。图谱首先组织研究对象和机制，再挂接公开工作；空白研究位置不会因当前目录缺少论文而消失。
 
-三条路线共 97 项，包含相关学习机制、AI4AI 支撑和初筛候选；另有 8 项跨路线评测/理论及 22 项历史/背景，共 127 项。**这些是当前目录的位置和阅读进度，不是全领域总数，也不是“只有这些工作有价值”。** 已确认低于 27B 的 8 项 Model/混合研究放入补充区；未知规模单独标明。
+| 领域图 | 组织主线 | 研究主题 | 子问题 |
+|---|---|---:|---:|
+| Harness | 可修改资产 → 反馈、搜索与选择 → 改进器、继承与迁移 | 10 | 51 |
+| Model | 自生成经验、偏好、验证、评价者、课程与参数学习之间的关系 | 10 | 51 |
+| Model × Harness | 外部经验内化、能力用于系统改写、共同适配与双向反馈 | 9 | 44 |
 
-每张图以研究问题和方法组织论文，可沿明确扩展、采用、比较、讨论或综述方法对照继续阅读；每条具体关系附两端团队与来源。当前共 43 条论文关系，其中 13 条原文明示，30 条综述对照。论文卡片围绕目标、思想、原理、算法、迭代、成果展开；摘要档案不冒充完整方法阅读。
+[Harness 领域图](assets/atlas/harness-field-graph.svg) · [Model 领域图](assets/atlas/model-field-graph.svg) · [Model × Harness 领域图](assets/atlas/hybrid-field-graph.svg)。图中关系的解释与原文例证可点击读取；论文关系图另外区分明确引用、扩展与方法对照。
 
-[Harness 静态图](assets/atlas/harness-graph.svg) · [Model 静态图](assets/atlas/model-graph.svg) · [Model × Harness 静态图](assets/atlas/hybrid-graph.svg)。当前 HTML 专门呈现公开文献，不含项目自己的理论或方案。原九页 PDF 保留为 2026-10-18 快照。
+当前论文目录位置为 **40 / 35 / 22**，共 97 项路线研究；加上 8 项跨路线评测/理论与 22 项历史/背景，共 127 项。45 项已有选定方法段落阅读，60 项仍是摘要/来源初筛，22 项为历史背景。45 条论文关系包括 15 条原文明示关系、30 条综述对照。**这些是收录和阅读进度，不是全领域总数或最终质量排名。**
+
+已确认低于 27B 的 9 项 Model/混合机制参考默认不进入论文主视图，规模未知另行标记。A–F 卡片解释目标、思想、原理、方法、反馈和成果；本次重写 27 项，并纠正 Dream-RSI、SEED Distillation、WebEvolver、RewardHarness 的主路线位置。HTML 专门呈现公开文献，不含项目自己的理论或方案。旧 PDF 保留为 2026-10-18 快照。
 
 ## What must be true before RSI is real?
 
-**Current scope and coverage:** The catalog preserves 127 entries: 97 route positions, 8 cross-route evaluation/theory references, and 22 historical/background items. The current reader contains 41 selected-method cards and 64 abstract/source screens. The earlier 38 claim reviews and 19-case shortlist remain a separate, dated review record; neither is a field census. A universal predictive theory has not been established.
+**Current scope and coverage:** The catalog preserves 127 entries: 97 route positions, 8 cross-route evaluation/theory references, and 22 historical/background items. The current reader contains 45 selected-method cards and 60 abstract/source screens. The earlier 38 claim reviews and 19-case shortlist remain a separate, dated review record; neither is a field census. A universal predictive theory has not been established.
 
 **BeforeRSI** studies one question:
 

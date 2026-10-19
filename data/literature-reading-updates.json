@@ -1,0 +1,449 @@
+{
+  "updated": "2026-10-19",
+  "statement_type": "bounded primary-source readings; classification consequences are marked separately",
+  "records": [
+    {
+      "work_id": "stop",
+      "reading_update_20261019": {
+        "scope": "已读问题形式化、递归算法、固定任务实验及五任务迁移实验；未逐项检查全部附录代码。",
+        "location": "arXiv:2310.02304v3（COLM 2024），§3–5，Algorithm 1，Figure 4，Table 1。"
+      }
+    },
+    {
+      "work_id": "promptbreeder",
+      "reading_update_20261019": {
+        "scope": "已读演化单元、两级提示变异、锦标赛、算子设计及实验设置与主结果；未逐条分析所有生成提示。",
+        "location": "arXiv:2309.16797v1，§3–6、Figure 1–2、Table 1；ICML 2024 论文页面核对出版信息。"
+      }
+    },
+    {
+      "work_id": "self-rewarding-lm",
+      "method_reading_20261019": {
+        "changed": "Llama 2 70B 的生成与评审参数",
+        "feedback": "当前模型的 rubric 评分形成偏好对",
+        "retained": "M1 → M2 → M3 的模型权重",
+        "fixed": "问题生成模型、评分提示；Claude 2 用于验证集早停。",
+        "task_distribution": "人工种子和合成指令用于训练；另用指令测试集和留出的人类偏好评价。",
+        "budget": "一次种子 SFT；两轮 DPO。",
+        "claim_type": "source fact；奖励能力改善为有限轮次的实证。"
+      },
+      "reading_update_20261019": {
+        "scope": "已读种子训练、偏好构造、两轮 DPO、评价与长度分析；未独立复现。",
+        "location": "arXiv v1（2024-01-18）；§2.1–2.4，§3.1.3，§3.2.1–3.2.2，Tables 1–2。"
+      }
+    },
+    {
+      "work_id": "adas",
+      "reading_update_20261019": {
+        "scope": "已读代码搜索空间、Meta Agent Search、ARC/推理任务设置及跨模型/跨任务迁移结果；未重跑其搜索。",
+        "location": "arXiv:2408.08435v1，§2–3、§4.1–4.3、Figure 3、Table 1；Appendix A–B 的接口与提示。"
+      }
+    },
+    {
+      "work_id": "aflow",
+      "reading_update_20261019": {
+        "scope": "本轮补读搜索空间、MCTS 变体、五次评测、数据划分及主实验结果；从摘要初筛升级为方法已读。",
+        "location": "arXiv:2410.10762v4（ICLR 2025），§3.1–3.2、§4、Algorithm 1、§5.1–5.2、Table 1。"
+      }
+    },
+    {
+      "work_id": "sica",
+      "reading_update_20261019": {
+        "scope": "已读初始 agent 结构、自指更新算法、效用函数、逐轮编码结果及推理任务实验。",
+        "location": "arXiv:2504.15228v1，§3、Algorithm 1、§4、Table 1、§4.1。"
+      }
+    },
+    {
+      "work_id": "dgm",
+      "method_reading_20261019": {
+        "changed": "agent 代码中的工具、提示与工作流",
+        "feedback": "编码任务执行日志和成功率",
+        "retained": "可执行 agent 版本及其谱系档案",
+        "fixed": "基础模型权重；主实验的档案维护、父代选择与评测流程",
+        "models": "自修改使用 Claude 3.5 Sonnet (New)；Polyglot 评测使用 o3-mini。",
+        "task_distribution": "搜索使用 SWE-bench / Polyglot 子集；最佳版本另在全量 Polyglot 评测。",
+        "budget": "每个主要搜索实验 80 轮；各候选采用不同规模的分阶段评测。",
+        "claim_type": "source fact；结果为作者报告。"
+      },
+      "reading_update_20261019": {
+        "scope": "已读自修改、父代选择、分阶段评测、消融和主要结果段落；未独立复现。",
+        "location": "arXiv v3（2026-03-12）；§3，§4.1–4.4。"
+      }
+    },
+    {
+      "work_id": "gepa",
+      "method_reading_20261019": {
+        "changed": "各 LLM 模块的 prompt",
+        "feedback": "任务分数、执行轨迹、编译/评测文本反馈",
+        "retained": "提示候选、逐实例成绩、祖先关系",
+        "fixed": "被优化模型权重；反思模型；优化器与评测函数",
+        "task_distribution": "训练反馈集与 Pareto 选择集分开；最终报告测试集表现。",
+        "models": "主要 GRPO 对照：Qwen3-8B；另有其他模型及代码生成扩展实验。",
+        "classification": "外部 Harness 优化器；未展示优化器自身递归改进。",
+        "claim_type": "source fact；效率限定为论文计量口径。"
+      },
+      "reading_update_20261019": {
+        "scope": "已读反思更新、候选选择、组合机制及主要对照结果；未运行官方实现。",
+        "location": "arXiv 2507.19457v2 PDF；§3、§3.1、Figure 3、Algorithms 1–2、§4。"
+      }
+    },
+    {
+      "work_id": "hyperagents",
+      "method_reading_20261019": {
+        "changed": "task agent 与 meta-agent 的 Python 实现",
+        "feedback": "领域任务评测、历史日志、剩余实验预算",
+        "retained": "包含任务程序和修改程序的后继版本及谱系",
+        "fixed": "基础模型权重；主文的父代选择和评测规则",
+        "task_distribution": "代码、论文接收预测、机器人奖励设计；迁往 Olympiad-level math grading。",
+        "budget": "元层迁移实验固定 50 次修改，以 imp@50 比较。",
+        "claim_type": "source fact；泛化表述限于报告的跨域实验。"
+      },
+      "reading_update_20261019": {
+        "scope": "已读程序结构、主实验边界、改进能力测量和跨域迁移段落；未独立复现。",
+        "location": "arXiv v1（2026-03-19）；§3–5.2；Appendix D.3；主文说明 Appendix E.5 为父代选择的另行探索。"
+      }
+    },
+    {
+      "work_id": "meta-harness",
+      "reading_update_20261019": {
+        "scope": "本轮补读搜索方法、文件化反馈、分类主结果/OOD、数学迁移和终端任务设置与结果；未重跑候选程序。",
+        "location": "arXiv:2603.28052v1，§3、Algorithm 1、§4.1–4.3、Tables 2–7；尤其 §4.3 的同基准搜索设置。"
+      }
+    },
+    {
+      "work_id": "mass",
+      "method_reading_20261019": {
+        "changed": "多代理 workflow 文本与 Qwen3.6-27B 参数",
+        "feedback": "当前模型对任务交付物的成对评价；外部强模型与公开基准用于报告结果",
+        "retained": "任务工作流、选中轨迹、代际模型权重",
+        "fixed": "qwen-code 0.20.0；外层工作流搜索与 SFT 流程",
+        "models": "Qwen3.6-27B-FP8；同一代模型担任 executor / optimizer / evaluator。",
+        "task_distribution": "合成研究编程任务中 8 项进入轨迹训练；另有合成留出任务与 6 个公开基准。",
+        "budget": "两个交替周期；论文另区分存储 token 与实际处理 token。",
+        "claim_type": "source fact；公开测试有改善也有回退。"
+      },
+      "reading_update_20261019": {
+        "scope": "已读工作流表示、搜索、轨迹选择、SFT 内化及主要公开测试结果；未复现私有任务与训练。",
+        "location": "arXiv v1；§3（Algorithms 1–3），§4.1–4.4。"
+      }
+    },
+    {
+      "work_id": "dream-rsi",
+      "route_classification_20261019": {
+        "route": "harness",
+        "reason": "可执行探索策略代码被 LLM 改写；基础 agent 保持不变。",
+        "source": "https://arxiv.org/html/2609.14858v2",
+        "location": "§3 Policy improvement and selection; Appendix D.2"
+      }
+    },
+    {
+      "work_id": "ace",
+      "reading_update_20261019": {
+        "scope": "已读 context collapse 动机、条目化更新、三角色算法、离线/在线评测协议、主表和相关分析。",
+        "location": "arXiv:2510.04618v1，§2.2、§3.1–3.2、§4.1–4.3、Table 1；§4.5–4.6 的组件和成本分析。"
+      }
+    },
+    {
+      "work_id": "rest-em",
+      "method_reading_20261019": {
+        "training_stage": "post-training",
+        "update": "reward-filtered SFT / EM-style policy improvement",
+        "data_regime": "每轮在线生成一个批次，随后离线优化；不是逐梯度步刷新样本的在线 RL",
+        "inheritance": "上一轮模型生成的数据；学生权重重置至原基座"
+      },
+      "reading_update_20261019": {
+        "scope": "已读方法、实验与重置基座对照；参数量未公开。结果为作者报告。",
+        "location": "v4：§3、Algorithm 1；§5.1–5.3、Figures 4/7"
+      }
+    },
+    {
+      "work_id": "sima2",
+      "method_reading_20261019": {
+        "model": "Gemini Flash-Lite backbone / SIMA 2；参数量未披露",
+        "training_stage": "SFT → online RL（基础阶段）→ 自生成经验适配实验",
+        "update": "自改实验更新损失未具体公开；不与基础在线 RL 混写",
+        "changed_objects": [
+          "SIMA 2 参数",
+          "反馈驱动的练习任务分布"
+        ]
+      },
+      "reading_update_20261019": {
+        "scope": "已读基础训练与自生成经验实验；task setter、reward model、世界模型未报告同步参数训练。",
+        "location": "v1：§3.3.1–3.3.3；§4.5.1–4.5.2、Figures 15–17"
+      }
+    },
+    {
+      "work_id": "constitutional-ai",
+      "method_reading_20261019": {
+        "model": "Anthropic 52B policy（论文亦含其他规模）",
+        "training_stage": "post-training",
+        "update": "critique–revision SFT, then RL from AI Feedback",
+        "human_inputs": "constitution、提示示例、帮助性偏好及其他既有训练数据"
+      },
+      "reading_update_20261019": {
+        "scope": "已读两阶段方法、数据来源与人类评估；结果为作者报告。",
+        "location": "v1：§1.2、§3.1–3.3、§4.1–4.4；Figure 2"
+      }
+    },
+    {
+      "work_id": "self-taught-evaluators",
+      "method_reading_20261019": {
+        "model": "Llama3-70B-Instruct",
+        "auxiliary_model": "Mixtral-8x22B-Instruct 生成/分类数据及初始判断",
+        "training_stage": "post-training",
+        "update": "offline SFT on judgment traces",
+        "inheritance": "上一轮生成的判断；每轮学生从种子权重重新微调"
+      },
+      "reading_update_20261019": {
+        "scope": "已读合成回答、判断筛选、种子重置与结果；未把评价器改进等同于下游策略共同训练。",
+        "location": "v1：§3.1–3.5、§4.1；§5.1–5.2、Tables 1–2"
+      }
+    },
+    {
+      "work_id": "gpt-red",
+      "method_reading_20261019": {
+        "training_stage": "post-training",
+        "update": "online self-play RL，攻击者与防御者同时训练",
+        "changed_objects": [
+          "attacker parameters",
+          "defender parameters"
+        ],
+        "retained_external_structure": "red-teaming harness 与环境奖励规则未报告被学习修改"
+      },
+      "reading_update_20261019": {
+        "scope": "已读 agentic harness、自博弈更新与核心对照；未展开具体攻击操作，结果为作者报告。",
+        "location": "官方论文：§4–5.1；Figures 4–7；§8–9"
+      }
+    },
+    {
+      "work_id": "dr-zero",
+      "method_reading_20261019": {
+        "models": [
+          "Qwen2.5-3B-Instruct",
+          "Qwen2.5-7B-Instruct"
+        ],
+        "training_stage": "post-training",
+        "update": "proposer: on-policy HRPO; solver: GRPO",
+        "inheritance": "两方权重与其共同决定的下一轮问题分布",
+        "scale_status": "below"
+      },
+      "reading_update_20261019": {
+        "scope": "已读方法、模型规模及 HRPO/GRPO 对照；不把无人工 QA 数据表述成无外部信息。",
+        "location": "v2：§3.1–3.4、Equations 1–5；§4、Appendix Tables 8–10"
+      }
+    },
+    {
+      "work_id": "skill-self-play",
+      "method_reading_20261019": {
+        "models": [
+          "Granite-4.1-3B",
+          "Qwen3-4B-Instruct",
+          "Qwen3-8B",
+          "Ministral-3-8B-Instruct",
+          "Ministral-3-14B-Instruct"
+        ],
+        "training_stage": "post-training",
+        "update": "GRPO for proposer and solver; external skill edits/induction/pruning",
+        "controller": "固定初始 backbone，未报告 controller 参数共同训练",
+        "scale_status": "below"
+      },
+      "reading_update_20261019": {
+        "scope": "已读目标、验证器、双策略更新及技能库生命周期；数字与对照均为作者报告。",
+        "location": "v1：§3.1–3.4、Algorithm 1；§4.1–4.4、Tables 3–4"
+      }
+    },
+    {
+      "work_id": "evotrainer",
+      "method_reading_20261019": {
+        "trainer": "Claude Sonnet 4.6，权重固定",
+        "trained_models": "SWE 4B / 9B；Math/Coding 参数量未明确",
+        "training_stage": "post-training",
+        "update": "GRPO-style policy training + training-harness code/skills revision",
+        "human_role": "启动训练和版本晋升需要确认"
+      },
+      "reading_update_20261019": {
+        "scope": "已读训练侧 harness、RL 配方、权限分工与实验；Math/Coding 训练对象参数量未据评价器型号推断。",
+        "location": "v2：§3.1–3.6；§4.1–4.4、Tables 2–3"
+      }
+    },
+    {
+      "work_id": "memskill",
+      "scale_check_20261019": {
+        "trainable_model": {
+          "name": "lightweight MLP skill-selection controller",
+          "total_b": null,
+          "algorithm": "PPO",
+          "parameter_count_status": "论文已读正文未报告controller精确参数量"
+        },
+        "shared_encoder": {
+          "name": "Qwen3-Embedding-0.6B",
+          "total_b": 0.6,
+          "trainable_status": "此段说明用作shared encoder；不据此声称0.6B全部训练"
+        },
+        "frozen_models": [
+          {
+            "name": "LLaMA-3.3-70B-Instruct",
+            "total_b": 70,
+            "role": "API base LLM / executor；训练controller时使用"
+          },
+          {
+            "name": "Qwen3-Next-80B-A3B-Instruct",
+            "total_b": 80,
+            "active_b": 3,
+            "role": "API base LLM；transfer evaluation only"
+          }
+        ],
+        "source_url": "https://arxiv.org/html/2602.02474v1",
+        "source_location": "§3.3.2; §3.4; §4.1 Implementation Details; Table1 footnote"
+      }
+    },
+    {
+      "work_id": "on-policy-harness-coevolution",
+      "method_reading_20261019": {
+        "changed": "提示、工具、hooks、上下文与子代理设置；随后学生模型 LoRA 参数",
+        "feedback": "任务成功率与学生真实失败轨迹；强教师局部改写",
+        "retained": "演化 Harness 与适配后的学生模型",
+        "fixed": "任务环境与测试划分；教师及局部纠正流程",
+        "models": "主实验 Qwen3-Coder-30B-A3B；Gemma-4-26B-A4B 为补充；教师 Gemini 3.1 Pro Preview。",
+        "task_distribution": "七项企业 agent 任务；训练/验证用于优化，测试留出；多数结果平均三次运行。",
+        "claim_type": "机制与数字是 source fact；planning-strategy drift 为作者解释，非普遍定理。"
+      },
+      "reading_update_20261019": {
+        "scope": "已读 Harness 搜索、LoRA-SFT、回退分析与局部纠正结果；未复现实验。",
+        "location": "arXiv v1（2026-09-08）；§3.1–3.4，Tables 1–3；Appendix B–C。"
+      }
+    },
+    {
+      "work_id": "rewardharness",
+      "route_classification_20261019": {
+        "route": "harness",
+        "reason": "主贡献是评价Harness演化；下游训练提供跨路线联系，未建立更新目标反向改进奖励系统的闭环。",
+        "source": "https://arxiv.org/html/2605.08703v1",
+        "location": "Abstract; §1; §2; §3.2; §4"
+      }
+    },
+    {
+      "work_id": "webevolver",
+      "reading_update_20261019": {
+        "scope": "已读方法、训练对象、迭代设置与主要结果；未复现实验。",
+        "location": "v2：§3.1–3.3、§4.1–4.4，Tables 1–3"
+      },
+      "route_classification_20261019": {
+        "route": "model",
+        "reason": "同时改多个模型仍是参数侧共学；已读方法没有非参数工作流/工具/环境包装被优化。",
+        "source": "https://arxiv.org/html/2504.21024v2",
+        "location": "§3.1–3.3, equations(5),(8)–(11)"
+      },
+      "scale_check_20261019": {
+        "models": [
+          {
+            "name": "Llama-3.3-70B policy",
+            "total_b": 70,
+            "role": "实际训练的网页策略"
+          },
+          {
+            "name": "Llama-3.3-70B world model",
+            "total_b": 70,
+            "role": "实际训练的网页世界模型"
+          }
+        ],
+        "source": "https://arxiv.org/html/2504.21024v2",
+        "location": "§4.1–4.2"
+      }
+    },
+    {
+      "work_id": "webrl",
+      "scale_check_20261019": {
+        "models": [
+          {
+            "name": "Llama-3.1-8B",
+            "total_b": 8,
+            "role": "实际训练的网页策略"
+          },
+          {
+            "name": "GLM-4-9B",
+            "total_b": 9,
+            "role": "实际训练的网页策略"
+          }
+        ],
+        "source": "https://arxiv.org/abs/2411.02337",
+        "location": "v3 abstract"
+      }
+    },
+    {
+      "work_id": "live-swe-agent",
+      "reading_update_20261019": {
+        "scope": "本轮补读工具合成算法、mini-SWE-agent 实现、预算、完整数据集主结果与工具案例；结果固定引用 v1。",
+        "location": "arXiv:2511.13646v1，§2.1–2.2、§3、§4.1–4.2、Tables 1–3；§2.1 明确“不改变 agentic loop”。"
+      }
+    },
+    {
+      "work_id": "seed-distillation",
+      "route_classification_20261019": {
+        "route": "model",
+        "reason": "明确更新模型参数；未显示持久非参数harness共同演化。",
+        "source": "https://arxiv.org/html/2607.14777v1",
+        "location": "§3 opening; §3.3; Fig.2"
+      }
+    },
+    {
+      "work_id": "iterative-rpo",
+      "method_reading_20261019": {
+        "model": "Llama-2-70B-Chat",
+        "training_stage": "post-training",
+        "update": "iterative offline DPO + length-normalized positive NLL",
+        "inheritance": "继承上一轮策略权重、刷新偏好对；上一轮策略同时充当 reference",
+        "important_correction": "GSM8K 正例池包含数据集提供的人工正确推理链"
+      },
+      "reading_update_20261019": {
+        "scope": "已读完整方法和三个任务实验；数字均为作者报告。",
+        "location": "v2：§2；§3.1–3.3；Table 1、Figures 2–3"
+      }
+    },
+    {
+      "work_id": "deepseek-math-v2",
+      "method_reading_20261019": {
+        "changed": "证明验证、元验证与证明生成的模型参数",
+        "feedback": "初始专家标注；随后多次验证与元验证形成标签和奖励",
+        "retained": "验证/生成 checkpoint，轮间 rejection fine-tuning 汇合能力",
+        "fixed": "证明评分 rubric、训练算法、题目池与外层自动标注流程",
+        "models": "DeepSeek-V3.2-Exp-Base 系列；此卡聚焦后训练机制。",
+        "task_distribution": "竞赛证明题训练池；CNML、IMO/CMO/Putnam、ISL 与 IMO-ProofBench 评测；各评测的生成/选优预算不同。",
+        "claim_type": "source fact；可验证性指训练出的自然语言检查能力。"
+      },
+      "reading_update_20261019": {
+        "scope": "已读 verifier、meta-verifier、generator 奖励、轮间继承与推理时评测段落；未复现训练或重新审定证明。",
+        "location": "arXiv v1（2025-11-27）；§2.1–2.3，§3.1–3.3；特别是 Eqs. 3、5–6。"
+      }
+    },
+    {
+      "work_id": "kimi-k2",
+      "method_reading_20261019": {
+        "changed": "actor 与 critic 的模型能力/参数",
+        "feedback": "rubric 成对偏好与可验证任务的 on-policy 信号",
+        "retained": "持续更新的 actor / critic checkpoint",
+        "fixed": "人工评价 rubric；训练算法与基础设施",
+        "models": "Kimi K2，约 1T 总参数、32B 激活；不把 actor/critic 自动解释为始终共享同一 checkpoint。",
+        "task_distribution": "可验证任务提供反馈锚点；开放任务接受 critic 奖励；最终模型另作广域评测。",
+        "claim_type": "source fact；不从整模型成绩反推单机制因果增益。"
+      },
+      "reading_update_20261019": {
+        "scope": "已读自评价奖励、critic 更新、策略目标和 rubric；本卡不覆盖整份预训练与基础设施报告。",
+        "location": "arXiv v1（2025-07-28）；§3.2.2–3.2.3，§4；Appendix F。"
+      }
+    },
+    {
+      "work_id": "llm-can-self-improve",
+      "method_reading_20261019": {
+        "model": "PaLM 540B",
+        "training_stage": "post-training",
+        "update": "self-consistency filtered offline SFT",
+        "inheritance": "本次生成的推理训练数据回流参数；主要实验为单轮"
+      },
+      "reading_update_20261019": {
+        "scope": "已读方法、训练设置、域内与域外结果；年份沿用 2022 预印本，数字取 2023 正式版。",
+        "location": "EMNLP 2023 正式版：§3–5、Figure 1、Tables 3–6"
+      }
+    }
+  ]
+}

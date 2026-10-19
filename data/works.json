@@ -149,7 +149,7 @@
       ],
       "evidence_status": "reported",
       "audit_status": "in_progress",
-      "central_limit": "任务规模有限；作者也未称为全部组件均可改的完整 RSI。",
+      "central_limit": "实验覆盖小规模算法任务和有限递归轮次；不能推出每轮改进、开放领域增长或模型权重自改进。",
       "sources": [
         {
           "type": "repository",
@@ -162,6 +162,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/pdf/2310.02304v3"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2310.02304"
         }
       ]
     },
@@ -177,7 +181,7 @@
       ],
       "evidence_status": "reported",
       "audit_status": "in_progress",
-      "central_limit": "提示演化不等于模型训练，也不证明开放任务上的持续加速。",
+      "central_limit": "变异指令参与演化，但 prompting topology、外层遗传算法与基础模型固定；不等于模型参数训练或整个优化器代码自修改。",
       "sources": [
         {
           "type": "paper",
@@ -186,6 +190,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/pdf/2309.16797v1"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2309.16797"
         }
       ]
     },
@@ -252,7 +260,7 @@
       ],
       "evidence_status": "reported",
       "audit_status": "pending",
-      "central_limit": "实际新题由固定 Llama 2-Chat 70B 生成；有人类种子、外部评审和早停。不证明无外部信息或无限递归增长。 规模核对：Llama 2 70B；两轮偏好集分别 3,964 / 6,942 对；256 题成对比较与 805 题 AlpacaEval 2。",
+      "central_limit": "实际新题由固定 Llama 2-Chat 70B 生成；有人类种子、外部评审和早停。不证明无外部信息或无限递归增长。",
       "sources": [
         {
           "type": "paper",
@@ -303,7 +311,7 @@
       ],
       "evidence_status": "reported",
       "audit_status": "in_progress",
-      "central_limit": "自动设计前身；生成的目标 agent 没有替换固定 meta-agent。",
+      "central_limit": "具体实验搜索 forward 函数；开放代码空间的理论表达能力不等于任意 agent 架构均被有效搜索。",
       "sources": [
         {
           "type": "repository",
@@ -326,7 +334,7 @@
       ],
       "evidence_status": "reported",
       "audit_status": "pending",
-      "central_limit": "Workflow gains require held-out transfer and comparison with recursive improvement of the generator.",
+      "central_limit": "80.3 是六种数据集指标的均值，非统一任务成功率；外层搜索算法及预设算子不参与自动改写。",
       "sources": [
         {
           "type": "repository",
@@ -339,6 +347,14 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/pdf/2410.10762"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2410.10762v4"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/pdf/2410.10762v4"
         }
       ]
     },
@@ -355,7 +371,7 @@
       ],
       "evidence_status": "reported",
       "audit_status": "in_progress",
-      "central_limit": "不能把子集分数说成完整 SWE-bench 成绩；未证明后继改进效率持续增长。",
+      "central_limit": "主要提升来自固定编码子集；同一评测集合参与版本选择，推理任务未显示同等幅度收益。",
       "sources": [
         {
           "type": "repository",
@@ -383,7 +399,7 @@
       ],
       "evidence_status": "reported",
       "audit_status": "in_progress",
-      "central_limit": "Open lineage must be separated from extra candidate and evaluation budget; broad transfer and rising improvement ability remain open.",
+      "central_limit": "开放搜索的收益仍受评估次数、选择集和基座能力影响；未证明无限增长。",
       "sources": [
         {
           "type": "repository",
@@ -512,7 +528,7 @@
       ],
       "evidence_status": "reported",
       "audit_status": "in_progress",
-      "central_limit": "Cross-domain meta-level transfer is author-reported; common-target attribution and independent matched-budget reproduction remain to be audited.",
+      "central_limit": "可表达任意程序不等于能有效发现任意改进；不同领域评价可信度不同。",
       "sources": [
         {
           "type": "repository",
@@ -819,7 +835,7 @@
       ],
       "evidence_status": "reported",
       "audit_status": "pending",
-      "central_limit": "Open source-level search needs matched restricted-search baselines and broad transfer tests.",
+      "central_limit": "目标 harness 的全程序搜索不等于 proposer 自改进；TerminalBench-2 同集搜索与评测，不能作留出任务泛化证据。",
       "sources": [
         {
           "type": "repository",
@@ -832,6 +848,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/pdf/2603.28052"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2603.28052v1"
         }
       ]
     },
@@ -904,7 +924,7 @@
       ],
       "evidence_status": "reported",
       "audit_status": "in_progress",
-      "central_limit": "Reported cross-domain regressions show that joint updating can redistribute capability; repeated broad transfer remains open.",
+      "central_limit": "共享权重可能共享偏差；训练 token 对齐不等于总成本对齐或广泛正迁移。",
       "sources": [
         {
           "type": "repository",
@@ -948,8 +968,7 @@
       "role": "direct_simulated_improvement",
       "reported_depth": "transfer",
       "changed_objects": [
-        "research_policy",
-        "simulation"
+        "research_exploration_policy_code"
       ],
       "evidence_status": "reported",
       "audit_status": "pending",
@@ -966,6 +985,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/pdf/2609.14858"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2609.14858v2"
         }
       ]
     },
@@ -1007,7 +1030,7 @@
       ],
       "evidence_status": "reported",
       "audit_status": "in_progress",
-      "central_limit": "证据是经验积累与任务适应；反思/维护算法本身没有自动进化。",
+      "central_limit": "增益针对既定经验维护流程；未训练模型参数，也未演化 Reflector/Curator 的实现。",
       "sources": [
         {
           "type": "paper",
@@ -1173,6 +1196,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/pdf/2312.06585v4"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2312.06585v4"
         }
       ]
     },
@@ -1481,7 +1508,7 @@
       ],
       "evidence_status": "reported",
       "audit_status": "in_progress",
-      "central_limit": "Constructed preference labels can be imperfect; the student is reset to the seed each round rather than simply continuing fine-tuning.",
+      "central_limit": "并非无锚定自证，也不是每轮直接继续微调；标签构造可能有误。",
       "sources": [
         {
           "type": "paper",
@@ -1546,7 +1573,7 @@
       ],
       "evidence_status": "reported",
       "audit_status": "in_progress",
-      "central_limit": "Task-specific robustness improvement and co-training do not establish unrestricted recursive research acceleration.",
+      "central_limit": "安全鲁棒性是特定能力；不能推导无限研发加速或全部通用能力增长。",
       "sources": [
         {
           "type": "paper",
@@ -1706,7 +1733,7 @@
       ],
       "evidence_status": "reported",
       "audit_status": "in_progress",
-      "central_limit": "无人工训练数据不等于无外部信息；题目真实性、难度和多样性仍是限制。 规模核对：Qwen2.5-3B / 7B Instruct；出题者与求解者迭代训练，检索提供外部信息。",
+      "central_limit": "无人工训练数据不等于无外部信息；题目真实性、难度和多样性仍是限制。",
       "sources": [
         {
           "type": "paper",
@@ -1731,7 +1758,7 @@
       ],
       "evidence_status": "reported",
       "audit_status": "in_progress",
-      "central_limit": "可执行验证与技能覆盖仍有边界，能力前沿难度代理不等于真实长期学习增益。",
+      "central_limit": "任务有效性与验证器边界约束扩展；技能增多未必增加真实覆盖。",
       "sources": [
         {
           "type": "paper",
@@ -1877,7 +1904,7 @@
       ],
       "evidence_status": "reported",
       "audit_status": "in_progress",
-      "central_limit": "自主流程不等于完全无人参与，也不证明训练代理权重或研发能力递归增长。 规模核对：SWE 训练对象明确为 4B / 9B；Math/Coding 的参数量本轮未核准。训练代理为冻结 Sonnet 4.6，不能当作被训练模型。",
+      "central_limit": "自主流程不等于完全无人参与，也不证明训练代理权重或研发能力递归增长。",
       "sources": [
         {
           "type": "paper",
@@ -2177,6 +2204,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/pdf/2602.02474"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2602.02474v1"
         }
       ]
     },
@@ -2241,7 +2272,7 @@
       ],
       "evidence_status": "reported",
       "audit_status": "in_progress",
-      "central_limit": "主要结果支持一次 harness 演化后的权重适配；多轮闭环是可接续方案，已读结果未展示长期反复迭代。完整轨迹模仿有明显退化。 规模核对：主实验 Qwen3-Coder-30B-A3B（总 30B / 激活 3B），LoRA SFT；Gemma-4-26B-A4B 为 <27B 补充实验，7 个企业任务。",
+      "central_limit": "主要结果支持一次 harness 演化后的权重适配；多轮闭环是可接续方案，已读结果未展示长期反复迭代。完整轨迹模仿有明显退化。",
       "sources": [
         {
           "type": "paper",
@@ -2250,6 +2281,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/html/2609.09134"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2609.09134v1"
         }
       ]
     },
@@ -2284,8 +2319,8 @@
       "role": "evaluator_research",
       "reported_depth": "persistent",
       "changed_objects": [
-        "reward_tools",
-        "reward_skills"
+        "reward_agent_skills",
+        "reward_agent_tools"
       ],
       "evidence_status": "reported",
       "audit_status": "in_progress",
@@ -2308,12 +2343,12 @@
       "role": "environment_research",
       "reported_depth": "persistent",
       "changed_objects": [
-        "agent_weights",
+        "web_policy_weights",
         "world_model_weights"
       ],
       "evidence_status": "reported",
       "audit_status": "in_progress",
-      "central_limit": "模型想象会积累偏差，真实网页验证不能由世界模型自身评分替代。",
+      "central_limit": "世界模型的长程误差会增加；线上网页随时间变化。WMLA 与 GAIA 的附加 GPT-4o 调用须计入系统条件，不能把总成绩全归因于参数学习。",
       "sources": [
         {
           "type": "paper",
@@ -2322,6 +2357,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/pdf/2504.21024"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2504.21024v2"
         }
       ]
     },
@@ -2455,7 +2494,7 @@
       ],
       "evidence_status": "reported",
       "audit_status": "in_progress",
-      "central_limit": "同任务内自改与跨任务继承是不同证据，不能从 solve rate 推出代际增长。",
+      "central_limit": "实际可变对象为任务内工具脚本；agent loop 不变，跨任务继承未由这些实验建立。",
       "sources": [
         {
           "type": "paper",
@@ -2464,6 +2503,10 @@
         {
           "type": "paper",
           "url": "https://arxiv.org/pdf/2511.13646"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/html/2511.13646v1"
         }
       ]
     },
@@ -2911,8 +2954,7 @@
       "role": "internalization_research",
       "reported_depth": "persistent",
       "changed_objects": [
-        "policy_weights",
-        "hindsight_skills"
+        "model_weights"
       ],
       "evidence_status": "reported",
       "audit_status": "in_progress",

@@ -1,0 +1,3747 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-10-19",
+  "purpose": "先组织科学与工程问题，再将公开工作及团队挂接到机制位置。图谱是可修订的综述结构，不宣称已证明本体完备。",
+  "routes": [
+    {
+      "id": "harness",
+      "title": "Harness",
+      "tagline": "外部资产、执行程序与改进器的演化",
+      "definition": "在这一主线中，主要学习与演化对象是 foundation model 参数之外、决定代理行为和改进过程的持久状态与可执行程序。基础模型通常保持冻结；若研究同时更新模型参数，则可与 Model × Harness 图建立连接。",
+      "central_question": "什么被改写，怎样产生下一次改进？",
+      "reading_key": "先看可修改对象，再沿“反馈→更新→选择→继承”的有向关系读图，最后看论文及团队占据哪些位置。不同节点是资产、机制或研究问题，不能用作互斥标签。",
+      "research_question": "哪些程序修改既提高任务表现，又改善后续搜索、反馈利用与跨任务继承？",
+      "scene": "一个代理在真实任务或实验环境中运行，留下行动轨迹、工具错误、结果与成本。系统据此修改提示、知识、技能或执行代码，把候选放回任务中比较；被保留的资产进入后续任务。递归研究进一步把“如何发现问题、提出并实施修改”的程序也放入可编辑范围，由更新后的系统继续推进改进。",
+      "loop": [
+        "运行任务并收集轨迹",
+        "定位失败、机会与成本",
+        "生成对具体资产的修改",
+        "执行验证并选择候选",
+        "继承、组合和再次使用"
+      ],
+      "facets": [
+        {
+          "title": "资产 ≠ 更新算法",
+          "text": "Prompt、memory、tool、workflow 是可以改变什么；reflection、evolution、MCTS 是怎样改变。相同算法可以作用于不同资产，同一工作也可跨多个资产。"
+        },
+        {
+          "title": "优化目标系统 ≠ 改写优化器",
+          "text": "ADAS、GEPA 和 AFlow 可以持续产生更强候选，但外层搜索器可保持固定。STOP、Promptbreeder、HyperAgents 进一步把某些改进机制纳入修改。"
+        },
+        {
+          "title": "持久能力 ≠ 临时轨迹",
+          "text": "当前任务的反思与即时工具生成首先是在线适应；只有明确保留并在后续任务复用，才能讨论跨任务能力积累。"
+        },
+        {
+          "title": "改进器自改 ≠ 全系统可改",
+          "text": "DGM 的档案维护和父代选择固定；HyperAgents 的主实验也保留手工父代选择。须记录实际可编辑边界，而不是用“递归”一词抹去边界。"
+        },
+        {
+          "title": "参数规模 ≠ 研究质量",
+          "text": "冻结模型的 harness 方法需要看机制、迁移、预算和比较是否有解释力；参数规模是实验条件，不能单独替代研究价值判断。"
+        }
+      ],
+      "open_questions": [
+        {
+          "title": "什么样的经验能够成为跨任务、跨模型仍然有效的程序改进？",
+          "text": "从当前任务中得到的提示、技能和代码补丁，哪些依赖原模型与环境，哪些能组合为可迁移能力？如何避免长期积累后相互干扰、过时或上下文膨胀？ 现有工作已经展示局部迁移和长期记忆机制，但不能由单一分布、有限任务上的迁移推出开放任务流中的持续泛化。"
+        },
+        {
+          "title": "什么改进会同时提升解题能力和产生下一轮改进的能力？",
+          "text": "更高 solve rate 是否提高给定预算内发现有效修改的概率？若解题与改进技能不对齐，哪些元层表示、反馈和可编辑边界有帮助？ DGM 和 HyperAgents 已研究自指更新与元层迁移；有限轮次收益还不能建立跨领域、跨预算持续提高改进效率的一般规律。"
+        },
+        {
+          "title": "评价器与任务分布都变化时，系统怎样保持进步的方向？",
+          "text": "学习中的 evaluator 如何与任务真值、实际效用和旧版本保持联系？怎样区分真实能力提升、评价器偏好变化与重复选择造成的过拟合？ 共同演化与评价锚点已有方法；开放任务中真值稀少、目标变化和长期比较仍不是已解决的一般问题。"
+        }
+      ],
+      "nodes": [
+        {
+          "id": "h-instructions",
+          "title": "指令与上下文程序",
+          "english": "Instructions & Context Programs",
+          "kind": "asset",
+          "question": "在权重不变时，怎样改变模型看到的信息和执行指令，使行为稳定改善？",
+          "definition": "可修改的对象包括 system prompt、模块提示、few-shot examples、上下文组装与压缩规则。文件只是存储载体；研究对象是这些内容对条件生成和后续工具调用的控制作用。",
+          "subtopics": [
+            "任务提示与模块提示",
+            "示例选择与排序",
+            "context assembly / compression",
+            "可执行规范与格式约束",
+            "反思形成的 playbook"
+          ],
+          "mechanisms": [
+            "基于执行轨迹的语言反思",
+            "候选提示变异与组合",
+            "按模块优化提示",
+            "增量编辑与去重"
+          ],
+          "example_work_ids": [
+            "promptbreeder",
+            "gepa",
+            "opro",
+            "ace"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2309.16797v1",
+            "https://arxiv.org/pdf/2507.19457v2",
+            "https://arxiv.org/abs/2309.03409",
+            "https://arxiv.org/html/2510.04618v1"
+          ],
+          "layout": {
+            "column": 0,
+            "row": 0
+          },
+          "kind_label": "可修改的外部资产"
+        },
+        {
+          "id": "h-memory",
+          "title": "长期记忆与知识组织",
+          "english": "Persistent Memory & Knowledge",
+          "kind": "asset",
+          "question": "哪些经历应跨任务保留，怎样抽象、检索、修订并消除相互矛盾的经验？",
+          "definition": "外部记忆保留模型参数之外的可更新状态：episodic traces、经验规则、检索索引、知识库和效用估计。存入更多记录不自动等于学得更多；关键在后续决策是否有效使用这些记录。",
+          "subtopics": [
+            "episodic / semantic memory",
+            "经验提炼与抽象",
+            "检索、排序与记忆效用",
+            "冲突、过时知识与遗忘",
+            "跨任务知识整合",
+            "知识库、数据库与可检索状态"
+          ],
+          "mechanisms": [
+            "轨迹总结与增量合并",
+            "相似度检索与效用排序",
+            "回报更新检索价值",
+            "基于使用反馈的记忆修订"
+          ],
+          "example_work_ids": [
+            "ace",
+            "memrl",
+            "mem2evolve",
+            "continual-harness"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2510.04618v1",
+            "https://arxiv.org/html/2601.03192v1",
+            "https://arxiv.org/abs/2604.10923",
+            "https://arxiv.org/abs/2605.09998"
+          ],
+          "layout": {
+            "column": 0,
+            "row": 1
+          },
+          "kind_label": "可修改的外部资产"
+        },
+        {
+          "id": "h-capabilities",
+          "title": "工具、技能与行动接口",
+          "english": "Tools, Skills & Action Interfaces",
+          "kind": "asset",
+          "question": "代理如何从重复操作中创造可调用能力，并把已有能力组合成更长的任务？",
+          "definition": "可修改对象是可执行工具代码、技能程序、工具说明、输入输出契约及发现与调用方式。Skills、plugins、MCP 是能力暴露和复用的不同载体；安装或调用现成工具本身不构成自改进。",
+          "subtopics": [
+            "tool synthesis / API construction",
+            "代码技能与语言技能",
+            "插件、skills、MCP / API 与调用协议",
+            "技能组合与依赖",
+            "技能测试、修复与淘汰"
+          ],
+          "mechanisms": [
+            "探索后封装可执行程序",
+            "执行错误驱动修复",
+            "检索已有技能并组合",
+            "评测反馈驱动技能编辑"
+          ],
+          "example_work_ids": [
+            "voyager",
+            "skillweaver",
+            "skillopt",
+            "live-swe-agent"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2305.16291v2",
+            "https://arxiv.org/html/2504.07079v1",
+            "https://arxiv.org/abs/2605.23904",
+            "https://arxiv.org/html/2511.13646v1"
+          ],
+          "layout": {
+            "column": 0,
+            "row": 2
+          },
+          "kind_label": "可修改的外部资产"
+        },
+        {
+          "id": "h-control",
+          "title": "推理与协作控制结构",
+          "english": "Control Flow & Agent Architecture",
+          "kind": "asset",
+          "question": "何时规划、行动、反思、调用工具或委派，以及多个代理之间怎样交换信息？",
+          "definition": "结构包括控制流、信息流、角色分工、模型调用路由、停止条件和重试策略。工作流图是其中一种表示；代码还可以表达循环、条件、动态工具和运行时生成的子任务。",
+          "subtopics": [
+            "规划与反思调度",
+            "条件、循环与终止",
+            "multi-agent roles / communication",
+            "模型与专家路由",
+            "并行搜索和结果聚合"
+          ],
+          "mechanisms": [
+            "代码空间中的架构搜索",
+            "图结构搜索与进化",
+            "MCTS 分配工作流探索",
+            "执行反馈修订控制逻辑"
+          ],
+          "example_work_ids": [
+            "adas",
+            "aflow",
+            "agentbreeder",
+            "harnessdev"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2408.08435v1",
+            "https://arxiv.org/html/2410.10762v4",
+            "https://arxiv.org/abs/2502.00757",
+            "https://arxiv.org/abs/2609.01437"
+          ],
+          "layout": {
+            "column": 1,
+            "row": 0
+          },
+          "kind_label": "可修改的外部资产"
+        },
+        {
+          "id": "h-runtime",
+          "title": "执行系统与资源配置",
+          "english": "Runtime, Environment & Infrastructure",
+          "kind": "asset",
+          "question": "怎样让同一模型用更少的时间、调用与资源完成更可靠的任务，并使系统改动可以运行？",
+          "definition": "包括 REPL、文件与进程状态、执行环境、依赖、调度、缓存、上下文预算、错误恢复与部署配置。须区分代理自己的运行环境，与被研究的外部任务环境；也须区分优化外部基础设施和改造自身 harness。",
+          "subtopics": [
+            "persistent execution / REPL",
+            "工具沙箱与依赖环境",
+            "并行、缓存与调用预算",
+            "错误恢复及状态恢复",
+            "软硬件与推理服务优化"
+          ],
+          "mechanisms": [
+            "执行剖析和瓶颈定位",
+            "可运行代码补丁",
+            "性能—费用联合选择",
+            "在多个环境复用执行机制"
+          ],
+          "example_work_ids": [
+            "sica",
+            "sol-pi",
+            "prime-agent",
+            "alphaevolve"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2504.15228v1",
+            "https://arxiv.org/html/2609.20519v1",
+            "https://arxiv.org/abs/2608.23552",
+            "https://arxiv.org/abs/2506.13131"
+          ],
+          "layout": {
+            "column": 1,
+            "row": 1
+          },
+          "kind_label": "可修改的外部资产"
+        },
+        {
+          "id": "h-experience",
+          "title": "任务、探索与经验分布",
+          "english": "Task Streams, Exploration & Curriculum",
+          "kind": "feedback",
+          "question": "系统下一步做什么，才能同时获得有用成果和改善自身所需的信息？",
+          "definition": "任务选择决定可以观察到的失败和成功。研究包括开放任务流、自动课程、主动探索、失败挖掘与迁移任务选择；课程和环境生成器在部分研究中固定，在另一些研究中也可能成为更新对象。",
+          "subtopics": [
+            "自动课程与能力边界",
+            "任务流及分布变化",
+            "失败发现与诊断",
+            "探索和 exploitation",
+            "同任务适应与跨任务积累"
+          ],
+          "mechanisms": [
+            "根据进度生成下一任务",
+            "从失败轨迹选择改进问题",
+            "任务路由与专家选择",
+            "跨环境复用已有技能"
+          ],
+          "example_work_ids": [
+            "voyager",
+            "continual-harness",
+            "adaptive-auto-harness",
+            "self-harness"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2305.16291v2",
+            "https://arxiv.org/abs/2605.09998",
+            "https://arxiv.org/abs/2606.01770",
+            "https://arxiv.org/abs/2606.09498"
+          ],
+          "layout": {
+            "column": 1,
+            "row": 2
+          },
+          "kind_label": "经验分布"
+        },
+        {
+          "id": "h-evaluation",
+          "title": "评测、验证器与反馈信号",
+          "english": "Evaluation, Verifiers & Feedback",
+          "kind": "feedback_asset",
+          "question": "什么变化算真实进步？反馈不足或评价器自己变化时，怎样继续可靠比较系统版本？",
+          "definition": "反馈可来自可执行测试、环境回报、人工评价或模型评审；它既指导更新，也决定版本选择。评价器代码和提示可以被优化，但其改进需要独立的任务结果或可信锚点支撑。",
+          "subtopics": [
+            "verifiable tests / environment reward",
+            "语言反馈与错误归因",
+            "模型评审及校准",
+            "代价、延迟和回归",
+            "评价器更新与历史结果可比性"
+          ],
+          "mechanisms": [
+            "阶段性评估和多保真选择",
+            "外部测试验证候选",
+            "评审器与任务代理共同演化",
+            "更新评价器后重评或校准记录"
+          ],
+          "example_work_ids": [
+            "red-queen-godel-machine",
+            "hgm",
+            "gepa",
+            "rrsi"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2606.26294v3",
+            "https://arxiv.org/html/2510.21614v1",
+            "https://arxiv.org/pdf/2507.19457v2",
+            "https://arxiv.org/html/2609.24972v1"
+          ],
+          "layout": {
+            "column": 2,
+            "row": 0
+          },
+          "kind_label": "反馈与可修改评价",
+          "short_title": "评测、验证与反馈"
+        },
+        {
+          "id": "h-search",
+          "title": "候选生成、搜索与选择",
+          "english": "Search, Selection & Evolution",
+          "kind": "update_mechanism",
+          "question": "如何在昂贵、噪声大而组合复杂的程序空间中找到有积累价值的修改？",
+          "definition": "这是作用于不同资产的更新机制，而不是一种独立资产。反思给出修改方向，搜索决定探索分配，选择决定继承哪些候选；档案和种群可以保留暂时非最优但有用的中间方案。",
+          "subtopics": [
+            "reflection-guided proposals",
+            "evolution / crossover",
+            "MCTS / bandit allocation",
+            "Pareto selection",
+            "archives / stepping stones"
+          ],
+          "mechanisms": [
+            "基于反馈的程序变异",
+            "多分支搜索与重组",
+            "分层评估分配计算",
+            "根据后代收益选择父代"
+          ],
+          "example_work_ids": [
+            "gepa",
+            "aflow",
+            "dgm",
+            "hgm",
+            "shinkaevolve"
+          ],
+          "source_urls": [
+            "https://arxiv.org/pdf/2507.19457v2",
+            "https://arxiv.org/html/2410.10762v4",
+            "https://arxiv.org/html/2505.22954v3",
+            "https://arxiv.org/html/2510.21614v1",
+            "https://arxiv.org/abs/2509.19349"
+          ],
+          "layout": {
+            "column": 2,
+            "row": 1
+          },
+          "kind_label": "更新机制"
+        },
+        {
+          "id": "h-improver",
+          "title": "改进程序的自修改",
+          "english": "Self-Modification of the Improver",
+          "kind": "recursive_boundary",
+          "question": "更新后的系统能否参与下一轮更新，并改变提出、实施或组织改进的方法？",
+          "definition": "把 task agent 与改进器区分开：自动优化目标系统，不必然修改优化器。真正需要定位的是哪些改进程序可编辑、修改后是否被下一代执行，以及父代选择、评价、预算等外层机制仍有哪些固定部分。",
+          "subtopics": [
+            "self-editing task agent",
+            "可演化的 mutation prompt",
+            "editable meta-agent",
+            "元层诊断和实验策略",
+            "固定外层控制的边界"
+          ],
+          "mechanisms": [
+            "改进器以自身代码为输入",
+            "更新任务逻辑与元代理逻辑",
+            "后继改进器继续提出修改",
+            "测试改进策略的跨任务迁移"
+          ],
+          "example_work_ids": [
+            "stop",
+            "promptbreeder",
+            "dgm",
+            "hyperagents"
+          ],
+          "source_urls": [
+            "https://arxiv.org/pdf/2310.02304v3",
+            "https://arxiv.org/html/2309.16797v1",
+            "https://arxiv.org/html/2505.22954v3",
+            "https://arxiv.org/html/2603.19461v1"
+          ],
+          "layout": {
+            "column": 2,
+            "row": 2
+          },
+          "kind_label": "递归边界"
+        },
+        {
+          "id": "h-inheritance",
+          "title": "继承、组合与跨域迁移",
+          "english": "Inheritance, Composition & Transfer",
+          "kind": "outcome",
+          "question": "一次修改如何成为后续仍可调用的能力，而非只对当前任务有效的临时技巧？",
+          "definition": "继承对象可以是提示、记忆、技能、程序版本或搜索经验。需要分别观察同任务复用、跨任务迁移、跨模型迁移以及改进策略迁移；这些能力不同，不能用一个总分代替。",
+          "subtopics": [
+            "跨 episode 继承",
+            "模块与技能的组合",
+            "跨模型迁移",
+            "跨任务与环境迁移",
+            "改进策略的迁移"
+          ],
+          "mechanisms": [
+            "版本与谱系档案",
+            "技能检索和依赖复用",
+            "模块整合及回归测试",
+            "固定预算下比较迁移后改进"
+          ],
+          "example_work_ids": [
+            "voyager",
+            "adas",
+            "hyperagents",
+            "modular-rsi",
+            "skillopt"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2305.16291v2",
+            "https://arxiv.org/html/2408.08435v1",
+            "https://arxiv.org/html/2603.19461v1",
+            "https://arxiv.org/html/2609.14857v2",
+            "https://arxiv.org/abs/2605.23904"
+          ],
+          "layout": {
+            "column": 3,
+            "row": 1
+          },
+          "kind_label": "继承与迁移"
+        }
+      ],
+      "edges": [
+        {
+          "id": "field-harness-01",
+          "source": "h-memory",
+          "target": "h-instructions",
+          "label": "检索后进入上下文",
+          "explanation": "被检索的经验改变模型下一步看到的信息；长时记忆与单次上下文是两种不同状态。",
+          "example_work_ids": [
+            "ace",
+            "memrl"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2510.04618v1",
+            "https://arxiv.org/html/2601.03192v1"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-harness-02",
+          "source": "h-experience",
+          "target": "h-memory",
+          "label": "轨迹形成经验",
+          "explanation": "任务交互产生可总结、可修订的持久记录。",
+          "example_work_ids": [
+            "ace",
+            "continual-harness"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2510.04618v1",
+            "https://arxiv.org/abs/2605.09998"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-harness-03",
+          "source": "h-experience",
+          "target": "h-capabilities",
+          "label": "探索产生新技能",
+          "explanation": "完成课程或探索网页后，把有效操作封装为可调用技能。",
+          "example_work_ids": [
+            "voyager",
+            "skillweaver"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2305.16291v2",
+            "https://arxiv.org/html/2504.07079v1"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-harness-04",
+          "source": "h-capabilities",
+          "target": "h-control",
+          "label": "扩展可调用动作",
+          "explanation": "新工具扩大动作空间，控制逻辑决定何时调用与组合。",
+          "example_work_ids": [
+            "voyager",
+            "live-swe-agent"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2305.16291v2",
+            "https://arxiv.org/html/2511.13646v1"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-harness-05",
+          "source": "h-control",
+          "target": "h-runtime",
+          "label": "在执行系统中实现",
+          "explanation": "同一工作流需要具体的调用、状态与错误处理实现，运行成本也随之改变。",
+          "example_work_ids": [
+            "sica",
+            "harnessdev"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2504.15228v1",
+            "https://arxiv.org/abs/2609.01437"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-harness-06",
+          "source": "h-runtime",
+          "target": "h-experience",
+          "label": "产生轨迹与故障",
+          "explanation": "执行日志、异常和运行代价决定系统可以学习哪些失败。",
+          "example_work_ids": [
+            "sica",
+            "self-harness"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2504.15228v1",
+            "https://arxiv.org/abs/2606.09498"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-harness-07",
+          "source": "h-evaluation",
+          "target": "h-search",
+          "label": "提供比较与选择信号",
+          "explanation": "评价结果影响候选保留、父代采样及下一步探索预算。",
+          "example_work_ids": [
+            "aflow",
+            "hgm"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2410.10762v4",
+            "https://arxiv.org/html/2510.21614v1"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-harness-08",
+          "source": "h-search",
+          "target": "h-instructions",
+          "label": "产生并选择提示修改",
+          "explanation": "反思、变异和 Pareto 选择可以作用于提示空间。",
+          "example_work_ids": [
+            "gepa",
+            "promptbreeder"
+          ],
+          "source_urls": [
+            "https://arxiv.org/pdf/2507.19457v2",
+            "https://arxiv.org/html/2309.16797v1"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-harness-09",
+          "source": "h-search",
+          "target": "h-control",
+          "label": "搜索控制程序",
+          "explanation": "搜索算法也可以修改循环、角色与 LLM 调用次序。",
+          "example_work_ids": [
+            "adas",
+            "aflow"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2408.08435v1",
+            "https://arxiv.org/html/2410.10762v4"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-harness-10",
+          "source": "h-search",
+          "target": "h-capabilities",
+          "label": "选择工具与技能版本",
+          "explanation": "技能候选通过执行或任务反馈被保留和修复。",
+          "example_work_ids": [
+            "skillopt",
+            "skillweaver"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2605.23904",
+            "https://arxiv.org/html/2504.07079v1"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-harness-11",
+          "source": "h-memory",
+          "target": "h-search",
+          "label": "提供既往搜索经验",
+          "explanation": "历史失败、候选和执行结果可以改善后续提案，不一定改变搜索算法本身。",
+          "example_work_ids": [
+            "adas",
+            "group-evolving-agents"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2408.08435v1",
+            "https://arxiv.org/abs/2602.04837"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-harness-12",
+          "source": "h-improver",
+          "target": "h-search",
+          "label": "改写改进策略",
+          "explanation": "当改进器可编辑时，后继系统可以改变诊断和提案方法；外层选择机制是否可改需逐项说明。",
+          "example_work_ids": [
+            "hyperagents",
+            "stop"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2603.19461v1",
+            "https://arxiv.org/pdf/2310.02304v3"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-harness-13",
+          "source": "h-search",
+          "target": "h-improver",
+          "label": "把改进器作为候选对象",
+          "explanation": "被搜索的程序可以恰好就是产生下一轮修改的程序，形成自指更新。",
+          "example_work_ids": [
+            "stop",
+            "promptbreeder"
+          ],
+          "source_urls": [
+            "https://arxiv.org/pdf/2310.02304v3",
+            "https://arxiv.org/html/2309.16797v1"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-harness-14",
+          "source": "h-evaluation",
+          "target": "h-improver",
+          "label": "评价后代改进能力",
+          "explanation": "任务分数之外，需观察改进器在给定预算内产生更强后代的能力。",
+          "example_work_ids": [
+            "hyperagents",
+            "aide2"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2603.19461v1",
+            "https://arxiv.org/html/2609.26457v1"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-harness-15",
+          "source": "h-improver",
+          "target": "h-evaluation",
+          "label": "可更新评审组件",
+          "explanation": "改进程序可以产生新评价器；采用新评价器改变了后续搜索的信号。",
+          "example_work_ids": [
+            "red-queen-godel-machine"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2606.26294v3"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-harness-16",
+          "source": "h-search",
+          "target": "h-inheritance",
+          "label": "保留分支与中间方案",
+          "explanation": "谱系档案允许当前非最优候选成为未来改进的起点。",
+          "example_work_ids": [
+            "dgm",
+            "hgm"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2505.22954v3",
+            "https://arxiv.org/html/2510.21614v1"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-harness-17",
+          "source": "h-capabilities",
+          "target": "h-inheritance",
+          "label": "技能可以复用与组合",
+          "explanation": "可执行技能是跨任务继承的一种具体载体。",
+          "example_work_ids": [
+            "voyager",
+            "skillweaver"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2305.16291v2",
+            "https://arxiv.org/html/2504.07079v1"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-harness-18",
+          "source": "h-memory",
+          "target": "h-inheritance",
+          "label": "知识跨任务保留",
+          "explanation": "持久知识要经后续使用才能转化为能力，而非只增加存储量。",
+          "example_work_ids": [
+            "memrl",
+            "ace"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2601.03192v1",
+            "https://arxiv.org/html/2510.04618v1"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-harness-19",
+          "source": "h-inheritance",
+          "target": "h-experience",
+          "label": "已有能力改变后续探索",
+          "explanation": "继承的技能使更复杂任务可达，进而改变将来收集到的经验。",
+          "example_work_ids": [
+            "voyager",
+            "mem2evolve"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2305.16291v2",
+            "https://arxiv.org/abs/2604.10923"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-harness-20",
+          "source": "h-inheritance",
+          "target": "h-improver",
+          "label": "改进经验可跨域使用",
+          "explanation": "迁移的不仅可以是解题程序，也可以是产生改进的策略；须由对应的迁移实验确认。",
+          "example_work_ids": [
+            "hyperagents"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2603.19461v1"
+          ],
+          "evidence": "survey_structure"
+        }
+      ],
+      "mappings": [
+        {
+          "work_id": "stop",
+          "topic_ids": [
+            "h-improver",
+            "h-search",
+            "h-evaluation"
+          ],
+          "summary": "改进程序源码。后继改进程序继续改写自身；模型冻结。",
+          "source_urls": [
+            "https://arxiv.org/pdf/2310.02304v3"
+          ],
+          "source_location": "arXiv:2310.02304v3（COLM 2024），§3–5，Algorithm 1，Figure 4，Table 1。",
+          "basis": "方法段落支持",
+          "primary_route": "harness"
+        },
+        {
+          "work_id": "promptbreeder",
+          "topic_ids": [
+            "h-instructions",
+            "h-search",
+            "h-improver"
+          ],
+          "summary": "任务提示；变异提示。变异提示也参与演化；不是权重训练。",
+          "source_urls": [
+            "https://arxiv.org/html/2309.16797v1",
+            "https://arxiv.org/pdf/2309.16797v1"
+          ],
+          "source_location": "arXiv:2309.16797v1，§3–6、Figure 1–2、Table 1；ICML 2024 论文页面核对出版信息。",
+          "basis": "方法段落支持",
+          "primary_route": "harness"
+        },
+        {
+          "work_id": "godel-agent",
+          "topic_ids": [
+            "h-control",
+            "h-improver"
+          ],
+          "summary": "代理控制代码。自修改的具体范围与跨任务继承仍需方法全文确认。",
+          "source_urls": [
+            "https://github.com/Arvid-pku/Godel_Agent",
+            "https://aclanthology.org/2025.acl-long.1354.pdf"
+          ],
+          "source_location": "摘要与既有来源记录",
+          "basis": "摘要初筛定位，非完整方法结论",
+          "primary_route": "harness"
+        },
+        {
+          "work_id": "adas",
+          "topic_ids": [
+            "h-control",
+            "h-search",
+            "h-inheritance"
+          ],
+          "summary": "目标 agent 的 forward 代码。meta-agent 实现固定；目标设计与档案更新。",
+          "source_urls": [
+            "https://arxiv.org/html/2408.08435v1"
+          ],
+          "source_location": "arXiv:2408.08435v1，§2–3、§4.1–4.3、Figure 3、Table 1；Appendix A–B 的接口与提示。",
+          "basis": "方法段落支持",
+          "primary_route": "harness"
+        },
+        {
+          "work_id": "aflow",
+          "topic_ids": [
+            "h-control",
+            "h-search",
+            "h-evaluation"
+          ],
+          "summary": "工作流代码；模块提示。搜索器固定；搜索的是工作流。",
+          "source_urls": [
+            "https://arxiv.org/html/2410.10762v4",
+            "https://arxiv.org/pdf/2410.10762"
+          ],
+          "source_location": "arXiv:2410.10762v4（ICLR 2025），§3.1–3.2、§4、Algorithm 1、§5.1–5.2、Table 1。",
+          "basis": "方法段落支持",
+          "primary_route": "harness"
+        },
+        {
+          "work_id": "sica",
+          "topic_ids": [
+            "h-runtime",
+            "h-improver",
+            "h-search",
+            "h-evaluation"
+          ],
+          "summary": "编码代理代码。历史最佳后继承担下一轮修改；非全部外层程序可改。",
+          "source_urls": [
+            "https://arxiv.org/html/2504.15228v1"
+          ],
+          "source_location": "arXiv:2504.15228v1，§3、Algorithm 1、§4、Table 1、§4.1。",
+          "basis": "方法段落支持",
+          "primary_route": "harness"
+        },
+        {
+          "work_id": "dgm",
+          "topic_ids": [
+            "h-control",
+            "h-capabilities",
+            "h-search",
+            "h-improver",
+            "h-inheritance"
+          ],
+          "summary": "编码代理代码；工具及上下文实现。被选后继负责修改；archive maintenance 与 parent selection 固定。",
+          "source_urls": [
+            "https://arxiv.org/html/2505.22954v3"
+          ],
+          "source_location": "arXiv v3（2026-03-12）；§3，§4.1–4.4。",
+          "basis": "方法段落支持",
+          "primary_route": "harness"
+        },
+        {
+          "work_id": "gepa",
+          "topic_ids": [
+            "h-instructions",
+            "h-search",
+            "h-evaluation"
+          ],
+          "summary": "LLM 模块提示。更新提示；优化算法不自修改。",
+          "source_urls": [
+            "https://arxiv.org/pdf/2507.19457v2"
+          ],
+          "source_location": "arXiv 2507.19457v2 PDF；§3、§3.1、Figure 3、Algorithms 1–2、§4。",
+          "basis": "方法段落支持",
+          "primary_route": "harness"
+        },
+        {
+          "work_id": "agentbreeder",
+          "topic_ids": [
+            "h-control",
+            "h-search"
+          ],
+          "summary": "多代理角色与结构。目标多代理系统演化；外层算法自修改未确认。",
+          "source_urls": [
+            "https://arxiv.org/abs/2502.00757",
+            "https://arxiv.org/pdf/2502.00757"
+          ],
+          "source_location": "摘要与既有来源记录",
+          "basis": "摘要初筛定位，非完整方法结论",
+          "primary_route": "harness"
+        },
+        {
+          "work_id": "hyperagents",
+          "topic_ids": [
+            "h-improver",
+            "h-control",
+            "h-memory",
+            "h-inheritance"
+          ],
+          "summary": "task agent 代码；meta-agent 代码。meta-agent 修改逻辑可改；主实验 parent selection 固定。",
+          "source_urls": [
+            "https://arxiv.org/html/2603.19461v1"
+          ],
+          "source_location": "arXiv v1（2026-03-19）；§3–5.2；Appendix D.3；主文说明 Appendix E.5 为父代选择的另行探索。",
+          "basis": "方法段落支持",
+          "primary_route": "harness"
+        },
+        {
+          "work_id": "rhi",
+          "topic_ids": [
+            "h-control",
+            "h-instructions",
+            "h-evaluation"
+          ],
+          "summary": "工作流规格。主位置来自初筛，元层是否自改待方法确认。",
+          "source_urls": [
+            "https://arxiv.org/abs/2607.15524",
+            "https://arxiv.org/pdf/2607.15524"
+          ],
+          "source_location": "摘要与既有来源记录",
+          "basis": "摘要初筛定位，非完整方法结论",
+          "primary_route": "harness"
+        },
+        {
+          "work_id": "helix",
+          "topic_ids": [
+            "h-runtime",
+            "h-search",
+            "h-memory"
+          ],
+          "summary": "harness 变体；成功及失败轨迹。产出训练记录不等于已实现 model 与 harness 共同演化。",
+          "source_urls": [
+            "https://github.com/HKUDS/HELIX",
+            "https://arxiv.org/pdf/2608.13951"
+          ],
+          "source_location": "摘要与既有来源记录",
+          "basis": "摘要初筛定位，非完整方法结论",
+          "primary_route": "harness"
+        },
+        {
+          "work_id": "hsi",
+          "topic_ids": [
+            "h-improver",
+            "h-search",
+            "h-runtime"
+          ],
+          "summary": "harness 代码；元演化过程。仓库初筛显示元演化可改；完整作用边界待确认。",
+          "source_urls": [
+            "https://github.com/TailinZhou/hsi",
+            "https://arxiv.org/pdf/2608.08466"
+          ],
+          "source_location": "摘要与既有来源记录",
+          "basis": "摘要初筛定位，非完整方法结论",
+          "primary_route": "harness"
+        },
+        {
+          "work_id": "harnessdev",
+          "topic_ids": [
+            "h-control",
+            "h-runtime",
+            "h-search",
+            "h-inheritance"
+          ],
+          "summary": "可执行 scaffold。创造者与执行者可以不同；不把目标优化等同创造者自改。",
+          "source_urls": [
+            "https://arxiv.org/abs/2609.01437",
+            "https://arxiv.org/pdf/2609.01437"
+          ],
+          "source_location": "摘要与既有来源记录",
+          "basis": "摘要初筛定位，非完整方法结论",
+          "primary_route": "harness"
+        },
+        {
+          "work_id": "rrsi",
+          "topic_ids": [
+            "h-improver",
+            "h-evaluation",
+            "h-runtime"
+          ],
+          "summary": "harness 修改提案及接受规则。约束的是自修改过程；泛化和成本约束需要分别观察。",
+          "source_urls": [
+            "https://arxiv.org/html/2609.24972v1"
+          ],
+          "source_location": "Table 2；提案 / 接受约束及消融",
+          "basis": "方法段落支持",
+          "primary_route": "harness"
+        },
+        {
+          "work_id": "meta-harness",
+          "topic_ids": [
+            "h-instructions",
+            "h-memory",
+            "h-control",
+            "h-runtime",
+            "h-search"
+          ],
+          "summary": "应用源码；记忆组织与上下文。源码可编辑范围广不等于每种资产均已有有效自改实证。",
+          "source_urls": [
+            "https://github.com/stanford-iris-lab/meta-harness",
+            "https://arxiv.org/pdf/2603.28052"
+          ],
+          "source_location": "arXiv:2603.28052v1，§3、Algorithm 1、§4.1–4.3、Tables 2–7；尤其 §4.3 的同基准搜索设置。",
+          "basis": "摘要初筛定位，非完整方法结论",
+          "primary_route": "harness"
+        },
+        {
+          "work_id": "aide2",
+          "topic_ids": [
+            "h-improver",
+            "h-search",
+            "h-evaluation",
+            "h-inheritance"
+          ],
+          "summary": "内层研究代理。主实验外层研究者固定；另有后继接管外层的实验。",
+          "source_urls": [
+            "https://arxiv.org/html/2609.26457v1"
+          ],
+          "source_location": "§2.1–2.2，§3.6 ignition test",
+          "basis": "方法段落支持",
+          "primary_route": "harness"
+        },
+        {
+          "work_id": "hgm",
+          "topic_ids": [
+            "h-search",
+            "h-evaluation",
+            "h-improver"
+          ],
+          "summary": "代理分支；分支研发价值估计。选择机制由研究者设计；它指导自修改分支探索。",
+          "source_urls": [
+            "https://arxiv.org/html/2510.21614v1"
+          ],
+          "source_location": "§2–4，Assumption 1 / Theorem 1；对照与资源口径",
+          "basis": "方法段落支持",
+          "primary_route": "harness"
+        },
+        {
+          "work_id": "ace",
+          "topic_ids": [
+            "h-instructions",
+            "h-memory",
+            "h-inheritance"
+          ],
+          "summary": "持久 playbook。内容与条目演化；生成—反思—整理流程固定。",
+          "source_urls": [
+            "https://arxiv.org/html/2510.04618v1"
+          ],
+          "source_location": "arXiv:2510.04618v1，§2.2、§3.1–3.2、§4.1–4.3、Table 1；§4.5–4.6 的组件和成本分析。",
+          "basis": "方法段落支持",
+          "primary_route": "harness"
+        },
+        {
+          "work_id": "alphaevolve",
+          "topic_ids": [
+            "h-search",
+            "h-runtime"
+          ],
+          "summary": "目标程序；部分计算基础设施算法。通用程序发现；只有涉及 AI 基础设施的应用属于 AI4AI，不能全部称自身 RSI。",
+          "source_urls": [
+            "https://arxiv.org/abs/2506.13131",
+            "https://arxiv.org/html/2506.13131v1"
+          ],
+          "source_location": "摘要与既有来源记录",
+          "basis": "摘要初筛定位，非完整方法结论",
+          "primary_route": "harness"
+        },
+        {
+          "work_id": "opro",
+          "topic_ids": [
+            "h-instructions",
+            "h-search"
+          ],
+          "summary": "候选提示或数值解。优化提示是相关机制；未因迭代次数多成为改进器自修改。",
+          "source_urls": [
+            "https://arxiv.org/abs/2309.03409",
+            "https://arxiv.org/pdf/2309.03409"
+          ],
+          "source_location": "摘要与既有来源记录",
+          "basis": "摘要初筛定位，非完整方法结论",
+          "primary_route": "harness"
+        },
+        {
+          "work_id": "sol-pi",
+          "topic_ids": [
+            "h-runtime",
+            "h-control",
+            "h-search",
+            "h-inheritance"
+          ],
+          "summary": "运行机制与代理 harness。以执行机制迁移及效率为重点，具体元循环边界见论文。",
+          "source_urls": [
+            "https://arxiv.org/html/2609.20519v1"
+          ],
+          "source_location": "§2.2、§3、§5.1",
+          "basis": "方法段落支持",
+          "primary_route": "harness"
+        },
+        {
+          "work_id": "modular-rsi",
+          "topic_ids": [
+            "h-control",
+            "h-runtime",
+            "h-improver",
+            "h-inheritance"
+          ],
+          "summary": "harness 模块。模块局部改进必须经组合后的整体验证。",
+          "source_urls": [
+            "https://arxiv.org/html/2609.14857v2"
+          ],
+          "source_location": "§3.1、§6.3–6.4，Table 5",
+          "basis": "方法段落支持",
+          "primary_route": "harness"
+        },
+        {
+          "work_id": "prime-agent",
+          "topic_ids": [
+            "h-memory",
+            "h-capabilities",
+            "h-runtime"
+          ],
+          "summary": "长期 REPL 状态；持久经验与技能。持久执行和经验修订可确认；改进器自修改范围待方法确认。",
+          "source_urls": [
+            "https://arxiv.org/abs/2608.23552",
+            "https://arxiv.org/pdf/2608.23552"
+          ],
+          "source_location": "摘要与既有来源记录",
+          "basis": "摘要初筛定位，非完整方法结论",
+          "primary_route": "harness"
+        },
+        {
+          "work_id": "red-queen-godel-machine",
+          "topic_ids": [
+            "h-evaluation",
+            "h-improver",
+            "h-search"
+          ],
+          "summary": "任务代理；评价器。评价器可改；独立 ground-truth anchors 不随评审器替换而抹去。",
+          "source_urls": [
+            "https://arxiv.org/html/2606.26294v3"
+          ],
+          "source_location": "评价器切换段落；Appendix D 消融与成本边界",
+          "basis": "方法段落支持",
+          "primary_route": "harness"
+        },
+        {
+          "work_id": "gear",
+          "topic_ids": [
+            "h-search",
+            "h-memory",
+            "h-improver"
+          ],
+          "summary": "研究状态种群；部分变体中的搜索控制器。仅部分变体让控制器演化，不能概括为所有 GEAR 设置均递归。",
+          "source_urls": [
+            "https://arxiv.org/abs/2605.13874",
+            "https://arxiv.org/pdf/2605.13874"
+          ],
+          "source_location": "摘要与既有来源记录",
+          "basis": "摘要初筛定位，非完整方法结论",
+          "primary_route": "harness"
+        },
+        {
+          "work_id": "meta-n",
+          "topic_ids": [
+            "h-control",
+            "h-capabilities",
+            "h-improver"
+          ],
+          "summary": "策略层与工具。已有初筛表明元操作固定；层数增加不等于元操作本身进化。",
+          "source_urls": [
+            "https://arxiv.org/abs/2608.24735",
+            "https://arxiv.org/pdf/2608.24735"
+          ],
+          "source_location": "摘要与既有来源记录",
+          "basis": "摘要初筛定位，非完整方法结论",
+          "primary_route": "harness"
+        },
+        {
+          "work_id": "self-harness",
+          "topic_ids": [
+            "h-runtime",
+            "h-experience",
+            "h-evaluation",
+            "h-improver"
+          ],
+          "summary": "自身 harness 代码。需要区分补丁产生与后继继续承担改进的完整循环。",
+          "source_urls": [
+            "https://arxiv.org/abs/2606.09498",
+            "https://arxiv.org/pdf/2606.09498"
+          ],
+          "source_location": "摘要与既有来源记录",
+          "basis": "摘要初筛定位，非完整方法结论",
+          "primary_route": "harness"
+        },
+        {
+          "work_id": "skillopt",
+          "topic_ids": [
+            "h-capabilities",
+            "h-evaluation",
+            "h-inheritance"
+          ],
+          "summary": "技能文本。外部优化模型修改技能；不是优化模型权重自改。",
+          "source_urls": [
+            "https://arxiv.org/abs/2605.23904",
+            "https://arxiv.org/pdf/2605.23904"
+          ],
+          "source_location": "摘要与既有来源记录",
+          "basis": "摘要初筛定位，非完整方法结论",
+          "primary_route": "harness"
+        },
+        {
+          "work_id": "mem2evolve",
+          "topic_ids": [
+            "h-memory",
+            "h-capabilities",
+            "h-experience",
+            "h-inheritance"
+          ],
+          "summary": "经验记忆；工具与专家资产。经验与能力资产双向影响；不据此认定更新算法也进化。",
+          "source_urls": [
+            "https://arxiv.org/abs/2604.10923",
+            "https://arxiv.org/pdf/2604.10923"
+          ],
+          "source_location": "摘要与既有来源记录",
+          "basis": "摘要初筛定位，非完整方法结论",
+          "primary_route": "harness"
+        },
+        {
+          "work_id": "memrl",
+          "topic_ids": [
+            "h-memory",
+            "h-evaluation",
+            "h-inheritance"
+          ],
+          "summary": "情景记忆；记忆效用值。LLM 参数冻结；记忆排序价值学习，更新规则本身固定。",
+          "source_urls": [
+            "https://arxiv.org/html/2601.03192v1"
+          ],
+          "source_location": "§3–4，特别是实际使用的式(8)，区别于一般 TD 形式。",
+          "basis": "方法段落支持",
+          "primary_route": "harness"
+        },
+        {
+          "work_id": "skillweaver",
+          "topic_ids": [
+            "h-capabilities",
+            "h-experience",
+            "h-inheritance"
+          ],
+          "summary": "网页 API 技能。技能库增长并用于后续任务；生成过程是否自改另论。",
+          "source_urls": [
+            "https://arxiv.org/html/2504.07079v1",
+            "https://arxiv.org/pdf/2504.07079"
+          ],
+          "source_location": "摘要与既有来源记录",
+          "basis": "摘要初筛定位，非完整方法结论",
+          "primary_route": "harness"
+        },
+        {
+          "work_id": "live-swe-agent",
+          "topic_ids": [
+            "h-capabilities",
+            "h-runtime",
+            "h-experience"
+          ],
+          "summary": "任务运行时创建的自定义工具脚本。主实验不改变 agentic loop；论文重点是同任务在线工具创造，不能说已证明跨任务递归演化。",
+          "source_urls": [
+            "https://arxiv.org/html/2511.13646v1",
+            "https://arxiv.org/pdf/2511.13646"
+          ],
+          "source_location": "arXiv:2511.13646v1，§2.1–2.2、§3、§4.1–4.2、Tables 1–3；§2.1 明确“不改变 agentic loop”。",
+          "basis": "方法段落支持",
+          "primary_route": "harness"
+        },
+        {
+          "work_id": "group-evolving-agents",
+          "topic_ids": [
+            "h-search",
+            "h-memory",
+            "h-improver",
+            "h-inheritance"
+          ],
+          "summary": "代理分支；跨分支经验。初筛支持经验共享引导结构修改；具体递归边界待方法核实。",
+          "source_urls": [
+            "https://arxiv.org/abs/2602.04837",
+            "https://arxiv.org/pdf/2602.04837"
+          ],
+          "source_location": "摘要与既有来源记录",
+          "basis": "摘要初筛定位，非完整方法结论",
+          "primary_route": "harness"
+        },
+        {
+          "work_id": "adaptive-auto-harness",
+          "topic_ids": [
+            "h-control",
+            "h-runtime",
+            "h-experience",
+            "h-search"
+          ],
+          "summary": "harness 集合；任务路由及经验。持续适应含人类引导信号；路由与改进器更新分别判断。",
+          "source_urls": [
+            "https://arxiv.org/abs/2606.01770",
+            "https://arxiv.org/pdf/2606.01770"
+          ],
+          "source_location": "摘要与既有来源记录",
+          "basis": "摘要初筛定位，非完整方法结论",
+          "primary_route": "harness"
+        },
+        {
+          "work_id": "continual-harness",
+          "topic_ids": [
+            "h-instructions",
+            "h-memory",
+            "h-capabilities",
+            "h-experience"
+          ],
+          "summary": "技能；提示；记忆。跨交互持久改进；早期人类参与和后续自动循环分开。",
+          "source_urls": [
+            "https://arxiv.org/abs/2605.09998",
+            "https://arxiv.org/html/2605.09998v1"
+          ],
+          "source_location": "摘要与既有来源记录",
+          "basis": "摘要初筛定位，非完整方法结论",
+          "primary_route": "harness"
+        },
+        {
+          "work_id": "shinkaevolve",
+          "topic_ids": [
+            "h-search",
+            "h-runtime"
+          ],
+          "summary": "候选程序；包括部分 agent harness。算法演化框架；普通程序任务属于相关搜索机制，不直接证明自身 RSI。",
+          "source_urls": [
+            "https://arxiv.org/abs/2509.19349",
+            "https://arxiv.org/pdf/2509.19349"
+          ],
+          "source_location": "摘要与既有来源记录",
+          "basis": "摘要初筛定位，非完整方法结论",
+          "primary_route": "harness"
+        },
+        {
+          "work_id": "voyager",
+          "topic_ids": [
+            "h-capabilities",
+            "h-memory",
+            "h-experience",
+            "h-inheritance"
+          ],
+          "summary": "可组合代码技能库。固定 GPT-4 和课程程序；持久技能积累成立，元算法自改未示范。",
+          "source_urls": [
+            "https://arxiv.org/html/2305.16291v2"
+          ],
+          "source_location": "§2、§3；本轮重读结构、技能库与反馈过程。",
+          "basis": "方法段落支持",
+          "primary_route": "harness"
+        },
+        {
+          "work_id": "dream-rsi",
+          "topic_ids": [
+            "h-control",
+            "h-search",
+            "h-experience",
+            "h-inheritance"
+          ],
+          "summary": "LLM 改写可执行的研究探索策略代码，用已有研究树进行回放、比较和选择；基础 agent 与评价器保持不变。",
+          "source_urls": [
+            "https://arxiv.org/html/2609.14858v2"
+          ],
+          "source_location": "§3 Policy improvement and selection; Appendix D.2",
+          "basis": "survey_classification",
+          "primary_route": "harness"
+        },
+        {
+          "work_id": "rewardharness",
+          "topic_ids": [
+            "h-evaluation",
+            "h-capabilities",
+            "h-search"
+          ],
+          "summary": "冻结视觉语言模型，通过偏好误差改进 reward agent 的技能和工具；该评价系统随后用于外部图像编辑模型的 GRPO 训练。",
+          "source_urls": [
+            "https://arxiv.org/html/2605.08703v1"
+          ],
+          "source_location": "Abstract; §1; §2; §3.2; §4",
+          "basis": "survey_classification",
+          "primary_route": "harness"
+        }
+      ]
+    },
+    {
+      "id": "model",
+      "title": "Model",
+      "tagline": "自生成经验、学习信号与参数更新",
+      "definition": "收录参数被学习更新的自训练、自反馈与 AI4AI 机制。ordinary RL、一次性 distillation 和使用 AI 处理数据是相关机制，不自动称为多代 RSI。若迭代对象仅为代码 / prompt，则归 Harness。",
+      "central_question": "学习信号从哪里来，下一代怎样变强？",
+      "reading_key": "首先按学习反馈机制组织概念关系；训练阶段、算法、在线性和功能角色作为交叉维度。图谱是可重叠概念网络，不要求每篇只属于一个箱子。",
+      "research_question": "怎样使自生成数据、评价者和课程持续提供有效的新学习信号，同时保持迁移与已有能力？",
+      "scene": "一代模型产生任务、答案或行动经验；反馈决定训练信号和数据分布；参数更新产生下一代。更深的闭环会继续训练评价者、出题者、数据选择者或改进器，使下一代不只更会解题，也改变下一轮学习条件。",
+      "loop": [
+        "生成任务、答案或经验",
+        "评价、验证与选择",
+        "形成学习信号",
+        "SFT / DPO / RL 更新",
+        "新模型再次生成"
+      ],
+      "facets": [
+        {
+          "title": "训练阶段 Training stage",
+          "text": "pretraining / post-training / test-time / deployment。同一方法可跨阶段；阶段不决定反馈来源。"
+        },
+        {
+          "title": "参数目标 Update objective",
+          "text": "SFT / distillation / DPO / preference optimization / policy-gradient RL / learned update。DPO 可使用每轮新采的偏好数据；不能仅因数据在线产生就把它写成 PPO。"
+        },
+        {
+          "title": "经验来源 Data collection",
+          "text": "fixed offline data / on-policy refresh / replay / mixed-policy data。online data collection、on-policy objective 和持续不间断训练是不同概念。"
+        },
+        {
+          "title": "更新节奏 Update schedule",
+          "text": "one-shot / round-based alternation / interleaved / asynchronous。记录真正运行的轮数与何时刷新 actor / critic / data。"
+        },
+        {
+          "title": "被训练的角色 Trainable roles",
+          "text": "actor / solver / judge / critic / task proposer / curriculum curator / improvement policy。共享参数或独立模型都可以；角色是系统功能，不是互斥技术路线。"
+        },
+        {
+          "title": "反馈来源 Grounding",
+          "text": "human seeds / rubric / executable checks / learned judge / self-consistency / downstream learning gain。指出每种反馈中的外部信息来源，防止把自生成等同于没有监督。"
+        },
+        {
+          "title": "参数写入 Plasticity",
+          "text": "full weights / adapter / LoRA / selected modules / no weight update。只修改 prompt / memory / code 时应回到 Harness 图。"
+        },
+        {
+          "title": "实际被训练模型的规模",
+          "text": "≥27B / <27B supplementary / unknown。总参数与 activated parameters 分开记录；大教师不使小学习者自动通过门槛。27B 是本综述主展示范围，不是科学价值定理。"
+        }
+      ],
+      "open_questions": [
+        {
+          "title": "谁能可靠地评价新的能力？",
+          "text": "当生成器超出现有评审能力时，如何获得仍然相关、可扩展、不会与生成器共同偏移的训练信号？ 更强的自生数据只有在反馈能辨别质量时才改变学习上限。"
+        },
+        {
+          "title": "什么样的自生任务真正增加能力覆盖？",
+          "text": "怎样同时优化 learnability、diversity 与跨分布迁移，使课程走向新能力而非在窄题型中重复提高分数？ 当前成功率与即时 advantage 只是训练价值代理；出题、选题与学习者相互适应可能产生局部循环。"
+        },
+        {
+          "title": "一次适应如何成为持续保留的能力？",
+          "text": "如何在长期任务流中选择更新时机和参数范围，让新能力可迁移、旧能力被保留，并使更新收益覆盖训练代价？ SEAL 的逐次自编辑实验仍出现遗忘；单任务 test-time 提升不能直接说明长期积累。"
+        }
+      ],
+      "nodes": [
+        {
+          "id": "m-bootstrapping",
+          "title": "自生成数据与自训练",
+          "english": "Self-training & bootstrapping",
+          "question": "模型的哪些输出值得成为下一轮训练数据？",
+          "definition": "模型生成解答、推理链或示范，经筛选后回流参数学习。关键变量是样本质量、覆盖、多样性，以及新一代是否重新产生训练数据。",
+          "subtopics": [
+            "Rationale bootstrapping：推理链自举",
+            "Rejection fine-tuning：正确轨迹筛选",
+            "Self-consistency filtering：自一致筛选",
+            "Self-distillation：自身经验蒸馏",
+            "Replay / mixture：新旧数据混合"
+          ],
+          "mechanisms": [
+            "采样候选 → 选取高质量轨迹 → SFT / 蒸馏 → 再采样",
+            "筛选信号可来自答案、执行器或 learned evaluator"
+          ],
+          "example_work_ids": [
+            "star",
+            "rest-em",
+            "llm-can-self-improve"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2203.14465",
+            "https://arxiv.org/abs/2312.06585",
+            "https://aclanthology.org/2023.emnlp-main.67.pdf"
+          ],
+          "kind": "feedback_mechanism",
+          "note": "",
+          "kind_label": "参数学习的反馈机制"
+        },
+        {
+          "id": "m-preferences",
+          "title": "自批评与 AI 偏好反馈",
+          "english": "Self-critique & AI feedback",
+          "question": "没有唯一正确答案时，怎样把批评或偏好变成训练信号？",
+          "definition": "由模型根据原则、rubric 或比较任务生成批评、修订与偏好，再训练回答策略。评价者可以冻结，也可以参与下一轮学习；这两种闭环强度不同。",
+          "subtopics": [
+            "Critique–revise：批评与修订",
+            "RLAIF：AI 反馈强化学习",
+            "Iterative DPO / preference optimization",
+            "Constitution / rubric：原则与评价准则",
+            "Shared generator–judge：生成与评价共享参数"
+          ],
+          "mechanisms": [
+            "自批评 → 修订示范 → SFT",
+            "成对评价 → 偏好对 → DPO 或 reward-model RL"
+          ],
+          "example_work_ids": [
+            "constitutional-ai",
+            "self-rewarding-lm",
+            "iterative-rpo",
+            "spin"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2212.08073v1",
+            "https://arxiv.org/html/2401.10020v1",
+            "https://arxiv.org/html/2404.19733v2"
+          ],
+          "kind": "feedback_mechanism",
+          "note": "",
+          "kind_label": "参数学习的反馈机制"
+        },
+        {
+          "id": "m-verifiable-feedback",
+          "title": "可验证反馈与策略改进",
+          "english": "Verifiable feedback & policy improvement",
+          "question": "哪些任务能把执行结果变成可靠、可扩展的学习信号？",
+          "definition": "答案检查、程序运行、环境状态或形式化证明核验提供外部反馈。可以用这些反馈筛选示范，也可以直接进行 RLVR；可验证反馈不是某一种优化算法。",
+          "subtopics": [
+            "Outcome verification：结果核验",
+            "Execution feedback：程序与工具执行",
+            "Formal verification：Lean 等证明核验",
+            "Search-to-train：搜索结果回流训练",
+            "Process credit：中间步骤与轨迹归因"
+          ],
+          "mechanisms": [
+            "当前策略采样 / 搜索 → 执行核验 → reward 或正负样本 → 参数更新"
+          ],
+          "example_work_ids": [
+            "alphaproof",
+            "absolute-zero",
+            "rest-em",
+            "iterative-rpo",
+            "metaevolve"
+          ],
+          "source_urls": [
+            "https://www.nature.com/articles/s41586-025-09833-y",
+            "https://arxiv.org/html/2505.03335v1",
+            "https://arxiv.org/abs/2607.21971"
+          ],
+          "kind": "feedback_mechanism",
+          "note": "",
+          "kind_label": "参数学习的反馈机制"
+        },
+        {
+          "id": "m-evaluator-learning",
+          "title": "评价器学习与生成—验证共演",
+          "english": "Evaluator learning & generator–verifier co-training",
+          "question": "生成器变强之后，评价器如何继续识别新错误？",
+          "definition": "把 judge、reward model 或 verifier 也作为学习对象。生成器不断提供新的判断难例，评价器更新后再影响生成器或数据选择。共享权重和独立模型都能实现这条关系。",
+          "subtopics": [
+            "Generative reward model：生成式奖励模型",
+            "Process / outcome verifier：过程与结果验证",
+            "Meta-verification：检查评价理由",
+            "Actor–critic co-training：执行与评价共训",
+            "Calibration：以可验证任务校准开放式评价"
+          ],
+          "mechanisms": [
+            "生成器产生新样本 → 训练评价器 → 反馈训练生成器",
+            "外部可验证信号 → 评价器校准 → 开放任务反馈"
+          ],
+          "example_work_ids": [
+            "self-rewarding-lm",
+            "self-taught-evaluators",
+            "deepseek-math-v2",
+            "kimi-k2",
+            "rl-tango",
+            "coverrl"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2408.02666v1",
+            "https://arxiv.org/html/2511.22570v1",
+            "https://arxiv.org/html/2507.20534v1",
+            "https://arxiv.org/abs/2505.15034"
+          ],
+          "kind": "feedback_mechanism",
+          "note": "",
+          "kind_label": "参数学习的反馈机制",
+          "short_title": "评价器与生成器共学"
+        },
+        {
+          "id": "m-self-play",
+          "title": "任务生成与自博弈",
+          "english": "Task generation & self-play",
+          "question": "模型如何持续遇到自己还不会、又可能学会的问题？",
+          "definition": "proposer、challenger 或 opponent 根据当前 solver 的表现改变任务或对手。这里区分生成新任务和从既有题库选任务，也区分共享模型与独立角色。",
+          "subtopics": [
+            "Proposer–solver：出题者与求解者",
+            "Adversarial self-play：攻防自博弈",
+            "Environment-grounded task generation",
+            "Learnability reward：可学习性反馈",
+            "Diversity / novelty：覆盖与新颖性"
+          ],
+          "mechanisms": [
+            "求解表现 → 出题 / 对手策略 → 新任务 → 求解学习 → 新表现"
+          ],
+          "example_work_ids": [
+            "absolute-zero",
+            "r-zero",
+            "dr-zero",
+            "agent0",
+            "tool-r0",
+            "gpt-red"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2505.03335v1",
+            "https://arxiv.org/abs/2508.05004",
+            "https://arxiv.org/html/2601.07055v2",
+            "https://arxiv.org/abs/2511.16043",
+            "https://cdn.openai.com/pdf/gpt-red-automated-red-teaming-via-self-play-at-scale.pdf"
+          ],
+          "kind": "feedback_mechanism",
+          "note": "",
+          "kind_label": "参数学习的反馈机制"
+        },
+        {
+          "id": "m-curriculum-learning",
+          "title": "课程与数据价值学习",
+          "english": "Adaptive curriculum & data selection",
+          "question": "有限训练预算应投入哪些任务、难度和能力缺口？",
+          "definition": "课程控制器根据学习者反馈调整采样分布；反馈可以是当前难度、预期学习增益或训练后的真实提升。困难、罕见、正确率低与有学习价值并不等价。",
+          "subtopics": [
+            "Competence frontier：能力边界",
+            "Learning-progress curriculum：学习进展课程",
+            "Bandit curator：数据选择 bandit",
+            "Difficulty / domain balancing",
+            "Data valuation：样本的下游训练价值"
+          ],
+          "mechanisms": [
+            "学习者表现 / advantage → 任务采样权重 → 新训练批次 → 更新学习者"
+          ],
+          "example_work_ids": [
+            "self-evolving-curriculum",
+            "actor-curator",
+            "webrl",
+            "agent-world"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2505.14970",
+            "https://arxiv.org/abs/2602.20532",
+            "https://arxiv.org/abs/2411.02337",
+            "https://arxiv.org/abs/2604.18292"
+          ],
+          "kind": "feedback_mechanism",
+          "note": "",
+          "kind_label": "参数学习的反馈机制"
+        },
+        {
+          "id": "m-experience-learning",
+          "title": "环境交互与长程经验学习",
+          "english": "Interactive learning & experience reuse",
+          "question": "多步工具行动的成功与失败，如何成为可迁移的策略能力？",
+          "definition": "在工具、网页、游戏或代码环境中生成轨迹，通过结果奖励、过程归因、示范筛选与回放训练行动策略。外部 memory 被写入并不等于模型参数学习，需分别标明。",
+          "subtopics": [
+            "Agentic RL：工具与多步决策训练",
+            "Trajectory credit assignment",
+            "Experience replay / relabeling",
+            "Simulated and real environments",
+            "Harness coordination：学会使用外部状态",
+            "Policy–world-model co-learning"
+          ],
+          "mechanisms": [
+            "行动轨迹 → 环境结果 / 过程反馈 → 轨迹选择与归因 → 行动策略更新"
+          ],
+          "example_work_ids": [
+            "sima2",
+            "webrl",
+            "agentevolver",
+            "agent-world",
+            "evoharness-rl"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2512.04797v1",
+            "https://arxiv.org/abs/2411.02337",
+            "https://arxiv.org/abs/2511.10395",
+            "https://arxiv.org/abs/2608.05446"
+          ],
+          "kind": "feedback_mechanism",
+          "note": "",
+          "kind_label": "参数学习的反馈机制",
+          "short_title": "交互经验与长程学习"
+        },
+        {
+          "id": "m-learned-updates",
+          "title": "学习如何改进学习者",
+          "english": "Learning to adapt & learned improvement policies",
+          "question": "如何训练一个真正提高后续学习或执行效果的改进器？",
+          "definition": "内层执行数据学习、奖励学习、技能整理或 harness 修改，外层用内层之后的表现训练改进策略。下游提升是反馈对象；一般的反思提示或多轮代码修订并不自动属于 meta-learning。",
+          "subtopics": [
+            "Bilevel optimization：内外层学习",
+            "Synthetic-data generator training",
+            "Learned self-edit：学习数据 / 更新指令",
+            "Reward designer training",
+            "Skill / harness curator training"
+          ],
+          "mechanisms": [
+            "改进器提出更新 → 内层学习或执行 → 下游效果 → 外层改进器训练"
+          ],
+          "example_work_ids": [
+            "seal",
+            "derl",
+            "harness-r1",
+            "skillos"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2506.10943v1",
+            "https://arxiv.org/html/2512.13399v3",
+            "https://arxiv.org/abs/2608.02276",
+            "https://arxiv.org/abs/2605.06614"
+          ],
+          "kind": "feedback_mechanism",
+          "note": "若可继承的外部 skills、reward code 或 harness 也同时演化，则在 Model × Harness 图增加连线；执行者冻结不等于全系统没有模型训练。",
+          "kind_label": "参数学习的反馈机制"
+        },
+        {
+          "id": "m-continual-adaptation",
+          "title": "持续学习与测试时适应",
+          "english": "Continual learning & test-time adaptation",
+          "question": "模型如何在新任务上学习，同时保留旧能力？",
+          "definition": "把上述学习机制放到任务流和部署阶段：何时写入参数、哪些参数可变、何时重置，以及新知识如何长期保留。它是跨机制研究主题，不与 SFT、RL 或 self-play 构成互斥分类。",
+          "subtopics": [
+            "Test-time training / RL",
+            "Streaming adaptation：任务流适应",
+            "Retention / interference：保留与干扰",
+            "Parameter-efficient adaptation：LoRA 等",
+            "Reset / consolidation：重置与长期保留"
+          ],
+          "mechanisms": [
+            "新任务 → 局部适应 → 新任务效果与旧任务保留 → 下一次适应"
+          ],
+          "example_work_ids": [
+            "seal",
+            "alphaproof"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2506.10943v1",
+            "https://www.nature.com/articles/s41586-025-09833-y"
+          ],
+          "kind": "cross_cutting_topic",
+          "note": "现有代表在本项目 ≥27B 规则下属于补充参考；不能据此判断整个主题已无大规模研究。更多推理 token 或修改上下文，不自动构成 test-time weight learning。",
+          "kind_label": "跨阶段问题"
+        },
+        {
+          "id": "m-pretraining-ai4ai",
+          "title": "预训练中的 AI4AI",
+          "english": "AI-assisted pretraining",
+          "question": "AI 能否改善基础模型的数据、训练规则与训练效率？",
+          "definition": "AI 改写语料、选择数据混合、设计损失 / 优化器或改进训练代码，均可能帮助预训练；只有训练结果进一步改进这些 AI 组件并形成继承关系，才出现相应的自改进闭环。",
+          "subtopics": [
+            "Synthetic / rephrased corpora",
+            "Data mixture optimization",
+            "Curriculum for pretraining",
+            "Learned optimizer / objective search",
+            "Training systems co-design"
+          ],
+          "mechanisms": [
+            "AI 处理数据 / 训练方案 → 基础模型训练 → 训练收益反馈；是否回流 AI 改进器需单独核实"
+          ],
+          "example_work_ids": [
+            "kimi-k2"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2507.20534v1",
+            "https://arxiv.org/abs/2305.10429"
+          ],
+          "kind": "boundary_topic",
+          "note": "Kimi K2 §2.2 支持 AI 改写预训练语料；这项事实不支持“该预训练管线已递归改进自己”。DoReMi 是数据配比机制参考，并非 ≥27B LLM RSI 主案例。",
+          "kind_label": "研究边界"
+        }
+      ],
+      "edges": [
+        {
+          "id": "field-model-01",
+          "source": "m-verifiable-feedback",
+          "target": "m-bootstrapping",
+          "label": "筛选正确轨迹",
+          "explanation": "外部答案或执行结果可以提供自训练的样本接受条件。",
+          "example_work_ids": [
+            "star",
+            "rest-em"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2203.14465",
+            "https://arxiv.org/html/2312.06585v4"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-model-02",
+          "source": "m-evaluator-learning",
+          "target": "m-bootstrapping",
+          "label": "筛选 / 标注自生数据",
+          "explanation": "学到的评价器可决定哪些生成样本进入下一轮训练。",
+          "example_work_ids": [
+            "self-taught-evaluators",
+            "deepseek-math-v2"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2408.02666v1",
+            "https://arxiv.org/html/2511.22570v1"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-model-03",
+          "source": "m-evaluator-learning",
+          "target": "m-preferences",
+          "label": "形成 AI 偏好",
+          "explanation": "评价模型把开放式回答比较转为偏好训练信号。",
+          "example_work_ids": [
+            "self-rewarding-lm",
+            "kimi-k2"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2401.10020v1",
+            "https://arxiv.org/html/2507.20534v1"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-model-04",
+          "source": "m-preferences",
+          "target": "m-evaluator-learning",
+          "label": "共同更新评价能力",
+          "explanation": "生成与判断共享参数时，偏好训练可能同时改变二者；需实测判断能力。",
+          "example_work_ids": [
+            "self-rewarding-lm"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2401.10020v1"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-model-05",
+          "source": "m-verifiable-feedback",
+          "target": "m-evaluator-learning",
+          "label": "校准评价器",
+          "explanation": "结果可靠的任务为 learned critic / verifier 提供训练信号。",
+          "example_work_ids": [
+            "kimi-k2",
+            "rl-tango"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2507.20534v1",
+            "https://arxiv.org/abs/2505.15034"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-model-06",
+          "source": "m-bootstrapping",
+          "target": "m-evaluator-learning",
+          "label": "提供新判断样本",
+          "explanation": "自生成候选及其选择结果构造新的 evaluator 训练材料。",
+          "example_work_ids": [
+            "self-taught-evaluators"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2408.02666v1"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-model-07",
+          "source": "m-self-play",
+          "target": "m-curriculum-learning",
+          "label": "生成能力边缘任务",
+          "explanation": "出题策略改变训练候选池；课程策略再分配采样。",
+          "example_work_ids": [
+            "absolute-zero",
+            "r-zero",
+            "agent0"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2505.03335",
+            "https://arxiv.org/abs/2508.05004",
+            "https://arxiv.org/abs/2511.16043"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-model-08",
+          "source": "m-curriculum-learning",
+          "target": "m-self-play",
+          "label": "反馈难度与可学习性",
+          "explanation": "求解者当前表现反馈给任务生成者，塑造下轮任务。",
+          "example_work_ids": [
+            "absolute-zero",
+            "dr-zero"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2505.03335",
+            "https://arxiv.org/html/2601.07055v2"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-model-09",
+          "source": "m-verifiable-feedback",
+          "target": "m-self-play",
+          "label": "验证任务与解答",
+          "explanation": "可执行环境同时检查自生任务是否合法、解答是否正确。",
+          "example_work_ids": [
+            "absolute-zero",
+            "tool-r0"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2505.03335",
+            "https://arxiv.org/abs/2602.21320"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-model-10",
+          "source": "m-self-play",
+          "target": "m-experience-learning",
+          "label": "驱动新交互",
+          "explanation": "AI 生成任务使执行者获得新的环境轨迹。",
+          "example_work_ids": [
+            "sima2",
+            "agentevolver",
+            "agent-world"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2512.04797v1",
+            "https://arxiv.org/abs/2511.10395",
+            "https://arxiv.org/abs/2604.18292"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-model-11",
+          "source": "m-experience-learning",
+          "target": "m-curriculum-learning",
+          "label": "从失败调整课程",
+          "explanation": "失败与能力缺口改变下一批任务。",
+          "example_work_ids": [
+            "webrl",
+            "agent-world"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2411.02337",
+            "https://arxiv.org/abs/2604.18292"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-model-12",
+          "source": "m-experience-learning",
+          "target": "m-verifiable-feedback",
+          "label": "产生执行结果",
+          "explanation": "环境动作和程序执行产生可检验的状态变化与反馈。",
+          "example_work_ids": [
+            "tool-r0",
+            "metaevolve"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2602.21320",
+            "https://arxiv.org/abs/2607.21971"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-model-13",
+          "source": "m-experience-learning",
+          "target": "m-bootstrapping",
+          "label": "回放 / 蒸馏有效经验",
+          "explanation": "经反馈选择的交互经验可变为后续监督训练材料；与在线 RL 可组合。",
+          "example_work_ids": [
+            "sima2",
+            "agentevolver"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2512.04797v1",
+            "https://arxiv.org/abs/2511.10395"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-model-14",
+          "source": "m-learned-updates",
+          "target": "m-bootstrapping",
+          "label": "优化训练材料",
+          "explanation": "外层按内层学习收益训练数据 / 自编辑生成策略。",
+          "example_work_ids": [
+            "seal"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2506.10943v1"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-model-15",
+          "source": "m-learned-updates",
+          "target": "m-experience-learning",
+          "label": "训练经验整理策略",
+          "explanation": "改进器把经历改写为 skills 或 harness，后续执行效果训练改进器。",
+          "example_work_ids": [
+            "skillos",
+            "harness-r1"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2605.06614",
+            "https://arxiv.org/abs/2608.02276"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-model-16",
+          "source": "m-continual-adaptation",
+          "target": "m-learned-updates",
+          "label": "把更新策略用于新任务",
+          "explanation": "学习如何 self-edit 可用于部署时知识吸收；长期保留仍需单独解决。",
+          "example_work_ids": [
+            "seal"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2506.10943v1"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-model-17",
+          "source": "m-verifiable-feedback",
+          "target": "m-continual-adaptation",
+          "label": "支持测试时参数学习",
+          "explanation": "测试时的可验证尝试可回流参数，而不只增加搜索量。",
+          "example_work_ids": [
+            "alphaproof"
+          ],
+          "source_urls": [
+            "https://www.nature.com/articles/s41586-025-09833-y"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-model-18",
+          "source": "m-pretraining-ai4ai",
+          "target": "m-bootstrapping",
+          "label": "扩展训练材料",
+          "explanation": "AI 合成 / 改写语料可以进入预训练；这条使用关系不证明训练反馈反向改进生成器。",
+          "example_work_ids": [
+            "kimi-k2"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2507.20534v1"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-model-19",
+          "source": "m-curriculum-learning",
+          "target": "m-pretraining-ai4ai",
+          "label": "连接数据混合优化",
+          "explanation": "按学习反馈选数据的思想也用于预训练数据配比；DoReMi 是机制参考，不列为当前大模型 RSI 主案例。",
+          "example_work_ids": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2505.14970",
+            "https://arxiv.org/abs/2602.20532",
+            "https://arxiv.org/abs/2411.02337",
+            "https://arxiv.org/abs/2604.18292",
+            "https://arxiv.org/html/2507.20534v1",
+            "https://arxiv.org/abs/2305.10429"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-model-20",
+          "source": "m-learned-updates",
+          "target": "m-pretraining-ai4ai",
+          "label": "研究预训练改进器",
+          "explanation": "把训练收益用作数据生成器或更新规则的外层目标是研究方向；此处没有据此声称现有目录已经实现前沿预训练 RSI。",
+          "example_work_ids": [],
+          "source_urls": [
+            "https://arxiv.org/html/2506.10943v1",
+            "https://arxiv.org/html/2512.13399v3",
+            "https://arxiv.org/abs/2608.02276",
+            "https://arxiv.org/abs/2605.06614",
+            "https://arxiv.org/html/2507.20534v1",
+            "https://arxiv.org/abs/2305.10429"
+          ],
+          "evidence": "survey_structure"
+        }
+      ],
+      "mappings": [
+        {
+          "work_id": "spin",
+          "topic_ids": [
+            "m-preferences",
+            "m-bootstrapping"
+          ],
+          "summary": "以当前输出与原始示范分布比较，迭代改进模型；self-play 一词不等于动态出题。",
+          "source_urls": [
+            "https://arxiv.org/html/2401.01335v2",
+            "https://github.com/uclaml/SPIN"
+          ],
+          "source_location": "摘要与既有来源记录",
+          "basis": "abstract_position",
+          "primary_route": "model"
+        },
+        {
+          "work_id": "self-rewarding-lm",
+          "topic_ids": [
+            "m-preferences",
+            "m-evaluator-learning"
+          ],
+          "summary": "回答与 judge 共享模型；自生偏好用于逐轮 DPO。",
+          "source_urls": [
+            "https://arxiv.org/html/2401.10020v1"
+          ],
+          "source_location": "§2.1–2.4，§3.1–3.2；特别是 §3.1.3 的固定出题模型。",
+          "basis": "method_supported",
+          "primary_route": "model"
+        },
+        {
+          "work_id": "seal",
+          "topic_ids": [
+            "m-learned-updates",
+            "m-bootstrapping",
+            "m-continual-adaptation"
+          ],
+          "summary": "学习自编辑数据 / 更新指令，并用内层适应效果训练编辑策略。",
+          "source_urls": [
+            "https://arxiv.org/html/2506.10943v1"
+          ],
+          "source_location": "§3；§4 few-shot setup；Appendix A",
+          "basis": "method_supported",
+          "primary_route": "model"
+        },
+        {
+          "work_id": "evoharness-rl",
+          "topic_ids": [
+            "m-experience-learning"
+          ],
+          "summary": "SFT 与 cost-aware GRPO 训练外部 BPE 状态访问策略；不因名称含 harness 就当成学习更新器。",
+          "source_urls": [
+            "https://arxiv.org/pdf/2608.05446",
+            "https://arxiv.org/abs/2608.05446"
+          ],
+          "source_location": "摘要与既有来源记录",
+          "basis": "abstract_position",
+          "primary_route": "model"
+        },
+        {
+          "work_id": "star",
+          "topic_ids": [
+            "m-bootstrapping",
+            "m-verifiable-feedback"
+          ],
+          "summary": "正确答案筛选自生推理链，答案辅助 rationalization 后再微调。",
+          "source_urls": [
+            "https://arxiv.org/pdf/2203.14465",
+            "https://arxiv.org/abs/2203.14465"
+          ],
+          "source_location": "摘要与既有来源记录",
+          "basis": "abstract_position",
+          "primary_route": "model"
+        },
+        {
+          "work_id": "rest-em",
+          "topic_ids": [
+            "m-bootstrapping",
+            "m-verifiable-feedback"
+          ],
+          "summary": "自生样本按外部二元反馈筛选，E/M 轮交替。",
+          "source_urls": [
+            "https://arxiv.org/pdf/2312.06585v4"
+          ],
+          "source_location": "首页；§3 Algorithm 1、§5–6、Figure 4/7",
+          "basis": "method_supported",
+          "primary_route": "model"
+        },
+        {
+          "work_id": "alphaproof",
+          "topic_ids": [
+            "m-verifiable-feedback",
+            "m-bootstrapping",
+            "m-continual-adaptation"
+          ],
+          "summary": "Lean 验证搜索经验，训练证明网络并做 test-time RL。",
+          "source_urls": [
+            "https://www.nature.com/articles/s41586-025-09833-y"
+          ],
+          "source_location": "Agent / Training / Methods: Proof network；test-time RL",
+          "basis": "method_supported",
+          "primary_route": "model"
+        },
+        {
+          "work_id": "sima2",
+          "topic_ids": [
+            "m-experience-learning",
+            "m-self-play"
+          ],
+          "summary": "AI 提供游戏任务与轨迹反馈，执行代理从交互经验学习；此映射不声称出题者同步训练。",
+          "source_urls": [
+            "https://arxiv.org/html/2512.04797v1"
+          ],
+          "source_location": "首页；§3.3、§4.5，Figures 15–17",
+          "basis": "method_supported",
+          "primary_route": "model"
+        },
+        {
+          "work_id": "constitutional-ai",
+          "topic_ids": [
+            "m-preferences",
+            "m-bootstrapping"
+          ],
+          "summary": "原则引导 self-critique / revision，再以 AI 偏好训练奖励与策略；非多代奖励者共演证据。",
+          "source_urls": [
+            "https://arxiv.org/html/2212.08073v1"
+          ],
+          "source_location": "§1.2、§3、§4；Figure 2 的 52B RL runs",
+          "basis": "method_supported",
+          "primary_route": "model"
+        },
+        {
+          "work_id": "self-taught-evaluators",
+          "topic_ids": [
+            "m-evaluator-learning",
+            "m-bootstrapping"
+          ],
+          "summary": "合成判断与偏好训练 evaluator，再以新评价生成下一轮训练数据。",
+          "source_urls": [
+            "https://arxiv.org/html/2408.02666v1"
+          ],
+          "source_location": "§3–4：构造标签、种子重置、实验",
+          "basis": "method_supported",
+          "primary_route": "model"
+        },
+        {
+          "work_id": "gpt-red",
+          "topic_ids": [
+            "m-self-play"
+          ],
+          "summary": "攻防模型相互提供训练压力；角色关系是 adversarial self-play。",
+          "source_urls": [
+            "https://cdn.openai.com/pdf/gpt-red-automated-red-teaming-via-self-play-at-scale.pdf"
+          ],
+          "source_location": "论文 §5；官方自玩与生产应用说明",
+          "basis": "method_supported",
+          "primary_route": "model"
+        },
+        {
+          "work_id": "dr-zero",
+          "topic_ids": [
+            "m-self-play",
+            "m-curriculum-learning",
+            "m-experience-learning"
+          ],
+          "summary": "搜索增强的 proposer / solver 共训，求解表现决定训练任务。",
+          "source_urls": [
+            "https://arxiv.org/html/2601.07055v2"
+          ],
+          "source_location": "§3.1 设置与学习目标；方法与实验概述",
+          "basis": "method_supported",
+          "primary_route": "model"
+        },
+        {
+          "work_id": "agent0",
+          "topic_ids": [
+            "m-self-play",
+            "m-curriculum-learning",
+            "m-experience-learning"
+          ],
+          "summary": "课程代理与工具执行代理形成任务生成和求解反馈。",
+          "source_urls": [
+            "https://arxiv.org/pdf/2511.16043",
+            "https://arxiv.org/abs/2511.16043"
+          ],
+          "source_location": "摘要与既有来源记录",
+          "basis": "abstract_position",
+          "primary_route": "model"
+        },
+        {
+          "work_id": "r-zero",
+          "topic_ids": [
+            "m-self-play",
+            "m-curriculum-learning"
+          ],
+          "summary": "challenger 围绕 solver 能力边缘生成下一批任务。",
+          "source_urls": [
+            "https://arxiv.org/pdf/2508.05004",
+            "https://arxiv.org/abs/2508.05004"
+          ],
+          "source_location": "摘要与既有来源记录",
+          "basis": "abstract_position",
+          "primary_route": "model"
+        },
+        {
+          "work_id": "absolute-zero",
+          "topic_ids": [
+            "m-self-play",
+            "m-verifiable-feedback",
+            "m-curriculum-learning"
+          ],
+          "summary": "同一模型兼任 proposer / solver，执行器给 correctness，求解成功率给 learnability。",
+          "source_urls": [
+            "https://arxiv.org/html/2505.03335v1",
+            "https://arxiv.org/abs/2505.03335"
+          ],
+          "source_location": "摘要与既有来源记录",
+          "basis": "abstract_position",
+          "primary_route": "model"
+        },
+        {
+          "work_id": "tool-r0",
+          "topic_ids": [
+            "m-self-play",
+            "m-verifiable-feedback",
+            "m-experience-learning"
+          ],
+          "summary": "工具任务生成与工具求解互相反馈；运行结果支持训练信号。",
+          "source_urls": [
+            "https://arxiv.org/html/2602.21320v1",
+            "https://arxiv.org/abs/2602.21320"
+          ],
+          "source_location": "摘要与既有来源记录",
+          "basis": "abstract_position",
+          "primary_route": "model"
+        },
+        {
+          "work_id": "derl",
+          "topic_ids": [
+            "m-learned-updates"
+          ],
+          "summary": "奖励程序设计者通过内层策略训练后的验证效果更新。",
+          "source_urls": [
+            "https://arxiv.org/html/2512.13399v3"
+          ],
+          "source_location": "§3.1、§5.1、Appendix C",
+          "basis": "method_supported",
+          "primary_route": "model"
+        },
+        {
+          "work_id": "harness-r1",
+          "topic_ids": [
+            "m-learned-updates"
+          ],
+          "summary": "训练 harness 编辑模型，用目标 agent 重跑后的成功评价编辑效果；与 Hybrid 关联。",
+          "source_urls": [
+            "https://arxiv.org/pdf/2608.02276",
+            "https://arxiv.org/abs/2608.02276"
+          ],
+          "source_location": "摘要、§4 训练设置、Appendix B.1–B.2 的 9B 编辑模型；仅此范围。",
+          "basis": "abstract_position",
+          "primary_route": "model"
+        },
+        {
+          "work_id": "webrl",
+          "topic_ids": [
+            "m-experience-learning",
+            "m-curriculum-learning"
+          ],
+          "summary": "失败轨迹产生新课程，outcome reward 与在线 RL 更新网页行动策略。",
+          "source_urls": [
+            "https://arxiv.org/pdf/2411.02337",
+            "https://arxiv.org/abs/2411.02337"
+          ],
+          "source_location": "摘要与既有来源记录",
+          "basis": "abstract_position",
+          "primary_route": "model"
+        },
+        {
+          "work_id": "rstar-math",
+          "topic_ids": [
+            "m-evaluator-learning",
+            "m-bootstrapping",
+            "m-verifiable-feedback"
+          ],
+          "summary": "搜索轨迹训练 policy 与 process preference model，结果验证约束反馈。",
+          "source_urls": [
+            "https://arxiv.org/pdf/2501.04519",
+            "https://arxiv.org/abs/2501.04519"
+          ],
+          "source_location": "摘要与既有来源记录",
+          "basis": "abstract_position",
+          "primary_route": "model"
+        },
+        {
+          "work_id": "self-evolved-reward",
+          "topic_ids": [
+            "m-evaluator-learning",
+            "m-bootstrapping"
+          ],
+          "summary": "奖励模型用自生训练反馈迭代学习评价能力。",
+          "source_urls": [
+            "https://arxiv.org/pdf/2411.00418",
+            "https://arxiv.org/abs/2411.00418"
+          ],
+          "source_location": "摘要与既有来源记录",
+          "basis": "abstract_position",
+          "primary_route": "model"
+        },
+        {
+          "work_id": "self-evolving-curriculum",
+          "topic_ids": [
+            "m-curriculum-learning"
+          ],
+          "summary": "以 advantage-derived learning gain 更新非平稳 bandit 课程。",
+          "source_urls": [
+            "https://arxiv.org/pdf/2505.14970",
+            "https://arxiv.org/abs/2505.14970"
+          ],
+          "source_location": "摘要与既有来源记录",
+          "basis": "abstract_position",
+          "primary_route": "model"
+        },
+        {
+          "work_id": "coverrl",
+          "topic_ids": [
+            "m-evaluator-learning"
+          ],
+          "summary": "同一模型交替生成与验证，通过验证缓解 self-consistency 错误。",
+          "source_urls": [
+            "https://arxiv.org/pdf/2603.17775",
+            "https://arxiv.org/abs/2603.17775"
+          ],
+          "source_location": "摘要与既有来源记录",
+          "basis": "abstract_position",
+          "primary_route": "model"
+        },
+        {
+          "work_id": "actor-curator",
+          "topic_ids": [
+            "m-curriculum-learning"
+          ],
+          "summary": "学习 neural curator，以预计策略提升而非单纯难度选题。",
+          "source_urls": [
+            "https://arxiv.org/pdf/2602.20532",
+            "https://arxiv.org/abs/2602.20532"
+          ],
+          "source_location": "摘要与既有来源记录",
+          "basis": "abstract_position",
+          "primary_route": "model"
+        },
+        {
+          "work_id": "agent-world",
+          "topic_ids": [
+            "m-experience-learning",
+            "m-self-play",
+            "m-curriculum-learning"
+          ],
+          "summary": "真实工具生态中构造可验证任务，按能力缺口产生后续训练经验。",
+          "source_urls": [
+            "https://arxiv.org/pdf/2604.18292",
+            "https://arxiv.org/abs/2604.18292"
+          ],
+          "source_location": "摘要与既有来源记录",
+          "basis": "abstract_position",
+          "primary_route": "model"
+        },
+        {
+          "work_id": "skillos",
+          "topic_ids": [
+            "m-learned-updates",
+            "m-experience-learning"
+          ],
+          "summary": "冻结执行者，训练 skill curator；较晚关联任务评价早先 SkillRepo 更新。",
+          "source_urls": [
+            "https://arxiv.org/pdf/2605.06614",
+            "https://arxiv.org/abs/2605.06614"
+          ],
+          "source_location": "摘要与既有来源记录",
+          "basis": "abstract_position",
+          "primary_route": "model"
+        },
+        {
+          "work_id": "agentevolver",
+          "topic_ids": [
+            "m-experience-learning",
+            "m-self-play"
+          ],
+          "summary": "自提问生成任务，自导航重用经验，自归因分配训练反馈。",
+          "source_urls": [
+            "https://arxiv.org/pdf/2511.10395",
+            "https://arxiv.org/abs/2511.10395"
+          ],
+          "source_location": "摘要与既有来源记录",
+          "basis": "abstract_position",
+          "primary_route": "model"
+        },
+        {
+          "work_id": "metaevolve",
+          "topic_ids": [
+            "m-verifiable-feedback",
+            "m-experience-learning"
+          ],
+          "summary": "用执行反馈训练多轮程序修订；meta-skills 不等于学习优化器。",
+          "source_urls": [
+            "https://arxiv.org/pdf/2607.21971",
+            "https://arxiv.org/abs/2607.21971"
+          ],
+          "source_location": "摘要与既有来源记录",
+          "basis": "abstract_position",
+          "primary_route": "model"
+        },
+        {
+          "work_id": "rl-tango",
+          "topic_ids": [
+            "m-evaluator-learning",
+            "m-verifiable-feedback"
+          ],
+          "summary": "生成者与过程验证者交替训练，结果正确性提供外部评价锚点。",
+          "source_urls": [
+            "https://arxiv.org/pdf/2505.15034",
+            "https://arxiv.org/abs/2505.15034"
+          ],
+          "source_location": "摘要与既有来源记录",
+          "basis": "abstract_position",
+          "primary_route": "model"
+        },
+        {
+          "work_id": "iterative-rpo",
+          "topic_ids": [
+            "m-preferences",
+            "m-verifiable-feedback"
+          ],
+          "summary": "答案正确性形成正负推理对，以 DPO+NLL 迭代训练；AI 生成数据不等于 AI 决定偏好真值。",
+          "source_urls": [
+            "https://arxiv.org/html/2404.19733v2"
+          ],
+          "source_location": "首页；§2、§3.1–3.3、Appendix A",
+          "basis": "method_supported",
+          "primary_route": "model"
+        },
+        {
+          "work_id": "deepseek-math-v2",
+          "topic_ids": [
+            "m-evaluator-learning",
+            "m-bootstrapping"
+          ],
+          "summary": "验证器、元验证与生成器迭代；轮间 rejection fine-tuning 融合能力。",
+          "source_urls": [
+            "https://arxiv.org/html/2511.22570v1"
+          ],
+          "source_location": "§2.1–2.3、§3.1–3.3；官方 Math-V2 config.json 与 V3.2-Exp 部署配置",
+          "basis": "method_supported",
+          "primary_route": "model"
+        },
+        {
+          "work_id": "kimi-k2",
+          "topic_ids": [
+            "m-evaluator-learning",
+            "m-preferences",
+            "m-verifiable-feedback",
+            "m-pretraining-ai4ai"
+          ],
+          "summary": "RLVR 信号校准 K2 critic，rubric 评价开放任务；另有预训练 rephrasing，二者不是一个已证递归环。",
+          "source_urls": [
+            "https://arxiv.org/html/2507.20534v1"
+          ],
+          "source_location": "§1、§3.2.2–3.2.3、§4 与 Appendix F",
+          "basis": "method_supported",
+          "primary_route": "model"
+        },
+        {
+          "work_id": "llm-can-self-improve",
+          "topic_ids": [
+            "m-bootstrapping"
+          ],
+          "summary": "self-consistency 筛选自生推理，回流 SFT；保留一轮自训练范围。",
+          "source_urls": [
+            "https://aclanthology.org/2023.emnlp-main.67.pdf"
+          ],
+          "source_location": "首页；§2–3、消融；2022 预印本 / EMNLP 2023",
+          "basis": "method_supported",
+          "primary_route": "model"
+        },
+        {
+          "work_id": "seed-distillation",
+          "topic_ids": [
+            "m-bootstrapping",
+            "m-experience-learning"
+          ],
+          "summary": "同一策略承担 actor 与训练期 analyzer；从自身轨迹提炼 hindsight skills，形成 on-policy distillation 与 RL 信号。部署时移除 analyzer，保留更新后的策略模型。",
+          "source_urls": [
+            "https://arxiv.org/html/2607.14777v1"
+          ],
+          "source_location": "§3 opening; §3.3; Fig.2",
+          "basis": "survey_classification",
+          "primary_route": "model"
+        },
+        {
+          "work_id": "webevolver",
+          "topic_ids": [
+            "m-experience-learning",
+            "m-bootstrapping"
+          ],
+          "summary": "策略 LLM 与 world-model LLM 从交互轨迹中共同训练；世界模型提供合成经验与前瞻规划。可变对象是两类模型的参数。",
+          "source_urls": [
+            "https://arxiv.org/html/2504.21024v2"
+          ],
+          "source_location": "v2：§3.1–3.3、§4.1–4.4，Tables 1–3",
+          "basis": "method_passages_read",
+          "primary_route": "model"
+        }
+      ]
+    },
+    {
+      "id": "hybrid",
+      "title": "Model × Harness",
+      "tagline": "参数与外部系统的耦合、内化与共同适配",
+      "definition": "Model指系统内所有被学习的参数，包括策略、reward model、world model与controller。Harness指参数之外可保留、可执行或可配置的组织结构与状态，包括工作流、tools、skills、记忆、环境包装和训练程序。Hybrid要求同时说明参数与外部系统的实际更新对象；强一些的协同进化还要说明两类更新怎样相互影响并跨轮复用。",
+      "central_question": "模型参数和外部系统同时变化时，经验如何进入参数，更新后的模型又如何改变下一轮学习与执行的组织方式？",
+      "reading_key": "先画相互耦合的研究问题，再把论文连接到它实际改变的环节。九个节点是可交叉的机制坐标，不是互斥论文箱。",
+      "research_question": "如何辨别顺序适配、双向反馈和持续共演，并在改变的系统条件下保持学习效果？",
+      "scene": "模型在 harness 中执行，形成轨迹与任务反馈。反馈可以同时用于参数学习和外部系统修改；更新后的模型是否继续参与系统设计，需要逐篇追踪。循环结构是阅读索引。每篇论文只高亮它实际实现的边；其余边保持空白。",
+      "loop": [
+        "模型在系统中运行",
+        "产生轨迹与任务反馈",
+        "更新参数与外部程序",
+        "重新适配与比较",
+        "保留有效组合"
+      ],
+      "facets": [
+        {
+          "title": "更新时间安排",
+          "text": "Sequential：先更新H，再训练M；未必再回到H。；Alternating：交替更新H与M，新的一个组件用于下一轮更新另一个。；Joint / Interleaved：多个目标或组件在同一训练过程互相影响；不要求每一步同时更新。；Online / Continual：随当前系统收集新经验并继续更新；应注明发生在训练还是实际部署。"
+        },
+        {
+          "title": "具体改变什么",
+          "text": "policy weights；reward/world-model weights；controller weights；workflow / prompts；skills / memory；environment / curriculum；training program / optimizer"
+        },
+        {
+          "title": "回到哪一层",
+          "text": "单向能力迁移；模型—系统共同适配；多轮互相更新；改进后的系统参与下一轮改进"
+        },
+        {
+          "title": "共同训练与系统共演的区别",
+          "text": "策略、评价器与世界模型同时训练，可能完全发生在参数侧。只有同时识别外部系统的更新对象，才能定位 Model × Harness；一条 H→M 路径也不自动成为双向闭环。"
+        }
+      ],
+      "open_questions": [
+        {
+          "title": "联合更新为什么有时互补，有时互相破坏？",
+          "text": "harness改变了状态分布与规划习惯；参数更新可能增强它，也可能破坏已经形成的配合。需要解释性能变化来自哪条耦合路径，而不是只比较最终分数。"
+        },
+        {
+          "title": "什么应保留在外部，什么应写入参数？",
+          "text": "可检索技能易更新并保留条件，参数内化减少部署依赖。两者的取舍涉及泛化、调用成本、遗忘和新任务适配。SkillRL与Harness-Zero代表不同位置，SEED展示训练期技能向参数的转移。"
+        },
+        {
+          "title": "任务、奖励和改进器都变化后，怎样仍然得到可迁移进步？",
+          "text": "学习信号本身可能随策略变化而变好或发生偏移。评价可靠性、任务覆盖与长期版本演化是相互关联的问题；多轮短期增益尚不等于长期稳定增长。"
+        }
+      ],
+      "nodes": [
+        {
+          "id": "x-workflow",
+          "title": "工作流与策略共同适配",
+          "english": "Workflow–Policy Co-adaptation",
+          "question": "模型行为改变以后，原来有效的规划、工具调用和错误恢复流程还有效吗？",
+          "definition": "将模型参数与外部工作流作为相互依赖的更新对象：先改变工作流会改变轨迹分布；随后训练模型又会改变该工作流的适用条件。研究对象是这种双向适配。",
+          "subtopics": [
+            "规划与执行分工",
+            "工具调用与错误恢复",
+            "模型—工作流分布匹配",
+            "交替更新与联合目标"
+          ],
+          "mechanisms": [
+            "harness evolution",
+            "failure attribution",
+            "alternating optimization",
+            "on-policy expert correction"
+          ],
+          "example_work_ids": [
+            "co-harness",
+            "on-policy-harness-coevolution",
+            "mass",
+            "sia"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2607.22688v1",
+            "https://arxiv.org/html/2609.09134",
+            "https://arxiv.org/html/2610.12176v1",
+            "https://arxiv.org/html/2605.27276v1"
+          ],
+          "layout": {
+            "column": 1,
+            "row": 0
+          },
+          "kind": "coupling_mechanism",
+          "kind_label": "参数与系统的耦合机制"
+        },
+        {
+          "id": "x-internalization",
+          "title": "外部经验进入参数",
+          "english": "Harness-to-Model Internalization",
+          "question": "外部流程带来的行为能力，怎样转化为模型在简化或不同harness下仍能使用的能力？",
+          "definition": "从外部工具、工作流、技能或教师干预获得训练轨迹与学习信号，通过SFT、RL或蒸馏更新模型。仅有这条单向传递，还不等于反复的双向共演。",
+          "subtopics": [
+            "成功轨迹筛选与SFT",
+            "局部纠错与on-policy监督",
+            "技能条件自蒸馏",
+            "复杂harness向目标动作空间编译",
+            "外部支持移除后的能力保持"
+          ],
+          "mechanisms": [
+            "trajectory distillation",
+            "behavioral internalization",
+            "on-policy distillation",
+            "agent-as-harness"
+          ],
+          "example_work_ids": [
+            "harness-zero",
+            "on-policy-harness-coevolution",
+            "seed-distillation",
+            "mass"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2609.24974v1",
+            "https://arxiv.org/html/2609.09134",
+            "https://arxiv.org/html/2607.14777v1",
+            "https://arxiv.org/html/2610.12176v1"
+          ],
+          "layout": {
+            "column": 0,
+            "row": 1
+          },
+          "kind": "coupling_mechanism",
+          "kind_label": "参数与系统的耦合机制"
+        },
+        {
+          "id": "x-externalization",
+          "title": "模型能力用于系统改写",
+          "english": "Model-to-Harness Design",
+          "question": "更新后的模型能否提出更有用的工具、技能、工作流和训练干预？",
+          "definition": "模型以设计者或改进器身份生成外部系统的修改；反馈筛选后的修改影响后续执行或学习。模型行为变强本身，不自动证明其系统设计能力也变强。",
+          "subtopics": [
+            "工作流与通信结构生成",
+            "工具与技能程序合成",
+            "环境包装与任务设计",
+            "训练程序与诊断工具修订",
+            "改进器在下一轮复用"
+          ],
+          "mechanisms": [
+            "program synthesis",
+            "workflow search",
+            "feedback-conditioned editing",
+            "improver reuse"
+          ],
+          "example_work_ids": [
+            "mass",
+            "sia",
+            "evods",
+            "evotrainer",
+            "envharness"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2610.12176v1",
+            "https://arxiv.org/html/2605.27276v1",
+            "https://arxiv.org/html/2606.03841v1",
+            "https://arxiv.org/html/2606.03108v2",
+            "https://arxiv.org/html/2608.19880v1"
+          ],
+          "layout": {
+            "column": 2,
+            "row": 1
+          },
+          "kind": "coupling_mechanism",
+          "kind_label": "参数与系统的耦合机制"
+        },
+        {
+          "id": "x-memory",
+          "title": "技能、记忆与策略共演",
+          "english": "Skill–Memory–Policy Co-evolution",
+          "question": "哪些经验留在外部技能/记忆库，哪些写入参数；二者如何协作？",
+          "definition": "外部技能或记忆操作持续增删、修订，同时训练使用这些资产的策略或控制器。技能内容变化与技能使用能力变化必须分别说明。",
+          "subtopics": [
+            "可执行技能与自然语言技能",
+            "技能检索及调用策略",
+            "记忆写入/更新/删除策略",
+            "经验抽象与适用条件",
+            "外部库扩展与参数学习"
+          ],
+          "mechanisms": [
+            "skill discovery",
+            "skill-conditioned RL",
+            "memory controller learning",
+            "hard-case-driven skill revision"
+          ],
+          "example_work_ids": [
+            "skillrl",
+            "memskill",
+            "evods",
+            "skill-self-play"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2602.08234v1",
+            "https://arxiv.org/html/2602.02474v1",
+            "https://arxiv.org/html/2606.03841v1",
+            "https://arxiv.org/html/2607.22529v1"
+          ],
+          "layout": {
+            "column": 0,
+            "row": 2
+          },
+          "kind": "coupling_mechanism",
+          "kind_label": "参数与系统的耦合机制"
+        },
+        {
+          "id": "x-environment",
+          "title": "任务、环境与学习共同变化",
+          "english": "Environment–Curriculum Co-adaptation",
+          "question": "训练任务怎样随当前能力和失败类型改变，同时保留可验证的任务语义？",
+          "definition": "策略表现影响任务生成、难度或环境接口；这些改变再塑造策略可获得的经验。可学习世界模型提供模拟经验，但仅更新世界模型权重不等于修改harness。",
+          "subtopics": [
+            "自动课程与能力边界",
+            "任务生成及验证",
+            "环境Stage/Contract/Chain",
+            "真实交互与世界模型模拟",
+            "探索分布与学习价值"
+          ],
+          "mechanisms": [
+            "automatic curriculum",
+            "task generation",
+            "environment wrappers",
+            "world-model rollouts"
+          ],
+          "example_work_ids": [
+            "rlanything",
+            "envharness",
+            "skill-self-play",
+            "socratic-swe",
+            "webevolver"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2602.02488v1",
+            "https://arxiv.org/html/2608.19880v1",
+            "https://arxiv.org/html/2607.22529v1",
+            "https://arxiv.org/abs/2606.07412",
+            "https://arxiv.org/html/2504.21024v2"
+          ],
+          "layout": {
+            "column": 1,
+            "row": 2
+          },
+          "kind": "coupling_mechanism",
+          "kind_label": "参数与系统的耦合机制",
+          "short_title": "任务、环境与学习共演"
+        },
+        {
+          "id": "x-feedback",
+          "title": "奖励、评价与策略互相影响",
+          "english": "Reward–Evaluator–Policy Coupling",
+          "question": "评价器怎样跟随策略变化而改进，同时避免把自身偏差当作进步？",
+          "definition": "策略轨迹提供评价器学习或诊断材料，评价信号又决定样本选择与参数更新。权重型reward model与外部tool/skill型评价器是两种不同载体。",
+          "subtopics": [
+            "过程奖励与结果奖励",
+            "reward-model更新",
+            "可演化的评价工具和skills",
+            "偏好示例与环境真值",
+            "策略—评价器分布变化"
+          ],
+          "mechanisms": [
+            "reward-model co-training",
+            "process supervision",
+            "self-evolving reward harness",
+            "external outcome feedback"
+          ],
+          "example_work_ids": [
+            "rlanything",
+            "rewardharness",
+            "mass",
+            "eureka"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2602.02488v1",
+            "https://arxiv.org/html/2605.08703v1",
+            "https://arxiv.org/html/2610.12176v1",
+            "https://arxiv.org/abs/2310.12931"
+          ],
+          "layout": {
+            "column": 2,
+            "row": 2
+          },
+          "kind": "coupling_mechanism",
+          "kind_label": "参数与系统的耦合机制",
+          "short_title": "奖励、评价与策略耦合"
+        },
+        {
+          "id": "x-training",
+          "title": "训练器与学习系统共同优化",
+          "english": "Training-Harness Co-evolution",
+          "question": "怎样让模型训练的改进过程本身学会更好地诊断、选择和执行下一次训练？",
+          "definition": "目标策略训练产生的结果，反过来用于改写训练程序、数据处理、奖励配方、诊断工具与研究记忆。固定研究LLM驱动目标模型训练属于AI4AI；只有说明哪部分研究系统被保留和改写，才可讨论其自身演化。",
+          "subtopics": [
+            "训练配方与优化器",
+            "样本过滤与rollout调度",
+            "奖励形状与训练目标",
+            "诊断工具及训练记忆",
+            "实验分支选择、合并与复用"
+          ],
+          "mechanisms": [
+            "training-program search",
+            "optimizer/recipe design",
+            "training diagnostics",
+            "versioned interventions"
+          ],
+          "example_work_ids": [
+            "evotrainer",
+            "sia",
+            "execution-grounded-research",
+            "automated-alignment-researchers",
+            "aira-design"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2606.03108v2",
+            "https://arxiv.org/html/2605.27276v1",
+            "https://arxiv.org/abs/2601.14525",
+            "https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures",
+            "https://arxiv.org/abs/2605.15871"
+          ],
+          "layout": {
+            "column": 2,
+            "row": 3
+          },
+          "kind": "coupling_mechanism",
+          "kind_label": "参数与系统的耦合机制",
+          "short_title": "训练器与学习系统共演"
+        },
+        {
+          "id": "x-organization",
+          "title": "组织结构与角色能力共同学习",
+          "english": "Organization–Policy Co-learning",
+          "question": "什么分工和信息路由能产生可学习的协作经验，而非仅增加agent数量？",
+          "definition": "组织层规定角色、通信、路由和分配；参数学习改变各角色的能力。研究两者如何共同适配。多个模型同时训练或固定多agent流程，都不足以单独证明组织结构在进化。",
+          "subtopics": [
+            "共享权重与角色特化",
+            "异构模型与专家路由",
+            "层次化委派与信息交接",
+            "协作轨迹与联合训练",
+            "预算分配与组织重构"
+          ],
+          "mechanisms": [
+            "multi-agent workflow search",
+            "role-conditioned policies",
+            "communication topology",
+            "orchestrator–subagent learning"
+          ],
+          "example_work_ids": [
+            "mass",
+            "evods",
+            "openrsi",
+            "autoscientists"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2610.12176v1",
+            "https://arxiv.org/html/2606.03841v1",
+            "https://arxiv.org/html/2607.28568v1",
+            "https://arxiv.org/abs/2605.28655"
+          ],
+          "layout": {
+            "column": 0,
+            "row": 3
+          },
+          "kind": "coupling_mechanism",
+          "kind_label": "参数与系统的耦合机制",
+          "short_title": "组织结构与角色共学"
+        },
+        {
+          "id": "x-deployment",
+          "title": "部署变化与再适配",
+          "english": "Deployment-time Re-adaptation",
+          "question": "工具、skills、hooks或模型版本变化后，如何保持原有能力并学会新的接口？",
+          "definition": "模型更新与harness更新的时间尺度常不一致；训练需要覆盖接口变化，部署反馈也可能触发后续学习或系统改写。离线鲁棒性训练、测试时适配和持续在线共演应明确区分。",
+          "subtopics": [
+            "工具schema与动作空间变化",
+            "skills/hooks/prompt变体",
+            "跨模型harness迁移",
+            "测试时训练与局部适配",
+            "版本兼容及长期回退"
+          ],
+          "mechanisms": [
+            "harness-state augmentation",
+            "test-time adaptation",
+            "continual adaptation",
+            "interface alignment"
+          ],
+          "example_work_ids": [
+            "taolive-hat",
+            "harness-zero",
+            "on-policy-harness-coevolution",
+            "sia"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2608.15763",
+            "https://arxiv.org/html/2609.24974v1",
+            "https://arxiv.org/html/2609.09134",
+            "https://arxiv.org/html/2605.27276v1"
+          ],
+          "layout": {
+            "column": 1,
+            "row": 3
+          },
+          "kind": "coupling_mechanism",
+          "kind_label": "参数与系统的耦合机制"
+        }
+      ],
+      "edges": [
+        {
+          "id": "field-hybrid-01",
+          "source": "x-workflow",
+          "target": "x-internalization",
+          "label": "生成学习轨迹",
+          "explanation": "工作流改变模型经历的状态和行动，将新的执行经验提供给参数学习。",
+          "example_work_ids": [
+            "mass",
+            "co-harness"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2610.12176v1",
+            "https://arxiv.org/html/2607.22688v1"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-hybrid-02",
+          "source": "x-internalization",
+          "target": "x-workflow",
+          "label": "改变适配条件",
+          "explanation": "训练可改变规划风格与能力，原harness不一定继续匹配新模型。",
+          "example_work_ids": [
+            "on-policy-harness-coevolution"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2609.09134"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-hybrid-03",
+          "source": "x-internalization",
+          "target": "x-externalization",
+          "label": "更新后重新设计",
+          "explanation": "更新模型再次承担改进器角色，检验任务学习是否迁移为系统设计能力。",
+          "example_work_ids": [
+            "mass"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2610.12176v1"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-hybrid-04",
+          "source": "x-externalization",
+          "target": "x-workflow",
+          "label": "改写执行流程",
+          "explanation": "模型提出并筛选新的角色、指令、工具流程和修复策略。",
+          "example_work_ids": [
+            "mass",
+            "sia",
+            "co-harness"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2610.12176v1",
+            "https://arxiv.org/html/2605.27276v1",
+            "https://arxiv.org/html/2607.22688v1"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-hybrid-05",
+          "source": "x-memory",
+          "target": "x-internalization",
+          "label": "技能引导学习",
+          "explanation": "可检索技能影响rollout与监督，使经验转化为策略学习信号。",
+          "example_work_ids": [
+            "skillrl",
+            "seed-distillation"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2602.08234v1",
+            "https://arxiv.org/html/2607.14777v1"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-hybrid-06",
+          "source": "x-internalization",
+          "target": "x-memory",
+          "label": "产生新的能力缺口",
+          "explanation": "更新后的策略产生新成败轨迹，暴露技能库或记忆操作尚未覆盖的情况。",
+          "example_work_ids": [
+            "skillrl",
+            "memskill"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2602.08234v1",
+            "https://arxiv.org/html/2602.02474v1"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-hybrid-07",
+          "source": "x-externalization",
+          "target": "x-environment",
+          "label": "生成任务和包装",
+          "explanation": "设计者根据失败轨迹生成课程或环境包装，改变可获得的训练经验。",
+          "example_work_ids": [
+            "envharness",
+            "skill-self-play"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2608.19880v1",
+            "https://arxiv.org/html/2607.22529v1"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-hybrid-08",
+          "source": "x-environment",
+          "target": "x-internalization",
+          "label": "决定训练分布",
+          "explanation": "环境与课程的改变决定模型采样到哪些状态、动作和反馈。",
+          "example_work_ids": [
+            "rlanything",
+            "envharness"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2602.02488v1",
+            "https://arxiv.org/html/2608.19880v1"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-hybrid-09",
+          "source": "x-feedback",
+          "target": "x-internalization",
+          "label": "筛选、赋分与纠错",
+          "explanation": "评价结果决定保留哪些轨迹、怎样构造奖励或训练目标。",
+          "example_work_ids": [
+            "mass",
+            "rlanything"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2610.12176v1",
+            "https://arxiv.org/html/2602.02488v1"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-hybrid-10",
+          "source": "x-internalization",
+          "target": "x-feedback",
+          "label": "改变评价器所见轨迹",
+          "explanation": "策略更新改变评价器的训练样本；评价器需要适应新的错误与成功分布。",
+          "example_work_ids": [
+            "rlanything"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2602.02488v1"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-hybrid-11",
+          "source": "x-environment",
+          "target": "x-feedback",
+          "label": "改变反馈可学习性",
+          "explanation": "任务过难或过易会改变成功/失败样本平衡，进而影响评价器训练。",
+          "example_work_ids": [
+            "rlanything"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2602.02488v1"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-hybrid-12",
+          "source": "x-feedback",
+          "target": "x-training",
+          "label": "触发训练诊断",
+          "explanation": "分数与实际行为的差异可以触发奖励、数据过滤或训练诊断工具修改。",
+          "example_work_ids": [
+            "evotrainer"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2606.03108v2"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-hybrid-13",
+          "source": "x-externalization",
+          "target": "x-training",
+          "label": "设计训练干预",
+          "explanation": "研究模型产生可执行训练程序、诊断工具和配方修改。",
+          "example_work_ids": [
+            "evotrainer",
+            "sia"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2606.03108v2",
+            "https://arxiv.org/html/2605.27276v1"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-hybrid-14",
+          "source": "x-training",
+          "target": "x-internalization",
+          "label": "实施参数更新",
+          "explanation": "训练系统决定如何把经验变为梯度更新，以及哪些模型版本继续保留。",
+          "example_work_ids": [
+            "evotrainer",
+            "sia"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2606.03108v2",
+            "https://arxiv.org/html/2605.27276v1"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-hybrid-15",
+          "source": "x-organization",
+          "target": "x-workflow",
+          "label": "规定分工与路由",
+          "explanation": "角色分工和通信拓扑成为工作流可优化的内容。",
+          "example_work_ids": [
+            "mass"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2610.12176v1"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-hybrid-16",
+          "source": "x-organization",
+          "target": "x-internalization",
+          "label": "提供多角色监督",
+          "explanation": "局部执行轨迹与编排轨迹训练同一模型或不同角色策略。",
+          "example_work_ids": [
+            "mass",
+            "evods"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2610.12176v1",
+            "https://arxiv.org/html/2606.03841v1"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-hybrid-17",
+          "source": "x-memory",
+          "target": "x-training",
+          "label": "复用研究经验",
+          "explanation": "训练诊断和失效经验沉淀成可调用技能，影响后续训练干预。",
+          "example_work_ids": [
+            "evotrainer"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2606.03108v2"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-hybrid-18",
+          "source": "x-deployment",
+          "target": "x-workflow",
+          "label": "暴露兼容性变化",
+          "explanation": "接口、工具或模型版本变化会使既有工作流失配，从而要求重新适配。",
+          "example_work_ids": [
+            "taolive-hat",
+            "on-policy-harness-coevolution"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2608.15763",
+            "https://arxiv.org/html/2609.09134"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-hybrid-19",
+          "source": "x-internalization",
+          "target": "x-deployment",
+          "label": "改变所需外部支持",
+          "explanation": "被内化的行为可能降低复杂harness依赖，但必须在目标部署接口下检验。",
+          "example_work_ids": [
+            "harness-zero",
+            "seed-distillation"
+          ],
+          "source_urls": [
+            "https://arxiv.org/html/2609.24974v1",
+            "https://arxiv.org/html/2607.14777v1"
+          ],
+          "evidence": "survey_structure"
+        },
+        {
+          "id": "field-hybrid-20",
+          "source": "x-deployment",
+          "target": "x-internalization",
+          "label": "提供适配训练分布",
+          "explanation": "训练覆盖不同harness状态或当前学生实际访问状态，以学习稳健行为。",
+          "example_work_ids": [
+            "taolive-hat",
+            "on-policy-harness-coevolution"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2608.15763",
+            "https://arxiv.org/html/2609.09134"
+          ],
+          "evidence": "survey_structure"
+        }
+      ],
+      "mappings": [
+        {
+          "work_id": "sia",
+          "topic_ids": [
+            "x-workflow",
+            "x-externalization",
+            "x-training",
+            "x-deployment"
+          ],
+          "summary": "反馈代理同时修改目标agent scaffold并训练其LoRA；主实验更新目标agent，未说明反馈代理自身权重随代更新。",
+          "source_urls": [
+            "https://arxiv.org/html/2605.27276v1"
+          ],
+          "source_location": "§3、§5；实际模型名和训练对象须分开核对",
+          "basis": "method_passages_read",
+          "primary_route": "hybrid"
+        },
+        {
+          "work_id": "co-harness",
+          "topic_ids": [
+            "x-workflow",
+            "x-internalization",
+            "x-externalization"
+          ],
+          "summary": "HarnessCritic修订外部系统后，用成功轨迹SFT；原文报告两轮。两轮结果不代表无限持续改善。",
+          "source_urls": [
+            "https://arxiv.org/html/2607.22688v1"
+          ],
+          "source_location": "§3、§4、Conclusion",
+          "basis": "method_passages_read",
+          "primary_route": "hybrid"
+        },
+        {
+          "work_id": "openrsi",
+          "topic_ids": [
+            "x-training",
+            "x-organization",
+            "x-internalization"
+          ],
+          "summary": "研发操作经过SFT/RL，部署执行长程ML搜索；主要改外部ML解法，系统本身固定。不能按“训练模型+有harness”认定协同RSI。",
+          "source_urls": [
+            "https://arxiv.org/html/2607.28568v1"
+          ],
+          "source_location": "§3–6、§8（既有方法阅读）",
+          "basis": "existing_screening",
+          "primary_route": "hybrid"
+        },
+        {
+          "work_id": "mass",
+          "topic_ids": [
+            "x-workflow",
+            "x-internalization",
+            "x-externalization",
+            "x-organization",
+            "x-feedback"
+          ],
+          "summary": "优化的是文本形式的多agent工作流；底层coding harness、工具和记忆固定。共享模型经SFT后再次承担执行、优化和评价角色；报告两轮。",
+          "source_urls": [
+            "https://arxiv.org/html/2610.12176v1"
+          ],
+          "source_location": "§2、§3 Algorithms 1–3、§4.1",
+          "basis": "method_passages_read",
+          "primary_route": "hybrid"
+        },
+        {
+          "work_id": "rsi-anything",
+          "topic_ids": [
+            "x-environment",
+            "x-feedback",
+            "x-training"
+          ],
+          "summary": "官方仓库给出预测—交互—反馈—保留循环。不同领域更新对象可能不同，需逐域核实是否同时改参数与非参数系统。",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.13912"
+          ],
+          "source_location": "官方README Framework；arXiv摘要",
+          "basis": "abstract_and_repository_read",
+          "primary_route": "hybrid"
+        },
+        {
+          "work_id": "eureka",
+          "topic_ids": [
+            "x-feedback",
+            "x-environment",
+            "x-externalization",
+            "x-training"
+          ],
+          "summary": "奖励程序与机器人策略更新；奖励设计LLM冻结。它是AI设计学习信号的参考，不能当LLM研究者自身参数递归升级。",
+          "source_urls": [
+            "https://arxiv.org/abs/2310.12931"
+          ],
+          "source_location": "既有摘要记录；目标不是LLM策略",
+          "basis": "existing_screening",
+          "primary_route": "hybrid"
+        },
+        {
+          "work_id": "automated-alignment-researchers",
+          "topic_ids": [
+            "x-training",
+            "x-feedback",
+            "x-externalization"
+          ],
+          "summary": "研究代理提出干预并训练外部目标模型；目标改善没有直接证明研究代理自身学习或自改。",
+          "source_urls": [
+            "https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures"
+          ],
+          "source_location": "官方研究报告（既有方法阅读）",
+          "basis": "existing_screening",
+          "primary_route": "hybrid"
+        },
+        {
+          "work_id": "seed-for-seed",
+          "topic_ids": [
+            "x-training",
+            "x-externalization",
+            "x-organization"
+          ],
+          "summary": "官方描述AI参与数据、算法和工程开发；尚无统一公开的自我递归协议可从介绍推定。",
+          "source_urls": [
+            "https://seed.bytedance.com/en/blog/seed2-1-officially-released-advancing-ai-productivity"
+          ],
+          "source_location": "官方团队博客",
+          "basis": "existing_screening",
+          "primary_route": "hybrid"
+        },
+        {
+          "work_id": "skill-self-play",
+          "topic_ids": [
+            "x-memory",
+            "x-environment",
+            "x-externalization"
+          ],
+          "summary": "技能保存任务生成与验证结构，出题/求解策略与技能内容共同变化；实际训练规模单列，不以教师规模替代。",
+          "source_urls": [
+            "https://arxiv.org/html/2607.22529v1"
+          ],
+          "source_location": "§3.1–3.2、§4（既有方法阅读）",
+          "basis": "existing_screening",
+          "primary_route": "hybrid"
+        },
+        {
+          "work_id": "rlanything",
+          "topic_ids": [
+            "x-environment",
+            "x-feedback",
+            "x-internalization"
+          ],
+          "summary": "同时训练策略和奖励模型，依据错误模式改写外部任务；Hybrid归属来自任务侧变化，并非来自“有两个模型”。",
+          "source_urls": [
+            "https://arxiv.org/html/2602.02488v1"
+          ],
+          "source_location": "§2、Algorithm 1、§3.1",
+          "basis": "method_passages_read",
+          "primary_route": "hybrid"
+        },
+        {
+          "work_id": "evotrainer",
+          "topic_ids": [
+            "x-training",
+            "x-memory",
+            "x-externalization",
+            "x-feedback"
+          ],
+          "summary": "训练侧诊断工具/流程与目标策略版本共同改进；训练者LLM为固定Sonnet，昂贵执行有人类把关。不能描述成训练者权重自进化。",
+          "source_urls": [
+            "https://arxiv.org/html/2606.03108v2"
+          ],
+          "source_location": "§3.3–3.6；Limitations",
+          "basis": "method_passages_read",
+          "primary_route": "hybrid"
+        },
+        {
+          "work_id": "autoscientists",
+          "topic_ids": [
+            "x-training",
+            "x-organization",
+            "x-memory"
+          ],
+          "summary": "研究团队共享实验知识并搜索外部目标训练方案；需要单独验证团队系统本身是否更新。",
+          "source_urls": [
+            "https://arxiv.org/abs/2605.28655"
+          ],
+          "source_location": "摘要及既有来源记录",
+          "basis": "existing_screening",
+          "primary_route": "hybrid"
+        },
+        {
+          "work_id": "execution-grounded-research",
+          "topic_ids": [
+            "x-training",
+            "x-feedback",
+            "x-externalization"
+          ],
+          "summary": "执行候选AI研究方案并反馈构思者；训练构思模型与改进目标模型须分开计，不把外部训练目标当成其自身后继。",
+          "source_urls": [
+            "https://arxiv.org/abs/2601.14525"
+          ],
+          "source_location": "摘要及既有来源记录",
+          "basis": "existing_screening",
+          "primary_route": "hybrid"
+        },
+        {
+          "work_id": "harness-zero",
+          "topic_ids": [
+            "x-internalization",
+            "x-workflow",
+            "x-deployment"
+          ],
+          "summary": "先演化harness，再由harnessing agent在学生动作空间生成干预轨迹并SFT；支持H→M内化，未直接展示更新学生继续演化H的反复闭环。",
+          "source_urls": [
+            "https://arxiv.org/html/2609.24974v1"
+          ],
+          "source_location": "§3.1–3.3、§4",
+          "basis": "method_passages_read",
+          "primary_route": "hybrid"
+        },
+        {
+          "work_id": "skillrl",
+          "topic_ids": [
+            "x-memory",
+            "x-internalization",
+            "x-externalization"
+          ],
+          "summary": "外部SkillBank与策略GRPO共同更新，teacher负责技能提炼且非被训练主体。训练主体7B，属于机制补充。",
+          "source_urls": [
+            "https://arxiv.org/html/2602.08234v1"
+          ],
+          "source_location": "§3、Algorithm 1、§4.1",
+          "basis": "method_passages_read",
+          "primary_route": "hybrid"
+        },
+        {
+          "work_id": "memskill",
+          "topic_ids": [
+            "x-memory",
+            "x-internalization",
+            "x-externalization"
+          ],
+          "summary": "训练对象是轻量MLP技能选择controller（PPO，精确参数量未报告）；Qwen3-Embedding-0.6B作shared encoder，LLaMA70B与Qwen80B通过API使用，executor/designer固定。不得将70B/80B当作被训练模型。",
+          "source_urls": [
+            "https://arxiv.org/html/2602.02474v1"
+          ],
+          "source_location": "§3.3–3.5；§4.1 Implementation Details；Table1注释",
+          "basis": "method_passages_read",
+          "primary_route": "hybrid"
+        },
+        {
+          "work_id": "evods",
+          "topic_ids": [
+            "x-memory",
+            "x-organization",
+            "x-externalization",
+            "x-internalization"
+          ],
+          "summary": "共享骨干的多角色策略经过SFT和online RL，产生并复用可执行技能；组织架构本身固定，不应把多角色训练说成拓扑演化。",
+          "source_urls": [
+            "https://arxiv.org/html/2606.03841v1"
+          ],
+          "source_location": "§4.1–4.4",
+          "basis": "method_passages_read",
+          "primary_route": "hybrid"
+        },
+        {
+          "work_id": "on-policy-harness-coevolution",
+          "topic_ids": [
+            "x-workflow",
+            "x-internalization",
+            "x-deployment"
+          ],
+          "summary": "对进化后harness做学生访问状态上的局部纠错与LoRA-SFT；主要实证是一次顺序适配，循环接续是提出的方向。on-policy描述采样状态，不代表训练算法为RL。",
+          "source_urls": [
+            "https://arxiv.org/html/2609.09134"
+          ],
+          "source_location": "§3.1–3.4、Conclusion",
+          "basis": "method_passages_read",
+          "primary_route": "hybrid"
+        },
+        {
+          "work_id": "taolive-hat",
+          "topic_ids": [
+            "x-deployment",
+            "x-workflow",
+            "x-internalization"
+          ],
+          "summary": "harness-state augmentation使模型适应skills/tool schemas/prompts/hooks变体；这是训练鲁棒性与部署适配，不证明AI自动演化harness。",
+          "source_urls": [
+            "https://arxiv.org/abs/2608.15763"
+          ],
+          "source_location": "v5摘要，具体方法需继续阅读",
+          "basis": "abstract_read",
+          "primary_route": "hybrid"
+        },
+        {
+          "work_id": "rewardharness",
+          "topic_ids": [
+            "x-feedback",
+            "x-memory",
+            "x-externalization",
+            "x-training"
+          ],
+          "summary": "跨路线机制联系。主贡献是评价Harness演化；下游训练提供跨路线联系，未建立更新目标反向改进奖励系统的闭环。 冻结视觉语言模型，通过偏好误差改进 reward agent 的技能和工具；该评价系统随后用于外部图像编辑模型的 GRPO 训练。",
+          "source_urls": [
+            "https://arxiv.org/html/2605.08703v1"
+          ],
+          "source_location": "§1、§2、§3.2、§4",
+          "basis": "method_passages_read",
+          "primary_route": "harness",
+          "cross_route_reference": true
+        },
+        {
+          "work_id": "webevolver",
+          "topic_ids": [
+            "x-environment",
+            "x-internalization",
+            "x-deployment"
+          ],
+          "summary": "跨路线机制联系。同时改多个模型仍是参数侧共学；已读方法没有非参数工作流/工具/环境包装被优化。 策略 LLM 与 world-model LLM 从交互轨迹中共同训练；世界模型提供合成经验与前瞻规划。可变对象是两类模型的参数。",
+          "source_urls": [
+            "https://arxiv.org/html/2504.21024v2"
+          ],
+          "source_location": "v2：§3.1–3.3、§4.1–4.4，Tables 1–3",
+          "basis": "method_passages_read",
+          "primary_route": "model",
+          "cross_route_reference": true
+        },
+        {
+          "work_id": "envharness",
+          "topic_ids": [
+            "x-environment",
+            "x-externalization",
+            "x-internalization"
+          ],
+          "summary": "EnvRigger根据失败生成环境wrapper，原环境底层和verifier冻结；再用重塑环境训练policy。是否跨多代反复重建wrapper应依据训练流程逐项说明。",
+          "source_urls": [
+            "https://arxiv.org/html/2608.19880v1"
+          ],
+          "source_location": "§2.1–2.2；§3",
+          "basis": "method_passages_read",
+          "primary_route": "hybrid"
+        },
+        {
+          "work_id": "aira-design",
+          "topic_ids": [
+            "x-training",
+            "x-externalization",
+            "x-organization"
+          ],
+          "summary": "研究代理搜索架构/计算原语，候选扩展到外部目标预训练；没有据此证明目标模型回到下一代研究者角色。",
+          "source_urls": [
+            "https://arxiv.org/abs/2605.15871"
+          ],
+          "source_location": "摘要及既有来源记录",
+          "basis": "existing_screening",
+          "primary_route": "hybrid"
+        },
+        {
+          "work_id": "socratic-swe",
+          "topic_ids": [
+            "x-environment",
+            "x-memory",
+            "x-internalization"
+          ],
+          "summary": "从软件求解轨迹提炼技能并生成新任务训练求解者；是否有跨轮持久可调用技能库及其明确更新边界，需方法全文确认。",
+          "source_urls": [
+            "https://arxiv.org/abs/2606.07412"
+          ],
+          "source_location": "摘要及既有来源记录",
+          "basis": "existing_screening",
+          "primary_route": "hybrid"
+        },
+        {
+          "work_id": "seed-distillation",
+          "topic_ids": [
+            "x-internalization",
+            "x-memory",
+            "x-feedback"
+          ],
+          "summary": "跨路线机制联系。明确更新模型参数；未显示持久非参数harness共同演化。 同一策略承担 actor 与训练期 analyzer；从自身轨迹提炼 hindsight skills，形成 on-policy distillation 与 RL 信号。部署时移除 analyzer，保留更新后的策略模型。",
+          "source_urls": [
+            "https://arxiv.org/html/2607.14777v1"
+          ],
+          "source_location": "§3、§3.3；Fig.2",
+          "basis": "method_passages_read",
+          "primary_route": "model",
+          "cross_route_reference": true
+        }
+      ]
+    }
+  ],
+  "bridges": [
+    {
+      "title": "经验内化 Experience → weights",
+      "text": "外部轨迹、记忆与技能形成训练信号；学到的参数能力能否摆脱原来的提示或工作流，需要部署实验检验。",
+      "topic_ids": [
+        "h-memory",
+        "m-bootstrapping",
+        "x-internalization"
+      ]
+    },
+    {
+      "title": "能力外化 Weights → system design",
+      "text": "模型提出工具、流程或训练程序修改；更强的模型是否产生更有效的系统改进，是独立于解题分数的问题。",
+      "topic_ids": [
+        "m-learned-updates",
+        "h-improver",
+        "x-externalization"
+      ]
+    },
+    {
+      "title": "评价与学习 Feedback → improvement",
+      "text": "可验证反馈、learned evaluator 和可编辑评价程序提供不同信号。评价器学习与评价 harness 演化要分开，再研究它们怎样影响策略。",
+      "topic_ids": [
+        "h-evaluation",
+        "m-evaluator-learning",
+        "x-feedback"
+      ]
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 {
-  "version": "4.0.0",
+  "version": "5.0.0",
   "updated": "2026-10-19",
-  "scope": "公开研究综述；不包含项目自身理论、预测或系统方案。",
+  "scope": "公开文献的领域主题图、论文关系图与阅读档案；领域结构为综述组织，论文归属可随证据修订。",
   "groups": [
     {
       "id": "h-prompt",
@@ -353,50 +353,52 @@
         "h-self",
         "h-research"
       ],
-      "purpose": "能否让程序改进器改写自身，使它以后生成更好的程序？",
-      "summary": "用调用冻结 GPT-4 的改进程序修改该改进程序自身。",
+      "purpose": "让程序改进器改进自身，检验其产生改进的能力能否传递到新任务。",
+      "summary": "STOP 将调用固定 LLM 的代码改进器本身作为优化对象；后继改进器继续承担下一轮自修改。",
       "sections": [
         {
           "axis": "A",
-          "title": "目标与问题",
-          "text": "能否让程序改进器改写自身，使它以后生成更好的程序？"
+          "title": "目标与价值",
+          "text": "优化的是生成更好程序的 improver，而不只是某一道题的解。它把自改进落实为一个可执行的元优化问题：后继程序能否更有效地改进下游解？"
         },
         {
           "axis": "B",
-          "title": "关键思想",
-          "text": "把“更好的解”推进到“更好的产生改进的程序”。"
+          "title": "核心思想",
+          "text": "改进器也是程序，因此同一个代码改进接口可以作用于普通解，也可以作用于改进器自身。好坏由下游任务效用决定，而非让模型自行宣称改进成功。"
         },
         {
           "axis": "C",
-          "title": "系统与原理",
-          "text": "用调用冻结 GPT-4 的改进程序修改该改进程序自身。"
+          "title": "结构与原理",
+          "text": "I(u,s,L) 用固定模型 L 改进解 s；meta-utility 是改进结果在任务集合上的平均效用。递归步骤为 Iₜ₊₁ = Iₜ(meta-utility, Iₜ, L)，可变对象是包含提示和搜索逻辑的 improver 源码。"
         },
         {
           "axis": "D",
-          "title": "算法与实现",
-          "text": "从生成并选择候选程序的种子改进器开始，把改进器源码本身作为待优化程序；下游程序的效用用于评价改进器。"
+          "title": "算法与实验",
+          "text": "种子 improver 调用 LLM 生成多个候选，再执行效用函数选择候选。人类预设任务、评分函数、调用预算及递归轮数；实验主要用 GPT-4，并比较 GPT-3.5、Mixtral。"
         },
         {
           "axis": "E",
-          "title": "反馈与迭代",
-          "text": "改进程序产生后继；后继继续生成程序改进。"
+          "title": "反馈与继承",
+          "text": "后继源码实际进入下一轮自修改，因而搜索策略可以被继承。作者观察到 beam search、遗传搜索等策略，但每轮性能并不保证单调增长。"
         },
         {
           "axis": "F",
-          "title": "结果与迁移",
-          "text": "作者报告后继改进程序在受限算法任务上优于种子，包含跨任务检验。\n任务规模有限；作者也未称为全部组件均可改的完整 RSI。"
+          "title": "成果与迁移",
+          "text": "作者报告 GPT-4 条件下的有限轮次收益，并把在 learning parity with noise 上产生的 improver 迁移到五类新任务。较弱模型实验反而退化，说明自应用接口本身不足以保证有效自改进。"
         }
       ],
       "team": "Microsoft Research / Stanford / OpenAI（研究在微软期间完成）",
       "team_source": "https://arxiv.org/pdf/2310.02304v3",
       "status": "methods",
       "placement": "main",
-      "primary_url": "https://arxiv.org/pdf/2310.02304v3",
-      "source_location": "首页署名与脚注；§3–4、Algorithm 1、迁移实验",
-      "limitations": "任务规模有限；作者也未称为全部组件均可改的完整 RSI。",
+      "primary_url": "https://arxiv.org/pdf/2310.02304",
+      "source_location": "arXiv:2310.02304v3（COLM 2024），§3–5，Algorithm 1，Figure 4，Table 1。",
+      "limitations": "实验覆盖小规模算法任务和有限递归轮次；不能推出每轮改进、开放领域增长或模型权重自改进。",
       "scope_kind": "direct",
       "scope_label": "自改进研究",
-      "classification_note": "以论文主要学习对象确定主位置；初筛条目的归属仍需方法全文确认。"
+      "classification_note": "Harness 的递归改进器代码演化：目标程序与下一轮 improver 是同一可继承对象。",
+      "reading_scope": "已读问题形式化、递归算法、固定任务实验及五任务迁移实验；未逐项检查全部附录代码。",
+      "resources": "冻结 GPT-4-0314；另比较 GPT-3.5-turbo-0613、Mixtral-8x7B-Instruct-v0.1；调用次数、执行时间和递归轮数由实验协议限制。"
     },
     {
       "id": "promptbreeder",
@@ -407,50 +409,52 @@
         "h-prompt",
         "h-self"
       ],
-      "purpose": "能否同时优化任务提示和产生提示变异的方法？",
-      "summary": "共同演化任务提示与生成变异的提示，基础模型冻结。",
+      "purpose": "同时演化任务提示和产生提示变体的指令，减少对固定 prompt optimizer 的依赖。",
+      "summary": "种群中的 task-prompts 与 mutation-prompt 一起传递；固定 LLM 既执行任务，也生成两类提示的变体。",
       "sections": [
         {
           "axis": "A",
-          "title": "目标与问题",
-          "text": "能否同时优化任务提示和产生提示变异的方法？"
+          "title": "目标与价值",
+          "text": "手写提示和固定改写指令可能限制提示搜索。Promptbreeder 研究能否把“怎样改写提示”也放进演化过程，让搜索适应具体任务领域。"
         },
         {
           "axis": "B",
-          "title": "关键思想",
-          "text": "明确让变异机制成为可继承的搜索对象。"
+          "title": "核心思想",
+          "text": "把 task-prompt 和 mutation-prompt 组成同一个遗传单元。任务分数既选择解题提示，也间接选择与其绑定的变异策略，这是它的 self-referential 部分。"
         },
         {
           "axis": "C",
-          "title": "系统与原理",
-          "text": "共同演化任务提示与生成变异的提示，基础模型冻结。"
+          "title": "结构与原理",
+          "text": "普通变异生成 P′ = LLM(M + P)；hyper-mutation 再改写 M。模型权重、锦标赛选择代码、预设算子种类及评分协议保持固定；few-shot 版本还携带正确解题示例。"
         },
         {
           "axis": "D",
-          "title": "算法与实现",
-          "text": "维护任务提示与变异提示的种群，用模型执行提示变异和任务测试；变异提示本身也参与演化。"
+          "title": "算法与实验",
+          "text": "二元锦标赛用较优个体的变体替换较差个体，结合直接变异、群体分布、hyper-mutation 等算子。论文使用 50 个体、通常 20–30 代，并在训练样本批次上估计适应度。"
         },
         {
           "axis": "E",
-          "title": "反馈与迭代",
-          "text": "任务提示与对应变异提示共同进入后继种群。"
+          "title": "反馈与继承",
+          "text": "更新后的任务提示和关联变异提示进入后继种群，影响以后候选的产生。初始任务描述、thinking styles 和变异算子框架由研究者提供，不是所有搜索规则都自动演化。"
         },
         {
           "axis": "F",
-          "title": "结果与迁移",
-          "text": "在算术、常识和分类任务上报告提示搜索收益，并分析自指成分。\n提示演化不等于模型训练，也不证明开放任务上的持续加速。"
+          "title": "成果与迁移",
+          "text": "作者在算术、常识推理和 ETHOS 分类上报告优于若干提示基线，并分析各变异组件的作用。主要证据是分领域提示演化；未展示一个通用提示改进器在开放任务流上持续自我增强。"
         }
       ],
       "team": "Google DeepMind",
       "team_source": "https://arxiv.org/pdf/2309.16797v1",
       "status": "methods",
       "placement": "main",
-      "primary_url": "https://arxiv.org/pdf/2309.16797v1",
-      "source_location": "首页；§3、§4、Table 1；ICML 2024 正式版另列",
-      "limitations": "提示演化不等于模型训练，也不证明开放任务上的持续加速。",
+      "primary_url": "https://arxiv.org/pdf/2309.16797",
+      "source_location": "arXiv:2309.16797v1，§3–6、Figure 1–2、Table 1；ICML 2024 论文页面核对出版信息。",
+      "limitations": "变异指令参与演化，但 prompting topology、外层遗传算法与基础模型固定；不等于模型参数训练或整个优化器代码自修改。",
       "scope_kind": "direct",
       "scope_label": "自改进研究",
-      "classification_note": "以论文主要学习对象确定主位置；初筛条目的归属仍需方法全文确认。"
+      "classification_note": "Harness 的提示协同演化：task-prompt 与 mutation-prompt 同时改变，属于提示层的改进机制演化。",
+      "reading_scope": "已读演化单元、两级提示变异、锦标赛、算子设计及实验设置与主结果；未逐条分析所有生成提示。",
+      "resources": "PaLM 2-L 冻结；50 个体，通常 20–30 代；训练批次估计适应度，测试样本报告结果。"
     },
     {
       "id": "funsearch",
@@ -536,38 +540,38 @@
       "methods": [
         "m-preference"
       ],
-      "purpose": "模型能否同时生成回答和偏好评价，并据此训练下一代？",
-      "summary": "同一 70B 模型产生回答并评分；每轮构造偏好对，以 DPO 更新下一代，再由下一代生成回答与偏好。",
+      "purpose": "让回答能力和偏好评价能力随同一模型的迭代训练共同改善。",
+      "summary": "Self-Rewarding LM 用当前模型生成并评价回答，再由偏好对训练下一代；更新后的模型继续承担回答者与评审者。",
       "sections": [
         {
           "axis": "A",
-          "title": "目标与问题",
-          "text": "模型能否同时生成回答和偏好评价，并据此训练下一代？"
+          "title": "目标与价值",
+          "text": "固定 reward model 可能限制后续学习；论文探索奖励判断能否和指令跟随一起改善，实验基座是 Llama 2 70B。"
         },
         {
           "axis": "B",
-          "title": "关键思想",
-          "text": "把回答者与奖励者放进同一参数继承链；主要贡献在学习信号及其迭代，而非修改 agent 软件。"
+          "title": "核心思想与洞察",
+          "text": "把评审也写成指令跟随任务，使同一个模型既能回答，又能给回答评分；因此模型更新后，产生下一轮训练信号的能力也可能改变。"
         },
         {
           "axis": "C",
-          "title": "系统与原理",
-          "text": "同一 70B 模型产生回答并评分；每轮构造偏好对，以 DPO 更新下一代，再由下一代生成回答与偏好。"
+          "title": "结构与原理",
+          "text": "先用人工种子做回答与评价 SFT，得到 M1；M1 生成并评分的偏好对用于 DPO 得到 M2，再重复得到 M3。"
         },
         {
           "axis": "D",
-          "title": "算法与实现",
-          "text": "后训练；种子 SFT → 迭代 DPO；轮间在线生成偏好；每轮 DPO 优化已收集的偏好对，不等于 PPO 在线 RL。"
+          "title": "算法与实验",
+          "text": "每题采样四个回答，分别多次评分后选偏好对。新问题由固定 Llama 2-Chat 70B 生成，候选回答与评分使用当前迭代模型。"
         },
         {
           "axis": "E",
-          "title": "反馈与迭代",
-          "text": "M1 生成回答与偏好训练 M2；M2 再生成偏好训练 M3；出题模型固定。"
+          "title": "反馈与继承",
+          "text": "跨轮继承模型参数及生成偏好的能力；评价 rubric 和出题流程不随之演化。训练是分轮收集偏好后做 DPO，并非 PPO 式在线交互。"
         },
         {
           "axis": "F",
-          "title": "结果与迁移",
-          "text": "核对 §2–3：M1 为种子 SFT，M2/M3 为两次 DPO；另评指令跟随与奖励排序，并比较仅正例 SFT。\n实际新题由固定 Llama 2-Chat 70B 生成；有人类种子、外部评审和早停。不证明无外部信息或无限递归增长。"
+          "title": "成果与迁移",
+          "text": "作者报告指令跟随与人类偏好一致性均改善；只加入高分回答做 SFT 未取得同样收益。回答长度随轮次增加，解释偏好胜率时也应考虑这一变化。"
         }
       ],
       "team": "Meta / NYU",
@@ -575,11 +579,21 @@
       "status": "methods",
       "placement": "main",
       "primary_url": "https://arxiv.org/html/2401.10020v1",
-      "source_location": "§2.1–2.4，§3.1–3.2；特别是 §3.1.3 的固定出题模型。",
+      "source_location": "arXiv v1（2024-01-18）；§2.1–2.4，§3.1.3，§3.2.1–3.2.2，Tables 1–2。",
       "limitations": "实际新题由固定 Llama 2-Chat 70B 生成；有人类种子、外部评审和早停。不证明无外部信息或无限递归增长。",
       "scope_kind": "direct",
       "scope_label": "自改进研究",
-      "classification_note": "以论文主要学习对象确定主位置；初筛条目的归属仍需方法全文确认。"
+      "classification_note": "回答与 judge 共享模型；自生偏好用于逐轮 DPO。",
+      "reading_scope": "已读种子训练、偏好构造、两轮 DPO、评价与长度分析；未独立复现。",
+      "details": {
+        "changed": "Llama 2 70B 的生成与评审参数",
+        "feedback": "当前模型的 rubric 评分形成偏好对",
+        "retained": "M1 → M2 → M3 的模型权重",
+        "fixed": "问题生成模型、评分提示；Claude 2 用于验证集早停。",
+        "task_distribution": "人工种子和合成指令用于训练；另用指令测试集和留出的人类偏好评价。",
+        "budget": "一次种子 SFT；两轮 DPO。",
+        "claim_type": "source fact；奖励能力改善为有限轮次的实证。"
+      }
     },
     {
       "id": "godel-agent",
@@ -628,38 +642,38 @@
       "methods": [
         "h-workflow"
       ],
-      "purpose": "能否自动发现代理的控制流程，而不只调一个提示词？",
-      "summary": "固定 meta-agent 依据档案编写、评测目标 agent 的 forward 实现。",
+      "purpose": "在代码空间自动设计 agent 的提示组合和控制流程，并检验发现的架构能否迁移。",
+      "summary": "固定 meta-agent 读取历史设计与验证结果，编写目标 agent 的 forward 函数；发现的设计进入不断扩充的档案。",
       "sections": [
         {
           "axis": "A",
-          "title": "目标与问题",
-          "text": "能否自动发现代理的控制流程，而不只调一个提示词？"
+          "title": "目标与价值",
+          "text": "人工设计提示、反思和多 agent 协作只能覆盖少量组合。ADAS 把 agent architecture discovery 作为可搜索问题，研究能否自动找到更有效的控制流程。"
         },
         {
           "axis": "B",
-          "title": "关键思想",
-          "text": "把完整控制流的自动设计与跨域、跨模型迁移连接起来。"
+          "title": "核心思想",
+          "text": "用程序表达 agent，而非只在预列出的提示模板中选择。保留历史设计作为 stepping stones，使后来的候选可以重组早期发现，即使某个中间设计暂时分数不高。"
         },
         {
           "axis": "C",
-          "title": "系统与原理",
-          "text": "固定 meta-agent 依据档案编写、评测目标 agent 的 forward 实现。"
+          "title": "结构与原理",
+          "text": "Meta Agent Search 的实际搜索对象是基础框架中的 forward 函数，框架提供模型查询和格式化接口。固定 meta-agent 编写目标 agent；二者未合并为同一个不断替换的改进器。"
         },
         {
           "axis": "D",
-          "title": "算法与实现",
-          "text": "Meta Agent Search 读取已有设计档案，生成目标代理的 forward 代码，通过执行反馈修订候选。"
+          "title": "算法与实验",
+          "text": "meta-agent 根据档案提出设计，经新颖性/正确性反思和运行报错修订后，在验证集评测并入档。主实验由 GPT-4 设计、GPT-3.5 执行，按领域搜索 25 或 30 轮。"
         },
         {
           "axis": "E",
-          "title": "反馈与迭代",
-          "text": "设计结果写回档案；改进器从档案学习上下文，但其实现固定。"
+          "title": "反馈与继承",
+          "text": "后续搜索读取候选源码、得分和置信区间；被继承的是设计经验与代码。评价函数、搜索外循环和 meta-agent 实现由研究者固定，目标 agent 的成功不会自动升级设计器。"
         },
         {
           "axis": "F",
-          "title": "结果与迁移",
-          "text": "报告 ARC、推理任务和跨域/跨模型迁移；有成本附录。\n自动设计前身；生成的目标 agent 没有替换固定 meta-agent。"
+          "title": "成果与迁移",
+          "text": "作者在 ARC 子集、DROP、MGSM、MMLU、GPQA 报告收益，并将已发现设计迁移到未参与搜索的模型及任务。它提供自动 agent 设计与架构迁移的证据，而非完整的改进器递归替换实验。"
         }
       ],
       "team": "UBC / Vector Institute",
@@ -667,11 +681,13 @@
       "status": "methods",
       "placement": "adjacent",
       "primary_url": "https://arxiv.org/html/2408.08435v1",
-      "source_location": "首页；§3、§4.3、Appendix G",
-      "limitations": "自动设计前身；生成的目标 agent 没有替换固定 meta-agent。",
+      "source_location": "arXiv:2408.08435v1，§2–3、§4.1–4.3、Figure 3、Table 1；Appendix A–B 的接口与提示。",
+      "limitations": "具体实验搜索 forward 函数；开放代码空间的理论表达能力不等于任意 agent 架构均被有效搜索。",
       "scope_kind": "enabler",
       "scope_label": "相关学习机制 / AI4AI",
-      "classification_note": "以论文主要学习对象确定主位置；初筛条目的归属仍需方法全文确认。"
+      "classification_note": "Harness 的自动架构设计；固定设计器和被搜索的目标 agent 分离。",
+      "reading_scope": "已读代码搜索空间、Meta Agent Search、ARC/推理任务设置及跨模型/跨任务迁移结果；未重跑其搜索。",
+      "resources": "冻结 GPT-4 设计目标 agent，冻结 GPT-3.5 执行主实验；领域分别搜索；验证集用于发现，留出测试集用于报告。"
     },
     {
       "id": "aflow",
@@ -681,36 +697,53 @@
       "methods": [
         "h-workflow"
       ],
-      "purpose": "如何在大量代理工作流中分配搜索预算并组合有效操作？",
-      "summary": "把工作流表示为代码和可组合操作，用蒙特卡洛树搜索分配候选评测预算。",
+      "purpose": "在代码表示的工作流空间中高效分配搜索预算，自动组合提示、调用顺序和分支逻辑。",
+      "summary": "AFlow 用 MCTS 变体搜索完整 workflow；LLM 根据执行反馈修改提示与代码连接，外层搜索算法保持固定。",
       "sections": [
         {
           "axis": "A",
-          "title": "目标与问题",
-          "text": "如何在大量代理工作流中分配搜索预算并组合有效操作？"
+          "title": "目标与价值",
+          "text": "自动工作流设计的瓶颈不仅是候选表达，还包括有限预算下怎样利用历史成功与失败。AFlow 针对这一搜索效率问题，把 workflow synthesis 组织为树搜索。"
+        },
+        {
+          "axis": "B",
+          "title": "核心思想",
+          "text": "搜索树的一个节点代表完整 workflow；workflow 内部的节点才代表 LLM 调用，两者不能混淆。代码表达顺序、条件与循环，操作子提供已有的有效组合。"
         },
         {
           "axis": "C",
-          "title": "系统与原理",
-          "text": "把工作流表示为代码和可组合操作，用蒙特卡洛树搜索分配候选评测预算。"
+          "title": "结构与原理",
+          "text": "实际搜索改变 prompts 和 code-represented edges，并组合 Generate、Review/Revise、Ensemble 等算子。模型、temperature、输出格式及外层 MCTS 变体固定，不进行模型训练。"
+        },
+        {
+          "axis": "D",
+          "title": "算法与实验",
+          "text": "循环包含混合概率选父节点、LLM 扩展、验证集执行和经验回传；每个候选在验证集运行五次。人类提供算子、评分函数和预算，主实验搜索 20 轮，涵盖问答、数学和代码六个数据集。"
+        },
+        {
+          "axis": "E",
+          "title": "反馈与继承",
+          "text": "保存相对父 workflow 的改动、效果及错误日志，下次扩展时复用这些经验。新 workflow 进入搜索树，但不替换搜索器代码；其能力积累发生在候选程序和搜索经验中。"
         },
         {
           "axis": "F",
-          "title": "结果与迁移",
-          "text": "自动优化工作流不等于搜索器自身被改进。"
+          "title": "成果与迁移",
+          "text": "作者报告在所划分测试集上，GPT-4o-mini 执行的六数据集平均指标为 80.3，对照 CoT-SC 为 76.0。论文也比较不同执行模型和成本；这些结果支持自动工作流搜索，不构成搜索器自身进化的证据。"
         }
       ],
       "team": "DeepWisdom / HKUST / HKUST(GZ) / RUC / Nanjing / Fudan / KAUST / Montréal / Mila",
       "team_source": "https://arxiv.org/pdf/2410.10762",
-      "status": "screened",
+      "status": "methods",
       "placement": "pending",
-      "primary_url": "https://github.com/FoundationAgents/AFlow",
-      "source_location": "摘要与既有来源记录",
-      "limitations": "自动优化工作流不等于搜索器自身被改进。",
+      "primary_url": "https://arxiv.org/html/2410.10762v4",
+      "source_location": "arXiv:2410.10762v4（ICLR 2025），§3.1–3.2、§4、Algorithm 1、§5.1–5.2、Table 1。",
+      "limitations": "80.3 是六种数据集指标的均值，非统一任务成功率；外层搜索算法及预设算子不参与自动改写。",
       "team_location": "论文首页署名（2026-10-19读取）",
       "scope_kind": "enabler",
       "scope_label": "相关学习机制 / AI4AI",
-      "classification_note": "以论文主要学习对象确定主位置；初筛条目的归属仍需方法全文确认。"
+      "classification_note": "Harness 的工作流程序搜索；与递归修改搜索器本身分开表述。",
+      "reading_scope": "本轮补读搜索空间、MCTS 变体、五次评测、数据划分及主实验结果；从摘要初筛升级为方法已读。",
+      "resources": "Claude 3.5 Sonnet 作为 optimizer；GPT-4o-mini 等作为 executor；API 权重冻结；主搜索 20 轮，验证/测试按 1:4 划分。"
     },
     {
       "id": "sica",
@@ -720,38 +753,38 @@
       "methods": [
         "h-self"
       ],
-      "purpose": "编码代理能否修改自己的实现，并把改进后的版本用于下一轮自修改？",
-      "summary": "从历史档案选当前最佳 agent，让它修改自己的代码库。",
+      "purpose": "让编码 agent 修改自己的实现，并把改进后的版本用于后续任务和下一轮自修改。",
+      "summary": "SICA 从版本档案中选取效用最高的 agent，由它修改自身代码；选拔同时考虑任务表现、时间和费用。",
       "sections": [
         {
           "axis": "A",
-          "title": "目标与问题",
-          "text": "编码代理能否修改自己的实现，并把改进后的版本用于下一轮自修改？"
+          "title": "目标与价值",
+          "text": "研究具有文件、终端和子 agent 能力的编码系统，能否自行改进工具与执行方式。目标同时包含完成任务的能力、运行时间和费用。"
         },
         {
           "axis": "B",
-          "title": "关键思想",
-          "text": "执行者与改进者共享可编辑实现；成本和速度也进入选择。"
+          "title": "核心思想",
+          "text": "target-agent 与 meta-agent 共享同一可编辑实现：执行任务的版本也负责产生后继版本。与固定设计器生成目标 agent 相比，改进后的工具能力可以参与下一轮自修改。"
         },
         {
           "axis": "C",
-          "title": "系统与原理",
-          "text": "从历史档案选当前最佳 agent，让它修改自己的代码库。"
+          "title": "结构与原理",
+          "text": "可编辑对象包括 agent 源码、工具、提示、子 agent 和上下文组织；主实验使用冻结的 Sonnet 3.5 与 o3-mini。外层档案选择、任务集合及效用定义由研究者给定。"
         },
         {
           "axis": "D",
-          "title": "算法与实现",
-          "text": "从历史版本中选择代理，修改代码并在规定任务上执行；选择效用同时考虑成功率、时间与费用。"
+          "title": "算法与实验",
+          "text": "每轮运行基准任务、记录准确率和成本，再让历史效用最好的 agent 阅读档案并实现一个新版本。编码实验包含固定随机抽取的 50 道 SWE-bench Verified、50 道 LiveCodeBench 及文件编辑和符号定位任务。"
         },
         {
           "axis": "E",
-          "title": "反馈与迭代",
-          "text": "被选中的后继 agent 承担下一轮自修改。"
+          "title": "反馈与继承",
+          "text": "候选版本及分数存入档案，被选中的版本成为后续修改者。轨迹中出现 diff/range 编辑器和 AST 符号定位器，具体工具改变成为可复用的系统资产。"
         },
         {
           "axis": "F",
-          "title": "结果与迁移",
-          "text": "作者在 SWE-bench Verified 随机子集报告 17%→53%，并报告其他编码/推理任务结果。\n不能把子集分数说成完整 SWE-bench 成绩；未证明后继改进效率持续增长。"
+          "title": "成果与迁移",
+          "text": "作者报告 SWE-bench 子集成绩从 17% 提升至最高 53%；这不是完整 500 题的成绩。推理任务上的收益明显较弱，说明 harness 改进取决于任务瓶颈和基座模型能力。"
         }
       ],
       "team": "iGent AI / University of Bristol",
@@ -759,11 +792,13 @@
       "status": "methods",
       "placement": "main",
       "primary_url": "https://arxiv.org/html/2504.15228v1",
-      "source_location": "首页；§3、Algorithm 1；§4 与 Appendix D",
-      "limitations": "不能把子集分数说成完整 SWE-bench 成绩；未证明后继改进效率持续增长。",
+      "source_location": "arXiv:2504.15228v1，§3、Algorithm 1、§4、Table 1、§4.1。",
+      "limitations": "主要提升来自固定编码子集；同一评测集合参与版本选择，推理任务未显示同等幅度收益。",
       "scope_kind": "direct",
       "scope_label": "自改进研究",
-      "classification_note": "以论文主要学习对象确定主位置；初筛条目的归属仍需方法全文确认。"
+      "classification_note": "Harness 的 agent 源码自修改；选定的后继版本同时承担任务求解和后续改进。",
+      "reading_scope": "已读初始 agent 结构、自指更新算法、效用函数、逐轮编码结果及推理任务实验。",
+      "resources": "冻结 Sonnet 3.5 v2；推理子 agent 使用 o3-mini；评分含准确率、时间和美元成本；主编码实验反复使用固定任务子集。"
     },
     {
       "id": "dgm",
@@ -774,38 +809,38 @@
         "h-self",
         "h-research"
       ],
-      "purpose": "怎样保留暂时不占优、却可能产生更强后代的代理分支？",
-      "summary": "智能体修改自身代码，保留多个历史分支，再由选中的后继继续修改。",
+      "purpose": "让 coding agent 通过修改自身实现，积累能继续产生改进的程序版本。",
+      "summary": "DGM 把 agent 自修改放进有历史档案的程序进化：被改进的 agent 也成为下一轮的改进者，基础模型权重保持冻结。",
       "sections": [
         {
           "axis": "A",
-          "title": "目标与问题",
-          "text": "怎样保留暂时不占优、却可能产生更强后代的代理分支？"
+          "title": "目标与价值",
+          "text": "目标是自动改进 coding agent 的工具与执行流程，并让这些改动继续参与后续开发；实验对象是冻结 LLM 驱动的可编辑 Python 程序。"
         },
         {
           "axis": "B",
-          "title": "关键思想",
-          "text": "可运行的自修改与开放谱系结合；较差的中间节点仍可能成为有价值的祖先。"
+          "title": "核心思想与洞察",
+          "text": "只沿当前最优版本前进，可能丢掉有用的中间结构。DGM 保留仍能编辑代码的历史分支，使暂时降分的版本也能成为后续改进的起点。"
         },
         {
           "axis": "C",
-          "title": "系统与原理",
-          "text": "智能体修改自身代码，保留多个历史分支，再由选中的后继继续修改。"
+          "title": "结构与原理",
+          "text": "父代既执行编码任务，也修改自己的代码；archive 保存程序谱系与评测结果。父代选择倾向高分、后代较少的分支，档案维护与选择规则由外层固定。"
         },
         {
           "axis": "D",
-          "title": "算法与实现",
-          "text": "从代理档案采样父代，执行代码自修改，用分阶段编码任务评价新版本，并把后继加入档案继续分支搜索。"
+          "title": "算法与实验",
+          "text": "每轮根据运行日志提出改动，实施代码修改，再分阶段评测新 agent。论文运行 80 轮，并对比固定改进者、取消历史档案两种设置。"
         },
         {
           "axis": "E",
-          "title": "反馈与迭代",
-          "text": "保留候选代理并用于后续代码改进；不等于已证明改进速度持续增长"
+          "title": "反馈与继承",
+          "text": "继承的是可运行代码、工具和工作流，而不是新的 LLM 权重。后继再用这些能力改写自身，因此反馈路径经过真实的软件执行与版本继承。"
         },
         {
           "axis": "F",
-          "title": "结果与迁移",
-          "text": "比较固定改进者、去掉谱系档案等设置，并报告跨模型与编码任务迁移。\n开放搜索的收益仍受评估次数、选择集和基座能力影响；未证明无限增长。"
+          "title": "成果与迁移",
+          "text": "作者报告 SWE-bench 评测子集从 20% 到 50%，全量 Polyglot 从 14.2% 到 30.7%；还测试了跨模型迁移。这支持代码层自改进及分支探索的效果，不能把子集成绩当作全量成绩。"
         }
       ],
       "team": "Sakana AI / UBC / Vector Institute",
@@ -813,11 +848,22 @@
       "status": "methods",
       "placement": "main",
       "primary_url": "https://arxiv.org/html/2505.22954v3",
-      "source_location": "§3–4，尤其 §4.2–4.4 与谱系图",
+      "source_location": "arXiv v3（2026-03-12）；§3，§4.1–4.4。",
       "limitations": "开放搜索的收益仍受评估次数、选择集和基座能力影响；未证明无限增长。",
       "scope_kind": "direct",
       "scope_label": "自改进研究",
-      "classification_note": "以论文主要学习对象确定主位置；初筛条目的归属仍需方法全文确认。"
+      "classification_note": "编码代理代码；工具及上下文实现。被选后继负责修改；archive maintenance 与 parent selection 固定。",
+      "reading_scope": "已读自修改、父代选择、分阶段评测、消融和主要结果段落；未独立复现。",
+      "details": {
+        "changed": "agent 代码中的工具、提示与工作流",
+        "feedback": "编码任务执行日志和成功率",
+        "retained": "可执行 agent 版本及其谱系档案",
+        "fixed": "基础模型权重；主实验的档案维护、父代选择与评测流程",
+        "models": "自修改使用 Claude 3.5 Sonnet (New)；Polyglot 评测使用 o3-mini。",
+        "task_distribution": "搜索使用 SWE-bench / Polyglot 子集；最佳版本另在全量 Polyglot 评测。",
+        "budget": "每个主要搜索实验 80 轮；各候选采用不同规模的分阶段评测。",
+        "claim_type": "source fact；结果为作者报告。"
+      }
     },
     {
       "id": "gepa",
@@ -827,38 +873,38 @@
       "methods": [
         "h-prompt"
       ],
-      "purpose": "怎样利用执行轨迹中的语言反馈，更高效地搜索提示与程序配置？",
-      "summary": "反思执行轨迹、修改提示，并从 Pareto 前沿组合互补候选。",
+      "purpose": "利用完整执行反馈，提高多模块 LLM 系统的提示优化效率。",
+      "summary": "GEPA 用语言反思定位失败原因，再搜索模块提示；按任务实例维护互补候选，而非只追踪一个平均分最高的提示。",
       "sections": [
         {
           "axis": "A",
-          "title": "目标与问题",
-          "text": "怎样利用执行轨迹中的语言反馈，更高效地搜索提示与程序配置？"
+          "title": "目标与价值",
+          "text": "复杂 agent 的一次执行会产生推理、工具调用和错误信息。GEPA 要将这些信息用于提示优化，减少只凭最终分数反复试错的成本。"
         },
         {
           "axis": "B",
-          "title": "关键思想",
-          "text": "以语言反馈改善搜索样本效率，是 harness 优化的重要比较基线。"
+          "title": "核心思想与洞察",
+          "text": "执行轨迹能说明错误发生在哪里；不同提示又可能擅长不同样本。反思负责提出有针对性的改动，Pareto selection 负责保留互补策略。"
         },
         {
           "axis": "C",
-          "title": "系统与原理",
-          "text": "反思执行轨迹、修改提示，并从 Pareto 前沿组合互补候选。"
+          "title": "结构与原理",
+          "text": "系统保持 LLM 权重与程序模块结构不变，更新模块的自然语言指令。候选按各训练实例的表现比较，并记录父子关系；GEPA+Merge 还组合不同分支的模块改动。"
         },
         {
           "axis": "D",
-          "title": "算法与实现",
-          "text": "收集执行轨迹，反思具体失败并提出提示修改；维护 Pareto 候选，组合互补改动。"
+          "title": "算法与实验",
+          "text": "选候选与模块 → 在小批量样本运行 → 读取分数和文本反馈 → 修改提示 → 复测；改进后再进入更大的选择集。研究比较 GRPO、MIPROv2 等方法。"
         },
         {
           "axis": "E",
-          "title": "反馈与迭代",
-          "text": "候选提示及轨迹反馈进入后续搜索；外层优化算法固定。"
+          "title": "反馈与继承",
+          "text": "保存的提示、候选池及其成绩影响后续搜索；反思模型与外层搜索算法本身没有在这项实验中被训练或自改写。它属于 Harness 优化机制。"
         },
         {
           "axis": "F",
-          "title": "结果与迁移",
-          "text": "六任务报告与 GRPO、MIPROv2 的比较；需要同时看反思模型成本。\n优化器本身未证自改；较少 rollout 不等于同比总 FLOPs 或费用。"
+          "title": "成果与迁移",
+          "text": "作者在六个任务配置中报告优于多项对照的效果与 rollout 效率，主要 GRPO 对照使用 Qwen3-8B。较少 rollout 不直接等于同比例减少总算力或费用，反思调用也有成本。"
         }
       ],
       "team": "UC Berkeley / Stanford / Notre Dame / MIT / Databricks / Bespoke Labs",
@@ -866,11 +912,22 @@
       "status": "methods",
       "placement": "adjacent",
       "primary_url": "https://arxiv.org/pdf/2507.19457v2",
-      "source_location": "首页；§2–4、Algorithm 1、实验与成本设置",
+      "source_location": "arXiv 2507.19457v2 PDF；§3、§3.1、Figure 3、Algorithms 1–2、§4。",
       "limitations": "优化器本身未证自改；较少 rollout 不等于同比总 FLOPs 或费用。",
       "scope_kind": "enabler",
       "scope_label": "相关学习机制 / AI4AI",
-      "classification_note": "以论文主要学习对象确定主位置；初筛条目的归属仍需方法全文确认。"
+      "classification_note": "LLM 模块提示。更新提示；优化算法不自修改。",
+      "reading_scope": "已读反思更新、候选选择、组合机制及主要对照结果；未运行官方实现。",
+      "details": {
+        "changed": "各 LLM 模块的 prompt",
+        "feedback": "任务分数、执行轨迹、编译/评测文本反馈",
+        "retained": "提示候选、逐实例成绩、祖先关系",
+        "fixed": "被优化模型权重；反思模型；优化器与评测函数",
+        "task_distribution": "训练反馈集与 Pareto 选择集分开；最终报告测试集表现。",
+        "models": "主要 GRPO 对照：Qwen3-8B；另有其他模型及代码生成扩展实验。",
+        "classification": "外部 Harness 优化器；未展示优化器自身递归改进。",
+        "claim_type": "source fact；效率限定为论文计量口径。"
+      }
     },
     {
       "id": "agentbreeder",
@@ -1002,7 +1059,7 @@
       "limitations": "小规模且筛选的 ARC 结果不能外推一般智能；旧编辑奖励对新学习者可能失效。",
       "scope_kind": "direct",
       "scope_label": "自改进研究",
-      "classification_note": "以论文主要学习对象确定主位置；初筛条目的归属仍需方法全文确认。"
+      "classification_note": "学习自编辑数据 / 更新指令，并用内层适应效果训练编辑策略。"
     },
     {
       "id": "hyperagents",
@@ -1014,38 +1071,38 @@
         "h-workflow",
         "h-evaluator"
       ],
-      "purpose": "如果任务能力不等于修改能力，能否直接让元代理的改进过程也可编辑？",
-      "summary": "任务代理和修改代理位于同一可编辑程序，元层诊断与修改流程也能被改写。",
+      "purpose": "让执行任务的方法与产生下一代 agent 的方法，都成为可演化程序。",
+      "summary": "HyperAgents 将 task agent 与 meta-agent 放进同一可编辑程序，在 DGM 的谱系搜索上进一步开放修改策略本身。",
       "sections": [
         {
           "axis": "A",
-          "title": "目标与问题",
-          "text": "如果任务能力不等于修改能力，能否直接让元代理的改进过程也可编辑？"
+          "title": "目标与价值",
+          "text": "做好任务与善于改进系统是两种能力：论文关注编码之外的领域，任务表现变好时，修改方法是否也能变好并迁移。"
         },
         {
           "axis": "B",
-          "title": "关键思想",
-          "text": "相对固定修改提示，把生成改进的方法开放给经验选择。"
+          "title": "核心思想与洞察",
+          "text": "如果诊断失败、组织修改和使用历史经验的流程始终固定，递归改进就受这个固定流程约束。HyperAgents 将这些元层步骤也纳入程序修改范围。"
         },
         {
           "axis": "C",
-          "title": "系统与原理",
-          "text": "任务代理和修改代理位于同一可编辑程序，元层诊断与修改流程也能被改写。"
+          "title": "结构与原理",
+          "text": "一个 hyperagent 包含 task agent 和 meta-agent；后者能读取历史版本、评测结果并改写两者。DGM-H 保留谱系档案，主实验的父代选择仍由外层固定。"
         },
         {
           "axis": "D",
-          "title": "算法与实现",
-          "text": "把 task agent 与 meta-agent 合为同一可编辑程序，在 DGM 的档案与分支搜索上开放整个元修改机制。"
+          "title": "算法与实验",
+          "text": "研究比较固定 meta-agent、去掉档案等设置，并在代码、论文评审、机器人奖励设计与数学评分上实验。迁移实验用固定修改预算衡量元代理能带来多大提升。"
         },
         {
           "axis": "E",
-          "title": "反馈与迭代",
-          "text": "后继的可编辑元代理继续提出改动；主要父节点选择仍由外层设定"
+          "title": "反馈与继承",
+          "text": "继承的不仅是任务程序，还包括日志分析、预算安排、记忆和提出改动的方法。迁移测试将演化后的 meta-agent 固定下来，以区分已有改进能力与继续自修改。"
         },
         {
           "axis": "F",
-          "title": "结果与迁移",
-          "text": "包含冻结元代理、去掉档案等对照，以及跨域元层迁移；主实验父代选择仍固定。\n可表达任意程序不等于能有效发现任意改进；不同领域评价可信度不同。"
+          "title": "成果与迁移",
+          "text": "作者报告元层策略可迁往数学评分并继续产生改进；不同对照的差距并非全部显著。其贡献是演示可迁移的改进方法，程序可表达任意计算并不等于已覆盖任意任务。"
         }
       ],
       "team": "Meta / UBC / Vector / Edinburgh / NYU",
@@ -1053,11 +1110,21 @@
       "status": "methods",
       "placement": "main",
       "primary_url": "https://arxiv.org/html/2603.19461v1",
-      "source_location": "§3–5；§4.1 对照；Appendix D / E 元层变化",
+      "source_location": "arXiv v1（2026-03-19）；§3–5.2；Appendix D.3；主文说明 Appendix E.5 为父代选择的另行探索。",
       "limitations": "可表达任意程序不等于能有效发现任意改进；不同领域评价可信度不同。",
       "scope_kind": "direct",
       "scope_label": "自改进研究",
-      "classification_note": "以论文主要学习对象确定主位置；初筛条目的归属仍需方法全文确认。"
+      "classification_note": "task agent 代码；meta-agent 代码。meta-agent 修改逻辑可改；主实验 parent selection 固定。",
+      "reading_scope": "已读程序结构、主实验边界、改进能力测量和跨域迁移段落；未独立复现。",
+      "details": {
+        "changed": "task agent 与 meta-agent 的 Python 实现",
+        "feedback": "领域任务评测、历史日志、剩余实验预算",
+        "retained": "包含任务程序和修改程序的后继版本及谱系",
+        "fixed": "基础模型权重；主文的父代选择和评测规则",
+        "task_distribution": "代码、论文接收预测、机器人奖励设计；迁往 Olympiad-level math grading。",
+        "budget": "元层迁移实验固定 50 次修改，以 imp@50 比较。",
+        "claim_type": "source fact；泛化表述限于报告的跨域实验。"
+      }
     },
     {
       "id": "harness-updating-benefit",
@@ -1533,7 +1600,7 @@
       "limitations": "这是作者聚合表上的比较，尚无独立重跑和完整多重比较不确定性分析。",
       "scope_kind": "direct",
       "scope_label": "自改进研究",
-      "classification_note": "以论文主要学习对象确定主位置；初筛条目的归属仍需方法全文确认。"
+      "classification_note": "harness 修改提案及接受规则。约束的是自修改过程；泛化和成本约束需要分别观察。"
     },
     {
       "id": "meta-harness",
@@ -1543,36 +1610,53 @@
       "methods": [
         "h-workflow"
       ],
-      "purpose": "能否自动搜索应用的记忆、信息组织与执行代码？",
-      "summary": "自动搜索应用源码，改变固定模型能看到的信息、记忆组织和执行逻辑。",
+      "purpose": "让 coding agent 利用完整代码与执行轨迹，搜索固定模型的上下文、检索、记忆和编排程序。",
+      "summary": "Meta-Harness 将每个候选的源码、分数和轨迹保存在文件系统中；固定 proposer 自行检索历史并改写目标 harness。",
       "sections": [
         {
           "axis": "A",
-          "title": "目标与问题",
-          "text": "能否自动搜索应用的记忆、信息组织与执行代码？"
+          "title": "目标与价值",
+          "text": "复杂 harness 的失败信息分散在代码与长执行轨迹中，仅给总分或摘要会丢失诊断线索。研究目标是自动发现更有效的信息组织与执行程序。"
+        },
+        {
+          "axis": "B",
+          "title": "核心思想",
+          "text": "不预先把全部历史压成固定提示，而让 proposer 通过文件工具按需检查具体失败。搜索空间是可执行 harness 代码，检索和诊断本身由 coding agent 完成。"
         },
         {
           "axis": "C",
-          "title": "系统与原理",
-          "text": "自动搜索应用源码，改变固定模型能看到的信息、记忆组织和执行逻辑。"
+          "title": "结构与原理",
+          "text": "候选是单文件 Python harness，可改变 prompt construction、retrieval、memory 与 orchestration。proposer 使用 Claude Code + Opus-4.6，目标模型冻结；实验未让候选 harness 替换这个 proposer。"
+        },
+        {
+          "axis": "D",
+          "title": "算法与实验",
+          "text": "每轮检索历史、提出候选、检查接口并执行，结果写回文件系统，父代选择不被硬编码。分类和数学实验使用 search/test 划分；TerminalBench-2 实验在同一 89 题上搜索与报告结果。"
+        },
+        {
+          "axis": "E",
+          "title": "反馈与继承",
+          "text": "后续迭代可读取任意先前源码及 raw traces，再修改算法结构。保留的是候选种群和完整搜索经历；分类、数学的留出测试不反馈给 proposer，外层执行协议保持固定。"
         },
         {
           "axis": "F",
-          "title": "结果与迁移",
-          "text": "源码空间开放并不保证搜索高效；任务外迁移仍是关键问题。"
+          "title": "成果与迁移",
+          "text": "作者报告分类平均准确率由 ACE 的 40.9% 提升至 48.6%，额外上下文由 50.8K 降至 11.4K tokens。九个未见分类数据集和跨模型数学实验提供迁移证据；终端编码结果属于同基准优化。"
         }
       ],
       "team": "Stanford / KRAFTON / MIT",
       "team_source": "https://arxiv.org/pdf/2603.28052",
-      "status": "screened",
+      "status": "methods",
       "placement": "pending",
-      "primary_url": "https://github.com/stanford-iris-lab/meta-harness",
-      "source_location": "摘要与既有来源记录",
-      "limitations": "源码空间开放并不保证搜索高效；任务外迁移仍是关键问题。",
+      "primary_url": "https://arxiv.org/html/2603.28052v1",
+      "source_location": "arXiv:2603.28052v1，§3、Algorithm 1、§4.1–4.3、Tables 2–7；尤其 §4.3 的同基准搜索设置。",
+      "limitations": "目标 harness 的全程序搜索不等于 proposer 自改进；TerminalBench-2 同集搜索与评测，不能作留出任务泛化证据。",
       "team_location": "论文首页署名（2026-10-19读取）",
       "scope_kind": "direct",
       "scope_label": "自改进研究",
-      "classification_note": "以论文主要学习对象确定主位置；初筛条目的归属仍需方法全文确认。"
+      "classification_note": "Harness 的执行程序与上下文机制搜索；proposer 和目标 harness 之间保持明确边界。",
+      "reading_scope": "本轮补读搜索方法、文件化反馈、分类主结果/OOD、数学迁移和终端任务设置与结果；未重跑候选程序。",
+      "resources": "固定 Claude Code + Opus-4.6 proposer；分类使用冻结 GPT-OSS-120B，20 轮、每轮 2 候选；数学用 GPT-OSS-20B 搜索并测试其他模型；终端实验搜索和报告使用同一 89 题。"
     },
     {
       "id": "aide2",
@@ -1625,7 +1709,7 @@
       "limitations": "主循环外层固定；私有数据参与外层选择后便不是整个循环未触碰的最终测试。",
       "scope_kind": "direct",
       "scope_label": "自改进研究",
-      "classification_note": "以论文主要学习对象确定主位置；初筛条目的归属仍需方法全文确认。"
+      "classification_note": "内层研究代理。主实验外层研究者固定；另有后继接管外层的实验。"
     },
     {
       "id": "openrsi",
@@ -1678,7 +1762,7 @@
       "limitations": "§8 明确：主要改外部 ML 解法，演化系统本身基本固定；训练模型加工程化 harness 不等于自治协同 RSI。",
       "scope_kind": "direct",
       "scope_label": "自改进研究",
-      "classification_note": "以论文主要学习对象确定主位置；初筛条目的归属仍需方法全文确认。"
+      "classification_note": "研发操作经过SFT/RL，部署执行长程ML搜索；主要改外部ML解法，系统本身固定。不能按“训练模型+有harness”认定协同RSI。"
     },
     {
       "id": "mass",
@@ -1689,38 +1773,38 @@
         "x-workflow",
         "x-skills"
       ],
-      "purpose": "能否把多代理工作流的协作经验训练进共享模型，再继续优化工作流？",
-      "summary": "进化多代理工作流，再用其中的轨迹训练共享模型，重复使用于执行、优化和评价角色。",
+      "purpose": "把多代理协作产生的行为学进权重，再用更新后的模型继续优化协作。",
+      "summary": "MASS 交替运行 workflow evolution 与 SFT：同一代模型担任执行者、工作流优化器和评价者，下一代权重重新承担三种角色。",
       "sections": [
         {
           "axis": "A",
-          "title": "目标与问题",
-          "text": "能否把多代理工作流的协作经验训练进共享模型，再继续优化工作流？"
+          "title": "目标与价值",
+          "text": "多代理系统可以依靠外部组织方式提升表现，但能力仍依赖特定脚手架。MASS 研究如何把协作轨迹内化进模型，并反馈到下一轮工作流设计。"
         },
         {
           "axis": "B",
-          "title": "关键思想",
-          "text": "将外部协作过程内化到同一模型；公开比较训练 token 和跨域表现。"
+          "title": "核心思想与洞察",
+          "text": "将协作结构与参数学习连起来：先改善同一模型多个副本的分工和通信，再从这些执行经验中训练模型，而不是始终依靠固定强教师。"
         },
         {
           "axis": "C",
-          "title": "系统与原理",
-          "text": "进化多代理工作流，再用其中的轨迹训练共享模型，重复使用于执行、优化和评价角色。"
+          "title": "结构与原理",
+          "text": "workflow 是角色、调用顺序和输出约定的文本；执行器、优化器、评审器共享当前模型。每个任务保留当前最优工作流，比较最终交付物而非只看过程文字。"
         },
         {
           "axis": "D",
-          "title": "算法与实现",
-          "text": "后训练；工作流进化搜索 + SFT；每轮由当前模型与工作流采集轨迹；训练阶段做 SFT。"
+          "title": "算法与实验",
+          "text": "先固定权重搜索工作流，再重复执行并成对排名轨迹，以 Bradley–Terry 分数选择训练数据。构造 SFT 样本时移除工作流提示，训练 assistant 行为，工具输出不计入目标损失。"
         },
         {
           "axis": "E",
-          "title": "反馈与迭代",
-          "text": "当前模型演化工作流，执行轨迹用于 SFT，更新模型再次担任执行/优化/评价角色。"
+          "title": "反馈与继承",
+          "text": "更新模型后重新执行、评价和优化，形成 H → 数据 → M → 新 H 的交替闭环。论文实验为两个周期；外层算法与 qwen-code 执行框架保持给定。"
         },
         {
           "axis": "F",
-          "title": "结果与迁移",
-          "text": "两轮更新；公开研究任务部分提升，Terminal-Bench 与 SWE-bench 同时出现回退。\n共享权重可能共享偏差；训练 token 对齐不等于总成本对齐或广泛正迁移。"
+          "title": "成果与迁移",
+          "text": "作者报告只用执行轨迹做 SFT，也改善了后续工作流优化及评审一致性；部分公开研究任务随两轮训练提升。Terminal-Bench 与 SWE-bench 同时回退，显示这种内化并不保证所有能力都增长。"
         }
       ],
       "team": "Sakana AI / UC Berkeley",
@@ -1728,11 +1812,22 @@
       "status": "methods",
       "placement": "main",
       "primary_url": "https://arxiv.org/html/2610.12176v1",
-      "source_location": "§4.4、Appendix C.5 Table 7 / D.2",
+      "source_location": "arXiv v1；§3（Algorithms 1–3），§4.1–4.4。",
       "limitations": "共享权重可能共享偏差；训练 token 对齐不等于总成本对齐或广泛正迁移。",
       "scope_kind": "direct",
       "scope_label": "自改进研究",
-      "classification_note": "以论文主要学习对象确定主位置；初筛条目的归属仍需方法全文确认。"
+      "classification_note": "优化的是文本形式的多agent工作流；底层coding harness、工具和记忆固定。共享模型经SFT后再次承担执行、优化和评价角色；报告两轮。",
+      "reading_scope": "已读工作流表示、搜索、轨迹选择、SFT 内化及主要公开测试结果；未复现私有任务与训练。",
+      "details": {
+        "changed": "多代理 workflow 文本与 Qwen3.6-27B 参数",
+        "feedback": "当前模型对任务交付物的成对评价；外部强模型与公开基准用于报告结果",
+        "retained": "任务工作流、选中轨迹、代际模型权重",
+        "fixed": "qwen-code 0.20.0；外层工作流搜索与 SFT 流程",
+        "models": "Qwen3.6-27B-FP8；同一代模型担任 executor / optimizer / evaluator。",
+        "task_distribution": "合成研究编程任务中 8 项进入轨迹训练；另有合成留出任务与 6 个公开基准。",
+        "budget": "两个交替周期；论文另区分存储 token 与实际处理 token。",
+        "claim_type": "source fact；公开测试有改善也有回退。"
+      }
     },
     {
       "id": "rsi-anything",
@@ -1776,41 +1871,42 @@
     {
       "id": "dream-rsi",
       "short": "Dream-RSI",
-      "route": "model",
-      "cluster": "m-meta",
+      "route": "harness",
+      "cluster": "h-research",
       "methods": [
-        "m-meta"
+        "h-research"
       ],
-      "purpose": "能否通过回放研究树，提前训练更有效的研究探索策略？",
-      "summary": "从研究发现树中回放轨迹，训练进入真实昂贵研发前的探索选择。",
+      "purpose": "怎样在真实研究树的回放中改进探索策略，减少昂贵的真实研发试错？",
+      "summary": "LLM 改写可执行的研究探索策略代码，用已有研究树进行回放、比较和选择；基础 agent 与评价器保持不变。",
       "sections": [
         {
           "axis": "A",
           "title": "目标与问题",
-          "text": "能否通过回放研究树，提前训练更有效的研究探索策略？"
+          "text": "怎样在真实研究树的回放中改进探索策略，减少昂贵的真实研发试错？"
         },
         {
           "axis": "C",
           "title": "系统与原理",
-          "text": "从研究发现树中回放轨迹，训练进入真实昂贵研发前的探索选择。"
+          "text": "LLM 改写可执行的研究探索策略代码，用已有研究树进行回放、比较和选择；基础 agent 与评价器保持不变。"
         },
         {
           "axis": "F",
           "title": "结果与迁移",
-          "text": "模拟研究中的有效策略能否改善真实研发，需要直接迁移结果。"
+          "text": "模拟回放中的收益需要在真实研发环境中检验；这里的策略改进是代码更新，不是模型权重训练。"
         }
       ],
       "team": "Google / Google DeepMind / Maryland / Virginia",
       "team_source": "https://arxiv.org/pdf/2609.14858",
       "status": "screened",
       "placement": "pending",
-      "primary_url": "https://github.com/zhengkid/Dream-RSI",
-      "source_location": "摘要与既有来源记录",
-      "limitations": "模拟研究中的有效策略能否改善真实研发，需要直接迁移结果。",
+      "primary_url": "https://arxiv.org/html/2609.14858v2",
+      "source_location": "§3 Policy improvement and selection; Appendix D.2",
+      "limitations": "模拟回放中的收益需要在真实研发环境中检验；这里的策略改进是代码更新，不是模型权重训练。",
       "team_location": "论文首页署名（2026-10-19读取）",
       "scope_kind": "direct",
       "scope_label": "自改进研究",
-      "classification_note": "以论文主要学习对象确定主位置；初筛条目的归属仍需方法全文确认。"
+      "classification_note": "可执行探索策略代码被 LLM 改写；基础 agent 保持不变。",
+      "reading_scope": "已读路线判断相关的方法段落；研究结果与完整资源记录仍待逐项整理。"
     },
     {
       "id": "hgm",
@@ -1864,7 +1960,7 @@
       "limitations": "自适应后代采样有选择偏差；oracle 命题不能转成实际估计器的无条件最优性。",
       "scope_kind": "direct",
       "scope_label": "自改进研究",
-      "classification_note": "以论文主要学习对象确定主位置；初筛条目的归属仍需方法全文确认。"
+      "classification_note": "代理分支；分支研发价值估计。选择机制由研究者设计；它指导自修改分支探索。"
     },
     {
       "id": "ace",
@@ -1875,38 +1971,38 @@
         "h-memory",
         "h-prompt"
       ],
-      "purpose": "怎样积累经验而不在反复压缩、重写上下文时丢失有效策略？",
-      "summary": "从轨迹提炼经验，以局部增量更新持久 playbook。",
+      "purpose": "把执行经验积累为可持续维护的上下文，避免反复整段重写造成知识丢失。",
+      "summary": "ACE 维护条目化 playbook：Reflector 从轨迹提炼经验，Curator 生成局部 delta，由确定性逻辑合并。",
       "sections": [
         {
           "axis": "A",
-          "title": "目标与问题",
-          "text": "怎样积累经验而不在反复压缩、重写上下文时丢失有效策略？"
+          "title": "目标与价值",
+          "text": "长程上下文适应面临 brevity bias 和 context collapse：反复重写会把具体经验压成泛泛摘要。ACE 研究如何持续保留、修订并复用这些经验。"
         },
         {
           "axis": "B",
-          "title": "关键思想",
-          "text": "避免整段重写导致经验丢失；把上下文作为可积累能力。"
+          "title": "核心思想",
+          "text": "把可积累知识表示为带标识的独立条目，只修改受新证据影响的部分。将执行、反思和整理分工，减少一个模型同时重写全部记忆造成的信息损失。"
         },
         {
           "axis": "C",
-          "title": "系统与原理",
-          "text": "从轨迹提炼经验，以局部增量更新持久 playbook。"
+          "title": "结构与原理",
+          "text": "Generator 运行任务，Reflector 分析轨迹，Curator 产生 delta，非 LLM 逻辑完成合并。实验三种角色使用同一冻结 DeepSeek-V3.1；更新的是 playbook，而非角色实现或模型权重。"
         },
         {
           "axis": "D",
-          "title": "算法与实现",
-          "text": "Generator 执行任务，Reflector 提取经验，Curator 以局部增量合并到 playbook，减少整段重写导致的信息损失。"
+          "title": "算法与实验",
+          "text": "每个条目含唯一 ID、内容及 helpful/harmful 计数；系统增补或修订条目，并用语义相似度去重。实验覆盖 AppWorld、FiNER 和 Formula，并消融反思与多轮适应。"
         },
         {
           "axis": "E",
-          "title": "反馈与迭代",
-          "text": "新任务使用已维护的经验，再把成败反馈写回经验库。"
+          "title": "反馈与继承",
+          "text": "离线模式在训练数据上积累 playbook 后用于测试；在线模式先用当前 playbook 作答，再依据该任务反馈更新。继承的是可复用经验，维护算法本身保持固定。"
         },
         {
           "axis": "F",
-          "title": "结果与迁移",
-          "text": "AppWorld 与金融任务报告收益；有反思、维护组件消融和成本分析。\n证据是经验积累与任务适应；反思/维护算法本身没有自动进化。"
+          "title": "成果与迁移",
+          "text": "作者报告 AppWorld 在线、无真实答案标签条件下，test-challenge 的 Task Goal Completion 从 ReAct 的 41.5% 提升至 66.0%。它支持外部经验积累的价值，不意味着已实现改进器自身的递归演化。"
         }
       ],
       "team": "Stanford / SambaNova / UC Berkeley",
@@ -1914,11 +2010,13 @@
       "status": "methods",
       "placement": "main",
       "primary_url": "https://arxiv.org/html/2510.04618v1",
-      "source_location": "首页；§3–4，尤其 §3.1–3.2、§4.5–4.6",
-      "limitations": "证据是经验积累与任务适应；反思/维护算法本身没有自动进化。",
+      "source_location": "arXiv:2510.04618v1，§2.2、§3.1–3.2、§4.1–4.3、Table 1；§4.5–4.6 的组件和成本分析。",
+      "limitations": "增益针对既定经验维护流程；未训练模型参数，也未演化 Reflector/Curator 的实现。",
       "scope_kind": "enabler",
       "scope_label": "相关学习机制 / AI4AI",
-      "classification_note": "以论文主要学习对象确定主位置；初筛条目的归属仍需方法全文确认。"
+      "classification_note": "Harness 的经验与上下文持续适应；可继承对象是 playbook，不是自修改的元优化器。",
+      "reading_scope": "已读 context collapse 动机、条目化更新、三角色算法、离线/在线评测协议、主表和相关分析。",
+      "resources": "三个角色均用冻结 DeepSeek-V3.1 non-thinking；离线最多 5 epochs、Reflector 最多 5 轮；AppWorld 使用官方 ReAct 框架。"
     },
     {
       "id": "alphaevolve",
@@ -2158,50 +2256,57 @@
       "methods": [
         "m-selftrain"
       ],
-      "purpose": "可验证问题中，自生成数据能否替代持续增加的人类示范？",
-      "summary": "生成自训练样本、用外部二元反馈筛选，再监督学习；反复交替。",
+      "purpose": "用可验证的自生成解答，扩展大模型的数学与编程训练数据。",
+      "summary": "当前模型采样，外部正确性检查筛选，原始基座再学习；迭代传递的是更好的训练分布。",
       "sections": [
         {
           "axis": "A",
-          "title": "目标与问题",
-          "text": "可验证问题中，自生成数据能否替代持续增加的人类示范？"
+          "title": "目标与价值",
+          "text": "人工解题示范有限，但检查最终答案或执行代码通常更便宜。ReST-EM 利用这一差异扩展训练数据。"
         },
         {
           "axis": "B",
-          "title": "关键思想",
-          "text": "展示自生成数据的规模效应，同时报告轮数增加后的饱和和过拟合。"
+          "title": "思想与洞察",
+          "text": "把昂贵的在线采样与参数优化拆开：先集中生成，再集中训练，便于大模型批量执行。"
         },
         {
           "axis": "C",
-          "title": "系统与原理",
-          "text": "生成自训练样本、用外部二元反馈筛选，再监督学习；反复交替。"
+          "title": "结构与原理",
+          "text": "二元奖励下，reward-weighted maximum likelihood 等价于仅学习通过验证的样本；论文用 EM 框架解释这个更新。"
         },
         {
           "axis": "D",
-          "title": "算法与实现",
-          "text": "后训练；反馈筛选 SFT / EM 式自训练；按轮刷新数据；非连续 on-policy 梯度更新。"
+          "title": "算法与实验",
+          "text": "每轮 Generate 从当前策略采样；Improve 对筛选数据做 SFT。验证答案与程序测试保持固定。"
         },
         {
           "axis": "E",
-          "title": "反馈与迭代",
-          "text": "每轮从原基座重训，但样本由上轮改进模型产生。"
+          "title": "反馈与演化",
+          "text": "每轮学生从同一个预训练基座重新开始，但教师是上一轮模型；新能力经生成数据传递，而非不断续训旧权重。"
         },
         {
           "axis": "F",
-          "title": "结果与迁移",
-          "text": "PaLM 2 的数学/编码训练与任务外迁移；重置基座的对照。\n外部验证规则与更新程序固定；规模未知不表示低于 27B。"
+          "title": "成果与迁移",
+          "text": "作者在 PaLM 2 数学、编程及未训练任务上报告收益；多轮也出现饱和或过拟合。理想 EM 的目标改进不保证有限样本训练的测试性能单调增加。"
         }
       ],
       "team": "Google DeepMind / Mila",
       "team_source": "https://arxiv.org/pdf/2312.06585v4",
       "status": "methods",
       "placement": "scale_unverified",
-      "primary_url": "https://arxiv.org/pdf/2312.06585v4",
-      "source_location": "首页；§3 Algorithm 1、§5–6、Figure 4/7",
+      "primary_url": "https://arxiv.org/html/2312.06585v4",
+      "source_location": "v4：§3、Algorithm 1；§5.1–5.3、Figures 4/7",
       "limitations": "外部验证规则与更新程序固定；规模未知不表示低于 27B。",
       "scope_kind": "enabler",
       "scope_label": "相关学习机制 / AI4AI",
-      "classification_note": "以论文主要学习对象确定主位置；初筛条目的归属仍需方法全文确认。"
+      "classification_note": "自生样本按外部二元反馈筛选，E/M 轮交替。",
+      "reading_scope": "已读方法、实验与重置基座对照；参数量未公开。结果为作者报告。",
+      "details": {
+        "training_stage": "post-training",
+        "update": "reward-filtered SFT / EM-style policy improvement",
+        "data_regime": "每轮在线生成一个批次，随后离线优化；不是逐梯度步刷新样本的在线 RL",
+        "inheritance": "上一轮模型生成的数据；学生权重重置至原基座"
+      }
     },
     {
       "id": "expert-iteration",
@@ -2596,7 +2701,7 @@
       "limitations": "不满足本项目 ≥27B 主图门槛，但不能因此判为低质量；外部训练程序仍固定。",
       "scope_kind": "enabler",
       "scope_label": "相关学习机制 / AI4AI",
-      "classification_note": "以论文主要学习对象确定主位置；初筛条目的归属仍需方法全文确认。"
+      "classification_note": "Lean 验证搜索经验，训练证明网络并做 test-time RL。"
     },
     {
       "id": "muzero",
@@ -2682,38 +2787,38 @@
       "methods": [
         "m-curriculum"
       ],
-      "purpose": "具身代理能否借助 AI 出题和评价，从自己的交互中继续学习？",
-      "summary": "Gemini 出题并评价游戏轨迹；agent 从自生成经验继续训练。",
+      "purpose": "让虚拟世界中的通用 agent 从自身交互继续学习新技能。",
+      "summary": "Gemini 负责提出任务与评价视频轨迹，SIMA 2 用这些交互经验继续训练。",
       "sections": [
         {
           "axis": "A",
-          "title": "目标与问题",
-          "text": "具身代理能否借助 AI 出题和评价，从自己的交互中继续学习？"
+          "title": "目标与价值",
+          "text": "跨游戏零样本泛化仍会遇到新物体与操作；目标是用自主练习获得这些技能，减少追加人类示范。"
         },
         {
           "axis": "B",
-          "title": "关键思想",
-          "text": "把 AI 任务生成和反馈接入具身技能学习，并在生成世界检查迁移。"
+          "title": "思想与洞察",
+          "text": "把基础模型的视觉、语言理解用于 task setting 与 reward modeling，为缺少内部状态接口的世界提供学习信号。"
         },
         {
           "axis": "C",
-          "title": "系统与原理",
-          "text": "Gemini 出题并评价游戏轨迹；agent 从自生成经验继续训练。"
+          "title": "结构与原理",
+          "text": "SIMA 2 执行键鼠动作；独立 Gemini 组件提出指令、观看轨迹并评分，评分规则用少量人类偏好校准。"
         },
         {
           "axis": "D",
-          "title": "算法与实现",
-          "text": "后训练；自生成经验训练；报告另含 RL 阶段；本卡不将所有训练阶段笼统写成同一个 RL 算法。"
+          "title": "算法与实验",
+          "text": "基础训练包括人类轨迹与 bridge data 的 SFT，再做可验证奖励的在线 RL；后续自改实验另从评分后的自身经验训练。"
         },
         {
           "axis": "E",
-          "title": "反馈与迭代",
-          "text": "更新 agent 再产生经验，任务选择可聚焦弱项；外部 Gemini 组件未证参数共演。"
+          "title": "反馈与演化",
+          "text": "训练后的 agent 再采集经验，评价反馈引导任务生成器聚焦弱项；改变的是 agent 参数与练习分布。"
         },
         {
           "axis": "F",
-          "title": "结果与迁移",
-          "text": "ASKA 技能/进度改善；Genie 3 城市场景训练后在自然场景测迁移。\n未证明 task setter、reward model 或世界模型也随 agent 共同训练。"
+          "title": "成果与迁移",
+          "text": "作者展示 ASKA 技能学习，以及 Genie 3 城市场景训练向自然场景任务迁移。自改阶段的具体损失未展开，不能直接套用基础阶段的 RL 配方。"
         }
       ],
       "team": "Google DeepMind",
@@ -2721,11 +2826,21 @@
       "status": "methods",
       "placement": "scale_unverified",
       "primary_url": "https://arxiv.org/html/2512.04797v1",
-      "source_location": "首页；§3.3、§4.5，Figures 15–17",
+      "source_location": "v1：§3.3.1–3.3.3；§4.5.1–4.5.2、Figures 15–17",
       "limitations": "未证明 task setter、reward model 或世界模型也随 agent 共同训练。",
       "scope_kind": "direct",
       "scope_label": "自改进研究",
-      "classification_note": "以论文主要学习对象确定主位置；初筛条目的归属仍需方法全文确认。"
+      "classification_note": "AI 提供游戏任务与轨迹反馈，执行代理从交互经验学习；此映射不声称出题者同步训练。",
+      "reading_scope": "已读基础训练与自生成经验实验；task setter、reward model、世界模型未报告同步参数训练。",
+      "details": {
+        "model": "Gemini Flash-Lite backbone / SIMA 2；参数量未披露",
+        "training_stage": "SFT → online RL（基础阶段）→ 自生成经验适配实验",
+        "update": "自改实验更新损失未具体公开；不与基础在线 RL 混写",
+        "changed_objects": [
+          "SIMA 2 参数",
+          "反馈驱动的练习任务分布"
+        ]
+      }
     },
     {
       "id": "constitutional-ai",
@@ -2735,38 +2850,38 @@
       "methods": [
         "m-preference"
       ],
-      "purpose": "能否用明确原则与 AI 反馈减少有害性偏好标注？",
-      "summary": "自批评/修订样本用于 SFT；AI 偏好训练奖励模型，再用于 RL。",
+      "purpose": "以明确原则和 AI 反馈训练有帮助、低危害且不一味回避的助手。",
+      "summary": "Constitution 指导自批评、修订和偏好判断；SFT 与 RLAIF 将这些反馈写入参数。",
       "sections": [
         {
           "axis": "A",
-          "title": "目标与问题",
-          "text": "能否用明确原则与 AI 反馈减少有害性偏好标注？"
+          "title": "目标与价值",
+          "text": "减少对人工危害性偏好标注的依赖，并使行为目标可用自然语言明确表达。"
         },
         {
           "axis": "B",
-          "title": "关键思想",
-          "text": "建立减少人工危害偏好标签的 AI 监督路线。"
+          "title": "思想与洞察",
+          "text": "把原则转化为可扩展监督：模型先应用原则批评自己，再把修订结果和比较判断转成训练信号。"
         },
         {
           "axis": "C",
-          "title": "系统与原理",
-          "text": "自批评/修订样本用于 SFT；AI 偏好训练奖励模型，再用于 RL。"
+          "title": "结构与原理",
+          "text": "固定 constitution 约束判断。助手、偏好模型和训练程序分工明确；帮助性部分仍使用人类反馈。"
         },
         {
           "axis": "D",
-          "title": "算法与实现",
-          "text": "后训练；自修订 SFT + RLAIF；固定 constitution；帮助性反馈含人工标注。"
+          "title": "算法与实验",
+          "text": "先用 critique–revision 生成的回答做 SFT；再用 AI 成对偏好训练 preference model，以其奖励继续 RL。"
         },
         {
           "axis": "E",
-          "title": "反馈与迭代",
-          "text": "AI 输出和偏好进入后续权重训练；未证持续重复整个系统共演。"
+          "title": "反馈与演化",
+          "text": "修订和偏好数据先离线生成，再进入策略训练。论文展示分阶段自改进，没有反复更新 constitution 或训练算法。"
         },
         {
           "axis": "F",
-          "title": "结果与迁移",
-          "text": "52B 实验有人类对比评价；帮助性仍使用人类反馈。\n关键 AI4AI 前身；论文没有证实改进器不断自改的多代闭环。"
+          "title": "成果与迁移",
+          "text": "作者在含 52B 策略的实验中用人类比较评估帮助性、危害性与回避性。主要贡献是 RLAIF 监督路线，不能据此视为多代自治研发系统。"
         }
       ],
       "team": "Anthropic",
@@ -2774,11 +2889,18 @@
       "status": "methods",
       "placement": "adjacent",
       "primary_url": "https://arxiv.org/html/2212.08073v1",
-      "source_location": "§1.2、§3、§4；Figure 2 的 52B RL runs",
+      "source_location": "v1：§1.2、§3.1–3.3、§4.1–4.4；Figure 2",
       "limitations": "关键 AI4AI 前身；论文没有证实改进器不断自改的多代闭环。",
       "scope_kind": "enabler",
       "scope_label": "相关学习机制 / AI4AI",
-      "classification_note": "以论文主要学习对象确定主位置；初筛条目的归属仍需方法全文确认。"
+      "classification_note": "原则引导 self-critique / revision，再以 AI 偏好训练奖励与策略；非多代奖励者共演证据。",
+      "reading_scope": "已读两阶段方法、数据来源与人类评估；结果为作者报告。",
+      "details": {
+        "model": "Anthropic 52B policy（论文亦含其他规模）",
+        "training_stage": "post-training",
+        "update": "critique–revision SFT, then RL from AI Feedback",
+        "human_inputs": "constitution、提示示例、帮助性偏好及其他既有训练数据"
+      }
     },
     {
       "id": "self-taught-evaluators",
@@ -2789,38 +2911,38 @@
         "m-verifier",
         "m-selftrain"
       ],
-      "purpose": "能否少依赖人工成对标注，迭代训练语言模型评价器？",
-      "summary": "用构造偏好和合成判断训练评价器，再以更新的判断生成训练信号。",
+      "purpose": "减少人工偏好标注，训练能够解释并比较答案的 LLM-as-a-Judge。",
+      "summary": "先构造预期优劣已知的回答对，再用筛选过的自生成判断逐轮训练评价器。",
       "sections": [
         {
           "axis": "A",
-          "title": "目标与问题",
-          "text": "能否少依赖人工成对标注，迭代训练语言模型评价器？"
+          "title": "目标与价值",
+          "text": "若评价器总依赖新增人工偏好标签，AI 监督的规模仍受标注限制；本文把评价器本身作为学习对象。"
         },
         {
           "axis": "B",
-          "title": "关键思想",
-          "text": "学习如何评价，同时保留构造标签这一外部来源。"
+          "title": "思想与洞察",
+          "text": "通过修改原问题制造答非所问的负例，获得廉价偏好标签；再学习怎样推理出这个偏好，而非仅背诵分数。"
         },
         {
           "axis": "C",
-          "title": "系统与原理",
-          "text": "用构造偏好和合成判断训练评价器，再以更新的判断生成训练信号。"
+          "title": "结构与原理",
+          "text": "Mixtral 生成原问题回答与扰动问题回答；后者被视为原问题的较差回答。评价器输出比较理由和最终裁决。"
         },
         {
           "axis": "D",
-          "title": "算法与实现",
-          "text": "后训练；SFT / 判断文本负对数似然；轮间刷新合成判断，轮内固定数据批次；构造偏好标签提供锚点。"
+          "title": "算法与实验",
+          "text": "对每组回答采样判断，只保留裁决符合构造标签的推理，用 NLL 训练 Llama3-70B-Instruct；这是 SFT，不是 RL。"
         },
         {
           "axis": "E",
-          "title": "反馈与迭代",
-          "text": "上一轮评价器生成下一轮判断；每轮学生从同一原始种子重新微调，而非连续接着上轮权重训练。"
+          "title": "反馈与演化",
+          "text": "每轮重新从种子模型微调，由上一轮评价器生成新的判断文本；裁决能力通过训练数据传递。"
         },
         {
           "axis": "F",
-          "title": "结果与迁移",
-          "text": "核对种子模型、构造标签与迭代过程；每轮学生从初始种子重新训练。\n并非无锚定自证，也不是每轮直接继续微调；标签构造可能有误。"
+          "title": "成果与迁移",
+          "text": "作者报告五轮后 RewardBench 从 75.4 升至 88.3；MT-Bench 改善较小。构造标签不等同于人工真值，训练产物是评价器。"
         }
       ],
       "team": "Meta FAIR",
@@ -2828,11 +2950,19 @@
       "status": "methods",
       "placement": "main",
       "primary_url": "https://arxiv.org/html/2408.02666v1",
-      "source_location": "§3–4：构造标签、种子重置、实验",
+      "source_location": "v1：§3.1–3.5、§4.1；§5.1–5.2、Tables 1–2",
       "limitations": "并非无锚定自证，也不是每轮直接继续微调；标签构造可能有误。",
       "scope_kind": "direct",
       "scope_label": "自改进研究",
-      "classification_note": "以论文主要学习对象确定主位置；初筛条目的归属仍需方法全文确认。"
+      "classification_note": "合成判断与偏好训练 evaluator，再以新评价生成下一轮训练数据。",
+      "reading_scope": "已读合成回答、判断筛选、种子重置与结果；未把评价器改进等同于下游策略共同训练。",
+      "details": {
+        "model": "Llama3-70B-Instruct",
+        "auxiliary_model": "Mixtral-8x22B-Instruct 生成/分类数据及初始判断",
+        "training_stage": "post-training",
+        "update": "offline SFT on judgment traces",
+        "inheritance": "上一轮生成的判断；每轮学生从种子权重重新微调"
+      }
     },
     {
       "id": "eureka",
@@ -2920,38 +3050,38 @@
         "m-verifier",
         "m-curriculum"
       ],
-      "purpose": "怎样用不断变化的攻击者持续发现并训练防御模型的弱点？",
-      "summary": "攻击者与多种防御模型共同 RL，变化的对手持续产生训练压力。",
+      "purpose": "持续发现模型安全弱点，并让防御模型从越来越强的攻击中学习。",
+      "summary": "攻击者与多种防御模型共同进行 self-play RL；对手变化形成持续更新的训练课程。",
       "sections": [
         {
           "axis": "A",
-          "title": "目标与问题",
-          "text": "怎样用不断变化的攻击者持续发现并训练防御模型的弱点？"
+          "title": "目标与价值",
+          "text": "静态攻击集容易被学完。GPT-Red 研究如何持续生成有效攻击，同时提高模型完成原任务时的稳健性。"
         },
         {
           "axis": "B",
-          "title": "关键思想",
-          "text": "将对手共同进化与真实生产模型防御训练连接。"
+          "title": "思想与洞察",
+          "text": "防御增强迫使攻击者换策略；多种防御模型减少攻击者对单一弱点的过拟合，形成 adaptive curriculum。"
         },
         {
           "axis": "C",
-          "title": "系统与原理",
-          "text": "攻击者与多种防御模型共同 RL，变化的对手持续产生训练压力。"
+          "title": "结构与原理",
+          "text": "攻击者在 agentic red-teaming harness 中试探防御者；环境判定攻击有效性、攻击成败及原任务完成情况。"
         },
         {
           "axis": "D",
-          "title": "算法与实现",
-          "text": "后训练；自博弈 RL；攻击与防御交互生成训练信号。"
+          "title": "算法与实验",
+          "text": "每轮采样环境、生成交互轨迹与奖励，再对攻击者和防御者做 RL；这是随双方策略刷新数据的自博弈训练。"
         },
         {
           "axis": "E",
-          "title": "反馈与迭代",
-          "text": "攻击/防御训练相互提供样本和反馈；多个模型共同训练仍属于 Model。"
+          "title": "反馈与演化",
+          "text": "双方更新后的策略成为下一轮对手。训练器与环境规则仍由外部定义，多模型共同训练本身不构成 harness 自改。"
         },
         {
           "axis": "F",
-          "title": "结果与迁移",
-          "text": "论文含冻结攻击者对照及跨检查点评价，避免只看双方共同变化的内部得分。\n安全鲁棒性是特定能力；不能推导无限研发加速或全部通用能力增长。"
+          "title": "成果与迁移",
+          "text": "作者用冻结攻击者对照及跨检查点评价展示共同训练收益，并报告生产模型应用。公开结论聚焦安全稳健性，参数量和总算力未完整公开。"
         }
       ],
       "team": "OpenAI",
@@ -2959,11 +3089,21 @@
       "status": "methods",
       "placement": "scale_unverified",
       "primary_url": "https://cdn.openai.com/pdf/gpt-red-automated-red-teaming-via-self-play-at-scale.pdf",
-      "source_location": "论文 §5；官方自玩与生产应用说明",
+      "source_location": "官方论文：§4–5.1；Figures 4–7；§8–9",
       "limitations": "安全鲁棒性是特定能力；不能推导无限研发加速或全部通用能力增长。",
       "scope_kind": "direct",
       "scope_label": "自改进研究",
-      "classification_note": "以论文主要学习对象确定主位置；初筛条目的归属仍需方法全文确认。"
+      "classification_note": "攻防模型相互提供训练压力；角色关系是 adversarial self-play。",
+      "reading_scope": "已读 agentic harness、自博弈更新与核心对照；未展开具体攻击操作，结果为作者报告。",
+      "details": {
+        "training_stage": "post-training",
+        "update": "online self-play RL，攻击者与防御者同时训练",
+        "changed_objects": [
+          "attacker parameters",
+          "defender parameters"
+        ],
+        "retained_external_structure": "red-teaming harness 与环境奖励规则未报告被学习修改"
+      }
     },
     {
       "id": "automated-alignment-researchers",
@@ -3016,7 +3156,7 @@
       "limitations": "改善目标模型不证明研究者自进化；数据效率比值不等于完整研发成本比。",
       "scope_kind": "enabler",
       "scope_label": "相关学习机制 / AI4AI",
-      "classification_note": "以论文主要学习对象确定主位置；初筛条目的归属仍需方法全文确认。"
+      "classification_note": "研究代理提出干预并训练外部目标模型；目标改善没有直接证明研究代理自身学习或自改。"
     },
     {
       "id": "seed-for-seed",
@@ -3108,7 +3248,7 @@
       "limitations": "运行节约不等于全生命周期节约，也不是已证明的后继研发复利。",
       "scope_kind": "enabler",
       "scope_label": "相关学习机制 / AI4AI",
-      "classification_note": "以论文主要学习对象确定主位置；初筛条目的归属仍需方法全文确认。"
+      "classification_note": "运行机制与代理 harness。以执行机制迁移及效率为重点，具体元循环边界见论文。"
     },
     {
       "id": "modular-rsi",
@@ -3162,7 +3302,7 @@
       "limitations": "模块独立改进不保证组合增益；同域迁移与少量基座不等于全面泛化。",
       "scope_kind": "direct",
       "scope_label": "自改进研究",
-      "classification_note": "以论文主要学习对象确定主位置；初筛条目的归属仍需方法全文确认。"
+      "classification_note": "harness 模块。模块局部改进必须经组合后的整体验证。"
     },
     {
       "id": "prime-agent",
@@ -3256,7 +3396,7 @@
       "limitations": "共同漂移会制造虚假进步；内部论文接收分不能替代外部学术验证。",
       "scope_kind": "direct",
       "scope_label": "自改进研究",
-      "classification_note": "以论文主要学习对象确定主位置；初筛条目的归属仍需方法全文确认。"
+      "classification_note": "任务代理；评价器。评价器可改；独立 ground-truth anchors 不随评审器替换而抹去。"
     },
     {
       "id": "dr-zero",
@@ -3266,38 +3406,38 @@
       "methods": [
         "m-curriculum"
       ],
-      "purpose": "搜索代理能否自主生成适合自身能力的训练问题？",
-      "summary": "搜索增强的出题者与求解者共同训练，求解反馈改变后续题目。",
+      "purpose": "不用整理好的问答训练集，自主训练具备检索能力的搜索 agent。",
+      "summary": "proposer 检索后出题，solver 检索后解题；双方根据当前成功率交替强化学习。",
       "sections": [
         {
           "axis": "A",
-          "title": "目标与问题",
-          "text": "搜索代理能否自主生成适合自身能力的训练问题？"
+          "title": "目标与价值",
+          "text": "搜索代理的训练常依赖人工问题与答案；本文用外部检索知识和 proposer–solver 自博弈构造课程。"
         },
         {
           "axis": "B",
-          "title": "关键思想",
-          "text": "课程分布由系统状态驱动；外部搜索提供超出既有训练题库的信息。"
+          "title": "思想与洞察",
+          "text": "出题不能只追求难：完全解不出与全部解出都缺少训练价值；奖励偏向可解但有挑战的任务。"
         },
         {
           "axis": "C",
-          "title": "系统与原理",
-          "text": "搜索增强的出题者与求解者共同训练，求解反馈改变后续题目。"
+          "title": "结构与原理",
+          "text": "出题者生成问题及参考答案，求解者多次尝试；搜索文档是外部知识来源，答案匹配提供学习信号。"
         },
         {
           "axis": "D",
-          "title": "算法与实现",
-          "text": "后训练；HRPO 等自博弈 RL；按当前求解能力产生新问题，使用检索反馈。"
+          "title": "算法与实验",
+          "text": "proposer 用严格 on-policy 的 HRPO，按检索跳数分组归一化优势以节省采样；solver 用 GRPO。"
         },
         {
           "axis": "E",
-          "title": "反馈与迭代",
-          "text": "求解结果指导出题者，新任务再训练求解者；搜索提供外部信息。"
+          "title": "反馈与演化",
+          "text": "更新后的 solver 改变题目成功率，进而改变 proposer 的奖励与下一轮题目；两个参数化策略交替更新。"
         },
         {
           "axis": "F",
-          "title": "结果与迁移",
-          "text": "已核对耦合目标和外部检索依赖；完整资源归一化与复现仍待完成。\n无人工训练数据不等于无外部信息；题目真实性、难度和多样性仍是限制。"
+          "title": "成果与迁移",
+          "text": "作者在 3B/7B 搜索问答任务上报告结果。跳数只是分组变量，真实性仍受合成答案影响；本目录将其保留为低于 27B 的方法参考。"
         }
       ],
       "team": "Meta Superintelligence Labs / UIUC",
@@ -3305,11 +3445,22 @@
       "status": "methods",
       "placement": "small",
       "primary_url": "https://arxiv.org/html/2601.07055v2",
-      "source_location": "§3.1 设置与学习目标；方法与实验概述",
+      "source_location": "v2：§3.1–3.4、Equations 1–5；§4、Appendix Tables 8–10",
       "limitations": "无人工训练数据不等于无外部信息；题目真实性、难度和多样性仍是限制。",
       "scope_kind": "direct",
       "scope_label": "自改进研究",
-      "classification_note": "以论文主要学习对象确定主位置；初筛条目的归属仍需方法全文确认。"
+      "classification_note": "搜索增强的 proposer / solver 共训，求解表现决定训练任务。",
+      "reading_scope": "已读方法、模型规模及 HRPO/GRPO 对照；不把无人工 QA 数据表述成无外部信息。",
+      "details": {
+        "models": [
+          "Qwen2.5-3B-Instruct",
+          "Qwen2.5-7B-Instruct"
+        ],
+        "training_stage": "post-training",
+        "update": "proposer: on-policy HRPO; solver: GRPO",
+        "inheritance": "两方权重与其共同决定的下一轮问题分布",
+        "scale_status": "below"
+      }
     },
     {
       "id": "skill-self-play",
@@ -3320,38 +3471,38 @@
         "x-skills",
         "x-environment"
       ],
-      "purpose": "出题者与求解者能否通过共同演化的技能库持续扩展训练任务？",
-      "summary": "技能记录生成规则、提示和验证逻辑；出题者、求解者与技能库共同更新。",
+      "purpose": "让自博弈课程既能追踪学习难度，也能持续生成结构有效的新任务。",
+      "summary": "proposer/solver 的 RL 与外部 skill library 更新联动；技能携带生成规则、示例及可执行验证器。",
       "sections": [
         {
           "axis": "A",
-          "title": "目标与问题",
-          "text": "出题者与求解者能否通过共同演化的技能库持续扩展训练任务？"
+          "title": "目标与价值",
+          "text": "自由出题容易产生无效任务或重复题型；目标是提高有效任务供给，同时扩展 solver 能力。"
         },
         {
           "axis": "B",
-          "title": "关键思想",
-          "text": "把可学习任务的生成结构外化为可修改技能，而非只调题目难度。"
+          "title": "思想与洞察",
+          "text": "把任务生成知识写成可复用 skill，结合无技能约束的探索；任务先通过有效性筛选，再按学习难度奖励。"
         },
         {
           "axis": "C",
-          "title": "系统与原理",
-          "text": "技能记录生成规则、提示和验证逻辑；出题者、求解者与技能库共同更新。"
+          "title": "结构与原理",
+          "text": "外部技能库提供结构规则与 validators；proposer 生成题目，solver 执行，成功率决定课程难度。"
         },
         {
           "axis": "D",
-          "title": "算法与实现",
-          "text": "后训练；技能自博弈 RL；随能力更新任务。"
+          "title": "算法与实验",
+          "text": "当前 solver 提供反馈后，proposer 与 solver 分别用 GRPO 更新；每轮重新生成训练池，进行五轮自博弈。"
         },
         {
           "axis": "E",
-          "title": "反馈与迭代",
-          "text": "技能任务生成与求解训练迭代；生成技能内容不自动构成外部可执行 harness 的自改。"
+          "title": "反馈与演化",
+          "text": "固定初始模型担任 skill controller，从失败轨迹修订技能、从探索归纳新技能、淘汰已过易的技能。参数与外部知识库均被保留到下一轮。"
         },
         {
           "axis": "F",
-          "title": "结果与迁移",
-          "text": "冻结技能、出题者、反馈求解者的对照，配合数据循环诊断。\n任务有效性与验证器边界约束扩展；技能增多未必增加真实覆盖。"
+          "title": "成果与迁移",
+          "text": "作者在 3B–14B 的工具调用与逻辑推理上测试，并提供冻结技能和冻结策略对照。属于小模型的协同机制证据，尚非 ≥27B 规模结论。"
         }
       ],
       "team": "Alibaba Qwen / CUHK / RUC / SYSU / PKU / ETH / UZH / Buffalo",
@@ -3359,11 +3510,25 @@
       "status": "methods",
       "placement": "small",
       "primary_url": "https://arxiv.org/html/2607.22529v1",
-      "source_location": "§3.1–3.2、§4.1、§4.3–4.4",
+      "source_location": "v1：§3.1–3.4、Algorithm 1；§4.1–4.4、Tables 3–4",
       "limitations": "任务有效性与验证器边界约束扩展；技能增多未必增加真实覆盖。",
       "scope_kind": "direct",
       "scope_label": "自改进研究",
-      "classification_note": "以论文主要学习对象确定主位置；初筛条目的归属仍需方法全文确认。"
+      "classification_note": "技能保存任务生成与验证结构，出题/求解策略与技能内容共同变化；实际训练规模单列，不以教师规模替代。",
+      "reading_scope": "已读目标、验证器、双策略更新及技能库生命周期；数字与对照均为作者报告。",
+      "details": {
+        "models": [
+          "Granite-4.1-3B",
+          "Qwen3-4B-Instruct",
+          "Qwen3-8B",
+          "Ministral-3-8B-Instruct",
+          "Ministral-3-14B-Instruct"
+        ],
+        "training_stage": "post-training",
+        "update": "GRPO for proposer and solver; external skill edits/induction/pruning",
+        "controller": "固定初始 backbone，未报告 controller 参数共同训练",
+        "scale_status": "below"
+      }
     },
     {
       "id": "rlanything",
@@ -3417,7 +3582,7 @@
       "limitations": "环境变化受预建任务与验证器约束；不能据此宣称任意世界可自我生成真值。",
       "scope_kind": "direct",
       "scope_label": "自改进研究",
-      "classification_note": "以论文主要学习对象确定主位置；初筛条目的归属仍需方法全文确认。"
+      "classification_note": "同时训练策略和奖励模型，依据错误模式改写外部任务；Hybrid归属来自任务侧变化，并非来自“有两个模型”。"
     },
     {
       "id": "agent0",
@@ -3583,38 +3748,38 @@
         "x-training",
         "x-skills"
       ],
-      "purpose": "能否让训练代理根据诊断修改训练流程，而不只采用固定 RL 配方？",
-      "summary": "训练代理观察实验，修改训练信号、流程与技能，再推动策略训练。",
+      "purpose": "让训练 agent 根据策略表现持续修改训练配方和分析工具。",
+      "summary": "目标策略通过 RL 更新；固定权重的 trainer agent 修改训练 harness，并积累可复用的分析技能。",
       "sections": [
         {
           "axis": "A",
-          "title": "目标与问题",
-          "text": "能否让训练代理根据诊断修改训练流程，而不只采用固定 RL 配方？"
+          "title": "目标与价值",
+          "text": "固定 RL 配方与粗粒度分数难以解释训练停滞；本文把训练过程中的分析能力也纳入可修改对象。"
         },
         {
           "axis": "B",
-          "title": "关键思想",
-          "text": "把训练侧 harness 纳入演化对象，拓宽仅改推理提示的视野。"
+          "title": "思想与洞察",
+          "text": "把“策略学得怎样”与“训练者凭什么决定下一步”连起来，允许新增指标、分析器和训练干预。"
         },
         {
           "axis": "C",
-          "title": "系统与原理",
-          "text": "训练代理观察实验，修改训练信号、流程与技能，再推动策略训练。"
+          "title": "结构与原理",
+          "text": "Sonnet 4.6 担任 trainer；目标模型接受 RL，外部 harness 保存版本、轨迹、分析脚本与技能。"
         },
         {
           "axis": "D",
-          "title": "算法与实现",
-          "text": "后训练；GRPO 类策略训练 + 训练软件修改；按训练轨迹与诊断调整下一段训练。"
+          "title": "算法与实验",
+          "text": "trainer 建立候选训练分支，修改奖励、过滤、采样或优化设置；实际策略训练采用 GRPO 类更新。"
         },
         {
           "axis": "E",
-          "title": "反馈与迭代",
-          "text": "固定 Sonnet 训练代理读训练诊断并改训练流程，再启动策略训练；昂贵动作有人把关。"
+          "title": "反馈与演化",
+          "text": "训练结果促使 trainer 修订分析工具并选择后续方案；版本与技能跨轮保留。训练启动和版本晋升仍由人确认。"
         },
         {
           "axis": "F",
-          "title": "结果与迁移",
-          "text": "方法描述含版本、记忆、技能和训练控制；本卡纳入工程设计命题，未认定每个组件的因果增益。\n自主流程不等于完全无人参与，也不证明训练代理权重或研发能力递归增长。"
+          "title": "成果与迁移",
+          "text": "作者在数学、编程和 SWE 上报告收益；SWE 为 4B/9B，Math/Coding 规模未明确。结果说明训练 harness 可适配，未展示 trainer 自身权重进化。"
         }
       ],
       "team": "Alibaba Tongyi Lab / SIAT-CAS / SUAT",
@@ -3622,11 +3787,19 @@
       "status": "methods",
       "placement": "scale_unverified",
       "primary_url": "https://arxiv.org/html/2606.03108v2",
-      "source_location": "§3.2–3.5：可修改边界、训练操作和人类权限",
+      "source_location": "v2：§3.1–3.6；§4.1–4.4、Tables 2–3",
       "limitations": "自主流程不等于完全无人参与，也不证明训练代理权重或研发能力递归增长。",
       "scope_kind": "direct",
       "scope_label": "自改进研究",
-      "classification_note": "以论文主要学习对象确定主位置；初筛条目的归属仍需方法全文确认。"
+      "classification_note": "训练侧诊断工具/流程与目标策略版本共同改进；训练者LLM为固定Sonnet，昂贵执行有人类把关。不能描述成训练者权重自进化。",
+      "reading_scope": "已读训练侧 harness、RL 配方、权限分工与实验；Math/Coding 训练对象参数量未据评价器型号推断。",
+      "details": {
+        "trainer": "Claude Sonnet 4.6，权重固定",
+        "trained_models": "SWE 4B / 9B；Math/Coding 参数量未明确",
+        "training_stage": "post-training",
+        "update": "GRPO-style policy training + training-harness code/skills revision",
+        "human_role": "启动训练和版本晋升需要确认"
+      }
     },
     {
       "id": "autoscientists",
@@ -4018,7 +4191,7 @@
       "limitations": "技能压缩可能丢失适用条件，特定基准增益不证明通用递归能力。",
       "scope_kind": "direct",
       "scope_label": "自改进研究",
-      "classification_note": "以论文主要学习对象确定主位置；初筛条目的归属仍需方法全文确认。",
+      "classification_note": "外部SkillBank与策略GRPO共同更新，teacher负责技能提炼且非被训练主体。训练主体7B，属于机制补充。",
       "scale_status": "below",
       "models": [
         {
@@ -4140,13 +4313,25 @@
       "team_source": "https://arxiv.org/pdf/2602.02474",
       "status": "screened",
       "placement": "pending",
-      "primary_url": "https://arxiv.org/abs/2602.02474",
-      "source_location": "摘要与既有来源记录",
+      "primary_url": "https://arxiv.org/html/2602.02474v1",
+      "source_location": "§3.3.2; §3.4; §4.1 Implementation Details; Table1 footnote",
       "limitations": "设计者本身是否改进未确定；技能选择和技能生成的贡献需分离。",
       "team_location": "论文首页署名（2026-10-19读取）",
       "scope_kind": "direct",
       "scope_label": "自改进研究",
-      "classification_note": "以论文主要学习对象确定主位置；初筛条目的归属仍需方法全文确认。"
+      "classification_note": "不能使用70B/80B冻结base LLM规模满足“实际训练模型≥27B”门槛；controller确切规模保持未知。",
+      "models": [
+        {
+          "name": "lightweight MLP skill-selection controller",
+          "total_b": null,
+          "algorithm": "PPO",
+          "parameter_count_status": "论文已读正文未报告controller精确参数量",
+          "role": "实际训练的技能选择控制器"
+        }
+      ],
+      "scale_status": "unverified",
+      "resources": "PPO 训练轻量 MLP skill-selection controller，已读段落未报告其精确参数量。Qwen3-Embedding-0.6B 是共享 encoder；LLaMA-3.3-70B 为冻结 API executor，Qwen3-Next-80B-A3B 仅用于迁移评测。不能用这些冻结 LLM 的规模代表被训练模型。",
+      "reading_scope": "已读 controller、技能演化和实验设置段落；控制器精确参数量未公开。"
     },
     {
       "id": "memrl",
@@ -4199,7 +4384,7 @@
       "limitations": "持久记忆学习成立不等于记忆更新规则或改进能力已自进化。",
       "scope_kind": "enabler",
       "scope_label": "相关学习机制 / AI4AI",
-      "classification_note": "以论文主要学习对象确定主位置；初筛条目的归属仍需方法全文确认。"
+      "classification_note": "情景记忆；记忆效用值。LLM 参数冻结；记忆排序价值学习，更新规则本身固定。"
     },
     {
       "id": "evods",
@@ -4249,50 +4434,60 @@
         "x-workflow",
         "x-training"
       ],
-      "purpose": "为什么强教师的成功轨迹可能教坏弱模型，怎样在演化后的 harness 中纠正它？",
-      "summary": "用当前学习者真实访问的状态做局部纠正，替代直接复制强教师整段轨迹。",
+      "purpose": "在为学生模型优化过的 Harness 中，让权重学习继续受益，而不破坏已有适配。",
+      "summary": "论文发现整段模仿强教师可能降低已演化 agent 的成功率；改为在学生实际访问的状态上局部纠错，再做 LoRA-SFT。",
       "sections": [
         {
           "axis": "A",
-          "title": "目标与问题",
-          "text": "为什么强教师的成功轨迹可能教坏弱模型，怎样在演化后的 harness 中纠正它？"
+          "title": "目标与价值",
+          "text": "Harness 与模型权重都会改变 agent 行为；问题是先优化 Harness 后，怎样继续训练模型，使两种改进能够组合。"
         },
         {
           "axis": "B",
-          "title": "关键思想",
-          "text": "明确暴露强教师与弱学习者、进化 harness 之间的分布和能力不匹配。"
+          "title": "核心思想与洞察",
+          "text": "作者提出 model–harness fit：脚手架可能已适应学生的规划方式。直接模仿强教师会改变规划分布，即使学到更多知识，也可能降低任务完成率。"
         },
         {
           "axis": "C",
-          "title": "系统与原理",
-          "text": "用当前学习者真实访问的状态做局部纠正，替代直接复制强教师整段轨迹。"
+          "title": "结构与原理",
+          "text": "先用学生运行任务，并以 GEPA-style search 修改提示、工具、hooks 和上下文；随后保留学生失败轨迹的周围步骤，只让教师改写定位出的失败回合。"
         },
         {
           "axis": "D",
-          "title": "算法与实现",
-          "text": "后训练；LoRA SFT；整轨迹模仿 vs 局部纠错；on-policy 指学生访问的状态；训练目标是 SFT，不是在线 RL。"
+          "title": "算法与实验",
+          "text": "局部纠正数据混合学生自身成功轨迹，再做 LoRA-SFT，并在同一演化 Harness 中复测。这里 on-policy 指数据来自学生访问的状态，参数训练目标仍是监督学习。"
         },
         {
           "axis": "E",
-          "title": "反馈与迭代",
-          "text": "已读结果：H 演化 → 学生访问状态 → 教师局部纠错 → SFT；更新 M 再演化 H 是提出的接续路径。"
+          "title": "反馈与继承",
+          "text": "保留优化后的 Harness 与更新的学生权重；下一轮可以再围绕新学生优化 Harness。主要结果检验一次 Harness 演化后的模型适配，反复多轮属于提出的接续流程。"
         },
         {
           "axis": "F",
-          "title": "结果与迁移",
-          "text": "Qwen 在进化 harness 下均值 78.0%；整轨迹模仿 63.1%；局部纠正 79.7%。\n主要结果支持一次 harness 演化后的权重适配；多轮闭环是可接续方案，已读结果未展示长期反复迭代。完整轨迹模仿有明显退化。"
+          "title": "成果与迁移",
+          "text": "Qwen3-Coder-30B-A3B 的七任务平均成功率：演化 Harness 为 78.0%，整轨迹模仿为 63.1%，局部纠正为 79.7%。这一结果支持适配方式的重要性，规划失配是作者据失败分析提出的解释。"
         }
       ],
       "team": "Salesforce AI",
       "team_source": "https://arxiv.org/html/2609.09134",
       "status": "methods",
       "placement": "main",
-      "primary_url": "https://arxiv.org/html/2609.09134",
-      "source_location": "§3.1–3.4，Tables 1–3",
+      "primary_url": "https://arxiv.org/html/2609.09134v1",
+      "source_location": "arXiv v1（2026-09-08）；§3.1–3.4，Tables 1–3；Appendix B–C。",
       "limitations": "主要结果支持一次 harness 演化后的权重适配；多轮闭环是可接续方案，已读结果未展示长期反复迭代。完整轨迹模仿有明显退化。",
       "scope_kind": "direct",
       "scope_label": "自改进研究",
-      "classification_note": "以论文主要学习对象确定主位置；初筛条目的归属仍需方法全文确认。"
+      "classification_note": "对进化后harness做学生访问状态上的局部纠错与LoRA-SFT；主要实证是一次顺序适配，循环接续是提出的方向。on-policy描述采样状态，不代表训练算法为RL。",
+      "reading_scope": "已读 Harness 搜索、LoRA-SFT、回退分析与局部纠正结果；未复现实验。",
+      "details": {
+        "changed": "提示、工具、hooks、上下文与子代理设置；随后学生模型 LoRA 参数",
+        "feedback": "任务成功率与学生真实失败轨迹；强教师局部改写",
+        "retained": "演化 Harness 与适配后的学生模型",
+        "fixed": "任务环境与测试划分；教师及局部纠正流程",
+        "models": "主实验 Qwen3-Coder-30B-A3B；Gemma-4-26B-A4B 为补充；教师 Gemini 3.1 Pro Preview。",
+        "task_distribution": "七项企业 agent 任务；训练/验证用于优化，测试留出；多数结果平均三次运行。",
+        "claim_type": "机制与数字是 source fact；planning-strategy drift 为作者解释，非普遍定理。"
+      }
     },
     {
       "id": "taolive-hat",
@@ -4331,18 +4526,18 @@
       "team_location": "论文首页署名（2026-10-19读取）",
       "scope_kind": "enabler",
       "scope_label": "相关学习机制 / AI4AI",
-      "classification_note": "以论文主要学习对象确定主位置；初筛条目的归属仍需方法全文确认。"
+      "classification_note": "暂列协同适配候选：摘要支持训练模型适应 skills、tools、prompts、hooks 的变化；是否包含持续保留的 harness 优化，还需完整方法确认。"
     },
     {
       "id": "rewardharness",
       "short": "RewardHarness",
-      "route": "hybrid",
-      "cluster": "x-environment",
+      "route": "harness",
+      "cluster": "h-evaluator",
       "methods": [
-        "x-environment"
+        "h-evaluator"
       ],
       "purpose": "奖励代理能否根据偏好误差修改自己的工具和技能，再改善后训练？",
-      "summary": "奖励代理依据偏好误差修订工具/技能库，再提供模型后训练奖励。",
+      "summary": "冻结视觉语言模型，通过偏好误差改进 reward agent 的技能和工具；该评价系统随后用于外部图像编辑模型的 GRPO 训练。",
       "sections": [
         {
           "axis": "A",
@@ -4352,7 +4547,7 @@
         {
           "axis": "C",
           "title": "系统与原理",
-          "text": "奖励代理依据偏好误差修订工具/技能库，再提供模型后训练奖励。"
+          "text": "冻结视觉语言模型，通过偏好误差改进 reward agent 的技能和工具；该评价系统随后用于外部图像编辑模型的 GRPO 训练。"
         },
         {
           "axis": "F",
@@ -4364,52 +4559,83 @@
       "team_source": "https://arxiv.org/html/2605.08703v1",
       "status": "screened",
       "placement": "pending",
-      "primary_url": "https://arxiv.org/abs/2605.08703",
-      "source_location": "摘要与既有来源记录",
+      "primary_url": "https://arxiv.org/html/2605.08703v1",
+      "source_location": "Abstract; §1; §2; §3.2; §4",
       "limitations": "初始人类偏好是锚点；奖励器自改与被训练模型回馈奖励器须区分。",
       "team_location": "论文首页署名（2026-10-19读取）",
       "scope_kind": "direct",
       "scope_label": "自改进研究",
-      "classification_note": "以论文主要学习对象确定主位置；初筛条目的归属仍需方法全文确认。"
+      "classification_note": "主贡献是评价Harness演化；下游训练提供跨路线联系，未建立更新目标反向改进奖励系统的闭环。",
+      "reading_scope": "已读路线判断相关的方法段落；研究结果与完整资源记录仍待逐项整理。"
     },
     {
       "id": "webevolver",
       "short": "WebEvolver",
-      "route": "hybrid",
-      "cluster": "x-environment",
+      "route": "model",
+      "cluster": "m-curriculum",
       "methods": [
-        "x-environment"
+        "m-curriculum"
       ],
       "purpose": "网页代理与网页世界模型共同学习，能否减少真实交互成本？",
-      "summary": "网页世界模型生成训练交互并帮助规划，与网页代理共同进化。",
+      "summary": "策略 LLM 与 world-model LLM 从交互轨迹中共同训练；世界模型提供合成经验与前瞻规划。可变对象是两类模型的参数。",
       "sections": [
         {
           "axis": "A",
-          "title": "目标与问题",
-          "text": "网页代理与网页世界模型共同学习，能否减少真实交互成本？"
+          "title": "目标与价值",
+          "text": "减少网页自训练的探索停滞与真实交互成本。"
+        },
+        {
+          "axis": "B",
+          "title": "思想与洞察",
+          "text": "把网页动态建模为可学习的下一观测预测器，用已有网页知识生成新经验。"
         },
         {
           "axis": "C",
-          "title": "系统与原理",
-          "text": "网页世界模型生成训练交互并帮助规划，与网页代理共同进化。"
+          "title": "结构与原理",
+          "text": "策略与世界模型分别学习动作、下一网页；二者都更新权重，网页执行程序保持固定。"
+        },
+        {
+          "axis": "D",
+          "title": "算法与实验",
+          "text": "成功轨迹筛选后做迭代 SFT；世界模型学习同批交互，再合成轨迹训练策略。另用 WMLA 前瞻选择动作。"
+        },
+        {
+          "axis": "E",
+          "title": "反馈与演化",
+          "text": "新策略继续采样，经验更新两个模型；实验使用特定迭代的模型组合，并非每轮统一同步更新。"
         },
         {
           "axis": "F",
-          "title": "结果与迁移",
-          "text": "模型想象会积累偏差，真实网页验证不能由世界模型自身评分替代。"
+          "title": "成果与迁移",
+          "text": "作者报告 WebVoyager 从 32.98% 到 42.49%；加深度 2 的 WMLA 后为 51.37%。GAIA-web 另使用 GPT-4o 分解与汇总，不能将整个系统的成绩等同于独立策略能力。"
         }
       ],
       "team": "Tencent AI Lab",
       "team_source": "https://arxiv.org/pdf/2504.21024",
-      "status": "screened",
+      "status": "methods",
       "placement": "pending",
-      "primary_url": "https://arxiv.org/abs/2504.21024",
-      "source_location": "摘要与既有来源记录",
-      "limitations": "模型想象会积累偏差，真实网页验证不能由世界模型自身评分替代。",
+      "primary_url": "https://arxiv.org/html/2504.21024v2",
+      "source_location": "v2：§3.1–3.3、§4.1–4.4，Tables 1–3",
+      "limitations": "世界模型的长程误差会增加；线上网页随时间变化。WMLA 与 GAIA 的附加 GPT-4o 调用须计入系统条件，不能把总成绩全归因于参数学习。",
       "team_location": "论文首页署名（2026-10-19读取）",
       "scope_kind": "direct",
       "scope_label": "自改进研究",
-      "classification_note": "以论文主要学习对象确定主位置；初筛条目的归属仍需方法全文确认。"
+      "classification_note": "同时改多个模型仍是参数侧共学；已读方法没有非参数工作流/工具/环境包装被优化。",
+      "reading_scope": "已读方法、训练对象、迭代设置与主要结果；未复现实验。",
+      "scale_status": "eligible",
+      "models": [
+        {
+          "name": "Llama-3.3-70B policy",
+          "total_b": 70,
+          "role": "实际训练的网页策略"
+        },
+        {
+          "name": "Llama-3.3-70B world model",
+          "total_b": 70,
+          "role": "实际训练的网页世界模型"
+        }
+      ],
+      "resources": "策略与世界模型均为 Llama-3.3-70B。训练查询 1,516 条；主要报告使用过滤后的 WebVoyager（473 题）与 Mind2Web-Live（53 题）。训练筛选用 Llama，最终任务评测与 WMLA 选择使用 GPT-4o。"
     },
     {
       "id": "webrl",
@@ -4441,14 +4667,28 @@
       "team": "Tsinghua / Zhipu AI",
       "team_source": "https://arxiv.org/pdf/2411.02337",
       "status": "screened",
-      "placement": "pending",
+      "placement": "small",
       "primary_url": "https://arxiv.org/abs/2411.02337",
       "source_location": "摘要与既有来源记录",
       "limitations": "课程反馈闭环不同于训练算法自改；目标领域仍限定在网页任务。",
       "team_location": "论文首页署名（2026-10-19读取）",
       "scope_kind": "direct",
       "scope_label": "自改进研究",
-      "classification_note": "以论文主要学习对象确定主位置；初筛条目的归属仍需方法全文确认。"
+      "classification_note": "以论文主要学习对象确定主位置；初筛条目的归属仍需方法全文确认。",
+      "scale_status": "below",
+      "models": [
+        {
+          "name": "Llama-3.1-8B",
+          "total_b": 8,
+          "role": "实际训练的网页策略"
+        },
+        {
+          "name": "GLM-4-9B",
+          "total_b": 9,
+          "role": "实际训练的网页策略"
+        }
+      ],
+      "resources": "实际训练的网页策略为 Llama-3.1-8B 与 GLM-4-9B；按本综述展示范围列为 <27B 机制参考。"
     },
     {
       "id": "rstar-math",
@@ -4614,36 +4854,53 @@
       "methods": [
         "h-self"
       ],
-      "purpose": "代理能否在解决软件问题的过程中改造自己的运行框架？",
-      "summary": "代理在解决软件任务时修改自身运行 scaffold。",
+      "purpose": "让软件 agent 在解决当前 issue 时即时合成适合该问题的工具。",
+      "summary": "Live-SWE-agent 在 mini-SWE-agent 的固定循环中加入工具创建与反思提示；实际变化是运行环境内的 custom tool scripts。",
       "sections": [
         {
           "axis": "A",
-          "title": "目标与问题",
-          "text": "代理能否在解决软件问题的过程中改造自己的运行框架？"
+          "title": "目标与价值",
+          "text": "预设工具未必适合每个仓库和 issue，复杂 bash 命令也可能增加上下文与操作错误。该工作研究 task-time tool synthesis，按当前问题构造更合适的搜索、编辑和分析工具。"
+        },
+        {
+          "axis": "B",
+          "title": "核心思想",
+          "text": "工具本身也是可执行代码，agent 可以在发现具体需要后再编写和使用。工具选择因此从固定工具箱扩展为随任务产生的程序，而不必事先穷举全部工具。"
         },
         {
           "axis": "C",
-          "title": "系统与原理",
-          "text": "代理在解决软件任务时修改自身运行 scaffold。"
+          "title": "结构与原理",
+          "text": "论文 §2.1 明确说明不改变 agentic loop；修改是在初始提示和每步环境反馈后加入反思提示。custom tool 被定义为环境中可执行的 script，基础模型及 agent 外循环固定。"
+        },
+        {
+          "axis": "D",
+          "title": "算法与实验",
+          "text": "agent 根据刚发生的操作结果决定是否写脚本，随后通过 shell 执行并可继续修订。实现基于 mini-SWE-agent，默认每题最多 250 步、3 美元；实验覆盖 SWE-bench Verified 和 SWE-Bench Pro。"
+        },
+        {
+          "axis": "E",
+          "title": "反馈与继承",
+          "text": "脚本执行输出和 issue 的测试反馈影响当前任务中的后续工具设计。论文展示同一任务内的创建、使用与修订，没有建立跨 issue 持久工具库或代际改进器替换实验。"
         },
         {
           "axis": "F",
-          "title": "结果与迁移",
-          "text": "同任务内自改与跨任务继承是不同证据，不能从 solve rate 推出代际增长。"
+          "title": "成果与迁移",
+          "text": "v1 作者报告 Claude 4.5 Sonnet 在完整 SWE-bench Verified 上由 mini-SWE-agent 的 70.6% 提升至 75.4%，在 SWE-Bench Pro 为 45.8%。这是在线工具合成的任务收益，不能表述为已改写整个 agent 框架。"
         }
       ],
       "team": "UIUC / Google",
       "team_source": "https://arxiv.org/pdf/2511.13646",
-      "status": "screened",
+      "status": "methods",
       "placement": "pending",
-      "primary_url": "https://arxiv.org/abs/2511.13646",
-      "source_location": "摘要与既有来源记录",
-      "limitations": "同任务内自改与跨任务继承是不同证据，不能从 solve rate 推出代际增长。",
+      "primary_url": "https://arxiv.org/html/2511.13646v1",
+      "source_location": "arXiv:2511.13646v1，§2.1–2.2、§3、§4.1–4.2、Tables 1–3；§2.1 明确“不改变 agentic loop”。",
+      "limitations": "实际可变对象为任务内工具脚本；agent loop 不变，跨任务继承未由这些实验建立。",
       "team_location": "论文首页署名（2026-10-19读取）",
       "scope_kind": "direct",
       "scope_label": "自改进研究",
-      "classification_note": "以论文主要学习对象确定主位置；初筛条目的归属仍需方法全文确认。"
+      "classification_note": "Harness 的运行期工具合成与修订；应从“自修改整个 scaffold”改为这一具体位置。",
+      "reading_scope": "本轮补读工具合成算法、mini-SWE-agent 实现、预算、完整数据集主结果与工具案例；结果固定引用 v1。",
+      "resources": "冻结 Claude 4.5 Sonnet 为默认基座；另测试 GPT-5/GPT-5-Mini；temperature 0、250 steps、每题 3 美元上限、每题单补丁。"
     },
     {
       "id": "group-evolving-agents",
@@ -5295,7 +5552,7 @@
       "limitations": "固定 GPT-4 与课程程序；技能复用不是已证元算法自改。",
       "scope_kind": "direct",
       "scope_label": "自改进研究",
-      "classification_note": "以论文主要学习对象确定主位置；初筛条目的归属仍需方法全文确认。"
+      "classification_note": "可组合代码技能库。固定 GPT-4 和课程程序；持久技能积累成立，元算法自改未示范。"
     },
     {
       "id": "agentevolver",
@@ -5378,13 +5635,13 @@
     {
       "id": "seed-distillation",
       "short": "SEED Distillation",
-      "route": "hybrid",
-      "cluster": "x-skills",
+      "route": "model",
+      "cluster": "m-selftrain",
       "methods": [
-        "x-skills"
+        "m-selftrain"
       ],
       "purpose": "策略能否把自身轨迹中提炼的技能，通过自蒸馏吸收到参数中？",
-      "summary": "当前策略同时收集轨迹和提炼事后技能，技能诱导信号训练同一策略。",
+      "summary": "同一策略承担 actor 与训练期 analyzer；从自身轨迹提炼 hindsight skills，形成 on-policy distillation 与 RL 信号。部署时移除 analyzer，保留更新后的策略模型。",
       "sections": [
         {
           "axis": "A",
@@ -5394,7 +5651,7 @@
         {
           "axis": "C",
           "title": "系统与原理",
-          "text": "当前策略同时收集轨迹和提炼事后技能，技能诱导信号训练同一策略。"
+          "text": "同一策略承担 actor 与训练期 analyzer；从自身轨迹提炼 hindsight skills，形成 on-policy distillation 与 RL 信号。部署时移除 analyzer，保留更新后的策略模型。"
         },
         {
           "axis": "F",
@@ -5406,13 +5663,14 @@
       "team_source": "https://arxiv.org/html/2607.14777v1",
       "status": "screened",
       "placement": "pending",
-      "primary_url": "https://arxiv.org/abs/2607.14777",
-      "source_location": "摘要与既有来源记录",
+      "primary_url": "https://arxiv.org/html/2607.14777v1",
+      "source_location": "§3 opening; §3.3; Fig.2",
       "limitations": "训练期事后信息在部署不可见；内化效果与信息泄漏边界需明确。",
       "team_location": "论文首页署名（2026-10-19读取）",
       "scope_kind": "direct",
       "scope_label": "自改进研究",
-      "classification_note": "以论文主要学习对象确定主位置；初筛条目的归属仍需方法全文确认。"
+      "classification_note": "明确更新模型参数；未显示持久非参数harness共同演化。",
+      "reading_scope": "已读路线判断相关的方法段落；研究结果与完整资源记录仍待逐项整理。"
     },
     {
       "id": "rl-tango",
@@ -5462,38 +5720,38 @@
         "m-preference",
         "m-selftrain"
       ],
-      "purpose": "为什么直接用 DPO 学推理可能不稳定，怎样有效使用自生成的正负推理链？",
-      "summary": "用当前模型生成推理候选，按答案正确性组成偏好对，再用 DPO+NLL 更新。",
+      "purpose": "让偏好优化有效学习推理链，并利用错误解答提供对比信号。",
+      "summary": "以最终答案正确性构造正负推理链，用 DPO 加正例 NLL 逐轮更新 Llama-2-70B-Chat。",
       "sections": [
         {
           "axis": "A",
-          "title": "目标与问题",
-          "text": "为什么直接用 DPO 学推理可能不稳定，怎样有效使用自生成的正负推理链？"
+          "title": "目标与价值",
+          "text": "常规 DPO 在推理任务上的收益有限；问题是如何同时提高正确解答概率并压低错误解答概率。"
         },
         {
           "axis": "B",
-          "title": "关键思想",
-          "text": "正例似然项与偏好项结合；解释直接套 DPO 对推理不稳定的问题。"
+          "title": "思想与洞察",
+          "text": "偏好间隔扩大时，正确解答的绝对概率仍可能下降。加入正例 NLL，直接约束模型继续学习正确推理链。"
         },
         {
           "axis": "C",
-          "title": "系统与原理",
-          "text": "用当前模型生成推理候选，按答案正确性组成偏好对，再用 DPO+NLL 更新。"
+          "title": "结构与原理",
+          "text": "同一问题采样多个解答，按最终答案与标准答案是否一致组成偏好对；中间推理步骤没有逐步标签。"
         },
         {
           "axis": "D",
-          "title": "算法与实现",
-          "text": "后训练；迭代 DPO + 正例 NLL；每轮重新采样；轮内偏好数据固定；不是 PPO。"
+          "title": "算法与实验",
+          "text": "轮内用固定偏好数据优化 DPO+NLL。GSM8K 实验还把人工 gold CoT 加入正例池，因此并非纯自生成训练。"
         },
         {
           "axis": "E",
-          "title": "反馈与迭代",
-          "text": "新权重生成下一轮偏好对，并作为下一轮参数与参考模型。"
+          "title": "反馈与演化",
+          "text": "上一轮权重既初始化学生，也作为 DPO reference；新模型重新采样下一轮数据，问题集与正确答案不变。"
         },
         {
           "axis": "F",
-          "title": "结果与迁移",
-          "text": "70B 多轮训练改善三个推理任务，包含 DPO/NLL 消融；收益最终饱和。\n依赖外部正确答案；没有学习训练算法或证明通用自主科研能力。"
+          "title": "成果与迁移",
+          "text": "作者报告 GSM8K 贪心准确率由 55.6% 升至 81.6%，并测试 MATH、ARC-Challenge。收益逐轮减小；这是固定题目集上的迭代学习。"
         }
       ],
       "team": "Meta FAIR / NYU",
@@ -5501,11 +5759,19 @@
       "status": "methods",
       "placement": "main",
       "primary_url": "https://arxiv.org/html/2404.19733v2",
-      "source_location": "首页；§2、§3.1–3.3、Appendix A",
+      "source_location": "v2：§2；§3.1–3.3；Table 1、Figures 2–3",
       "limitations": "依赖外部正确答案；没有学习训练算法或证明通用自主科研能力。",
       "scope_kind": "direct",
       "scope_label": "自改进研究",
-      "classification_note": "以论文主要学习对象确定主位置；初筛条目的归属仍需方法全文确认。"
+      "classification_note": "答案正确性形成正负推理对，以 DPO+NLL 迭代训练；AI 生成数据不等于 AI 决定偏好真值。",
+      "reading_scope": "已读完整方法和三个任务实验；数字均为作者报告。",
+      "details": {
+        "model": "Llama-2-70B-Chat",
+        "training_stage": "post-training",
+        "update": "iterative offline DPO + length-normalized positive NLL",
+        "inheritance": "继承上一轮策略权重、刷新偏好对；上一轮策略同时充当 reference",
+        "important_correction": "GSM8K 正例池包含数据集提供的人工正确推理链"
+      }
     },
     {
       "id": "deepseek-math-v2",
@@ -5516,38 +5782,38 @@
         "m-verifier",
         "m-proof"
       ],
-      "purpose": "复杂数学证明没有简单答案校验时，怎样扩展可靠的训练反馈？",
-      "summary": "迭代训练证明验证器与生成器，并用元验证筛选自动标注。",
+      "purpose": "为自然语言数学证明建立能随生成器进步的验证与训练信号。",
+      "summary": "DeepSeekMath-V2 交替训练 proof verifier 与 generator，再用 meta-verification 检查批评是否成立，让验证能力追上更难的新证明。",
       "sections": [
         {
           "axis": "A",
-          "title": "目标与问题",
-          "text": "复杂数学证明没有简单答案校验时，怎样扩展可靠的训练反馈？"
+          "title": "目标与价值",
+          "text": "证明题不能只检查最终答案；正确答案也可能伴随错误推导。论文目标是训练能发现具体逻辑问题、并帮助生成器修正证明的验证能力。"
         },
         {
           "axis": "B",
-          "title": "关键思想",
-          "text": "反馈能力也随生成能力更新；不只奖励最终数值答案。"
+          "title": "核心思想与洞察",
+          "text": "只奖励评分正确，会出现“分数对、理由错”的 verifier。Meta-verification 进一步检查所指出的错误是否真实存在、是否足以支持评分。"
         },
         {
           "axis": "C",
-          "title": "系统与原理",
-          "text": "迭代训练证明验证器与生成器，并用元验证筛选自动标注。"
+          "title": "结构与原理",
+          "text": "系统包含证明生成、证明验证和验证意见复核。生成器同时输出证明与自评，奖励既看证明质量，也看自评是否诚实、理由是否成立。"
         },
         {
           "axis": "D",
-          "title": "算法与实现",
-          "text": "后训练；GRPO + 轮间 rejection fine-tuning；每轮生成器从验证器初始化；次轮验证器继承融合后的前轮能力。"
+          "title": "算法与实验",
+          "text": "用 GRPO 先训 verifier，再从其 checkpoint 训练 generator；后续轮次先通过 rejection fine-tuning 汇合两种能力。新证明经多次验证及元验证筛选，形成下一轮训练标签。"
         },
         {
           "axis": "E",
-          "title": "反馈与迭代",
-          "text": "生成器产生更难证明→验证/元验证标注→更新验证器→再训练生成器。"
+          "title": "反馈与继承",
+          "text": "更强 generator 提供更难判断的证明，更强 verifier 再指导生成；末两轮采用自动标注替代人工标注。持久更新发生在模型参数，评分规则仍由研究者给定。"
         },
         {
           "axis": "F",
-          "title": "结果与迁移",
-          "text": "最后两轮由自动标注取代人工标注；报告数学证明表现及专家评估。\n非形式化验证仍可能犯错；高计算搜索成绩不是单次生成分数，亦未证明全域递归加速。"
+          "title": "成果与迁移",
+          "text": "作者在竞赛证明任务上报告明显进展，并用推理时迭代提高证明质量。高计算量搜索成绩与单次生成成绩分别报告；自然语言 verifier 的认可仍不同于形式证明器的验证。"
         }
       ],
       "team": "DeepSeek-AI",
@@ -5555,11 +5821,21 @@
       "status": "methods",
       "placement": "main",
       "primary_url": "https://arxiv.org/html/2511.22570v1",
-      "source_location": "§2.1–2.3、§3.1–3.3；官方 Math-V2 config.json 与 V3.2-Exp 部署配置",
+      "source_location": "arXiv v1（2025-11-27）；§2.1–2.3，§3.1–3.3；特别是 Eqs. 3、5–6。",
       "limitations": "非形式化验证仍可能犯错；高计算搜索成绩不是单次生成分数，亦未证明全域递归加速。",
       "scope_kind": "direct",
       "scope_label": "自改进研究",
-      "classification_note": "以论文主要学习对象确定主位置；初筛条目的归属仍需方法全文确认。"
+      "classification_note": "验证器、元验证与生成器迭代；轮间 rejection fine-tuning 融合能力。",
+      "reading_scope": "已读 verifier、meta-verifier、generator 奖励、轮间继承与推理时评测段落；未复现训练或重新审定证明。",
+      "details": {
+        "changed": "证明验证、元验证与证明生成的模型参数",
+        "feedback": "初始专家标注；随后多次验证与元验证形成标签和奖励",
+        "retained": "验证/生成 checkpoint，轮间 rejection fine-tuning 汇合能力",
+        "fixed": "证明评分 rubric、训练算法、题目池与外层自动标注流程",
+        "models": "DeepSeek-V3.2-Exp-Base 系列；此卡聚焦后训练机制。",
+        "task_distribution": "竞赛证明题训练池；CNML、IMO/CMO/Putnam、ISL 与 IMO-ProofBench 评测；各评测的生成/选优预算不同。",
+        "claim_type": "source fact；可验证性指训练出的自然语言检查能力。"
+      }
     },
     {
       "id": "kimi-k2",
@@ -5570,38 +5846,38 @@
         "m-verifier",
         "m-preference"
       ],
-      "purpose": "开放式任务难以自动判分，怎样让奖励评价跟上正在更新的策略？",
-      "summary": "K2 actor 生成回答，K2 critic 按 rubric 提供偏好，critic 又从可验证的 on-policy 轨迹更新。",
+      "purpose": "让开放式任务的奖励评价持续跟上正在更新的 actor。",
+      "summary": "Kimi K2 的 Self-Critique Rubric Reward 用 critic 评价开放式回答，又以可验证任务中的当前策略轨迹更新 critic，将 RLVR 信号带入主观评价。",
       "sections": [
         {
           "axis": "A",
-          "title": "目标与问题",
-          "text": "开放式任务难以自动判分，怎样让奖励评价跟上正在更新的策略？"
+          "title": "目标与价值",
+          "text": "创作、解释和复杂问答通常没有可直接执行的正确答案判定器。K2 要将强化学习从可验证任务扩展到这些开放任务。"
         },
         {
           "axis": "B",
-          "title": "关键思想",
-          "text": "把可验证任务的反馈迁入开放任务评价，并避免评价器完全冻结。"
+          "title": "核心思想与洞察",
+          "text": "奖励评价也会遇到新策略产生的新行为。论文用 on-policy 的可验证轨迹持续校准 critic，让其判断不完全停留在初始偏好数据上。"
         },
         {
           "axis": "C",
-          "title": "系统与原理",
-          "text": "K2 actor 生成回答，K2 critic 按 rubric 提供偏好，critic 又从可验证的 on-policy 轨迹更新。"
+          "title": "结构与原理",
+          "text": "K2 actor 生成回答，K2 critic 按 core、prescriptive 及人工任务 rubric 做成对比较；critic 先经偏好数据 SFT，再接受可验证信号更新。"
         },
         {
           "axis": "D",
-          "title": "算法与实现",
-          "text": "后训练；策略 RL + critic 在线校准；可验证 on-policy 轨迹训练 critic；critic 为开放任务提供偏好。"
+          "title": "算法与实验",
+          "text": "actor 使用 K1.5 系列的策略优化目标；同题采样回答，以组内相对奖励驱动参数更新。可验证任务的 rollout 同时为 critic refinement 提供数据。"
         },
         {
           "axis": "E",
-          "title": "反馈与迭代",
-          "text": "当前策略轨迹更新 critic；critic 的反馈继续训练策略。"
+          "title": "反馈与继承",
+          "text": "形成 actor → 当前轨迹 → critic 更新 → actor 奖励的反馈回路。演化对象是模型参数；人工 rubric 与训练基础设施没有在该闭环中自主改写。"
         },
         {
           "axis": "F",
-          "title": "结果与迁移",
-          "text": "技术报告明确描述策略—critic 闭环；最终模型有广域评测。\n报告未充分隔离该闭环对最终总成绩的因果贡献；人工 rubric 仍是锚点。"
+          "title": "成果与迁移",
+          "text": "技术报告展示了这一机制如何进入大规模 K2 后训练，并报告最终模型的广域表现；公开结果没有把该闭环的独立贡献从整套训练流程中完全分离。"
         }
       ],
       "team": "Moonshot AI（月之暗面）",
@@ -5609,11 +5885,21 @@
       "status": "methods",
       "placement": "main",
       "primary_url": "https://arxiv.org/html/2507.20534v1",
-      "source_location": "§1、§3.2.2–3.2.3、§4 与 Appendix F",
+      "source_location": "arXiv v1（2025-07-28）；§3.2.2–3.2.3，§4；Appendix F。",
       "limitations": "报告未充分隔离该闭环对最终总成绩的因果贡献；人工 rubric 仍是锚点。",
       "scope_kind": "direct",
       "scope_label": "自改进研究",
-      "classification_note": "以论文主要学习对象确定主位置；初筛条目的归属仍需方法全文确认。"
+      "classification_note": "RLVR 信号校准 K2 critic，rubric 评价开放任务；另有预训练 rephrasing，二者不是一个已证递归环。",
+      "reading_scope": "已读自评价奖励、critic 更新、策略目标和 rubric；本卡不覆盖整份预训练与基础设施报告。",
+      "details": {
+        "changed": "actor 与 critic 的模型能力/参数",
+        "feedback": "rubric 成对偏好与可验证任务的 on-policy 信号",
+        "retained": "持续更新的 actor / critic checkpoint",
+        "fixed": "人工评价 rubric；训练算法与基础设施",
+        "models": "Kimi K2，约 1T 总参数、32B 激活；不把 actor/critic 自动解释为始终共享同一 checkpoint。",
+        "task_distribution": "可验证任务提供反馈锚点；开放任务接受 critic 奖励；最终模型另作广域评测。",
+        "claim_type": "source fact；不从整模型成绩反推单机制因果增益。"
+      }
     },
     {
       "id": "llm-can-self-improve",
@@ -5623,38 +5909,38 @@
       "methods": [
         "m-selftrain"
       ],
-      "purpose": "大模型能否用自己生成并筛选的推理过程改善推理能力？",
-      "summary": "用 self-consistency 筛选自生成推理样本，再微调同一模型。",
+      "purpose": "不用训练题的标准答案，让模型自身生成的数据改善推理。",
+      "summary": "PaLM 540B 用多次采样和多数投票产生伪标签，再学习通向该答案的多样推理链。",
       "sections": [
         {
           "axis": "A",
-          "title": "目标与问题",
-          "text": "大模型能否用自己生成并筛选的推理过程改善推理能力？"
+          "title": "目标与价值",
+          "text": "标准答案与人工推理示范难以持续扩充；本文研究仅有问题时能否获得有效训练信号。"
         },
         {
           "axis": "B",
-          "title": "关键思想",
-          "text": "早期大规模自训练证据，不能被误写成小模型现象。"
+          "title": "思想与洞察",
+          "text": "利用 self-consistency 聚合多条推理路径，把推理时多次采样的收益部分转入参数。"
         },
         {
           "axis": "C",
-          "title": "系统与原理",
-          "text": "用 self-consistency 筛选自生成推理样本，再微调同一模型。"
+          "title": "结构与原理",
+          "text": "多数答案作为伪标签，只保留支持该答案的推理链；一致性提供选择依据，但不等同于正确性证明。"
         },
         {
           "axis": "D",
-          "title": "算法与实现",
-          "text": "后训练；自一致性筛选 + SFT；无答案标签的训练问题，仍使用提示/选择规则。"
+          "title": "算法与实验",
+          "text": "离线生成数据，以多种提示格式组织样本，再对同一 PaLM 540B 做监督微调；论文还测试自生成问题。"
         },
         {
           "axis": "E",
-          "title": "反馈与迭代",
-          "text": "自身生成样本回到参数更新；未证多代循环。"
+          "title": "反馈与演化",
+          "text": "自身输出经筛选回到参数更新；主要实验是一轮 self-training，没有展示持续多代能力增长。"
         },
         {
           "axis": "F",
-          "title": "结果与迁移",
-          "text": "PaLM 540B 在多项推理任务报告改善及多样性消融。\n一轮自训练前身；不把它计成已证持续递归系统。"
+          "title": "成果与迁移",
+          "text": "作者报告 GSM8K 的 CoT 准确率从 56.5% 升至 73.5%，并在未参与训练的任务上测试迁移。关键变量是伪标签质量与推理多样性。"
         }
       ],
       "team": "Google / UIUC",
@@ -5662,11 +5948,18 @@
       "status": "methods",
       "placement": "adjacent",
       "primary_url": "https://aclanthology.org/2023.emnlp-main.67.pdf",
-      "source_location": "首页；§2–3、消融；2022 预印本 / EMNLP 2023",
+      "source_location": "EMNLP 2023 正式版：§3–5、Figure 1、Tables 3–6",
       "limitations": "一轮自训练前身；不把它计成已证持续递归系统。",
       "scope_kind": "enabler",
       "scope_label": "相关学习机制 / AI4AI",
-      "classification_note": "以论文主要学习对象确定主位置；初筛条目的归属仍需方法全文确认。"
+      "classification_note": "self-consistency 筛选自生推理，回流 SFT；保留一轮自训练范围。",
+      "reading_scope": "已读方法、训练设置、域内与域外结果；年份沿用 2022 预印本，数字取 2023 正式版。",
+      "details": {
+        "model": "PaLM 540B",
+        "training_stage": "post-training",
+        "update": "self-consistency filtered offline SFT",
+        "inheritance": "本次生成的推理训练数据回流参数；主要实验为单轮"
+      }
     }
   ],
   "relations": [
@@ -6432,6 +6725,36 @@
         {
           "url": "https://arxiv.org/html/2602.08234v1",
           "location": "§4.1、Table 1；训练配置使用 Qwen2.5-7B。"
+        }
+      ]
+    },
+    {
+      "id": "rel-llm-self-improve-rest-em",
+      "source": "llm-can-self-improve",
+      "target": "rest-em",
+      "kind": "compares",
+      "label": "无标签自训练与可验证反馈对照",
+      "explanation": "ReST-EM 在相关工作中比较 Huang 等人的自生成推理训练，区分自一致筛选与任务可验证奖励。",
+      "evidence": "source_explicit",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2312.06585v4",
+          "location": "§4 Related work；Huang et al. (2022)，后发表于 EMNLP 2023"
+        }
+      ]
+    },
+    {
+      "id": "rel-meta-harness-evotrainer",
+      "source": "meta-harness",
+      "target": "evotrainer",
+      "kind": "discusses",
+      "label": "从执行 harness 搜索到训练配置演化",
+      "explanation": "EvoTrainer 在相关工作中讨论 Meta-Harness，区分推理系统的配置搜索与由真实训练反馈指导的训练方案改进。",
+      "evidence": "source_explicit",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2606.03108v2",
+          "location": "§2.2 Harness and Infrastructure Optimization for LLM Systems"
         }
       ]
     }

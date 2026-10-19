@@ -101,7 +101,7 @@ def validate_works(data: object) -> set[str]:
 def validate_graph(data: object, work_ids: set[str]) -> None:
     if not isinstance(data, dict):
         fail("knowledge graph root must be an object")
-    if data.get("schema_version") == "4.0.0":
+    if data.get("schema_version") in {"4.0.0", "5.0.0"}:
         from check_literature_graphs import check
         check()
         return
@@ -272,7 +272,7 @@ def validate_curated_atlas(work_ids: set[str]) -> None:
         if slot["route"] not in route_ids or not set(slot["evidence_ids"]) <= work_ids:
             fail("invalid research-space association")
     graph = load(GRAPH_PATH)
-    if graph.get("schema_version") != "4.0.0":
+    if graph.get("schema_version") not in {"4.0.0", "5.0.0"}:
         if {r["work_id"] for r in graph["work_bindings"]} != main:
             fail("canonical graph must bind exactly the main-view works")
         if {r["id"] for r in graph["nodes"] if r["type"] == "work"} != main:
@@ -301,7 +301,7 @@ def validate_curated_atlas(work_ids: set[str]) -> None:
     source_layers = {r["id"]:r for r in layers}
     if any(r["layer"] != source_layers[r["id"]] for r in atlas["works"]):
         fail("generated layer record differs from reviewed source")
-    if graph.get("schema_version") != "4.0.0":
+    if graph.get("schema_version") not in {"4.0.0", "5.0.0"}:
         page = (ROOT / "research/atlas/index.html").read_text(encoding="utf-8")
         embedded = re.search(r'<script id="atlas-data" type="application/json">(.*?)</script>', page, re.S)
         if not embedded or json.loads(embedded.group(1)) != atlas:
