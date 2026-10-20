@@ -6,6 +6,7 @@ import hashlib
 import json
 import re
 import sys
+import zipfile
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -201,6 +202,13 @@ def validate_documentation() -> None:
         ROOT / "docs/index.html"
     ).read_bytes():
         fail("primary HTML download and hosting entry differ")
+    with zipfile.ZipFile(ROOT / "BeforeRSI.zip") as archive:
+        if (
+            archive.namelist() != ["RSI_Field_landscape.html"]
+            or archive.read("RSI_Field_landscape.html")
+            != (ROOT / "RSI_Field_landscape.html").read_bytes()
+        ):
+            fail("download ZIP differs from the standalone HTML")
 
     def embedded(script_id):
         match = re.search(
@@ -210,10 +218,10 @@ def validate_documentation() -> None:
             fail(f"missing embedded data: {script_id}")
         return json.loads(match[1])
 
-    atlas = load(ROOT / "data/atlas.json")
+    landscape = load(ROOT / "data/landscape.json")
     english = load(ROOT / "data/locales/en.json")
-    if embedded("literature-data") != atlas or embedded("locale-en") != english:
-        fail("atlas or English text changed: run scripts/build_learning.py")
+    if embedded("literature-data") != landscape or embedded("locale-en") != english:
+        fail("landscape or English text changed: run scripts/build_learning.py")
     for path, digest in embedded("build-manifest").items():
         if hashlib.sha256((ROOT / path).read_bytes()).hexdigest() != digest:
             fail(f"{path} changed: rebuild the documentation")
@@ -241,28 +249,28 @@ def validate_documentation() -> None:
     if equations[0] != equations[1]:
         fail("Chinese and English manual equations differ")
 
-    ids = {w["id"] for w in atlas["works"]}
-    if len(ids) != len(atlas["works"]):
-        fail("duplicate atlas work ID")
-    node_ids = {n["id"] for r in atlas["field"]["routes"] for n in r["nodes"]}
+    ids = {w["id"] for w in landscape["works"]}
+    if len(ids) != len(landscape["works"]):
+        fail("duplicate landscape work ID")
+    node_ids = {n["id"] for r in landscape["field"]["routes"] for n in r["nodes"]}
     collections = {
         "works": ids,
         "nodes": node_ids,
-        "routes": {r["id"] for r in atlas["field"]["routes"]},
-        "relations": {r["id"] for r in atlas["relations"]},
-        "edges": {e["id"] for r in atlas["field"]["routes"] for e in r["edges"]},
-        "companies": {c["id"] for c in atlas["industry"]["companies"]},
+        "routes": {r["id"] for r in landscape["field"]["routes"]},
+        "relations": {r["id"] for r in landscape["relations"]},
+        "edges": {e["id"] for r in landscape["field"]["routes"] for e in r["edges"]},
+        "companies": {c["id"] for c in landscape["industry"]["companies"]},
     }
     for key, expected in collections.items():
         if set(english[key]) != expected:
             fail(f"English {key} coverage differs: {set(english[key]) ^ expected}")
-    for w in atlas["works"]:
+    for w in landscape["works"]:
         translated = english["works"][w["id"]]["sections"]
         if len(translated) != 6 or any(not t.strip() for t in translated):
             fail(f"{w['id']}: six English sections required")
         for url in w.get("sources", []):
             validate_url(url, w["id"])
-    for r in atlas["field"]["routes"]:
+    for r in landscape["field"]["routes"]:
         if len(english["routes"][r["id"]]["facets"]) != len(r["facets"]):
             fail(f"{r['id']}: English facet coverage differs")
         if len(english["routes"][r["id"]]["open_details"]) != len(r["open_questions"]):
@@ -279,22 +287,22 @@ def validate_documentation() -> None:
         for edge in r["edges"]:
             if edge["source"] not in node_ids or edge["target"] not in node_ids:
                 fail("field edge has an unknown endpoint")
-    for r in atlas["relations"]:
+    for r in landscape["relations"]:
         if r["source"] not in ids or r["target"] not in ids:
             fail(f"{r['id']}: unknown work relationship endpoint")
-    if len(english["bridges"]) != len(atlas["field"]["bridges"]):
+    if len(english["bridges"]) != len(landscape["field"]["bridges"]):
         fail("English cross-route bridge coverage differs")
     for key in ("axes", "cases", "comparisons"):
-        if len(english["reader_guide"][key]) != len(atlas["reader_guide"][key]):
+        if len(english["reader_guide"][key]) != len(landscape["reader_guide"][key]):
             fail(f"English reading guide {key} coverage differs")
     if {c["id"] for c in english["reader_guide"]["cases"]} != {
-        c["id"] for c in atlas["reader_guide"]["cases"]
+        c["id"] for c in landscape["reader_guide"]["cases"]
     }:
         fail("English reading guide case IDs differ")
-    for a in atlas["actors"]["actors"]:
+    for a in landscape["actors"]["actors"]:
         if not set(a["work_ids"]) <= ids:
             fail(f"{a['id']}: unknown affiliated work")
-    for c in atlas["industry"]["companies"]:
+    for c in landscape["industry"]["companies"]:
         if not {w["work_id"] for w in c["work_links"]} <= ids:
             fail(f"{c['id']}: unknown company work")
         if not set(c["topic_ids"]) <= node_ids:
@@ -327,7 +335,7 @@ def main() -> int:
         return 1
 
     print(
-        f"validation passed: {len(work_ids)} research claims; bilingual atlas, manuals, build inputs and local links"
+        f"validation passed: {len(work_ids)} research claims; bilingual landscape, manuals, build inputs and local links"
     )
     return 0
 

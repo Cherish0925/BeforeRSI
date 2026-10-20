@@ -1,4 +1,4 @@
-// Browser behavior checks for the generated, offline atlas.
+// Browser behavior checks for the generated, offline landscape.
 // Requires Playwright. Set CHROMIUM_PATH to use an existing Chromium binary.
 const { chromium } = require("playwright");
 const fs = require("node:fs");
@@ -18,10 +18,17 @@ const assert = require("node:assert/strict");
   const page = await browser.newPage({
     viewport: { width: 1440, height: 1080 },
   });
+  await page.context().setOffline(true);
+  const networkRequests = [];
+  page.on("request", (request) => {
+    if (/^https?:/.test(request.url())) networkRequests.push(request.url());
+  });
   const errors = [];
   page.on("pageerror", (e) => errors.push(e.message));
   const file = "file://" + path.join(root, "RSI_Field_landscape.html");
-  const atlas = JSON.parse(fs.readFileSync(path.join(root, "data/atlas.json")));
+  const landscape = JSON.parse(
+    fs.readFileSync(path.join(root, "data/landscape.json")),
+  );
   async function labelsFit(selector) {
     await page.evaluate(() => document.fonts.ready);
     const clipped = await page.locator(selector).evaluateAll((cards) =>
@@ -74,7 +81,7 @@ const assert = require("node:assert/strict");
         (await page.locator("#node-detail .source-list a").count()) > 0,
       );
       await page.locator("[data-expand-map]").click();
-      const r = atlas.field.routes.find((r) => r.id === route);
+      const r = landscape.field.routes.find((r) => r.id === route);
       assert.equal(
         await page.locator(".field-subtopic").count(),
         r.nodes.reduce((n, x) => n + x.subtopics.length, 0),
@@ -266,6 +273,11 @@ const assert = require("node:assert/strict");
     await page.setViewportSize({ width: 1440, height: 1080 });
   }
   assert.deepEqual(errors, []);
+  assert.deepEqual(
+    networkRequests,
+    [],
+    "Local reading must not require network requests",
+  );
   console.log(
     "Browser checks passed: both languages, 3 mechanism maps and research graphs, expanded subquestions, filters, dialogs, 141 works, 69 relations, 27 companies, 157 participants, 567 discovery entries, glossary, search, links, PDF bytes, labels, and mobile overflow.",
   );

@@ -1,6 +1,6 @@
 # Model / LLM：从原理到自我改进
 
-[下载 PDF](Model_LLM_Learning_Manual.pdf) · [离线交互图谱](index.html#learn=00) · [项目首页](../README.md)
+[下载 PDF](Model_LLM_Learning_Manual.pdf) · [离线交互图谱（ZIP）](https://raw.githubusercontent.com/Cherish0925/BeforeRSI/main/BeforeRSI.zip) · [项目首页](../README.md)
 
 [00](#chapter-00) | [01](#chapter-01) | [02](#chapter-02) | [03](#chapter-03) | [04](#chapter-04) | [05](#chapter-05) | [06](#chapter-06) | [07](#chapter-07) | [08](#chapter-08) | [09](#chapter-09) | [10](#chapter-10) | [11](#chapter-11) | [12](#chapter-12) | [13](#chapter-13) | [14](#chapter-14) | [15](#chapter-15) | [16](#chapter-16) | [17](#chapter-17) | [18](#chapter-18) | [19](#chapter-19) | [20](#chapter-20) | [21](#chapter-21) | [22](#chapter-22) | [23](#chapter-23) | [24](#chapter-24) | [25](#chapter-25) | [26](#chapter-26) | [27](#chapter-27) | [28](#chapter-28) | [A](#chapter-A) | [B](#chapter-B) | [C](#chapter-C) | [D](#chapter-D)
 

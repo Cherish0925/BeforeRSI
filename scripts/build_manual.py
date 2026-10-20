@@ -894,7 +894,7 @@ class Cover(Flowable):
             20,
             191,
             (
-                "61 topics linked to 19 atlas branches and 95 subtopics."
+                "61 topics linked to 19 landscape branches and 95 subtopics."
                 if EN
                 else "61 个基础主题，连接图谱 19 个分支、95 个子项。"
             ),
@@ -923,7 +923,7 @@ class Cover(Flowable):
             0,
             48,
             (
-                "The same source powers the offline atlas and this manual."
+                "The same source powers the offline landscape and this manual."
                 if EN
                 else "与 RSI 图谱中的完整教程共用正文。"
             ),
@@ -937,7 +937,7 @@ story = [
     Paragraph("Contents" if EN else "阅读目录", styles["h2"]),
     Paragraph(
         (
-            "Read from foundations to mechanisms. Appendix A defines terms; B and C index topics and atlas branches. Contents and bookmarks are clickable."
+            "Read from foundations to mechanisms. Appendix A defines terms; B and C index topics and landscape branches. Contents and bookmarks are clickable."
             if EN
             else "从基础到机制连续阅读；查词用附录 A，查找主题与图谱分支用附录 B、C。目录与 PDF 书签可点击跳转。"
         ),

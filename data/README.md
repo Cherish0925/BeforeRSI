@@ -4,7 +4,7 @@ Two collections serve different purposes. 两套目录分别服务于领域浏�
 
 | File | Purpose / 用途 |
 |---|---|
-| [atlas.json](atlas.json) | 141-record landscape: works, routes, sources, reviews, relations, participants and companies / 141 条领域记录与其机制、来源、关系和机构 |
+| [landscape.json](landscape.json) | 141-record landscape: works, routes, sources, reviews, relations, participants and companies / 141 条领域记录与其机制、来源、关系和机构 |
 | [locales/en.json](locales/en.json) | English editorial text for every work, route, mechanism, field edge, work relation and company / 完整对应的英文编辑层 |
 | [works.json](works.json) | 38 selected works linked to the research program's claims / 38 项研究论证索引 |
 | [works.schema.json](works.schema.json) | Schema for the research claim index / 研究论证索引结构 |
@@ -23,9 +23,9 @@ Two collections serve different purposes. 两套目录分别服务于领域浏�
 
 ## Language alignment / 语言对应
 
-`atlas.json` retains the Chinese record and original review metadata. `locales/en.json` supplies English prose keyed by the same IDs. Its six work sections retain the mechanism, experimental setting, key numbers and result scope while using natural English exposition. Source URLs, years, model metadata and organization relationships are shared.
+`landscape.json` retains the Chinese record and original review metadata. `locales/en.json` supplies English prose keyed by the same IDs. Its six work sections retain the mechanism, experimental setting, key numbers and result scope while using natural English exposition. Source URLs, years, model metadata and organization relationships are shared.
 
-`atlas.json` 保留中文记录与原始阅读元数据；`locales/en.json` 按相同 ID 提供英文表达。六个工作段落保持机制、实验条件、关键数字和结论范围对应。来源、年份、模型信息与机构关系共用。
+`landscape.json` 保留中文记录与原始阅读元数据；`locales/en.json` 按相同 ID 提供英文表达。六个工作段落保持机制、实验条件、关键数字和结论范围对应。来源、年份、模型信息与机构关系共用。
 
 Raw review notes preserve their original language. They are provenance records; the bilingual public reading surface uses the edited sections. 新的实质性修订应同步两种语言；原始笔记保留原语言，双语阅读使用编辑后的条目。
 

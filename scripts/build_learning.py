@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the bilingual manuals and self-contained research atlas."""
+"""Build the bilingual manuals and self-contained research landscape."""
 from pathlib import Path
 import argparse
 import base64
@@ -7,6 +7,7 @@ import hashlib
 import json
 import subprocess
 import sys
+import zipfile
 from fontTools import subset
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -35,20 +36,22 @@ def main():
             raise ValueError(f"{lang} manual is stale; run a full build")
         manuals[lang] = guide
 
-    atlas = json.loads((ROOT / "data/atlas.json").read_text())
+    landscape = json.loads((ROOT / "data/landscape.json").read_text())
     english = json.loads((ROOT / "data/locales/en.json").read_text())
-    template = (ROOT / "web/atlas.html").read_text()
+    template = (ROOT / "web/app.html").read_text()
     css = (
-        (ROOT / "web/atlas.css").read_text()
+        (ROOT / "web/app.css").read_text()
         + "\n"
         + (ROOT / "web/landscape.css").read_text()
     )
     js = (
-        (ROOT / "web/atlas.js").read_text()
+        (ROOT / "web/app.js").read_text()
         + "\n"
         + (ROOT / "web/landscape.js").read_text()
     )
-    texts = json.dumps([atlas, english, manuals], ensure_ascii=False) + js + template
+    texts = (
+        json.dumps([landscape, english, manuals], ensure_ascii=False) + js + template
+    )
     options = subset.Options()
     options.flavor = "woff"
     options.desubroutinize = True
@@ -56,10 +59,10 @@ def main():
     sub = subset.Subsetter(options=options)
     sub.populate(text="".join(sorted(set(texts))))
     sub.subset(font)
-    font_path = CACHE / "AtlasSC.woff"
+    font_path = CACHE / "BeforeRSISC.woff"
     subset.save_font(font, str(font_path), options)
     fontcss = (
-        "@font-face{font-family:AtlasSC;src:url(data:font/woff;base64,"
+        "@font-face{font-family:BeforeRSISC;src:url(data:font/woff;base64,"
         + base64.b64encode(font_path.read_bytes()).decode()
         + ') format("woff");font-weight:400;font-display:swap;}'
     )
@@ -71,9 +74,9 @@ def main():
 
     replacements = {
         "{{FONT_CSS}}": fontcss,
-        "{{ATLAS_CSS}}": css,
-        "{{ATLAS_JS}}": js,
-        "{{ATLAS_DATA}}": embedded(atlas),
+        "{{APP_CSS}}": css,
+        "{{APP_JS}}": js,
+        "{{LANDSCAPE_DATA}}": embedded(landscape),
         "{{LOCALE_EN}}": embedded(english),
         "{{MANUAL_DATA}}": embedded(manuals),
     }
@@ -83,9 +86,9 @@ def main():
         template = template.replace(marker, value)
     # Build inputs are hashed so validation catches stale generated UI as well as data.
     paths = [
-        "web/atlas.html",
-        "web/atlas.css",
-        "web/atlas.js",
+        "web/app.html",
+        "web/app.css",
+        "web/app.js",
         "web/landscape.css",
         "web/landscape.js",
         "scripts/build_manual.py",
@@ -100,12 +103,22 @@ def main():
     )
     (ROOT / "docs/index.html").write_text(template)
     (ROOT / "RSI_Field_landscape.html").write_text(template)
+    # A ZIP downloads as a file; GitHub Raw serves HTML as plain text.
+    entry = zipfile.ZipInfo(
+        "RSI_Field_landscape.html", date_time=(2026, 10, 20, 0, 0, 0)
+    )
+    entry.compress_type = zipfile.ZIP_DEFLATED
+    entry.external_attr = 0o100644 << 16
+    with zipfile.ZipFile(
+        ROOT / "BeforeRSI.zip", "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9
+    ) as archive:
+        archive.writestr(entry, template.encode("utf-8"))
     stats = {
         "manuals": {
             k: {"pages": v["pages"], "chapters": len(v["chapters"])}
             for k, v in manuals.items()
         },
-        "works": len(atlas["works"]),
+        "works": len(landscape["works"]),
         "english_works": len(english["works"]),
         "html_bytes": len(template.encode()),
     }

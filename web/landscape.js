@@ -1,5 +1,5 @@
-// The atlas keeps the original two graph views: mechanisms and research relationships.
-const atlasState = {
+// The landscape keeps the original two graph views: mechanisms and research relationships.
+const mapState = {
   route: null,
   expanded: false,
   zoom: 0.9,
@@ -88,7 +88,7 @@ const labelSpans = (lines, x, leading) =>
     )
     .join("");
 function fieldMap(r, selected = null, edgeId = null, compact = false) {
-  const deep = !compact && atlasState.expanded,
+  const deep = !compact && mapState.expanded,
     width = 1040,
     nw = 402,
     labels = new Map(
@@ -201,7 +201,7 @@ function fieldMap(r, selected = null, edgeId = null, compact = false) {
   return `<svg xmlns="http://www.w3.org/2000/svg" class="field-network" viewBox="0 0 ${width} ${height}" role="group" aria-label="${esc(r.title + " " + L("mechanism map", "领域知识图谱"))}" style="--route:${colors[r.id]}"><defs><marker id="arrow-${r.id}-${compact ? "s" : "l"}" viewBox="0 0 7 7" refX="6" refY="3.5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#8199a7"/></marker></defs>${arrows}${cards}</svg>`;
 }
 function overview() {
-  return `<header class="landscape-heading"><div class="eyebrow">RSI FIELD ATLAS · 2026.10.20</div><h1>${L("The RSI research landscape", "RSI 研究图谱")}</h1><p>${L("Three routes map the mechanisms. Select a topic or arrow to explore its subquestions, research, sources and participants.", "三条路线呈现研究机制。点击主题或箭头，进入子问题、具体研究、原始来源与参与团队。")}</p></header><div class="field-grid">${A.field.routes.map((r, i) => `<section class="field-card" style="--route:${colors[r.id]}"><div class="field-head"><div class="eyebrow">RESEARCH LANDSCAPE 0${i + 1}</div><h2>${r.title}</h2><p>${esc(routeData(r).tagline)}</p></div>${fieldMap(r, null, null, true)}<div class="field-foot"><a href="#route=${r.id}">${L("Explore the complete map", "展开整张图谱")} →</a><small>${r.nodes.length} ${L("topics", "主题")} · ${r.edges.length} ${L("links", "关系")}</small></div></section>`).join("")}</div><p class="map-caption">${L("Nodes are research topics; arrows show mechanism relationships. Research-to-research links have their own graph within each route.", "节点是研究主题，箭头是机制联系。每条路线另有研究关系图，可以查看论文之间的采用、扩展与对照。")}</p>${actorMatrix()}<div class="reader-entry"><div><h2>${L("Understand the mechanisms", "读懂 RSI")}</h2><p>${L("What changes, what provides feedback, and what survives into the next round? Compare six representative systems.", "改了哪里、靠什么改、什么进入下一轮？通过六项代表研究建立具体认识。")}</p></div><a class="button" href="#guide">${L("Open the reading guide", "阅读机制导读")} →</a><a class="button" href="#learn=00">${L("Model / LLM manual", "Model / LLM 教程")} →</a></div><section class="section-head"><h2>${L("How the routes connect", "三条路线怎样相接")}</h2></section><div class="grid-3">${A.field.bridges
+  return `<header class="landscape-heading"><div class="eyebrow">RSI RESEARCH LANDSCAPE · 2026.10.20</div><h1>${L("The RSI research landscape", "RSI 研究图谱")}</h1><p>${L("Three routes map the mechanisms. Select a topic or arrow to explore its subquestions, research, sources and participants.", "三条路线呈现研究机制。点击主题或箭头，进入子问题、具体研究、原始来源与参与团队。")}</p></header><div class="field-grid">${A.field.routes.map((r, i) => `<section class="field-card" style="--route:${colors[r.id]}"><div class="field-head"><div class="eyebrow">RESEARCH LANDSCAPE 0${i + 1}</div><h2>${r.title}</h2><p>${esc(routeData(r).tagline)}</p></div>${fieldMap(r, null, null, true)}<div class="field-foot"><a href="#route=${r.id}">${L("Explore the complete map", "展开整张图谱")} →</a><small>${r.nodes.length} ${L("topics", "主题")} · ${r.edges.length} ${L("links", "关系")}</small></div></section>`).join("")}</div><p class="map-caption">${L("Nodes are research topics; arrows show mechanism relationships. Research-to-research links have their own graph within each route.", "节点是研究主题，箭头是机制联系。每条路线另有研究关系图，可以查看论文之间的采用、扩展与对照。")}</p>${actorMatrix()}<div class="reader-entry"><div><h2>${L("Understand the mechanisms", "读懂 RSI")}</h2><p>${L("What changes, what provides feedback, and what survives into the next round? Compare six representative systems.", "改了哪里、靠什么改、什么进入下一轮？通过六项代表研究建立具体认识。")}</p></div><a class="button" href="#guide">${L("Open the reading guide", "阅读机制导读")} →</a><a class="button" href="#learn=00">${L("Model / LLM manual", "Model / LLM 教程")} →</a></div><section class="section-head"><h2>${L("How the routes connect", "三条路线怎样相接")}</h2></section><div class="grid-3">${A.field.bridges
     .map((b, i) => {
       const e = E.bridges[i];
       return `<article class="panel"><h3>${esc(L(e.title, b.title))}</h3><p>${esc(L(e.text, b.text))}</p><div class="mini-list">${b.topic_ids.map(nodeLink).join("")}</div></article>`;
@@ -259,12 +259,12 @@ function routeRows(r, nodeId) {
     .filter(
       (w) =>
         mapped.has(w.id) &&
-        (atlasState.kind === "all" ||
-          w.actor_types.includes(atlasState.kind)) &&
-        (atlasState.org === "all" ||
-          w.organizations.includes(atlasState.org)) &&
-        (atlasState.status === "all" || w.status === atlasState.status) &&
-        (atlasState.small || w.placement !== "small"),
+        (mapState.kind === "all" ||
+          w.actor_types.includes(mapState.kind)) &&
+        (mapState.org === "all" ||
+          w.organizations.includes(mapState.org)) &&
+        (mapState.status === "all" || w.status === mapState.status) &&
+        (mapState.small || w.placement !== "small"),
     )
     .sort((a, b) => b.year - a.year || a.number - b.number);
 }
@@ -284,31 +284,31 @@ function routeWorkList(r, nodeId) {
   const rows = routeRows(r, nodeId),
     size = 12,
     pages = Math.max(1, Math.ceil(rows.length / size));
-  atlasState.page = Math.min(atlasState.page, pages);
+  mapState.page = Math.min(mapState.page, pages);
   const orgs = [
     ...new Set(r.mappings.flatMap((m) => works.get(m.work_id).organizations)),
   ].sort();
-  return `<div class="section-head"><h2>${nodeId ? esc(nodeTitle(nodeId)) + " · " : ""}${L("Research and participants", "研究工作与参与团队")}</h2><span>${rows.length} ${L("works", "项工作")}</span></div><div class="filter-chips">${[["all", L("All participants", "全部主体")], ...A.actors.types.filter((t) => t.main).map((t) => [t.id, typeName(t.id)])].map(([id, t]) => `<button data-route-kind="${id}" aria-pressed="${id === atlasState.kind}">${t}</button>`).join("")}</div><details class="route-filters"><summary>${L("Affiliation, reading status and model scale", "机构、阅读状态与模型规模")}</summary><div class="filters"><select id="map-org" aria-label="${L("Affiliation", "机构")}">${options([["all", L("All affiliations", "全部机构")], ...orgs.map((x) => [x, x])], atlasState.org)}</select><select id="map-status" aria-label="${L("Reading status", "阅读状态")}">${options(
+  return `<div class="section-head"><h2>${nodeId ? esc(nodeTitle(nodeId)) + " · " : ""}${L("Research and participants", "研究工作与参与团队")}</h2><span>${rows.length} ${L("works", "项工作")}</span></div><div class="filter-chips">${[["all", L("All participants", "全部主体")], ...A.actors.types.filter((t) => t.main).map((t) => [t.id, typeName(t.id)])].map(([id, t]) => `<button data-route-kind="${id}" aria-pressed="${id === mapState.kind}">${t}</button>`).join("")}</div><details class="route-filters"><summary>${L("Affiliation, reading status and model scale", "机构、阅读状态与模型规模")}</summary><div class="filters"><select id="map-org" aria-label="${L("Affiliation", "机构")}">${options([["all", L("All affiliations", "全部机构")], ...orgs.map((x) => [x, x])], mapState.org)}</select><select id="map-status" aria-label="${L("Reading status", "阅读状态")}">${options(
     [
       ["all", L("All reading statuses", "全部阅读状态")],
       ["methods", L("Source reviewed", "来源已研读")],
       ["screened", L("Pending full text", "原文待补")],
     ],
-    atlasState.status,
-  )}</select><label><input type="checkbox" id="map-small" ${atlasState.small ? "checked" : ""}>${L("Include <27B mechanisms", "包含 <27B 补充机制")}</label></div></details><div class="study-list">${
+    mapState.status,
+  )}</select><label><input type="checkbox" id="map-small" ${mapState.small ? "checked" : ""}>${L("Include <27B mechanisms", "包含 <27B 补充机制")}</label></div></details><div class="study-list">${
     rows
-      .slice((atlasState.page - 1) * size, atlasState.page * size)
+      .slice((mapState.page - 1) * size, mapState.page * size)
       .map(studyRow)
       .join("") ||
     `<p class="empty">${L("No research matches these filters.", "当前筛选下没有对应研究。")}</p>`
-  }</div>${pages > 1 ? `<div class="result-pager"><button data-route-page="${atlasState.page - 1}" ${atlasState.page === 1 ? "disabled" : ""}>←</button><span>${atlasState.page} / ${pages}</span><button data-route-page="${atlasState.page + 1}" ${atlasState.page === pages ? "disabled" : ""}>→</button></div>` : ""}`;
+  }</div>${pages > 1 ? `<div class="result-pager"><button data-route-page="${mapState.page - 1}" ${mapState.page === 1 ? "disabled" : ""}>←</button><span>${mapState.page} / ${pages}</span><button data-route-page="${mapState.page + 1}" ${mapState.page === pages ? "disabled" : ""}>→</button></div>` : ""}`;
 }
 function routePage(id, nodeId) {
   const r = A.field.routes.find((r) => r.id === id) || A.field.routes[0],
     s = routeState(),
     d = routeData(r);
-  if (atlasState.route !== r.id)
-    Object.assign(atlasState, {
+  if (mapState.route !== r.id)
+    Object.assign(mapState, {
       route: r.id,
       kind: "all",
       org: "all",
@@ -317,16 +317,16 @@ function routePage(id, nodeId) {
       page: 1,
     });
   const mode = s.mode || "domain";
-  return `<header class="landscape-heading"><div class="eyebrow">${L("FIELD KNOWLEDGE GRAPH", "领域知识图谱")}</div><h1>${r.title}<small>${esc(d.tagline)}</small></h1><p>${esc(d.definition)}</p></header><div class="mode-bar"><a class="${mode === "domain" ? "active" : ""}" href="#route=${r.id}">${L("Mechanism landscape", "领域知识图谱")}</a><a class="${mode === "papers" ? "active" : ""}" href="#route=${r.id}&mode=papers">${L("Research relationship graph", "研究关系图")}</a><span>${L("Topics → subquestions → research → sources", "主题 → 子问题 → 研究 → 原文")}</span></div>${mode === "papers" ? paperGraphPage(r, s) : `<div class="domain-layout" style="--route:${colors[r.id]}"><section class="domain-canvas"><div class="canvas-toolbar"><b>${r.nodes.length} ${L("topics", "主题")} · ${r.nodes.reduce((n, x) => n + x.subtopics.length, 0)} ${L("subquestions", "子问题")}</b><div><button data-expand-map>${atlasState.expanded ? L("Collapse subquestions", "收起子问题") : L("Expand all subquestions", "展开全部子问题")}</button><a class="button" href="#route=${r.id}">${L("Full map", "全图")}</a></div></div><div class="domain-scroll">${fieldMap(r, nodeId, s.edge)}</div><div class="map-caption">${L("Solid borders: objects, feedback and methods. Dashed borders: inheritance or recursive boundaries.", "实线边框：研究对象、反馈与方法；虚线边框：继承或递归边界。")}</div></section><aside class="domain-inspector" id="node-detail">${mechanismInspector(r, nodeId, s.edge)}</aside></div><section id="route-work-list">${routeWorkList(r, nodeId)}</section>`}<details class="route-context"><summary>${L("Reading paths, the update cycle and open questions", "阅读路径、运行过程与开放问题")}</summary><div class="grid-3">${A.paths[r.id].map((p, i) => `<article class="panel"><h3>${esc(L(pathTexts[r.id][i][0], p.title))}</h3><p>${esc(L(pathTexts[r.id][i][1], p.question))}</p><div class="mini-list">${p.ids.map(workOpen).join("")}</div></article>`).join("")}</div><h3>${L("The update cycle", "运行过程")}</h3><p>${esc(d.scene)}</p><div class="loop">${d.loop.map((x, i) => `<span><b>${i + 1}</b>${esc(x)}</span>`).join("")}</div><h3>${L("Key distinctions", "关键维度")}</h3><div class="grid-3">${r.facets.map((f, i) => `<article class="panel"><h4>${esc(L(E.routes[r.id].facets[i].title, f.title))}</h4><p>${esc(L(E.routes[r.id].facets[i].text, f.text))}</p></article>`).join("")}</div><h3>${L("Open questions", "开放问题")}</h3>${r.open_questions.map((q, i) => `<article class="open-question"><h4>${esc(L(d.open_questions[i], q.title))}</h4><p>${esc(L(E.routes[r.id].open_details[i], q.text))}</p></article>`).join("")}</details>`;
+  return `<header class="landscape-heading"><div class="eyebrow">${L("FIELD KNOWLEDGE GRAPH", "领域知识图谱")}</div><h1>${r.title}<small>${esc(d.tagline)}</small></h1><p>${esc(d.definition)}</p></header><div class="mode-bar"><a class="${mode === "domain" ? "active" : ""}" href="#route=${r.id}">${L("Mechanism landscape", "领域知识图谱")}</a><a class="${mode === "papers" ? "active" : ""}" href="#route=${r.id}&mode=papers">${L("Research relationship graph", "研究关系图")}</a><span>${L("Topics → subquestions → research → sources", "主题 → 子问题 → 研究 → 原文")}</span></div>${mode === "papers" ? paperGraphPage(r, s) : `<div class="domain-layout" style="--route:${colors[r.id]}"><section class="domain-canvas"><div class="canvas-toolbar"><b>${r.nodes.length} ${L("topics", "主题")} · ${r.nodes.reduce((n, x) => n + x.subtopics.length, 0)} ${L("subquestions", "子问题")}</b><div><button data-expand-map>${mapState.expanded ? L("Collapse subquestions", "收起子问题") : L("Expand all subquestions", "展开全部子问题")}</button><a class="button" href="#route=${r.id}">${L("Full map", "全图")}</a></div></div><div class="domain-scroll">${fieldMap(r, nodeId, s.edge)}</div><div class="map-caption">${L("Solid borders: objects, feedback and methods. Dashed borders: inheritance or recursive boundaries.", "实线边框：研究对象、反馈与方法；虚线边框：继承或递归边界。")}</div></section><aside class="domain-inspector" id="node-detail">${mechanismInspector(r, nodeId, s.edge)}</aside></div><section id="route-work-list">${routeWorkList(r, nodeId)}</section>`}<details class="route-context"><summary>${L("Reading paths, the update cycle and open questions", "阅读路径、运行过程与开放问题")}</summary><div class="grid-3">${A.paths[r.id].map((p, i) => `<article class="panel"><h3>${esc(L(pathTexts[r.id][i][0], p.title))}</h3><p>${esc(L(pathTexts[r.id][i][1], p.question))}</p><div class="mini-list">${p.ids.map(workOpen).join("")}</div></article>`).join("")}</div><h3>${L("The update cycle", "运行过程")}</h3><p>${esc(d.scene)}</p><div class="loop">${d.loop.map((x, i) => `<span><b>${i + 1}</b>${esc(x)}</span>`).join("")}</div><h3>${L("Key distinctions", "关键维度")}</h3><div class="grid-3">${r.facets.map((f, i) => `<article class="panel"><h4>${esc(L(E.routes[r.id].facets[i].title, f.title))}</h4><p>${esc(L(E.routes[r.id].facets[i].text, f.text))}</p></article>`).join("")}</div><h3>${L("Open questions", "开放问题")}</h3>${r.open_questions.map((q, i) => `<article class="open-question"><h4>${esc(L(d.open_questions[i], q.title))}</h4><p>${esc(L(E.routes[r.id].open_details[i], q.text))}</p></article>`).join("")}</details>`;
 }
 function graphWorks(r) {
   return A.works.filter(
     (w) =>
       w.route === r.id &&
-      (atlasState.group === "all" || w.methods.includes(atlasState.group)) &&
-      (atlasState.org === "all" || w.organizations.includes(atlasState.org)) &&
-      (atlasState.status === "all" || w.status === atlasState.status) &&
-      (atlasState.small || w.placement !== "small"),
+      (mapState.group === "all" || w.methods.includes(mapState.group)) &&
+      (mapState.org === "all" || w.organizations.includes(mapState.org)) &&
+      (mapState.status === "all" || w.status === mapState.status) &&
+      (mapState.small || w.placement !== "small"),
   );
 }
 function paperGraph(r, s) {
@@ -370,7 +370,7 @@ function paperGraph(r, s) {
         : [],
     );
   let wires = "";
-  if (atlasState.methods)
+  if (mapState.methods)
     for (const w of ws) {
       const p = positions.get(w.id);
       for (const method of w.methods) {
@@ -410,7 +410,7 @@ function paperGraph(r, s) {
       return `<g class="paper-group"><rect x="${p.x}" y="${p.y}" width="230" height="80" rx="6"/><text x="${p.x + 12}" y="${p.y + 23}" font-size="${label.size}">${labelSpans(label.lines, p.x + 12, 21)}</text></g>`;
     })
     .join("");
-  return `<svg class="paper-network" style="width:calc(max(780px, 100%) * ${atlasState.zoom / 0.9});height:auto" width="${width * atlasState.zoom}" height="${Math.max(y, 240) * atlasState.zoom}" viewBox="0 0 ${width} ${Math.max(y, 240)}" role="group" aria-label="${L("Research relationship graph", "研究关系图")}"><defs><marker id="paper-arrow" viewBox="0 0 7 7" refX="6" refY="3.5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#678997"/></marker></defs>${wires}${edges}${labels}${cards}</svg>`;
+  return `<svg class="paper-network" style="width:calc(max(780px, 100%) * ${mapState.zoom / 0.9});height:auto" width="${width * mapState.zoom}" height="${Math.max(y, 240) * mapState.zoom}" viewBox="0 0 ${width} ${Math.max(y, 240)}" role="group" aria-label="${L("Research relationship graph", "研究关系图")}"><defs><marker id="paper-arrow" viewBox="0 0 7 7" refX="6" refY="3.5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#678997"/></marker></defs>${wires}${edges}${labels}${cards}</svg>`;
 }
 function paperInspector(r, s) {
   const edge = A.relations.find((e) => e.id === s.relation),
@@ -430,14 +430,14 @@ function paperGraphPage(r, s) {
         A.works.filter((w) => w.route === r.id).flatMap((w) => w.organizations),
       ),
     ].sort();
-  return `<div class="filters"><select id="paper-group" aria-label="${L("Method group", "方法分组")}">${options([["all", L("All methods", "全部问题与方法")], ...groups.map((g) => [g.id, groupName(g)])], atlasState.group)}</select><select id="map-org" aria-label="${L("Affiliation", "机构")}">${options([["all", L("All affiliations", "全部机构")], ...orgs.map((o) => [o, o])], atlasState.org)}</select><select id="map-status" aria-label="${L("Reading status", "阅读状态")}">${options(
+  return `<div class="filters"><select id="paper-group" aria-label="${L("Method group", "方法分组")}">${options([["all", L("All methods", "全部问题与方法")], ...groups.map((g) => [g.id, groupName(g)])], mapState.group)}</select><select id="map-org" aria-label="${L("Affiliation", "机构")}">${options([["all", L("All affiliations", "全部机构")], ...orgs.map((o) => [o, o])], mapState.org)}</select><select id="map-status" aria-label="${L("Reading status", "阅读状态")}">${options(
     [
       ["all", L("All reading statuses", "全部阅读状态")],
       ["methods", L("Source reviewed", "来源已研读")],
       ["screened", L("Pending full text", "原文待补")],
     ],
-    atlasState.status,
-  )}</select><label><input id="map-small" type="checkbox" ${atlasState.small ? "checked" : ""}>${L("Include <27B", "包含 <27B")}</label><button data-reset-paper>${L("Reset", "重置")}</button></div><div class="domain-layout" style="--route:${colors[r.id]}"><section class="domain-canvas"><div class="canvas-toolbar"><b>${graphWorks(r).length} ${L("studies", "项研究")}</b><div><button data-zoom="out" aria-label="${L("Zoom out", "缩小")}">−</button><button data-zoom="reset">${Math.round((atlasState.zoom / 0.9) * 100)}%</button><button data-zoom="in" aria-label="${L("Zoom in", "放大")}">+</button><button data-method-wires aria-pressed="${atlasState.methods}">${L("Method links", "方法连线")}</button></div></div><div class="paper-viewport" id="paper-viewport">${paperGraph(r, s)}</div></section><aside class="domain-inspector">${paperInspector(r, s)}</aside></div>`;
+    mapState.status,
+  )}</select><label><input id="map-small" type="checkbox" ${mapState.small ? "checked" : ""}>${L("Include <27B", "包含 <27B")}</label><button data-reset-paper>${L("Reset", "重置")}</button></div><div class="domain-layout" style="--route:${colors[r.id]}"><section class="domain-canvas"><div class="canvas-toolbar"><b>${graphWorks(r).length} ${L("studies", "项研究")}</b><div><button data-zoom="out" aria-label="${L("Zoom out", "缩小")}">−</button><button data-zoom="reset">${Math.round((mapState.zoom / 0.9) * 100)}%</button><button data-zoom="in" aria-label="${L("Zoom in", "放大")}">+</button><button data-method-wires aria-pressed="${mapState.methods}">${L("Method links", "方法连线")}</button></div></div><div class="paper-viewport" id="paper-viewport">${paperGraph(r, s)}</div></section><aside class="domain-inspector">${paperInspector(r, s)}</aside></div>`;
 }
 const participantState = {
   key: "",
@@ -668,7 +668,7 @@ function redrawPaper() {
     next.scrollTop = scroll[1];
   }
 }
-document.getElementById("atlas-search").addEventListener("submit", (e) => {
+document.getElementById("search-form").addEventListener("submit", (e) => {
   e.preventDefault();
   filters.q = document.getElementById("global-query").value;
   filters.route = "all";
@@ -687,15 +687,15 @@ document.addEventListener("click", (e) => {
   if (e.target.closest("[data-close-dialog]"))
     document.getElementById("paper-dialog").close();
   if (e.target.closest("[data-expand-map]")) {
-    atlasState.expanded = !atlasState.expanded;
+    mapState.expanded = !mapState.expanded;
     render();
   }
   if (e.target.closest("[data-method-wires]")) {
-    atlasState.methods = !atlasState.methods;
+    mapState.methods = !mapState.methods;
     redrawPaper();
   }
   if (e.target.closest("[data-reset-paper]")) {
-    Object.assign(atlasState, {
+    Object.assign(mapState, {
       group: "all",
       org: "all",
       status: "all",
@@ -708,27 +708,27 @@ document.addEventListener("click", (e) => {
   }
   const zoom = e.target.closest("[data-zoom]");
   if (zoom) {
-    atlasState.zoom =
+    mapState.zoom =
       zoom.dataset.zoom === "reset"
         ? 0.9
         : Math.max(
             0.35,
             Math.min(
               1.8,
-              atlasState.zoom + (zoom.dataset.zoom === "in" ? 0.15 : -0.15),
+              mapState.zoom + (zoom.dataset.zoom === "in" ? 0.15 : -0.15),
             ),
           );
     redrawPaper();
   }
   const kind = e.target.closest("[data-route-kind]");
   if (kind) {
-    atlasState.kind = kind.dataset.routeKind;
-    atlasState.page = 1;
+    mapState.kind = kind.dataset.routeKind;
+    mapState.page = 1;
     redrawRouteWorks();
   }
   const page = e.target.closest("[data-route-page]");
   if (page) {
-    atlasState.page = Number(page.dataset.routePage);
+    mapState.page = Number(page.dataset.routePage);
     redrawRouteWorks();
     document
       .getElementById("route-work-list")
@@ -782,13 +782,13 @@ document.addEventListener("change", (e) => {
     "paper-group": "group",
   }[e.target.id];
   if (key) {
-    atlasState[key] = e.target.value;
-    atlasState.page = 1;
+    mapState[key] = e.target.value;
+    mapState.page = 1;
     redrawRouteWorks();
   }
   if (e.target.id === "map-small") {
-    atlasState.small = e.target.checked;
-    atlasState.page = 1;
+    mapState.small = e.target.checked;
+    mapState.page = 1;
     redrawRouteWorks();
   }
   const pk = {

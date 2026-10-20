@@ -8,7 +8,7 @@ Contributions should improve the evidence, explanations, map or experimental cap
 
 1. Link a primary paper, repository, technical release, benchmark record or raw result.
 2. Identify the changed object, fixed components, feedback, inherited state, model roles, task splits, resource budget and measured result.
-3. Update `data/atlas.json` and the matching English entry in `data/locales/en.json`. Preserve stable IDs and distinguish source-supported relationships from editorial comparisons.
+3. Update `data/landscape.json` and the matching English entry in `data/locales/en.json`. Preserve stable IDs and distinguish source-supported relationships from editorial comparisons.
 4. Describe each work through the six existing sections. Keep quantitative claims tied to their evaluation settings.
 5. Add an institution or company relationship only when authorship or an official release supports it.
 

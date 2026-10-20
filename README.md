@@ -2,13 +2,13 @@
 
 ![BeforeRSI — the landscape of recursive self-improvement](assets/readme-header.png)
 
-**A bilingual research atlas of recursive self-improvement.**
+**A bilingual research landscape of recursive self-improvement.**
 
 [English](README.md) · [简体中文](README.zh-CN.md)
 
-**[Download the bilingual interactive atlas · RSI_Field_landscape.html](https://raw.githubusercontent.com/Cherish0925/BeforeRSI/main/RSI_Field_landscape.html)**
+**[Download the bilingual RSI research landscape · BeforeRSI.zip](https://raw.githubusercontent.com/Cherish0925/BeforeRSI/main/BeforeRSI.zip)**
 
-Save the file and open it in a browser. Switch 中文 / English at the top right. The home view presents all three mechanism maps.
+Download the ZIP, extract it, and open `RSI_Field_landscape.html` in a browser. Switch 中文 / English at the top right. Maps, search and the manual work offline; opening source papers requires a connection.
 
 BeforeRSI connects the mechanisms, literature and research organizations behind AI self-improvement. It follows three routes: **Harness**, **Model**, and **Model × Harness**. The central question is how a system's retained changes affect its ability to produce the next improvement.
 
@@ -16,12 +16,12 @@ BeforeRSI connects the mechanisms, literature and research organizations behind 
 
 | Goal | English | 中文 |
 |---|---|---|
-| Explore the landscape | [Download the offline atlas](https://raw.githubusercontent.com/Cherish0925/BeforeRSI/main/RSI_Field_landscape.html), open it in a browser, and select English | 下载同一文件，打开后选择中文 |
+| Explore the landscape | [Download ZIP](https://raw.githubusercontent.com/Cherish0925/BeforeRSI/main/BeforeRSI.zip), extract it, and open the HTML | 下载并解压，打开 HTML 后选择中文 |
 | Learn model and LLM foundations | [Learning manual](docs/model-llm.en.md) · [49-page PDF](docs/Model_LLM_Learning_Manual.en.pdf) | [学习手册](docs/model-llm.md) · [52 页 PDF](docs/Model_LLM_Learning_Manual.pdf) |
 | Follow the research program | [Map](MAP.md) → [Theory](THEORY.md) → [Hypotheses](HYPOTHESES.md) | [图景](docs/zh/MAP.md) → [理论](docs/zh/THEORY.md) → [假设](docs/zh/HYPOTHESES.md) |
 | Contribute or build | [Contributing](CONTRIBUTING.md) · [Documentation](docs/README.md) | [参与贡献](CONTRIBUTING.zh-CN.md) · [构建说明](docs/README.zh-CN.md) |
 
-The interactive HTML atlas is the main entry to the project. Three mechanism maps appear side by side, and each route has a research relationship graph. Select a topic or arrow to inspect subquestions, mechanisms, papers and sources. The same file includes the participant matrix, reading guide, discovery pool, search, learning manual and both PDFs, available offline.
+The interactive HTML landscape is the main entry to the project. Three mechanism maps appear side by side, and each route has a research relationship graph. Select a topic or arrow to inspect subquestions, mechanisms, papers and sources. The same file includes the participant matrix, reading guide, discovery pool, search, learning manual and both PDFs, available offline.
 
 ## What is included
 
@@ -34,7 +34,7 @@ The interactive HTML atlas is the main entry to the project. Three mechanism map
 | Reading guide | 6 reading dimensions, 6 worked examples and 4 method comparisons |
 | Research participants | 157 normalized entries from 170 source affiliation names |
 | Company profiles | 27 companies and industry research teams |
-| Learning manual | 29 chapters, 148 glossary entries, 61 foundational topics, 95 atlas subtopics, 43 references |
+| Learning manual | 29 chapters, 148 glossary entries, 61 foundational topics, 95 landscape subtopics, 43 references |
 | Research program | 38 selected work records, 12 working hypotheses, 5 proposed experiments |
 
 Source snapshot: **19 October 2026**. Bilingual edition: **20 October 2026**. The 38-work research claim index serves the theoretical program; it is separate from the 141-record landscape and the counts are not additive.
@@ -70,13 +70,14 @@ The equations and experiment proposals are working research. Simulations illustr
 
 | Path | Role |
 |---|---|
-| [`RSI_Field_landscape.html`](RSI_Field_landscape.html) | Main bilingual interactive atlas; `docs/index.html` contains the same page for hosting |
-| `data/atlas.json` | Landscape records, mappings, sources, organizations and review notes |
+| [`BeforeRSI.zip`](BeforeRSI.zip) | Offline download containing the single HTML file below |
+| [`RSI_Field_landscape.html`](RSI_Field_landscape.html) | Main bilingual interactive landscape; `docs/index.html` contains the same page for hosting |
+| `data/landscape.json` | Landscape records, mappings, sources, organizations and review notes |
 | `data/locales/en.json` | English work, mechanism, relationship and company text |
 | `data/works.json` | Research claim index; see [data documentation](data/README.md) |
 | `docs/model-llm*.md` | Chinese and English manual sources |
 | `docs/zh/` | Chinese research documents |
-| `web/` | Maintainable atlas template, styles and behavior |
+| `web/` | Maintainable landscape template, styles and behavior |
 | `scripts/` | Build and validation commands |
 | `experiments/` · `simulations/` | Experiment specifications and illustrative models |
 

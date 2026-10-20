@@ -6,9 +6,9 @@
 
 [English](README.md) · [简体中文](README.zh-CN.md)
 
-**[下载双语交互图谱 · RSI_Field_landscape.html](https://raw.githubusercontent.com/Cherish0925/BeforeRSI/main/RSI_Field_landscape.html)**
+**[下载双语交互图谱 · BeforeRSI.zip](https://raw.githubusercontent.com/Cherish0925/BeforeRSI/main/BeforeRSI.zip)**
 
-保存后用浏览器打开，右上角切换中文 / English。首页直接展示三条路线的完整领域图。
+下载 ZIP → 解压 → 用浏览器打开 `RSI_Field_landscape.html`，右上角切换中文 / English。图谱、搜索和教程可离线使用；访问论文原文时才需要联网。
 
 BeforeRSI 连接 AI 自改进的机制、文献与研究主体，沿 **Harness、Model、Model × Harness** 三条路线梳理领域。核心问题是：系统保留下来的变化，怎样影响它产生下一次改进的能力？
 
@@ -16,7 +16,7 @@ BeforeRSI 连接 AI 自改进的机制、文献与研究主体，沿 **Harness�
 
 | 目标 | 中文 | English |
 |---|---|---|
-| 浏览领域图景 | [下载离线图谱](https://raw.githubusercontent.com/Cherish0925/BeforeRSI/main/RSI_Field_landscape.html)，用浏览器打开后选择中文 | 同一文件切换 English |
+| 浏览领域图景 | [下载 ZIP](https://raw.githubusercontent.com/Cherish0925/BeforeRSI/main/BeforeRSI.zip)，解压后打开 HTML | 同一文件切换 English |
 | 学习模型与 LLM 原理 | [学习手册](docs/model-llm.md) · [52 页 PDF](docs/Model_LLM_Learning_Manual.pdf) | [Manual](docs/model-llm.en.md) · [49-page PDF](docs/Model_LLM_Learning_Manual.en.pdf) |
 | 阅读研究主线 | [图景](docs/zh/MAP.md) → [理论](docs/zh/THEORY.md) → [假设](docs/zh/HYPOTHESES.md) | [Map](MAP.md) → [Theory](THEORY.md) → [Hypotheses](HYPOTHESES.md) |
 | 参与整理与构建 | [贡献指南](CONTRIBUTING.zh-CN.md) · [构建说明](docs/README.zh-CN.md) | [Contributing](CONTRIBUTING.md) · [Documentation](docs/README.md) |
@@ -70,8 +70,9 @@ BeforeRSI 连接 AI 自改进的机制、文献与研究主体，沿 **Harness�
 
 | 路径 | 用途 |
 |---|---|
+| [`BeforeRSI.zip`](BeforeRSI.zip) | 离线下载包，仅含下列 HTML 主文件 |
 | [`RSI_Field_landscape.html`](RSI_Field_landscape.html) | 双语交互图谱主文件；`docs/index.html` 为同一内容的网页入口 |
-| `data/atlas.json` | 领域记录、机制映射、来源、机构和阅读笔记 |
+| `data/landscape.json` | 领域记录、机制映射、来源、机构和阅读笔记 |
 | `data/locales/en.json` | 工作、机制、关系和公司的英文编辑层 |
 | `data/works.json` | 研究论证索引，见[数据说明](data/README.md) |
 | `docs/model-llm*.md` | 中英文学习手册源文档 |

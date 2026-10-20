@@ -186,7 +186,7 @@ DGM-style lineages, HyperAgents, HSI, and AIDE² make more than one generation e
 
 ### First model–harness co-evolution loops
 
-Co-Harness, OpenRSI, MASS and SIA study model–system adaptation with different scopes and schedules. HELIX supplies harness composition and model-update records without training a successor model. The atlas records these implemented and proposed edges separately. Stable repeated co-evolution and increasing improvement efficiency remain experimental questions.
+Co-Harness, OpenRSI, MASS and SIA study model–system adaptation with different scopes and schedules. HELIX supplies harness composition and model-update records without training a successor model. The landscape records these implemented and proposed edges separately. Stable repeated co-evolution and increasing improvement efficiency remain experimental questions.
 
 ## 6. The convergent mainline
 

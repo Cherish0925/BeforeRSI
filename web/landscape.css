@@ -1,4 +1,4 @@
-/* Research atlas shell and the original two graph views. */
+/* Research landscape shell and the original two graph views. */
 :root {
   font-synthesis: weight;
   --paper: #f5f7f8;
@@ -24,12 +24,12 @@ h2 {
 h3 {
   font-size: 17px;
 }
-.atlas-shell {
+.app-shell {
   display: grid;
   grid-template-columns: 204px minmax(0, 1fr);
   min-height: 100vh;
 }
-.atlas-sidebar {
+.app-sidebar {
   height: 100vh;
   position: sticky;
   top: 0;
@@ -91,10 +91,10 @@ h3 {
   color: var(--muted);
   line-height: 1.9;
 }
-.atlas-body {
+.app-body {
   min-width: 0;
 }
-.atlas-topbar {
+.app-topbar {
   height: 72px;
   position: sticky;
   top: 0;
@@ -108,7 +108,7 @@ h3 {
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(10px);
 }
-#atlas-search {
+#search-form {
   display: flex;
   border: 1px solid var(--line);
   border-radius: 7px;
@@ -118,7 +118,7 @@ h3 {
   padding: 4px;
   gap: 6px;
 }
-#atlas-search input {
+#search-form input {
   border: 0;
   background: transparent;
   min-width: 0;
@@ -126,7 +126,7 @@ h3 {
   padding: 4px 10px;
   font-size: 13px;
 }
-#atlas-search button {
+#search-form button {
   border: 0;
   font-size: 12px;
   background: #e9f1f2;
@@ -794,7 +794,7 @@ footer {
   color: var(--muted);
 }
 @media (min-width: 1800px) {
-  .atlas-shell {
+  .app-shell {
     grid-template-columns: 220px minmax(0, 1fr);
   }
   main {
@@ -805,10 +805,10 @@ footer {
   }
 }
 @media (max-width: 1250px) {
-  .atlas-shell {
+  .app-shell {
     grid-template-columns: 180px minmax(0, 1fr);
   }
-  .atlas-sidebar {
+  .app-sidebar {
     padding: 25px 12px;
   }
   .field-grid {
@@ -904,10 +904,10 @@ footer {
   }
 }
 @media (max-width: 700px) {
-  .atlas-shell {
+  .app-shell {
     display: block;
   }
-  .atlas-sidebar {
+  .app-sidebar {
     position: static;
     height: auto;
     padding: 16px;
@@ -947,7 +947,7 @@ footer {
   .sidebar-note {
     display: none;
   }
-  .atlas-topbar {
+  .app-topbar {
     height: 62px;
     padding: 10px 16px;
     gap: 10px;

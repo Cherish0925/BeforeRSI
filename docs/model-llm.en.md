@@ -1,10 +1,10 @@
 # Model / LLM: From Computation to Self-Improvement
 
-[中文](model-llm.md) · [PDF](Model_LLM_Learning_Manual.en.pdf) · [Interactive atlas](index.html?lang=en#learn=00) · [Project](../README.md)
+[中文](model-llm.md) · [PDF](Model_LLM_Learning_Manual.en.pdf) · [Interactive HTML (ZIP)](https://raw.githubusercontent.com/Cherish0925/BeforeRSI/main/BeforeRSI.zip) · [Project](../README.md)
 
 ## 00｜A map of the learning process
 
-This guide connects model computation, parameter learning and the mechanisms that generate subsequent learning experiences. Its 29 chapters cover architecture, training, inference, evaluation, self-training, self-play, curricula, continual adaptation and model–harness co-evolution. Four appendices provide terminology, a 61-topic index, links to 95 atlas subtopics and primary references.
+This guide connects model computation, parameter learning and the mechanisms that generate subsequent learning experiences. Its 29 chapters cover architecture, training, inference, evaluation, self-training, self-play, curricula, continual adaptation and model–harness co-evolution. Four appendices provide terminology, a 61-topic index, links to 95 landscape subtopics and primary references.
 
 The organizing question is: **which experience, transformed by which feedback and update, becomes which reusable capability?** A model may produce answers, critiques, tasks, training data or update instructions. Selection and learning determine which of those outputs change future behavior.
 
@@ -419,7 +419,7 @@ Let J(θ,H) denote performance of parameters and external system together. H cha
 | Organization and role capability | Routing, delegation and communication co-adapt with shared or specialized models |
 | Deployment and re-adaptation | New interfaces, tools and model versions require renewed compatibility |
 
-Skills can describe applicability, procedure and failure conditions. Their transfer into parameters should be measured after removing the external aid. Stage/Contract/Chain in the atlas describe particular environment decompositions, not a universal named algorithm.
+Skills can describe applicability, procedure and failure conditions. Their transfer into parameters should be measured after removing the external aid. Stage/Contract/Chain in the landscape describe particular environment decompositions, not a universal named algorithm.
 
 Compare (old model, old harness), (new model, old harness), (old model, new harness) and (new model, new harness) on the same tasks and comparable resources. Gains restricted to the new/new pair indicate strong compatibility effects; gains under the old harness locate some improvement in the model. Better solving does not automatically mean better program design; improvement behavior can require its own training.
 
@@ -761,7 +761,7 @@ The 148 entries locate terms in the main chapters. Definitions are concise; the 
 | 59 | Speculative decoding | 12 |
 | 60 | Six axes of model development | 24, 28 |
 
-## C｜Atlas correspondence
+## C｜Landscape correspondence
 
 The Model route has 10 branches and 51 subtopics; Model × Harness has 9 branches and 44 subtopics. These mechanisms can overlap. The table links every subtopic to its explanatory chapters.
 
@@ -789,7 +789,7 @@ The Model route has 10 branches and 51 subtopics; Model × Harness has 9 branche
 
 ## D｜Primary references
 
-These references support the mechanisms introduced in the guide. Detailed RSI work records and their source links are in the atlas.
+These references support the mechanisms introduced in the guide. Detailed RSI work records and their source links are in the landscape.
 
 ### [1] Attention Is All You Need
 
