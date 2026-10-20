@@ -295,7 +295,7 @@ function routeWorkList(r, nodeId) {
       ["screened", L("Pending full text", "原文待补")],
     ],
     mapState.status,
-  )}</select><label><input type="checkbox" id="map-small" ${mapState.small ? "checked" : ""}>${L("Include <27B mechanisms", "包含 <27B 补充机制")}</label></div></details><div class="study-list">${
+  )}</select><label><input type="checkbox" id="map-small" ${mapState.small ? "checked" : ""}>${L("Include models below 27B", "包含 27B 以下模型")}</label></div></details><div class="study-list">${
     rows
       .slice((mapState.page - 1) * size, mapState.page * size)
       .map(studyRow)
@@ -437,7 +437,7 @@ function paperGraphPage(r, s) {
       ["screened", L("Pending full text", "原文待补")],
     ],
     mapState.status,
-  )}</select><label><input id="map-small" type="checkbox" ${mapState.small ? "checked" : ""}>${L("Include <27B", "包含 <27B")}</label><button data-reset-paper>${L("Reset", "重置")}</button></div><div class="domain-layout" style="--route:${colors[r.id]}"><section class="domain-canvas"><div class="canvas-toolbar"><b>${graphWorks(r).length} ${L("studies", "项研究")}</b><div><button data-zoom="out" aria-label="${L("Zoom out", "缩小")}">−</button><button data-zoom="reset">${Math.round((mapState.zoom / 0.9) * 100)}%</button><button data-zoom="in" aria-label="${L("Zoom in", "放大")}">+</button><button data-method-wires aria-pressed="${mapState.methods}">${L("Method links", "方法连线")}</button></div></div><div class="paper-viewport" id="paper-viewport">${paperGraph(r, s)}</div></section><aside class="domain-inspector">${paperInspector(r, s)}</aside></div>`;
+  )}</select><label><input id="map-small" type="checkbox" ${mapState.small ? "checked" : ""}>${L("Include models below 27B", "包含 27B 以下模型")}</label><button data-reset-paper>${L("Reset", "重置")}</button></div><div class="domain-layout" style="--route:${colors[r.id]}"><section class="domain-canvas"><div class="canvas-toolbar"><b>${graphWorks(r).length} ${L("studies", "项研究")}</b><div><button data-zoom="out" aria-label="${L("Zoom out", "缩小")}">−</button><button data-zoom="reset">${Math.round((mapState.zoom / 0.9) * 100)}%</button><button data-zoom="in" aria-label="${L("Zoom in", "放大")}">+</button><button data-method-wires aria-pressed="${mapState.methods}">${L("Method links", "方法连线")}</button></div></div><div class="paper-viewport" id="paper-viewport">${paperGraph(r, s)}</div></section><aside class="domain-inspector">${paperInspector(r, s)}</aside></div>`;
 }
 const participantState = {
   key: "",
@@ -609,7 +609,7 @@ const leadNames = {
 };
 const leadName = (id) => (leadNames[id] ? L(...leadNames[id]) : id);
 function discoveryPage() {
-  return `<header class="landscape-heading"><div class="eyebrow">DISCOVERY POOL / ${A.discovery_review.entries.length}</div><h1>${L("Research discovery and scope", "文献检索与范围判断")}</h1><p>${L("Browse the original discovery pool, abstracts and recorded relevance decisions alongside the detailed catalog. The discovery pool and catalog overlap; unmatched entries have not all undergone full-paper review.", "浏览原有检索池、摘要和逐条相关性判断，并跳转到已建立的详细研究卡片。检索池与目录存在交集；尚未匹配的条目并非全部完成全文研读。")}</p></header><div class="filter-chips">${Object.entries(
+  return `<header class="landscape-heading"><div class="eyebrow">DISCOVERY POOL / ${A.discovery_review.entries.length}</div><h1>${L("Research discovery and scope", "文献检索与范围判断")}</h1><p>${L("Browse 567 discovery entries with abstracts and relevance decisions. Matched entries link to detailed study cards; unmatched entries remain reading leads.", "浏览 567 条检索线索、摘要与相关性判断。已匹配的条目可进入详细研究卡片，其余条目作为后续阅读线索。")}</p></header><div class="filter-chips">${Object.entries(
     A.discovery_review.counts,
   )
     .map(

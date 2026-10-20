@@ -2,7 +2,7 @@
 
 [English](MAP.md) · [简体中文](docs/zh/MAP.md)
 
-RSI has been obscured by mixing several different questions:
+This map organizes RSI around six questions:
 
 - Can software rewrite itself?
 - Can a learner improve its learning rule?
@@ -11,7 +11,7 @@ RSI has been obscured by mixing several different questions:
 - Can a successor become better at producing the next successor?
 - Can these gains persist when tasks, models, and bottlenecks change?
 
-The field becomes clear when the questions are arranged by causal dependency rather than by project name.
+The sections below trace their causal dependencies and historical connections.
 
 ## 1. The object
 

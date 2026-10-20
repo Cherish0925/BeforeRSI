@@ -8,27 +8,28 @@
 
 **[下载双语交互图谱 · BeforeRSI.zip](https://raw.githubusercontent.com/Cherish0925/BeforeRSI/main/BeforeRSI.zip)**
 
-下载 ZIP → 解压 → 用浏览器打开 `RSI_Field_landscape.html`，右上角切换中文 / English。图谱、搜索和教程可离线使用；访问论文原文时才需要联网。
+下载 ZIP → 解压 → 用 Chrome 或 Edge 打开 `RSI_Field_landscape.html`，右上角切换中文 / English。图谱、搜索、学习手册及其 PDF 均可离线使用；访问来源链接时联网。
 
-BeforeRSI 连接 AI 自改进的机制、文献与研究主体，沿 **Harness、Model、Model × Harness** 三条路线梳理领域。核心问题是：系统保留下来的变化，怎样影响它产生下一次改进的能力？
+BeforeRSI 连接 AI 自改进的机制、文献与研究主体，沿 **Harness、Model、Model × Harness** 三条路线，从机制主题进入子问题、相关研究和原始来源。
+
+![BeforeRSI 的三条路线与交互式机制图](assets/landscape-preview.zh.png)
+
+点击节点或箭头，查看解释与关联工作；每条路线还可切换为研究关系图。同一文件包含机构交叉表、机制导读、文献池与学习手册。
 
 ## 从这里开始
 
 | 目标 | 中文 | English |
 |---|---|---|
-| 浏览领域图景 | [下载 ZIP](https://raw.githubusercontent.com/Cherish0925/BeforeRSI/main/BeforeRSI.zip)，解压后打开 HTML | 同一文件切换 English |
 | 学习模型与 LLM 原理 | [学习手册](docs/model-llm.md) · [52 页 PDF](docs/Model_LLM_Learning_Manual.pdf) | [Manual](docs/model-llm.en.md) · [49-page PDF](docs/Model_LLM_Learning_Manual.en.pdf) |
 | 阅读研究主线 | [图景](docs/zh/MAP.md) → [理论](docs/zh/THEORY.md) → [假设](docs/zh/HYPOTHESES.md) | [Map](MAP.md) → [Theory](THEORY.md) → [Hypotheses](HYPOTHESES.md) |
 | 参与整理与构建 | [贡献指南](CONTRIBUTING.zh-CN.md) · [构建说明](docs/README.zh-CN.md) | [Contributing](CONTRIBUTING.md) · [Documentation](docs/README.md) |
-
-交互式 HTML 是项目的主要入口。三张领域图并列呈现，每条路线可切换领域知识图谱与研究关系图；点击节点或箭头，查看子问题、机制、论文和来源。文件还包含机构交叉表、机制导读、文献池、搜索、完整学习手册与两份 PDF，保存后可离线阅读。
 
 ## 收录内容
 
 | 内容 | 范围 |
 |---|---|
 | 研究目录 | 141 条：118 条方法记录、1 条初筛记录、22 条历史与背景记录 |
-| 机制图 | 3 条路线、29 个节点、60 条概念连接 |
+| 机制图 | 3 条路线、29 个主题、146 个子问题、60 条概念连接 |
 | 研究关系 | 69 条扩展、采用、讨论与比较关系 |
 | 文献检索池 | 567 条线索，包含摘要、作者、范围判断和已匹配研究入口 |
 | 机制导读 | 6 个阅读维度、6 项研究案例、4 组方法对照 |
@@ -37,15 +38,15 @@ BeforeRSI 连接 AI 自改进的机制、文献与研究主体，沿 **Harness�
 | 学习手册 | 29 章、148 组术语、61 个基础主题、95 个图谱子项、43 项原始文献 |
 | 研究主线 | 38 项论证索引、12 个待检验假设、5 个实验方案 |
 
-资料快照：**2026 年 10 月 19 日**。双语整理版：**2026 年 10 月 20 日**。38 项研究论证索引服务于理论与实验主线，与 141 条领域目录用途不同，数量不能相加。
+资料快照：**2026 年 10 月 19 日**。双语整理版：**2026 年 10 月 20 日**。记录定义、不同目录的关系与筛选方式见[数据说明](data/README.md)。
 
 ## 三条路线
 
-**Harness**：持久提示、记忆、技能、工具、控制流、运行代码与改进程序。追踪哪些外部资产发生变化，以及变化怎样跨任务保留。
-
-**Model**：从自生成数据、偏好、验证、交互、课程和学习到的更新策略中改变参数。实际训练对象与固定教师、评价器、基线分别记录。
-
-**Model × Harness**：参数与外部系统之间的反馈。关注经验内化、工作流适配，以及技能、环境、评价器和训练程序的共同变化。
+| 路线 | 更新对象 | 主要机制 |
+|---|---|---|
+| **Harness** | 模型周围可保留的状态与程序 | 提示、记忆、技能、工具、工作流、运行代码与改进程序 |
+| **Model** | 模型参数与学习到的更新策略 | 自生成数据、偏好、验证、交互和课程 |
+| **Model × Harness** | 参数与外部系统共同变化 | 经验内化；技能、环境、评价器和训练程序的共同演化 |
 
 每条工作按六个维度解读：目标与价值、思想与洞察、结构与原理、算法与实验、反馈与演化、成果与迁移。中英文共用 ID 和来源；完整中文阅读记录可在研究卡片内展开，并保留在原始数据中。
 
@@ -63,8 +64,6 @@ BeforeRSI 连接 AI 自改进的机制、文献与研究主体，沿 **Harness�
 | [评价协议](docs/zh/EVALUATION.md) | 怎样测量迁移、资源、回退与后继质量？ |
 | [模拟](docs/zh/SIMULATION.md) | 明确的示例假设产生什么动力学？ |
 | [研究记录](docs/zh/RESEARCH_LOG.md) | 当前研究表示怎样形成？ |
-
-公式与实验方案属于进行中的研究；模拟用于说明假设；文献条目依据所引用的公开材料整理。相应状态在具体内容中标明。
 
 ## 仓库结构
 
@@ -91,6 +90,6 @@ python scripts/validate.py
 
 首次构建下载固定版本的 Noto Sans SC 字体，后续使用本地缓存。生成文件与浏览器检查见[构建说明](docs/README.zh-CN.md)。
 
-欢迎补充原始来源、纠正机制、改进解释，或用实验回答开放问题。协作方式见[贡献指南](CONTRIBUTING.zh-CN.md)和 [AGENTS.md](AGENTS.md)。
+补充来源或报告问题，请[提交 issue](https://github.com/Cherish0925/BeforeRSI/issues/new)，附上链接与对应主题。修改流程见[贡献指南](CONTRIBUTING.zh-CN.md)；引用信息见 [CITATION.cff](CITATION.cff)。
 
 [MIT 许可证](LICENSE)；内置字体使用 [SIL OFL](assets/fonts/OFL.txt)。

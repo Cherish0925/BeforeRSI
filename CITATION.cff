@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use BeforeRSI, cite this repository."
-title: "BeforeRSI: A research map and experimental program for recursive self-improvement"
+title: "BeforeRSI: A bilingual research landscape of recursive self-improvement"
 type: software
 authors:
   - family-names: Yang
@@ -8,6 +8,5 @@ authors:
 repository-code: "https://github.com/Cherish0925/BeforeRSI"
 url: "https://github.com/Cherish0925/BeforeRSI"
 license: MIT
-version: 0.3.0
-date-released: 2026-10-16
-abstract: "A source-linked map, evidence standard, and experimental program for recursive self-improvement in AI models, harnesses, and complete AI systems."
+date-released: 2026-10-20
+abstract: "An offline bilingual research landscape connecting mechanisms, literature and research organizations across Harness, Model and Model–Harness coevolution, with a learning manual and experimental research program."

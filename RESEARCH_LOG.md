@@ -2,7 +2,7 @@
 
 [English](RESEARCH_LOG.md) · [简体中文](docs/zh/RESEARCH_LOG.md)
 
-This is a distilled record of the substantive reasoning that led to the current BeforeRSI program. It preserves changes in representation, failed framings, open alternatives, and the experiments proposed to distinguish them. It is not a raw conversation transcript.
+This record tracks material changes in representation, evidence and research direction, with alternative explanations and experiments that distinguish them.
 
 ## 2026-08 — Strict self-improvement criteria
 

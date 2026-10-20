@@ -14,12 +14,12 @@ Two collections serve different purposes. 两套目录分别服务于领域浏�
 ## Landscape structure / 图谱结构
 
 - `works`: stable IDs, six reading sections, model roles, source links and structured review notes / 稳定 ID、六维解读、模型角色、来源及阅读笔记。
-- `field.routes`: 29 nodes, 60 conceptual edges and work-to-topic mappings / 29 个机制节点、60 条概念关系与工作映射。
+- `field.routes`: 29 topics, 146 subquestions, 60 conceptual edges and work-to-topic mappings / 29 个机制主题、146 个子问题、60 条概念关系与工作映射。
 - `relations`: 69 work relationships; `evidence` distinguishes source statements from editorial comparisons / 69 条研究关系，注明来源陈述或方法对照。
 - `actors`: 157 normalized participants and aliases / 157 个归一研究主体及别名。
 - `institutions`: 170 original affiliation names / 170 个原始机构名称。
 - `industry`: 27 company profiles with research links and public directions / 27 家公司条目及公开研究方向。
-- Discovery and reading fields preserve the source-review trail; leads are not added to the work count / 发现与阅读字段保留整理过程，线索不计入工作总数。
+- `discovery_review`: 567 discovery entries with abstracts, relevance decisions and links to matching catalog records / 567 条检索线索、摘要、相关性判断与目录匹配。
 
 ## Language alignment / 语言对应
 
@@ -27,13 +27,19 @@ Two collections serve different purposes. 两套目录分别服务于领域浏�
 
 `landscape.json` 保留中文记录与原始阅读元数据；`locales/en.json` 按相同 ID 提供英文表达。六个工作段落保持机制、实验条件、关键数字和结论范围对应。来源、年份、模型信息与机构关系共用。
 
-Raw review notes preserve their original language. They are provenance records; the bilingual public reading surface uses the edited sections. 新的实质性修订应同步两种语言；原始笔记保留原语言，双语阅读使用编辑后的条目。
+The bilingual reading interface uses the edited sections; expandable original notes retain their source language. Update both languages when revising the content.
+
+双语阅读使用编辑后的条目；可展开的原始笔记保留原语言。实质性修订应同步两种语言。
 
 ## Counts and filters / 统计与筛选
 
-The 141 records comprise 118 method records, 1 screened record and 22 historical/context records. Route placement is 52 Harness, 36 Model, 22 Hybrid, 9 cross-cutting and 22 archive records. The default browser includes all records.
+The 141 records comprise 118 method records, 1 screened record and 22 historical/context records. Route placement is 52 Harness, 36 Model, 22 Hybrid, 9 cross-cutting and 22 archive records. The research catalog initially shows all 141 records. Route study lists and relationship graphs initially exclude records flagged as using trainable models below 27B parameters; select “Include models below 27B” to show every work in a route.
 
-141 条记录包括 118 条方法记录、1 条初筛记录和 22 条历史背景记录；路线分布为 Harness 52、Model 36、Hybrid 22、横向研究 9、基础背景 22。默认显示全部记录。
+141 条记录包括 118 条方法记录、1 条初筛记录和 22 条历史背景记录；路线分布为 Harness 52、Model 36、Hybrid 22、横向研究 9、基础背景 22。研究目录初始显示全部 141 条；路线研究列表与关系图初始筛去标记为训练模型小于 27B 的工作，勾选“包含 27B 以下模型”可显示该路线全部工作。
+
+The discovery pool overlaps the landscape catalog and includes leads at different review stages. The 38-work claim index separately selects sources for the theoretical and experimental program. Each collection reports its own count.
+
+检索池与领域目录存在交集，条目处于不同阅读阶段。38 项论证索引另行选取支撑理论与实验主线的来源。各目录按自身用途分别计数。
 
 The scale filter uses the actually trained model. A fixed teacher, judge, executor or baseline has its own role; its size does not determine trainable-model eligibility. Affiliation counts can overlap across works; joint research is counted once in the catalog.
 

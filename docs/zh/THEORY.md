@@ -2,7 +2,7 @@
 
 [English](../../THEORY.md) · [中文入口](../../README.zh-CN.md)
 
-本文建立由模型、Harness、改进器、持久经验和外部任务环境组成的工作模型。公式用于提出可检验解释，并非已经确立的普遍理论。公开证据见 [EVIDENCE.md](EVIDENCE.md)，竞争假设见 [HYPOTHESES.md](HYPOTHESES.md)，模拟与参数识别见 [SIMULATION.md](SIMULATION.md)。更能预测干预结果的表示可以替代当前模型。
+本文以模型、Harness、改进器、持久经验和外部任务环境描述递归自改进，建立可检验的工作模型。其假设对应[公开证据](EVIDENCE.md)、[竞争假设与判别实验](HYPOTHESES.md)，以及[模拟与参数识别](SIMULATION.md)。
 
 核心对象是：在单位资源约束下，当前系统产生后继系统的概率分布。任务能力提高与产生下一次改进的能力提高，是两个需要分别测量的量。
 

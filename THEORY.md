@@ -2,17 +2,9 @@
 
 [English](THEORY.md) · [简体中文](docs/zh/THEORY.md)
 
-This document gives a compact mathematical model of recursive self-improvement (RSI) for an AI system composed of a model, a harness, an improver, persistent experience, and an external task environment.
+This working model describes recursive self-improvement in terms of a model, harness, improver, persistent experience and external task environment. Its assumptions connect to [public evidence](EVIDENCE.md), [competing hypotheses and tests](HYPOTHESES.md), and [simulations and parameter identification](SIMULATION.md).
 
-## Status of the model
-
-The equations in this file are a working model, not a settled theory. Source-backed facts live in EVIDENCE.md. Falsifiable propositions, competing explanations, and decisive tests live in HYPOTHESES.md. Synthetic trajectories and parameter-identification plans live in SIMULATION.md.
-
-The model should be replaced whenever another representation predicts interventions better.
-
-The central object is not task capability alone. It is the **resource-normalized operator that maps the current system into a distribution over successor systems**. RSI begins when a successor improves that operator itself.
-
----
+The central object is the **resource-normalized operator that maps the current system into a distribution over successor systems**. Task capability and the ability to produce further improvements are measured separately.
 
 ## 1. The smallest useful statement
 
