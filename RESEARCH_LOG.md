@@ -1,5 +1,7 @@
 # Research lineage
 
+[English](RESEARCH_LOG.md) · [简体中文](docs/zh/RESEARCH_LOG.md)
+
 This is a distilled record of the substantive reasoning that led to the current BeforeRSI program. It preserves changes in representation, failed framings, open alternatives, and the experiments proposed to distinguish them. It is not a raw conversation transcript.
 
 ## 2026-08 — Strict self-improvement criteria
@@ -387,3 +389,14 @@ The current representation may still be wrong. Important alternatives include:
 - the best formalism may be information-theoretic, evolutionary, or game-theoretic rather than control-theoretic.
 
 These alternatives are reasons to run discriminating experiments, not reasons to avoid modeling.
+## 2026-10-20 — Bilingual landscape and evidence reconciliation
+
+The landscape now shares stable IDs across Chinese and English: 141 work records, 29 mechanism nodes, 60 conceptual links, 69 work relationships, 157 normalized participants and 27 company profiles. Both manuals cover the same 29 chapters, glossary, topic index and references. The 38-work claim index remains a separate research selection.
+
+Three older summaries were reconciled with the detailed source review:
+
+- HELIX exports training records but does not train a successor model; its completed experiment is harness composition and data production.
+- HyperAgents includes cross-domain imp@k experiments; the short-budget result and the statistically inconclusive longer compounding comparison are separate findings.
+- AIDE² improves the target researcher under a fixed outer agent; the separate ignition comparison is inconclusive about a successor's superior improvement efficiency.
+
+These changes align the evidence summary and claim index with the literature cards. They do not change the theoretical model or turn author-reported experiments into independent replications.

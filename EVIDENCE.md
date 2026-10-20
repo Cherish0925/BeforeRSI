@@ -1,5 +1,7 @@
 # Evidence and judgment
 
+[English](EVIDENCE.md) · [简体中文](docs/zh/EVIDENCE.md)
+
 This document separates scientific value from the label attached to a project. A work can be useful without being RSI. A work can also contain a genuine result while making a broader claim than its evidence supports.
 
 ## 1. The evidence test
@@ -93,15 +95,11 @@ The scientific question is whether lineage and clade selection improve future tr
 
 ### HyperAgents and HSI
 
-These systems move more of the meta-level into the editable program. This is closer to D3 because task-agent and meta-agent behavior, or harness and meta-evolver behavior, can both change.
-
-The crucial missing evidence is cross-problem meta-transfer: a meta-level update selected on one improvement problem should produce better descendants on another.
+Both place meta-level procedures inside editable code. [HyperAgents](https://arxiv.org/html/2603.19461v1) explicitly tests cross-domain improvement capability with imp@k; its short-budget transfer result is positive, while the longer compounding comparison is not statistically significant. HSI's separate harness/evolver updates require their own transfer analysis. These are different evidence records.
 
 ### AIDE²
 
-AIDE² is one of the strongest public multi-generation claims. The authors report repeated accepted rewrites of an AI research agent, fixed-budget evaluation, and transfer to held-out AI-R&D benchmarks.
-
-The result changes the prior belief that self-rewriting research agents can only produce isolated one-step gains. It does not yet establish open-ended RSI. The reported run is author-produced, the task family is AI R&D, the number of accepted generations is small, and independent end-to-end reproduction is still needed.
+[AIDE²](https://arxiv.org/html/2609.26457v1) reports repeated improvements to a research agent under a fixed outer researcher, with transfer to external AI-R&D benchmarks. Its separate ignition test asks whether a successor can replace that researcher: three seeds per arm finish at means 0.780 and 0.782, an inconclusive comparison. The study supports research-harness improvement; successor takeover has not established higher improvement efficiency.
 
 ### RRSI, Meta-Harness, RHI, and related harness systems
 
@@ -140,7 +138,7 @@ A recursive claim still requires repeated generations, cross-task transfer, rete
 
 ## 6. Model–harness co-evolution
 
-HELIX, Co-Harness, OpenRSI, MASS, SIA, and related work identify the correct deployed unit: model and harness jointly determine behavior, and harness rollouts determine part of the data available for later model training.
+Co-Harness, OpenRSI, MASS, SIA and related work study model–system adaptation with different update schedules. [HELIX](https://arxiv.org/html/2608.13951v1) contributes harness composition and verified training records; Section 9.5 states that it does not train an updated model. Its build–update–rebuild cycle is a proposed continuation, not a completed weight-update experiment.
 
 The core loop is sound:
 

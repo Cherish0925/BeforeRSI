@@ -1,5 +1,7 @@
 # Experiment 002 — Model–harness attribution
 
+[English](002-model-harness-cross.md) · [简体中文](../docs/zh/experiments/002-model-harness-cross.md)
+
 ## Question
 
 When model and harness are both updated, where does the gain reside?

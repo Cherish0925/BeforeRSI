@@ -1,5 +1,7 @@
 # Experiment 001 — Harness transfer under equal total compute
 
+[English](001-harness-transfer.md) · [简体中文](../docs/zh/experiments/001-harness-transfer.md)
+
 ## Question
 
 Does a persistent harness update create reusable capability, or does it merely amortize additional search and repeated benchmark feedback?

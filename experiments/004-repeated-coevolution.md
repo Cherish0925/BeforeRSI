@@ -1,5 +1,7 @@
 # Experiment 004 — Repeated model–harness–improver co-evolution
 
+[English](004-repeated-coevolution.md) · [简体中文](../docs/zh/experiments/004-repeated-coevolution.md)
+
 ## Question
 
 Does the complete update cycle increase both transferable capability and future improvement efficiency across multiple generations, or do the gains saturate once easy harness and model defects are removed?

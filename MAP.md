@@ -1,5 +1,7 @@
 # The RSI map
 
+[English](MAP.md) · [简体中文](docs/zh/MAP.md)
+
 RSI has been obscured by mixing several different questions:
 
 - Can software rewrite itself?
@@ -184,14 +186,14 @@ DGM-style lineages, HyperAgents, HSI, and AIDE² make more than one generation e
 
 ### First model–harness co-evolution loops
 
-HELIX, Co-Harness, OpenRSI, MASS, SIA, and related work connect harness-generated trajectories to model updates. Most public demonstrations cover one or a few rounds. They do not yet establish stable repeated co-evolution or a rising rate of improvement.
+Co-Harness, OpenRSI, MASS and SIA study model–system adaptation with different scopes and schedules. HELIX supplies harness composition and model-update records without training a successor model. The atlas records these implemented and proposed edges separately. Stable repeated co-evolution and increasing improvement efficiency remain experimental questions.
 
 ## 6. The convergent mainline
 
-The shortest credible path to general RSI is:
+The research program proposes the following route to test general RSI:
 
 ```mermaid
-flowchart LR
+flowchart TB
     M0[Model M_t] --> H0[Harness portfolio H_t]
     H0 --> R[Matched task rollouts]
     R --> V[Independent verification]

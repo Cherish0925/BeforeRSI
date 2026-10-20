@@ -1,5 +1,7 @@
 # Working hypotheses
 
+[English](HYPOTHESES.md) · [简体中文](docs/zh/HYPOTHESES.md)
+
 This file contains propositions that organize the research program. They are not treated as established facts. Each hypothesis must remain easy to challenge, replace, or falsify.
 
 Statuses:

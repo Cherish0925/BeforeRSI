@@ -1,1 +1,825 @@
-{"schema_version":"1.0.0","updated":"2026-10-16","depth_definitions":{"conceptual":"Qualitative or theoretical statement without an executable persistent update.","external_optimization":"A fixed optimizer improves an external target.","adaptation":"The system learns or searches for current or future tasks under a fixed update procedure.","persistent":"A versioned modification survives into later tasks.","transfer":"A persistent modification is reported to improve untouched tasks, models, or environments.","multi_generation":"Several successor generations or lineage steps are reported.","one_round_coevolution":"Model–harness interaction is demonstrated for one full build/update/rebuild round.","recursive_theory":"A formal result concerns improvement of the self-modifying procedure.","evaluation":"The work primarily evaluates, audits, or bounds self-improvement claims."},"evidence_definitions":{"reported":"Stated by the original authors or repository.","reproduced":"Public artifacts were rerun with materially matching results.","replicated":"An independent implementation supports the same conclusion.","contradicted":"A controlled result conflicts with the claim.","open":"Available evidence does not decide the claim."},"works":[{"id":"good-1965","name":"Speculations Concerning the First Ultraintelligent Machine","year":1965,"role":"theory","reported_depth":"conceptual","changed_objects":[],"evidence_status":"reported","audit_status":"pending","central_limit":"Qualitative positive-feedback argument; no operational update process or empirical test.","sources":[{"type":"paper","url":"https://doi.org/10.1016/S0065-2458(08)60418-0"}]},{"id":"eurisko","name":"EURISKO","year":1983,"role":"historical_self_modification","reported_depth":"persistent","changed_objects":["heuristics","meta_heuristics"],"evidence_status":"reported","audit_status":"pending","central_limit":"Bounded hand-engineered representations, incomplete modern reproduction, and no evidence of scalable general recursion.","sources":[{"type":"paper","url":"https://www.cs.northwestern.edu/~mek802/papers/not-mine/Lenat_EURISKO.pdf"}]},{"id":"godel-machine","name":"Gödel Machine","year":2003,"role":"formal_rsi","reported_depth":"recursive_theory","changed_objects":["program","proof_searcher"],"evidence_status":"reported","audit_status":"pending","central_limit":"Useful self-rewrites must be provable in the encoded axiomatic system; proof search is not shown tractable for modern AI.","sources":[{"type":"paper","url":"https://arxiv.org/abs/cs/0309048"}]},{"id":"maml","name":"MAML","year":2017,"role":"precursor_meta_learning","reported_depth":"adaptation","changed_objects":["model_parameters"],"evidence_status":"reported","audit_status":"pending","central_limit":"Learns fast adaptation under a fixed human-designed meta-training algorithm; does not improve the improver.","sources":[{"type":"paper","url":"https://proceedings.mlr.press/v70/finn17a.html"}]},{"id":"alphago-zero","name":"AlphaGo Zero","year":2017,"role":"precursor_self_play","reported_depth":"adaptation","changed_objects":["model_parameters"],"evidence_status":"reported","audit_status":"pending","central_limit":"Powerful self-generated experience under exact rules and reward; update algorithm and objective remain fixed.","sources":[{"type":"paper","url":"https://www.nature.com/articles/nature24270"}]},{"id":"automl-zero","name":"AutoML-Zero","year":2020,"role":"adjacent_algorithm_search","reported_depth":"external_optimization","changed_objects":["learning_algorithm"],"evidence_status":"reported","audit_status":"pending","central_limit":"Discovers target algorithms with a fixed outer evolutionary process; no successor-improver evidence.","sources":[{"type":"paper","url":"https://proceedings.mlr.press/v119/real20a.html"}]},{"id":"stop","name":"STOP","year":2023,"role":"direct_self_referential_improver","reported_depth":"persistent","changed_objects":["improver_program"],"evidence_status":"reported","audit_status":"pending","central_limit":"Underlying language model is fixed and evidence is bounded to the supplied task setting.","sources":[{"type":"repository","url":"https://github.com/microsoft/stop"},{"type":"paper","url":"https://arxiv.org/abs/2310.02304"}]},{"id":"promptbreeder","name":"Promptbreeder","year":2023,"role":"direct_self_referential_prompt_search","reported_depth":"persistent","changed_objects":["task_prompts","mutation_prompts"],"evidence_status":"reported","audit_status":"pending","central_limit":"Self-reference is prompt-level; broad transfer and successor-as-improver performance are not established.","sources":[{"type":"paper","url":"https://proceedings.mlr.press/v235/fernando24a.html"}]},{"id":"funsearch","name":"FunSearch","year":2024,"role":"adjacent_program_search","reported_depth":"external_optimization","changed_objects":["target_program"],"evidence_status":"reported","audit_status":"pending","central_limit":"Produces valuable external programs with a fixed model-search-evaluator process; does not improve the producing system.","sources":[{"type":"paper","url":"https://www.nature.com/articles/s41586-023-06924-6"}]},{"id":"spin","name":"SPIN","year":2024,"role":"precursor_model_self_training","reported_depth":"persistent","changed_objects":["model_weights","self_generated_training_data"],"evidence_status":"reported","audit_status":"pending","central_limit":"The iterative training rule is externally fixed; long-run diversity, retention, and recursive update quality remain open.","sources":[{"type":"repository","url":"https://github.com/uclaml/SPIN"},{"type":"paper","url":"https://proceedings.mlr.press/v235/chen24j.html"}]},{"id":"self-rewarding-lm","name":"Self-Rewarding Language Models","year":2024,"role":"precursor_self_generated_reward","reported_depth":"persistent","changed_objects":["model_weights","self_generated_rewards"],"evidence_status":"reported","audit_status":"pending","central_limit":"Task and judge errors can be correlated; repeated generations and independent acceptance are not established.","sources":[{"type":"paper","url":"https://proceedings.mlr.press/v235/yuan24d.html"}]},{"id":"godel-agent","name":"Gödel Agent","year":2024,"role":"direct_self_modifying_agent","reported_depth":"persistent","changed_objects":["agent_code","agent_logic"],"evidence_status":"reported","audit_status":"pending","central_limit":"Transfer across unrelated tasks, models, and improvement problems remains limited.","sources":[{"type":"repository","url":"https://github.com/Arvid-pku/Godel_Agent"},{"type":"paper","url":"https://aclanthology.org/2025.acl-long.1354/"}]},{"id":"adas","name":"ADAS","year":2024,"role":"adjacent_agent_architecture_search","reported_depth":"external_optimization","changed_objects":["agent_architecture"],"evidence_status":"reported","audit_status":"pending","central_limit":"The outer designer remains fixed; persistent target improvement is not evidence that the improver improved.","sources":[{"type":"repository","url":"https://github.com/ShengranHu/ADAS"}]},{"id":"aflow","name":"AFlow","year":2024,"role":"adjacent_workflow_search","reported_depth":"external_optimization","changed_objects":["agent_workflow"],"evidence_status":"reported","audit_status":"pending","central_limit":"Workflow gains require held-out transfer and comparison with recursive improvement of the generator.","sources":[{"type":"repository","url":"https://github.com/FoundationAgents/AFlow"},{"type":"paper","url":"https://arxiv.org/abs/2410.10762"}]},{"id":"sica","name":"SICA","year":2025,"role":"direct_self_modifying_agent","reported_depth":"persistent","changed_objects":["agent_code","agent_tools","agent_policy"],"evidence_status":"reported","audit_status":"pending","central_limit":"Coding-benchmark evidence does not establish scale transfer or improved successor generation.","sources":[{"type":"repository","url":"https://github.com/MaximeRobeyns/self_improving_coding_agent"},{"type":"paper","url":"https://arxiv.org/abs/2504.15228"}]},{"id":"dgm","name":"Darwin Gödel Machine","year":2025,"role":"direct_lineage_self_modification","reported_depth":"multi_generation","changed_objects":["agent_code","lineage"],"evidence_status":"reported","audit_status":"pending","central_limit":"Open lineage must be separated from extra candidate and evaluation budget; broad transfer and rising improvement ability remain open.","sources":[{"type":"repository","url":"https://github.com/jennyzzt/dgm"},{"type":"paper","url":"https://arxiv.org/abs/2505.22954"}]},{"id":"gepa","name":"GEPA","year":2025,"role":"adjacent_reflective_optimizer","reported_depth":"external_optimization","changed_objects":["text_parameters","prompts","agent_configuration"],"evidence_status":"reported","audit_status":"pending","central_limit":"A strong fixed optimizer and baseline for RSI; the optimizer itself is not shown to improve.","sources":[{"type":"repository","url":"https://github.com/gepa-ai/gepa"},{"type":"paper","url":"https://arxiv.org/abs/2507.19457"}]},{"id":"agentbreeder","name":"AgentBreeder","year":2025,"role":"adjacent_multi_agent_search","reported_depth":"external_optimization","changed_objects":["multi_agent_scaffold"],"evidence_status":"reported","audit_status":"pending","central_limit":"Evolution of a target scaffold does not establish recursive improvement of the evolutionary process.","sources":[{"type":"paper","url":"https://arxiv.org/abs/2502.00757"}]},{"id":"statistical-limits","name":"On the Statistical Limits of Self-Improving Agents","year":2025,"role":"evaluation_theory","reported_depth":"evaluation","changed_objects":[],"evidence_status":"reported","audit_status":"pending","central_limit":"Provides statistical limits and corrections; does not itself implement an improving system.","sources":[{"type":"paper","url":"https://arxiv.org/abs/2510.04399"}]},{"id":"seal","name":"SEAL","year":2025,"role":"direct_model_self_update","reported_depth":"persistent","changed_objects":["model_weights","self_generated_update_data"],"evidence_status":"reported","audit_status":"pending","central_limit":"Repeated generations, broad transfer, retention, and improved update construction remain open.","sources":[{"type":"repository","url":"https://github.com/Continual-Intelligence/SEAL"}]},{"id":"hyperagents","name":"HyperAgents","year":2026,"role":"direct_meta_agent_self_modification","reported_depth":"multi_generation","changed_objects":["task_agent_program","meta_agent_program"],"evidence_status":"reported","audit_status":"pending","central_limit":"Cross-problem meta-transfer and multi-generation matched-budget evidence require independent replication.","sources":[{"type":"repository","url":"https://github.com/facebookresearch/HyperAgents"},{"type":"paper","url":"https://arxiv.org/abs/2603.19461"}]},{"id":"harness-updating-benefit","name":"Harness Updating Is Not Harness Benefit","year":2026,"role":"evaluation_scale_attribution","reported_depth":"evaluation","changed_objects":[],"evidence_status":"reported","audit_status":"pending","central_limit":"Establishes an important separation and scale pattern; further models, tasks, and independent replication are needed.","sources":[{"type":"paper","url":"https://arxiv.org/abs/2605.30621"}]},{"id":"sia","name":"SIA","year":2026,"role":"direct_model_harness_coevolution","reported_depth":"transfer","changed_objects":["model_weights","harness"],"evidence_status":"reported","audit_status":"pending","central_limit":"Update-object selection, component attribution, and repeated full-loop transfer remain open.","sources":[{"type":"repository","url":"https://github.com/hexo-ai/sia"},{"type":"paper","url":"https://arxiv.org/abs/2605.27276"}]},{"id":"rhi","name":"Recursive Harness Self-Improvement","year":2026,"role":"direct_harness_improvement","reported_depth":"transfer","changed_objects":["harness_specification"],"evidence_status":"reported","audit_status":"pending","central_limit":"Task-specific synthetic settings and few update iterations do not establish broad or open-ended recursion.","sources":[{"type":"paper","url":"https://arxiv.org/abs/2607.15524"}]},{"id":"rethink-harness-eval","name":"Rethinking the Evaluation of Harness Evolution for Agents","year":2026,"role":"evaluation_matched_compute","reported_depth":"evaluation","changed_objects":[],"evidence_status":"reported","audit_status":"pending","central_limit":"Defines stronger comparisons for harness evolution; results still depend on chosen tasks and feedback regimes.","sources":[{"type":"paper","url":"https://arxiv.org/abs/2607.12227"}]},{"id":"co-harness","name":"Co-Evolving Harnesses and Model Weights for LLM Agents","year":2026,"role":"direct_model_harness_coevolution","reported_depth":"transfer","changed_objects":["model_weights","harness"],"evidence_status":"reported","audit_status":"pending","central_limit":"Repeated co-evolution, structural harness redesign, and broad cross-model transfer remain open.","sources":[{"type":"paper","url":"https://arxiv.org/abs/2607.22688"}]},{"id":"helix","name":"HELIX","year":2026,"role":"direct_model_harness_coevolution","reported_depth":"one_round_coevolution","changed_objects":["harness_portfolio","model_training_data"],"evidence_status":"reported","audit_status":"pending","central_limit":"Public evidence covers one co-evolution round; repeated model updates and successor-improver gains are not established.","sources":[{"type":"repository","url":"https://github.com/HKUDS/HELIX"},{"type":"paper","url":"https://arxiv.org/abs/2608.13951"}]},{"id":"hsi","name":"HSI","year":2026,"role":"direct_harness_meta_improvement","reported_depth":"multi_generation","changed_objects":["harness","search_procedure","meta_evolver"],"evidence_status":"reported","audit_status":"pending","central_limit":"Meta-level changes need transfer to a distinct improvement problem and independent matched-budget evaluation.","sources":[{"type":"repository","url":"https://github.com/TailinZhou/hsi"},{"type":"paper","url":"https://arxiv.org/abs/2608.08466"}]},{"id":"evoharness-rl","name":"EvoHarness-RL","year":2026,"role":"precursor_harness_policy_learning","reported_depth":"persistent","changed_objects":["harness_policy","external_harness_state","model_policy"],"evidence_status":"reported","audit_status":"pending","central_limit":"Transfer beyond the reported long-horizon environments and recursive update quality are not established.","sources":[{"type":"paper","url":"https://arxiv.org/abs/2608.05446"}]},{"id":"harness-tampering","name":"Auditing Harness Tampering in Self-Improving Agents","year":2026,"role":"evaluation_integrity","reported_depth":"evaluation","changed_objects":[],"evidence_status":"reported","audit_status":"pending","central_limit":"Audits tampering in current systems; prevention and protected acceptance remain engineering and research problems.","sources":[{"type":"paper","url":"https://arxiv.org/abs/2609.00069"}]},{"id":"harnessdev","name":"HarnessDev","year":2026,"role":"direct_harness_creation_and_evolution","reported_depth":"persistent","changed_objects":["harness_source_code"],"evidence_status":"reported","audit_status":"pending","central_limit":"Creator–executor transfer, equal-compute baselines, and later successor quality require broader testing.","sources":[{"type":"paper","url":"https://arxiv.org/abs/2609.01437"}]},{"id":"rrsi","name":"RRSI","year":2026,"role":"direct_harness_improvement","reported_depth":"transfer","changed_objects":["prompt","control_flow","context","tools","skills","memory","subagents"],"evidence_status":"reported","audit_status":"pending","central_limit":"Frozen-model, finite-evolve-set results need independent reruns, time-forward tasks, and stronger scale transfer.","sources":[{"type":"repository","url":"https://github.com/google-research/rrsi"},{"type":"paper","url":"https://arxiv.org/abs/2609.24972"}]},{"id":"meta-harness","name":"Meta-Harness","year":2026,"role":"direct_harness_improvement","reported_depth":"transfer","changed_objects":["harness_source_code"],"evidence_status":"reported","audit_status":"pending","central_limit":"Open source-level search needs matched restricted-search baselines and broad transfer tests.","sources":[{"type":"repository","url":"https://github.com/stanford-iris-lab/meta-harness"}]},{"id":"aide2","name":"AIDE²","year":2026,"role":"direct_ai_research_agent_rsi","reported_depth":"multi_generation","changed_objects":["research_agent_code","search_policy","memory"],"evidence_status":"reported","audit_status":"pending","central_limit":"Strong author-reported multi-generation evidence; complete independent end-to-end reproduction remains absent.","sources":[{"type":"paper","url":"https://arxiv.org/abs/2609.26457"},{"type":"project_page","url":"https://www.weco.ai/blog/first-evidence-of-recursive-self-improvement"}]},{"id":"openrsi","name":"OpenRSI","year":2026,"role":"direct_model_system_coevolution","reported_depth":"transfer","changed_objects":["model_weights","search_system"],"evidence_status":"reported","audit_status":"pending","central_limit":"Model and system contributions, scale transfer, and repeated recursive gain require independent component crossing.","sources":[{"type":"repository","url":"https://github.com/FrontisAI/OpenRSI"}]},{"id":"mass","name":"MASS","year":2026,"role":"direct_model_workflow_coevolution","reported_depth":"transfer","changed_objects":["model_weights","multi_agent_workflow"],"evidence_status":"reported","audit_status":"pending","central_limit":"Reported cross-domain regressions show that joint updating can redistribute capability; repeated broad transfer remains open.","sources":[{"type":"repository","url":"https://github.com/SakanaAI/mass"}]},{"id":"rsi-anything","name":"RSI-Anything","year":2026,"role":"direct_environment_mediated_improvement","reported_depth":"transfer","changed_objects":["policy","world_model","system_state"],"evidence_status":"reported","audit_status":"pending","central_limit":"Cross-environment transfer and resistance to simulator or evaluator exploitation need independent replication.","sources":[{"type":"repository","url":"https://github.com/Gen-Verse/RSI-Anything"}]},{"id":"dream-rsi","name":"Dream-RSI","year":2026,"role":"direct_simulated_improvement","reported_depth":"transfer","changed_objects":["research_policy","simulation"],"evidence_status":"reported","audit_status":"pending","central_limit":"The relation between simulated rehearsal and real improvement, and successor-as-improver gain, remains open.","sources":[{"type":"repository","url":"https://github.com/zhengkid/Dream-RSI"},{"type":"paper","url":"https://arxiv.org/abs/2609.14858"}]}]}
+{
+  "schema_version": "1.0.0",
+  "updated": "2026-10-20",
+  "depth_definitions": {
+    "conceptual": "Qualitative or theoretical statement without an executable persistent update.",
+    "external_optimization": "A fixed optimizer improves an external target.",
+    "adaptation": "The system learns or searches for current or future tasks under a fixed update procedure.",
+    "persistent": "A versioned modification survives into later tasks.",
+    "transfer": "A persistent modification is reported to improve untouched tasks, models, or environments.",
+    "multi_generation": "Several successor generations or lineage steps are reported.",
+    "one_round_coevolution": "Model–harness interaction is demonstrated for one full build/update/rebuild round.",
+    "recursive_theory": "A formal result concerns improvement of the self-modifying procedure.",
+    "evaluation": "The work primarily evaluates, audits, or bounds self-improvement claims."
+  },
+  "evidence_definitions": {
+    "reported": "Stated by the original authors or repository.",
+    "reproduced": "Public artifacts were rerun with materially matching results.",
+    "replicated": "An independent implementation supports the same conclusion.",
+    "contradicted": "A controlled result conflicts with the claim.",
+    "open": "Available evidence does not decide the claim."
+  },
+  "works": [
+    {
+      "id": "good-1965",
+      "name": "Speculations Concerning the First Ultraintelligent Machine",
+      "year": 1965,
+      "role": "theory",
+      "reported_depth": "conceptual",
+      "changed_objects": [],
+      "evidence_status": "reported",
+      "audit_status": "pending",
+      "central_limit": "Qualitative positive-feedback argument; no operational update process or empirical test.",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://doi.org/10.1016/S0065-2458(08)60418-0"
+        }
+      ]
+    },
+    {
+      "id": "eurisko",
+      "name": "EURISKO",
+      "year": 1983,
+      "role": "historical_self_modification",
+      "reported_depth": "persistent",
+      "changed_objects": [
+        "heuristics",
+        "meta_heuristics"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "pending",
+      "central_limit": "Bounded hand-engineered representations, incomplete modern reproduction, and no evidence of scalable general recursion.",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://www.cs.northwestern.edu/~mek802/papers/not-mine/Lenat_EURISKO.pdf"
+        }
+      ]
+    },
+    {
+      "id": "godel-machine",
+      "name": "Gödel Machine",
+      "year": 2003,
+      "role": "formal_rsi",
+      "reported_depth": "recursive_theory",
+      "changed_objects": [
+        "program",
+        "proof_searcher"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "pending",
+      "central_limit": "Useful self-rewrites must be provable in the encoded axiomatic system; proof search is not shown tractable for modern AI.",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/cs/0309048"
+        }
+      ]
+    },
+    {
+      "id": "maml",
+      "name": "MAML",
+      "year": 2017,
+      "role": "precursor_meta_learning",
+      "reported_depth": "adaptation",
+      "changed_objects": [
+        "model_parameters"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "pending",
+      "central_limit": "Learns fast adaptation under a fixed human-designed meta-training algorithm; does not improve the improver.",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://proceedings.mlr.press/v70/finn17a.html"
+        }
+      ]
+    },
+    {
+      "id": "alphago-zero",
+      "name": "AlphaGo Zero",
+      "year": 2017,
+      "role": "precursor_self_play",
+      "reported_depth": "adaptation",
+      "changed_objects": [
+        "model_parameters"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "pending",
+      "central_limit": "Powerful self-generated experience under exact rules and reward; update algorithm and objective remain fixed.",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://www.nature.com/articles/nature24270"
+        }
+      ]
+    },
+    {
+      "id": "automl-zero",
+      "name": "AutoML-Zero",
+      "year": 2020,
+      "role": "adjacent_algorithm_search",
+      "reported_depth": "external_optimization",
+      "changed_objects": [
+        "learning_algorithm"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "pending",
+      "central_limit": "Discovers target algorithms with a fixed outer evolutionary process; no successor-improver evidence.",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://proceedings.mlr.press/v119/real20a.html"
+        }
+      ]
+    },
+    {
+      "id": "stop",
+      "name": "STOP",
+      "year": 2023,
+      "role": "direct_self_referential_improver",
+      "reported_depth": "persistent",
+      "changed_objects": [
+        "improver_program"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "pending",
+      "central_limit": "Underlying language model is fixed and evidence is bounded to the supplied task setting.",
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://github.com/microsoft/stop"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2310.02304"
+        }
+      ]
+    },
+    {
+      "id": "promptbreeder",
+      "name": "Promptbreeder",
+      "year": 2023,
+      "role": "direct_self_referential_prompt_search",
+      "reported_depth": "persistent",
+      "changed_objects": [
+        "task_prompts",
+        "mutation_prompts"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "pending",
+      "central_limit": "Self-reference is prompt-level; broad transfer and successor-as-improver performance are not established.",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://proceedings.mlr.press/v235/fernando24a.html"
+        }
+      ]
+    },
+    {
+      "id": "funsearch",
+      "name": "FunSearch",
+      "year": 2024,
+      "role": "adjacent_program_search",
+      "reported_depth": "external_optimization",
+      "changed_objects": [
+        "target_program"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "pending",
+      "central_limit": "Produces valuable external programs with a fixed model-search-evaluator process; does not improve the producing system.",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://www.nature.com/articles/s41586-023-06924-6"
+        }
+      ]
+    },
+    {
+      "id": "spin",
+      "name": "SPIN",
+      "year": 2024,
+      "role": "precursor_model_self_training",
+      "reported_depth": "persistent",
+      "changed_objects": [
+        "model_weights",
+        "self_generated_training_data"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "pending",
+      "central_limit": "The iterative training rule is externally fixed; long-run diversity, retention, and recursive update quality remain open.",
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://github.com/uclaml/SPIN"
+        },
+        {
+          "type": "paper",
+          "url": "https://proceedings.mlr.press/v235/chen24j.html"
+        }
+      ]
+    },
+    {
+      "id": "self-rewarding-lm",
+      "name": "Self-Rewarding Language Models",
+      "year": 2024,
+      "role": "precursor_self_generated_reward",
+      "reported_depth": "persistent",
+      "changed_objects": [
+        "model_weights",
+        "self_generated_rewards"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "pending",
+      "central_limit": "Task and judge errors can be correlated; repeated generations and independent acceptance are not established.",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://proceedings.mlr.press/v235/yuan24d.html"
+        }
+      ]
+    },
+    {
+      "id": "godel-agent",
+      "name": "Gödel Agent",
+      "year": 2024,
+      "role": "direct_self_modifying_agent",
+      "reported_depth": "persistent",
+      "changed_objects": [
+        "agent_code",
+        "agent_logic"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "pending",
+      "central_limit": "Transfer across unrelated tasks, models, and improvement problems remains limited.",
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://github.com/Arvid-pku/Godel_Agent"
+        },
+        {
+          "type": "paper",
+          "url": "https://aclanthology.org/2025.acl-long.1354/"
+        }
+      ]
+    },
+    {
+      "id": "adas",
+      "name": "ADAS",
+      "year": 2024,
+      "role": "adjacent_agent_architecture_search",
+      "reported_depth": "external_optimization",
+      "changed_objects": [
+        "agent_architecture"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "pending",
+      "central_limit": "The outer designer remains fixed; persistent target improvement is not evidence that the improver improved.",
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://github.com/ShengranHu/ADAS"
+        }
+      ]
+    },
+    {
+      "id": "aflow",
+      "name": "AFlow",
+      "year": 2024,
+      "role": "adjacent_workflow_search",
+      "reported_depth": "external_optimization",
+      "changed_objects": [
+        "agent_workflow"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "pending",
+      "central_limit": "Workflow gains require held-out transfer and comparison with recursive improvement of the generator.",
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://github.com/FoundationAgents/AFlow"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2410.10762"
+        }
+      ]
+    },
+    {
+      "id": "sica",
+      "name": "SICA",
+      "year": 2025,
+      "role": "direct_self_modifying_agent",
+      "reported_depth": "persistent",
+      "changed_objects": [
+        "agent_code",
+        "agent_tools",
+        "agent_policy"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "pending",
+      "central_limit": "Coding-benchmark evidence does not establish scale transfer or improved successor generation.",
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://github.com/MaximeRobeyns/self_improving_coding_agent"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2504.15228"
+        }
+      ]
+    },
+    {
+      "id": "dgm",
+      "name": "Darwin Gödel Machine",
+      "year": 2025,
+      "role": "direct_lineage_self_modification",
+      "reported_depth": "multi_generation",
+      "changed_objects": [
+        "agent_code",
+        "lineage"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "pending",
+      "central_limit": "Open lineage must be separated from extra candidate and evaluation budget; broad transfer and rising improvement ability remain open.",
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://github.com/jennyzzt/dgm"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2505.22954"
+        }
+      ]
+    },
+    {
+      "id": "gepa",
+      "name": "GEPA",
+      "year": 2025,
+      "role": "adjacent_reflective_optimizer",
+      "reported_depth": "external_optimization",
+      "changed_objects": [
+        "text_parameters",
+        "prompts",
+        "agent_configuration"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "pending",
+      "central_limit": "A strong fixed optimizer and baseline for RSI; the optimizer itself is not shown to improve.",
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://github.com/gepa-ai/gepa"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2507.19457"
+        }
+      ]
+    },
+    {
+      "id": "agentbreeder",
+      "name": "AgentBreeder",
+      "year": 2025,
+      "role": "adjacent_multi_agent_search",
+      "reported_depth": "external_optimization",
+      "changed_objects": [
+        "multi_agent_scaffold"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "pending",
+      "central_limit": "Evolution of a target scaffold does not establish recursive improvement of the evolutionary process.",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2502.00757"
+        }
+      ]
+    },
+    {
+      "id": "statistical-limits",
+      "name": "On the Statistical Limits of Self-Improving Agents",
+      "year": 2025,
+      "role": "evaluation_theory",
+      "reported_depth": "evaluation",
+      "changed_objects": [],
+      "evidence_status": "reported",
+      "audit_status": "pending",
+      "central_limit": "Provides statistical limits and corrections; does not itself implement an improving system.",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2510.04399"
+        }
+      ]
+    },
+    {
+      "id": "seal",
+      "name": "SEAL",
+      "year": 2025,
+      "role": "direct_model_self_update",
+      "reported_depth": "persistent",
+      "changed_objects": [
+        "model_weights",
+        "self_generated_update_data"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "pending",
+      "central_limit": "Repeated generations, broad transfer, retention, and improved update construction remain open.",
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://github.com/Continual-Intelligence/SEAL"
+        }
+      ]
+    },
+    {
+      "id": "hyperagents",
+      "name": "HyperAgents",
+      "year": 2026,
+      "role": "direct_meta_agent_self_modification",
+      "reported_depth": "multi_generation",
+      "changed_objects": [
+        "task_agent_program",
+        "meta_agent_program"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "pending",
+      "central_limit": "Reports cross-domain imp@k transfer; the longer compounding comparison is not statistically significant, and independent replication remains open.",
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://github.com/facebookresearch/HyperAgents"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2603.19461"
+        }
+      ]
+    },
+    {
+      "id": "harness-updating-benefit",
+      "name": "Harness Updating Is Not Harness Benefit",
+      "year": 2026,
+      "role": "evaluation_scale_attribution",
+      "reported_depth": "evaluation",
+      "changed_objects": [],
+      "evidence_status": "reported",
+      "audit_status": "pending",
+      "central_limit": "Establishes an important separation and scale pattern; further models, tasks, and independent replication are needed.",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2605.30621"
+        }
+      ]
+    },
+    {
+      "id": "sia",
+      "name": "SIA",
+      "year": 2026,
+      "role": "direct_model_harness_coevolution",
+      "reported_depth": "transfer",
+      "changed_objects": [
+        "model_weights",
+        "harness"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "pending",
+      "central_limit": "Update-object selection, component attribution, and repeated full-loop transfer remain open.",
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://github.com/hexo-ai/sia"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2605.27276"
+        }
+      ]
+    },
+    {
+      "id": "rhi",
+      "name": "Recursive Harness Self-Improvement",
+      "year": 2026,
+      "role": "direct_harness_improvement",
+      "reported_depth": "transfer",
+      "changed_objects": [
+        "harness_specification"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "pending",
+      "central_limit": "Task-specific synthetic settings and few update iterations do not establish broad or open-ended recursion.",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2607.15524"
+        }
+      ]
+    },
+    {
+      "id": "rethink-harness-eval",
+      "name": "Rethinking the Evaluation of Harness Evolution for Agents",
+      "year": 2026,
+      "role": "evaluation_matched_compute",
+      "reported_depth": "evaluation",
+      "changed_objects": [],
+      "evidence_status": "reported",
+      "audit_status": "pending",
+      "central_limit": "Defines stronger comparisons for harness evolution; results still depend on chosen tasks and feedback regimes.",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2607.12227"
+        }
+      ]
+    },
+    {
+      "id": "co-harness",
+      "name": "Co-Evolving Harnesses and Model Weights for LLM Agents",
+      "year": 2026,
+      "role": "direct_model_harness_coevolution",
+      "reported_depth": "transfer",
+      "changed_objects": [
+        "model_weights",
+        "harness"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "pending",
+      "central_limit": "Repeated co-evolution, structural harness redesign, and broad cross-model transfer remain open.",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2607.22688"
+        }
+      ]
+    },
+    {
+      "id": "helix",
+      "name": "HELIX",
+      "year": 2026,
+      "role": "harness_composition_and_training_data",
+      "reported_depth": "persistent",
+      "changed_objects": [
+        "harness_portfolio",
+        "model_training_data"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "pending",
+      "central_limit": "The paper exports verified model-update records but does not train an updated model; build-update-rebuild remains a proposed continuation (Section 9.5).",
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://github.com/HKUDS/HELIX"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2608.13951"
+        }
+      ]
+    },
+    {
+      "id": "hsi",
+      "name": "HSI",
+      "year": 2026,
+      "role": "direct_harness_meta_improvement",
+      "reported_depth": "multi_generation",
+      "changed_objects": [
+        "harness",
+        "search_procedure",
+        "meta_evolver"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "pending",
+      "central_limit": "Meta-level changes need transfer to a distinct improvement problem and independent matched-budget evaluation.",
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://github.com/TailinZhou/hsi"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2608.08466"
+        }
+      ]
+    },
+    {
+      "id": "evoharness-rl",
+      "name": "EvoHarness-RL",
+      "year": 2026,
+      "role": "precursor_harness_policy_learning",
+      "reported_depth": "persistent",
+      "changed_objects": [
+        "harness_policy",
+        "external_harness_state",
+        "model_policy"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "pending",
+      "central_limit": "Transfer beyond the reported long-horizon environments and recursive update quality are not established.",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2608.05446"
+        }
+      ]
+    },
+    {
+      "id": "harness-tampering",
+      "name": "Auditing Harness Tampering in Self-Improving Agents",
+      "year": 2026,
+      "role": "evaluation_integrity",
+      "reported_depth": "evaluation",
+      "changed_objects": [],
+      "evidence_status": "reported",
+      "audit_status": "pending",
+      "central_limit": "Audits tampering in current systems; prevention and protected acceptance remain engineering and research problems.",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2609.00069"
+        }
+      ]
+    },
+    {
+      "id": "harnessdev",
+      "name": "HarnessDev",
+      "year": 2026,
+      "role": "direct_harness_creation_and_evolution",
+      "reported_depth": "persistent",
+      "changed_objects": [
+        "harness_source_code"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "pending",
+      "central_limit": "Creator–executor transfer, equal-compute baselines, and later successor quality require broader testing.",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2609.01437"
+        }
+      ]
+    },
+    {
+      "id": "rrsi",
+      "name": "RRSI",
+      "year": 2026,
+      "role": "direct_harness_improvement",
+      "reported_depth": "transfer",
+      "changed_objects": [
+        "prompt",
+        "control_flow",
+        "context",
+        "tools",
+        "skills",
+        "memory",
+        "subagents"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "pending",
+      "central_limit": "Frozen-model, finite-evolve-set results need independent reruns, time-forward tasks, and stronger scale transfer.",
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://github.com/google-research/rrsi"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2609.24972"
+        }
+      ]
+    },
+    {
+      "id": "meta-harness",
+      "name": "Meta-Harness",
+      "year": 2026,
+      "role": "direct_harness_improvement",
+      "reported_depth": "transfer",
+      "changed_objects": [
+        "harness_source_code"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "pending",
+      "central_limit": "Open source-level search needs matched restricted-search baselines and broad transfer tests.",
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://github.com/stanford-iris-lab/meta-harness"
+        }
+      ]
+    },
+    {
+      "id": "aide2",
+      "name": "AIDE²",
+      "year": 2026,
+      "role": "direct_ai_research_agent_rsi",
+      "reported_depth": "multi_generation",
+      "changed_objects": [
+        "research_agent_code",
+        "search_policy",
+        "memory"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "pending",
+      "central_limit": "The main outer researcher is fixed. A separate three-seed ignition comparison is inconclusive about successor takeover and improved self-improvement efficiency.",
+      "sources": [
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2609.26457"
+        },
+        {
+          "type": "project_page",
+          "url": "https://www.weco.ai/blog/first-evidence-of-recursive-self-improvement"
+        }
+      ]
+    },
+    {
+      "id": "openrsi",
+      "name": "OpenRSI",
+      "year": 2026,
+      "role": "direct_model_system_coevolution",
+      "reported_depth": "transfer",
+      "changed_objects": [
+        "model_weights",
+        "search_system"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "pending",
+      "central_limit": "Model and system contributions, scale transfer, and repeated recursive gain require independent component crossing.",
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://github.com/FrontisAI/OpenRSI"
+        }
+      ]
+    },
+    {
+      "id": "mass",
+      "name": "MASS",
+      "year": 2026,
+      "role": "direct_model_workflow_coevolution",
+      "reported_depth": "transfer",
+      "changed_objects": [
+        "model_weights",
+        "multi_agent_workflow"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "pending",
+      "central_limit": "Reported cross-domain regressions show that joint updating can redistribute capability; repeated broad transfer remains open.",
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://github.com/SakanaAI/mass"
+        }
+      ]
+    },
+    {
+      "id": "rsi-anything",
+      "name": "RSI-Anything",
+      "year": 2026,
+      "role": "direct_environment_mediated_improvement",
+      "reported_depth": "transfer",
+      "changed_objects": [
+        "policy",
+        "world_model",
+        "system_state"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "pending",
+      "central_limit": "Cross-environment transfer and resistance to simulator or evaluator exploitation need independent replication.",
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://github.com/Gen-Verse/RSI-Anything"
+        }
+      ]
+    },
+    {
+      "id": "dream-rsi",
+      "name": "Dream-RSI",
+      "year": 2026,
+      "role": "direct_simulated_improvement",
+      "reported_depth": "transfer",
+      "changed_objects": [
+        "research_policy",
+        "simulation"
+      ],
+      "evidence_status": "reported",
+      "audit_status": "pending",
+      "central_limit": "The relation between simulated rehearsal and real improvement, and successor-as-improver gain, remains open.",
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://github.com/zhengkid/Dream-RSI"
+        },
+        {
+          "type": "paper",
+          "url": "https://arxiv.org/abs/2609.14858"
+        }
+      ]
+    }
+  ]
+}

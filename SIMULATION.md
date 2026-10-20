@@ -1,5 +1,7 @@
 # Simulation and model identification
 
+[English](SIMULATION.md) · [简体中文](docs/zh/SIMULATION.md)
+
 The simulations in this repository are **illustrative dynamical models**, not empirical forecasts. Their job is to make assumptions explicit, expose qualitative regimes, and identify which quantities a real RSI experiment must measure.
 
 The current simulation stack has three layers:

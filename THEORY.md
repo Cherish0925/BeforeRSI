@@ -1,5 +1,7 @@
 # A dynamical theory of model–harness recursive self-improvement
 
+[English](THEORY.md) · [简体中文](docs/zh/THEORY.md)
+
 This document gives a compact mathematical model of recursive self-improvement (RSI) for an AI system composed of a model, a harness, an improver, persistent experience, and an external task environment.
 
 ## Status of the model

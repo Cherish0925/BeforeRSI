@@ -1,5 +1,7 @@
 # Experiment 003 — Successor as improver
 
+[English](003-successor-as-improver.md) · [简体中文](../docs/zh/experiments/003-successor-as-improver.md)
+
 ## Question
 
 Is the successor better at producing later successors?

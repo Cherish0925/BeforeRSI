@@ -1,5 +1,7 @@
 # Experiment 005 — Evaluator fidelity and the RSI phase boundary
 
+[English](005-evaluator-phase-boundary.md) · [简体中文](../docs/zh/experiments/005-evaluator-phase-boundary.md)
+
 ## Question
 
 At what evaluator quality does additional candidate search stop producing real improvement and begin selecting noise, benchmark-specific patches, or metric exploits?

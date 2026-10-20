@@ -1,5 +1,7 @@
 # Evaluation standard
 
+[English](EVALUATION.md) · [简体中文](docs/zh/EVALUATION.md)
+
 This document defines the minimum experiment needed to claim self-improvement or recursive self-improvement.
 
 ## 1. Register the complete system

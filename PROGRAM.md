@@ -1,5 +1,7 @@
 # Research program: model–harness co-evolution
 
+[English](PROGRAM.md) · [简体中文](docs/zh/PROGRAM.md)
+
 The objective is a system that repeatedly improves both task capability and the ability to construct later improvements.
 
 The unit of research is not a model checkpoint or a harness in isolation. It is a versioned tuple:

@@ -40,7 +40,13 @@ def validate_url(value: object, context: str) -> None:
 def validate_works(data: object) -> set[str]:
     if not isinstance(data, dict):
         fail("works catalog root must be an object")
-    required = {"schema_version", "updated", "depth_definitions", "evidence_definitions", "works"}
+    required = {
+        "schema_version",
+        "updated",
+        "depth_definitions",
+        "evidence_definitions",
+        "works",
+    }
     if set(data) != required:
         fail(f"works catalog keys must be exactly {sorted(required)}")
     if not re.fullmatch(r"\d+\.\d+\.\d+", data["schema_version"]):
@@ -52,8 +58,16 @@ def validate_works(data: object) -> set[str]:
     for index, work in enumerate(data["works"]):
         context = f"works[{index}]"
         required_work = {
-            "id", "name", "year", "role", "reported_depth", "changed_objects",
-            "evidence_status", "audit_status", "central_limit", "sources",
+            "id",
+            "name",
+            "year",
+            "role",
+            "reported_depth",
+            "changed_objects",
+            "evidence_status",
+            "audit_status",
+            "central_limit",
+            "sources",
         }
         if not isinstance(work, dict) or set(work) != required_work:
             fail(f"{context}: invalid keys")
@@ -81,7 +95,10 @@ def validate_works(data: object) -> set[str]:
             fail(f"{work_id}: invalid evidence status")
         if work["audit_status"] not in AUDIT:
             fail(f"{work_id}: invalid audit status")
-        if not isinstance(work["central_limit"], str) or len(work["central_limit"].strip()) < 20:
+        if (
+            not isinstance(work["central_limit"], str)
+            or len(work["central_limit"].strip()) < 20
+        ):
             fail(f"{work_id}: central_limit is too short")
         sources = work["sources"]
         if not isinstance(sources, list) or not sources:
@@ -140,7 +157,6 @@ def validate_graph(data: object, work_ids: set[str]) -> None:
                 fail(f"{binding['work_id']}: unknown node {node_id!r}")
 
 
-
 def validate_hypotheses(data: object) -> None:
     if not isinstance(data, dict):
         fail("hypothesis registry root must be an object")
@@ -165,29 +181,121 @@ def validate_hypotheses(data: object) -> None:
         seen.add(hypothesis_id)
         if item["status"] not in statuses:
             fail(f"{hypothesis_id}: invalid status")
-        if not isinstance(item["statement"], str) or len(item["statement"].strip()) < 20:
+        if (
+            not isinstance(item["statement"], str)
+            or len(item["statement"].strip()) < 20
+        ):
             fail(f"{hypothesis_id}: statement is too short")
-        if not isinstance(item["decisive_test"], str) or len(item["decisive_test"].strip()) < 20:
+        if (
+            not isinstance(item["decisive_test"], str)
+            or len(item["decisive_test"].strip()) < 20
+        ):
             fail(f"{hypothesis_id}: decisive_test is too short")
         if not isinstance(item["files"], list) or not item["files"]:
             fail(f"{hypothesis_id}: files must be non-empty")
 
 
 def validate_documentation() -> None:
-    html = (ROOT / "docs/index.html").read_text(encoding="utf-8")
+    page = (ROOT / "docs/index.html").read_text(encoding="utf-8")
+
     def embedded(script_id):
-        match = re.search(r'<script id="' + script_id + r'"[^>]*>(.*?)</script>', html, re.S)
+        match = re.search(
+            r'<script id="' + script_id + r'"[^>]*>(.*?)</script>', page, re.S
+        )
         if not match:
             fail(f"missing embedded data: {script_id}")
         return json.loads(match[1])
-    guide = embedded("model-learning-data")
-    source = (ROOT / "docs/model-llm.md").read_bytes()
-    if guide["source_sha256"] != hashlib.sha256(source).hexdigest():
-        fail("guide changed: run scripts/build_learning.py")
-    if base64.b64decode(guide["pdf"]) != (ROOT / "docs/Model_LLM_Learning_Manual.pdf").read_bytes():
-        fail("standalone and embedded PDFs differ")
-    if embedded("literature-data") != load(ROOT / "data/atlas.json"):
-        fail("atlas data changed: run scripts/build_learning.py")
+
+    atlas = load(ROOT / "data/atlas.json")
+    english = load(ROOT / "data/locales/en.json")
+    if embedded("literature-data") != atlas or embedded("locale-en") != english:
+        fail("atlas or English text changed: run scripts/build_learning.py")
+    for path, digest in embedded("build-manifest").items():
+        if hashlib.sha256((ROOT / path).read_bytes()).hexdigest() != digest:
+            fail(f"{path} changed: rebuild the documentation")
+    manuals = embedded("model-learning-data")
+    for lang in ("zh", "en"):
+        suffix = ".en" if lang == "en" else ""
+        guide = manuals[lang]
+        source = (ROOT / f"docs/model-llm{suffix}.md").read_bytes()
+        if guide["source_sha256"] != hashlib.sha256(source).hexdigest():
+            fail(f"{lang} manual changed: rebuild the documentation")
+        pdf = ROOT / f"docs/Model_LLM_Learning_Manual{suffix}.pdf"
+        if base64.b64decode(guide["pdf"]) != pdf.read_bytes():
+            fail(f"{lang} standalone and embedded PDFs differ")
+        expected = [f"{i:02}" for i in range(29)] + list("ABCD")
+        if [c["key"] for c in guide["chapters"]] != expected:
+            fail(f"{lang} manual has incomplete chapter coverage")
+    if set(manuals["en"]["pageMap"]) != set(manuals["zh"]["pageMap"]):
+        fail("manual bookmark coverage differs")
+    equations = []
+    for suffix in ("", ".en"):
+        text = (ROOT / f"docs/model-llm{suffix}.md").read_text()
+        equations.append(
+            [re.sub(r"\s+", "", e) for e in re.findall(r"\$\$(.*?)\$\$", text, re.S)]
+        )
+    if equations[0] != equations[1]:
+        fail("Chinese and English manual equations differ")
+
+    ids = {w["id"] for w in atlas["works"]}
+    if len(ids) != len(atlas["works"]):
+        fail("duplicate atlas work ID")
+    node_ids = {n["id"] for r in atlas["field"]["routes"] for n in r["nodes"]}
+    collections = {
+        "works": ids,
+        "nodes": node_ids,
+        "routes": {r["id"] for r in atlas["field"]["routes"]},
+        "relations": {r["id"] for r in atlas["relations"]},
+        "edges": {e["id"] for r in atlas["field"]["routes"] for e in r["edges"]},
+        "companies": {c["id"] for c in atlas["industry"]["companies"]},
+    }
+    for key, expected in collections.items():
+        if set(english[key]) != expected:
+            fail(f"English {key} coverage differs: {set(english[key]) ^ expected}")
+    for w in atlas["works"]:
+        translated = english["works"][w["id"]]["sections"]
+        if len(translated) != 6 or any(not t.strip() for t in translated):
+            fail(f"{w['id']}: six English sections required")
+        for url in w.get("sources", []):
+            validate_url(url, w["id"])
+    for r in atlas["field"]["routes"]:
+        for n in r["nodes"]:
+            if len(english["nodes"][n["id"]]["subtopics"]) != len(n["subtopics"]):
+                fail(f"{n['id']}: English subtopic coverage differs")
+        for mapping in r["mappings"]:
+            if (
+                mapping["work_id"] not in ids
+                or not set(mapping["topic_ids"]) <= node_ids
+            ):
+                fail("field mapping has an unknown work or topic")
+        for edge in r["edges"]:
+            if edge["source"] not in node_ids or edge["target"] not in node_ids:
+                fail("field edge has an unknown endpoint")
+    for r in atlas["relations"]:
+        if r["source"] not in ids or r["target"] not in ids:
+            fail(f"{r['id']}: unknown work relationship endpoint")
+    for a in atlas["actors"]["actors"]:
+        if not set(a["work_ids"]) <= ids:
+            fail(f"{a['id']}: unknown affiliated work")
+    for c in atlas["industry"]["companies"]:
+        if not {w["work_id"] for w in c["work_links"]} <= ids:
+            fail(f"{c['id']}: unknown company work")
+        if not set(c["topic_ids"]) <= node_ids:
+            fail(f"{c['id']}: unknown company topic")
+
+
+def validate_local_links() -> None:
+    for path in ROOT.rglob("*.md"):
+        if any(
+            part in {".git", ".cache", "node_modules", ".venv"} for part in path.parts
+        ):
+            continue
+        for target in re.findall(r"!?\[[^\]]*\]\(([^)]+)\)", path.read_text()):
+            if target.startswith(("https://", "http://", "mailto:", "#")):
+                continue
+            relative = target.split("#", 1)[0].split("?", 1)[0]
+            if relative and not (path.parent / relative).exists():
+                fail(f"{path.relative_to(ROOT)}: missing local link {target}")
 
 
 def main() -> int:
@@ -196,11 +304,14 @@ def main() -> int:
         validate_graph(load(GRAPH_PATH), work_ids)
         validate_hypotheses(load(HYPOTHESES_PATH))
         validate_documentation()
+        validate_local_links()
     except (OSError, json.JSONDecodeError, ValueError) as exc:
         print(f"validation failed: {exc}", file=sys.stderr)
         return 1
 
-    print(f"validation passed: {len(work_ids)} works")
+    print(
+        f"validation passed: {len(work_ids)} research claims; bilingual atlas, manuals, build inputs and local links"
+    )
     return 0
 
 
