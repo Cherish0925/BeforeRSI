@@ -6,10 +6,10 @@
 |---|---|---|
 | Manual source | [model-llm.en.md](model-llm.en.md) | [model-llm.md](model-llm.md) |
 | Printable edition | [PDF](Model_LLM_Learning_Manual.en.pdf) | [PDF](Model_LLM_Learning_Manual.pdf) |
-| Offline atlas | [index.html](index.html) — both languages in one file | 同一文件内切换语言 |
+| Offline atlas | [RSI_Field_landscape.html](../RSI_Field_landscape.html) — both languages in one file | 同一文件内切换语言 |
 | Research documents | [Project index](../README.md) | [中文研究索引](../README.zh-CN.md) |
 
-Download `index.html` and open it in a browser. Reading, search and PDF downloads work offline. Primary-source and repository links open online. Direct entries include `?lang=en#learn=00`, `?lang=zh#route=model`, `#work=dgm` and `#people`.
+Download `RSI_Field_landscape.html` and open it in a browser. Reading, search and PDF downloads work offline. Primary-source and repository links open online. Direct entries include `?lang=en#learn=00`, `?lang=zh#route=model`, `#work=dgm`, `#participants`, `#guide` and `#discovery`. Each route also has a `&mode=papers` view.
 
 ## Sources and outputs
 
@@ -18,7 +18,7 @@ Download `index.html` and open it in a browser. Reading, search and PDF download
 | `docs/model-llm.md`, `docs/model-llm.en.md` | Manual text, formulas, references and indexes |
 | `data/atlas.json` | Landscape, source links, mappings and review notes |
 | `data/locales/en.json` | English editorial layer with matching IDs |
-| `web/atlas.html`, `web/atlas.css`, `web/atlas.js` | Page template, styles and behavior |
+| `web/atlas.html`, `web/atlas.*`, `web/landscape.*` | Page template, styles and behavior |
 | `scripts/build_manual.py` | One language edition, figures and cached chapter data |
 | `scripts/build_learning.py` | Both manuals and the standalone atlas |
 | `scripts/validate.py` | Data, translations, local links and source/output consistency |
@@ -38,7 +38,7 @@ python scripts/validate.py
 
 The first build downloads a pinned, checksum-verified Noto Sans SC font. Later builds use `.cache/learning/`. The font license is in `assets/fonts/OFL.txt`. Mathematical expressions render locally through Matplotlib.
 
-Generated deliverables are `docs/index.html`, both `docs/Model_LLM_Learning_Manual*.pdf` files, and `docs/figures/*.svg`. Commit them with their source changes. Intermediate fonts, equation images and chapter data remain in `.cache/learning/`.
+The root `RSI_Field_landscape.html` and `docs/index.html` are generated from the same sources and must be byte-identical. The root file is the primary download; `docs/index.html` is the hosting entry. Other generated deliverables are both `docs/Model_LLM_Learning_Manual*.pdf` files, and `docs/figures/*.svg`. Commit them with their source changes. Intermediate fonts, equation images and chapter data remain in `.cache/learning/`.
 
 For interface-only changes, reuse unchanged manual builds:
 
@@ -59,6 +59,6 @@ npx playwright install chromium
 node scripts/test_atlas.cjs
 ```
 
-Set `CHROMIUM_PATH` to use an existing Chromium executable. The check exercises both languages, filters, graph links, organizations, chapter search, references, exact PDF download bytes and narrow-screen overflow. Screenshots go to `.cache/browser/`.
+Set `CHROMIUM_PATH` to use an existing Chromium executable. The check exercises both languages, all three mechanism maps and research graphs, subquestion expansion, filters, participant tables, discovery, study dialogs, chapter search, references, exact PDF download bytes and narrow-screen overflow. Screenshots go to `.cache/browser/`.
 
 For PDF layout changes, render representative pages with `pdftoppm` and inspect the cover, contents, formulas, diagrams, tables and final references. PDF text extraction alone does not detect clipping or overlap.

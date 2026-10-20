@@ -197,6 +197,10 @@ def validate_hypotheses(data: object) -> None:
 
 def validate_documentation() -> None:
     page = (ROOT / "docs/index.html").read_text(encoding="utf-8")
+    if (ROOT / "RSI_Field_landscape.html").read_bytes() != (
+        ROOT / "docs/index.html"
+    ).read_bytes():
+        fail("primary HTML download and hosting entry differ")
 
     def embedded(script_id):
         match = re.search(
@@ -259,6 +263,10 @@ def validate_documentation() -> None:
         for url in w.get("sources", []):
             validate_url(url, w["id"])
     for r in atlas["field"]["routes"]:
+        if len(english["routes"][r["id"]]["facets"]) != len(r["facets"]):
+            fail(f"{r['id']}: English facet coverage differs")
+        if len(english["routes"][r["id"]]["open_details"]) != len(r["open_questions"]):
+            fail(f"{r['id']}: English open-question coverage differs")
         for n in r["nodes"]:
             if len(english["nodes"][n["id"]]["subtopics"]) != len(n["subtopics"]):
                 fail(f"{n['id']}: English subtopic coverage differs")
@@ -274,6 +282,15 @@ def validate_documentation() -> None:
     for r in atlas["relations"]:
         if r["source"] not in ids or r["target"] not in ids:
             fail(f"{r['id']}: unknown work relationship endpoint")
+    if len(english["bridges"]) != len(atlas["field"]["bridges"]):
+        fail("English cross-route bridge coverage differs")
+    for key in ("axes", "cases", "comparisons"):
+        if len(english["reader_guide"][key]) != len(atlas["reader_guide"][key]):
+            fail(f"English reading guide {key} coverage differs")
+    if {c["id"] for c in english["reader_guide"]["cases"]} != {
+        c["id"] for c in atlas["reader_guide"]["cases"]
+    }:
+        fail("English reading guide case IDs differ")
     for a in atlas["actors"]["actors"]:
         if not set(a["work_ids"]) <= ids:
             fail(f"{a['id']}: unknown affiliated work")

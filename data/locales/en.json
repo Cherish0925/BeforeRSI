@@ -1926,6 +1926,33 @@
         "Which skills and edits transfer across tasks, models, and environments?",
         "When does better task performance improve the ability to discover the next useful change?",
         "How can changing evaluators and task streams preserve meaningful comparisons?"
+      ],
+      "facets": [
+        {
+          "title": "Assets and update algorithms",
+          "text": "Prompts, memory, tools and workflows specify what can change. Reflection, evolution and MCTS specify how it changes. One algorithm can act on several assets; one study can update several kinds of asset."
+        },
+        {
+          "title": "Optimizing the target and rewriting the optimizer",
+          "text": "ADAS, GEPA and AFlow can produce stronger candidates while keeping the outer search procedure fixed. STOP, Promptbreeder and HyperAgents also place some improvement mechanisms inside the editable system."
+        },
+        {
+          "title": "Persistent capability and temporary trajectories",
+          "text": "Reflection and tools generated for a current task first constitute online adaptation. Cross-task accumulation depends on explicit retention and later reuse."
+        },
+        {
+          "title": "Editable improvers and fixed outer procedures",
+          "text": "DGM fixes archive maintenance and parent selection. HyperAgents also retains hand-designed parent selection in its main experiments. Each study has a concrete editable boundary."
+        },
+        {
+          "title": "Model scale and research contribution",
+          "text": "For frozen-model harness methods, mechanisms, transfer, budgets and comparisons establish the contribution. Parameter count is an experimental condition."
+        }
+      ],
+      "open_details": [
+        "Which prompts, skills and code changes depend on their original model and environment, and which compose into transferable capability? Long-term accumulation introduces interference, staleness and context growth. Existing local transfer and memory results leave open generalization across an open task stream.",
+        "Does better task performance increase the probability of finding a useful modification at a fixed budget? If solving and improving require different skills, which meta-level representations, feedback and editable boundaries help? DGM and HyperAgents study self-reference and meta-transfer within finite settings.",
+        "How can learned evaluators remain connected to task truth, actual utility and earlier versions? Evaluation preferences and repeated selection can change alongside capability. Sparse ground truth, shifting objectives and long-run comparison remain open problems."
       ]
     },
     "model": {
@@ -1945,6 +1972,45 @@
         "What supplies new information when successive models share errors?",
         "How can evaluators and curricula keep pace with the learner?",
         "Which gains transfer and persist after repeated updates?"
+      ],
+      "facets": [
+        {
+          "title": "Training stage",
+          "text": "Pretraining, post-training, test-time learning and deployment. A method can span stages; the stage does not determine where feedback comes from."
+        },
+        {
+          "title": "Update objective",
+          "text": "SFT, distillation, DPO, preference optimization, policy-gradient RL and learned updates. DPO may use refreshed preference data; online data collection does not make its objective PPO."
+        },
+        {
+          "title": "Data collection",
+          "text": "Fixed offline data, on-policy refresh, replay and mixed-policy data. Online collection, an on-policy objective and uninterrupted continual training are distinct choices."
+        },
+        {
+          "title": "Update schedule",
+          "text": "One-shot, round-based alternation, interleaved or asynchronous updates. Track actual rounds and when the actor, critic and data are refreshed."
+        },
+        {
+          "title": "Trainable roles",
+          "text": "Actor, solver, judge, critic, task proposer, curriculum curator and improvement policy. Roles may share weights or use separate models; they describe system functions."
+        },
+        {
+          "title": "Feedback grounding",
+          "text": "Human seeds, rubrics, executable checks, learned judges, self-consistency and downstream learning gains provide different information. Self-generated data can still depend on external supervision."
+        },
+        {
+          "title": "Parameter plasticity",
+          "text": "Full weights, adapters, LoRA or selected modules may change. Systems that only edit prompts, memory or code belong on the Harness route."
+        },
+        {
+          "title": "Scale of the model actually trained",
+          "text": "Record ≥27B, <27B or unknown for the learner, separating total and activated parameters. A large teacher does not change a small learner’s scale. The threshold is a display preference."
+        }
+      ],
+      "open_details": [
+        "When a generator exceeds existing judges, what relevant, scalable signal can still distinguish quality without drifting with the generator? Better generated data raises learning limits only when feedback can identify useful examples.",
+        "How can learnability, diversity and distributional transfer be optimized together? Current success rates and immediate advantages are proxies for learning value. Co-adapting proposers, selectors and learners can settle into narrow cycles.",
+        "Which update timing and parameter choices let new capabilities transfer, preserve older abilities and justify training cost? SEAL’s sequential self-edit experiments still exhibit forgetting; a test-time gain on one task does not establish long-term accumulation."
       ]
     },
     "hybrid": {
@@ -1964,6 +2030,29 @@
         "Which external capabilities can be internalized without losing reliability?",
         "Does stronger task-solving ability improve system-design ability?",
         "How should updates be scheduled when models, interfaces, and evaluators change together?"
+      ],
+      "facets": [
+        {
+          "title": "Update schedule",
+          "text": "Sequential updates change H and then train M, with no necessary return to H. Alternating updates use each new component to update the other. Joint or interleaved training couples objectives without requiring simultaneous updates. Online or continual updates use fresh experience; specify whether this happens during training or deployment."
+        },
+        {
+          "title": "What changes",
+          "text": "Policy, reward-model, world-model or controller weights; workflows and prompts; skills and memory; environments and curricula; training programs and optimizers."
+        },
+        {
+          "title": "Where feedback returns",
+          "text": "One-way transfer, model–system coadaptation, repeated mutual updates, or an improved system participating in the next improvement cycle."
+        },
+        {
+          "title": "Joint training and system coevolution",
+          "text": "Training a policy, evaluator and world model can occur entirely on the parameter side. Model × Harness also identifies an external-system update. A single H→M path is one-way transfer."
+        }
+      ],
+      "open_details": [
+        "Harness changes alter state distributions and planning habits. Parameter updates may strengthen or disrupt the resulting coordination. Explaining a result requires identifying the coupling path, beyond comparing final scores.",
+        "Retrievable skills preserve conditions and remain easy to edit; parameter internalization reduces deployment dependencies. The choice affects generalization, calling cost, forgetting and adaptation. SkillRL and Harness-Zero occupy different positions, while SEED transfers training-time skills into weights.",
+        "The learning signal can improve or drift as the policy changes. Evaluation reliability, task coverage and long-term version evolution are coupled. Several rounds of short-term gain leave long-run stability open."
       ]
     }
   },
@@ -2496,5 +2585,171 @@
     }
   },
   "updated": "2026-10-20",
-  "source_snapshot": "2026-10-19"
+  "source_snapshot": "2026-10-19",
+  "bridges": [
+    {
+      "title": "Experience → weights",
+      "text": "Trajectories, memories and skills become training signals. Deployment experiments test whether the learned capability can operate without its original prompts or workflow."
+    },
+    {
+      "title": "Weights → system design",
+      "text": "Models propose changes to tools, workflows and training procedures. Producing better system improvements is a separate ability from solving more tasks."
+    },
+    {
+      "title": "Feedback → improvement",
+      "text": "Executable checks, learned evaluators and editable evaluation programs provide different signals. Evaluator learning and evaluation-harness evolution can be studied separately and then coupled."
+    }
+  ],
+  "reader_guide": {
+    "axes": [
+      {
+        "axis": "A",
+        "title": "Purpose and value",
+        "question": "Which bottleneck does it remove, and what counts as success?",
+        "content": "Identify the task, user, prior limitation and resource conditions. Separate the intended goal from the result actually obtained."
+      },
+      {
+        "axis": "B",
+        "title": "Ideas and choices",
+        "question": "What choice distinguishes it from the closest prior work?",
+        "content": "Explain why a representation, feedback signal or search method was selected and what trade-off it makes."
+      },
+      {
+        "axis": "C",
+        "title": "Structure and mechanism",
+        "question": "Which variable changes, and through what path does it affect capability?",
+        "content": "Connect the model, harness, data, environment, evaluator and improver. Identify proved results, experimentally supported explanations and hypotheses."
+      },
+      {
+        "axis": "D",
+        "title": "Method and implementation",
+        "question": "How do inputs and feedback produce a working successor?",
+        "content": "Explain the algorithm, training or search steps, implementation and informative controls. For theory, specify assumptions and the central proof argument."
+      },
+      {
+        "axis": "E",
+        "title": "Feedback and inheritance",
+        "question": "What survives, and how is it used next?",
+        "content": "Trace parameters, code, memory, candidates and training data across updates. Identify fixed components and whether the change improves execution or later improvement."
+      },
+      {
+        "axis": "F",
+        "title": "Results and transfer",
+        "question": "What capability or knowledge is gained, and where does it carry over?",
+        "content": "Report results, resource costs, regressions and transfer scope. Distinguish repeated optimization, new-task generalization, cross-model transfer and transfer of an improvement method."
+      }
+    ],
+    "cases": [
+      {
+        "id": "gepa",
+        "headline": "Search prompts using explanatory feedback in trajectories",
+        "loop": "Choose candidate/module → reflect on trajectories → edit prompts → minibatch evaluation → retain candidates",
+        "changed": "Module prompts; optional combinations of modules across lineages",
+        "feedback": "Execution traces, textual evaluation feedback and scores",
+        "retained": "A prompt pool, lineages and per-example Pareto scores",
+        "fixed": "Control flow, execution weights, reflection optimizer and selection procedure",
+        "insight": "Textual reflection and example-level Pareto retention preserve complementary candidates.",
+        "boundary": "It does not outperform RL on every task. Execution and reflection compute differ; weights and the optimizer remain fixed.",
+        "basis": "Sections 2–4, Algorithm 1, Tables 1–3; Appendices C/D/E/H/I/N."
+      },
+      {
+        "id": "dgm",
+        "headline": "Editable agent versions continue modifying their successors",
+        "loop": "Select lineage → parent diagnoses and implements → staged evaluation → extend archive",
+        "changed": "Coding-agent source code, prompts, tools and workflows",
+        "feedback": "Execution logs and staged coding success rates",
+        "retained": "Self-modified successors enter the archive and can continue self-modification",
+        "fixed": "Model weights, outer parent selection and archive maintenance, benchmark protocol",
+        "insight": "Promising intermediate programs remain available as starting points for later innovations.",
+        "boundary": "The 200-task SWE result is not the full Verified leaderboard. Main comparisons use unequal cost; the outer exploration procedure is fixed.",
+        "basis": "Sections 3–4 and 6; Figures 2–4; Appendices C/D/E, particularly E.1 cost and E.2/E.3 staged evaluation."
+      },
+      {
+        "id": "rhi",
+        "headline": "Express workflows as iteratively editable text",
+        "loop": "Run → compare adjacent outputs → accumulate history → revise prompts",
+        "changed": "Task-specific textual harness: roles, instructions, contracts, hops and stopping rules",
+        "feedback": "LLM preferences over specified artifacts from adjacent versions",
+        "retained": "The textual harness and self-comparison history",
+        "fixed": "Agent backend, model weights, judge and harness optimizer",
+        "insight": "Adjacent preferences and historical feedback guide communication contracts and workflows.",
+        "boundary": "Artifact preferences are not a full execution review. Adaptation is task-specific; the information-theoretic objective is a hypothesis. Per-run savings exclude amortized search.",
+        "basis": "Sections 3–6, Algorithm 1, Figures 5–11; Appendices B/C/E/F."
+      },
+      {
+        "id": "self-rewarding-lm",
+        "headline": "Updated models generate their own preference supervision",
+        "loop": "Seed SFT → generate and score answers → DPO; two self-rewarding rounds",
+        "changed": "Shared 70B answerer/judge weights",
+        "feedback": "Preference pairs from current-model self-scores",
+        "retained": "M1 weights continue into M2 and M3",
+        "fixed": "Question-generating model, scoring rubric, DPO rule and external evaluation",
+        "insight": "Shared parameters let the model’s evaluating ability change along with its answering ability.",
+        "boundary": "Question generation and rubrics are fixed. Evaluation includes external early stopping and increased answer length; two self-rewarding DPO rounds are tested.",
+        "basis": "Sections 2.1–2.4 and 3.1–3.2; Tables 1–2; Section 6."
+      },
+      {
+        "id": "self-taught-evaluators",
+        "headline": "Better evaluators provide the next round’s training judgments",
+        "loop": "Construct contrasts → sample/filter judge outputs → SFT → relabel",
+        "changed": "70B judge weights and synthetic judgment explanations",
+        "feedback": "Agreement with an intended synthetic preference",
+        "retained": "Each round generates data; the next judge is retrained from the same seed",
+        "fixed": "Preference-construction rules, initial prompt pool and rubric",
+        "insight": "Controlled contrasts make expected preference labels available.",
+        "boundary": "Synthetic orderings are not ground truth. The main study updates only the judge; easy Chat items regress, MT-Bench gains are limited and downstream RL gains are untested.",
+        "basis": "Sections 3–6; Tables 1–6; Appendices A.1–A.2; Section 8."
+      },
+      {
+        "id": "mass",
+        "headline": "Workflow experience enters weights, then updated weights search workflows",
+        "loop": "Workflow search → SFT on self-selected trajectories → updated model fills three roles",
+        "changed": "Workflow role/information-flow text and shared 27B weights",
+        "feedback": "The current model compares deliverables pairwise",
+        "retained": "Workflows, trajectories and merged weights",
+        "fixed": "qwen-code 0.20.0, tools/memory and outer algorithm",
+        "insight": "Organized information flow generates supervision that can be internalized.",
+        "boundary": "Eight training tasks; shared self-evaluation biases; some benchmark regressions. Token efficiency is not total compute efficiency.",
+        "basis": "Sections 2–5; Algorithms 1–3; Appendices B training, C public evaluation, D token controls, E search ablations and G behavior."
+      }
+    ],
+    "comparisons": [
+      {
+        "ids": [
+          "gepa",
+          "dgm"
+        ],
+        "title": "Prompt search and program self-modification",
+        "text": "GEPA updates task prompts; DGM updates the agent program participating in later self-modification. Both use feedback and candidate inheritance, but differ in the editable object and inclusion of the improver.",
+        "kind": "Editorial mechanism comparison"
+      },
+      {
+        "ids": [
+          "rhi",
+          "mass"
+        ],
+        "title": "Connecting harness updates to model training",
+        "text": "RHI searches workflows. MASS explicitly adopts that search approach and adds trajectory training, allowing the updated model to execute, optimize and evaluate. The new path links parameter learning with external workflows.",
+        "kind": "Explicit source connection: MASS Appendix J"
+      },
+      {
+        "ids": [
+          "self-rewarding-lm",
+          "self-taught-evaluators"
+        ],
+        "title": "Continuing weights and inheriting through data",
+        "text": "Self-Rewarding LMs continue weights through iterative DPO. Self-Taught Evaluators use the current judge to filter supervision, then train from the same seed. Iterative self-training can transmit capability through different channels.",
+        "kind": "Editorial mechanism comparison"
+      },
+      {
+        "ids": [
+          "apex-tune",
+          "mass"
+        ],
+        "title": "Improving training products and improving the researcher",
+        "text": "Apex-Tune’s public results concern training and kernel efficiency; MASS updates the model shared by execution, optimization and evaluation. Improvements to research products and to the producing researcher are separate outcomes.",
+        "kind": "Editorial comparison; Apex details appear in its study card"
+      }
+    ]
+  }
 }

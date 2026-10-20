@@ -38,8 +38,16 @@ def main():
     atlas = json.loads((ROOT / "data/atlas.json").read_text())
     english = json.loads((ROOT / "data/locales/en.json").read_text())
     template = (ROOT / "web/atlas.html").read_text()
-    css = (ROOT / "web/atlas.css").read_text()
-    js = (ROOT / "web/atlas.js").read_text()
+    css = (
+        (ROOT / "web/atlas.css").read_text()
+        + "\n"
+        + (ROOT / "web/landscape.css").read_text()
+    )
+    js = (
+        (ROOT / "web/atlas.js").read_text()
+        + "\n"
+        + (ROOT / "web/landscape.js").read_text()
+    )
     texts = json.dumps([atlas, english, manuals], ensure_ascii=False) + js + template
     options = subset.Options()
     options.flavor = "woff"
@@ -78,6 +86,8 @@ def main():
         "web/atlas.html",
         "web/atlas.css",
         "web/atlas.js",
+        "web/landscape.css",
+        "web/landscape.js",
         "scripts/build_manual.py",
         "scripts/build_learning.py",
     ]
@@ -89,6 +99,7 @@ def main():
         + "</script>\n<!-- Noto Sans SC: SIL OFL 1.1; assets/fonts/OFL.txt -->\n</head>",
     )
     (ROOT / "docs/index.html").write_text(template)
+    (ROOT / "RSI_Field_landscape.html").write_text(template)
     stats = {
         "manuals": {
             k: {"pages": v["pages"], "chapters": len(v["chapters"])}

@@ -1,54 +1,36 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta
-      name="description"
-      content="BeforeRSI — a bilingual research atlas of recursive self-improvement: mechanisms, literature, organizations, and a model-learning manual."
-    />
-    <meta name="theme-color" content="#f8f8f4" />
-    <title>BeforeRSI · Research Atlas</title>
-    <style>
-      {{FONT_CSS}}
-      {{ATLAS_CSS}}
-    </style>
-  </head>
-  <body>
-    <a class="skip" href="#main">Skip to content / 跳至正文</a>
-    <header class="site-header">
-      <div class="header-inner">
-        <a class="brand" href="#overview"
-          >Before<span>RSI</span><small>RESEARCH ATLAS</small></a
-        >
-        <div class="header-actions">
-          <a
-            href="https://github.com/Cherish0925/BeforeRSI"
-            target="_blank"
-            rel="noopener"
-            >GitHub ↗</a
-          ><button id="language" type="button" aria-label="Change language">
-            中文
-          </button>
-        </div>
-      </div>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="BeforeRSI — an interactive bilingual landscape of recursive self-improvement: mechanisms, literature, research relationships and organizations.">
+  <meta name="theme-color" content="#f4f6f7">
+  <title>BeforeRSI · RSI 研究图谱</title>
+  <style>{{FONT_CSS}}
+{{ATLAS_CSS}}</style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content / 跳至正文</a>
+  <div class="atlas-shell">
+    <aside class="atlas-sidebar">
+      <a class="brand" href="#overview">Before<span>RSI</span><small>RESEARCH LANDSCAPES</small></a>
       <nav id="nav" aria-label="Main navigation"></nav>
-    </header>
-    <main id="main" tabindex="-1"></main>
-    <footer id="footer"></footer>
-    <noscript
-      >This offline atlas requires JavaScript. Read the English and Chinese
-      Markdown editions at github.com/Cherish0925/BeforeRSI.</noscript
-    >
-    <script id="literature-data" type="application/json">
-      {{ATLAS_DATA}}
-    </script>
-    <script id="locale-en" type="application/json">
-      {{LOCALE_EN}}
-    </script>
-    <script id="model-learning-data" type="application/json">
-      {{MANUAL_DATA}}
-    </script>
-    <script>{{ATLAS_JS}}</script>
-  </body>
+      <div class="sidebar-note">Harness · Model · Co-evolution<br>2026.10.20 · 中文 / English</div>
+    </aside>
+    <div class="atlas-body">
+      <header class="atlas-topbar">
+        <form id="atlas-search"><input id="global-query" type="search" aria-label="Search / 搜索"><button id="global-submit" type="submit">搜索</button></form>
+        <div class="header-actions"><a href="https://github.com/Cherish0925/BeforeRSI" target="_blank" rel="noopener">GitHub ↗</a><button id="language" type="button">English</button></div>
+      </header>
+      <main id="main" tabindex="-1"></main>
+      <footer id="footer"></footer>
+    </div>
+  </div>
+  <dialog id="paper-dialog" aria-label="Research details / 研究详情"><div class="dialog-tools"><button data-dialog-language>English</button><button data-close-dialog aria-label="Close / 关闭">×</button></div><div id="paper-content"></div></dialog>
+  <noscript>This interactive atlas requires JavaScript. Read the English and Chinese editions at github.com/Cherish0925/BeforeRSI.</noscript>
+  <script id="literature-data" type="application/json">{{ATLAS_DATA}}</script>
+  <script id="locale-en" type="application/json">{{LOCALE_EN}}</script>
+  <script id="model-learning-data" type="application/json">{{MANUAL_DATA}}</script>
+  <script>{{ATLAS_JS}}</script>
+</body>
 </html>

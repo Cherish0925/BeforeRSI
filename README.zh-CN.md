@@ -1,8 +1,14 @@
 # BeforeRSI
 
+![BeforeRSI — the landscape of recursive self-improvement](assets/readme-header.png)
+
 **递归自改进的双语研究图谱。**
 
 [English](README.md) · [简体中文](README.zh-CN.md)
+
+**[下载双语交互图谱 · RSI_Field_landscape.html](https://raw.githubusercontent.com/Cherish0925/BeforeRSI/main/RSI_Field_landscape.html)**
+
+保存后用浏览器打开，右上角切换中文 / English。首页直接展示三条路线的完整领域图。
 
 BeforeRSI 连接 AI 自改进的机制、文献与研究主体，沿 **Harness、Model、Model × Harness** 三条路线梳理领域。核心问题是：系统保留下来的变化，怎样影响它产生下一次改进的能力？
 
@@ -10,12 +16,12 @@ BeforeRSI 连接 AI 自改进的机制、文献与研究主体，沿 **Harness�
 
 | 目标 | 中文 | English |
 |---|---|---|
-| 浏览领域图景 | [下载离线图谱](https://raw.githubusercontent.com/Cherish0925/BeforeRSI/main/docs/index.html)，用浏览器打开后选择中文 | 同一文件切换 English |
+| 浏览领域图景 | [下载离线图谱](https://raw.githubusercontent.com/Cherish0925/BeforeRSI/main/RSI_Field_landscape.html)，用浏览器打开后选择中文 | 同一文件切换 English |
 | 学习模型与 LLM 原理 | [学习手册](docs/model-llm.md) · [52 页 PDF](docs/Model_LLM_Learning_Manual.pdf) | [Manual](docs/model-llm.en.md) · [49-page PDF](docs/Model_LLM_Learning_Manual.en.pdf) |
 | 阅读研究主线 | [图景](docs/zh/MAP.md) → [理论](docs/zh/THEORY.md) → [假设](docs/zh/HYPOTHESES.md) | [Map](MAP.md) → [Theory](THEORY.md) → [Hypotheses](HYPOTHESES.md) |
 | 参与整理与构建 | [贡献指南](CONTRIBUTING.zh-CN.md) · [构建说明](docs/README.zh-CN.md) | [Contributing](CONTRIBUTING.md) · [Documentation](docs/README.md) |
 
-图谱是一个独立 HTML 文件，内置双语内容、搜索、机制图、研究关系、机构索引、教程目录、字体和两份可下载 PDF。离线阅读不需要服务器或 API 密钥。
+交互式 HTML 是项目的主要入口。三张领域图并列呈现，每条路线可切换领域知识图谱与研究关系图；点击节点或箭头，查看子问题、机制、论文和来源。文件还包含机构交叉表、机制导读、文献池、搜索、完整学习手册与两份 PDF，保存后可离线阅读。
 
 ## 收录内容
 
@@ -24,6 +30,8 @@ BeforeRSI 连接 AI 自改进的机制、文献与研究主体，沿 **Harness�
 | 研究目录 | 141 条：118 条方法记录、1 条初筛记录、22 条历史与背景记录 |
 | 机制图 | 3 条路线、29 个节点、60 条概念连接 |
 | 研究关系 | 69 条扩展、采用、讨论与比较关系 |
+| 文献检索池 | 567 条线索，包含摘要、作者、范围判断和已匹配研究入口 |
+| 机制导读 | 6 个阅读维度、6 项研究案例、4 组方法对照 |
 | 研究主体 | 170 个原始机构名称归一为 157 个主体 |
 | 公司条目 | 27 家公司与产业研究团队 |
 | 学习手册 | 29 章、148 组术语、61 个基础主题、95 个图谱子项、43 项原始文献 |
@@ -39,7 +47,7 @@ BeforeRSI 连接 AI 自改进的机制、文献与研究主体，沿 **Harness�
 
 **Model × Harness**：参数与外部系统之间的反馈。关注经验内化、工作流适配，以及技能、环境、评价器和训练程序的共同变化。
 
-每条工作按六个维度解读：目标与价值、思想与洞察、结构与原理、算法与实验、反馈与演化、成果与迁移。中英文共用 ID 和来源；完整结构化阅读记录保存在数据中。
+每条工作按六个维度解读：目标与价值、思想与洞察、结构与原理、算法与实验、反馈与演化、成果与迁移。中英文共用 ID 和来源；完整中文阅读记录可在研究卡片内展开，并保留在原始数据中。
 
 ## 从领域图景走向实验
 
@@ -62,6 +70,7 @@ BeforeRSI 连接 AI 自改进的机制、文献与研究主体，沿 **Harness�
 
 | 路径 | 用途 |
 |---|---|
+| [`RSI_Field_landscape.html`](RSI_Field_landscape.html) | 双语交互图谱主文件；`docs/index.html` 为同一内容的网页入口 |
 | `data/atlas.json` | 领域记录、机制映射、来源、机构和阅读笔记 |
 | `data/locales/en.json` | 工作、机制、关系和公司的英文编辑层 |
 | `data/works.json` | 研究论证索引，见[数据说明](data/README.md) |

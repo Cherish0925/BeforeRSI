@@ -1,8 +1,14 @@
 # BeforeRSI
 
+![BeforeRSI — the landscape of recursive self-improvement](assets/readme-header.png)
+
 **A bilingual research atlas of recursive self-improvement.**
 
 [English](README.md) · [简体中文](README.zh-CN.md)
+
+**[Download the bilingual interactive atlas · RSI_Field_landscape.html](https://raw.githubusercontent.com/Cherish0925/BeforeRSI/main/RSI_Field_landscape.html)**
+
+Save the file and open it in a browser. Switch 中文 / English at the top right. The home view presents all three mechanism maps.
 
 BeforeRSI connects the mechanisms, literature and research organizations behind AI self-improvement. It follows three routes: **Harness**, **Model**, and **Model × Harness**. The central question is how a system's retained changes affect its ability to produce the next improvement.
 
@@ -10,12 +16,12 @@ BeforeRSI connects the mechanisms, literature and research organizations behind 
 
 | Goal | English | 中文 |
 |---|---|---|
-| Explore the landscape | [Download the offline atlas](https://raw.githubusercontent.com/Cherish0925/BeforeRSI/main/docs/index.html), open it in a browser, and select English | 下载同一文件，打开后选择中文 |
+| Explore the landscape | [Download the offline atlas](https://raw.githubusercontent.com/Cherish0925/BeforeRSI/main/RSI_Field_landscape.html), open it in a browser, and select English | 下载同一文件，打开后选择中文 |
 | Learn model and LLM foundations | [Learning manual](docs/model-llm.en.md) · [49-page PDF](docs/Model_LLM_Learning_Manual.en.pdf) | [学习手册](docs/model-llm.md) · [52 页 PDF](docs/Model_LLM_Learning_Manual.pdf) |
 | Follow the research program | [Map](MAP.md) → [Theory](THEORY.md) → [Hypotheses](HYPOTHESES.md) | [图景](docs/zh/MAP.md) → [理论](docs/zh/THEORY.md) → [假设](docs/zh/HYPOTHESES.md) |
 | Contribute or build | [Contributing](CONTRIBUTING.md) · [Documentation](docs/README.md) | [参与贡献](CONTRIBUTING.zh-CN.md) · [构建说明](docs/README.zh-CN.md) |
 
-The atlas is one self-contained HTML file. It includes both languages, search, mechanism maps, work relationships, organizations, chapter navigation, fonts and both downloadable PDFs. No server or API key is needed for local reading.
+The interactive HTML atlas is the main entry to the project. Three mechanism maps appear side by side, and each route has a research relationship graph. Select a topic or arrow to inspect subquestions, mechanisms, papers and sources. The same file includes the participant matrix, reading guide, discovery pool, search, learning manual and both PDFs, available offline.
 
 ## What is included
 
@@ -24,6 +30,8 @@ The atlas is one self-contained HTML file. It includes both languages, search, m
 | Research catalog | 141 records: 118 method records, 1 screened record, 22 historical/context records |
 | Mechanism maps | 3 routes, 29 nodes, 60 conceptual links |
 | Work relationships | 69 extensions, uses, discussions and comparisons |
+| Discovery pool | 567 entries with abstracts, authors, scope decisions and links to matched studies |
+| Reading guide | 6 reading dimensions, 6 worked examples and 4 method comparisons |
 | Research participants | 157 normalized entries from 170 source affiliation names |
 | Company profiles | 27 companies and industry research teams |
 | Learning manual | 29 chapters, 148 glossary entries, 61 foundational topics, 95 atlas subtopics, 43 references |
@@ -39,7 +47,7 @@ Source snapshot: **19 October 2026**. Bilingual edition: **20 October 2026**. Th
 
 **Model × Harness** — feedback between weights and external systems. Study internalization of experience, workflow adaptation, evolving skills, environments, evaluators and training programs.
 
-Each work has six sections: purpose, core idea, mechanism, experiments, learning and inheritance, and results and scope. Chinese and English share IDs and sources. The full structured review trail remains available in the data.
+Each work has six sections: purpose, core idea, mechanism, experiments, learning and inheritance, and results and scope. Chinese and English share IDs and sources. Full original Chinese review notes can be expanded within each study and remain in the source data.
 
 ## From the landscape to experiments
 
@@ -62,6 +70,7 @@ The equations and experiment proposals are working research. Simulations illustr
 
 | Path | Role |
 |---|---|
+| [`RSI_Field_landscape.html`](RSI_Field_landscape.html) | Main bilingual interactive atlas; `docs/index.html` contains the same page for hosting |
 | `data/atlas.json` | Landscape records, mappings, sources, organizations and review notes |
 | `data/locales/en.json` | English work, mechanism, relationship and company text |
 | `data/works.json` | Research claim index; see [data documentation](data/README.md) |
