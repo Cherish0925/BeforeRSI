@@ -6,14 +6,14 @@ When model and harness are both updated, where does the gain reside?
 
 ## Required cross
 
-$
+$$
 
 (M_0,H_0),\quad
 (M_1,H_0),\quad
 (M_0,H_1),\quad
 (M_1,H_1).
 
-$
+$$
 
 $M_1$ should be trained from versioned, verified trajectories. $H_1$ should be selected without access to hidden or time-forward evaluation.
 

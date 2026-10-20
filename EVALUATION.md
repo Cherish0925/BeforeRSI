@@ -129,7 +129,7 @@ A gain inside the parent’s repeat-evaluation noise is unresolved.
 
 Observed score change can contain:
 
-$
+$$
 
 \Delta_{\text{obs}}=
 \Delta_{\text{compute}}
@@ -139,7 +139,7 @@ $
 +\Delta_{\text{measurement}}
 +\epsilon.
 
-$
+$$
 
 This is an experimental decomposition, not an identity recoverable from one run.
 
@@ -159,22 +159,22 @@ Only $\Delta_{\text{transfer}}$, net of unacceptable regressions and cost, suppo
 
 For model $M$, harness $H$, and improver $I$, evaluate a factorial subset of:
 
-$
+$$
 
 M_i\times H_j\times I_k.
 
-$
+$$
 
 The minimum model–harness cross is:
 
-$
+$$
 
 (M_0,H_0),\quad
 (M_1,H_0),\quad
 (M_0,H_1),\quad
 (M_1,H_1).
 
-$
+$$
 
 Interpretation:
 
@@ -240,11 +240,11 @@ Use several model capability levels when the claim concerns general harness or i
 
 Report:
 
-$
+$$
 
 \Delta(s)=U_Q(M_s,H_1)-U_Q(M_s,H_0)
 
-$
+$$
 
 and the corresponding cost. A single small-model result cannot support a frontier-model claim. A single frontier-model result cannot reveal whether the method depends on capabilities absent from smaller systems.
 
@@ -252,13 +252,13 @@ and the corresponding cost. A single small-model result cannot support a frontie
 
 For D3, compare parent and successor as improvers on a new improvement problem.
 
-$
+$$
 
 S_0 \xrightarrow{I_0} S_1,\qquad
 S_0 \xrightarrow[\text{new problem}]{B} C_0,\qquad
 S_1 \xrightarrow[\text{same problem}]{B} C_1.
 
-$
+$$
 
 Evaluate $C_0$ and $C_1$ on hidden tasks. Match the improvement budget $B$.
 

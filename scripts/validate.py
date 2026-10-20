@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+import base64
+import hashlib
 import json
 import re
 import sys
@@ -171,11 +173,29 @@ def validate_hypotheses(data: object) -> None:
             fail(f"{hypothesis_id}: files must be non-empty")
 
 
+def validate_documentation() -> None:
+    html = (ROOT / "docs/index.html").read_text(encoding="utf-8")
+    def embedded(script_id):
+        match = re.search(r'<script id="' + script_id + r'"[^>]*>(.*?)</script>', html, re.S)
+        if not match:
+            fail(f"missing embedded data: {script_id}")
+        return json.loads(match[1])
+    guide = embedded("model-learning-data")
+    source = (ROOT / "docs/model-llm.md").read_bytes()
+    if guide["source_sha256"] != hashlib.sha256(source).hexdigest():
+        fail("guide changed: run scripts/build_learning.py")
+    if base64.b64decode(guide["pdf"]) != (ROOT / "docs/Model_LLM_Learning_Manual.pdf").read_bytes():
+        fail("standalone and embedded PDFs differ")
+    if embedded("literature-data") != load(ROOT / "data/atlas.json"):
+        fail("atlas data changed: run scripts/build_learning.py")
+
+
 def main() -> int:
     try:
         work_ids = validate_works(load(WORKS_PATH))
         validate_graph(load(GRAPH_PATH), work_ids)
         validate_hypotheses(load(HYPOTHESES_PATH))
+        validate_documentation()
     except (OSError, json.JSONDecodeError, ValueError) as exc:
         print(f"validation failed: {exc}", file=sys.stderr)
         return 1

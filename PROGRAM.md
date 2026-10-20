@@ -4,11 +4,11 @@ The objective is a system that repeatedly improves both task capability and the 
 
 The unit of research is not a model checkpoint or a harness in isolation. It is a versioned tuple:
 
-$
+$$
 
 S_t=(M_t,\mathcal H_t,I_t,D_t,E_t),
 
-$
+$$
 
 with protected acceptance $V^\*$.
 
@@ -24,7 +24,7 @@ A portfolio is necessary because the best harness for current task score may gen
 
 A single benchmark score is inadequate. For candidate system $S$, define a vector:
 
-$
+$$
 
 J(S)=
 \left(
@@ -37,7 +37,7 @@ R(S),
 D_{\text{quality}}(S)
 \right),
 
-$
+$$
 
 where:
 
@@ -109,30 +109,30 @@ Update $M_t\rightarrow M_{t+1}$ with a declared training method. Retain a frozen
 
 Evaluate the full matrix
 
-$
+$$
 
 M_i \times H_j,
 
-$
+$$
 
 at minimum:
 
-$
+$$
 
 (M_t,H_t),\quad
 (M_{t+1},H_t),\quad
 (M_t,H_{t+1}),\quad
 (M_{t+1},H_{t+1}).
 
-$
+$$
 
 With a portfolio, estimate:
 
-$
+$$
 
 A_{ij}=U_Q(M_i,H_j).
 
-$
+$$
 
 This matrix reveals whether gain lives in model weights, harness code, or local co-adaptation. It also shows whether the new model can exploit older harnesses and whether the new harness transfers back to the parent model.
 
@@ -240,13 +240,13 @@ Purpose: determine whether a persistent harness change beats giving the parent t
 
 Required comparisons:
 
-$
+$$
 
 H_0^{\text{standard}},\quad
 H_0^{\text{equal-compute}},\quad
 H_1^{\text{standard}}.
 
-$
+$$
 
 Evaluate on untouched and time-forward tasks, then transfer $H_1$ to a second model family.
 
@@ -254,11 +254,11 @@ Evaluate on untouched and time-forward tasks, then transfer $H_1$ to a second mo
 
 Train or obtain $M_1$ from verified trajectories and evaluate:
 
-$
+$$
 
 (M_0,H_0),\ (M_1,H_0),\ (M_0,H_1),\ (M_1,H_1).
 
-$
+$$
 
 Repeat across more than one model scale. This experiment decides whether joint gains are additive, synergistic, compensatory, or locally co-adapted.
 
@@ -268,7 +268,7 @@ Give $S_0$ and $S_1$ the same new improvement problem and budget. Compare the de
 
 Primary quantity:
 
-$
+$$
 
 R_t=
 \frac{
@@ -277,7 +277,7 @@ U_Q(S_{t+1}^{\text{child}})-U_Q(S_t)
 C_{\text{improve}}
 }.
 
-$
+$$
 
 D3 requires a reproducible increase in later improvement quality or efficiency.
 
@@ -285,13 +285,13 @@ D3 requires a reproducible increase in later improvement quality or efficiency.
 
 Run at least three complete cycles:
 
-$
+$$
 
 (M_t,\mathcal H_t,I_t)
 \rightarrow
 (M_{t+1},\mathcal H_{t+1},I_{t+1}).
 
-$
+$$
 
 Track held-out capability, transfer, diversity, regressions, update cost, and saturation. Compare with:
 
@@ -313,12 +313,12 @@ A result on one model endpoint does not determine the sign of the effect at anot
 
 For each intervention, measure:
 
-$
+$$
 
 \Delta(s)=
 U_Q(M_s,H_1)-U_Q(M_s,H_0),
 
-$
+$$
 
 where $s$ indexes model scale or capability.
 

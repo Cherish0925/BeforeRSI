@@ -1,0 +1,5 @@
+matplotlib==3.10.8
+reportlab==4.4.9
+fonttools==4.61.1
+pypdf==6.10.0
+Pillow==12.3.0

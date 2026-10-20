@@ -144,13 +144,13 @@ HELIX, Co-Harness, OpenRSI, MASS, SIA, and related work identify the correct dep
 
 The core loop is sound:
 
-$
+$$
 
 H_t \rightarrow D_t^{\text{verified}}
 \rightarrow M_{t+1}
 \rightarrow H_{t+1}.
 
-$
+$$
 
 Current public evidence is early. Common limitations include one-round demonstrations, task-specific evaluators, incomplete $M\times H$ crossing, no time-forward tasks, and no comparison of parent and successor as improvers.
 

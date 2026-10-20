@@ -7,7 +7,7 @@
 <br>
 
 [![Status](https://img.shields.io/badge/status-research%20in%20progress-111827?style=flat-square)](#status)
-[![Corpus](https://img.shields.io/badge/public%20corpus-38%20works-C58B35?style=flat-square)](EVIDENCE.md)
+[![Corpus](https://img.shields.io/badge/research%20catalog-38%20works-C58B35?style=flat-square)](EVIDENCE.md)
 [![Claim depth](https://img.shields.io/badge/claim%20depth-D0%E2%86%92D4-5C9C96?style=flat-square)](#claim-depth)
 [![CI](https://img.shields.io/github/actions/workflow/status/Cherish0925/BeforeRSI/validate.yml?branch=main&style=flat-square&label=data)](https://github.com/Cherish0925/BeforeRSI/actions)
 [![License](https://img.shields.io/badge/license-MIT-6B7280?style=flat-square)](LICENSE)
@@ -18,13 +18,26 @@
 
 ---
 
+## Start here
+
+| Goal | Entry |
+|---|---|
+| Learn how LLMs train and improve | [中文学习手册](docs/model-llm.md) · [52-page PDF](docs/Model_LLM_Learning_Manual.pdf) |
+| Explore model, harness and joint improvement research | [Download the interactive atlas](https://raw.githubusercontent.com/Cherish0925/BeforeRSI/main/docs/index.html) and open it locally |
+| Study the research model | [Theory](THEORY.md) → [Hypotheses](HYPOTHESES.md) → [Experiments](experiments/) |
+| Edit or rebuild the materials | [Documentation sources and build](docs/README.md) |
+
+The Chinese guide contains 29 chapters, 148 bilingual terms and 43 references. Its indexes connect 61 foundational topics to 95 atlas subtopics. The offline atlas includes chapter navigation, full-text tutorial search and the same downloadable PDF.
+
+The atlas contains 141 work records. The separate 38-work research catalog links specific claims to the project's theory and experiments; these are different scopes, not competing totals. Reading and review status are recorded in the atlas data.
+
 ## What must be true before RSI is real?
 
 **BeforeRSI** studies one question:
 
 > When can we say that an AI system has improved its own capacity to improve?
 
-A better answer after more sampling is not enough. A benchmark score obtained after repeated access to the benchmark is not enough. A fixed optimizer producing a better prompt or workflow is not enough. A model and harness updated together are not interpretable unless their contributions can be separated.
+We study persistent changes to models, harnesses and improvement procedures, measuring transfer and the ability to produce better successors under comparable resources.
 
 The object of study is a versioned AI system:
 
@@ -156,25 +169,13 @@ These experiments are ordered. Experiment 03 is the first direct test of the wor
 4. **[Repeated co-evolution](experiments/004-repeated-coevolution.md)** — run model, harness, and improver updates for several generations against model-only, harness-only, fixed-improver, and equal-compute baselines.
 5. **[Evaluator phase boundary](experiments/005-evaluator-phase-boundary.md)** — measure when additional candidate search stops producing true held-out gain because evaluation noise or exploitability dominates.
 
-## What this repository rejects
-
-BeforeRSI does not upgrade a result because its title contains *recursive*, *self-evolving*, *autonomous* or *self-reflective*. The following are insufficient on their own:
-
-- extra samples, retries, agents or evaluator calls;
-- a fixed outer optimizer repeatedly improving a target;
-- benchmark-specific prompt or workflow patches;
-- self-generated data with an unchanged training rule;
-- joint model/harness updates without component crossing;
-- one successful parent → child update described as recursion;
-- gains demonstrated only on small models and extrapolated to frontier models;
-- self-evaluation used as the sole acceptance test.
-
-These methods may be useful components or strong baselines. **[EVALUATION.md](EVALUATION.md)** specifies what stronger claims require.
-
 ## Repository
 
 | File | Purpose |
 |---|---|
+| **[docs/model-llm.md](docs/model-llm.md)** | Chinese guide to model computation, training and self-improvement |
+| **[docs/index.html](docs/index.html)** | standalone interactive research atlas and tutorial |
+| **[data/atlas.json](data/atlas.json)** | atlas records, relationships and reading status |
 | **[THEORY.md](THEORY.md)** | mathematical dynamics, coevolution matrix, control parameters, phase regimes and predictions |
 | **[MAP.md](MAP.md)** | history, causal structure, knowledge tree and present frontier |
 | **[EVIDENCE.md](EVIDENCE.md)** | strongest public work, claim depth, limitations and primary sources |
@@ -188,7 +189,7 @@ These methods may be useful components or strong baselines. **[EVALUATION.md](EV
 | **[RESEARCH_LOG.md](RESEARCH_LOG.md)** | distilled lineage of the project's changing representations and decisions |
 | **[AGENTS.md](AGENTS.md)** | multi-agent research protocol and epistemic rules |
 
-The repository stays small on purpose. New files are added when they contain a new source audit, a testable claim, an experiment, or a result.
+Edit the guide and atlas sources, then rebuild their PDF and HTML outputs. See [the build instructions](docs/README.md).
 
 ## Status
 
@@ -201,5 +202,5 @@ The immediate work is deliberately narrow:
 ---
 
 <div align="center">
-<sub>BeforeRSI asks for stronger evidence before stronger words.</sub>
+<sub>Models, harnesses and the mechanisms that improve them.</sub>
 </div>

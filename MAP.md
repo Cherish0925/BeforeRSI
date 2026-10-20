@@ -15,11 +15,11 @@ The field becomes clear when the questions are arranged by causal dependency rat
 
 A deployed AI system is represented as
 
-$
+$$
 
 S_t=(M_t,H_t,I_t,D_t,E_t).
 
-$
+$$
 
 - $M_t$: model weights, architecture, optimizer state, and learned policies;
 - $H_t$: prompts, context construction, memory, tools, skills, routing, agent topology, control flow, verification calls, and stopping rules;
@@ -29,11 +29,11 @@ $
 
 The acceptance process is written separately:
 
-$
+$$
 
 V^\*(S_t,S_{t+1};Q,B),
 
-$
+$$
 
 where $Q$ is an untouched task distribution and $B$ is a fixed resource budget. $V^\*$ may be improved through a separate process, but a candidate cannot freely modify the test that accepts it.
 
@@ -138,13 +138,13 @@ Exact verifiers make algorithm search, games, theorem proving, and code tests un
 
 A credible RSI system therefore needs three feedback layers:
 
-$
+$$
 
 V_t^{\text{search}},\qquad
 V_t^{\text{validation}},\qquad
 V^\*_{\text{accept}}.
 
-$
+$$
 
 - $V^{\text{search}}$ supplies dense feedback and may be imperfect.
 - $V^{\text{validation}}$ supports model and procedure choices but must have controlled exposure.
